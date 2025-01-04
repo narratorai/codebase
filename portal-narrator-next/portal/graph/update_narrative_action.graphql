@@ -1,0 +1,10 @@
+mutation UpdateNarrativeAction($id: uuid!, $name: String!, $description: String, $happened_at: date!) {
+  update_narrative_company_timelines(
+    where: { id: { _eq: $id } }
+    _set: { name: $name, description: $description, happened_at: $happened_at }
+  ) {
+    returning {
+      id
+    }
+  }
+}

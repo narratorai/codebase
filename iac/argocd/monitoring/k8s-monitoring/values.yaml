@@ -1,0 +1,40 @@
+prometheus-operator-crds:
+  enabled: false
+cluster:
+  name: mgmt
+externalServices:
+  prometheus:
+    host: https://prometheus-prod-13-prod-us-east-0.grafana.net
+    basicAuth:
+      username: "1274438"
+      password: ""
+  loki:
+    host: https://logs-prod-006.grafana.net
+    basicAuth:
+      username: "736265"
+      password: ""
+  tempo:
+    host: https://tempo-prod-04-prod-us-east-0.grafana.net:443
+    basicAuth:
+      username: "735369"
+      password: ""
+opencost:
+  opencost:
+    exporter:
+      defaultClusterId: mgmt
+    prometheus:
+      external:
+        url: https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom
+traces:
+  enabled: true
+grafana-agent:
+  agent:
+    extraPorts:
+      - name: otlp-grpc
+        port: 4317
+        targetPort: 4317
+        protocol: TCP
+      - name: otlp-http
+        port: 4318
+        targetPort: 4318
+        protocol: TCP

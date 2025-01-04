@@ -1,0 +1,18 @@
+query GetChatUser($chat_id: uuid!, $company_id: uuid!) {
+  chat: chat_by_pk(id: $chat_id) {
+    id
+    user {
+      id
+      email
+      company_users(where: { company_id: { _eq: $company_id } }) {
+        id
+        first_name
+        last_name
+        user_id
+        company {
+          id
+        }
+      }
+    }
+  }
+}

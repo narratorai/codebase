@@ -1,0 +1,16 @@
+mutation UpdateColumn(
+  $id: uuid!
+  $label: String!
+  $has_data: Boolean!
+) {
+  update_column_renames(
+    where: {
+      id: { _eq: $id }
+    }
+    _set: { label: $label, has_data: $has_data}
+  ) {
+    returning {
+      id
+    }
+  }
+}

@@ -1,0 +1,11 @@
+query GetRunningExecutions($task_id: uuid) {
+  task_executions: task_execution(
+    where: { task_id: { _eq: $task_id }, status: { _eq: running } }
+    order_by: { started_at: desc }
+    limit: 1
+  ) {
+    id
+    status
+    task_id
+  }
+}

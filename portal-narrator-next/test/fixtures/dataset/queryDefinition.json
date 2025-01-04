@@ -1,0 +1,1264 @@
+{
+  "override_sql": null,
+  "query": {
+    "activities": [
+      {
+        "did": true,
+        "kind": "limiting",
+        "occurence_after_time": false,
+        "occurrence": "first",
+        "occurrence_value": 1,
+        "relationships": [],
+        "config": {
+          "activity_stream": "activity_stream",
+          "customer_table": "customer",
+          "enrichment_table": null,
+          "has_source": true
+        },
+        "slug": [
+          "started_session"
+        ],
+        "filters": [],
+        "id": "started_session_3aQ4ZrGo",
+        "activity_ids": [
+          "7e641291-eaca-40c7-9b31-30acaf62be3d"
+        ],
+        "name": "Started Session"
+      },
+      {
+        "did": true,
+        "kind": "append",
+        "occurence_after_time": false,
+        "occurrence": "metric",
+        "occurrence_value": "COUNT_DISTINCT",
+        "relationships": [
+          {
+            "slug": "within_cohort"
+          }
+        ],
+        "config": {
+          "activity_stream": "activity_stream",
+          "customer_table": "customer",
+          "enrichment_table": null,
+          "has_source": true
+        },
+        "slug": [
+          "viewed_course"
+        ],
+        "filters": [],
+        "id": "viewed_course_Oo2A7HN_",
+        "activity_ids": [
+          "93045021-822e-4358-8a43-c91b650ea2a1"
+        ],
+        "name": "Viewed Course",
+        "relationship_slug": "agg_all_in_between"
+      },
+      {
+        "did": true,
+        "kind": "conversion",
+        "occurence_after_time": false,
+        "occurrence": "first",
+        "occurrence_value": 1,
+        "relationships": [
+          {
+            "slug": "within_cohort"
+          }
+        ],
+        "config": {
+          "activity_stream": "activity_stream",
+          "customer_table": "customer",
+          "enrichment_table": null,
+          "has_source": true
+        },
+        "slug": [
+          "viewed_course"
+        ],
+        "filters": [],
+        "id": "viewed_course_2ei6FtOF",
+        "activity_ids": [
+          "93045021-822e-4358-8a43-c91b650ea2a1"
+        ],
+        "name": "Viewed Course",
+        "relationship_slug": "first_in_between"
+      },
+      {
+        "did": true,
+        "kind": "conversion",
+        "occurence_after_time": false,
+        "occurrence": "first",
+        "occurrence_value": 1,
+        "relationships": [],
+        "config": {
+          "activity_stream": "activity_stream",
+          "customer_table": "customer",
+          "enrichment_table": null,
+          "has_source": true
+        },
+        "slug": [
+          "identified_visitor"
+        ],
+        "filters": [],
+        "id": "identified_visitor_hyUcErjq",
+        "activity_ids": [
+          "dcc753f7-6460-4f47-a0e5-19eafca97f08"
+        ],
+        "name": "Identified Visitor",
+        "relationship_slug": "first_ever"
+      },
+      {
+        "did": true,
+        "kind": "conversion",
+        "occurence_after_time": false,
+        "occurrence": "first",
+        "occurrence_value": 1,
+        "relationships": [
+          {
+            "slug": "within_cohort"
+          }
+        ],
+        "config": {
+          "activity_stream": "activity_stream",
+          "customer_table": "customer",
+          "enrichment_table": null,
+          "has_source": false
+        },
+        "slug": [
+          "lead_created"
+        ],
+        "filters": [
+          {
+            "activity_column_name": "activity_occurrence",
+            "filter": {
+              "operator": "equal",
+              "value": "1",
+              "kind": "value",
+              "or_null": false
+            },
+            "enrichment_table": null
+          }
+        ],
+        "id": "lead_created_4RJOm7yo",
+        "activity_ids": [
+          "fe2e8699-8007-4fcd-b3b4-9dcce8b4b3ea"
+        ],
+        "name": "Lead Created",
+        "relationship_slug": "first_in_between"
+      }
+    ],
+    "columns": [
+      {
+        "id": "limiting_started_session_3aQ4ZrGo_ts",
+        "filters": [
+          {
+            "operator": "greater_than",
+            "value": "2019-10-13T00:00:00Z",
+            "kind": "value",
+            "or_null": false
+          }
+        ],
+        "label": "started_session_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_session_3aQ4ZrGo",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "timestamp",
+        "mavis_type": "timestamp"
+      },
+      {
+        "id": "limiting_started_session_3aQ4ZrGo_customer",
+        "filters": [],
+        "label": "customer",
+        "name": "customer",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_session_3aQ4ZrGo",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "string",
+        "mavis_type": "string"
+      },
+      {
+        "id": "limiting_started_session_3aQ4ZrGo_feature_1",
+        "filters": [],
+        "label": "activity",
+        "name": "feature_1",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_session_3aQ4ZrGo",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "string",
+        "mavis_type": "string"
+      },
+      {
+        "id": "limiting_started_session_3aQ4ZrGo_join_customer",
+        "filters": [],
+        "label": "unique_customer_identifier",
+        "name": "join_customer",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_session_3aQ4ZrGo",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "string",
+        "mavis_type": "string"
+      },
+      {
+        "id": "limiting_started_session_3aQ4ZrGo_ad_source",
+        "filters": [],
+        "label": "ad_source",
+        "name": "ad_source",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_session_3aQ4ZrGo",
+          "enrichment_table": "enriched_pages"
+        },
+        "source_kind": "activity",
+        "type": "string",
+        "mavis_type": "string"
+      },
+      {
+        "id": "append_viewed_course_Oo2A7HN__feature_1",
+        "filters": [],
+        "label": "number_of_courses_viewed",
+        "name": "feature_1",
+        "output": true,
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "viewed_course_Oo2A7HN_",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "integer",
+        "mavis_type": "string"
+      },
+      {
+        "id": "conversion_viewed_course_2ei6FtOF_ts",
+        "filters": [],
+        "label": "converted_to_viewed_course_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_id": "viewed_course_2ei6FtOF",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "timestamp"
+      },
+      {
+        "id": "converted_to_viewed_course_2ei6FtOF",
+        "filters": [],
+        "label": "converted_to_viewed_course",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_id": "viewed_course_2ei6FtOF",
+          "raw_string": "iff(not_is_null({conversion_viewed_course_2ei6FtOF_ts}),1, 0)"
+        },
+        "source_kind": "computed",
+        "type": "boolean"
+      },
+      {
+        "id": "days_to_viewed_course_2ei6FtOF",
+        "filters": [],
+        "label": "days_to_viewed_course",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_id": "viewed_course_2ei6FtOF",
+          "raw_string": "date_diff('day', {limiting_started_session_3aQ4ZrGo_ts},{conversion_viewed_course_2ei6FtOF_ts})"
+        },
+        "source_kind": "computed",
+        "type": "number"
+      },
+      {
+        "id": "conversion_identified_visitor_hyUcErjq_ts",
+        "filters": [],
+        "label": "converted_to_identified_visitor_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_id": "identified_visitor_hyUcErjq",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "timestamp"
+      },
+      {
+        "id": "converted_to_identified_visitor_hyUcErjq",
+        "filters": [],
+        "label": "converted_to_identified_visitor",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_id": "identified_visitor_hyUcErjq",
+          "raw_string": "iff(not_is_null({conversion_identified_visitor_hyUcErjq_ts}),1, 0)"
+        },
+        "source_kind": "computed",
+        "type": "boolean"
+      },
+      {
+        "id": "days_to_identified_visitor_hyUcErjq",
+        "filters": [],
+        "label": "days_to_identified_visitor",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_id": "identified_visitor_hyUcErjq",
+          "raw_string": "date_diff('day', {limiting_started_session_3aQ4ZrGo_ts},{conversion_identified_visitor_hyUcErjq_ts})"
+        },
+        "source_kind": "computed",
+        "type": "number"
+      },
+      {
+        "id": "conversion_lead_created_4RJOm7yo_ts",
+        "filters": [],
+        "label": "converted_to_lead_created_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_id": "lead_created_4RJOm7yo",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "timestamp"
+      },
+      {
+        "id": "converted_to_lead_created_4RJOm7yo",
+        "filters": [],
+        "label": "converted_to_lead_created",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_id": "lead_created_4RJOm7yo",
+          "raw_string": "iff(not_is_null({conversion_lead_created_4RJOm7yo_ts}),1, 0)"
+        },
+        "source_kind": "computed",
+        "type": "boolean"
+      },
+      {
+        "id": "days_to_lead_created_4RJOm7yo",
+        "filters": [],
+        "label": "days_to_lead_created",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_id": "lead_created_4RJOm7yo",
+          "raw_string": "date_diff('day', {limiting_started_session_3aQ4ZrGo_ts},{conversion_lead_created_4RJOm7yo_ts})"
+        },
+        "source_kind": "computed",
+        "type": "number"
+      },
+      {
+        "id": "started_session_at_vRGJ_lHs",
+        "filters": [],
+        "label": "week_of_started_session_at",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_truncate",
+          "column_id": "limiting_started_session_3aQ4ZrGo_ts",
+          "resolution": "1",
+          "segmentation": "week"
+        },
+        "source_kind": "computed",
+        "type": "timestamp",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "started_session_at_ZfgCQg7m",
+        "filters": [],
+        "label": "day_of_started_session_at",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_truncate",
+          "column_id": "limiting_started_session_3aQ4ZrGo_ts",
+          "segmentation": "day",
+          "resolution": "3"
+        },
+        "source_kind": "computed",
+        "type": "timestamp",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "paid_visit",
+        "filters": [],
+        "label": "paid_visit",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "ifttt",
+          "cases": [
+            {
+              "filters": [
+                {
+                  "column_id": "limiting_started_session_3aQ4ZrGo_ad_source",
+                  "filter": {
+                    "operator": "not_is_null",
+                    "value": "",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "1",
+              "value_kind": "integer"
+            }
+          ],
+          "value_kind": "integer",
+          "value": "0"
+        },
+        "source_kind": "computed",
+        "type": "integer",
+        "_auto_generated_by": null
+      }
+    ],
+    "all_groups": [
+      {
+        "name": "Week",
+        "slug": "week",
+        "_column_ids": [
+          "started_session_at_vRGJ_lHs"
+        ],
+        "columns": [
+          {
+            "id": "week_started_session_at_vRGJ_lHs",
+            "filters": [],
+            "label": "week_of_started_session_at",
+            "name": "",
+            "output": true,
+            "type": "timestamp",
+            "column_id": "started_session_at_vRGJ_lHs",
+            "pivoted": false
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "week_computed_conversion_to_viewed_course_2ei6FtOF",
+            "filters": [],
+            "label": "percent_viewed_course",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "({week_metric_total_viewed_course_2ei6FtOF}*1.0)/{metrics_total_events}"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "week_computed_conversion_to_identified_visitor_hyUcErjq",
+            "filters": [],
+            "label": "percent_identified_visitor",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "({week_metric_total_identified_visitor_hyUcErjq}*1.0)/{metrics_total_events}"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "week_cost_per_click",
+            "filters": [],
+            "label": "cost_per_click",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "math_operation_multi_column",
+              "column_id": "_spend_column_spend",
+              "operation": "/",
+              "second_column_id": "_spend_column_clicks"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "id": "week_cost_per_impression",
+            "filters": [],
+            "label": "cost_per_impression",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "math_operation_multi_column",
+              "column_id": "_spend_column_spend",
+              "operation": "/",
+              "second_column_id": "_spend_column_impressions"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "id": "week_cost_per_session",
+            "filters": [],
+            "label": "Cost per Session",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "math_operation_multi_column",
+              "column_id": "_spend_column_spend",
+              "operation": "/",
+              "second_column_id": "metric_paid_visit_sum_fou_0_x_kn"
+            },
+            "source_kind": "computed",
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "week_computed_conversion_to_lead_created_4RJOm7yo",
+            "filters": [],
+            "label": "conversion_rate_to_lead_created",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "({week_metric_total_lead_created_4RJOm7yo}*1.0)/{metrics_total_events}"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "week_cost_per_session_moving_average",
+            "filters": [],
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "moving_average",
+              "column_id": "week_cost_per_session",
+              "order": [
+                {
+                  "column_id": "week_started_session_at_vRGJ_lHs",
+                  "order_direction": "asc"
+                }
+              ],
+              "window_size": "3"
+            },
+            "source_kind": "computed",
+            "type": "number",
+            "_auto_generated_by": null,
+            "label": "Cost per Session Moving Average"
+          }
+        ],
+        "metrics": [
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metrics_total_events",
+            "label": "total_sessions",
+            "agg_function": "COUNT_ALL",
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "week_metric_total_viewed_course_2ei6FtOF",
+            "label": "total_viewed_course",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "converted_to_viewed_course_2ei6FtOF",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "week_metric_total_identified_visitor_hyUcErjq",
+            "label": "total_identified_visitor",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "converted_to_identified_visitor_hyUcErjq",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metric_append_viewed_course_oo_2_a_7_hn_feature_1_average_slv_jcl_in",
+            "label": "avg_courses_viewed_per_session",
+            "agg_function": "AVERAGE",
+            "output": true,
+            "column_id": "append_viewed_course_Oo2A7HN__feature_1",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metric_paid_visit_sum_fou_0_x_kn",
+            "label": "total_paid_visits",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "paid_visit",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "week_metric_total_lead_created_4RJOm7yo",
+            "label": "total_lead_created",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "converted_to_lead_created_4RJOm7yo",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": "create-cac"
+          }
+        ],
+        "pivot": [],
+        "order": [
+          {
+            "column_id": "week_started_session_at_vRGJ_lHs",
+            "order_direction": "asc"
+          }
+        ],
+        "parent_filters": [],
+        "spend": {
+          "joins": [
+            {
+              "column_id": "week_started_session_at_vRGJ_lHs",
+              "spend_column": "week"
+            }
+          ],
+          "columns": [
+            {
+              "id": "_spend_column_spend",
+              "filters": [],
+              "label": "spend",
+              "name": "spend",
+              "output": true,
+              "type": "float"
+            },
+            {
+              "id": "_spend_column_clicks",
+              "filters": [],
+              "label": "clicks",
+              "name": "clicks",
+              "output": true,
+              "type": "integer"
+            },
+            {
+              "id": "_spend_column_impressions",
+              "filters": [],
+              "label": "impressions",
+              "name": "impressions",
+              "output": true,
+              "type": "integer"
+            }
+          ],
+          "_distribute_output": false
+        }
+      },
+      {
+        "slug": "week_1",
+        "_column_ids": [
+          "started_session_at_ZfgCQg7m"
+        ],
+        "columns": [
+          {
+            "id": "day_started_session_at_ZfgCQg7m",
+            "filters": [],
+            "label": "day_of_started_session_at",
+            "name": "",
+            "output": true,
+            "type": "timestamp",
+            "column_id": "started_session_at_ZfgCQg7m",
+            "pivoted": false
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "week_computed_conversion_to_viewed_course_2ei6FtOF",
+            "filters": [],
+            "label": "percent_viewed_course",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "({week_metric_total_viewed_course_2ei6FtOF}*1.0)/{metrics_total_events}"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "week_computed_conversion_to_identified_visitor_hyUcErjq",
+            "filters": [],
+            "label": "percent_identified_visitor",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "({week_metric_total_identified_visitor_hyUcErjq}*1.0)/{metrics_total_events}"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "week_1_cost_per_click",
+            "filters": [],
+            "label": "cost_per_click",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "math_operation_multi_column",
+              "column_id": "_spend_column_spend",
+              "operation": "/",
+              "second_column_id": "_spend_column_clicks"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "id": "week_1_cost_per_impression",
+            "filters": [],
+            "label": "cost_per_impression",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "math_operation_multi_column",
+              "column_id": "_spend_column_spend",
+              "operation": "/",
+              "second_column_id": "_spend_column_impressions"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "id": "week_1_cost_per_mille",
+            "filters": [],
+            "label": "cost_per_mille",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "math_operation",
+              "column_id": "week_1_cost_per_impression",
+              "operation": "*",
+              "number": "1000"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "id": "week_1_computed_conversion_to_lead_created_4RJOm7yo",
+            "filters": [],
+            "label": "conversion_rate_to_lead_created",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "({week_1_metric_total_lead_created_4RJOm7yo}*1.0)/{metrics_total_events}"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": null
+          }
+        ],
+        "metrics": [
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metrics_total_events",
+            "label": "total_sessions",
+            "agg_function": "COUNT_ALL",
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "week_metric_total_viewed_course_2ei6FtOF",
+            "label": "total_viewed_course",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "converted_to_viewed_course_2ei6FtOF",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "week_metric_total_identified_visitor_hyUcErjq",
+            "label": "total_identified_visitor",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "converted_to_identified_visitor_hyUcErjq",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metric_append_viewed_course_oo_2_a_7_hn_feature_1_average_slv_jcl_in",
+            "label": "avg_courses_viewed_per_session",
+            "agg_function": "AVERAGE",
+            "output": true,
+            "column_id": "append_viewed_course_Oo2A7HN__feature_1",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metric_append_viewed_course_oo_2_a_7_hn_feature_1_sum_sdo_do_iv_7",
+            "label": "total_course_views",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "append_viewed_course_Oo2A7HN__feature_1",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "week_1_metric_total_lead_created_4RJOm7yo",
+            "label": "total_lead_created",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "converted_to_lead_created_4RJOm7yo",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": "create-cac"
+          }
+        ],
+        "pivot": [],
+        "order": [
+          {
+            "column_id": "day_started_session_at_ZfgCQg7m",
+            "order_direction": "asc"
+          }
+        ],
+        "parent_filters": [],
+        "_fieldIndex": 1,
+        "_isEdit": true,
+        "name": "Day",
+        "spend": {
+          "joins": [
+            {
+              "column_id": "day_started_session_at_ZfgCQg7m",
+              "spend_column": "day"
+            }
+          ],
+          "columns": [
+            {
+              "id": "_spend_column_spend",
+              "filters": [],
+              "label": "spend",
+              "name": "spend",
+              "output": true,
+              "type": "float"
+            },
+            {
+              "id": "_spend_column_clicks",
+              "filters": [],
+              "label": "clicks",
+              "name": "clicks",
+              "output": true,
+              "type": "integer"
+            },
+            {
+              "id": "_spend_column_impressions",
+              "filters": [],
+              "label": "impressions",
+              "name": "impressions",
+              "output": true,
+              "type": "integer"
+            }
+          ],
+          "_distribute_output": false
+        }
+      },
+      {
+        "slug": "week_1_1",
+        "_column_ids": [
+          "started_session_at_ZfgCQg7m",
+          "limiting_started_session_3aQ4ZrGo_ad_source"
+        ],
+        "columns": [
+          {
+            "id": "day_1_started_session_at_ZfgCQg7m",
+            "filters": [
+              {
+                "operator": "time_range",
+                "value": "",
+                "kind": "value",
+                "or_null": false,
+                "from_type": "start_of_time",
+                "to_type": "relative",
+                "to_value": "5",
+                "to_value_resolution": "day"
+              }
+            ],
+            "label": "day_of_started_session_at",
+            "name": "",
+            "output": true,
+            "type": "timestamp",
+            "column_id": "started_session_at_ZfgCQg7m",
+            "pivoted": false
+          },
+          {
+            "id": "day_1_limiting_started_session_3aQ4ZrGo_ad_source",
+            "filters": [],
+            "label": "ad_source",
+            "name": "",
+            "output": true,
+            "type": "string",
+            "column_id": "limiting_started_session_3aQ4ZrGo_ad_source",
+            "pivoted": false
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "week_computed_conversion_to_viewed_course_2ei6FtOF",
+            "filters": [],
+            "label": "percent_viewed_course",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "({week_metric_total_viewed_course_2ei6FtOF}*1.0)/{metrics_total_events}"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "week_computed_conversion_to_identified_visitor_hyUcErjq",
+            "filters": [],
+            "label": "percent_identified_visitor",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "({week_metric_total_identified_visitor_hyUcErjq}*1.0)/{metrics_total_events}"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "week_1_cost_per_click",
+            "filters": [],
+            "label": "cost_per_click",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "math_operation_multi_column",
+              "column_id": "_spend_column_spend",
+              "operation": "/",
+              "second_column_id": "_spend_column_clicks"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "id": "week_1_cost_per_impression",
+            "filters": [],
+            "label": "cost_per_impression",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "math_operation_multi_column",
+              "column_id": "_spend_column_spend",
+              "operation": "/",
+              "second_column_id": "_spend_column_impressions"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "id": "week_1_cost_per_mille",
+            "filters": [],
+            "label": "cost_per_mille",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "math_operation",
+              "column_id": "week_1_cost_per_impression",
+              "operation": "*",
+              "number": "1000"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "id": "week_1_1_session_ad_source",
+            "filters": [],
+            "label": "session_ad_source",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "ifttt",
+              "cases": [
+                {
+                  "filters": [
+                    {
+                      "column_id": "day_1_limiting_started_session_3aQ4ZrGo_ad_source",
+                      "filter": {
+                        "operator": "is_null",
+                        "value": "",
+                        "kind": "value",
+                        "or_null": false
+                      }
+                    }
+                  ],
+                  "value": "Non Paid",
+                  "value_kind": "string"
+                }
+              ],
+              "value_kind": "column_id",
+              "value": "day_1_limiting_started_session_3aQ4ZrGo_ad_source"
+            },
+            "source_kind": "computed",
+            "type": "string",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "week_1_1_computed_conversion_to_lead_created_4RJOm7yo",
+            "filters": [],
+            "label": "conversion_rate_to_lead_created",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "({week_1_1_metric_total_lead_created_4RJOm7yo}*1.0)/{metrics_total_events}"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "week_1_1_clicks_minus_sessions",
+            "filters": [],
+            "label": "Clicks minus sessions",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "math_operation_multi_column",
+              "column_id": "_spend_column_clicks",
+              "operation": "-",
+              "second_column_id": "metrics_total_events"
+            },
+            "source_kind": "computed",
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "week_1_1_percent_diff_clicks_s_essions",
+            "filters": [],
+            "label": "Percent Diff Clicks SEssions",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "math_operation_multi_column",
+              "column_id": "_spend_column_clicks",
+              "operation": "/",
+              "second_column_id": "metrics_total_events"
+            },
+            "source_kind": "computed",
+            "type": "number",
+            "_auto_generated_by": null
+          }
+        ],
+        "metrics": [
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metrics_total_events",
+            "label": "total_sessions",
+            "agg_function": "COUNT_ALL",
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "week_metric_total_viewed_course_2ei6FtOF",
+            "label": "total_viewed_course",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "converted_to_viewed_course_2ei6FtOF",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "week_metric_total_identified_visitor_hyUcErjq",
+            "label": "total_identified_visitor",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "converted_to_identified_visitor_hyUcErjq",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": "create-cac"
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metric_append_viewed_course_oo_2_a_7_hn_feature_1_average_slv_jcl_in",
+            "label": "avg_courses_viewed_per_session",
+            "agg_function": "AVERAGE",
+            "output": true,
+            "column_id": "append_viewed_course_Oo2A7HN__feature_1",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metric_append_viewed_course_oo_2_a_7_hn_feature_1_sum_sdo_do_iv_7",
+            "label": "total_course_views",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "append_viewed_course_Oo2A7HN__feature_1",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "week_1_1_metric_total_lead_created_4RJOm7yo",
+            "label": "total_lead_created",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "converted_to_lead_created_4RJOm7yo",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": "create-cac"
+          }
+        ],
+        "pivot": [],
+        "order": [
+          {
+            "column_id": "day_1_started_session_at_ZfgCQg7m",
+            "order_direction": "asc"
+          }
+        ],
+        "parent_filters": [],
+        "_fieldIndex": 2,
+        "_isEdit": true,
+        "name": "Day Ad Source",
+        "spend": {
+          "joins": [
+            {
+              "column_id": "day_1_started_session_at_ZfgCQg7m",
+              "spend_column": "day"
+            },
+            {
+              "column_id": "day_1_limiting_started_session_3aQ4ZrGo_ad_source",
+              "spend_column": "ad_source"
+            }
+          ],
+          "columns": [
+            {
+              "id": "_spend_column_spend",
+              "filters": [],
+              "label": "spend",
+              "name": "spend",
+              "output": true,
+              "type": "float"
+            },
+            {
+              "id": "_spend_column_clicks",
+              "filters": [],
+              "label": "clicks",
+              "name": "clicks",
+              "output": true,
+              "type": "integer"
+            },
+            {
+              "id": "_spend_column_impressions",
+              "filters": [],
+              "label": "impressions",
+              "name": "impressions",
+              "output": true,
+              "type": "integer"
+            }
+          ],
+          "_distribute_output": false
+        }
+      }
+    ],
+    "order": [
+      {
+        "column_id": "limiting_started_session_3aQ4ZrGo_ts",
+        "order_direction": "desc"
+      }
+    ],
+    "activity_stream": "activity_stream"
+  }
+}

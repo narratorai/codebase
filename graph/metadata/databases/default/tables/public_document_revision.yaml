@@ -1,0 +1,3 @@
+table:
+  name: document_revision
+  schema: public

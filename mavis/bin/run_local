@@ -1,0 +1,26 @@
+#! /usr/bin/env python3
+
+"""
+Entrypoint for running mavis api locally
+  - Sets some important ENV vars for running locally
+  - Starts uvicorn
+"""
+
+import os
+import sys
+from pathlib import Path
+
+import uvicorn
+
+# Make sure the env is set for local
+# This flag will cause .env to be read
+os.environ["ENV"] = "dev"
+
+# Set up the path
+root_path = Path(".")
+sys.path.append(str(root_path.resolve()))
+
+
+if __name__ == "__main__":
+    # Start the server
+    uvicorn.run("core.api.main:app", reload=True, workers=4)

@@ -1,0 +1,19 @@
+mutation InsertTagItemOne(
+  $related_id: uuid!
+  $related_to: tag_relations_enum!
+  $tag_id: uuid!
+) {
+  insert_tag_one(
+    object: {
+      related_id: $related_id
+      related_to: $related_to
+      tag_id: $tag_id
+    }
+    on_conflict: {
+      constraint: tag_tag_id_related_to_related_id_key
+      update_columns: [updated_at]
+    }
+  ) {
+    id
+  }
+}

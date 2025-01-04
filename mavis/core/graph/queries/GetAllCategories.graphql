@@ -1,0 +1,6 @@
+query GetAllCategories($company_id: uuid!) {
+  company_categories(where: {company_id: {_eq: $company_id}}) {
+    id,
+    category
+  }
+}

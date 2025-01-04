@@ -1,0 +1,5 @@
+mutation DeleteCompanyTable($id: uuid!) {
+  delete_company_table_by_pk(id: $id) {
+    id
+  }
+}

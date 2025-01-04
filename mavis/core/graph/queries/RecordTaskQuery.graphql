@@ -1,0 +1,5 @@
+mutation RecordTaskQuery($message_id: String!, $details: jsonb) {
+  update_task_execution(_append: {details: $details}, where: {orchestration_id: {_eq: $message_id}}) {
+    affected_rows
+  }
+}

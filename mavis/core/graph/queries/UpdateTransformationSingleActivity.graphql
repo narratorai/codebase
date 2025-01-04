@@ -1,0 +1,15 @@
+mutation UpdateTransformationSingleActivity(
+  $transformation_id: uuid!
+  $single_activity: Boolean!
+) {
+  update_transformation(
+    where: { id: { _eq: $transformation_id } }
+    _set: {
+      single_activity: $single_activity
+    }
+  ){
+    returning {
+      id
+    }
+  }
+}

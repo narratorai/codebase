@@ -1,0 +1,262 @@
+# Workflow inspired by https://glebbahmutov.com/blog/develop-preview-test/
+
+# NOTE there are two jobs here:
+# e2e runs integration specs against a deploy preview
+# regression runs the full suite against production
+#
+# **They are very similar, so if you update one you will need to update both**
+
+# NOTE: as of 1/21/22 the e2e suite is borked in CI. It can still be run locally.
+# We are temporarilly disabling the trigger events for this test suite.
+# Once this is sorted out, uncomment below and remove this comment.
+
+name: Cypress
+on:
+  # Run regression tests on schedule
+  # schedule:
+  #   - cron: 0 4 * * *
+  # # Run on deployment status updates -- this will run e2e tests against completed vercel deploys
+  # deployment_status:
+  # # Allow manual trigger via a button in github or a HTTP call - See https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL to run tests against'
+        default: 'https://portal.narrator.ai'
+        required: true
+
+jobs:
+  # this is basically a copy of the e2e test below, without setting github statuses
+  # the only differences are:
+  # - it runs against production
+  # - we dont pass a 'spec' option so it runs all tests
+  regression:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+      RUN_TYPE: 'regression'
+      # URL to run tests against
+      CYPRESS_BASE_URL: 'https://portal.narrator.ai/'
+    steps:
+      # NOTE remove this and the other status reports below when/if we use the Cypress Github App
+      - name: Commit Status 🟡
+        uses: octokit/request-action@v2.4.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: POST /repos/{owner}/{repo}/statuses/{sha}
+          owner: narratorai
+          repo: portal-narrator-next
+          sha: ${{ github.sha }}
+          context: ${{ env.RUN_TYPE }}
+          state: 'pending'
+          description: 'Cypress tests pending for ${{ env.CYPRESS_BASE_URL }}'
+          target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          # cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+      - run: |
+          yarn --silent install --frozen-lockfile --pure-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - id: cypress
+        name: Run Cypress 🌲
+        # continue-on-error: true
+        uses: cypress-io/github-action@v4
+        env:
+          # Configure cypress env vars from GH actions secrets
+          # https://github.com/narratorai/portal-narrator-next/settings/secrets/actions
+          CYPRESS_AUTH0_DOMAIN: ${{ secrets.CYPRESS_AUTH0_DOMAIN }}
+          CYPRESS_MEMBER_USERNAME: ${{ secrets.CYPRESS_MEMBER_USERNAME }}
+          CYPRESS_MEMBER_NO_COMPANY_USERNAME: ${{ secrets.CYPRESS_MEMBER_NO_COMPANY_USERNAME }}
+          CYPRESS_MEMBER_ONE_COMPANY_USERNAME: ${{ secrets.CYPRESS_MEMBER_ONE_COMPANY_USERNAME }}
+          CYPRESS_MEMBER_MULTI_COMPANY_USERNAME: ${{ secrets.CYPRESS_MEMBER_MULTI_COMPANY_USERNAME }}
+          CYPRESS_MEMBER_PASSWORD: ${{ secrets.CYPRESS_MEMBER_PASSWORD }}
+          CYPRESS_ADMIN_USERNAME: ${{ secrets.CYPRESS_ADMIN_USERNAME }}
+          CYPRESS_ADMIN_PASSWORD: ${{ secrets.CYPRESS_ADMIN_PASSWORD }}
+          CYPRESS_SNOWFLAKE_TEST_ACCOUNT_NAME: ${{ secrets.CYPRESS_SNOWFLAKE_TEST_ACCOUNT_NAME }}
+          CYPRESS_SNOWFLAKE_TEST_USERNAME: ${{ secrets.CYPRESS_SNOWFLAKE_TEST_USERNAME }}
+          CYPRESS_SNOWFLAKE_TEST_PASSWORD: ${{ secrets.CYPRESS_SNOWFLAKE_TEST_PASSWORD }}
+
+          # pass the Dashboard record key as an environment variable
+          # CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # we have already installed all dependencies above
+          install: false
+          quiet: true
+          # record: true
+
+      # if you are NOT using Cypress GitHub Integration App, then set commit status manually
+      # https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#job-status-check-functions
+      - name: Commit Status 🟢
+        if: success()
+        continue-on-error: true
+        uses: octokit/request-action@v2.4.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: POST /repos/{owner}/{repo}/statuses/{sha}
+          owner: narratorai
+          repo: portal-narrator-next
+          sha: ${{ github.sha }}
+          context: ${{ env.RUN_TYPE }}
+          state: 'success'
+          description: 'Cypress tests passed'
+          target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+      - name: Commit Status 🔴
+        if: failure()
+        continue-on-error: true
+        uses: octokit/request-action@v2.4.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: POST /repos/{owner}/{repo}/statuses/{sha}
+          owner: narratorai
+          repo: portal-narrator-next
+          sha: ${{ github.sha }}
+          context: ${{ env.RUN_TYPE }}
+          state: 'failure'
+          description: 'Cypress tests failed'
+          target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+
+      # after the test run completes
+      # store videos and any screenshots of failures
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+
+      - if: always()
+        run: |
+          echo Cypress finished with: ${{ steps.cypress.outcome }}
+
+  # Runs only integration tests against
+  e2e:
+    # only runs this job on successful deploy or a manual invocation
+    if: github.event.deployment_status.state == 'success' || github.event.inputs.url != null
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+      RUN_TYPE: 'e2e'
+      # URL to run tests against
+      CYPRESS_BASE_URL: ${{ github.event.deployment_status.target_url || github.event.inputs.url }}
+    steps:
+      - name: Commit Status 🟡
+        uses: octokit/request-action@v2.4.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: POST /repos/{owner}/{repo}/statuses/{sha}
+          owner: narratorai
+          repo: portal-narrator-next
+          sha: ${{ github.sha }}
+          context: ${{ env.RUN_TYPE }}
+          state: 'pending'
+          description: 'Cypress tests pending for ${{ env.CYPRESS_BASE_URL }}'
+          target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          # cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+      - run: |
+          yarn --silent install --frozen-lockfile --pure-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - id: cypress
+        name: Run Cypress 🌲
+        # continue-on-error: true
+        uses: cypress-io/github-action@v4
+        env:
+          # Configure cypress env vars from GH actions secrets
+          # https://github.com/narratorai/portal-narrator-next/settings/secrets/actions
+          CYPRESS_AUTH0_DOMAIN: ${{ secrets.CYPRESS_AUTH0_DOMAIN }}
+          CYPRESS_MEMBER_USERNAME: ${{ secrets.CYPRESS_MEMBER_USERNAME }}
+          CYPRESS_MEMBER_NO_COMPANY_USERNAME: ${{ secrets.CYPRESS_MEMBER_NO_COMPANY_USERNAME }}
+          CYPRESS_MEMBER_ONE_COMPANY_USERNAME: ${{ secrets.CYPRESS_MEMBER_ONE_COMPANY_USERNAME }}
+          CYPRESS_MEMBER_MULTI_COMPANY_USERNAME: ${{ secrets.CYPRESS_MEMBER_MULTI_COMPANY_USERNAME }}
+          CYPRESS_MEMBER_PASSWORD: ${{ secrets.CYPRESS_MEMBER_PASSWORD }}
+          CYPRESS_ADMIN_USERNAME: ${{ secrets.CYPRESS_ADMIN_USERNAME }}
+          CYPRESS_ADMIN_PASSWORD: ${{ secrets.CYPRESS_ADMIN_PASSWORD }}
+          CYPRESS_SNOWFLAKE_TEST_ACCOUNT_NAME: ${{ secrets.CYPRESS_SNOWFLAKE_TEST_ACCOUNT_NAME }}
+          CYPRESS_SNOWFLAKE_TEST_USERNAME: ${{ secrets.CYPRESS_SNOWFLAKE_TEST_USERNAME }}
+          CYPRESS_SNOWFLAKE_TEST_PASSWORD: ${{ secrets.CYPRESS_SNOWFLAKE_TEST_PASSWORD }}
+
+          # pass the Dashboard record key as an environment variable
+          # CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # we have already installed all dependencies above
+          install: false
+          quiet: true
+          # Only run the e2e suite against deployments
+          spec: cypress/e2e/integration/*
+          # record: true
+
+      # if you are NOT using Cypress GitHub Integration App, then set commit status manually
+      # https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#job-status-check-functions
+      - name: Commit Status 🟢
+        if: success()
+        continue-on-error: true
+        uses: octokit/request-action@v2.4.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: POST /repos/{owner}/{repo}/statuses/{sha}
+          owner: narratorai
+          repo: portal-narrator-next
+          sha: ${{ github.sha }}
+          context: ${{ env.RUN_TYPE }}
+          state: 'success'
+          description: 'Cypress tests passed'
+          target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+      - name: Commit Status 🔴
+        if: failure()
+        continue-on-error: true
+        uses: octokit/request-action@v2.4.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: POST /repos/{owner}/{repo}/statuses/{sha}
+          owner: narratorai
+          repo: portal-narrator-next
+          sha: ${{ github.sha }}
+          context: ${{ env.RUN_TYPE }}
+          state: 'failure'
+          description: 'Cypress tests failed'
+          target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+
+      # after the test run completes
+      # store videos and any screenshots of failures
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+
+      - if: always()
+        run: |
+          echo Cypress finished with: ${{ steps.cypress.outcome }}

@@ -1,0 +1,15 @@
+mutation UpdateTeamPermissions(
+  $permissions: [team_permission_insert_input!]!
+  $related_to: String!
+  $related_id: uuid!
+) {
+  delete_team_permission(where: { related_to: { _eq: $related_to }, related_id: { _eq: $related_id } }) {
+    affected_rows
+  }
+
+  insert_team_permission(objects: $permissions) {
+    returning {
+      id
+    }
+  }
+}

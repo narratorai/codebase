@@ -1,0 +1,8 @@
+subscription DimTableMaintenanceCount($company_id: uuid!) {
+  dim_table(where: { company_id: { _eq: $company_id } }) {
+    id
+    maintenances(where: { ended_at: { _is_null: true } }) {
+      id
+    }
+  }
+}

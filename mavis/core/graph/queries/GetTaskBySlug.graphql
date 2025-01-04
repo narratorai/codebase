@@ -1,0 +1,11 @@
+query GetTaskBySlug($company_id: uuid!, $slug: String!) {
+    company_task(
+        where: { company_id: { _eq: $company_id }, task_slug: { _eq: $slug } }
+    ) {
+        id
+        created_at
+        task_slug
+        schedule
+        category
+    }
+}

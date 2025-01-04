@@ -1,0 +1,4 @@
+table:
+  name: tag_relations
+  schema: public
+is_enum: true

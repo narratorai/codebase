@@ -1,0 +1,13 @@
+table:
+  name: validation_activity_sql_queries
+  schema: public
+object_relationships:
+  - name: alert
+    using:
+      manual_configuration:
+        column_mapping:
+          id: query_id
+        insertion_order: null
+        remote_table:
+          name: company_query_alert
+          schema: public

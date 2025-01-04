@@ -1,0 +1,196 @@
+name: Build
+on:
+  push:
+    tags:
+      - 'v*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      ECR_IMAGE: mavis
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          echo "BUILD_REVISION=$(echo ${GITHUB_SHA::8})" >> $GITHUB_ENV
+      - if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        run: |
+          echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_ENV
+      - if: github.event_name == 'pull_request'
+        run: |
+          echo "BRANCH_NAME=$(echo ${GITHUB_HEAD_REF})" >> $GITHUB_ENV
+
+      - name: Get python version
+        run: |
+          echo "PYTHON_VERSION=$(cat .python-version)" >> $GITHUB_ENV
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ECR_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_ECR_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Extract mavis metadata
+        id: docker_meta_mavis
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_IMAGE }}
+          tags: |
+            type=schedule,priority=1000,pattern=nightly,enable=${{ github.event_name == 'schedule' && 'true' || 'false' }}
+            type=ref,priority=600,event=branch,enable=${{ github.event_name != 'schedule' && 'true' || 'false' }}
+            type=ref,priority=600,event=tag
+            type=ref,priority=600,prefix=pr-,event=pr
+            type=sha,priority=100,prefix=sha-
+
+      - name: Build mavis
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          target: app
+          pull: true
+          push: true
+          no-cache: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+          cache-from: |
+            ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_IMAGE }}:nightly
+            ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_IMAGE }}:master
+            type=gha, scope=${{ github.workflow }}
+          cache-to: |
+            type=gha, scope=${{ github.workflow }}, mode=max
+          build-args: |
+            "BUILD_LABEL=${{ env.BRANCH_NAME }}"
+            "BUILD_REVISION=${{ env.BUILD_REVISION }}"
+            "PYTHON_VERSION=${{ env.PYTHON_VERSION }}"
+            "OTEL_SERVICE_NAME=${{ secrets.API_OTEL_SERVICE_NAME }}"
+          tags: ${{ steps.docker_meta_mavis.outputs.tags }}
+          labels: ${{ steps.docker_meta_mavis.outputs.labels }}
+
+      - name: Extract worker metadata
+        id: docker_meta_mavis_worker
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_IMAGE }}-worker
+          tags: |
+            type=schedule,priority=1000,pattern=nightly,enable=${{ github.event_name == 'schedule' && 'true' || 'false' }}
+            type=ref,priority=600,event=branch,enable=${{ github.event_name != 'schedule' && 'true' || 'false' }}
+            type=ref,priority=600,event=tag
+            type=ref,priority=600,prefix=pr-,event=pr
+            type=sha,priority=100,prefix=sha-
+
+      - name: Build worker
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          target: worker
+          pull: true
+          push: true
+          no-cache: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+          cache-from: |
+            ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_IMAGE }}-worker:nightly
+            ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_IMAGE }}-worker:master
+            type=gha, scope=${{ github.workflow }}
+          build-args: |
+            "BUILD_LABEL=${{ env.BRANCH_NAME }}"
+            "BUILD_REVISION=${{ env.BUILD_REVISION }}"
+            "PYTHON_VERSION=${{ env.PYTHON_VERSION }}"
+            "OTEL_SERVICE_NAME=${{ secrets.WORKER_OTEL_SERVICE_NAME }}"
+          tags: ${{ steps.docker_meta_mavis_worker.outputs.tags }}
+          labels: ${{ steps.docker_meta_mavis_worker.outputs.labels }}
+
+      - name: Extract heartbeat metadata
+        id: docker_meta_mavis_heartbeat
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_IMAGE }}-heartbeat
+          tags: |
+            type=schedule,priority=1000,pattern=nightly,enable=${{ github.event_name == 'schedule' && 'true' || 'false' }}
+            type=ref,priority=600,event=branch,enable=${{ github.event_name != 'schedule' && 'true' || 'false' }}
+            type=ref,priority=600,event=tag
+            type=ref,priority=600,prefix=pr-,event=pr
+            type=sha,priority=100,prefix=sha-
+
+      - name: Build heartbeat
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          target: heartbeat
+          pull: true
+          push: true
+          no-cache: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+          cache-from: |
+            ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_IMAGE }}-heartbeat:nightly
+            ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_IMAGE }}-heartbeat:master
+            type=gha, scope=${{ github.workflow }}
+          build-args: |
+            "BUILD_LABEL=${{ env.BRANCH_NAME }}"
+            "BUILD_REVISION=${{ env.BUILD_REVISION }}"
+            "PYTHON_VERSION=${{ env.PYTHON_VERSION }}"
+            "OTEL_SERVICE_NAME=${{ secrets.WORKER_OTEL_SERVICE_NAME }}"
+          tags: ${{ steps.docker_meta_mavis_heartbeat.outputs.tags }}
+          labels: ${{ steps.docker_meta_mavis_heartbeat.outputs.labels }}
+
+      - name: Extract mavis-worker-bouncer metadata
+        id: docker_meta_mavis_worker_bouncer
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_IMAGE }}-worker-bouncer
+          tags: |
+            type=schedule,priority=1000,pattern=nightly,enable=${{ github.event_name == 'schedule' && 'true' || 'false' }}
+            type=ref,priority=600,event=branch,enable=${{ github.event_name != 'schedule' && 'true' || 'false' }}
+            type=ref,priority=600,event=tag
+            type=ref,priority=600,prefix=pr-,event=pr
+            type=sha,priority=100,prefix=sha-
+
+      - name: Build mavis-worker-bouncer
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          target: mavis-worker-bouncer
+          pull: true
+          push: true
+          no-cache: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+          cache-from: |
+            ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_IMAGE }}-worker-bouncer:nightly
+            ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_IMAGE }}-worker-bouncer:master
+            type=gha, scope=${{ github.workflow }}
+          build-args: |
+            "BUILD_LABEL=${{ env.BRANCH_NAME }}"
+            "BUILD_REVISION=${{ env.BUILD_REVISION }}"
+            "PYTHON_VERSION=${{ env.PYTHON_VERSION }}"
+            "OTEL_SERVICE_NAME=${{ secrets.WORKER_OTEL_SERVICE_NAME }}"
+          tags: ${{ steps.docker_meta_mavis_worker_bouncer.outputs.tags }}
+          labels: ${{ steps.docker_meta_mavis_worker_bouncer.outputs.labels }}
+
+  report:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    env:
+      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sentry Release
+        uses: getsentry/action-release@v1
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: narrator
+          SENTRY_PROJECT: mavis
+        with:
+          environment: ${{ github.ref == 'refs/heads/master' && 'production' || 'nonprod' }}
+          finalize: ${{ github.ref == 'refs/heads/master' }}
+
+      - name: Mark Honeycomb
+        if: github.ref == 'refs/heads/main-k8s'
+        run: |
+          curl https://api.honeycomb.io/1/markers/mavis \
+            -X POST \
+            -H "X-Honeycomb-Team: ${{ secrets.HONEYCOMB_TOKEN }}" \
+            -d "{\"message\":\"$(git show -s --format='%h - %s - %cn' $GITHUB_SHA)\", \"url\":  \"https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID\", \"type\":\"deploy\"}"

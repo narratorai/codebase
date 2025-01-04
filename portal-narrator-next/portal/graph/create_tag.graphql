@@ -1,0 +1,9 @@
+mutation CreateTag($resource_id: uuid!, $tag_id: uuid!, $related_to: tag_relations_enum!) {
+  insert_tag_one(
+    object: { related_to: $related_to, related_id: $resource_id, tag_id: $tag_id }
+    on_conflict: { constraint: tag_tag_id_related_to_related_id_key, update_columns: updated_at }
+  ) {
+    id
+    updated_at
+  }
+}

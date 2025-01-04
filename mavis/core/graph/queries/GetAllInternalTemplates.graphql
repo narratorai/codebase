@@ -1,0 +1,15 @@
+query GetAllInternalTemplates($company_id: uuid! ) {
+  narrative_template(order_by: {name: asc, global_version: desc, customer_iteration: desc, local_iteration: desc}, where: {company_id: {_eq: $company_id}}) {
+    id
+    name
+    question
+    description
+    customer_iteration
+    local_iteration
+    global_version
+    state
+    type
+    display_companies_using
+    company_id
+  }
+}

@@ -1,0 +1,7 @@
+mutation DeleteNarrativeTag($narrative_tag_id: uuid!) {
+  delete_narrative_tags(where: { id: { _eq: $narrative_tag_id } }) {
+    returning {
+      id
+    }
+  }
+}

@@ -1,0 +1,5 @@
+mutation DeleteSlowlyChangingDim($id: uuid!) {
+  delete_slowly_changing_customer_dims_by_pk(id: $id) {
+    id
+  }
+}

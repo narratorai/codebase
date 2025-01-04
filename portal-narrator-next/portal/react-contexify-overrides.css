@@ -1,0 +1,33 @@
+.react-contexify {
+  background-color: #f9f9f9;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  box-shadow: 0 2px 4px 0 rgba(214, 214, 214, 0.5);
+  padding: 0;
+}
+
+.react-contexify__item__content {
+  padding: 0 !important;
+}
+
+.react-contexify__item:not(.react-contexify__item--disabled):hover > .react-contexify__item__content {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+.react-contexify__item--disabled,
+.react-contexify__item--disabled > * {
+  color: #979899 !important;
+  cursor: not-allowed;
+}
+
+.react-contexify__item--disabled svg,
+.react-contexify__item--disabled use,
+.react-contexify__item--disabled path,
+.react-contexify__item--disabled mask,
+.react-contexify__item--disabled:hover svg,
+.react-contexify__item--disabled:hover use,
+.react-contexify__item--disabled:hover path,
+.react-contexify__item--disabled:hover mask {
+  fill: #979899 !important;
+}

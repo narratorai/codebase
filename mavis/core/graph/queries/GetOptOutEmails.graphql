@@ -1,0 +1,6 @@
+query GetOptOutEmails($company_id: uuid) {
+  user(where: {company_users: {company_id: {_eq: $company_id}, preferences: {email_opt_out: {_eq: true}}}}) {
+    email
+    id
+  }
+}

@@ -1,0 +1,511 @@
+{
+  "groupings": {
+    "group_by_kind_and_source": {
+      "all_columns": [
+        {
+          "filters": [],
+          "id": "session_ts",
+          "label": "session_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session"
+          },
+          "source_kind": "activity",
+          "type": "timestamp"
+        },
+        {
+          "filters": [],
+          "id": "session_customer",
+          "label": "email",
+          "name": "customer",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session"
+          },
+          "source_kind": "activity",
+          "type": "string"
+        },
+        {
+          "filters": [],
+          "id": "session_utm_source",
+          "label": "session_utm_source",
+          "name": "utm_source",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session"
+          },
+          "source_kind": "enrichment",
+          "type": "string"
+        },
+        {
+          "filters": [],
+          "id": "session_session_kind",
+          "label": "session_session_kind",
+          "name": "session_kind",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session"
+          },
+          "source_kind": "enrichment",
+          "type": "string"
+        },
+        {
+          "filters": [],
+          "id": "session_session_source",
+          "label": "session_session_source",
+          "name": "session_source",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session"
+          },
+          "source_kind": "enrichment",
+          "type": "string"
+        },
+        {
+          "filters": [],
+          "id": "ordered_impression_kit_ts",
+          "label": "ordered_impression_kit_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit"
+          },
+          "source_kind": "activity",
+          "type": "timestamp"
+        },
+        {
+          "filters": [],
+          "id": "converted_to_ordered_impression_kit",
+          "label": "converted_to_ordered_impression_kit",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+            "cases": [
+              {
+                "column_id": "ordered_impression_kit_ts",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null
+                },
+                "value": 1,
+                "value_kind": "number"
+              }
+            ],
+            "kind": "ifttt",
+            "value": 0,
+            "value_kind": "number"
+          },
+          "source_kind": "computed",
+          "type": "boolean"
+        },
+        {
+          "filters": [],
+          "id": "days_to_ordered_impression_kit",
+          "label": "days_to_ordered_impression_kit",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+            "column_id": "session_ts",
+            "kind": "time_between",
+            "second_column_id": "ordered_impression_kit_ts",
+            "segmentation": "days"
+          },
+          "source_kind": "computed",
+          "type": "number"
+        }
+      ],
+      "metrics": {
+        "columns": [
+          {
+            "body": {},
+            "column_name": "session_session_kind",
+            "id": "group_session_session_kind",
+            "global": {
+              "name": "% Nulls",
+              "type": "percent",
+              "value": 0.0770909090909091
+            }
+          },
+          {
+            "body": {},
+            "column_name": "session_session_source",
+            "id": "group_session_session_source",
+            "global": {
+              "name": "% Nulls",
+              "type": "percent",
+              "value": 0.09090909090909091
+            }
+          }
+        ],
+        "conversions": {},
+        "total_events": 11
+      },
+      "query_definition": {
+        "override_sql": null,
+        "query": {
+          "activities": [
+            {
+              "config": {
+                "activity_stream": "mv_activity_stream",
+                "customer_table": "v_customers",
+                "enrichment_column": "enriched_activity_id",
+                "enrichment_table": "mv_enriched_pages",
+                "has_source": true
+              },
+              "did": true,
+              "kind": "limiting",
+              "occurence_after_time": false,
+              "occurrence": "all",
+              "relationships": [],
+              "slug": "session"
+            },
+            {
+              "config": {
+                "activity_stream": "mv_activity_stream",
+                "customer_table": "v_customers",
+                "enrichment_column": null,
+                "enrichment_table": null,
+                "has_source": false
+              },
+              "did": true,
+              "kind": "conversion",
+              "occurence_after_time": false,
+              "occurrence": "first",
+              "relationships": [],
+              "slug": "ordered_impression_kit"
+            }
+          ],
+          "activity_stream": "mv_activity_stream",
+          "all_groups": [
+            {
+              "column_ids": [
+                "group_session_session_kind",
+                "group_session_session_source"
+              ],
+              "columns": [
+                  {
+                      "id": "group_session_session_kind",
+                      "filters": [],
+                      "label": "session_session_kind",
+                      "column_id": "session_session_kind",
+                      "output": true,
+                      "type": "string",
+                      "pivoted": "false"
+                  },
+                  {
+                      "id": "group_session_session_source",
+                      "filters": [],
+                      "label": "session_session_source",
+                      "column_id": "session_session_source",
+                      "output": true,
+                      "type": "string",
+                      "pivoted": "false"
+                  }
+              ],
+              "computed_columns": [],
+              "metrics": [
+                {
+                    "id": "metrics_total_events",
+                    "label": "total_events",
+                    "agg_function": "COUNT",
+                    "output": true,
+                    "column_id": "*",
+                    "filters": [],
+                    "pivot": [],
+                    "type": "number"
+                },
+                {
+                  "id": "metric_total_ordered_impression_kit",
+                  "label": "total_ordered_impression_kit",
+                  "agg_function": "SUM",
+                  "output": true,
+                  "column_id": "converted_to_ordered_impression_kit",
+                  "filters": [],
+                  "pivot": [],
+                  "type": "number"
+                }
+              ],
+              "name": "Group by Kind and Source",
+              "order": [
+                {
+                  "column_id": "metrics_total_events",
+                  "order_direction": "desc"
+                }
+              ],
+              "pivot": [],
+              "slug": "group_by_kind_and_source"
+            }
+          ],
+          "columns": [
+            {
+              "filters": [],
+              "id": "session_ts",
+              "label": "session_at",
+              "name": "ts",
+              "output": true,
+              "source_details": {
+                "activity_kind": "limiting",
+                "activity_slug": "session"
+              },
+              "source_kind": "activity",
+              "type": "timestamp"
+            },
+            {
+              "filters": [],
+              "id": "session_customer",
+              "label": "email",
+              "name": "customer",
+              "output": true,
+              "source_details": {
+                "activity_kind": "limiting",
+                "activity_slug": "session"
+              },
+              "source_kind": "activity",
+              "type": "string"
+            },
+            {
+              "filters": [],
+              "id": "session_utm_source",
+              "label": "session_utm_source",
+              "name": "utm_source",
+              "output": true,
+              "source_details": {
+                "activity_kind": "limiting",
+                "activity_slug": "session"
+              },
+              "source_kind": "enrichment",
+              "type": "string"
+            },
+            {
+              "filters": [],
+              "id": "session_session_kind",
+              "label": "session_session_kind",
+              "name": "session_kind",
+              "output": true,
+              "source_details": {
+                "activity_kind": "limiting",
+                "activity_slug": "session"
+              },
+              "source_kind": "enrichment",
+              "type": "string"
+            },
+            {
+              "filters": [],
+              "id": "session_session_source",
+              "label": "session_session_source",
+              "name": "session_source",
+              "output": true,
+              "source_details": {
+                "activity_kind": "limiting",
+                "activity_slug": "session"
+              },
+              "source_kind": "enrichment",
+              "type": "string"
+            },
+            {
+              "filters": [],
+              "id": "ordered_impression_kit_ts",
+              "label": "ordered_impression_kit_at",
+              "name": "ts",
+              "output": true,
+              "source_details": {
+                "activity_kind": "conversion",
+                "activity_slug": "ordered_impression_kit"
+              },
+              "source_kind": "activity",
+              "type": "timestamp"
+            },
+            {
+              "filters": [],
+              "id": "converted_to_ordered_impression_kit",
+              "label": "converted_to_ordered_impression_kit",
+              "name": "",
+              "output": true,
+              "source_details": {
+                "activity_kind": "conversion",
+                "activity_slug": "ordered_impression_kit",
+                "cases": [
+                  {
+                    "column_id": "ordered_impression_kit_ts",
+                    "filter": {
+                      "operator": "is_not_null",
+                      "value": null
+                    },
+                    "value": 1,
+                    "value_kind": "number"
+                  }
+                ],
+                "kind": "ifttt",
+                "value": 0,
+                "value_kind": "number"
+              },
+              "source_kind": "computed",
+              "type": "boolean"
+            },
+            {
+              "filters": [],
+              "id": "days_to_ordered_impression_kit",
+              "label": "days_to_ordered_impression_kit",
+              "name": "",
+              "output": true,
+              "source_details": {
+                "activity_kind": "conversion",
+                "activity_slug": "ordered_impression_kit",
+                "column_id": "session_ts",
+                "kind": "time_between",
+                "second_column_id": "ordered_impression_kit_ts",
+                "segmentation": "days"
+              },
+              "source_kind": "computed",
+              "type": "number"
+            }
+          ],
+          "grouping": {
+            "column_ids": [
+              "session_session_kind",
+              "session_session_source"
+            ],
+            "columns": [
+              "session_session_kind",
+              "session_session_source"
+            ],
+            "computed_columns": [],
+            "metrics": [
+              {
+                "agg_function": "COUNT",
+                "column_id": "*",
+                "column_label": 1,
+                "filters": [],
+                "label": "total_events",
+                "pivot": []
+              },
+              {
+                "agg_function": "SUM",
+                "column_id": "converted_to_ordered_impression_kit",
+                "column_label": "converted_to_ordered_impression_kit",
+                "filters": [],
+                "label": "total_ordered_impression_kit",
+                "pivot": []
+              }
+            ],
+            "name": "Group by Kind and Source",
+            "order": [],
+            "pivot": [],
+            "slug": "group_by_kind_and_source"
+          },
+          "order": []
+        }
+      },
+      "results": {
+        "columns": [
+          "session_session_kind",
+          "session_session_source",
+          "total_events",
+          "total_ordered_impression_kit"
+        ],
+        "column_mapping": [
+          {
+            "id": "group_session_session_kind",
+            "label": "session_session_kind"
+          },
+          {
+            "id": "group_session_session_source",
+            "label": "session_session_source"
+          },
+          {
+            "id": "metrics_total_events",
+            "label": "total_events"
+          },
+          {
+            "id": "metric_total_ordered_impression_kit",
+            "label": "total_ordered_impression_kit"
+          }
+        ],
+        "data": {
+          "rows": [
+            {
+              "session_session_kind": "Search",
+              "session_session_source": "Paid",
+              "total_events": 233293,
+              "total_ordered_impression_kit": 12195
+            },
+            {
+              "session_session_kind": "Direct",
+              "session_session_source": "Organic",
+              "total_events": 506166,
+              "total_ordered_impression_kit": 53840
+            },
+            {
+              "session_session_kind": "Social",
+              "session_session_source": "Organic",
+              "total_events": 170942,
+              "total_ordered_impression_kit": 3296
+            },
+            {
+              "session_session_kind": "Referral",
+              "session_session_source": "Paid",
+              "total_events": 34266,
+              "total_ordered_impression_kit": 530
+            },
+            {
+              "session_session_kind": "Referral",
+              "session_session_source": "Organic",
+              "total_events": 39425,
+              "total_ordered_impression_kit": 1791
+            },
+            {
+              "session_session_kind": "Social",
+              "session_session_source": "Paid",
+              "total_events": 2399949,
+              "total_ordered_impression_kit": 42904
+            },
+            {
+              "session_session_kind": "Email",
+              "session_session_source": "Organic",
+              "total_events": 6,
+              "total_ordered_impression_kit": 0
+            },
+            {
+              "session_session_kind": "Search",
+              "session_session_source": "Organic",
+              "total_events": 160466,
+              "total_ordered_impression_kit": 11379
+            },
+            {
+              "session_session_kind": "Email",
+              "session_session_source": "Paid",
+              "total_events": 55536,
+              "total_ordered_impression_kit": 9976
+            },
+            {
+              "session_session_kind": "Direct",
+              "session_session_source": "Paid",
+              "total_events": 128778,
+              "total_ordered_impression_kit": 1449
+            },
+            {
+              "session_session_kind": null,
+              "session_session_source": null,
+              "total_events": 4,
+              "total_ordered_impression_kit": 0
+            }
+          ]
+        }
+      },
+      "returning_rows": 11,
+      "slug": "group_by_kind_and_source"
+    }
+  },
+  "raw": null
+}

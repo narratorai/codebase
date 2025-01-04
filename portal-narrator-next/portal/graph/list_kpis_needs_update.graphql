@@ -1,0 +1,6 @@
+subscription ListKpisNeedsUpdate($company_id: uuid!) {
+  metric(where: { company_id: { _eq: $company_id } }, order_by: { updated_at: desc }, limit: 1) {
+    id
+    updated_at
+  }
+}

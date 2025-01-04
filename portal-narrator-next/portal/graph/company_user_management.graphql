@@ -1,0 +1,50 @@
+fragment CompanyUserFields on company_user {
+  id
+  company_id
+  user_id
+  first_name
+  last_name
+  phone
+  role
+  updated_at
+  job_title
+  user {
+    id
+    role
+    email
+  }
+}
+
+query GetCompanyUsers($company_slug: String!) {
+  company_users: company_user(where: { company: { slug: { _eq: $company_slug } } }) {
+    id
+    ...CompanyUserFields
+  }
+}
+
+query GetCompanyUser($company_user_id: uuid!) {
+  company_users: company_user(where: { id: { _eq: $company_user_id } }) {
+    id
+    ...CompanyUserFields
+  }
+}
+
+mutation UpdateCompanyUser(
+  $id: uuid!
+  $role: company_user_role_enum!
+  $first_name: String
+  $last_name: String
+  $phone: String
+  $job_title: String
+) {
+  update_company_user(
+    where: { id: { _eq: $id } }
+    _set: { role: $role, first_name: $first_name, last_name: $last_name, phone: $phone, job_title: $job_title }
+  ) {
+    affected_rows
+    returning {
+      id
+      ...CompanyUserFields
+    }
+  }
+}

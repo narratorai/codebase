@@ -1,0 +1,26 @@
+# Dev entry for requirements
+# Installs all the requirements files you may need, as well as some dev-specific tools
+
+-r ./requirements.txt
+
+# GraphQL
+ariadne-codegen==0.7.1
+
+# Linters
+pre-commit==3.7.1
+
+# Testing
+moto[all]==5.0.11
+pytest==8.3.3
+pytest-asyncio==0.23.8
+pytest-cov==4.1.0
+pytest-github-actions-annotate-failures==0.2.0
+python-dotenv==1.0.1
+requests-mock==1.12.1
+
+# Debugging
+# environment `PYTHONBREAKPOINT=ipdb.set_trace`
+dramatiq-dashboard==0.4.0
+ipdb==0.13.13
+remote_pdb==2.1.0
+memray==1.13.4

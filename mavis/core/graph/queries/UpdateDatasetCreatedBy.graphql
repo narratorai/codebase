@@ -1,0 +1,13 @@
+mutation UpdateDatasetCreatedBy(
+    $id: uuid!
+    $created_by: uuid
+) {
+    update_dataset_by_pk(
+        pk_columns: { id: $id }
+        _set: {
+            created_by: $created_by
+        }
+    ) {
+        id
+    }
+}

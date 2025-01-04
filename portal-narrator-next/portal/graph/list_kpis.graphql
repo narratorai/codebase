@@ -1,0 +1,43 @@
+query ListKpis($company_id: uuid!, $user_id: uuid!) {
+  metric(where: { company_id: { _eq: $company_id }, status: { _neq: archived } }, order_by: { created_at: desc }) {
+    id
+    name
+    created_at
+    updated_at
+    status
+    time_resolution
+    user {
+      id
+      email
+      company_users(where: { company_id: { _eq: $company_id } }) {
+        id
+        first_name
+        last_name
+        preferences {
+          id
+          profile_picture
+        }
+      }
+    }
+    tags(where: { company_tag: { _or: [{ user_id: { _eq: $user_id } }, { user_id: { _is_null: true } }] } }) {
+      id
+      updated_at
+      company_tag {
+        id
+        tag
+        color
+        user_id
+      }
+    }
+    datasets_aggregate {
+      aggregate {
+        count
+      }
+    }
+    narratives_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+}

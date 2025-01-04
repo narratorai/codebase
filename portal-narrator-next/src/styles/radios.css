@@ -1,0 +1,36 @@
+.radio-input {
+  @apply cursor-pointer;
+  @apply disabled:cursor-not-allowed;
+  @apply size-4;
+  @apply border;
+  @apply border-2;
+
+  @apply appearance-none;
+  @apply m-0;
+
+  @apply bg-white;
+  @apply border-gray-100;
+
+  /* @apply hover:bg-purple-100; */
+  /* @apply hover:border-purple-600; */
+
+  @apply active:shadow-focus;
+  @apply focus:shadow-focus;
+
+  @apply active:hover:bg-white;
+  @apply active:hover:border-gray-100;
+  @apply focus:hover:bg-white;
+  @apply focus:hover:border-gray-100;
+
+  @apply disabled:bg-gray-50;
+  @apply disabled:border-gray-100;
+
+  @apply checked:bg-purple-600;
+  @apply checked:border-purple-600;
+
+  @apply checked:hover:bg-purple-600;
+  @apply checked:hover:border-purple-600;
+
+  @apply checked:disabled:bg-gray-50;
+  @apply checked:disabled:border-gray-100;
+}

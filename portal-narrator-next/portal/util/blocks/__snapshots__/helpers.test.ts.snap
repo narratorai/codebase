@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`util/blocks/helpers #getAllDependentFields should match snapshot 1`] = `
+[
+  "last_month",
+  "max_conversion_rate_to_completed_transaction",
+  "min_conversion_rate_to_completed_transaction",
+  "max_category_tapped",
+  "last_month_total_swipes",
+  "last_month_total_taps",
+  "engagement_rate",
+  "percent_diff_in_distribution_local_trvl",
+  "percent_of_LCL_trvl",
+]
+`;
+
+exports[`util/blocks/helpers #getDependentFieldsForField should match the snapshot 1`] = `
+[
+  "cards_shown",
+  "engagement_rate",
+]
+`;
+
+exports[`util/blocks/helpers #groupPropertiesByTab returns grouped properties by tab 1`] = `
+[
+  {
+    "label": "Tab A",
+    "properties": [
+      {
+        "content": <div />,
+        "disabled": false,
+        "name": "slug",
+        "readonly": false,
+      },
+      {
+        "content": <div />,
+        "disabled": false,
+        "name": "notes",
+        "readonly": false,
+      },
+    ],
+    "property_names": [
+      "slug",
+      "notes",
+    ],
+    "redirect_tab_ids": [],
+    "tab_id": "tab_a",
+  },
+]
+`;

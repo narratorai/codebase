@@ -1,0 +1,4 @@
+table:
+  name: sql_query_relations
+  schema: public
+is_enum: true

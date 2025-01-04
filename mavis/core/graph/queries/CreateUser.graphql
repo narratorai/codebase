@@ -1,0 +1,9 @@
+mutation CreateUser($email: String!) {
+  insert_user_one(
+    object: { email: $email, role: user }
+    on_conflict: { constraint: user_email_key, update_columns: [email] }
+  ) {
+    id
+    role
+  }
+}

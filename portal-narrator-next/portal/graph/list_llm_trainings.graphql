@@ -1,0 +1,42 @@
+query TrainingsIndex($company_id: uuid!) {
+  all_trainings: llm_training(
+    where: { company_table: { company_id: { _eq: $company_id } } }
+    order_by: { created_at: desc }
+  ) {
+    id
+    created_at
+    created_by
+    updated_at
+    question
+    table_id
+    dataset_id
+    custom_definition
+    in_production
+    user {
+      id
+      email
+      company_users(where: { company_id: { _eq: $company_id } }) {
+        first_name
+        last_name
+        id
+        role
+        user_id
+        company {
+          id
+        }
+      }
+    }
+    company_table {
+      id
+      activity_stream
+      identifier
+    }
+    user_training_questions {
+      id
+      question
+      created_by
+      created_at
+      updated_at
+    }
+  }
+}

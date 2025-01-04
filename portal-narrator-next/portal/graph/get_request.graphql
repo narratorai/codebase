@@ -1,0 +1,52 @@
+query GetRequest($company_id: uuid!, $request_id: uuid!) {
+  training_request(where: { company_id: { _eq: $company_id }, id: { _eq: $request_id } }) {
+    id
+    created_at
+    created_by
+    context
+    email_context
+    email_requester
+    email_sent_at
+    type
+    updated_at
+    status_updated_at
+    status
+    dataset_id
+    group_slug
+    plot_slug
+    assignee {
+      accepted_terms_at
+      accepted_terms_version
+      created_at
+      email
+      id
+      role
+      updated_at
+    }
+    chat {
+      id
+      question
+      messages
+      rating
+    }
+    llm_training {
+      id
+      question
+      in_production
+    }
+    user {
+      id
+      email
+      company_users(where: { company_id: { _eq: $company_id } }) {
+        id
+        first_name
+        last_name
+        job_title
+        user_id
+        company {
+          id
+        }
+      }
+    }
+  }
+}

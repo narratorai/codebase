@@ -1,0 +1,141 @@
+table:
+  name: dataset_materialization
+  schema: public
+object_relationships:
+  - name: company_task
+    using:
+      foreign_key_constraint_on: task_id
+  - name: dataset
+    using:
+      foreign_key_constraint_on: dataset_id
+  - name: user
+    using:
+      foreign_key_constraint_on: updated_by
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        _and:
+          - dataset:
+              company_id:
+                _eq: X-Hasura-Company-Id
+          - _or:
+              - dataset:
+                  user:
+                    id:
+                      _eq: X-Hasura-User-Id
+              - _exists:
+                  _table:
+                    name: company_user
+                    schema: public
+                  _where:
+                    _and:
+                      - company_id:
+                          _eq: X-Hasura-Company-Id
+                      - user_id:
+                          _eq: X-Hasura-User-Id
+                      - role:
+                          _eq: admin
+      set:
+        updated_by: x-hasura-User-Id
+      columns:
+        - column_id
+        - dataset_id
+        - days_to_resync
+        - group_slug
+        - id
+        - label
+        - sheet_key
+        - task_id
+        - type
+        - user_ids
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - column_id
+        - created_at
+        - dataset_id
+        - days_to_resync
+        - external_link
+        - group_slug
+        - id
+        - label
+        - postmark_from
+        - s3_secret_key
+        - sheet_key
+        - task_id
+        - template_id
+        - type
+        - updated_at
+        - updated_by
+        - user_ids
+        - webhook_url
+      filter:
+        dataset:
+          company:
+            id:
+              _eq: X-Hasura-Company-Id
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - column_id
+        - days_to_resync
+        - group_slug
+        - label
+        - s3_secret_key
+        - sheet_key
+        - type
+        - user_ids
+        - webhook_url
+      filter:
+        _and:
+          - dataset:
+              company_id:
+                _eq: X-Hasura-Company-Id
+          - _or:
+              - dataset:
+                  user:
+                    id:
+                      _eq: X-Hasura-User-Id
+              - _exists:
+                  _table:
+                    name: company_user
+                    schema: public
+                  _where:
+                    _and:
+                      - company_id:
+                          _eq: X-Hasura-Company-Id
+                      - user_id:
+                          _eq: X-Hasura-User-Id
+                      - role:
+                          _eq: admin
+      check: null
+      set:
+        updated_by: x-hasura-User-Id
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        _and:
+          - dataset:
+              company_id:
+                _eq: X-Hasura-Company-Id
+          - _or:
+              - dataset:
+                  user:
+                    id:
+                      _eq: X-Hasura-User-Id
+              - _exists:
+                  _table:
+                    name: company_user
+                    schema: public
+                  _where:
+                    _and:
+                      - company_id:
+                          _eq: X-Hasura-Company-Id
+                      - user_id:
+                          _eq: X-Hasura-User-Id
+                      - role:
+                          _eq: admin

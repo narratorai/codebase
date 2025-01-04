@@ -1,0 +1,10 @@
+subscription Company($company_slug: String!) {
+  company(limit: 1, where: { slug: { _eq: $company_slug } }) {
+    id
+    status
+    created_at
+    tables {
+      id
+    }
+  }
+}

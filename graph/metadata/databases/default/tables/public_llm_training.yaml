@@ -1,0 +1,58 @@
+table:
+  name: llm_training
+  schema: public
+object_relationships:
+  - name: company_table
+    using:
+      foreign_key_constraint_on: table_id
+  - name: dataset
+    using:
+      foreign_key_constraint_on: dataset_id
+  - name: user
+    using:
+      foreign_key_constraint_on: created_by
+array_relationships:
+  - name: training_requests
+    using:
+      foreign_key_constraint_on:
+        column: training_id
+        table:
+          name: training_request
+          schema: public
+  - name: user_training_questions
+    using:
+      manual_configuration:
+        column_mapping:
+          id: llm_training_id
+        insertion_order: null
+        remote_table:
+          name: user_training_question
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - answer
+        - created_at
+        - created_by
+        - custom_definition
+        - dataset_id
+        - id
+        - in_production
+        - question
+        - table_id
+        - updated_at
+      filter:
+        _exists:
+          _table:
+            name: company_user
+            schema: public
+          _where:
+            _and:
+              - user_id:
+                  _eq: X-Hasura-User-Id
+              - company_id:
+                  _eq: X-Hasura-Company-Id
+              - role:
+                  _eq: admin
+    comment: ""

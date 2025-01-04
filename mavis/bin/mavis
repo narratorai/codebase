@@ -1,0 +1,80 @@
+#! /usr/bin/env python3
+
+"""
+This is the entrypoint for all mavis scripts. It does the following:
+ - Parses CLI arguments
+ - Initializes script environment and sys.path
+ - Executes script
+"""
+
+import argparse
+import sys
+from pathlib import Path
+from runpy import run_path
+
+# from asyncio import run
+
+# Set up the path
+root_path = Path(".")
+sys.path.append(str(root_path.resolve()))
+
+
+def create_event_loop_thread():
+    from dramatiq.asyncio import EventLoopThread
+    from dramatiq.middleware import AsyncIO
+
+    from batch_jobs.dramatiq import broker
+    from core.logger import get_logger
+
+    # Ensure the dramatiq broker is using the AsyncIO middleware
+    assert any(map(lambda x: x.__class__ == AsyncIO, broker.middleware))
+
+    logger = get_logger()
+    return EventLoopThread(logger)
+
+
+def run_script(script, company_slug, **kwargs):
+    # from dramatiq.asyncio import set_event_loop_thread
+
+    # # Start an event loop for async dramatiq actors
+    # event_loop_thread = create_event_loop_thread()
+    # event_loop_thread.start()
+    # set_event_loop_thread(event_loop_thread)
+
+    # try:
+    # TODO: if the script is asynchronous, we should await it
+    # run(script(company_slug=company_slug, **kwargs))
+    # script(company_slug=company_slug, **kwargs)
+    # finally:
+    #     event_loop_thread.stop()
+
+    script(company_slug=company_slug, **kwargs)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Run a mavis script")
+
+    # Used for adhoc / one-off script runs
+    parser.add_argument("company_slug", type=str)
+    parser.add_argument("script", help="the script you want to run, ie: 'jobs/my_script.py")
+    parser.add_argument(
+        "script_args",
+        nargs="?",
+        default="-",
+        help="comma separated list of args to pass to the script, ie: 'arg1=val1,arg2=val2'",
+    )
+
+    args = parser.parse_args()
+    if args.script_args == "-":
+        parsed_script_args = {}
+    else:
+        parsed_script_args = {arg.split("=")[0]: arg.split("=")[1] for arg in (args.script_args).split(",") if arg}
+
+    # Load the script
+    mod = run_path(args.script, run_name=args.script)
+
+    script = mod.get(args.script.split("/")[-1].split(".")[0])
+    if script is None:
+        raise Exception(f"{args.script} is missing a main method. Add one as the entrypoint to the job.")
+
+    run_script(script, args.company_slug, **parsed_script_args)

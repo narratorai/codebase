@@ -1,0 +1,7 @@
+mutation DeleteDatasetTag($dataset_tag_id: uuid!) {
+  delete_dataset_tags(where: { id: { _eq: $dataset_tag_id } }) {
+    returning {
+      id
+    }
+  }
+}

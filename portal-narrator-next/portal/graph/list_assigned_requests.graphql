@@ -1,0 +1,22 @@
+query ListOutstandingAssignedRequests($company_id: uuid!, $company_user_id: uuid!) {
+  training_request(
+    where: {
+      company_id: { _eq: $company_id }
+      assignee: { company_users: { id: { _eq: $company_user_id } } }
+      status: { _neq: completed }
+    }
+    order_by: { created_at: desc_nulls_last }
+  ) {
+    id
+    created_at
+    created_by
+    context
+    email_context
+    email_requester
+    email_sent_at
+    type
+    updated_at
+    status_updated_at
+    status
+  }
+}

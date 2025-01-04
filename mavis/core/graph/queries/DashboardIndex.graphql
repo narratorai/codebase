@@ -1,0 +1,8 @@
+query DashboardIndex($company_id: uuid!) {
+  narrative(where: {company_id: {_eq: $company_id}, state:{_neq:archived}, type:{_eq:dashboard}}, order_by: [{ updated_at: desc }]) {
+    id
+    slug
+    name
+    state
+  }
+}

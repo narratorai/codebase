@@ -1,0 +1,1769 @@
+{
+  "fields": {
+    "company_slug": "narrator-demo",
+    "#company_slug": "Narrator Demo",
+    "__company_slug": "No explanation\n\n*depends_on:* \n",
+    "cache_minutes": 1440,
+    "#cache_minutes": "1440",
+    "__cache_minutes": "No explanation\n\n*depends_on:* \n",
+    "warehouse": "redshift",
+    "#warehouse": "Redshift",
+    "__warehouse": "No explanation\n\n*depends_on:* \n",
+    "company_name": "Narrator Demo",
+    "#company_name": "Narrator Demo",
+    "__company_name": "No explanation\n\n*depends_on:* \n",
+    "website": "narrator.ai",
+    "#website": "Narrator.ai",
+    "__website": "No explanation\n\n*depends_on:* \n",
+    "local_tz": "America/New_York",
+    "#local_tz": "America/New_York",
+    "__local_tz": "No explanation\n\n*depends_on:* \n",
+    "now": "2022-04-13T11:00:00",
+    "#now": "2022 04 13T11:00:00",
+    "__now": "No explanation\n\n*depends_on:* \n",
+    "today": "2022-04-13",
+    "#today": "2022 04 13",
+    "__today": "No explanation\n\n*depends_on:* \n",
+    "this_week": "2022-04-11",
+    "#this_week": "2022 04 11",
+    "__this_week": "No explanation\n\n*depends_on:* \n",
+    "this_month": "2022-04-01",
+    "#this_month": "2022 04 01",
+    "__this_month": "No explanation\n\n*depends_on:* \n",
+    "this_year": "2022-01-01",
+    "#this_year": "2022 01 01",
+    "__this_year": "No explanation\n\n*depends_on:* \n",
+    "yesterday": "2022-04-12",
+    "#yesterday": "2022 04 12",
+    "__yesterday": "No explanation\n\n*depends_on:* \n",
+    "last_week": "2022-04-04",
+    "#last_week": "2022 04 04",
+    "__last_week": "No explanation\n\n*depends_on:* \n",
+    "last_month": "2022-03-01",
+    "#last_month": "2022 03 01",
+    "__last_month": "No explanation\n\n*depends_on:* \n",
+    "last_year": "2021-01-01",
+    "#last_year": "2021 01 01",
+    "__last_year": "No explanation\n\n*depends_on:* \n",
+    "last_point_disclaimer": "Please be aware that the last data point in the time series plots can still change because the data is still updating for the most recent time frame.",
+    "#last_point_disclaimer": "Please Be Aware That The Last Data Point In The Time Series Plots Can Still Change Because The Data Is Still Updating For The Most Recent Time Frame.",
+    "__last_point_disclaimer": "No explanation\n\n*depends_on:* \n",
+    "cohort_activity": "Opened Email",
+    "#cohort_activity": "Opened Email",
+    "__cohort_activity": "What's the name of the cohort activity?\n\n*depends_on:* \n",
+    "days_to_convert_1": "FAILED: ('cumulative_percent_of_total_opened_emailcc8668a9')",
+    "#days_to_convert_1": "FAILED: ('cumulative Percent Of Total Opened Emailcc8668a9')",
+    "__days_to_convert_1": "how long it takes 85% of people to convert (will error out if not conversion and that is okay)\n\n*depends_on:* \n",
+    "goal_direction": "increase",
+    "#goal_direction": "Increase",
+    "__goal_direction": "Which direction do you want to move the conversion?\n\n*depends_on:* \n",
+    "kpi_format": "percent",
+    "#kpi_format": "Percent",
+    "__kpi_format": "how should we format the number that is the kpi goal?\n\n*depends_on:* \n",
+    "kpi_goal": "Conversion Rate to Completed Order Between",
+    "#kpi_goal": "Conversion Rate To Completed Order Between",
+    "__kpi_goal": "what is the kpi you want to optimize?\n\n*depends_on:* \n",
+    "lever": "Campaign Type",
+    "#lever": "Campaign Type",
+    "__lever": "What is the lever you want to explore?\n\n*depends_on:* \n",
+    "lever_format": "string",
+    "#lever_format": "String",
+    "__lever_format": "No explanation\n\n*depends_on:* \n",
+    "row_label": "Opened Email",
+    "#row_label": "Opened Email",
+    "__row_label": "No explanation\n\n*depends_on:* \n",
+    "total_opened_email_based_on_days_to_convert": "FAILED: ('cumulative_percent_of_total_opened_emailcc8668a9')",
+    "#total_opened_email_based_on_days_to_convert": "FAILED: ('cumulative Percent Of Total Opened Emailcc8668a9')",
+    "__total_opened_email_based_on_days_to_convert": "No explanation\n\n*depends_on:* \n",
+    "days_to_convert": "FAILED: ('cumulative_percent_of_total_opened_emailcc8668a9')",
+    "#days_to_convert": "FAILED: ('cumulative Percent Of Total Opened Emailcc8668a9')",
+    "__days_to_convert": "days to convert 85% of volume, but set to 0 if it doesn't exist.\n\n*depends_on:* days_to_convert_1\n",
+    "kpi_trend": {
+      "y_intercept": 0.012256654445339918,
+      "slope": -0.0004502506907764728,
+      "first_y": 0.012256654445339918,
+      "final_y": 0.009555150300681083,
+      "avg_residual": 0.00020670577705238737,
+      "y_projections": [
+        0.009104899609904609, 0.008654648919128136, 0.008204398228351662, 0.00775414753757519, 0.007303896846798718,
+        0.006853646156022245, 0.0064033954652457726, 0.005953144774469299, 0.0055028940836928265, 0.005052643392916354,
+        0.004602392702139881, 0.004152142011363408
+      ],
+      "x_projections": [
+        "2022-04-01",
+        "2022-05-01",
+        "2022-06-01",
+        "2022-07-01",
+        "2022-08-01",
+        "2022-09-01",
+        "2022-10-01",
+        "2022-11-01",
+        "2022-12-01",
+        "2023-01-01",
+        "2023-02-01",
+        "2023-03-01"
+      ],
+      "final_x": "2022-03-01",
+      "first_x": "2021-09-01",
+      "start_date": "2021-09-01",
+      "end_date": null,
+      "all_lines": [
+        {
+          "y_intercept": 0.045938562839490035,
+          "slope": -0.0001850133035395431,
+          "first_y": 0.045938562839490035,
+          "final_y": 0.04038816373330374,
+          "avg_residual": 0.0005670030756257662,
+          "y_projections": [
+            0.040203150429764196, 0.04001813712622466, 0.03983312382268511, 0.03964811051914557, 0.03946309721560603,
+            0.03927808391206648, 0.03909307060852694, 0.0389080573049874, 0.038723044001447854, 0.038538030697908315,
+            0.03835301739436877, 0.038168004090829225
+          ],
+          "x_projections": [
+            "2020-10-01",
+            "2020-11-01",
+            "2020-12-01",
+            "2021-01-01",
+            "2021-02-01",
+            "2021-03-01",
+            "2021-04-01",
+            "2021-05-01",
+            "2021-06-01",
+            "2021-07-01",
+            "2021-08-01",
+            "2021-09-01"
+          ],
+          "final_x": "2020-09-01",
+          "first_x": "2018-03-01",
+          "start_date": "2018-03-01",
+          "end_date": "2020-09-01"
+        },
+        {
+          "y_intercept": 0.01174320125605856,
+          "slope": 0.00039375333227055276,
+          "first_y": 0.01174320125605856,
+          "final_y": 0.013711967917411323,
+          "avg_residual": 0.00024835970608508046,
+          "y_projections": [
+            0.014105721249681876, 0.014499474581952429, 0.014893227914222982, 0.015286981246493535,
+            0.015680734578764087, 0.016074487911034642, 0.016468241243305193, 0.016861994575575745, 0.0172557479078463,
+            0.01764950124011685, 0.018043254572387403, 0.018437007904657958
+          ],
+          "x_projections": [
+            "2021-06-01",
+            "2021-07-01",
+            "2021-08-01",
+            "2021-09-01",
+            "2021-10-01",
+            "2021-11-01",
+            "2021-12-01",
+            "2022-01-01",
+            "2022-02-01",
+            "2022-03-01",
+            "2022-04-01",
+            "2022-05-01"
+          ],
+          "final_x": "2021-05-01",
+          "first_x": "2020-12-01",
+          "start_date": "2020-12-01",
+          "end_date": "2021-05-01"
+        },
+        {
+          "y_intercept": 0.012256654445339918,
+          "slope": -0.0004502506907764728,
+          "first_y": 0.012256654445339918,
+          "final_y": 0.009555150300681083,
+          "avg_residual": 0.00020670577705238737,
+          "y_projections": [
+            0.009104899609904609, 0.008654648919128136, 0.008204398228351662, 0.00775414753757519, 0.007303896846798718,
+            0.006853646156022245, 0.0064033954652457726, 0.005953144774469299, 0.0055028940836928265,
+            0.005052643392916354, 0.004602392702139881, 0.004152142011363408
+          ],
+          "x_projections": [
+            "2022-04-01",
+            "2022-05-01",
+            "2022-06-01",
+            "2022-07-01",
+            "2022-08-01",
+            "2022-09-01",
+            "2022-10-01",
+            "2022-11-01",
+            "2022-12-01",
+            "2023-01-01",
+            "2023-02-01",
+            "2023-03-01"
+          ],
+          "final_x": "2022-03-01",
+          "first_x": "2021-09-01",
+          "start_date": "2021-09-01",
+          "end_date": null
+        }
+      ],
+      "last_slope": 0.00039375333227055276,
+      "last_start_date": "2020-12-01",
+      "last_final_y": 0.013711967917411323
+    },
+    "#kpi_trend": {
+      "final_x": "2022-03-01",
+      "final_y": "0.96%",
+      "last_final_y": "1.37%",
+      "start_date": "2021-09-01",
+      "last_start_date": "2020-12-01",
+      "end_date": null,
+      "slope": "-0.05%",
+      "y_intercept": "0.012",
+      "y_projections": [
+        "0.91%",
+        "0.87%",
+        "0.82%",
+        "0.78%",
+        "0.73%",
+        "0.69%",
+        "0.64%",
+        "0.6%",
+        "0.55%",
+        "0.51%",
+        "0.46%",
+        "0.42%"
+      ],
+      "x_projections": [
+        "2022-04-01",
+        "2022-05-01",
+        "2022-06-01",
+        "2022-07-01",
+        "2022-08-01",
+        "2022-09-01",
+        "2022-10-01",
+        "2022-11-01",
+        "2022-12-01",
+        "2023-01-01",
+        "2023-02-01",
+        "2023-03-01"
+      ],
+      "last_slope": "0.04%"
+    },
+    "__kpi_trend": "No explanation\n\n*depends_on:* days_to_convert, today, kpi_format\n",
+    "last_valid_date": "2022-04-13",
+    "#last_valid_date": "2022-04-13",
+    "__last_valid_date": "This is the last date we can use when the data is all matured\n\n*depends_on:* days_to_convert, today\n",
+    "max_month": "2022-04-01",
+    "#max_month": "2022-03-31 08:00 PM (1.71 weeks ago)",
+    "__max_month": "No explanation\n\n*depends_on:* \n",
+    "min_month": "2018-01-01",
+    "#min_month": "2017-12-31 07:00 PM (4.28 years ago)",
+    "__min_month": "No explanation\n\n*depends_on:* \n",
+    "most_recent_month": "2022-03-01",
+    "#most_recent_month": "2022-02-28 07:00 PM (1.43 months ago)",
+    "__most_recent_month": "what is the most recent month that will have full data?\n\n*depends_on:* this_month\n",
+    "kpi_10th_ptile": 0,
+    "#kpi_10th_ptile": "0%",
+    "__kpi_10th_ptile": "10th percentile of kpi\n\n*depends_on:* kpi_format, most_recent_month\n",
+    "kpi_90th_ptile": 0,
+    "#kpi_90th_ptile": "0%",
+    "__kpi_90th_ptile": "90th percentile of kpi\n\n*depends_on:* most_recent_month, kpi_format\n",
+    "recent_kpi_goal": 0.0095,
+    "#recent_kpi_goal": "0.95%",
+    "__recent_kpi_goal": "No explanation\n\n*depends_on:* last_valid_date, most_recent_month, kpi_format, days_to_convert\n",
+    "recent_volume": 1565,
+    "#recent_volume": "1.56k",
+    "__recent_volume": "How much volume is contributing to the metric in recent months?\n\n*depends_on:* most_recent_month\n",
+    "grouped_lever": {
+      "kind": "string",
+      "groups": ["MISSING YOU"],
+      "group_names": ["MISSING YOU"],
+      "metrics": [0.0103],
+      "percents": [0.7263740945888368],
+      "else_metric": 0.011796044845842416,
+      "else_percent": 0.27362590541116316,
+      "else_name": "Not MISSING YOU",
+      "confidence_interval": 0.5,
+      "stat_significant": false
+    },
+    "#grouped_lever": {
+      "kind": "string",
+      "groups": ["MISSING YOU"],
+      "metrics": ["1.03%"],
+      "percents": ["73%"],
+      "else_percent": "27%",
+      "else_metric": "1.18%",
+      "else_name": "Not MISSING YOU",
+      "confidence_interval": "50%",
+      "stat_significant": "is not statistically significant",
+      "error": null
+    },
+    "__grouped_lever": "No explanation\n\n*depends_on:* kpi_format, goal_direction\n",
+    "highest_kpi_by_lever": 0.0162,
+    "#highest_kpi_by_lever": "1.62%",
+    "__highest_kpi_by_lever": "What is the highest kpi for the kpi by lever (not grouped) breakdown?\n\n*depends_on:* kpi_format\n",
+    "kpi_decimation": 0.01,
+    "#kpi_decimation": "0.01",
+    "__kpi_decimation": "How to decimate the kpi for plotting its distribution\n\n*depends_on:* kpi_90th_ptile, kpi_10th_ptile\n",
+    "lever_of_highest_kpi_by_lever": "COUPON",
+    "#lever_of_highest_kpi_by_lever": "COUPON",
+    "__lever_of_highest_kpi_by_lever": "which SINGLE (not-grouped) lever has the highest KPI?\n\n*depends_on:* highest_kpi_by_lever, lever_format\n",
+    "percent_of_lever_with_highest_kpi": 0.0576906689390712,
+    "#percent_of_lever_with_highest_kpi": "5.77%",
+    "__percent_of_lever_with_highest_kpi": "How many Opened Email are there for the SINGLE (not-grouped) lever with the hightst kpi?\n\n*depends_on:* highest_kpi_by_lever\n",
+    "highest_kpi_agg": 0.0118,
+    "#highest_kpi_agg": "1.18%",
+    "__highest_kpi_agg": "Based on the aggregated data (not over time) what is the max of the KPI for the grouped levers?\n\n*depends_on:* kpi_format\n",
+    "lowest_kpi_agg": 0.0103,
+    "#lowest_kpi_agg": "1.03%",
+    "__lowest_kpi_agg": "Based on the aggregated data (not over time) what is the min of the KPI for the grouped levers?\n\n*depends_on:* kpi_format\n",
+    "best_kpi_agg": 0.0118,
+    "#best_kpi_agg": "1.18%",
+    "__best_kpi_agg": "Based on the aggregated data (not over time) what is the value of the best lever's goal kpi?\n\n*depends_on:* kpi_format, goal_direction, lowest_kpi_agg, highest_kpi_agg\n",
+    "worst_kpi_agg": 0.0103,
+    "#worst_kpi_agg": "1.03%",
+    "__worst_kpi_agg": "Based on the aggregated data (not over time) what is the value of the worst lever's goal kpi?\n\n*depends_on:* kpi_format, goal_direction, lowest_kpi_agg, highest_kpi_agg\n",
+    "lever_with_best_kpi_agg": "Not MISSING YOU",
+    "#lever_with_best_kpi_agg": "Not MISSING YOU",
+    "__lever_with_best_kpi_agg": "Based on the aggregated data (not over time) what is the BEST grouped lever based on the KPI?\n\n*depends_on:* best_kpi_agg\n",
+    "lever_with_worst_kpi_agg": "MISSING YOU",
+    "#lever_with_worst_kpi_agg": "MISSING YOU",
+    "__lever_with_worst_kpi_agg": "Based on the aggregated data (not over time) what is the WORST grouped lever based on the KPI?\n\n*depends_on:* worst_kpi_agg, lever_with_best_kpi_agg\n",
+    "goal_consistency": {
+      "percent": 0.9411764705882353,
+      "start_date": "2018-01-01",
+      "end_date": null,
+      "higher": "Not MISSING YOU",
+      "lower": "MISSING YOU",
+      "higher_avg": 0.012512388503468783,
+      "lower_avg": 0.010245772811918063,
+      "current": true,
+      "avg_to_now": 0
+    },
+    "#goal_consistency": {
+      "percent": "94%",
+      "start_date": "2018-01-01",
+      "end_date": null,
+      "higher": "Not MISSING YOU",
+      "lower": "MISSING YOU",
+      "higher_avg": "1.25%",
+      "lower_avg": "1.02%",
+      "avg_to_now": "0%",
+      "current": "is consistent"
+    },
+    "__goal_consistency": "Check to see if the lever consistently makes a different on the KPI\n\n*depends_on:* kpi_trend, kpi_format, lever_with_worst_kpi_agg, lever_with_best_kpi_agg\n",
+    "best_kpi_consistency_trend": 0.012512388503468783,
+    "#best_kpi_consistency_trend": "1.25%",
+    "__best_kpi_consistency_trend": "What is the value of the KPI of the BEST lever (based on the output of the consistency checker trend)?\n\n*depends_on:* kpi_format, goal_direction, goal_consistency\n",
+    "best_lever_consistency_trend": "Not MISSING YOU",
+    "#best_lever_consistency_trend": "Not MISSING YOU",
+    "__best_lever_consistency_trend": "What is the grouped lever with the BEST KPI (based on the output of the consistency checker trend)?\n\n*depends_on:* goal_direction, goal_consistency\n"
+  },
+  "query": {
+    "activities": [
+      {
+        "id": "opened_email43e317aa",
+        "name": "Opened Email",
+        "slug": ["opened_email"],
+        "activity_ids": ["18ad573f-352e-420f-bb55-2de4a8187d59"],
+        "did": true,
+        "occurrence": "all",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "limiting"
+      },
+      {
+        "id": "started_session3005f8c1",
+        "name": "Started Session",
+        "slug": ["started_session"],
+        "activity_ids": ["22e38afd-3145-47c1-92d4-9d4f51163f53"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "within_cohort"
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_in_between"
+      },
+      {
+        "id": "completed_ordera83867de",
+        "name": "Completed Order",
+        "slug": ["completed_order"],
+        "activity_ids": ["e134737e-e96a-4f10-8bdb-385773ded546"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "within_cohort"
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_in_between"
+      }
+    ],
+    "columns": [
+      {
+        "id": "activity_id9fc0bb0c",
+        "name": "activity_id",
+        "label": "Activity Id",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "opened_email43e317aa",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ts6898ae6f",
+        "name": "ts",
+        "label": "Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "opened_email43e317aa",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "customerb8fdd760",
+        "name": "customer",
+        "label": "Customer",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "opened_email43e317aa",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "feature_1c7bbe84b",
+        "name": "feature_1",
+        "label": "Campaign Type",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "opened_email43e317aa",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "activity_occurrencee50b9d88",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "group_func": null,
+        "type": "number",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "opened_email43e317aa",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ts7a4b3bbc",
+        "name": "ts",
+        "label": "First In Between Started Session Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "started_session3005f8c1",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_started_session6e96d03d",
+        "name": null,
+        "label": "Did Started Session Between",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts7a4b3bbc)",
+          "activity_kind": "append",
+          "activity_id": "started_session3005f8c1",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_started_session189a9ae9",
+        "name": null,
+        "label": "Days To Started Session",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, ts7a4b3bbc)",
+          "activity_kind": "append",
+          "activity_id": "started_session3005f8c1",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "tsf6ff42a7",
+        "name": "ts",
+        "label": "First In Between Completed Order Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "completed_ordera83867de",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_completed_order82ea3dde",
+        "name": null,
+        "label": "Did Completed Order Between",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(tsf6ff42a7)",
+          "activity_kind": "append",
+          "activity_id": "completed_ordera83867de",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_completed_ordere6e4ff37",
+        "name": null,
+        "label": "Days To Completed Order",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, tsf6ff42a7)",
+          "activity_kind": "append",
+          "activity_id": "completed_ordera83867de",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "monthd1efb62d",
+        "name": null,
+        "label": "Month",
+        "output": true,
+        "filters": [],
+        "mavis_type": null,
+        "type": "timestamp",
+        "group_func": [],
+        "source_kind": "computed",
+        "source_details": {
+          "kind": "freehand_function",
+          "raw_string": "date_trunc('month', ts6898ae6f)"
+        }
+      },
+      {
+        "id": "monthb7f85549",
+        "name": null,
+        "label": "Month",
+        "output": true,
+        "filters": [],
+        "mavis_type": null,
+        "type": "timestamp",
+        "group_func": [],
+        "source_kind": "computed",
+        "source_details": {
+          "kind": "freehand_function",
+          "raw_string": "date_trunc('month', ts6898ae6f)"
+        }
+      },
+      {
+        "id": "grouped_campaign_type",
+        "filters": [],
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "freehand_function",
+          "raw_string": "field_bucket(feature_1c7bbe84b, {grouped_lever})"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null,
+        "label": "Grouped Campaign Type"
+      },
+      {
+        "id": "bucketed_did_completed_order_between_by_51570fd48",
+        "name": null,
+        "label": "Rounded Did Completed Order Between",
+        "output": true,
+        "filters": [],
+        "mavis_type": null,
+        "type": "integer",
+        "group_func": [],
+        "source_kind": "computed",
+        "source_details": {
+          "kind": "freehand_function",
+          "raw_string": "decimate_number(did_completed_order82ea3dde, {kpi_decimation})"
+        }
+      }
+    ],
+    "all_groups": [
+      {
+        "name": "by Month",
+        "slug": "monthe0da3c5a",
+        "columns": [
+          {
+            "id": "month_cb0e242f",
+            "filters": [],
+            "label": "Month",
+            "name": "",
+            "output": true,
+            "mavis_type": "timestamp",
+            "type": "timestamp",
+            "source_kind": "group",
+            "column_id": "monthb7f85549",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_opened_email_row_rows_3198b1d6",
+            "label": "Total Opened Email",
+            "agg_function": "COUNT_ALL",
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_completed_order_between_8db38522",
+            "label": "Conversion Rate to Completed Order Between",
+            "agg_function": "AVERAGE",
+            "output": true,
+            "column_id": "did_completed_order82ea3dde",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "metric_did_terminated_contracte_887_c_6_cd_percentile_cont_b_1_hbyo_3_gr",
+            "label": "90th pct Conversion Rate to Completed Order Between",
+            "agg_function": "PERCENTILE_CONT",
+            "output": true,
+            "column_id": "did_completed_order82ea3dde",
+            "filters": [],
+            "pivot": [],
+            "type": "float",
+            "_auto_generated_by": null,
+            "percentile": 0.9
+          },
+          {
+            "id": "metric_did_terminated_contracte_887_c_6_cd_percentile_cont_b_1_hbyo_3_gr_vGDe8pv_N",
+            "label": "10th pct Did Completed Order Between",
+            "agg_function": "PERCENTILE_CONT",
+            "output": true,
+            "column_id": "did_completed_order82ea3dde",
+            "filters": [],
+            "pivot": [],
+            "type": "float",
+            "_auto_generated_by": null,
+            "percentile": 0.1
+          }
+        ],
+        "computed_columns": [],
+        "pivot": [],
+        "parent_filters": [],
+        "order": [
+          {
+            "column_id": "month_cb0e242f",
+            "order_direction": "asc"
+          }
+        ],
+        "plots": [
+          {
+            "name": "Total {pluralize(2,row_label)} by Month",
+            "slug": "total_opened_email_row_by_month",
+            "config": {
+              "dataset": {
+                "slug": "e4219670_6bb7_417c_9450_2974ff764f99",
+                "group_slug": "monthe0da3c5a",
+                "plot_slug": null
+              },
+              "columns": {
+                "y2_available": false,
+                "ys": ["total_opened_email_row_rows_3198b1d6"],
+                "xs": ["month_cb0e242f"],
+                "color_bys": [],
+                "y2": null,
+                "advance_editing": false,
+                "x_name": "X Column: Month",
+                "color_name": null
+              },
+              "traces": [
+                {
+                  "y_column": "total_opened_email_row_rows_3198b1d6",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "number",
+                  "color": "#339c16",
+                  "name": "Total {pluralize(2,row_label)}",
+                  "default_shown": true,
+                  "line_type": "solid"
+                }
+              ],
+              "axes": {
+                "title": "Total {pluralize(2,row_label)} by Month",
+                "y_axis": "Total {pluralize(2,row_label)}",
+                "x_axis": "Month",
+                "y2_axis": "",
+                "plot_kind": "line",
+                "y_range_from": null,
+                "x_range_from": null,
+                "y_range_to": null,
+                "x_range_to": null,
+                "limit_top": null,
+                "cluster_x_values": false
+              },
+              "annotations": [],
+              "revision": 12
+            }
+          },
+          {
+            "name": "Conversion Rate to Completed Order Between by Month",
+            "slug": "conversion_rate_to_completed_order_between_by_month",
+            "config": {
+              "dataset": {
+                "slug": "cba4237b_4422_4b3d_9ee5_c6f5a993c939",
+                "group_slug": "monthe0da3c5a",
+                "plot_slug": null
+              },
+              "columns": {
+                "y2_available": false,
+                "ys": ["conversion_rate_to_completed_order_between_8db38522"],
+                "xs": ["month_cb0e242f"],
+                "color_bys": [],
+                "y2": null,
+                "advance_editing": false,
+                "x_name": "X Column: Month",
+                "color_name": null
+              },
+              "traces": [
+                {
+                  "y_column": "conversion_rate_to_completed_order_between_8db38522",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "{kpi_format}",
+                  "color": "#35a1ff",
+                  "name": "Conversion Rate to Completed Order Between",
+                  "default_shown": true,
+                  "line_type": "solid"
+                }
+              ],
+              "axes": {
+                "title": "Conversion Rate to Completed Order Between by Month",
+                "y_axis": "Conversion Rate to Completed Order Between",
+                "x_axis": "Month",
+                "y2_axis": "",
+                "plot_kind": "line",
+                "y_range_from": null,
+                "x_range_from": null,
+                "y_range_to": null,
+                "x_range_to": null,
+                "limit_top": null,
+                "cluster_x_values": false
+              },
+              "annotations": [],
+              "revision": 5
+            }
+          }
+        ]
+      },
+      {
+        "name": "by Campaign Type",
+        "slug": "campaign_type12e8b7ef",
+        "columns": [
+          {
+            "id": "campaign_type_a1d6be09",
+            "filters": [],
+            "label": "Campaign Type",
+            "name": "",
+            "output": true,
+            "mavis_type": "{lever_format}",
+            "type": "{lever_format}",
+            "source_kind": "group",
+            "column_id": "feature_1c7bbe84b",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_opened_email_row_rows_2bff2441",
+            "label": "Total Opened Email",
+            "agg_function": "COUNT_ALL",
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_completed_order_between_3fbb2a57",
+            "label": "Conversion Rate to Completed Order Between",
+            "agg_function": "AVERAGE",
+            "output": true,
+            "column_id": "did_completed_order82ea3dde",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "metric_did_completed_order_6251_feca_stddev_w_ci_osa_t_lz",
+            "label": "Stddev Did Completed Order Between",
+            "agg_function": "STDDEV",
+            "output": true,
+            "column_id": "did_completed_order82ea3dde",
+            "filters": [],
+            "pivot": [],
+            "type": "float",
+            "_auto_generated_by": null,
+            "column_kind": "metrics"
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "percent_of_total_opened_email_row5c76d578",
+            "name": null,
+            "label": "Percent of Total Opened Email",
+            "output": true,
+            "filters": [],
+            "mavis_type": null,
+            "type": "float",
+            "group_func": [],
+            "source_kind": "computed",
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "percent_of_total_all(total_opened_email_row_rows_2bff2441)"
+            },
+            "column_kind": "computed"
+          },
+          {
+            "id": "cumulative_percent_of_total_opened_email30c149fe",
+            "name": null,
+            "label": "Cumulative Percent of Total Opened Email",
+            "output": true,
+            "filters": [],
+            "mavis_type": null,
+            "type": "float",
+            "group_func": [],
+            "source_kind": "computed",
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "running_total_all(percent_of_total_opened_email_row5c76d578, [campaign_type_a1d6be09.desc])"
+            },
+            "column_kind": "computed"
+          },
+          {
+            "id": "is_reasonable_to_evaluate",
+            "filters": [
+              {
+                "operator": "not_equal",
+                "value": "1",
+                "kind": "value",
+                "or_null": false
+              }
+            ],
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "iff( percent_of_total_opened_email_row5c76d578 < 0.005 and cumulative_percent_of_total_opened_email30c149fe >= 0.9, 1, 0)\n\n"
+            },
+            "source_kind": "computed",
+            "type": "number",
+            "_auto_generated_by": null,
+            "label": "Is Long Tail",
+            "column_kind": "computed"
+          }
+        ],
+        "pivot": [],
+        "parent_filters": [
+          {
+            "filter": {
+              "operator": "less_than",
+              "kind": "field",
+              "or_null": false,
+              "value_resolution": "date",
+              "value": "{last_valid_date}"
+            },
+            "column_id": "ts6898ae6f"
+          },
+          {
+            "filter": {
+              "operator": "greater_than",
+              "kind": "field",
+              "or_null": false,
+              "value_resolution": "date",
+              "value": "{kpi_trend['start_date']}"
+            },
+            "column_id": "ts6898ae6f"
+          }
+        ],
+        "order": [
+          {
+            "column_id": "total_opened_email_row_rows_2bff2441",
+            "order_direction": "desc"
+          }
+        ],
+        "plots": [
+          {
+            "name": "Conversion Rate to Completed Order Between by Campaign Type",
+            "slug": "conversion_rate_to_completed_order_between_by_campaign_type",
+            "config": {
+              "dataset": {
+                "slug": "feb26a45_bcb2_4c57_99a7_7dd665825f13",
+                "group_slug": "campaign_type12e8b7ef",
+                "plot_slug": null
+              },
+              "columns": {
+                "y2_available": true,
+                "ys": ["conversion_rate_to_completed_order_between_3fbb2a57"],
+                "xs": ["campaign_type_a1d6be09"],
+                "color_bys": [],
+                "y2": "percent_of_total_opened_email_row5c76d578",
+                "advance_editing": false,
+                "x_name": "X Column: Campaign Type",
+                "color_name": null
+              },
+              "traces": [
+                {
+                  "y_column": "conversion_rate_to_completed_order_between_3fbb2a57",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "{kpi_format}",
+                  "color": "#35a1ff",
+                  "name": "Conversion Rate to Completed Order Between",
+                  "default_shown": true,
+                  "line_type": "solid"
+                },
+                {
+                  "y_column": "percent_of_total_opened_email_row5c76d578",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y2",
+                  "format": "percent",
+                  "color": "#ffa200",
+                  "name": "Percent of Total Opened Email",
+                  "default_shown": true,
+                  "line_type": "dot"
+                }
+              ],
+              "axes": {
+                "title": "Conversion Rate to Completed Order Between by Campaign Type",
+                "y_axis": "Conversion Rate to Completed Order Between",
+                "x_axis": "Campaign Type",
+                "y2_axis": "Percent of Total Opened Email",
+                "plot_kind": "bar",
+                "y_range_from": null,
+                "x_range_from": null,
+                "y_range_to": null,
+                "x_range_to": null,
+                "limit_top": 20,
+                "cluster_x_values": false
+              },
+              "annotations": [],
+              "revision": 23
+            }
+          }
+        ]
+      },
+      {
+        "name": "by Grouped Campaign Type",
+        "slug": "grouped_campaign_typead191ea6",
+        "columns": [
+          {
+            "id": "grouped_campaign_type_c060b2d4",
+            "filters": [],
+            "label": "Grouped Campaign Type",
+            "name": "",
+            "output": true,
+            "mavis_type": "string",
+            "type": "string",
+            "source_kind": "group",
+            "column_id": "grouped_campaign_type",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_opened_email_row_rows_ea65e362",
+            "label": "Total Opened Email",
+            "agg_function": "COUNT_ALL",
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_completed_order_between_14924b7a",
+            "label": "Conversion Rate to Completed Order Between",
+            "agg_function": "AVERAGE",
+            "output": true,
+            "column_id": "did_completed_order82ea3dde",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "metric_did_terminated_contracte_887_c_6_cd_sum_fn_15_mfkv_o",
+            "label": "Total Did Completed Order Between",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "did_completed_order82ea3dde",
+            "filters": [],
+            "pivot": [],
+            "type": "float",
+            "_auto_generated_by": null
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "percent_of_total_opened_email_row0020ab20",
+            "name": null,
+            "label": "Percent of Total Opened Email",
+            "output": true,
+            "filters": [],
+            "mavis_type": null,
+            "type": "float",
+            "group_func": [],
+            "source_kind": "computed",
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "percent_of_total_all(total_opened_email_row_rows_ea65e362)"
+            },
+            "column_kind": "computed"
+          }
+        ],
+        "pivot": [],
+        "parent_filters": [
+          {
+            "filter": {
+              "operator": "less_than",
+              "kind": "field",
+              "or_null": false,
+              "value_resolution": "date",
+              "value": "{last_valid_date}"
+            },
+            "column_id": "ts6898ae6f"
+          },
+          {
+            "filter": {
+              "operator": "greater_than",
+              "kind": "field",
+              "or_null": false,
+              "value_resolution": "date",
+              "value": "{kpi_trend['start_date']}"
+            },
+            "column_id": "ts6898ae6f"
+          }
+        ],
+        "order": [
+          {
+            "column_id": "total_opened_email_row_rows_ea65e362",
+            "order_direction": "desc"
+          }
+        ],
+        "plots": [
+          {
+            "name": "Conversion Rate to Completed Order Between by Grouped Campaign Type",
+            "slug": "conversion_rate_to_completed_order_between_by_grouped_campaign_type",
+            "config": {
+              "dataset": {
+                "slug": "db524395_6d5c_4217_a643_e575a8b467fe",
+                "group_slug": "grouped_campaign_typead191ea6",
+                "plot_slug": null
+              },
+              "columns": {
+                "y2_available": true,
+                "ys": ["conversion_rate_to_completed_order_between_14924b7a"],
+                "xs": ["grouped_campaign_type_c060b2d4"],
+                "color_bys": [],
+                "y2": "metric_did_terminated_contracte_887_c_6_cd_sum_fn_15_mfkv_o",
+                "advance_editing": false,
+                "x_name": "X Column: Grouped Campaign Type",
+                "color_name": null
+              },
+              "traces": [
+                {
+                  "y_column": "conversion_rate_to_completed_order_between_14924b7a",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "{kpi_format}",
+                  "color": "#35a1ff",
+                  "name": "Conversion Rate to Completed Order Between",
+                  "default_shown": true,
+                  "line_type": "solid"
+                },
+                {
+                  "y_column": "metric_did_terminated_contracte_887_c_6_cd_sum_fn_15_mfkv_o",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y2",
+                  "format": "number",
+                  "color": "#339c16",
+                  "name": "Total Did Completed Order Between",
+                  "default_shown": true,
+                  "line_type": "dot"
+                }
+              ],
+              "axes": {
+                "title": "Conversion Rate to Completed Order Between by Grouped Campaign Type",
+                "y_axis": "Conversion Rate to Completed Order Between",
+                "x_axis": "Grouped Campaign Type",
+                "y2_axis": "Total Did Completed Order Between",
+                "plot_kind": "bar",
+                "y_range_from": null,
+                "x_range_from": null,
+                "y_range_to": null,
+                "x_range_to": null,
+                "limit_top": null,
+                "cluster_x_values": false
+              },
+              "annotations": [],
+              "revision": 15
+            }
+          }
+        ]
+      },
+      {
+        "name": "by Month & Grouped Campaign Type",
+        "slug": "month_grouped_campaign_type70cf4119",
+        "columns": [
+          {
+            "id": "month_8679727a",
+            "filters": [],
+            "label": "Month",
+            "name": "",
+            "output": true,
+            "mavis_type": "timestamp",
+            "type": "timestamp",
+            "source_kind": "group",
+            "column_id": "monthb7f85549",
+            "pivoted": false,
+            "column_kind": "group"
+          },
+          {
+            "id": "grouped_campaign_type_8db98900",
+            "filters": [],
+            "label": "Grouped Campaign Type",
+            "name": "",
+            "output": true,
+            "mavis_type": "string",
+            "type": "string",
+            "source_kind": "group",
+            "column_id": "grouped_campaign_type",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_opened_email_row_rows_e20f4ce2",
+            "label": "Total Opened Email",
+            "agg_function": "COUNT_ALL",
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_completed_order_between_e7b00507",
+            "label": "Conversion Rate to Completed Order Between",
+            "agg_function": "AVERAGE",
+            "output": true,
+            "column_id": "did_completed_order82ea3dde",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "type": "float",
+            "column_kind": "metrics"
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "percent_of_total_opened_email_row504effc8",
+            "name": null,
+            "label": "Percent of Total Opened Email",
+            "output": true,
+            "filters": [],
+            "mavis_type": null,
+            "type": "float",
+            "group_func": [],
+            "source_kind": "computed",
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "ratio_to_report(total_opened_email_row_rows_e20f4ce2, [month_8679727a])"
+            },
+            "column_kind": "computed"
+          }
+        ],
+        "pivot": [],
+        "parent_filters": [
+          {
+            "filter": {
+              "operator": "less_than",
+              "kind": "field",
+              "or_null": false,
+              "value_resolution": "date",
+              "value": "{last_valid_date}"
+            },
+            "column_id": "ts6898ae6f"
+          }
+        ],
+        "order": [
+          {
+            "column_id": "month_8679727a",
+            "order_direction": "asc"
+          },
+          {
+            "column_id": "grouped_campaign_type_8db98900",
+            "order_direction": "asc"
+          }
+        ],
+        "plots": [
+          {
+            "name": "Percent of Total Opened Email by Month (by: Grouped Campaign Type)",
+            "slug": "percent_of_total_opened_email_row_by_month_by_grouped_campaign_type",
+            "config": {
+              "dataset": {
+                "slug": "cb5d0468_3363_40ee_9d9c_7c185e1553ac",
+                "group_slug": "month_grouped_campaign_type70cf4119",
+                "plot_slug": null
+              },
+              "columns": {
+                "y2_available": false,
+                "ys": ["percent_of_total_opened_email_row504effc8"],
+                "xs": ["month_8679727a"],
+                "color_bys": ["grouped_campaign_type_8db98900"],
+                "y2": null,
+                "advance_editing": false,
+                "x_name": "X Column: Month",
+                "color_name": "Colored by: Grouped Campaign Type"
+              },
+              "traces": [
+                {
+                  "y_column": "percent_of_total_opened_email_row504effc8",
+                  "color_id": "Campaign Type",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "percent",
+                  "color": "#ffa200",
+                  "name": "Campaign Type",
+                  "default_shown": true,
+                  "line_type": "solid"
+                },
+                {
+                  "y_column": "percent_of_total_opened_email_row504effc8",
+                  "color_id": "Did Not Training In 30d",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "percent",
+                  "color": "#f54114",
+                  "name": "Did Not Training In 30d",
+                  "default_shown": true,
+                  "line_type": "solid"
+                }
+              ],
+              "axes": {
+                "title": "Percent of Total Opened Email by Month (by: Grouped Campaign Type)",
+                "y_axis": "Percent of Total Opened Email",
+                "x_axis": "Month",
+                "y2_axis": "",
+                "plot_kind": "line",
+                "y_range_from": null,
+                "x_range_from": null,
+                "y_range_to": null,
+                "x_range_to": null,
+                "limit_top": null,
+                "cluster_x_values": false
+              },
+              "annotations": [],
+              "revision": 13
+            }
+          },
+          {
+            "name": "Conversion Rate to Completed Order Between by Month (by: Grouped Campaign Type)",
+            "slug": "conversion_rate_to_completed_order_between_by_month_by_grouped_campaign_type",
+            "config": {
+              "dataset": {
+                "slug": "a52f0ec9_7b61_45ad_923b_71bf8f0a74f9",
+                "group_slug": "month_grouped_campaign_type70cf4119",
+                "plot_slug": null
+              },
+              "columns": {
+                "y2_available": false,
+                "ys": ["conversion_rate_to_completed_order_between_e7b00507"],
+                "xs": ["month_8679727a"],
+                "color_bys": ["grouped_campaign_type_8db98900"],
+                "y2": null,
+                "advance_editing": false,
+                "x_name": "X Column: Month",
+                "color_name": "Colored by: Grouped Campaign Type"
+              },
+              "traces": [
+                {
+                  "y_column": "conversion_rate_to_completed_order_between_e7b00507",
+                  "color_id": "Campaign Type",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "{kpi_format}",
+                  "color": "#35a1ff",
+                  "name": "Campaign Type",
+                  "default_shown": true,
+                  "line_type": "solid"
+                },
+                {
+                  "y_column": "conversion_rate_to_completed_order_between_e7b00507",
+                  "color_id": "Did Not Training In 30d",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "{kpi_format}",
+                  "color": "#0e3353",
+                  "name": "Did Not Training In 30d",
+                  "default_shown": true,
+                  "line_type": "solid"
+                }
+              ],
+              "axes": {
+                "title": "Conversion Rate to Completed Order Between by Month (by: Grouped Campaign Type)",
+                "y_axis": "Conversion Rate to Completed Order Between",
+                "x_axis": "Month",
+                "y2_axis": "",
+                "plot_kind": "line",
+                "y_range_from": null,
+                "x_range_from": null,
+                "y_range_to": null,
+                "x_range_to": null,
+                "limit_top": null,
+                "cluster_x_values": false
+              },
+              "annotations": [],
+              "revision": 5
+            }
+          }
+        ]
+      },
+      {
+        "name": "by Did Completed Order Between",
+        "slug": "did_completed_order_betweena4c2147d",
+        "columns": [
+          {
+            "id": "did_completed_order_between_750f25a3",
+            "filters": [
+              {
+                "operator": "less_than_equal",
+                "kind": "field",
+                "or_null": false,
+                "value": "{(1+kpi_90th_ptile) *1.2}"
+              }
+            ],
+            "label": "Rounded Did Completed Order Between",
+            "name": "",
+            "output": true,
+            "mavis_type": "integer",
+            "type": "integer",
+            "source_kind": "group",
+            "column_id": "bucketed_did_completed_order_between_by_51570fd48",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_opened_email_row_rows_31f8e11d",
+            "label": "Total Opened Email",
+            "agg_function": "COUNT_ALL",
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "type": "integer",
+            "column_kind": "metrics"
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "percent_of_total_opened_email_row6d32d57d",
+            "name": null,
+            "label": "Percent of Total Opened Email",
+            "output": true,
+            "filters": [],
+            "mavis_type": null,
+            "type": "float",
+            "group_func": [],
+            "source_kind": "computed",
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "percent_of_total_all(total_opened_email_row_rows_31f8e11d)"
+            },
+            "column_kind": "computed"
+          }
+        ],
+        "pivot": [],
+        "parent_filters": [
+          {
+            "filter": {
+              "operator": "greater_than",
+              "kind": "field",
+              "or_null": false,
+              "value_resolution": "date",
+              "value": "{kpi_trend['start_date']}"
+            },
+            "column_id": "ts6898ae6f"
+          }
+        ],
+        "order": [
+          {
+            "column_id": "did_completed_order_between_750f25a3",
+            "order_direction": "asc"
+          }
+        ],
+        "plots": [
+          {
+            "name": "Distribution of {kpi_goal}",
+            "slug": "percent_of_total_opened_email_row_by_did_completed_order_between",
+            "config": {
+              "dataset": {
+                "slug": "c224ef13_808e_4752_9842_6c25818afc36",
+                "group_slug": "did_completed_order_betweena4c2147d",
+                "plot_slug": null
+              },
+              "columns": {
+                "y2_available": true,
+                "ys": ["percent_of_total_opened_email_row6d32d57d"],
+                "xs": ["did_completed_order_between_750f25a3"],
+                "color_bys": [],
+                "y2": "total_opened_email_row_rows_31f8e11d",
+                "advance_editing": false,
+                "x_name": "X Column: Did Completed Order Between",
+                "color_name": null
+              },
+              "traces": [
+                {
+                  "y_column": "percent_of_total_opened_email_row6d32d57d",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "percent",
+                  "color": "#35a1ff",
+                  "name": "Percent Of Total {pluralize(2,row_label)} ",
+                  "default_shown": true,
+                  "line_type": "solid"
+                },
+                {
+                  "y_column": "total_opened_email_row_rows_31f8e11d",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y2",
+                  "format": "number",
+                  "color": "#339c16",
+                  "name": "Total {pluralize(2,row_label)} ",
+                  "default_shown": true,
+                  "line_type": "dot"
+                }
+              ],
+              "axes": {
+                "title": "Distribution of {kpi_goal}",
+                "y_axis": "Percent of Total {pluralize(2,row_label)} ",
+                "x_axis": "Did Completed Order Between",
+                "y2_axis": "Total {pluralize(2,row_label)} ",
+                "plot_kind": "bar",
+                "y_range_from": null,
+                "x_range_from": null,
+                "y_range_to": null,
+                "x_range_to": null,
+                "limit_top": null,
+                "cluster_x_values": false
+              },
+              "annotations": [],
+              "revision": 20
+            }
+          }
+        ]
+      },
+      {
+        "name": "by Grouped Campaign Type for Consistent Time Pd",
+        "slug": "grouped_did_training_in_30_dad_191_ea_6_1",
+        "columns": [
+          {
+            "id": "grouped_campaign_type_c060b2d4",
+            "filters": [],
+            "label": "Grouped Campaign Type",
+            "name": "",
+            "output": true,
+            "mavis_type": "string",
+            "type": "string",
+            "source_kind": "group",
+            "column_id": "grouped_campaign_type",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_opened_email_row_rows_ea65e362",
+            "label": "Total Opened Email",
+            "agg_function": "COUNT_ALL",
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_completed_order_between_14924b7a",
+            "label": "Conversion Rate to Completed Order Between",
+            "agg_function": "AVERAGE",
+            "output": true,
+            "column_id": "did_completed_order82ea3dde",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "metric_did_terminated_contracte_887_c_6_cd_sum_fn_15_mfkv_o",
+            "label": "Total Did Completed Order Between",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "did_completed_order82ea3dde",
+            "filters": [],
+            "pivot": [],
+            "type": "float",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "metric_did_terminated_contracte_887_c_6_cd_stddev_n_yhxz_5_rg_k",
+            "label": "Stddev Did Completed Order Between",
+            "agg_function": "STDDEV",
+            "output": true,
+            "column_id": "did_completed_order82ea3dde",
+            "filters": [],
+            "pivot": [],
+            "type": "float",
+            "_auto_generated_by": null
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "percent_of_total_opened_email_row0020ab20",
+            "name": null,
+            "label": "Percent of Total Opened Email",
+            "output": true,
+            "filters": [],
+            "mavis_type": null,
+            "type": "float",
+            "group_func": [],
+            "source_kind": "computed",
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "percent_of_total_all(total_opened_email_row_rows_ea65e362)"
+            },
+            "column_kind": "computed"
+          }
+        ],
+        "pivot": [],
+        "parent_filters": [
+          {
+            "filter": {
+              "operator": "less_than",
+              "kind": "field",
+              "or_null": false,
+              "value_resolution": "date",
+              "value": "{last_valid_date}"
+            },
+            "column_id": "ts6898ae6f"
+          },
+          {
+            "filter": {
+              "operator": "greater_than_equal",
+              "kind": "field",
+              "or_null": false,
+              "value_resolution": "date",
+              "value": "{goal_consistency['start_date']}"
+            },
+            "column_id": "ts6898ae6f"
+          },
+          {
+            "filter": {
+              "operator": "not_is_null",
+              "kind": "value",
+              "or_null": false
+            },
+            "column_id": "did_completed_order82ea3dde"
+          }
+        ],
+        "order": [
+          {
+            "column_id": "total_opened_email_row_rows_ea65e362",
+            "order_direction": "desc"
+          }
+        ],
+        "plots": [
+          {
+            "name": "Conversion Rate to Completed Order Between by Group (only {pluralize(2,row_label)} after {#goal_consistency['start_date']})",
+            "slug": "conversion_rate_to_completed_order_between_by_grouped_campaign_type",
+            "config": {
+              "dataset": {
+                "slug": "87c6f54c_b19b_4aa7_ae5a_8d33a09ff732",
+                "group_slug": "grouped_did_training_in_30_dad_191_ea_6_1",
+                "plot_slug": null
+              },
+              "columns": {
+                "y2_available": true,
+                "ys": ["conversion_rate_to_completed_order_between_14924b7a"],
+                "xs": ["grouped_campaign_type_c060b2d4"],
+                "color_bys": [],
+                "y2": "total_opened_email_row_rows_ea65e362",
+                "advance_editing": false,
+                "x_name": "X Column: Grouped Campaign Type",
+                "color_name": null
+              },
+              "traces": [
+                {
+                  "y_column": "conversion_rate_to_completed_order_between_14924b7a",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "{kpi_format}",
+                  "color": "#35a1ff",
+                  "name": "Conversion Rate to Completed Order Between",
+                  "default_shown": true,
+                  "line_type": "solid"
+                },
+                {
+                  "y_column": "total_opened_email_row_rows_ea65e362",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y2",
+                  "format": "number",
+                  "color": "#339c16",
+                  "name": "Total {pluralize(2,row_label)}",
+                  "default_shown": true,
+                  "line_type": "dot"
+                }
+              ],
+              "axes": {
+                "title": "Conversion Rate to Completed Order Between by Group (only {pluralize(2,row_label)} after {#goal_consistency['start_date']})",
+                "y_axis": "Conversion Rate to Completed Order Between",
+                "x_axis": "Grouped Campaign Type",
+                "y2_axis": "Total {pluralize(2,row_label)}",
+                "plot_kind": "bar",
+                "y_range_from": null,
+                "x_range_from": null,
+                "y_range_to": null,
+                "x_range_to": null,
+                "limit_top": null,
+                "cluster_x_values": false
+              },
+              "annotations": [],
+              "revision": 20
+            }
+          }
+        ]
+      }
+    ],
+    "order": [
+      {
+        "column_id": "ts6898ae6f",
+        "order_direction": "desc"
+      }
+    ],
+    "activity_stream": "activity_stream",
+    "swapped_ids": []
+  }
+}

@@ -1,0 +1,3827 @@
+{
+  "_has_customer_column": true,
+  "_is_running": false,
+  "_is_dirty": true,
+  "_stale_tabs": [
+      "__raw"
+  ],
+  "_delete_columns_tabs": [],
+  "_view": "table",
+  "_slug": "debug_null_columns3e0a77ed",
+  "_group_slug": null,
+  "_prev_query": {
+      "activities": [
+          {
+              "id": "marketing_session98626881",
+              "name": "Marketing Session",
+              "slug": [
+                  "marketing_session"
+              ],
+              "activity_ids": [
+                  "f17fabf3-f101-4384-9fca-0f38576feaec"
+              ],
+              "did": true,
+              "occurrence": "all",
+              "occurrence_value": null,
+              "config": {
+                  "has_source": true,
+                  "activity_stream": "activity_stream"
+              },
+              "relationships": [],
+              "filters": [],
+              "kind": "limiting"
+          }
+      ],
+      "columns": [
+          {
+              "id": "activity_ida92e5240",
+              "name": "activity_id",
+              "label": "Activity Id",
+              "output": true,
+              "filters": [],
+              "mavis_type": "string",
+              "group_func": null,
+              "type": "string",
+              "source_kind": "activity",
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session98626881",
+                  "enrichment_table": null,
+                  "applied_function": null
+              }
+          },
+          {
+              "id": "ts176ad943",
+              "name": "ts",
+              "label": "Timestamp",
+              "output": true,
+              "filters": [],
+              "mavis_type": "timestamp",
+              "group_func": null,
+              "type": "timestamp",
+              "source_kind": "activity",
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session98626881",
+                  "enrichment_table": null,
+                  "applied_function": null
+              }
+          },
+          {
+              "id": "customere9142dbe",
+              "name": "customer",
+              "label": "Customer",
+              "output": true,
+              "filters": [],
+              "mavis_type": "string",
+              "group_func": null,
+              "type": "string",
+              "source_kind": "activity",
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session98626881",
+                  "enrichment_table": null,
+                  "applied_function": null
+              }
+          },
+          {
+              "id": "join_customerb5288ada",
+              "name": "join_customer",
+              "label": "Unique Identifier",
+              "output": true,
+              "filters": [],
+              "mavis_type": "string",
+              "group_func": null,
+              "type": "string",
+              "source_kind": "activity",
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session98626881",
+                  "enrichment_table": null,
+                  "applied_function": null
+              }
+          },
+          {
+              "id": "feature_17ec4e8f5",
+              "name": "feature_1",
+              "label": "Activity",
+              "output": true,
+              "filters": [],
+              "mavis_type": "string",
+              "group_func": null,
+              "type": "string",
+              "source_kind": "activity",
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session98626881",
+                  "enrichment_table": null,
+                  "applied_function": null
+              }
+          },
+          {
+              "id": "feature_2489c1357",
+              "name": "feature_2",
+              "label": "Feature 1",
+              "output": true,
+              "filters": [],
+              "mavis_type": "string",
+              "group_func": null,
+              "type": "string",
+              "source_kind": "activity",
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session98626881",
+                  "enrichment_table": null,
+                  "applied_function": null
+              }
+          },
+          {
+              "id": "feature_3bb30331b",
+              "name": "feature_3",
+              "label": "Feature 2",
+              "output": true,
+              "filters": [],
+              "mavis_type": "string",
+              "group_func": null,
+              "type": "string",
+              "source_kind": "activity",
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session98626881",
+                  "enrichment_table": null,
+                  "applied_function": null
+              }
+          },
+          {
+              "id": "link1ed456ae",
+              "name": "link",
+              "label": "Link",
+              "output": true,
+              "filters": [],
+              "mavis_type": "string",
+              "group_func": null,
+              "type": "string",
+              "source_kind": "activity",
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session98626881",
+                  "enrichment_table": null,
+                  "applied_function": null
+              }
+          },
+          {
+              "id": "activity_occurrence4e669430",
+              "name": "activity_occurrence",
+              "label": "Activity Occurrence",
+              "output": true,
+              "filters": [],
+              "mavis_type": "integer",
+              "group_func": null,
+              "type": "number",
+              "source_kind": "activity",
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session98626881",
+                  "enrichment_table": null,
+                  "applied_function": null
+              }
+          },
+          {
+              "id": "broken_null_column",
+              "filters": [],
+              "label": "Broken Null Column",
+              "name": "",
+              "output": true,
+              "source_details": {
+                  "kind": "ifttt",
+                  "cases": [
+                      {
+                          "filters": [
+                              {
+                                  "column_id": "feature_2489c1357",
+                                  "filter": {
+                                      "operator": "equal",
+                                      "kind": "value",
+                                      "or_null": false,
+                                      "value": "fun stuff"
+                                  }
+                              }
+                          ],
+                          "value_kind": "column_id",
+                          "value": "feature_2489c1357"
+                      }
+                  ],
+                  "value_kind": "null",
+                  "value": "null"
+              },
+              "source_kind": "computed",
+              "type": "null",
+              "_auto_generated_by": null
+          },
+          {
+              "id": "broken_null_column__qeXeYQ3y",
+              "filters": [],
+              "label": "Broken Null Column NEW",
+              "name": "",
+              "output": true,
+              "source_details": {
+                  "kind": "ifttt",
+                  "cases": [
+                      {
+                          "filters": [
+                              {
+                                  "column_id": "feature_2489c1357",
+                                  "filter": {
+                                      "operator": "equal",
+                                      "kind": "value",
+                                      "or_null": false,
+                                      "value": "fun stuff"
+                                  }
+                              }
+                          ],
+                          "value_kind": "string",
+                          "value": "Should be able to select this"
+                      }
+                  ],
+                  "value_kind": "null",
+                  "value": "null"
+              },
+              "source_kind": "computed",
+              "type": "string",
+              "_auto_generated_by": null
+          }
+      ],
+      "all_groups": [
+          {
+              "name": "by Activity Id",
+              "slug": "activity_id79454434",
+              "columns": [
+                  {
+                      "id": "activity_id_0784c76f",
+                      "filters": [],
+                      "label": "Activity Id",
+                      "name": "",
+                      "output": true,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "source_kind": "group",
+                      "column_id": "activity_ida92e5240",
+                      "pivoted": false,
+                      "column_kind": "group"
+                  }
+              ],
+              "metrics": [
+                  {
+                      "id": "total_marketing_session_rows_3c678828",
+                      "label": "Total Marketing Session Rows",
+                      "agg_function": "COUNT_ALL",
+                      "output": true,
+                      "column_id": null,
+                      "filters": [],
+                      "pivot": [],
+                      "mavis_type": null,
+                      "type": "integer",
+                      "column_kind": "metrics"
+                  }
+              ],
+              "computed_columns": [],
+              "pivot": [],
+              "parent_filters": [],
+              "order": [
+                  {
+                      "column_id": "total_marketing_session_rows_3c678828",
+                      "order_direction": "desc"
+                  }
+              ]
+          }
+      ],
+      "order": [
+          {
+              "column_id": "ts176ad943",
+              "order_direction": "desc"
+          }
+      ],
+      "activity_stream": "activity_stream",
+      "swapped_ids": []
+  },
+  "_error": null,
+  "_column_shortcuts": [
+      {
+          "column_types": [
+              "string",
+              "number",
+              "boolean"
+          ],
+          "in_parent": true,
+          "in_group": false,
+          "key": "group_by",
+          "label": "Group by",
+          "options": [
+              {
+                  "key": "only_column",
+                  "label": "Only Column"
+              },
+              {
+                  "key": "by-day",
+                  "label": "By Day"
+              },
+              {
+                  "key": "by-week",
+                  "label": "By Week"
+              },
+              {
+                  "key": "by-month",
+                  "label": "By Month"
+              }
+          ]
+      },
+      {
+          "column_types": [
+              "timestamp"
+          ],
+          "in_parent": true,
+          "in_group": false,
+          "key": "group_by",
+          "label": "Group by",
+          "options": [
+              {
+                  "key": "only_column",
+                  "label": "Only Column"
+              },
+              {
+                  "key": "day",
+                  "label": "Day"
+              },
+              {
+                  "key": "week",
+                  "label": "Week"
+              },
+              {
+                  "key": "month",
+                  "label": "Month"
+              },
+              {
+                  "key": "year",
+                  "label": "Year"
+              }
+          ]
+      },
+      {
+          "column_types": [
+              "timestamp"
+          ],
+          "in_parent": true,
+          "in_group": true,
+          "key": "truncate_time",
+          "label": "Trucate Time",
+          "options": [
+              {
+                  "key": "day",
+                  "label": "Day"
+              },
+              {
+                  "key": "week",
+                  "label": "Week"
+              },
+              {
+                  "key": "month",
+                  "label": "Month"
+              },
+              {
+                  "key": "year",
+                  "label": "Year"
+              }
+          ]
+      },
+      {
+          "column_types": [
+              "timestamp"
+          ],
+          "in_parent": true,
+          "in_group": true,
+          "key": "extract_part",
+          "label": "Get Part of Timestamp",
+          "options": [
+              {
+                  "key": "DAYOFWEEK",
+                  "label": "Day of Week"
+              },
+              {
+                  "key": "second",
+                  "label": "Second"
+              },
+              {
+                  "key": "minute",
+                  "label": "Minute"
+              },
+              {
+                  "key": "hour",
+                  "label": "Hour"
+              },
+              {
+                  "key": "day",
+                  "label": "Day"
+              },
+              {
+                  "key": "week",
+                  "label": "Week"
+              },
+              {
+                  "key": "month",
+                  "label": "Month"
+              },
+              {
+                  "key": "quarter",
+                  "label": "Quarter"
+              },
+              {
+                  "key": "year",
+                  "label": "Year"
+              }
+          ]
+      },
+      {
+          "column_types": [
+              "timestamp",
+              "string",
+              "number",
+              "boolean"
+          ],
+          "in_parent": true,
+          "in_group": false,
+          "key": "add_exists_column",
+          "label": "Add IS NOT NULL flag (0/1)",
+          "options": []
+      },
+      {
+          "column_types": [
+              "timestamp"
+          ],
+          "in_parent": true,
+          "in_group": false,
+          "key": "quick_computed_column",
+          "label": "Add a Computed Column",
+          "options": [
+              {
+                  "key": "to_epoch",
+                  "label": "To Epoch"
+              }
+          ]
+      },
+      {
+          "column_types": [
+              "number"
+          ],
+          "in_parent": true,
+          "in_group": true,
+          "key": "quick_computed_column",
+          "label": "Add a Computed Column",
+          "options": [
+              {
+                  "key": "floor",
+                  "label": "Floor"
+              },
+              {
+                  "key": "decimate_by_5",
+                  "label": "Bucket by 5"
+              },
+              {
+                  "key": "abs",
+                  "label": "Get Absolute Value"
+              }
+          ]
+      },
+      {
+          "column_types": [
+              "string"
+          ],
+          "in_parent": true,
+          "in_group": false,
+          "key": "quick_computed_column",
+          "label": "Add a Computed Column",
+          "options": [
+              {
+                  "key": "lower",
+                  "label": "Lower text"
+              }
+          ]
+      },
+      {
+          "column_types": [
+              "number"
+          ],
+          "in_parent": false,
+          "in_group": true,
+          "key": "add_top_10",
+          "label": "Filter for Top 10",
+          "options": []
+      },
+      {
+          "column_types": [
+              "number"
+          ],
+          "in_parent": false,
+          "in_group": true,
+          "key": "percent_of_total",
+          "label": "Add % of Total",
+          "options": []
+      },
+      {
+          "column_types": [
+              "number"
+          ],
+          "in_parent": false,
+          "in_group": true,
+          "key": "running_total",
+          "label": "Add Cumulative SUM",
+          "options": []
+      },
+      {
+          "column_types": [
+              "number"
+          ],
+          "in_parent": false,
+          "in_group": true,
+          "key": "lag_diff",
+          "label": "Add Diff from last row",
+          "options": []
+      },
+      {
+          "column_types": [
+              "timestamp",
+              "string",
+              "number",
+              "boolean"
+          ],
+          "in_parent": true,
+          "in_group": true,
+          "key": "cascade_rename",
+          "label": "Cascade Rename",
+          "options": []
+      },
+      {
+          "column_types": [
+              "timestamp",
+              "string",
+              "number",
+              "boolean"
+          ],
+          "in_parent": true,
+          "in_group": false,
+          "key": "delete_dependent_metrics",
+          "label": "Delete Dependent Metrics",
+          "options": []
+      },
+      {
+          "column_types": [
+              "timestamp"
+          ],
+          "in_parent": true,
+          "in_group": false,
+          "key": "make_metric",
+          "label": "Add a Metric Column to groups",
+          "options": [
+              {
+                  "key": "count",
+                  "label": "Count"
+              },
+              {
+                  "key": "count_distinct",
+                  "label": "Count Distinct"
+              },
+              {
+                  "key": "max",
+                  "label": "Max"
+              },
+              {
+                  "key": "min",
+                  "label": "Min"
+              }
+          ]
+      },
+      {
+          "column_types": [
+              "string"
+          ],
+          "in_parent": true,
+          "in_group": false,
+          "key": "make_metric",
+          "label": "Add a Metric Column to groups",
+          "options": [
+              {
+                  "key": "count",
+                  "label": "Count"
+              },
+              {
+                  "key": "count_distinct",
+                  "label": "Count Distinct"
+              }
+          ]
+      },
+      {
+          "column_types": [
+              "number"
+          ],
+          "in_parent": true,
+          "in_group": false,
+          "key": "make_metric",
+          "label": "Add a Metric Column to groups",
+          "options": [
+              {
+                  "key": "count",
+                  "label": "Count"
+              },
+              {
+                  "key": "count_distinct",
+                  "label": "Count Distinct"
+              },
+              {
+                  "key": "sum",
+                  "label": "Sum"
+              },
+              {
+                  "key": "average",
+                  "label": "Average"
+              },
+              {
+                  "key": "max",
+                  "label": "Max"
+              },
+              {
+                  "key": "min",
+                  "label": "Min"
+              },
+              {
+                  "key": "median",
+                  "label": "Median"
+              },
+              {
+                  "key": "stddev",
+                  "label": "Stddev"
+              }
+          ]
+      },
+      {
+          "column_types": [
+              "boolean"
+          ],
+          "in_parent": true,
+          "in_group": false,
+          "key": "make_metric",
+          "label": "Add a Metric Column to groups",
+          "options": [
+              {
+                  "key": "count",
+                  "label": "Count"
+              },
+              {
+                  "key": "count_distinct",
+                  "label": "Count Distinct"
+              },
+              {
+                  "key": "max",
+                  "label": "Max"
+              },
+              {
+                  "key": "min",
+                  "label": "Min"
+              }
+          ]
+      }
+  ],
+  "_dataset_from_graph": {
+      "__typename": "dataset",
+      "company_category": null,
+      "created_at": "2021-05-03T22:17:22.587691+00:00",
+      "created_by": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091",
+      "description": null,
+      "last_viewed_at": "2021-05-04T21:14:54.812+00:00",
+      "id": "c3afa994-eb83-4884-ab65-a24edb9d64dc",
+      "materializations": [],
+      "name": "Debug \"null\" columns",
+      "slug": "debug_null_columns3e0a77ed",
+      "status": "live",
+      "updated_at": "2021-05-04T21:14:55.367736+00:00",
+      "user": {
+          "__typename": "user",
+          "id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091",
+          "email": "matt@narrator.ai",
+          "company_users": [
+              {
+                  "__typename": "company_user",
+                  "first_name": "Matt",
+                  "last_name": "Star",
+                  "id": "b23a2f26-f1c2-4fc0-bea6-cad80100b6d8",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": "Matt",
+                  "last_name": "Star",
+                  "id": "7891acc3-9a7a-4813-a754-0f4c1abc3e8d",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": "Matt",
+                  "last_name": "Star",
+                  "id": "f0f550d1-7339-4b1d-9cfc-222bc8837f6f",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": "Matt",
+                  "last_name": "Star",
+                  "id": "38fd596e-ed60-442b-bc84-29766d5ed134",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": "Matt",
+                  "last_name": "Star",
+                  "id": "74758773-80ce-4f1d-9755-1d3154a90632",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": "Matt",
+                  "last_name": "Star",
+                  "id": "20d2ef30-ff52-4110-ab71-6a08f93d26d7",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": "Matt",
+                  "last_name": "Star",
+                  "id": "7f0f6f08-f96e-44e9-af45-b66a4fdcec9c",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "4aef5641-747d-48bb-b3d2-8388a049f6c4",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "9f83960f-9ed9-4b03-8cf8-9ad77d44ea82",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "992e02e7-560a-43e1-8392-23231a787754",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "0081fc08-2633-45e3-a478-8f6c058fc299",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "98967e47-2784-4463-8b76-63b863a06dd4",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": "Matt",
+                  "last_name": "Star",
+                  "id": "f97b3c67-0dcd-4c91-95e3-5a251406b4c8",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "5a9b5e30-d601-4cc1-ad9d-9c9164d5776f",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "cc5e2476-cc09-4be0-8d12-a27a5b68bb6e",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "8071009d-d7c3-447a-9f00-8e9e3dcb74d2",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "1767ebac-999e-471c-a6b3-befa6ef7bc0c",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "eb054a62-7967-49ee-bcd9-e5fd48a6f705",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "c2bd5d39-4a3c-4a47-ae02-26de0945454f",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "48e07e06-099e-436d-8db1-71bc543d5067",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "59a056ca-05eb-4978-8789-8bd1a9b23374",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "550e362b-1d4f-4509-b5f6-a374b0fce208",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "9094e07f-e765-495e-8b8d-122ad1a1a91f",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "d801c9ed-9cb9-4e72-b6e8-8705932ebc6c",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "61471681-e629-42be-a6bb-79506ce1591e",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "6c79dfc8-9359-45a6-b0df-d223c2049177",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "e91fe7b7-a9ea-4ab4-8afe-81b7d6fee8aa",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "e259d414-694a-4076-a75a-f9b62849b8a4",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "87af72a7-ee46-47a5-bbe3-28be81d48f75",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "daeae1de-45eb-4fb0-a176-cba9e5ac95d0",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "ff96d070-d46d-4a12-aa54-ce12cbcc0e34",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "598b453e-8712-4a74-954d-7db6f627303c",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "626ecd26-7b30-42cf-ab04-fc1f7e5d5f74",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "8f913f5e-8505-46e3-8c98-c22f6dbbbbf6",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "855c7074-2a83-4c01-bb0f-c1dd5968ca8b",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "a696686f-6022-4492-b545-bc31a32c5584",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "8a263499-ea1b-4100-97b1-1d9a36de3718",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "05abc758-ab4d-49d6-a91c-9270327342b1",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "24e92a07-191e-4a41-8c20-c36bd03a9bed",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              },
+              {
+                  "__typename": "company_user",
+                  "first_name": null,
+                  "last_name": null,
+                  "id": "c15e25f2-c69e-4c5a-8d7b-f803b876b7ad",
+                  "role": "admin",
+                  "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+              }
+          ]
+      }
+  },
+  "_plotter_context": {},
+  "_definition_context": {
+      "column_options": [
+          {
+              "activity_ids": [
+                  "f17fabf3-f101-4384-9fca-0f38576feaec"
+              ],
+              "relationship_slug": null,
+              "filter_options": [
+                  {
+                      "name": "activity_id",
+                      "label": "Activity Id",
+                      "dropdown_label": "Activity Id",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "0%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "ts",
+                      "label": "Timestamp",
+                      "dropdown_label": "Timestamp",
+                      "mavis_type": "timestamp",
+                      "type": "timestamp",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "0%"
+                          },
+                          {
+                              "key": "Min Date",
+                              "value": "2018-01-04T23:13:01.242000"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "customer",
+                      "label": "Customer",
+                      "dropdown_label": "Customer",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "join_customer",
+                      "label": "Unique Identifier",
+                      "dropdown_label": "Unique Identifier",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "feature_1",
+                      "label": "Activity",
+                      "dropdown_label": "Activity",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "/",
+                              "value": "87.11%"
+                          },
+                          {
+                              "key": "/how-it-works/",
+                              "value": "3.57%"
+                          },
+                          {
+                              "key": "/narratives/",
+                              "value": "1.35%"
+                          },
+                          {
+                              "key": "/about-us/",
+                              "value": "1.15%"
+                          },
+                          {
+                              "key": "/pricing/",
+                              "value": "1.03%"
+                          },
+                          {
+                              "key": "/how-it-works",
+                              "value": "0.82%"
+                          },
+                          {
+                              "key": "/terms/",
+                              "value": "0.34%"
+                          },
+                          {
+                              "key": "/faq/",
+                              "value": "0.34%"
+                          },
+                          {
+                              "key": "/docs/getting-started/",
+                              "value": "0.32%"
+                          },
+                          {
+                              "key": "/how-it-works/universal-data-model/",
+                              "value": "0.31%"
+                          },
+                          {
+                              "key": "/get-started/",
+                              "value": "0.26%"
+                          },
+                          {
+                              "key": "/privacy/",
+                              "value": "0.25%"
+                          },
+                          {
+                              "key": "/pricing",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "/about-us",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "/activity-stream/",
+                              "value": "0.19%"
+                          },
+                          {
+                              "key": "/data-platform/",
+                              "value": "0.15%"
+                          },
+                          {
+                              "key": "/cases/",
+                              "value": "0.14%"
+                          },
+                          {
+                              "key": "/cases/data-science-and-analysis/",
+                              "value": "0.12%"
+                          },
+                          {
+                              "key": "/activity-schema/",
+                              "value": "0.12%"
+                          },
+                          {
+                              "key": "/mavis/",
+                              "value": "0.12%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "feature_2",
+                      "label": "Feature 1",
+                      "dropdown_label": "Feature 1",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "NULL",
+                              "value": "61.65%"
+                          },
+                          {
+                              "key": "https://www.google.com/",
+                              "value": "7.51%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/",
+                              "value": "3.62%"
+                          },
+                          {
+                              "key": "https://techcrunch.com/2019/08/20/here-are-the-82-startups-that-launched-on-day-2-of-ycs-s19-demo-days/",
+                              "value": "2.6%"
+                          },
+                          {
+                              "key": "https://news.ycombinator.com/",
+                              "value": "2.55%"
+                          },
+                          {
+                              "key": "https://techcrunch.com/2019/08/16/y-combinator-backed-narrator-wants-to-become-the-operating-system-for-data-science/",
+                              "value": "1.45%"
+                          },
+                          {
+                              "key": "https://www.ycombinator.com/companies/",
+                              "value": "1.03%"
+                          },
+                          {
+                              "key": "https://www.linkedin.com/",
+                              "value": "0.91%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/posts/narrator?utm_campaign=3102_2019-08-18&utm_medium=email&utm_source=Product+Hunt&utm_term=editorial",
+                              "value": "0.73%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/posts/narrator",
+                              "value": "0.64%"
+                          },
+                          {
+                              "key": "https://www.google.com",
+                              "value": "0.62%"
+                          },
+                          {
+                              "key": "https://www.ycombinator.com/companies/?batch=s2019",
+                              "value": "0.62%"
+                          },
+                          {
+                              "key": "https://news.ycombinator.com",
+                              "value": "0.59%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/",
+                              "value": "0.51%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/posts/narrator-2",
+                              "value": "0.51%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/about-us",
+                              "value": "0.44%"
+                          },
+                          {
+                              "key": "https://techcrunch.com/2019/08/16/y-combinator-backed-narrator-wants-to-become-the-operating-system-for-data-science/amp/",
+                              "value": "0.41%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=producthunt",
+                              "value": "0.38%"
+                          },
+                          {
+                              "key": "https://stackshare.io/",
+                              "value": "0.37%"
+                          },
+                          {
+                              "key": "https://www.linkedin.com/company/narratorai/about/",
+                              "value": "0.34%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "feature_3",
+                      "label": "Feature 2",
+                      "dropdown_label": "Feature 2",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "test",
+                              "value": "54.97%"
+                          },
+                          {
+                              "key": "NULL",
+                              "value": "45.03%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "link",
+                      "label": "Link",
+                      "dropdown_label": "Link",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "https://www.narrator.ai/",
+                              "value": "80.6%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=producthunt",
+                              "value": "3.73%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/how-it-works/",
+                              "value": "3.52%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/narratives/",
+                              "value": "1.29%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/about-us/",
+                              "value": "1.14%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/pricing/",
+                              "value": "0.95%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/how-it-works",
+                              "value": "0.82%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=stackshare",
+                              "value": "0.38%"
+                          },
+                          {
+                              "key": "https://master--www-narrator.netlify.com/",
+                              "value": "0.36%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/faq/",
+                              "value": "0.34%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/terms/",
+                              "value": "0.33%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/docs/getting-started/",
+                              "value": "0.31%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/how-it-works/universal-data-model/",
+                              "value": "0.31%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/privacy/",
+                              "value": "0.25%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/get-started/",
+                              "value": "0.24%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/about-us",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/pricing",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=Welcome.AI",
+                              "value": "0.19%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/activity-stream/",
+                              "value": "0.19%"
+                          },
+                          {
+                              "key": "http://www.narrator.ai/",
+                              "value": "0.18%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "activity_occurrence",
+                      "label": "Activity Occurrence",
+                      "dropdown_label": "Activity Occurrence",
+                      "mavis_type": "integer",
+                      "type": "integer",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "First (1)",
+                              "value": "74.12%"
+                          },
+                          {
+                              "key": "Recurring (2+)",
+                              "value": "25.88%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "activity_repeated_at",
+                      "label": "Activity Repeated At",
+                      "dropdown_label": "Activity Repeated At",
+                      "mavis_type": "timestamp",
+                      "type": "timestamp",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "75.48%"
+                          },
+                          {
+                              "key": "Min Date",
+                              "value": "2018-01-05T19:44:17.694000"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "source",
+                      "label": "Source",
+                      "dropdown_label": "Source",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "segment",
+                              "value": "100%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "source_id",
+                      "label": "Source Id",
+                      "dropdown_label": "Source Id",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "0%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "users-company",
+                      "label": "Company",
+                      "dropdown_label": "Company",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-customer",
+                      "label": "Customer",
+                      "dropdown_label": "Customer",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-first_name",
+                      "label": "First Name",
+                      "dropdown_label": "First Name",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-last_name",
+                      "label": "Last Name",
+                      "dropdown_label": "Last Name",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-name",
+                      "label": "Name",
+                      "dropdown_label": "Name",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-phone",
+                      "label": "Phone",
+                      "dropdown_label": "Phone",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-title",
+                      "label": "Title",
+                      "dropdown_label": "Title",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-user_created_at",
+                      "label": "User Created At",
+                      "dropdown_label": "User Created At",
+                      "mavis_type": "timestamp",
+                      "type": "timestamp",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  }
+              ],
+              "select_options": [
+                  {
+                      "name": "activity_id",
+                      "label": "Activity Id",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "0%"
+                          }
+                      ],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "ts",
+                      "label": "Timestamp",
+                      "dropdown_label": null,
+                      "mavis_type": "timestamp",
+                      "type": "timestamp",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "0%"
+                          },
+                          {
+                              "key": "Min Date",
+                              "value": "2018-01-04T23:13:01.242000"
+                          }
+                      ],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "customer",
+                      "label": "Customer",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "join_customer",
+                      "label": "Unique Identifier",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "feature_1",
+                      "label": "Activity",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "/",
+                              "value": "87.11%"
+                          },
+                          {
+                              "key": "/how-it-works/",
+                              "value": "3.57%"
+                          },
+                          {
+                              "key": "/narratives/",
+                              "value": "1.35%"
+                          },
+                          {
+                              "key": "/about-us/",
+                              "value": "1.15%"
+                          },
+                          {
+                              "key": "/pricing/",
+                              "value": "1.03%"
+                          },
+                          {
+                              "key": "/how-it-works",
+                              "value": "0.82%"
+                          },
+                          {
+                              "key": "/terms/",
+                              "value": "0.34%"
+                          },
+                          {
+                              "key": "/faq/",
+                              "value": "0.34%"
+                          },
+                          {
+                              "key": "/docs/getting-started/",
+                              "value": "0.32%"
+                          },
+                          {
+                              "key": "/how-it-works/universal-data-model/",
+                              "value": "0.31%"
+                          },
+                          {
+                              "key": "/get-started/",
+                              "value": "0.26%"
+                          },
+                          {
+                              "key": "/privacy/",
+                              "value": "0.25%"
+                          },
+                          {
+                              "key": "/pricing",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "/about-us",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "/activity-stream/",
+                              "value": "0.19%"
+                          },
+                          {
+                              "key": "/data-platform/",
+                              "value": "0.15%"
+                          },
+                          {
+                              "key": "/cases/",
+                              "value": "0.14%"
+                          },
+                          {
+                              "key": "/cases/data-science-and-analysis/",
+                              "value": "0.12%"
+                          },
+                          {
+                              "key": "/activity-schema/",
+                              "value": "0.12%"
+                          },
+                          {
+                              "key": "/mavis/",
+                              "value": "0.12%"
+                          }
+                      ],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "feature_2",
+                      "label": "Feature 1",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "NULL",
+                              "value": "61.65%"
+                          },
+                          {
+                              "key": "https://www.google.com/",
+                              "value": "7.51%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/",
+                              "value": "3.62%"
+                          },
+                          {
+                              "key": "https://techcrunch.com/2019/08/20/here-are-the-82-startups-that-launched-on-day-2-of-ycs-s19-demo-days/",
+                              "value": "2.6%"
+                          },
+                          {
+                              "key": "https://news.ycombinator.com/",
+                              "value": "2.55%"
+                          },
+                          {
+                              "key": "https://techcrunch.com/2019/08/16/y-combinator-backed-narrator-wants-to-become-the-operating-system-for-data-science/",
+                              "value": "1.45%"
+                          },
+                          {
+                              "key": "https://www.ycombinator.com/companies/",
+                              "value": "1.03%"
+                          },
+                          {
+                              "key": "https://www.linkedin.com/",
+                              "value": "0.91%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/posts/narrator?utm_campaign=3102_2019-08-18&utm_medium=email&utm_source=Product+Hunt&utm_term=editorial",
+                              "value": "0.73%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/posts/narrator",
+                              "value": "0.64%"
+                          },
+                          {
+                              "key": "https://www.google.com",
+                              "value": "0.62%"
+                          },
+                          {
+                              "key": "https://www.ycombinator.com/companies/?batch=s2019",
+                              "value": "0.62%"
+                          },
+                          {
+                              "key": "https://news.ycombinator.com",
+                              "value": "0.59%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/",
+                              "value": "0.51%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/posts/narrator-2",
+                              "value": "0.51%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/about-us",
+                              "value": "0.44%"
+                          },
+                          {
+                              "key": "https://techcrunch.com/2019/08/16/y-combinator-backed-narrator-wants-to-become-the-operating-system-for-data-science/amp/",
+                              "value": "0.41%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=producthunt",
+                              "value": "0.38%"
+                          },
+                          {
+                              "key": "https://stackshare.io/",
+                              "value": "0.37%"
+                          },
+                          {
+                              "key": "https://www.linkedin.com/company/narratorai/about/",
+                              "value": "0.34%"
+                          }
+                      ],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "feature_3",
+                      "label": "Feature 2",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "test",
+                              "value": "54.97%"
+                          },
+                          {
+                              "key": "NULL",
+                              "value": "45.03%"
+                          }
+                      ],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "link",
+                      "label": "Link",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "https://www.narrator.ai/",
+                              "value": "80.6%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=producthunt",
+                              "value": "3.73%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/how-it-works/",
+                              "value": "3.52%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/narratives/",
+                              "value": "1.29%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/about-us/",
+                              "value": "1.14%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/pricing/",
+                              "value": "0.95%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/how-it-works",
+                              "value": "0.82%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=stackshare",
+                              "value": "0.38%"
+                          },
+                          {
+                              "key": "https://master--www-narrator.netlify.com/",
+                              "value": "0.36%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/faq/",
+                              "value": "0.34%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/terms/",
+                              "value": "0.33%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/docs/getting-started/",
+                              "value": "0.31%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/how-it-works/universal-data-model/",
+                              "value": "0.31%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/privacy/",
+                              "value": "0.25%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/get-started/",
+                              "value": "0.24%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/about-us",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/pricing",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=Welcome.AI",
+                              "value": "0.19%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/activity-stream/",
+                              "value": "0.19%"
+                          },
+                          {
+                              "key": "http://www.narrator.ai/",
+                              "value": "0.18%"
+                          }
+                      ],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "activity_occurrence",
+                      "label": "Activity Occurrence",
+                      "dropdown_label": null,
+                      "mavis_type": "integer",
+                      "type": "integer",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "First (1)",
+                              "value": "74.12%"
+                          },
+                          {
+                              "key": "Recurring (2+)",
+                              "value": "25.88%"
+                          }
+                      ],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "activity_repeated_at",
+                      "label": "Activity Repeated At",
+                      "dropdown_label": "Activity Repeated At",
+                      "mavis_type": "timestamp",
+                      "type": "timestamp",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "75.48%"
+                          },
+                          {
+                              "key": "Min Date",
+                              "value": "2018-01-05T19:44:17.694000"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "source",
+                      "label": "Source",
+                      "dropdown_label": "Source",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "segment",
+                              "value": "100%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "source_id",
+                      "label": "Source Id",
+                      "dropdown_label": "Source Id",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "0%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "users-company",
+                      "label": "Company",
+                      "dropdown_label": "Company",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-customer",
+                      "label": "Customer",
+                      "dropdown_label": "Customer",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-first_name",
+                      "label": "First Name",
+                      "dropdown_label": "First Name",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-last_name",
+                      "label": "Last Name",
+                      "dropdown_label": "Last Name",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-name",
+                      "label": "Name",
+                      "dropdown_label": "Name",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-phone",
+                      "label": "Phone",
+                      "dropdown_label": "Phone",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-title",
+                      "label": "Title",
+                      "dropdown_label": "Title",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-user_created_at",
+                      "label": "User Created At",
+                      "dropdown_label": "User Created At",
+                      "mavis_type": "timestamp",
+                      "type": "timestamp",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  }
+              ]
+          }
+      ],
+      "form_value": {
+          "cohort": {
+              "activity_ids": [
+                  "f17fabf3-f101-4384-9fca-0f38576feaec"
+              ],
+              "columns": [
+                  {
+                      "name": "activity_id",
+                      "label": "Activity Id",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "ts",
+                      "label": "Timestamp",
+                      "dropdown_label": null,
+                      "mavis_type": "timestamp",
+                      "type": "timestamp",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "customer",
+                      "label": "Customer",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "join_customer",
+                      "label": "Unique Identifier",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "feature_1",
+                      "label": "Activity",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "feature_2",
+                      "label": "Feature 1",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "feature_3",
+                      "label": "Feature 2",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "link",
+                      "label": "Link",
+                      "dropdown_label": null,
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": null
+                  },
+                  {
+                      "name": "activity_occurrence",
+                      "label": "Activity Occurrence",
+                      "dropdown_label": null,
+                      "mavis_type": "integer",
+                      "type": "integer",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": null
+                  }
+              ],
+              "occurrence_filter": {
+                  "occurrence": "all",
+                  "custom_value": null
+              },
+              "column_filters": [],
+              "all_columns": [
+                  {
+                      "name": "activity_id",
+                      "label": "Activity Id",
+                      "dropdown_label": "Activity Id",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "0%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "ts",
+                      "label": "Timestamp",
+                      "dropdown_label": "Timestamp",
+                      "mavis_type": "timestamp",
+                      "type": "timestamp",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "0%"
+                          },
+                          {
+                              "key": "Min Date",
+                              "value": "2018-01-04T23:13:01.242000"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "customer",
+                      "label": "Customer",
+                      "dropdown_label": "Customer",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "join_customer",
+                      "label": "Unique Identifier",
+                      "dropdown_label": "Unique Identifier",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "feature_1",
+                      "label": "Activity",
+                      "dropdown_label": "Activity",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "/",
+                              "value": "87.11%"
+                          },
+                          {
+                              "key": "/how-it-works/",
+                              "value": "3.57%"
+                          },
+                          {
+                              "key": "/narratives/",
+                              "value": "1.35%"
+                          },
+                          {
+                              "key": "/about-us/",
+                              "value": "1.15%"
+                          },
+                          {
+                              "key": "/pricing/",
+                              "value": "1.03%"
+                          },
+                          {
+                              "key": "/how-it-works",
+                              "value": "0.82%"
+                          },
+                          {
+                              "key": "/terms/",
+                              "value": "0.34%"
+                          },
+                          {
+                              "key": "/faq/",
+                              "value": "0.34%"
+                          },
+                          {
+                              "key": "/docs/getting-started/",
+                              "value": "0.32%"
+                          },
+                          {
+                              "key": "/how-it-works/universal-data-model/",
+                              "value": "0.31%"
+                          },
+                          {
+                              "key": "/get-started/",
+                              "value": "0.26%"
+                          },
+                          {
+                              "key": "/privacy/",
+                              "value": "0.25%"
+                          },
+                          {
+                              "key": "/pricing",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "/about-us",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "/activity-stream/",
+                              "value": "0.19%"
+                          },
+                          {
+                              "key": "/data-platform/",
+                              "value": "0.15%"
+                          },
+                          {
+                              "key": "/cases/",
+                              "value": "0.14%"
+                          },
+                          {
+                              "key": "/cases/data-science-and-analysis/",
+                              "value": "0.12%"
+                          },
+                          {
+                              "key": "/activity-schema/",
+                              "value": "0.12%"
+                          },
+                          {
+                              "key": "/mavis/",
+                              "value": "0.12%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "feature_2",
+                      "label": "Feature 1",
+                      "dropdown_label": "Feature 1",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "NULL",
+                              "value": "61.65%"
+                          },
+                          {
+                              "key": "https://www.google.com/",
+                              "value": "7.51%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/",
+                              "value": "3.62%"
+                          },
+                          {
+                              "key": "https://techcrunch.com/2019/08/20/here-are-the-82-startups-that-launched-on-day-2-of-ycs-s19-demo-days/",
+                              "value": "2.6%"
+                          },
+                          {
+                              "key": "https://news.ycombinator.com/",
+                              "value": "2.55%"
+                          },
+                          {
+                              "key": "https://techcrunch.com/2019/08/16/y-combinator-backed-narrator-wants-to-become-the-operating-system-for-data-science/",
+                              "value": "1.45%"
+                          },
+                          {
+                              "key": "https://www.ycombinator.com/companies/",
+                              "value": "1.03%"
+                          },
+                          {
+                              "key": "https://www.linkedin.com/",
+                              "value": "0.91%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/posts/narrator?utm_campaign=3102_2019-08-18&utm_medium=email&utm_source=Product+Hunt&utm_term=editorial",
+                              "value": "0.73%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/posts/narrator",
+                              "value": "0.64%"
+                          },
+                          {
+                              "key": "https://www.google.com",
+                              "value": "0.62%"
+                          },
+                          {
+                              "key": "https://www.ycombinator.com/companies/?batch=s2019",
+                              "value": "0.62%"
+                          },
+                          {
+                              "key": "https://news.ycombinator.com",
+                              "value": "0.59%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/",
+                              "value": "0.51%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/posts/narrator-2",
+                              "value": "0.51%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/about-us",
+                              "value": "0.44%"
+                          },
+                          {
+                              "key": "https://techcrunch.com/2019/08/16/y-combinator-backed-narrator-wants-to-become-the-operating-system-for-data-science/amp/",
+                              "value": "0.41%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=producthunt",
+                              "value": "0.38%"
+                          },
+                          {
+                              "key": "https://stackshare.io/",
+                              "value": "0.37%"
+                          },
+                          {
+                              "key": "https://www.linkedin.com/company/narratorai/about/",
+                              "value": "0.34%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "feature_3",
+                      "label": "Feature 2",
+                      "dropdown_label": "Feature 2",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "test",
+                              "value": "54.97%"
+                          },
+                          {
+                              "key": "NULL",
+                              "value": "45.03%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "link",
+                      "label": "Link",
+                      "dropdown_label": "Link",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "https://www.narrator.ai/",
+                              "value": "80.6%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=producthunt",
+                              "value": "3.73%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/how-it-works/",
+                              "value": "3.52%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/narratives/",
+                              "value": "1.29%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/about-us/",
+                              "value": "1.14%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/pricing/",
+                              "value": "0.95%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/how-it-works",
+                              "value": "0.82%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=stackshare",
+                              "value": "0.38%"
+                          },
+                          {
+                              "key": "https://master--www-narrator.netlify.com/",
+                              "value": "0.36%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/faq/",
+                              "value": "0.34%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/terms/",
+                              "value": "0.33%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/docs/getting-started/",
+                              "value": "0.31%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/how-it-works/universal-data-model/",
+                              "value": "0.31%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/privacy/",
+                              "value": "0.25%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/get-started/",
+                              "value": "0.24%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/about-us",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/pricing",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=Welcome.AI",
+                              "value": "0.19%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/activity-stream/",
+                              "value": "0.19%"
+                          },
+                          {
+                              "key": "http://www.narrator.ai/",
+                              "value": "0.18%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "activity_occurrence",
+                      "label": "Activity Occurrence",
+                      "dropdown_label": "Activity Occurrence",
+                      "mavis_type": "integer",
+                      "type": "integer",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "First (1)",
+                              "value": "74.12%"
+                          },
+                          {
+                              "key": "Recurring (2+)",
+                              "value": "25.88%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "activity_repeated_at",
+                      "label": "Activity Repeated At",
+                      "dropdown_label": "Activity Repeated At",
+                      "mavis_type": "timestamp",
+                      "type": "timestamp",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "75.48%"
+                          },
+                          {
+                              "key": "Min Date",
+                              "value": "2018-01-05T19:44:17.694000"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "source",
+                      "label": "Source",
+                      "dropdown_label": "Source",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "segment",
+                              "value": "100%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "source_id",
+                      "label": "Source Id",
+                      "dropdown_label": "Source Id",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "0%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "users-company",
+                      "label": "Company",
+                      "dropdown_label": "Company",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-customer",
+                      "label": "Customer",
+                      "dropdown_label": "Customer",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-first_name",
+                      "label": "First Name",
+                      "dropdown_label": "First Name",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-last_name",
+                      "label": "Last Name",
+                      "dropdown_label": "Last Name",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-name",
+                      "label": "Name",
+                      "dropdown_label": "Name",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-phone",
+                      "label": "Phone",
+                      "dropdown_label": "Phone",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-title",
+                      "label": "Title",
+                      "dropdown_label": "Title",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-user_created_at",
+                      "label": "User Created At",
+                      "dropdown_label": "User Created At",
+                      "mavis_type": "timestamp",
+                      "type": "timestamp",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  }
+              ],
+              "raw_columns": [
+                  {
+                      "name": "activity_id",
+                      "label": "Activity Id",
+                      "dropdown_label": "Activity Id",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "0%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "ts",
+                      "label": "Timestamp",
+                      "dropdown_label": "Timestamp",
+                      "mavis_type": "timestamp",
+                      "type": "timestamp",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "0%"
+                          },
+                          {
+                              "key": "Min Date",
+                              "value": "2018-01-04T23:13:01.242000"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "customer",
+                      "label": "Customer",
+                      "dropdown_label": "Customer",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "join_customer",
+                      "label": "Unique Identifier",
+                      "dropdown_label": "Unique Identifier",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "feature_1",
+                      "label": "Activity",
+                      "dropdown_label": "Activity",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "/",
+                              "value": "87.11%"
+                          },
+                          {
+                              "key": "/how-it-works/",
+                              "value": "3.57%"
+                          },
+                          {
+                              "key": "/narratives/",
+                              "value": "1.35%"
+                          },
+                          {
+                              "key": "/about-us/",
+                              "value": "1.15%"
+                          },
+                          {
+                              "key": "/pricing/",
+                              "value": "1.03%"
+                          },
+                          {
+                              "key": "/how-it-works",
+                              "value": "0.82%"
+                          },
+                          {
+                              "key": "/terms/",
+                              "value": "0.34%"
+                          },
+                          {
+                              "key": "/faq/",
+                              "value": "0.34%"
+                          },
+                          {
+                              "key": "/docs/getting-started/",
+                              "value": "0.32%"
+                          },
+                          {
+                              "key": "/how-it-works/universal-data-model/",
+                              "value": "0.31%"
+                          },
+                          {
+                              "key": "/get-started/",
+                              "value": "0.26%"
+                          },
+                          {
+                              "key": "/privacy/",
+                              "value": "0.25%"
+                          },
+                          {
+                              "key": "/pricing",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "/about-us",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "/activity-stream/",
+                              "value": "0.19%"
+                          },
+                          {
+                              "key": "/data-platform/",
+                              "value": "0.15%"
+                          },
+                          {
+                              "key": "/cases/",
+                              "value": "0.14%"
+                          },
+                          {
+                              "key": "/cases/data-science-and-analysis/",
+                              "value": "0.12%"
+                          },
+                          {
+                              "key": "/activity-schema/",
+                              "value": "0.12%"
+                          },
+                          {
+                              "key": "/mavis/",
+                              "value": "0.12%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "feature_2",
+                      "label": "Feature 1",
+                      "dropdown_label": "Feature 1",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "NULL",
+                              "value": "61.65%"
+                          },
+                          {
+                              "key": "https://www.google.com/",
+                              "value": "7.51%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/",
+                              "value": "3.62%"
+                          },
+                          {
+                              "key": "https://techcrunch.com/2019/08/20/here-are-the-82-startups-that-launched-on-day-2-of-ycs-s19-demo-days/",
+                              "value": "2.6%"
+                          },
+                          {
+                              "key": "https://news.ycombinator.com/",
+                              "value": "2.55%"
+                          },
+                          {
+                              "key": "https://techcrunch.com/2019/08/16/y-combinator-backed-narrator-wants-to-become-the-operating-system-for-data-science/",
+                              "value": "1.45%"
+                          },
+                          {
+                              "key": "https://www.ycombinator.com/companies/",
+                              "value": "1.03%"
+                          },
+                          {
+                              "key": "https://www.linkedin.com/",
+                              "value": "0.91%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/posts/narrator?utm_campaign=3102_2019-08-18&utm_medium=email&utm_source=Product+Hunt&utm_term=editorial",
+                              "value": "0.73%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/posts/narrator",
+                              "value": "0.64%"
+                          },
+                          {
+                              "key": "https://www.google.com",
+                              "value": "0.62%"
+                          },
+                          {
+                              "key": "https://www.ycombinator.com/companies/?batch=s2019",
+                              "value": "0.62%"
+                          },
+                          {
+                              "key": "https://news.ycombinator.com",
+                              "value": "0.59%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/",
+                              "value": "0.51%"
+                          },
+                          {
+                              "key": "https://www.producthunt.com/posts/narrator-2",
+                              "value": "0.51%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/about-us",
+                              "value": "0.44%"
+                          },
+                          {
+                              "key": "https://techcrunch.com/2019/08/16/y-combinator-backed-narrator-wants-to-become-the-operating-system-for-data-science/amp/",
+                              "value": "0.41%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=producthunt",
+                              "value": "0.38%"
+                          },
+                          {
+                              "key": "https://stackshare.io/",
+                              "value": "0.37%"
+                          },
+                          {
+                              "key": "https://www.linkedin.com/company/narratorai/about/",
+                              "value": "0.34%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "feature_3",
+                      "label": "Feature 2",
+                      "dropdown_label": "Feature 2",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "test",
+                              "value": "54.97%"
+                          },
+                          {
+                              "key": "NULL",
+                              "value": "45.03%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "link",
+                      "label": "Link",
+                      "dropdown_label": "Link",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "https://www.narrator.ai/",
+                              "value": "80.6%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=producthunt",
+                              "value": "3.73%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/how-it-works/",
+                              "value": "3.52%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/narratives/",
+                              "value": "1.29%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/about-us/",
+                              "value": "1.14%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/pricing/",
+                              "value": "0.95%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/how-it-works",
+                              "value": "0.82%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=stackshare",
+                              "value": "0.38%"
+                          },
+                          {
+                              "key": "https://master--www-narrator.netlify.com/",
+                              "value": "0.36%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/faq/",
+                              "value": "0.34%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/terms/",
+                              "value": "0.33%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/docs/getting-started/",
+                              "value": "0.31%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/how-it-works/universal-data-model/",
+                              "value": "0.31%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/privacy/",
+                              "value": "0.25%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/get-started/",
+                              "value": "0.24%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/about-us",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/pricing",
+                              "value": "0.2%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/?ref=Welcome.AI",
+                              "value": "0.19%"
+                          },
+                          {
+                              "key": "https://www.narrator.ai/activity-stream/",
+                              "value": "0.19%"
+                          },
+                          {
+                              "key": "http://www.narrator.ai/",
+                              "value": "0.18%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "activity_occurrence",
+                      "label": "Activity Occurrence",
+                      "dropdown_label": "Activity Occurrence",
+                      "mavis_type": "integer",
+                      "type": "integer",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "First (1)",
+                              "value": "74.12%"
+                          },
+                          {
+                              "key": "Recurring (2+)",
+                              "value": "25.88%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "activity_repeated_at",
+                      "label": "Activity Repeated At",
+                      "dropdown_label": "Activity Repeated At",
+                      "mavis_type": "timestamp",
+                      "type": "timestamp",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "75.48%"
+                          },
+                          {
+                              "key": "Min Date",
+                              "value": "2018-01-05T19:44:17.694000"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "source",
+                      "label": "Source",
+                      "dropdown_label": "Source",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "segment",
+                              "value": "100%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "source_id",
+                      "label": "Source Id",
+                      "dropdown_label": "Source Id",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [
+                          {
+                              "key": "% NULL",
+                              "value": "0%"
+                          }
+                      ],
+                      "opt_group": "Activity Columns"
+                  },
+                  {
+                      "name": "users-company",
+                      "label": "Company",
+                      "dropdown_label": "Company",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-customer",
+                      "label": "Customer",
+                      "dropdown_label": "Customer",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-first_name",
+                      "label": "First Name",
+                      "dropdown_label": "First Name",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-last_name",
+                      "label": "Last Name",
+                      "dropdown_label": "Last Name",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-name",
+                      "label": "Name",
+                      "dropdown_label": "Name",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-phone",
+                      "label": "Phone",
+                      "dropdown_label": "Phone",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-title",
+                      "label": "Title",
+                      "dropdown_label": "Title",
+                      "mavis_type": "string",
+                      "type": "string",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  },
+                  {
+                      "name": "users-user_created_at",
+                      "label": "User Created At",
+                      "dropdown_label": "User Created At",
+                      "mavis_type": "timestamp",
+                      "type": "timestamp",
+                      "enrichment_table": null,
+                      "values": [],
+                      "opt_group": "Customer Attributes"
+                  }
+              ]
+          },
+          "append_activities": []
+      }
+  },
+  "_plan_execution": {
+      "plan": [],
+      "show_user": false,
+      "staged_dataset": {
+          "fields": {},
+          "query": {
+              "activities": [
+                  {
+                      "id": "marketing_session98626881",
+                      "name": "Marketing Session",
+                      "slug": [
+                          "marketing_session"
+                      ],
+                      "activity_ids": [
+                          "f17fabf3-f101-4384-9fca-0f38576feaec"
+                      ],
+                      "did": true,
+                      "occurrence": "all",
+                      "occurrence_value": null,
+                      "config": {
+                          "has_source": true,
+                          "activity_stream": "activity_stream"
+                      },
+                      "relationships": [],
+                      "filters": [],
+                      "kind": "limiting"
+                  }
+              ],
+              "columns": [
+                  {
+                      "id": "activity_ida92e5240",
+                      "name": "activity_id",
+                      "label": "Activity Id",
+                      "output": true,
+                      "filters": [],
+                      "mavis_type": "string",
+                      "group_func": null,
+                      "type": "string",
+                      "source_kind": "activity",
+                      "source_details": {
+                          "activity_kind": "limiting",
+                          "activity_id": "marketing_session98626881",
+                          "enrichment_table": null,
+                          "applied_function": null
+                      }
+                  },
+                  {
+                      "id": "ts176ad943",
+                      "name": "ts",
+                      "label": "Timestamp",
+                      "output": true,
+                      "filters": [],
+                      "mavis_type": "timestamp",
+                      "group_func": null,
+                      "type": "timestamp",
+                      "source_kind": "activity",
+                      "source_details": {
+                          "activity_kind": "limiting",
+                          "activity_id": "marketing_session98626881",
+                          "enrichment_table": null,
+                          "applied_function": null
+                      }
+                  },
+                  {
+                      "id": "customere9142dbe",
+                      "name": "customer",
+                      "label": "Customer",
+                      "output": true,
+                      "filters": [],
+                      "mavis_type": "string",
+                      "group_func": null,
+                      "type": "string",
+                      "source_kind": "activity",
+                      "source_details": {
+                          "activity_kind": "limiting",
+                          "activity_id": "marketing_session98626881",
+                          "enrichment_table": null,
+                          "applied_function": null
+                      }
+                  },
+                  {
+                      "id": "join_customerb5288ada",
+                      "name": "join_customer",
+                      "label": "Unique Identifier",
+                      "output": true,
+                      "filters": [],
+                      "mavis_type": "string",
+                      "group_func": null,
+                      "type": "string",
+                      "source_kind": "activity",
+                      "source_details": {
+                          "activity_kind": "limiting",
+                          "activity_id": "marketing_session98626881",
+                          "enrichment_table": null,
+                          "applied_function": null
+                      }
+                  },
+                  {
+                      "id": "feature_17ec4e8f5",
+                      "name": "feature_1",
+                      "label": "Activity",
+                      "output": true,
+                      "filters": [],
+                      "mavis_type": "string",
+                      "group_func": null,
+                      "type": "string",
+                      "source_kind": "activity",
+                      "source_details": {
+                          "activity_kind": "limiting",
+                          "activity_id": "marketing_session98626881",
+                          "enrichment_table": null,
+                          "applied_function": null
+                      }
+                  },
+                  {
+                      "id": "feature_2489c1357",
+                      "name": "feature_2",
+                      "label": "Feature 1",
+                      "output": true,
+                      "filters": [],
+                      "mavis_type": "string",
+                      "group_func": null,
+                      "type": "string",
+                      "source_kind": "activity",
+                      "source_details": {
+                          "activity_kind": "limiting",
+                          "activity_id": "marketing_session98626881",
+                          "enrichment_table": null,
+                          "applied_function": null
+                      }
+                  },
+                  {
+                      "id": "feature_3bb30331b",
+                      "name": "feature_3",
+                      "label": "Feature 2",
+                      "output": true,
+                      "filters": [],
+                      "mavis_type": "string",
+                      "group_func": null,
+                      "type": "string",
+                      "source_kind": "activity",
+                      "source_details": {
+                          "activity_kind": "limiting",
+                          "activity_id": "marketing_session98626881",
+                          "enrichment_table": null,
+                          "applied_function": null
+                      }
+                  },
+                  {
+                      "id": "link1ed456ae",
+                      "name": "link",
+                      "label": "Link",
+                      "output": true,
+                      "filters": [],
+                      "mavis_type": "string",
+                      "group_func": null,
+                      "type": "string",
+                      "source_kind": "activity",
+                      "source_details": {
+                          "activity_kind": "limiting",
+                          "activity_id": "marketing_session98626881",
+                          "enrichment_table": null,
+                          "applied_function": null
+                      }
+                  },
+                  {
+                      "id": "activity_occurrence4e669430",
+                      "name": "activity_occurrence",
+                      "label": "Activity Occurrence",
+                      "output": true,
+                      "filters": [],
+                      "mavis_type": "integer",
+                      "group_func": null,
+                      "type": "number",
+                      "source_kind": "activity",
+                      "source_details": {
+                          "activity_kind": "limiting",
+                          "activity_id": "marketing_session98626881",
+                          "enrichment_table": null,
+                          "applied_function": null
+                      }
+                  },
+                  {
+                      "id": "broken_null_column",
+                      "filters": [],
+                      "label": "Broken Null Column",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "ifttt",
+                          "cases": [
+                              {
+                                  "filters": [
+                                      {
+                                          "column_id": "feature_2489c1357",
+                                          "filter": {
+                                              "operator": "equal",
+                                              "kind": "value",
+                                              "or_null": false,
+                                              "value": "fun stuff"
+                                          }
+                                      }
+                                  ],
+                                  "value_kind": "column_id",
+                                  "value": "feature_2489c1357"
+                              }
+                          ],
+                          "value_kind": "null",
+                          "value": "null"
+                      },
+                      "source_kind": "computed",
+                      "type": "null",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "id": "broken_null_column__qeXeYQ3y",
+                      "filters": [],
+                      "label": "Broken Null Column NEW",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "ifttt",
+                          "cases": [
+                              {
+                                  "filters": [
+                                      {
+                                          "column_id": "feature_2489c1357",
+                                          "filter": {
+                                              "operator": "equal",
+                                              "kind": "value",
+                                              "or_null": false,
+                                              "value": "fun stuff"
+                                          }
+                                      }
+                                  ],
+                                  "value_kind": "string",
+                                  "value": "Should be able to select this"
+                              }
+                          ],
+                          "value_kind": "null",
+                          "value": "null"
+                      },
+                      "source_kind": "computed",
+                      "type": "string",
+                      "_auto_generated_by": null
+                  }
+              ],
+              "all_groups": [
+                  {
+                      "name": "by Activity Id",
+                      "slug": "activity_id79454434",
+                      "columns": [
+                          {
+                              "id": "activity_id_0784c76f",
+                              "filters": [],
+                              "label": "Activity Id",
+                              "name": "",
+                              "output": true,
+                              "mavis_type": "string",
+                              "type": "string",
+                              "source_kind": "group",
+                              "column_id": "activity_ida92e5240",
+                              "pivoted": false,
+                              "column_kind": "group"
+                          }
+                      ],
+                      "metrics": [
+                          {
+                              "id": "total_marketing_session_rows_3c678828",
+                              "label": "Total Marketing Session Rows",
+                              "agg_function": "COUNT_ALL",
+                              "output": true,
+                              "column_id": null,
+                              "filters": [],
+                              "pivot": [],
+                              "mavis_type": null,
+                              "type": "integer",
+                              "column_kind": "metrics"
+                          }
+                      ],
+                      "computed_columns": [],
+                      "pivot": [],
+                      "parent_filters": [],
+                      "order": [
+                          {
+                              "column_id": "total_marketing_session_rows_3c678828",
+                              "order_direction": "desc"
+                          }
+                      ]
+                  }
+              ],
+              "order": [
+                  {
+                      "column_id": "ts176ad943",
+                      "order_direction": "desc"
+                  }
+              ],
+              "activity_stream": "activity_stream",
+              "swapped_ids": []
+          }
+      },
+      "staged_compiled_sql": []
+  },
+  "fields": {},
+  "activity_stream": "activity_stream",
+  "activities": [
+      {
+          "id": "marketing_session98626881",
+          "name": "Marketing Session",
+          "slug": [
+              "marketing_session"
+          ],
+          "activity_ids": [
+              "f17fabf3-f101-4384-9fca-0f38576feaec"
+          ],
+          "did": true,
+          "occurrence": "all",
+          "occurrence_value": null,
+          "config": {
+              "has_source": true,
+              "activity_stream": "activity_stream"
+          },
+          "relationships": [],
+          "filters": [],
+          "kind": "limiting"
+      }
+  ],
+  "columns": [
+      {
+          "id": "activity_ida92e5240",
+          "name": "activity_id",
+          "label": "Activity Id",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+              "activity_kind": "limiting",
+              "activity_id": "marketing_session98626881",
+              "enrichment_table": null,
+              "applied_function": null
+          }
+      },
+      {
+          "id": "ts176ad943",
+          "name": "ts",
+          "label": "Timestamp",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": null,
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+              "activity_kind": "limiting",
+              "activity_id": "marketing_session98626881",
+              "enrichment_table": null,
+              "applied_function": null
+          }
+      },
+      {
+          "id": "customere9142dbe",
+          "name": "customer",
+          "label": "Customer",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+              "activity_kind": "limiting",
+              "activity_id": "marketing_session98626881",
+              "enrichment_table": null,
+              "applied_function": null
+          }
+      },
+      {
+          "id": "join_customerb5288ada",
+          "name": "join_customer",
+          "label": "Unique Identifier",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+              "activity_kind": "limiting",
+              "activity_id": "marketing_session98626881",
+              "enrichment_table": null,
+              "applied_function": null
+          }
+      },
+      {
+          "id": "feature_17ec4e8f5",
+          "name": "feature_1",
+          "label": "Activity",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+              "activity_kind": "limiting",
+              "activity_id": "marketing_session98626881",
+              "enrichment_table": null,
+              "applied_function": null
+          }
+      },
+      {
+          "id": "feature_2489c1357",
+          "name": "feature_2",
+          "label": "Feature 1",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+              "activity_kind": "limiting",
+              "activity_id": "marketing_session98626881",
+              "enrichment_table": null,
+              "applied_function": null
+          }
+      },
+      {
+          "id": "feature_3bb30331b",
+          "name": "feature_3",
+          "label": "Feature 2",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+              "activity_kind": "limiting",
+              "activity_id": "marketing_session98626881",
+              "enrichment_table": null,
+              "applied_function": null
+          }
+      },
+      {
+          "id": "link1ed456ae",
+          "name": "link",
+          "label": "Link",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+              "activity_kind": "limiting",
+              "activity_id": "marketing_session98626881",
+              "enrichment_table": null,
+              "applied_function": null
+          }
+      },
+      {
+          "id": "activity_occurrence4e669430",
+          "name": "activity_occurrence",
+          "label": "Activity Occurrence",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+              "activity_kind": "limiting",
+              "activity_id": "marketing_session98626881",
+              "enrichment_table": null,
+              "applied_function": null
+          }
+      },
+      {
+          "id": "broken_null_column",
+          "filters": [],
+          "label": "Broken Null Column",
+          "name": "",
+          "output": true,
+          "source_details": {
+              "kind": "ifttt",
+              "cases": [
+                  {
+                      "filters": [
+                          {
+                              "column_id": "feature_2489c1357",
+                              "filter": {
+                                  "operator": "equal",
+                                  "kind": "value",
+                                  "or_null": false,
+                                  "value": "fun stuff"
+                              }
+                          }
+                      ],
+                      "value_kind": "column_id",
+                      "value": "feature_2489c1357"
+                  }
+              ],
+              "value_kind": "null",
+              "value": "null"
+          },
+          "source_kind": "computed",
+          "type": "null",
+          "_auto_generated_by": null
+      },
+      {
+          "id": "broken_null_column__qeXeYQ3y",
+          "filters": [],
+          "name": "",
+          "output": true,
+          "source_details": {
+              "kind": "ifttt",
+              "cases": [
+                  {
+                      "filters": [
+                          {
+                              "column_id": "feature_2489c1357",
+                              "filter": {
+                                  "operator": "equal",
+                                  "kind": "value",
+                                  "or_null": false,
+                                  "value": "fun stuff"
+                              }
+                          }
+                      ],
+                      "value_kind": "number",
+                      "value": 1
+                  }
+              ],
+              "value_kind": "null",
+              "value": "null"
+          },
+          "source_kind": "computed",
+          "type": "number",
+          "_auto_generated_by": null,
+          "label": "Else null then number"
+      },
+      {
+          "id": "else_column_id_timestamp",
+          "filters": [],
+          "label": "Else column id timestamp",
+          "name": "",
+          "output": true,
+          "source_details": {
+              "kind": "ifttt",
+              "cases": [
+                  {
+                      "filters": [
+                          {
+                              "column_id": "customere9142dbe",
+                              "filter": {
+                                  "operator": "equal",
+                                  "value": "customer",
+                                  "kind": "value",
+                                  "or_null": false
+                              }
+                          }
+                      ],
+                      "value": "Hi there",
+                      "value_kind": "string"
+                  }
+              ],
+              "value_kind": "column_id",
+              "value": "ts176ad943"
+          },
+          "source_kind": "computed",
+          "type": "timestamp",
+          "_auto_generated_by": null
+      },
+      {
+          "id": "else_string",
+          "filters": [],
+          "label": "else string",
+          "name": "",
+          "output": true,
+          "source_details": {
+              "kind": "ifttt",
+              "cases": [
+                  {
+                      "filters": [
+                          {
+                              "column_id": "feature_17ec4e8f5",
+                              "filter": {
+                                  "operator": "equal",
+                                  "value": "not real activity",
+                                  "kind": "value",
+                                  "or_null": false
+                              }
+                          }
+                      ],
+                      "value": "true",
+                      "value_kind": "boolean"
+                  }
+              ],
+              "value_kind": "string",
+              "value": "else string"
+          },
+          "source_kind": "computed",
+          "type": "string",
+          "_auto_generated_by": null
+      },
+      {
+          "id": "else_null_then_column_timestamp",
+          "filters": [],
+          "label": "else null then column timestamp",
+          "name": "",
+          "output": true,
+          "source_details": {
+              "kind": "ifttt",
+              "cases": [
+                  {
+                      "filters": [
+                          {
+                              "column_id": "customere9142dbe",
+                              "filter": {
+                                  "operator": "equal",
+                                  "value": "fake@customer.com",
+                                  "kind": "value",
+                                  "or_null": false
+                              }
+                          }
+                      ],
+                      "value_kind": "timestamp",
+                      "value_resolution": "date",
+                      "value": "2021-05-13T07:00:00.000Z"
+                  }
+              ],
+              "value_kind": "null",
+              "value": "null"
+          },
+          "source_kind": "computed",
+          "type": "timestamp",
+          "_auto_generated_by": null
+      }
+  ],
+  "all_groups": [
+      {
+          "name": "by Activity Id",
+          "slug": "activity_id79454434",
+          "columns": [
+              {
+                  "id": "activity_id_0784c76f",
+                  "filters": [],
+                  "label": "Activity Id",
+                  "name": "",
+                  "output": true,
+                  "mavis_type": "string",
+                  "type": "string",
+                  "source_kind": "group",
+                  "column_id": "activity_ida92e5240",
+                  "pivoted": false,
+                  "column_kind": "group"
+              }
+          ],
+          "metrics": [
+              {
+                  "id": "total_marketing_session_rows_3c678828",
+                  "label": "Total Marketing Session Rows",
+                  "agg_function": "COUNT_ALL",
+                  "output": true,
+                  "column_id": null,
+                  "filters": [],
+                  "pivot": [],
+                  "mavis_type": null,
+                  "type": "integer",
+                  "column_kind": "metrics"
+              }
+          ],
+          "computed_columns": [],
+          "pivot": [],
+          "parent_filters": [],
+          "order": [
+              {
+                  "column_id": "total_marketing_session_rows_3c678828",
+                  "order_direction": "desc"
+              }
+          ]
+      }
+  ],
+  "order": [
+      {
+          "column_id": "ts176ad943",
+          "order_direction": "desc"
+      }
+  ],
+  "swapped_ids": []
+}

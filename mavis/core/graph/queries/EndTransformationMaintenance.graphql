@@ -1,0 +1,5 @@
+mutation EndTransformationMaintenance($transformation_id: uuid!) {
+  update_transformation_maintenance(where: { ended_at: { _is_null: true }, transformation_id: { _eq: $transformation_id } }, _set: { ended_at: "now()" }) {
+    affected_rows
+  }
+}

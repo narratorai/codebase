@@ -1,0 +1,11 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- CREATE VIEW compiled_narratives AS (
+-- SELECT
+--     id,
+--     created_at,
+--     related_id as narrative_id,
+--     s3_key
+-- FROM versions s
+-- where related_to = 'narrative_run'
+-- );

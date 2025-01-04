@@ -1,0 +1,39 @@
+query GetActivityDependencies($id: uuid!) {
+  activity_by_pk(id: $id) {
+    id
+    slug
+    name
+    table_id
+    datasets {
+      dataset {
+        id
+        slug
+        name
+        tags(limit: 1, order_by: {updated_at: desc}, where: {company_tag: {tag: {_eq: "recently_viewed"}}}) {
+          updated_at
+          company_tag {
+            user {
+              email
+            }
+          }
+        }
+        materializations {
+          task_id
+          label
+          id
+          type
+          column_id
+        }
+        dependent_narratives(where: {narrative: {state: {_neq: archived}}}) {
+          narrative {
+            task_id
+            id
+            slug
+            name
+            state
+          }
+        }
+      }
+    }
+  }
+}

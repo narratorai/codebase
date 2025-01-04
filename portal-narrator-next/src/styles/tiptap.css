@@ -1,0 +1,291 @@
+@import 'highlight.js/styles/atom-one-dark.css';
+
+.tiptap.ProseMirror {
+  /* This allows to add an ofset to the drag extension */
+  @apply px-10;
+
+  /* Placeholder */
+  .is-empty,
+  p.is-editor-empty:first-child {
+    &::before {
+      @apply text-gray-100;
+      @apply float-left;
+      @apply pointer-events-none;
+      @apply h-0;
+
+      content: attr(data-placeholder);
+    }
+
+    &[data-placeholder=''],
+    &[data-placeholder=''] {
+      &::before {
+        content: none;
+      }
+    }
+
+    /* Compensate for the space added between the list item and its decoration */
+    &:is(ul),
+    &:is(ol) {
+      &::before {
+        @apply pl-2;
+      }
+    }
+
+    /* Compensate for the space added between the checkbox and the list item */
+    &:is(ul[data-type='taskList']) {
+      &::before {
+        @apply pl-6;
+      }
+    }
+  }
+
+  & > *[data-type],
+  & > *[uid],
+  ul li[uid],
+  ol li[uid] {
+    @apply !my-2;
+  }
+
+  div[data-type='horizontalGrid'] + div[data-type='horizontalGrid'],
+  div[data-type='horizontalGrid'] + .ProseMirror-gapcursor + div[data-type='horizontalGrid'] {
+    @apply !mt-4;
+  }
+
+  p[uid] + p[uid] {
+    @apply mt-2;
+  }
+
+  h1[uid],
+  h2[uid],
+  h3[uid],
+  h4[uid],
+  h5[uid],
+  h6[uid],
+  p[uid],
+  ol[uid],
+  ul[uid],
+  li[uid],
+  blockquote[uid],
+  table {
+    @apply leading-normal;
+  }
+
+  /* To make @ant-design/charts components reponsive */
+  canvas {
+    @apply !w-full;
+    @apply object-contain;
+  }
+
+  ul[uid],
+  ol[uid] {
+    @apply pl-8;
+
+    li {
+      @apply pl-2;
+    }
+  }
+
+  ul[uid] {
+    li[uid] {
+      @apply list-disc;
+    }
+  }
+
+  ol[uid] {
+    li[uid] {
+      @apply list-decimal;
+    }
+  }
+
+  ul[data-type='taskList'] {
+    @apply pl-0;
+
+    li {
+      @apply flex;
+      @apply space-x-2;
+      @apply list-none;
+      @apply pl-0;
+
+      :last-child {
+        @apply flex-1;
+      }
+
+      &[data-checked='true'] {
+        /* To prevent children from being visually marked as completed */
+        & > div > p {
+          @apply line-through;
+          @apply opacity-50;
+        }
+      }
+    }
+  }
+
+  a[uid] {
+    @apply cursor-pointer;
+    @apply decoration-gray-100;
+    @apply text-gray-800;
+    @apply underline;
+    @apply underline-offset-4;
+  }
+
+  u[uid] {
+    @apply decoration-current;
+    @apply underline-offset-4;
+  }
+
+  hr:not(.ProseMirror-selectednode *),
+  img:not(.ProseMirror-selectednode *),
+  div[data-type='file']:not(.ProseMirror-selectednode *),
+  div[data-type='dataTable']:not(.ProseMirror-selectednode *),
+  div[data-type='datasetMetric']:not(.ProseMirror-selectednode *),
+  div[data-type='decision']:not(.ProseMirror-selectednode *),
+  div[data-type='horizontalGrid']:not(.ProseMirror-selectednode *),
+  div[data-type='plot']:not(.ProseMirror-selectednode *),
+  div[data-type='filter']:not(.ProseMirror-selectednode *) {
+    &.ProseMirror-selectednode,
+    &.ProseMirror-selectednoderange {
+      @apply rounded-sm;
+      @apply outline;
+      @apply outline-offset-2;
+      @apply outline-blue-600;
+    }
+  }
+
+  blockquote[uid] {
+    @apply border-gray-600;
+    @apply border-l-[3px];
+    @apply pl-6;
+  }
+
+  code:not(pre > code) {
+    @apply bg-gray-50;
+    @apply px-2;
+    @apply py-1;
+    @apply rounded;
+    @apply text-red-600;
+    @apply text-sm;
+  }
+
+  pre[uid] {
+    @apply bg-gray-900;
+    @apply rounded-md;
+    @apply text-white;
+
+    code {
+      @apply p-4;
+      @apply block;
+    }
+  }
+
+  table {
+    @apply border-collapse;
+    @apply border-spacing-0;
+    @apply max-w-full;
+
+    th,
+    td {
+      @apply border;
+      @apply border-gray-100;
+      @apply p-2;
+      @apply relative;
+
+      &.selectedCell {
+        @apply outline;
+        @apply -outline-offset-1;
+        @apply outline-blue-600;
+      }
+
+      .column-resize-handle {
+        @apply absolute;
+        @apply cursor-col-resize;
+        @apply top-0;
+        @apply bottom-0;
+        @apply right-0;
+        @apply w-1;
+        @apply bg-gray-100;
+        @apply z-50;
+      }
+    }
+
+    th {
+      @apply bg-gray-50;
+      @apply font-semibold;
+    }
+  }
+
+  div[data-type='horizontalGrid'] {
+    @apply gap-1;
+  }
+
+  &[contenteditable='true'] {
+    div[data-type='horizontalGrid'] {
+      @apply ring-1 ring-gray-100 ring-offset-4;
+      @apply rounded;
+    }
+
+    div[data-type='gridColumnGutter'] {
+      @apply cursor-col-resize;
+      @apply -my-1;
+      @apply relative;
+
+      &::after {
+        width: 1px;
+
+        @apply block;
+        @apply absolute;
+        @apply top-0;
+        @apply bottom-0;
+        @apply left-1/2;
+        @apply -translate-x-1/2;
+        @apply bg-gray-100;
+
+        content: '';
+      }
+
+      &::before {
+        @apply block;
+        @apply absolute;
+        @apply h-6;
+        @apply w-4;
+        @apply bg-gray-100;
+        @apply rounded-sm;
+
+        @apply top-1/2;
+        @apply left-1/2;
+        @apply -translate-x-1/2;
+        @apply -translate-y-1/2;
+
+        content: '';
+
+        @apply bg-no-repeat;
+        @apply bg-center;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' style='fill: rgb(132, 130, 140)'%3E%3Cpath d='M3,2 C2.44771525,2 2,1.55228475 2,1 C2,0.44771525 2.44771525,0 3,0 C3.55228475,0 4,0.44771525 4,1 C4,1.55228475 3.55228475,2 3,2 Z M3,6 C2.44771525,6 2,5.55228475 2,5 C2,4.44771525 2.44771525,4 3,4 C3.55228475,4 4,4.44771525 4,5 C4,5.55228475 3.55228475,6 3,6 Z M3,10 C2.44771525,10 2,9.55228475 2,9 C2,8.44771525 2.44771525,8 3,8 C3.55228475,8 4,8.44771525 4,9 C4,9.55228475 3.55228475,10 3,10 Z M7,2 C6.44771525,2 6,1.55228475 6,1 C6,0.44771525 6.44771525,0 7,0 C7.55228475,0 8,0.44771525 8,1 C8,1.55228475 7.55228475,2 7,2 Z M7,6 C6.44771525,6 6,5.55228475 6,5 C6,4.44771525 6.44771525,4 7,4 C7.55228475,4 8,4.44771525 8,5 C8,5.55228475 7.55228475,6 7,6 Z M7,10 C6.44771525,10 6,9.55228475 6,9 C6,8.44771525 6.44771525,8 7,8 C7.55228475,8 8,8.44771525 8,9 C8,9.55228475 7.55228475,10 7,10 Z'%3E%3C/path%3E%3C/svg%3E");
+        background-size: theme('fontSize.sm');
+      }
+    }
+  }
+}
+
+.drag-handle {
+  @apply rounded;
+
+  &::after {
+    @apply flex-x-center;
+    @apply justify-center;
+    @apply h-6;
+    @apply w-4;
+    @apply cursor-grab;
+    @apply rounded-sm;
+
+    content: '';
+
+    @apply bg-no-repeat;
+    @apply bg-center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' style='fill: rgb(206, 205, 209)'%3E%3Cpath d='M3,2 C2.44771525,2 2,1.55228475 2,1 C2,0.44771525 2.44771525,0 3,0 C3.55228475,0 4,0.44771525 4,1 C4,1.55228475 3.55228475,2 3,2 Z M3,6 C2.44771525,6 2,5.55228475 2,5 C2,4.44771525 2.44771525,4 3,4 C3.55228475,4 4,4.44771525 4,5 C4,5.55228475 3.55228475,6 3,6 Z M3,10 C2.44771525,10 2,9.55228475 2,9 C2,8.44771525 2.44771525,8 3,8 C3.55228475,8 4,8.44771525 4,9 C4,9.55228475 3.55228475,10 3,10 Z M7,2 C6.44771525,2 6,1.55228475 6,1 C6,0.44771525 6.44771525,0 7,0 C7.55228475,0 8,0.44771525 8,1 C8,1.55228475 7.55228475,2 7,2 Z M7,6 C6.44771525,6 6,5.55228475 6,5 C6,4.44771525 6.44771525,4 7,4 C7.55228475,4 8,4.44771525 8,5 C8,5.55228475 7.55228475,6 7,6 Z M7,10 C6.44771525,10 6,9.55228475 6,9 C6,8.44771525 6.44771525,8 7,8 C7.55228475,8 8,8.44771525 8,9 C8,9.55228475 7.55228475,10 7,10 Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: theme('fontSize.sm');
+  }
+
+  &:hover {
+    @apply bg-gray-50;
+  }
+}

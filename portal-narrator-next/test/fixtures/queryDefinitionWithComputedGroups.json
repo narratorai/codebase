@@ -1,0 +1,900 @@
+{
+  "override_sql": null,
+  "query": {
+      "activities": [
+          {
+              "did": true,
+              "kind": "limiting",
+              "occurence_after_time": false,
+              "occurrence": "all",
+              "occurrence_value": 1,
+              "relationships": [],
+              "config": {
+                  "activity_stream": "activity_stream",
+                  "customer_table": "users",
+                  "enrichment_table": null,
+                  "has_source": true
+              },
+              "slug": "marketing_session",
+              "filters": [],
+              "id": "marketing_session_HRs_f16G"
+          },
+          {
+              "did": true,
+              "kind": "append",
+              "occurence_after_time": false,
+              "occurrence": "first",
+              "occurrence_value": 1,
+              "relationships": [
+                  {
+                      "slug": "within_cohort"
+                  }
+              ],
+              "config": {
+                  "activity_stream": "activity_stream",
+                  "customer_table": "users",
+                  "enrichment_table": null,
+                  "has_source": false
+              },
+              "slug": "added_metric",
+              "filters": [],
+              "id": "added_metric_kJMjepgs"
+          },
+          {
+              "did": true,
+              "kind": "conversion",
+              "occurence_after_time": false,
+              "occurrence": "first",
+              "occurrence_value": 1,
+              "relationships": [
+                  {
+                      "slug": "within_cohort"
+                  }
+              ],
+              "config": {
+                  "activity_stream": "activity_stream",
+                  "customer_table": "users",
+                  "enrichment_table": null,
+                  "has_source": false
+              },
+              "slug": "added_metric",
+              "filters": [],
+              "id": "added_metric_RTaJkZfE"
+          }
+      ],
+      "columns": [
+          {
+              "id": "limiting_marketing_session_HRs_f16G_ts",
+              "filters": [],
+              "label": "marketing_session_at",
+              "name": "ts",
+              "output": true,
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session_HRs_f16G",
+                  "enrichment_table": null
+              },
+              "source_kind": "activity",
+              "type": "timestamp",
+              "mavis_type": "timestamp"
+          },
+          {
+              "id": "limiting_marketing_session_HRs_f16G_customer",
+              "filters": [],
+              "label": "customer",
+              "name": "customer",
+              "output": true,
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session_HRs_f16G",
+                  "enrichment_table": null
+              },
+              "source_kind": "activity",
+              "type": "string",
+              "mavis_type": "string"
+          },
+          {
+              "id": "limiting_marketing_session_HRs_f16G_join_customer",
+              "filters": [],
+              "label": "unique_customer_identifier",
+              "name": "join_customer",
+              "output": true,
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session_HRs_f16G",
+                  "enrichment_table": null
+              },
+              "source_kind": "activity",
+              "type": "string",
+              "mavis_type": "string"
+          },
+          {
+              "id": "limiting_marketing_session_HRs_f16G_activity_occurrence",
+              "filters": [],
+              "label": "activity_occurrence",
+              "name": "activity_occurrence",
+              "output": true,
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session_HRs_f16G",
+                  "enrichment_table": null
+              },
+              "source_kind": "activity",
+              "type": "integer",
+              "mavis_type": "integer"
+          },
+          {
+              "id": "limiting_marketing_session_HRs_f16G_activity_repeated_at",
+              "filters": [],
+              "label": "activity_repeated_at",
+              "name": "activity_repeated_at",
+              "output": true,
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session_HRs_f16G"
+              },
+              "source_kind": "activity",
+              "type": "timestamp",
+              "mavis_type": "timestamp"
+          },
+          {
+              "id": "limiting_marketing_session_HRs_f16G_enriched_ts",
+              "filters": [],
+              "label": "enriched_ts",
+              "name": "enriched_ts",
+              "output": true,
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session_HRs_f16G",
+                  "enrichment_table": "enriched_pages"
+              },
+              "source_kind": "activity",
+              "type": "timestamp",
+              "mavis_type": "timestamp"
+          },
+          {
+              "id": "limiting_marketing_session_HRs_f16G_utm_source",
+              "filters": [],
+              "label": "utm_source",
+              "name": "utm_source",
+              "output": true,
+              "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "marketing_session_HRs_f16G",
+                  "enrichment_table": "enriched_pages"
+              },
+              "source_kind": "activity",
+              "type": "string",
+              "mavis_type": "string"
+          },
+          {
+              "id": "append_added_metric_kJMjepgs_feature_2",
+              "filters": [],
+              "label": "first_added_metric_slug_custom_f_2",
+              "name": "feature_2",
+              "output": true,
+              "source_details": {
+                  "activity_kind": "append",
+                  "activity_id": "added_metric_kJMjepgs",
+                  "enrichment_table": null
+              },
+              "source_kind": "activity",
+              "type": "string",
+              "mavis_type": "string"
+          },
+          {
+              "id": "append_added_metric_kJMjepgs_ts",
+              "filters": [],
+              "label": "first_added_metric_at",
+              "name": "ts",
+              "output": true,
+              "source_details": {
+                  "activity_kind": "append",
+                  "activity_id": "added_metric_kJMjepgs",
+                  "enrichment_table": null
+              },
+              "source_kind": "activity",
+              "type": "timestamp",
+              "mavis_type": "timestamp"
+          },
+          {
+              "id": "append_added_metric_kJMjepgs_feature_3",
+              "filters": [],
+              "label": "first_added_metric_slug_custom_f_3",
+              "name": "feature_3",
+              "output": true,
+              "source_details": {
+                  "activity_kind": "append",
+                  "activity_id": "added_metric_kJMjepgs",
+                  "enrichment_table": null
+              },
+              "source_kind": "activity",
+              "type": "string",
+              "mavis_type": "string"
+          },
+          {
+              "id": "conversion_added_metric_RTaJkZfE_ts",
+              "filters": [],
+              "label": "converted_to_added_metric_at",
+              "name": "ts",
+              "output": true,
+              "source_details": {
+                  "activity_kind": "conversion",
+                  "activity_id": "added_metric_RTaJkZfE",
+                  "enrichment_table": null
+              },
+              "source_kind": "activity",
+              "type": "timestamp"
+          },
+          {
+              "id": "converted_to_added_metric_RTaJkZfE",
+              "filters": [],
+              "label": "converted_to_added_metric",
+              "name": "",
+              "output": true,
+              "source_details": {
+                  "activity_kind": "conversion",
+                  "activity_id": "added_metric_RTaJkZfE",
+                  "raw_string": "iff(not_is_null({conversion_added_metric_RTaJkZfE_ts}),1, 0)"
+              },
+              "source_kind": "computed",
+              "type": "boolean"
+          },
+          {
+              "id": "days_to_added_metric_RTaJkZfE",
+              "filters": [],
+              "label": "days_to_added_metric",
+              "name": "",
+              "output": true,
+              "source_details": {
+                  "activity_kind": "conversion",
+                  "activity_id": "added_metric_RTaJkZfE",
+                  "raw_string": "date_diff('day', {limiting_marketing_session_HRs_f16G_ts},{conversion_added_metric_RTaJkZfE_ts})"
+              },
+              "source_kind": "computed",
+              "type": "number"
+          },
+          {
+              "id": "adding_time",
+              "filters": [],
+              "label": "adding_time",
+              "name": "",
+              "output": true,
+              "source_details": {
+                  "kind": "time_add",
+                  "column_id": "limiting_marketing_session_HRs_f16G_ts",
+                  "number": "1",
+                  "segmentation": "week"
+              },
+              "source_kind": "computed",
+              "type": "timestamp",
+              "_auto_generated_by": null
+          },
+          {
+              "id": "time_to_now",
+              "filters": [],
+              "label": "time_to_now",
+              "name": "",
+              "output": true,
+              "source_details": {
+                  "kind": "time_to_now",
+                  "column_id": "limiting_marketing_session_HRs_f16G_ts",
+                  "segmentation": "week"
+              },
+              "source_kind": "computed",
+              "type": "number",
+              "_auto_generated_by": null
+          }
+      ],
+      "activity_stream": "activity_stream",
+      "all_groups": [
+          {
+              "name": "More groups for cancel",
+              "slug": "more_groups_for_cancel",
+              "_column_ids": [
+                  "limiting_marketing_session_HRs_f16G_customer"
+              ],
+              "columns": [
+                  {
+                      "id": "more_groups_for_cancel_limiting_marketing_session_HRs_f16G_customer",
+                      "filters": [],
+                      "label": "customer",
+                      "name": "",
+                      "output": true,
+                      "type": "string",
+                      "column_id": "limiting_marketing_session_HRs_f16G_customer",
+                      "pivoted": false
+                  }
+              ],
+              "computed_columns": [
+                  {
+                      "id": "more_groups_for_cancel_events_plus_10",
+                      "filters": [],
+                      "label": "events_plus_10",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "math_operation",
+                          "column_id": "metrics_total_events",
+                          "operation": "+",
+                          "number": "10"
+                      },
+                      "source_kind": "computed",
+                      "type": "number",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "id": "more_groups_for_cancel_testing_this_bad_boy",
+                      "filters": [],
+                      "label": "testing_this_bad_boy",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "ifttt",
+                          "cases": [
+                              {
+                                  "filters": [
+                                      {
+                                          "column_id": "more_groups_for_cancel_limiting_marketing_session_HRs_f16G_customer",
+                                          "filter": {
+                                              "operator": "not_is_null",
+                                              "value": "",
+                                              "kind": "value",
+                                              "or_null": false
+                                          }
+                                      }
+                                  ],
+                                  "value": "Customer exists!",
+                                  "value_kind": "string"
+                              }
+                          ],
+                          "value_kind": "string",
+                          "value": "Customer does NOT exist :("
+                      },
+                      "source_kind": "computed",
+                      "type": "string",
+                      "_auto_generated_by": null
+                  },
+                {
+                    "id": "more_groups_for_cancel_testing_this_bad_boy_2",
+                    "filters": [],
+                    "label": "testing_this_bad_boy_2",
+                    "name": "",
+                    "output": true,
+                    "source_details": {
+                        "kind": "ifttt",
+                        "cases": [
+                            {
+                                "filters": [
+                                    {
+                                        "column_id": "more_groups_for_cancel_limiting_marketing_session_HRs_f16G_customer",
+                                        "filter": {
+                                            "operator": "not_is_null",
+                                            "value": "",
+                                            "kind": "value",
+                                            "or_null": false
+                                        }
+                                    }
+                                ],
+                                "value": "Customer exists!",
+                                "value_kind": "string"
+                            }
+                        ],
+                        "value_kind": "column_id",
+                        "value": "more_groups_for_cancel_metric_total_added_metric_RTaJkZfE"
+                    },
+                    "source_kind": "computed",
+                    "type": "string",
+                    "_auto_generated_by": null
+                }
+              ],
+              "metrics": [
+                  {
+                      "_pre_pivot_column_id": null,
+                      "_pre_pivot_column_label": null,
+                      "id": "metrics_total_events",
+                      "label": "total_events",
+                      "agg_function": "COUNT_ALL",
+                      "output": true,
+                      "column_id": null,
+                      "filters": [],
+                      "pivot": [],
+                      "type": "number",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "_pre_pivot_column_id": null,
+                      "_pre_pivot_column_label": null,
+                      "id": "more_groups_for_cancel_metric_total_added_metric_RTaJkZfE",
+                      "label": "total_added_metric",
+                      "agg_function": "SUM",
+                      "output": true,
+                      "column_id": "converted_to_added_metric_RTaJkZfE",
+                      "filters": [],
+                      "pivot": [],
+                      "type": "number",
+                      "_auto_generated_by": "create-cac"
+                  }
+              ],
+              "pivot": [],
+              "order": [
+                  {
+                      "column_id": "metrics_total_events",
+                      "order_direction": "desc"
+                  }
+              ],
+              "parent_filters": [
+                  {
+                      "filter": {
+                          "operator": "not_is_null",
+                          "value": "",
+                          "kind": "value",
+                          "or_null": false
+                      },
+                      "column_id": "limiting_marketing_session_HRs_f16G_customer"
+                  }
+              ]
+          },
+          {
+              "name": "more testing",
+              "slug": "more_testing",
+              "_column_ids": [
+                  "limiting_marketing_session_HRs_f16G_activity_occurrence"
+              ],
+              "columns": [
+                  {
+                      "id": "more_testing_limiting_marketing_session_HRs_f16G_activity_occurrence",
+                      "filters": [],
+                      "label": "activity_occurrence",
+                      "name": "",
+                      "output": true,
+                      "type": "integer",
+                      "column_id": "limiting_marketing_session_HRs_f16G_activity_occurrence",
+                      "pivoted": false
+                  }
+              ],
+              "computed_columns": [
+                  {
+                      "id": "more_testing_percent_column",
+                      "filters": [],
+                      "label": "percent_column",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "percent_of_total",
+                          "column_id": "more_testing_limiting_marketing_session_HRs_f16G_activity_occurrence",
+                          "group_column_ids": [
+                              "metrics_total_events"
+                          ]
+                      },
+                      "source_kind": "computed",
+                      "type": "number",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "id": "more_testing_computed_conversion_to_added_metric_RTaJkZfE",
+                      "filters": [],
+                      "label": "conversion_rate_to_added_metric",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "freehand_function",
+                          "raw_string": "({more_testing_metric_total_added_metric_RTaJkZfE}*1.0)/{metrics_total_events}"
+                      },
+                      "source_kind": "computed",
+                      "type": "float",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "id": "more_testing_percent_column_hZgZQb3c",
+                      "filters": [],
+                      "label": "percent_column",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "percent_of_total",
+                          "column_id": "more_testing_limiting_marketing_session_HRs_f16G_activity_occurrence",
+                          "group_column_ids": [
+                              "metrics_total_events"
+                          ]
+                      },
+                      "source_kind": "computed",
+                      "type": "number",
+                      "_auto_generated_by": null
+                  }
+              ],
+              "metrics": [
+                  {
+                      "_pre_pivot_column_id": null,
+                      "_pre_pivot_column_label": null,
+                      "id": "metrics_total_events",
+                      "label": "total_events",
+                      "agg_function": "COUNT_ALL",
+                      "output": true,
+                      "column_id": null,
+                      "filters": [],
+                      "pivot": [],
+                      "type": "number",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "_pre_pivot_column_id": null,
+                      "_pre_pivot_column_label": null,
+                      "id": "more_testing_metric_total_added_metric_RTaJkZfE",
+                      "label": "total_added_metric",
+                      "agg_function": "SUM",
+                      "output": false,
+                      "column_id": "converted_to_added_metric_RTaJkZfE",
+                      "filters": [],
+                      "pivot": [],
+                      "type": "number",
+                      "_auto_generated_by": "create-cac"
+                  }
+              ],
+              "pivot": [],
+              "order": [
+                  {
+                      "column_id": "more_testing_limiting_marketing_session_HRs_f16G_activity_occurrence",
+                      "order_direction": "asc"
+                  }
+              ],
+              "parent_filters": []
+          },
+          {
+              "name": "Multiple group by columns",
+              "slug": "multiple_group_by_columns",
+              "_column_ids": [
+                  "limiting_marketing_session_HRs_f16G_ts",
+                  "limiting_marketing_session_HRs_f16G_customer",
+                  "limiting_marketing_session_HRs_f16G_activity_occurrence"
+              ],
+              "columns": [
+                  {
+                      "id": "multiple_group_by_columns_limiting_marketing_session_HRs_f16G_ts",
+                      "filters": [],
+                      "label": "marketing_session_at",
+                      "name": "",
+                      "output": true,
+                      "type": "timestamp",
+                      "column_id": "limiting_marketing_session_HRs_f16G_ts",
+                      "pivoted": false
+                  },
+                  {
+                      "id": "multiple_group_by_columns_limiting_marketing_session_HRs_f16G_customer",
+                      "filters": [],
+                      "label": "customer",
+                      "name": "",
+                      "output": true,
+                      "type": "string",
+                      "column_id": "limiting_marketing_session_HRs_f16G_customer",
+                      "pivoted": false
+                  },
+                  {
+                      "id": "multiple_group_by_columns_limiting_marketing_session_HRs_f16G_activity_occurrence",
+                      "filters": [],
+                      "label": "activity_occurrence",
+                      "name": "",
+                      "output": true,
+                      "type": "integer",
+                      "column_id": "limiting_marketing_session_HRs_f16G_activity_occurrence",
+                      "pivoted": false
+                  }
+              ],
+              "computed_columns": [
+                  {
+                      "id": "multiple_group_by_columns_add_time_to_marketing",
+                      "filters": [],
+                      "label": "add_time_to_marketing",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "time_add",
+                          "column_id": "multiple_group_by_columns_limiting_marketing_session_HRs_f16G_ts",
+                          "number": "1",
+                          "segmentation": "week"
+                      },
+                      "source_kind": "computed",
+                      "type": "timestamp",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "id": "multiple_group_by_columns_getting_longer_strings",
+                      "filters": [],
+                      "label": "getting_longer_strings",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "replace",
+                          "column_id": "multiple_group_by_columns_limiting_marketing_session_HRs_f16G_customer",
+                          "remove_str": "-",
+                          "replace_str": "abcdefg"
+                      },
+                      "source_kind": "computed",
+                      "type": "string",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "id": "multiple_group_by_columns_computed_conversion_to_added_metric_RTaJkZfE",
+                      "filters": [],
+                      "label": "conversion_rate_to_added_metric",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "freehand_function",
+                          "raw_string": "({multiple_group_by_columns_metric_total_added_metric_RTaJkZfE}*1.0)/{metrics_total_events}"
+                      },
+                      "source_kind": "computed",
+                      "type": "float",
+                      "_auto_generated_by": null
+                  }
+              ],
+              "metrics": [
+                  {
+                      "_pre_pivot_column_id": null,
+                      "_pre_pivot_column_label": null,
+                      "id": "metrics_total_events",
+                      "label": "total_events",
+                      "agg_function": "COUNT_ALL",
+                      "output": true,
+                      "column_id": null,
+                      "filters": [],
+                      "pivot": [],
+                      "type": "number",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "_pre_pivot_column_id": null,
+                      "_pre_pivot_column_label": null,
+                      "id": "multiple_group_by_columns_metric_total_added_metric_RTaJkZfE",
+                      "label": "total_added_metric",
+                      "agg_function": "SUM",
+                      "output": true,
+                      "column_id": "converted_to_added_metric_RTaJkZfE",
+                      "filters": [],
+                      "pivot": [],
+                      "type": "number",
+                      "_auto_generated_by": "create-cac"
+                  }
+              ],
+              "pivot": [],
+              "order": [
+                  {
+                      "column_id": "multiple_group_by_columns_limiting_marketing_session_HRs_f16G_ts",
+                      "order_direction": "asc"
+                  }
+              ],
+              "parent_filters": []
+          },
+          {
+              "name": "No columns",
+              "slug": "no_columns",
+              "_column_ids": [],
+              "columns": [],
+              "computed_columns": [
+                  {
+                      "id": "no_columns_plus_ten_events",
+                      "filters": [],
+                      "label": "plus_ten_events",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "math_operation",
+                          "column_id": "metrics_total_events",
+                          "operation": "+",
+                          "number": "10"
+                      },
+                      "source_kind": "computed",
+                      "type": "number",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "id": "no_columns_computed_conversion_to_added_metric_RTaJkZfE",
+                      "filters": [],
+                      "label": "conversion_rate_to_added_metric",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "freehand_function",
+                          "raw_string": "({no_columns_metric_total_added_metric_RTaJkZfE}*1.0)/{metrics_total_events}"
+                      },
+                      "source_kind": "computed",
+                      "type": "float",
+                      "_auto_generated_by": null
+                  }
+              ],
+              "metrics": [
+                  {
+                      "_pre_pivot_column_id": null,
+                      "_pre_pivot_column_label": null,
+                      "id": "metrics_total_events",
+                      "label": "total_events",
+                      "agg_function": "COUNT_ALL",
+                      "output": true,
+                      "column_id": null,
+                      "filters": [],
+                      "pivot": [],
+                      "type": "number",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "_pre_pivot_column_id": null,
+                      "_pre_pivot_column_label": null,
+                      "id": "metric_limiting_marketing_session_h_rs_f_16_g_customer_count_9_m_kz_jji_c",
+                      "label": "count_customer",
+                      "agg_function": "COUNT",
+                      "output": true,
+                      "column_id": "limiting_marketing_session_HRs_f16G_customer",
+                      "filters": [],
+                      "pivot": [],
+                      "type": "number",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "_pre_pivot_column_id": null,
+                      "_pre_pivot_column_label": null,
+                      "id": "metric_limiting_marketing_session_h_rs_f_16_g_enriched_ts_count_1_sz_r_dfa_v",
+                      "label": "count_enriched_ts",
+                      "agg_function": "COUNT",
+                      "output": true,
+                      "column_id": "limiting_marketing_session_HRs_f16G_enriched_ts",
+                      "filters": [],
+                      "pivot": [],
+                      "type": "number",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "_pre_pivot_column_id": null,
+                      "_pre_pivot_column_label": null,
+                      "id": "no_columns_metric_total_added_metric_RTaJkZfE",
+                      "label": "total_added_metric",
+                      "agg_function": "SUM",
+                      "output": true,
+                      "column_id": "converted_to_added_metric_RTaJkZfE",
+                      "filters": [],
+                      "pivot": [],
+                      "type": "number",
+                      "_auto_generated_by": "create-cac"
+                  }
+              ],
+              "pivot": [],
+              "order": [
+                  {
+                      "column_id": "metrics_total_events",
+                      "order_direction": "desc"
+                  }
+              ],
+              "parent_filters": []
+          },
+          {
+              "name": "Pivot With Null",
+              "slug": "pivot_with_null",
+              "_column_ids": [
+                  "limiting_marketing_session_HRs_f16G_utm_source",
+                  "limiting_marketing_session_HRs_f16G_customer"
+              ],
+              "columns": [
+                  {
+                      "id": "pivot_with_null_limiting_marketing_session_HRs_f16G_utm_source",
+                      "filters": [],
+                      "label": "utm_source",
+                      "name": "",
+                      "output": true,
+                      "type": "string",
+                      "column_id": "limiting_marketing_session_HRs_f16G_utm_source",
+                      "pivoted": false
+                  },
+                  {
+                      "id": "pivot_with_null_limiting_marketing_session_HRs_f16G_customer",
+                      "filters": [],
+                      "label": "customer",
+                      "name": "",
+                      "output": true,
+                      "type": "string",
+                      "column_id": "limiting_marketing_session_HRs_f16G_customer",
+                      "pivoted": false
+                  }
+              ],
+              "computed_columns": [
+                  {
+                      "id": "pivot_with_null_computed_conversion_to_added_metric_RTaJkZfE",
+                      "filters": [],
+                      "label": "conversion_rate_to_added_metric",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "freehand_function",
+                          "raw_string": "({pivot_with_null_metric_total_added_metric_RTaJkZfE}*1.0)/{metrics_total_events}"
+                      },
+                      "source_kind": "computed",
+                      "type": "float",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "id": "pivot_with_null_percent_of_total",
+                      "filters": [],
+                      "label": "percent_of_total",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "percent_of_total",
+                          "column_id": "metrics_total_events",
+                          "group_column_ids": [
+                              "pivot_with_null_limiting_marketing_session_HRs_f16G_customer"
+                          ]
+                      },
+                      "source_kind": "computed",
+                      "type": "number",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "id": "pivot_with_null_running_total",
+                      "filters": [],
+                      "label": "running_total",
+                      "name": "",
+                      "output": true,
+                      "source_details": {
+                          "kind": "running_total",
+                          "column_id": "metrics_total_events",
+                          "group_column_ids": [
+                              "metrics_total_events",
+                              "pivot_with_null_limiting_marketing_session_HRs_f16G_customer"
+                          ],
+                          "order": [
+                              {
+                                  "column_id": "pivot_with_null_limiting_marketing_session_HRs_f16G_utm_source",
+                                  "order_direction": "desc"
+                              },
+                              {
+                                  "column_id": "pivot_with_null_metric_total_added_metric_RTaJkZfE",
+                                  "order_direction": "asc"
+                              }
+                          ]
+                      },
+                      "source_kind": "computed",
+                      "type": "number",
+                      "_auto_generated_by": null
+                  }
+              ],
+              "metrics": [
+                  {
+                      "_pre_pivot_column_id": null,
+                      "_pre_pivot_column_label": null,
+                      "id": "metrics_total_events",
+                      "label": "total_events",
+                      "agg_function": "COUNT_ALL",
+                      "output": true,
+                      "column_id": null,
+                      "filters": [],
+                      "pivot": [],
+                      "type": "number",
+                      "_auto_generated_by": null
+                  },
+                  {
+                      "_pre_pivot_column_id": null,
+                      "_pre_pivot_column_label": null,
+                      "id": "pivot_with_null_metric_total_added_metric_RTaJkZfE",
+                      "label": "total_added_metric",
+                      "agg_function": "SUM",
+                      "output": true,
+                      "column_id": "converted_to_added_metric_RTaJkZfE",
+                      "filters": [],
+                      "pivot": [],
+                      "type": "number",
+                      "_auto_generated_by": null
+                  }
+              ],
+              "pivot": [],
+              "order": [],
+              "parent_filters": [],
+              "_fieldIndex": 4,
+              "_isEdit": true
+          }
+      ],
+      "order": [
+          {
+              "column_id": "limiting_marketing_session_HRs_f16G_ts",
+              "order_direction": "desc"
+          }
+      ]
+  }
+}

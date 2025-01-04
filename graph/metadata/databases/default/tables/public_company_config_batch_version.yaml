@@ -1,0 +1,4 @@
+table:
+  name: company_config_batch_version
+  schema: public
+is_enum: true

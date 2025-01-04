@@ -1,0 +1,21 @@
+query GetTransformationQueryUpdates($company_id: uuid!, $from_date: timestamptz!) {
+  query_updates(
+    where: {
+      transformation: { company_id: { _eq: $company_id } }
+      processed_at: { _gt: $from_date }
+    }
+    order_by: [{ processed_at: asc }]
+  ) {
+    processed_at
+    rows_inserted
+    update_duration
+    from_sync_time
+    to_sync_time
+    transformation_id
+    transformation {
+      name
+      table
+      update_type
+    }
+  }
+}

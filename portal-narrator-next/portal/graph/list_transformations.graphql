@@ -1,0 +1,58 @@
+query TransformationIndex($company_slug: String!) {
+  all_transformations: transformation(
+    where: { company: { slug: { _eq: $company_slug } } }
+    order_by: [{ created_at: desc }]
+  ) {
+    id
+    created_at
+    slug
+    name
+    kind
+    table
+    notes
+    activities {
+      id
+      activity {
+        id
+        slug
+        name
+        company_table {
+          id
+          activity_stream
+        }
+        activity_maintenances(where: { ended_at: { _is_null: true } }) {
+          id
+          kind
+          notes
+          started_at
+          maintenance_kind {
+            description
+          }
+        }
+      }
+    }
+    transformation_maintenances(where: { ended_at: { _is_null: true } }) {
+      id
+      kind
+      notes
+      started_at
+      maintenance_kind {
+        description
+      }
+    }
+    current_query {
+      id
+      sql
+    }
+    production_queries(order_by: [{ updated_at: desc }], limit: 1) {
+      id
+      updated_by
+      updated_at
+    }
+    query_updates(where: { rows_inserted: { _gt: 0 } }, limit: 1) {
+      id
+      rows_inserted
+      processed_at
+    }
+  }
+}

@@ -1,0 +1,30 @@
+mutation InsertCompanyTable(
+    $company_id: uuid!
+    $activity_stream: String!
+    $identifier: String
+    $default_time_between: String
+    $is_imported: Boolean
+    $manually_partition_activity: Boolean
+    $maintainer_id: uuid
+) {
+    insert_company_table_one(
+        object: {
+            activity_stream: $activity_stream
+            identifier: $identifier
+            company_id: $company_id
+            is_imported: $is_imported
+            default_time_between: $default_time_between
+            manually_partition_activity: $manually_partition_activity
+            maintainer_id: $maintainer_id
+        }
+        on_conflict: {
+            constraint: company_table_activity_stream_company_id_key
+            update_columns: [identifier]
+        }
+    ) {
+        id
+        identifier
+        activity_stream
+        updated_at
+    }
+}

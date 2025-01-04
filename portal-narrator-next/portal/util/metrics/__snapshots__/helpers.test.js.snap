@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Metrics - helpers #getMetricObject gets metric object from metricName 1`] = `
+{
+  "last_month": 13004,
+  "month": 2345,
+  "overall": 627521,
+}
+`;
+
+exports[`Metrics - helpers #getPrimaryMetric gets time density specific metric for current metric 1`] = `2345`;
+
+exports[`Metrics - helpers #getSecondaryMetric gets time density specific metric for last metric 1`] = `13004`;

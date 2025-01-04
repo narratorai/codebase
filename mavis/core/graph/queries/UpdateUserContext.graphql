@@ -1,0 +1,7 @@
+mutation UpdateUserContext($company_id: uuid, $user_id: uuid!, $context_update: company_user_set_input!) {
+  update_company_user(where: { company_id: { _eq: $company_id }, user_id: { _eq: $user_id } }, _set: $context_update) {
+    returning {
+      id
+    }
+  }
+}

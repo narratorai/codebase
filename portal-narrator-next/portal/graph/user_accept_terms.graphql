@@ -1,0 +1,12 @@
+mutation UserAcceptTerms($id: uuid!, $accepted_terms_version: uuid!) {
+  update_user(
+    where: { id: { _eq: $id } }
+    _set: { accepted_terms_at: "now()", accepted_terms_version: $accepted_terms_version }
+  ) {
+    returning {
+      id
+      accepted_terms_version
+      accepted_terms_at
+    }
+  }
+}

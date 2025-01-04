@@ -1,0 +1,14 @@
+query GetTaskExecution($execution_id: uuid!) {
+  task_execution_by_pk(id: $execution_id) {
+    id
+    status
+    started_at
+    completed_at
+    details
+    task {
+      id
+      task_slug
+      category
+    }
+  }
+}

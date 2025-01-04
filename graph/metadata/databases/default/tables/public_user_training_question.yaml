@@ -1,0 +1,97 @@
+table:
+  name: user_training_question
+  schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        _exists:
+          _table:
+            name: company
+            schema: public
+          _where:
+            id:
+              _eq: X-Hasura-Company-Id
+      columns:
+        - created_by
+        - llm_training_id
+        - question
+    comment: ""
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - created_by
+        - id
+        - llm_training_id
+        - question
+        - updated_at
+      filter:
+        _exists:
+          _table:
+            name: company
+            schema: public
+          _where:
+            id:
+              _eq: X-Hasura-Company-Id
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - question
+      filter:
+        _and:
+          - _exists:
+              _table:
+                name: company
+                schema: public
+              _where:
+                id:
+                  _eq: X-Hasura-Company-Id
+          - _or:
+              - created_by:
+                  _eq: X-Hasura-User-Id
+              - _exists:
+                  _table:
+                    name: company_user
+                    schema: public
+                  _where:
+                    _and:
+                      - company_id:
+                          _eq: X-Hasura-Company-Id
+                      - user_id:
+                          _eq: X-Hasura-User-Id
+                      - role:
+                          _eq: admin
+      check: null
+    comment: ""
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        _and:
+          - _exists:
+              _table:
+                name: company
+                schema: public
+              _where:
+                id:
+                  _eq: X-Hasura-Company-Id
+          - _or:
+              - created_by:
+                  _eq: X-Hasura-User-Id
+              - _exists:
+                  _table:
+                    name: company_user
+                    schema: public
+                  _where:
+                    _and:
+                      - company_id:
+                          _eq: X-Hasura-Company-Id
+                      - user_id:
+                          _eq: X-Hasura-User-Id
+                      - role:
+                          _eq: admin
+    comment: ""

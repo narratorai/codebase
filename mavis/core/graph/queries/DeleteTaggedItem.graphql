@@ -1,0 +1,5 @@
+mutation DeleteTaggedItem($id: uuid!) {
+  delete_tag_by_pk(id: $id) {
+    id
+  }
+}

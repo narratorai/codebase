@@ -1,0 +1,10 @@
+table:
+  name: comment
+  schema: public
+object_relationships:
+- name: narrative
+  using:
+    foreign_key_constraint_on: narrative_id
+- name: user
+  using:
+    foreign_key_constraint_on: commenter_id

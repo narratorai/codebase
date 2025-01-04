@@ -1,0 +1,8 @@
+mutation InsertTaskExecution($task_id: uuid!, $task_orchestration_id: String!) {
+  inserted_task_execution: insert_task_execution_one(
+    object: { task_id: $task_id, status: running, started_at: "now()", orchestration_id: $task_orchestration_id }
+    on_conflict: { constraint: task_execution_is_running_task_id_key, update_columns: [] }
+  ) {
+    id
+  }
+}

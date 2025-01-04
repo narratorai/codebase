@@ -1,0 +1,72 @@
+query ListNarrativesV3($company_id: uuid!, $statuses: [status_enum!]!, $user_id: uuid!) {
+  narrative(
+    where: { company_id: { _eq: $company_id }, state: { _in: $statuses }, type: { _neq: dashboard } }
+    order_by: [{ created_at: desc_nulls_last }]
+  ) {
+    created_at
+    created_by
+    description
+    id
+    name
+    slug
+    state
+    updated_at
+    category_id
+    requested_by
+    type
+    last_config_updated_at
+    company_category {
+      category
+      created_at
+      color
+      id
+    }
+    user {
+      id
+      email
+      company_users(where: { company_id: { _eq: $company_id } }) {
+        first_name
+        last_name
+        id
+        created_at
+        company {
+          id
+          slug
+        }
+      }
+    }
+    company_task {
+      category
+      schedule
+      task_slug
+      id
+    }
+    actions(order_by: [{ happened_at: asc }]) {
+      id
+      name
+      description
+      happened_at
+      created_at
+      related_to
+      related_to_id
+      updated_at
+    }
+    narrative_runs(order_by: [{ created_at: desc }], limit: 1) {
+      id
+      narrative_slug
+      s3_key
+      created_at
+      is_actionable
+    }
+    tags(where: { company_tag: { _or: [{ user_id: { _eq: $user_id } }, { user_id: { _is_null: true } }] } }) {
+      id
+      updated_at
+      company_tag {
+        id
+        tag
+        color
+        user_id
+      }
+    }
+  }
+}

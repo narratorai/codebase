@@ -1,0 +1,624 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#handleUpdateComputationColumn in a group tab creates a compute column with group_func 1`] = `
+{
+  "columns": [
+    {
+      "column_id": "feature_2c7f9cff7",
+      "column_kind": "group",
+      "filters": [],
+      "id": "feature_1_2ecde358",
+      "label": "Feature 1",
+      "mavis_type": "string",
+      "name": "",
+      "output": true,
+      "pivoted": false,
+      "source_kind": "group",
+      "type": "string",
+    },
+    {
+      "column_id": "feature_3b508423f",
+      "column_kind": "group",
+      "filters": [],
+      "id": "feature_2_5b9c9450",
+      "label": "Feature 2",
+      "mavis_type": "string",
+      "name": "",
+      "output": true,
+      "pivoted": false,
+      "source_kind": "group",
+      "type": "string",
+    },
+    {
+      "column_id": "link7e16eb22",
+      "column_kind": "group",
+      "filters": [],
+      "id": "link_14a609c0",
+      "label": "Link",
+      "mavis_type": "string",
+      "name": "",
+      "output": true,
+      "pivoted": false,
+      "source_kind": "group",
+      "type": "string",
+    },
+  ],
+  "metrics": [
+    {
+      "agg_function": "COUNT_ALL",
+      "column_id": null,
+      "column_kind": "metrics",
+      "conditioned_on_columns": null,
+      "filters": [],
+      "id": "total_marketing_session_rows_17fc7f48",
+      "label": "Total Marketing Session Rows",
+      "mavis_type": null,
+      "output": true,
+      "pivot": [],
+      "type": "integer",
+    },
+    {
+      "agg_function": "SUM",
+      "column_id": "did_email_clickedddf9679c",
+      "column_kind": "metrics",
+      "conditioned_on_columns": null,
+      "filters": [],
+      "id": "total_email_clicked_between_49d8fc30",
+      "label": "Total Email Clicked Between",
+      "mavis_type": null,
+      "output": true,
+      "pivot": [],
+      "type": "float",
+    },
+    {
+      "agg_function": "AVERAGE",
+      "column_id": "did_email_clickedddf9679c",
+      "column_kind": "metrics",
+      "conditioned_on_columns": null,
+      "filters": [],
+      "id": "conversion_rate_to_email_clicked_between_585ba8ac",
+      "label": "Conversion Rate to Email Clicked Between",
+      "mavis_type": null,
+      "output": true,
+      "pivot": [],
+      "type": "float",
+    },
+    {
+      "agg_function": "AVERAGE",
+      "column_id": "day_email_clicked364ea5b7",
+      "column_kind": "metrics",
+      "conditioned_on_columns": null,
+      "filters": [],
+      "id": "average_days_to_email_clicked_6e07ad0f",
+      "label": "Average Days To Email Clicked",
+      "mavis_type": null,
+      "output": true,
+      "pivot": [],
+      "type": "float",
+    },
+  ],
+  "name": "by Feature 1 & Feature 2 & Link",
+  "order": [
+    {
+      "column_id": "total_marketing_session_rows_17fc7f48",
+      "order_direction": "asc",
+    },
+  ],
+  "parent_filters": [],
+  "pivot": [],
+  "slug": "feature_1_feature_2_link11a8f00b",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a group tab creates a compute column with group_func 2`] = `
+{
+  "_auto_generated_by": null,
+  "filters": [],
+  "group_func": [],
+  "id": Any<String>,
+  "label": "Group Func in Group",
+  "name": "",
+  "output": true,
+  "source_details": {
+    "kind": "freehand_function",
+    "raw_string": "iff(not_is_null(link_14a609c0), '1', '0')",
+  },
+  "source_kind": "computed",
+  "type": "string",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a parent tab creates a compute column with group_func 1`] = `
+{
+  "filters": [],
+  "group_func": null,
+  "id": Any<String>,
+  "label": "Activity Id",
+  "mavis_type": "string",
+  "name": "activity_id",
+  "output": true,
+  "source_details": {
+    "activity_id": "marketing_sessionbd7670fb",
+    "activity_kind": "limiting",
+    "applied_function": null,
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "string",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a parent tab creates a compute column with group_func 2`] = `
+{
+  "filters": [],
+  "group_func": null,
+  "id": Any<String>,
+  "label": "Timestamp",
+  "mavis_type": "timestamp",
+  "name": "ts",
+  "output": true,
+  "source_details": {
+    "activity_id": "marketing_sessionbd7670fb",
+    "activity_kind": "limiting",
+    "applied_function": null,
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "timestamp",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a parent tab creates a compute column with group_func 3`] = `
+{
+  "filters": [],
+  "group_func": null,
+  "id": Any<String>,
+  "label": "Customer",
+  "mavis_type": "string",
+  "name": "customer",
+  "output": true,
+  "source_details": {
+    "activity_id": "marketing_sessionbd7670fb",
+    "activity_kind": "limiting",
+    "applied_function": null,
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "string",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a parent tab creates a compute column with group_func 4`] = `
+{
+  "filters": [],
+  "group_func": null,
+  "id": Any<String>,
+  "label": "Unique Identifier",
+  "mavis_type": "string",
+  "name": "join_customer",
+  "output": true,
+  "source_details": {
+    "activity_id": "marketing_sessionbd7670fb",
+    "activity_kind": "limiting",
+    "applied_function": null,
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "string",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a parent tab creates a compute column with group_func 5`] = `
+{
+  "filters": [],
+  "group_func": null,
+  "id": Any<String>,
+  "label": "Activity",
+  "mavis_type": "string",
+  "name": "feature_1",
+  "output": true,
+  "source_details": {
+    "activity_id": "marketing_sessionbd7670fb",
+    "activity_kind": "limiting",
+    "applied_function": null,
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "string",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a parent tab creates a compute column with group_func 6`] = `
+{
+  "filters": [],
+  "group_func": null,
+  "id": Any<String>,
+  "label": "Feature 1",
+  "mavis_type": "string",
+  "name": "feature_2",
+  "output": true,
+  "source_details": {
+    "activity_id": "marketing_sessionbd7670fb",
+    "activity_kind": "limiting",
+    "applied_function": null,
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "string",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a parent tab creates a compute column with group_func 7`] = `
+{
+  "filters": [],
+  "group_func": null,
+  "id": Any<String>,
+  "label": "Feature 2",
+  "mavis_type": "string",
+  "name": "feature_3",
+  "output": true,
+  "source_details": {
+    "activity_id": "marketing_sessionbd7670fb",
+    "activity_kind": "limiting",
+    "applied_function": null,
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "string",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a parent tab creates a compute column with group_func 8`] = `
+{
+  "filters": [],
+  "group_func": null,
+  "id": Any<String>,
+  "label": "Link",
+  "mavis_type": "string",
+  "name": "link",
+  "output": true,
+  "source_details": {
+    "activity_id": "marketing_sessionbd7670fb",
+    "activity_kind": "limiting",
+    "applied_function": null,
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "string",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a parent tab creates a compute column with group_func 9`] = `
+{
+  "filters": [],
+  "group_func": null,
+  "id": Any<String>,
+  "label": "Activity Occurrence",
+  "mavis_type": "integer",
+  "name": "activity_occurrence",
+  "output": true,
+  "source_details": {
+    "activity_id": "marketing_sessionbd7670fb",
+    "activity_kind": "limiting",
+    "applied_function": null,
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "number",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a parent tab creates a compute column with group_func 10`] = `
+{
+  "filters": [],
+  "group_func": null,
+  "id": Any<String>,
+  "label": "First In Between Email Clicked Timestamp",
+  "mavis_type": "timestamp",
+  "name": "ts",
+  "output": true,
+  "source_details": {
+    "activity_id": "email_clicked6a87a66d",
+    "activity_kind": "append",
+    "applied_function": null,
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "timestamp",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a parent tab creates a compute column with group_func 11`] = `
+{
+  "filters": [],
+  "group_func": [
+    "sum",
+    "average",
+  ],
+  "id": Any<String>,
+  "label": "Did Email Clicked Between",
+  "mavis_type": "integer",
+  "name": null,
+  "output": true,
+  "source_details": {
+    "activity_id": "email_clicked6a87a66d",
+    "activity_kind": "append",
+    "enrichment_table": null,
+    "raw_string": "exists(tsabb33d19)",
+  },
+  "source_kind": "computed",
+  "type": "integer",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a parent tab creates a compute column with group_func 12`] = `
+{
+  "filters": [],
+  "group_func": [
+    "average",
+  ],
+  "id": Any<String>,
+  "label": "Days To Email Clicked",
+  "mavis_type": "timestamp",
+  "name": null,
+  "output": true,
+  "source_details": {
+    "activity_id": "email_clicked6a87a66d",
+    "activity_kind": "append",
+    "enrichment_table": null,
+    "raw_string": "time_diff('day', join_ts.local, tsabb33d19)",
+  },
+  "source_kind": "computed",
+  "type": "integer",
+}
+`;
+
+exports[`#handleUpdateComputationColumn in a parent tab creates a compute column with group_func 13`] = `
+{
+  "_auto_generated_by": null,
+  "filters": [],
+  "group_func": [],
+  "id": Any<String>,
+  "label": "Group Func in Parent",
+  "name": "",
+  "output": true,
+  "source_details": {
+    "kind": "freehand_function",
+    "raw_string": "iff(not_is_null(linka0da20a2), '1', '0')",
+  },
+  "source_kind": "computed",
+  "type": "string",
+}
+`;
+
+exports[`#makeColumnOptionsWithExistingLabels for append activity/join options overwrites labels from api with labels from formValue 1`] = `
+[
+  {
+    "enrichment_table": null,
+    "label": "started_session_at",
+    "name": "ts",
+    "type": "timestamp",
+    "values": [],
+  },
+  {
+    "dropdown_label": "2",
+    "enrichment_table": null,
+    "label": "Page Path",
+    "name": "feature_2",
+    "type": "string",
+    "values": [],
+  },
+]
+`;
+
+exports[`#makeColumnOptionsWithExistingLabels for cohort activity options overwrites labels from api with labels from formValue 1`] = `
+[
+  {
+    "enrichment_table": null,
+    "label": "started_session_at",
+    "name": "ts",
+    "type": "timestamp",
+    "values": [
+      {
+        "key": "independent_completed_order",
+        "value": "43.88%",
+      },
+    ],
+  },
+  {
+    "dropdown_label": "2",
+    "enrichment_table": null,
+    "label": "Page Path",
+    "name": "feature_2",
+    "type": "string",
+    "values": [],
+  },
+]
+`;
+
+exports[`#makeMetricsOnPivotedToggle creates a metric column for each distinct value 1`] = `
+{
+  "pivotedComputedColumns": [
+    {
+      "_auto_generated_by": "create-pivot",
+      "filters": [],
+      "id": "metric_total_ordered_impression_kit_first_value__computed_conversion",
+      "label": "Conversion Rate to total_ordered_impression_kit first_value",
+      "name": "",
+      "output": true,
+      "source_details": {
+        "kind": "freehand_function",
+        "raw_string": "({metric_total_ordered_impression_kit_first_value}*1.0)/{metrics_total_events_first_value}",
+      },
+      "source_kind": "computed",
+      "type": "float",
+    },
+    {
+      "_auto_generated_by": "create-pivot",
+      "filters": [],
+      "id": "metric_total_ordered_impression_kit_second_value___computed_conversion",
+      "label": "Conversion Rate to total_ordered_impression_kit second_value,",
+      "name": "",
+      "output": true,
+      "source_details": {
+        "kind": "freehand_function",
+        "raw_string": "({metric_total_ordered_impression_kit_second_value_}*1.0)/{metrics_total_events_second_value_}",
+      },
+      "source_kind": "computed",
+      "type": "float",
+    },
+    {
+      "_auto_generated_by": "create-pivot",
+      "filters": [],
+      "id": "metric_total_ordered_impression_kit_third_value__computed_conversion",
+      "label": "Conversion Rate to total_ordered_impression_kit third_value",
+      "name": "",
+      "output": true,
+      "source_details": {
+        "kind": "freehand_function",
+        "raw_string": "({metric_total_ordered_impression_kit_third_value}*1.0)/{metrics_total_events_third_value}",
+      },
+      "source_kind": "computed",
+      "type": "float",
+    },
+  ],
+  "pivotedMetrics": [
+    {
+      "_auto_generated_by": "create-pivot",
+      "_pre_pivot_column_id": "metrics_total_events",
+      "_pre_pivot_column_label": "total_events",
+      "agg_function": "COUNT",
+      "column_id": "*",
+      "filters": [],
+      "id": "metrics_total_events_first_value",
+      "label": "total_events first_value",
+      "output": true,
+      "pivot": [
+        {
+          "column_id": "group_session_session_kind",
+          "value": "first_value",
+        },
+      ],
+      "type": "number",
+    },
+    {
+      "_auto_generated_by": "create-pivot",
+      "_pre_pivot_column_id": "metrics_total_events",
+      "_pre_pivot_column_label": "total_events",
+      "agg_function": "COUNT",
+      "column_id": "*",
+      "filters": [],
+      "id": "metrics_total_events_second_value_",
+      "label": "total_events second_value,",
+      "output": true,
+      "pivot": [
+        {
+          "column_id": "group_session_session_kind",
+          "value": "second_value,",
+        },
+      ],
+      "type": "number",
+    },
+    {
+      "_auto_generated_by": "create-pivot",
+      "_pre_pivot_column_id": "metrics_total_events",
+      "_pre_pivot_column_label": "total_events",
+      "agg_function": "COUNT",
+      "column_id": "*",
+      "filters": [],
+      "id": "metrics_total_events_third_value",
+      "label": "total_events third_value",
+      "output": true,
+      "pivot": [
+        {
+          "column_id": "group_session_session_kind",
+          "value": "third_value",
+        },
+      ],
+      "type": "number",
+    },
+    {
+      "_auto_generated_by": "create-pivot",
+      "_pre_pivot_column_id": "metric_total_ordered_impression_kit",
+      "_pre_pivot_column_label": "total_ordered_impression_kit",
+      "agg_function": "SUM",
+      "column_id": "converted_to_ordered_impression_kit",
+      "filters": [],
+      "id": "metric_total_ordered_impression_kit_first_value",
+      "label": "total_ordered_impression_kit first_value",
+      "output": true,
+      "pivot": [
+        {
+          "column_id": "group_session_session_kind",
+          "value": "first_value",
+        },
+      ],
+      "type": "number",
+    },
+    {
+      "_auto_generated_by": "create-pivot",
+      "_pre_pivot_column_id": "metric_total_ordered_impression_kit",
+      "_pre_pivot_column_label": "total_ordered_impression_kit",
+      "agg_function": "SUM",
+      "column_id": "converted_to_ordered_impression_kit",
+      "filters": [],
+      "id": "metric_total_ordered_impression_kit_second_value_",
+      "label": "total_ordered_impression_kit second_value,",
+      "output": true,
+      "pivot": [
+        {
+          "column_id": "group_session_session_kind",
+          "value": "second_value,",
+        },
+      ],
+      "type": "number",
+    },
+    {
+      "_auto_generated_by": "create-pivot",
+      "_pre_pivot_column_id": "metric_total_ordered_impression_kit",
+      "_pre_pivot_column_label": "total_ordered_impression_kit",
+      "agg_function": "SUM",
+      "column_id": "converted_to_ordered_impression_kit",
+      "filters": [],
+      "id": "metric_total_ordered_impression_kit_third_value",
+      "label": "total_ordered_impression_kit third_value",
+      "output": true,
+      "pivot": [
+        {
+          "column_id": "group_session_session_kind",
+          "value": "third_value",
+        },
+      ],
+      "type": "number",
+    },
+  ],
+}
+`;
+
+exports[`#reverseMetricComputeColumns reverses the pivot metrics 1`] = `
+{
+  "computedColumns": [],
+  "metrics": [
+    {
+      "agg_function": "COUNT",
+      "column_id": "*",
+      "filters": [],
+      "id": "metrics_total_events",
+      "label": "total_events",
+      "output": true,
+      "pivot": [],
+      "type": "number",
+    },
+    {
+      "agg_function": "SUM",
+      "column_id": "converted_to_ordered_impression_kit",
+      "filters": [],
+      "id": "metric_total_ordered_impression_kit",
+      "label": "total_ordered_impression_kit",
+      "output": true,
+      "pivot": [],
+      "type": "number",
+    },
+  ],
+}
+`;

@@ -1,0 +1,15 @@
+mutation InsertSharedSqlQuery(
+  $company_id: uuid!
+  $sql: String!
+  $user_id: String!
+  $related_to: String!
+  $name: String
+) {
+  insert_company_sql_queries(
+    objects: { sql: $sql, related_id: $company_id, updated_by: $user_id, related_to: $related_to, name: $name }
+  ) {
+    returning {
+      id
+    }
+  }
+}

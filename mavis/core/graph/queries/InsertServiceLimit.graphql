@@ -1,0 +1,28 @@
+mutation InsertServiceLimit(
+    $company_id: uuid!
+    $user_limit: Int
+    $monthly_price: float8
+    $name: String
+    $start_on: date
+
+) {
+    update_service_limit(
+        where: { company_id: { _eq: $company_id }, end_on: { _is_null: true } }
+        _set: { end_on: "now()" }
+    ) {
+        returning {
+            company_id
+        }
+    }
+    insert_service_limit_one(
+        object: {
+            user_limit: $user_limit
+            monthly_price: $monthly_price
+            name: $name
+            company_id: $company_id
+            start_on: $start_on
+        }
+    ) {
+        id
+    }
+}

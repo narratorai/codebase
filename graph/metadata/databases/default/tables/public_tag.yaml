@@ -1,0 +1,194 @@
+table:
+  name: tag
+  schema: public
+object_relationships:
+  - name: activity
+    using:
+      manual_configuration:
+        column_mapping:
+          related_id: id
+        insertion_order: null
+        remote_table:
+          name: activity
+          schema: public
+  - name: company_tag
+    using:
+      foreign_key_constraint_on: tag_id
+  - name: dataset
+    using:
+      manual_configuration:
+        column_mapping:
+          related_id: id
+        insertion_order: null
+        remote_table:
+          name: dataset
+          schema: public
+  - name: metric
+    using:
+      manual_configuration:
+        column_mapping:
+          related_id: id
+        insertion_order: null
+        remote_table:
+          name: metric
+          schema: public
+  - name: narrative
+    using:
+      manual_configuration:
+        column_mapping:
+          related_id: id
+        insertion_order: null
+        remote_table:
+          name: narrative
+          schema: public
+  - name: transformation
+    using:
+      manual_configuration:
+        column_mapping:
+          related_id: id
+        insertion_order: null
+        remote_table:
+          name: transformation
+          schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        _and:
+          - _or:
+              - metric:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - dataset:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - activity:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - transformation:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - narrative:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+          - _and:
+              - company_tag:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - _or:
+                  - company_tag:
+                      user_id:
+                        _eq: X-Hasura-User-Id
+                  - company_tag:
+                      user_id:
+                        _is_null: true
+      columns:
+        - related_id
+        - related_to
+        - tag_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - related_to
+        - created_at
+        - updated_at
+        - id
+        - related_id
+        - tag_id
+      filter:
+        _and:
+          - _or:
+              - metric:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - dataset:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - activity:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - transformation:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - narrative:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+          - _and:
+              - company_tag:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - _or:
+                  - company_tag:
+                      user_id:
+                        _eq: X-Hasura-User-Id
+                  - company_tag:
+                      user_id:
+                        _is_null: true
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - updated_at
+      filter:
+        _and:
+          - _or:
+              - metric:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - dataset:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - activity:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - transformation:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - narrative:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+          - _and:
+              - company_tag:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - _or:
+                  - company_tag:
+                      user_id:
+                        _eq: X-Hasura-User-Id
+                  - company_tag:
+                      user_id:
+                        _is_null: true
+      check: null
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        _and:
+          - _or:
+              - metric:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - dataset:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - activity:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - transformation:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - narrative:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+          - _and:
+              - company_tag:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - _or:
+                  - company_tag:
+                      user_id:
+                        _eq: X-Hasura-User-Id
+                  - company_tag:
+                      user_id:
+                        _is_null: true

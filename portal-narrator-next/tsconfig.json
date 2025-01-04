@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "styles/*": ["src/styles/*"],
+      "static/*": ["public/static/*"],
+
+      // Deprecated imports
+      "components/*": ["portal/components/*"],
+      "util/*": ["portal/util/*"],
+      "graph/*": ["portal/graph/*"],
+      "machines/*": ["portal/machines/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "portal-global.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", "cypress", "**/*.test.*"]
+}

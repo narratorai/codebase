@@ -1,0 +1,93 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "field_slug": {
+        "type": "string"
+      },
+      "current": {
+        "type": "integer"
+      },
+      "type": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "size": {
+        "type": "string"
+      },
+      "direction": {
+        "type": "string"
+      },
+      "percent": {
+        "type": "integer"
+      },
+      "clickable": {
+        "type": "boolean",
+        "default": false
+      },
+      "show_buttons": {
+        "type": "boolean",
+        "default": false  
+      },
+      "button_labels": {
+        "type": "object",
+        "properties": {
+          "next": { "type": "string"},
+          "previous": { "type": "string"}
+        }
+      },
+      "steps": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            }, 
+            "description": {
+              "type": "string"
+            },
+            "sub_title": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "ui_schema" : {
+    "ui:field": "step"
+  },
+  "data": {
+    "field_slug": "signup_steps",
+    "type": "navigation",
+    "status": "progress",
+    "size": "small",
+    "clickable": false,
+    "show_buttons": true,
+    "button_labels": {
+      "next": "Forward",
+      "previous": "Back"
+    },
+    "current": 1,
+    "steps": [{
+        "title": "Started",
+        "description": "This was the first step"
+      }, {
+        "title": "In Progress",
+        "description": "This is the second step",
+        "sub_title": "nearly there"
+      }, {
+        "title": "Done",
+        "description": "This is the last step",
+        "status": "finish",
+        "disabled": true
+      }
+    ]
+  }
+}

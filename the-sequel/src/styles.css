@@ -1,0 +1,120 @@
+/* 
+  Autocomplete popup styles
+*/
+
+/* borders and padding */
+.monaco-editor .editor-widget.suggest-widget, .monaco-editor .suggest-details-container {
+  background: white;
+  box-shadow: 6px 8px 15px 0px rgb(0 0 0 / 5%);
+  border-radius: 5px;
+}
+
+/* details container is the extra window with docs in it */
+.monaco-editor .suggest-details-container {
+  border: 1px solid #e5e5e5;
+  width: unset!important;
+  height: unset!important;
+  padding: 12px 0px;  /* vertical padding here - so overall panel height changes */
+}
+
+.monaco-editor .suggest-details-container .suggest-details .monaco-scrollable-element {
+  padding: 0px 12px; /* horizontal padding here - so overall panel width stays the same. Important for keeping proper position */
+}
+
+.monaco-editor .editor-widget.suggest-widget .monaco-list .monaco-list-row {
+  padding-left: 12px;
+}
+
+.monaco-editor div.suggest-details {
+  border: none;
+}
+
+/* Font and text */
+.monaco-editor .editor-widget.suggest-widget .monaco-list .monaco-list-row .contents div.main {
+  font-family: "Source Sans Pro", sans-serif !important;
+  font-weight: 300 !important;
+}
+
+/* highlighted and focused text color */
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row.focused, .monaco-editor .suggest-widget .monaco-list .monaco-list-row.focused:hover {
+  background-color: #dcedf8;
+  color: #242424 !important;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row.focused .monaco-highlighted-label span.highlight {
+  color: #0066bf;
+}
+
+/* Markdown styles in the documentation pane */
+
+.monaco-editor .docs.markdown-docs p {
+  margin: 0px;
+}
+
+.monaco-editor .suggest-details .body .header p {
+  padding-bottom: 0px !important;
+  font-family: "Source Sans Pro", sans-serif !important;
+  font-weight: 300;
+}
+
+.monaco-editor .docs.markdown-docs blockquote {
+  background-color: #f1f7fb;
+  color: #0e4b71;
+  padding: 0px 12px;
+  border: 1px solid #dcedf8;
+  border-radius: 2px;
+  margin: 0px;
+}
+
+/* code block */
+.monaco-editor .docs.markdown-docs .code {
+  padding: 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+}
+
+/* inline code */
+.monaco-editor .docs.markdown-docs code {
+  background-color: unset;
+  color: #cd3c8e;
+  padding: 0px;
+}
+
+
+/* 
+  General Monaco styles 
+*/
+
+
+.tools-container {
+  display: flex;
+  margin: 10px 0px;
+  align-items: center;
+}
+
+.error-bar {
+  margin-left: 10px;
+}
+
+.run-button {
+  border: 1px solid lightgray;
+  padding: 5px;
+}
+
+/* SqlEditor */
+.query-vertical-decoration-light {
+  background: rgb(235, 235, 235);
+  width: 2px!important;
+  margin-left: 4px;
+}
+
+.query-vertical-decoration-dark {
+  background: rgb(48, 48, 48);
+  width: 2px!important;
+  margin-left: 4px;
+}
+
+/* AG Grid */
+.ag-row, .ag-header-row {
+  font-size: 13px;
+}

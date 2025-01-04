@@ -1,0 +1,37 @@
+{
+  "default_audience": "",
+  "default_directory": "Username-Password-Authentication",
+  "enabled_locales": ["en"],
+  "flags": {
+    "allow_legacy_tokeninfo_endpoint": false,
+    "enable_client_connections": false,
+    "enable_custom_domain_in_emails": true,
+    "enable_dynamic_client_registration": false,
+    "enable_idtoken_api2": true,
+    "enable_legacy_profile": false,
+    "enable_public_signup_user_exists_error": false,
+    "new_universal_login_experience_enabled": true,
+    "universal_login": true,
+    "dashboard_ui_next": true,
+    "no_disclose_enterprise_connections": false,
+    "disable_clickjack_protection_headers": false,
+    "include_email_in_reset_pwd_redirect": true,
+    "include_email_in_verify_email_redirect": true
+  },
+  "friendly_name": "Narrator",
+  "idle_session_lifetime": 72,
+  "picture_url": "https://assets.narrator.ai/brand/narrator-logo-mark-150.png",
+  "sandbox_version": "16",
+  "session_lifetime": 720,
+  "support_email": "support@narrator.ai",
+  "support_url": "https://www.narrator.ai",
+  "universal_login": {
+    "colors": {
+      "page_background": "#000000",
+      "primary": "#0059d6"
+    },
+    "passwordless": {
+      "allow_magiclink_verify_without_session": true
+    }
+  }
+}

@@ -1,0 +1,715 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "slug": { "enum": [], "enumNames": [], "type": "string", "title": "Select Dataset" },
+      "add_annotations": { "type": "boolean", "default": false, "title": "Add Annotations" },
+      "create_custom_plot": { "type": "boolean", "default": false, "title": "Create Custom Plot" }
+    },
+    "title": "Narrative Plotter",
+    "description": "A way to visualize your datasets",
+    "dependencies": {
+      "define_plot": {
+        "oneOf": [
+          {
+            "properties": {
+              "define_plot": { "enum": [true] },
+              "columns": {
+                "type": "object",
+                "properties": {
+                  "ys": {
+                    "type": "array",
+                    "items": {
+                      "enum": [
+                        "total_opened_email_rows_85cfa19b",
+                        "total_started_session_1e39adaf",
+                        "conversion_rate_to_started_session_045b81d1",
+                        "total_clicked_email_89466466",
+                        "conversion_rate_to_clicked_email_e283c54a",
+                        "metric_customer_9628_c_2_cd_count_distinct_y_pg_yus_7_rc"
+                      ],
+                      "enumNames": [
+                        "Total Opened Email Rows",
+                        "Total Started Session",
+                        "Conversion Rate to Started Session",
+                        "Total Clicked Email",
+                        "Conversion Rate to Clicked Email",
+                        "Count Distinct Customer"
+                      ],
+                      "type": "string"
+                    },
+                    "uniqueItems": true,
+                    "title": "Y Columns"
+                  },
+                  "advance_editing": { "type": "boolean", "default": false, "title": "Advance Editing" },
+                  "y2_available": { "type": "boolean", "default": false, "title": "Y2 Available" }
+                },
+                "title": "Columns",
+                "dependencies": {
+                  "advance_editing": {
+                    "oneOf": [
+                      {
+                        "properties": {
+                          "advance_editing": { "enum": [true] },
+                          "xs": {
+                            "type": "array",
+                            "items": { "enum": ["month_769267d0"], "enumNames": ["Month"], "type": "string" },
+                            "uniqueItems": true,
+                            "title": "X Columns"
+                          },
+                          "color_bys": {
+                            "type": "array",
+                            "items": { "enum": ["month_769267d0"], "enumNames": ["Month"], "type": "string" },
+                            "uniqueItems": true,
+                            "title": "Color By Columns"
+                          }
+                        },
+                        "required": []
+                      },
+                      {
+                        "properties": {
+                          "advance_editing": { "enum": [false] },
+                          "x_name": { "type": "string", "title": " " },
+                          "color_name": { "type": "string", "title": " " }
+                        },
+                        "required": []
+                      }
+                    ]
+                  },
+                  "y2_available": {
+                    "oneOf": [
+                      {
+                        "properties": {
+                          "y2_available": { "enum": [true] },
+                          "y2": {
+                            "enum": [
+                              "none",
+                              "compute-count_record_percent",
+                              "compute-percent",
+                              "compute-first_percent",
+                              "total_opened_email_rows_85cfa19b",
+                              "total_started_session_1e39adaf",
+                              "conversion_rate_to_started_session_045b81d1",
+                              "total_clicked_email_89466466",
+                              "conversion_rate_to_clicked_email_e283c54a",
+                              "metric_customer_9628_c_2_cd_count_distinct_y_pg_yus_7_rc"
+                            ],
+                            "enumNames": [
+                              "No Y2",
+                              "Computed % of Count Record",
+                              "Computed % of Total",
+                              "Computed % of First Metric",
+                              "Total Opened Email Rows",
+                              "Total Started Session",
+                              "Conversion Rate to Started Session",
+                              "Total Clicked Email",
+                              "Conversion Rate to Clicked Email",
+                              "Count Distinct Customer"
+                            ],
+                            "type": "string",
+                            "title": "Y2 Columns"
+                          }
+                        },
+                        "required": []
+                      },
+                      { "properties": { "y2_available": { "enum": [false] } }, "required": [] }
+                    ]
+                  }
+                }
+              }
+            },
+            "required": []
+          },
+          { "properties": { "define_plot": { "enum": [false] } }, "required": [] }
+        ]
+      },
+      "edit_layout": {
+        "oneOf": [
+          {
+            "properties": {
+              "edit_layout": { "enum": [true] },
+              "axes": {
+                "type": "object",
+                "properties": {
+                  "title": { "type": "string", "title": "Title" },
+                  "y_axis": { "type": "string", "title": "Y Axis" },
+                  "x_axis": { "type": "string", "title": "X Axis" },
+                  "plot_kind": {
+                    "enum": ["line", "bar"],
+                    "enumNames": ["Line", "Bar"],
+                    "type": "string",
+                    "title": "Plot kind"
+                  },
+                  "y2_selected": { "type": "boolean", "default": false, "title": "Y2 Selected" },
+                  "limit_plot_range": { "type": "boolean", "default": false, "title": "Limit Plot Range" }
+                },
+                "title": "Axes",
+                "dependencies": {
+                  "y2_selected": {
+                    "oneOf": [
+                      {
+                        "properties": {
+                          "y2_selected": { "enum": [true] },
+                          "y2_axis": { "type": "string", "title": "Y2 Axis" }
+                        },
+                        "required": []
+                      },
+                      { "properties": { "y2_selected": { "enum": [false] } }, "required": [] }
+                    ]
+                  },
+                  "limit_plot_range": {
+                    "oneOf": [
+                      {
+                        "properties": {
+                          "limit_plot_range": { "enum": [true] },
+                          "x_range_from": { "type": "string", "title": "Limit X From" },
+                          "x_range_to": { "type": "string", "title": "Limit X To" },
+                          "y_range_from": { "type": "number", "title": "Limit Y From" },
+                          "y_range_to": { "type": "number", "title": "Limit Y To" }
+                        },
+                        "required": []
+                      },
+                      { "properties": { "limit_plot_range": { "enum": [false] } }, "required": [] }
+                    ]
+                  }
+                }
+              }
+            },
+            "required": []
+          },
+          { "properties": { "edit_layout": { "enum": [false] } }, "required": [] }
+        ]
+      },
+      "update_lines": {
+        "oneOf": [
+          {
+            "properties": {
+              "update_lines": { "enum": [true] },
+              "traces": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "default_shown": { "type": "boolean", "title": "👁" },
+                    "line_type": {
+                      "enum": ["solid", "dot", "dash", "longdash", "dashdot", "longdashdot"],
+                      "enumNames": ["____", "....", "-----", "___ ___", "-.-._", "___.___"],
+                      "type": "string",
+                      "title": "Line Style"
+                    },
+                    "color": { "type": "string", "title": "Color" },
+                    "format": {
+                      "enum": ["number", "revenue", "percent"],
+                      "enumNames": ["#", "$", "%"],
+                      "type": "string",
+                      "title": "Format"
+                    },
+                    "remove": { "type": "boolean", "title": "🗑" },
+                    "name": { "type": "string", "title": "Name" }
+                  }
+                },
+                "title": "Customize Lines"
+              }
+            },
+            "required": []
+          },
+          { "properties": { "update_lines": { "enum": [false] } }, "required": [] }
+        ]
+      },
+      "add_annotations": {
+        "oneOf": [
+          {
+            "properties": {
+              "add_annotations": { "enum": [true] },
+              "annotations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "enum": ["point", "vertical_line", "horizontal_line"],
+                      "enumNames": ["Point", "Vertical Line", "Horizontal Line"],
+                      "type": "string",
+                      "default": "point",
+                      "title": "kind"
+                    },
+                    "content": { "type": "string", "title": "Annotation" }
+                  },
+                  "dependencies": {
+                    "kind": {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "kind": { "enum": ["point"] },
+                            "ax": { "type": "number", "title": "Arrow's Relative X", "default": -40 },
+                            "ay": { "type": "number", "title": "Arrow's Relative Y", "default": -40 },
+                            "guess_rel": { "type": "boolean", "title": "🕵️‍♀️" },
+                            "x_location": { "type": "string", "title": "x Location" },
+                            "y_location": { "type": "string", "title": "Y Location" }
+                          },
+                          "required": []
+                        },
+                        {
+                          "properties": {
+                            "kind": { "enum": ["vertical_line"] },
+                            "x_location": { "type": "string", "title": "x Location" }
+                          },
+                          "required": []
+                        },
+                        {
+                          "properties": {
+                            "kind": { "enum": ["horizontal_line"] },
+                            "y_location": { "type": "string", "title": "Y Location" }
+                          },
+                          "required": []
+                        }
+                      ]
+                    }
+                  }
+                },
+                "title": "Annotation"
+              }
+            },
+            "required": []
+          },
+          { "properties": { "add_annotations": { "enum": [false] } }, "required": [] }
+        ]
+      },
+      "create_custom_plot": {
+        "oneOf": [
+          {
+            "properties": {
+              "create_custom_plot": { "enum": [true] },
+              "group_slug": { "enum": [], "enumNames": [], "type": "string", "title": "Select Group" },
+              "define_plot": { "type": "boolean", "default": false, "title": "Define Plot" },
+              "edit_layout": { "type": "boolean", "default": false, "title": "Edit Layout" },
+              "update_lines": { "type": "boolean", "default": false, "title": "Update Lines" }
+            },
+            "required": []
+          },
+          {
+            "properties": {
+              "create_custom_plot": { "enum": [false] },
+              "plot_slug": { "enum": [], "enumNames": [], "type": "string", "title": "Load Saved Plot" }
+            },
+            "required": []
+          }
+        ]
+      }
+    }
+  },
+  "ui_schema": {
+    "ui:order": [
+      "create_custom_plot",
+      "slug",
+      "group_slug",
+      "plot_slug",
+      "define_plot",
+      "columns",
+      "edit_layout",
+      "axes",
+      "update_lines",
+      "traces",
+      "add_annotations",
+      "annotations",
+      "*"
+    ],
+    "ui:options": {
+      "hide_output": true,
+      "process_data_on_load": true,
+      "title": false,
+      "flex_direction": "row",
+      "flex_wrap": "wrap"
+    },
+    "define_plot": { "ui:widget": "BooleanToggleWidget" },
+    "update_lines": { "ui:widget": "BooleanToggleWidget" },
+    "edit_layout": { "ui:widget": "BooleanToggleWidget" },
+    "add_annotations": { "ui:widget": "BooleanToggleWidget" },
+    "create_custom_plot": {},
+    "slug": {
+      "ui:options": {
+        "load_values": true,
+        "process_data": true,
+        "outer_box_props": { "width": "50%", "pr": "12px", "pl": "0px", "mb": "8px" },
+        "bottom_border": false
+      }
+    },
+    "group_slug": {
+      "ui:options": {
+        "load_values": true,
+        "update_schema": true,
+        "process_data": true,
+        "submit_form": true,
+        "outer_box_props": { "width": "50%", "pr": "12px", "pl": "0px", "mb": "8px" },
+        "bottom_border": false
+      }
+    },
+    "plot_slug": {
+      "ui:options": {
+        "load_values": true,
+        "submit_form": true,
+        "outer_box_props": { "width": "50%", "pr": "12px", "pl": "0px", "mb": "8px" },
+        "bottom_border": false
+      }
+    },
+    "columns": {
+      "ui:order": [
+        "ys",
+        "y2",
+        "advance_editing",
+        "x_name",
+        "color_name",
+        "xs",
+        "color_bys",
+        "y2_available",
+        "refresh_trace",
+        "*"
+      ],
+      "ui:options": {
+        "title": false,
+        "outer_box_props": { "width": "100%", "pr": "12px", "pl": "16px", "mb": "8px" },
+        "bottom_border": false
+      },
+      "y2_available": { "ui:hidden": true, "ui:widget": "hidden" },
+      "advance_editing": { "ui:options": { "update_schema": true } },
+      "ys": {
+        "ui:options": {
+          "process_data": true,
+          "submit_form": true,
+          "outer_box_props": { "width": "100%", "pr": "12px", "pl": "0px", "mb": "8px" },
+          "bottom_border": false
+        }
+      },
+      "y2": {
+        "ui:options": {
+          "process_data": true,
+          "submit_form": true,
+          "outer_box_props": { "width": "50%", "pr": "12px", "pl": "0px", "mb": "8px" },
+          "bottom_border": false
+        }
+      },
+      "xs": {
+        "ui:options": {
+          "process_data": true,
+          "submit_form": true,
+          "outer_box_props": { "width": "100%", "pr": "12px", "pl": "0px", "mb": "8px" },
+          "bottom_border": false
+        }
+      },
+      "color_bys": {
+        "ui:options": {
+          "process_data": true,
+          "submit_form": true,
+          "outer_box_props": { "width": "100%", "pr": "12px", "pl": "0px", "mb": "8px" },
+          "bottom_border": false
+        }
+      },
+      "x_name": {
+        "ui:widget": "MarkdownRenderWidget",
+        "ui:options": { "outer_box_props": { "width": "100%", "pr": "12px", "pl": "0px" }, "bottom_border": false }
+      },
+      "color_name": {
+        "ui:widget": "MarkdownRenderWidget",
+        "ui:options": { "outer_box_props": { "width": "100%", "pr": "12px", "pl": "0px" }, "bottom_border": false }
+      }
+    },
+    "traces": {
+      "ui:options": {
+        "title": false,
+        "addable": false,
+        "orderable": true,
+        "removable": false,
+        "outer_box_props": { "width": "100%", "pr": "12px", "pl": "16px", "mb": "8px" },
+        "bottom_border": false
+      },
+      "items": {
+        "ui:order": ["name", "default_shown", "line_type", "format", "color", "remove"],
+        "name": {
+          "ui:options": { "outer_box_props": { "width": "100%", "pr": "12px", "pl": "0px" }, "bottom_border": false }
+        },
+        "default_shown": {
+          "ui:options": {
+            "submit_form": true,
+            "outer_box_props": { "width": "15%", "pr": "12px", "pl": "0px" },
+            "bottom_border": false,
+            "inline_input_height": true
+          }
+        },
+        "line_type": {
+          "ui:options": {
+            "submit_form": true,
+            "data_public": true,
+            "outer_box_props": { "width": "25%", "pr": "12px", "pl": "0px" },
+            "bottom_border": false
+          }
+        },
+        "format": {
+          "ui:options": {
+            "process_data": true,
+            "submit_form": true,
+            "data_public": true,
+            "outer_box_props": { "width": "20%", "pr": "12px", "pl": "0px" },
+            "bottom_border": false
+          }
+        },
+        "color": {
+          "ui:widget": "color",
+          "ui:options": {
+            "submit_form": true,
+            "data_public": true,
+            "outer_box_props": { "width": "30%", "pr": "12px", "pl": "0px" },
+            "bottom_border": false
+          }
+        },
+        "remove": {
+          "ui:options": {
+            "submit_form": true,
+            "outer_box_props": { "width": "10%", "pr": "12px", "pl": "0px" },
+            "bottom_border": false,
+            "inline_input_height": true
+          }
+        }
+      }
+    },
+    "axes": {
+      "ui:order": [
+        "title",
+        "plot_kind",
+        "y_axis",
+        "x_axis",
+        "y2_axis",
+        "limit_plot_range",
+        "x_range_from",
+        "x_range_to",
+        "y_range_from",
+        "y_range_to",
+        "y2_selected",
+        "*"
+      ],
+      "ui:options": {
+        "title": false,
+        "outer_box_props": { "width": "100%", "pr": "12px", "pl": "16px", "mb": "8px" },
+        "bottom_border": false
+      },
+      "title": {
+        "ui:options": {
+          "outer_box_props": { "width": "70%", "pr": "12px", "pl": "0px", "mb": "8px" },
+          "bottom_border": false
+        }
+      },
+      "plot_kind": {
+        "ui:options": {
+          "outer_box_props": { "width": "30%", "pr": "12px", "pl": "0px", "mb": "8px" },
+          "bottom_border": false,
+          "submit_form": true
+        }
+      },
+      "y_axis": {
+        "ui:options": {
+          "outer_box_props": { "width": "50%", "pr": "12px", "pl": "0px", "mb": "8px" },
+          "bottom_border": false
+        }
+      },
+      "x_axis": {
+        "ui:options": {
+          "outer_box_props": { "width": "50%", "pr": "12px", "pl": "0px", "mb": "8px" },
+          "bottom_border": false
+        }
+      },
+      "y2_axis": {
+        "ui:options": {
+          "outer_box_props": { "width": "50%", "pr": "12px", "pl": "0px", "mb": "8px" },
+          "bottom_border": false
+        }
+      },
+      "limit_plot_range": { "ui:widget": "BooleanToggleWidget" },
+      "x_range_from": {
+        "ui:options": {
+          "outer_box_props": { "width": "50%", "pr": "12px", "pl": "0px", "mb": "8px" },
+          "bottom_border": false,
+          "data_public": true
+        }
+      },
+      "x_range_to": {
+        "ui:options": {
+          "outer_box_props": { "width": "50%", "pr": "12px", "pl": "0px", "mb": "8px" },
+          "bottom_border": false,
+          "data_public": true
+        }
+      },
+      "y_range_from": {
+        "ui:options": {
+          "outer_box_props": { "width": "50%", "pr": "12px", "pl": "0px", "mb": "8px" },
+          "bottom_border": false,
+          "data_public": true
+        }
+      },
+      "y_range_to": {
+        "ui:options": {
+          "outer_box_props": { "width": "50%", "pr": "12px", "pl": "0px", "mb": "8px" },
+          "bottom_border": false,
+          "data_public": true
+        }
+      },
+      "y2_selected": { "ui:hidden": true, "ui:widget": "hidden" }
+    },
+    "annotations": {
+      "ui:options": {
+        "title": false,
+        "orderable": false,
+        "outer_box_props": { "width": "100%", "pr": "12px", "pl": "16px", "mb": "8px" },
+        "bottom_border": false
+      },
+      "items": {
+        "ui:order": ["kind", "x_location", "y_location", "content", "ax", "ay", "guess_rel"],
+        "kind": {
+          "ui:options": {
+            "outer_box_props": { "width": "40%", "pr": "12px", "pl": "0px" },
+            "bottom_border": false,
+            "data_public": true
+          }
+        },
+        "x_location": {
+          "ui:widget": "MarkdownWidget",
+          "ui:options": {
+            "outer_box_props": { "width": "50%", "pr": "12px", "pl": "0px" },
+            "bottom_border": false,
+            "autocomplete": [],
+            "default_height": 50
+          },
+          "ui:data_public": true
+        },
+        "y_location": {
+          "ui:widget": "MarkdownWidget",
+          "ui:options": {
+            "outer_box_props": { "width": "50%", "pr": "12px", "pl": "0px" },
+            "bottom_border": false,
+            "autocomplete": [],
+            "default_height": 50
+          },
+          "ui:data_public": true
+        },
+        "ax": {
+          "ui:options": {
+            "outer_box_props": { "width": "25%", "pr": "12px", "pl": "0px" },
+            "bottom_border": false,
+            "data_public": true
+          }
+        },
+        "ay": {
+          "ui:options": {
+            "outer_box_props": { "width": "25%", "pr": "12px", "pl": "0px" },
+            "bottom_border": false,
+            "data_public": true
+          }
+        },
+        "guess_rel": {
+          "ui:widget": "BooleanButtonWidget",
+          "ui:help_text": "Guess Arrow Position",
+          "ui:options": {
+            "process_data": true,
+            "button_type": "tertiary",
+            "tiny": true,
+            "outer_box_props": { "width": "10%", "pr": "12px", "pl": "0px" },
+            "bottom_border": false,
+            "inline_input_height": true
+          },
+          "ui:help": "Guess Arrow Position"
+        },
+        "content": { "ui:widget": "MarkdownWidget", "ui:options": { "autocomplete": [], "default_height": 100 } }
+      }
+    },
+    "refresh_plot": {
+      "ui:widget": "BooleanButtonWidget",
+      "ui:options": { "process_data": true, "button_type": "primary", "submit_form": true }
+    }
+  },
+  "data": {
+    "add_annotations": false,
+    "create_custom_plot": false,
+    "slug": "6bd15bd8_4528_4b28_ad72_9077166c36b1",
+    "group_slug": "monthffc5277d",
+    "define_plot": true,
+    "define_layout": false,
+    "plot_slug": "monthffc5277d^^total_emails_opened_and_unique_customers_opening_emails",
+    "previous_name": [],
+    "requester": { "email": "user@example.com" },
+    "dataset": {
+      "slug": "6bd15bd8_4528_4b28_ad72_9077166c36b1",
+      "group_slug": "monthffc5277d",
+      "plot_slug": "total_emails_opened_and_unique_customers_opening_emails"
+    },
+    "edit_layout": true,
+    "columns": {
+      "y2_available": false,
+      "ys": ["total_opened_email_rows_85cfa19b", "metric_customer_9628_c_2_cd_count_distinct_y_pg_yus_7_rc"],
+      "xs": ["month_769267d0"],
+      "color_bys": [],
+      "y2": null,
+      "advance_editing": false,
+      "x_name": "X Column: Month",
+      "color_name": null
+    },
+    "traces": [
+      {
+        "y_column": "total_opened_email_rows_85cfa19b",
+        "color_id": "",
+        "remove": false,
+        "yaxis": "y",
+        "format": "number",
+        "color": "#3366cc",
+        "name": "Total Opened Email Rows",
+        "default_shown": true,
+        "line_type": "solid"
+      },
+      {
+        "y_column": "metric_customer_9628_c_2_cd_count_distinct_y_pg_yus_7_rc",
+        "color_id": "",
+        "remove": false,
+        "yaxis": "y",
+        "format": "number",
+        "color": "#dc3912",
+        "name": "Count Distinct Customer",
+        "default_shown": true,
+        "line_type": "solid"
+      }
+    ],
+    "axes": {
+      "title": "Multiple Metrics by Month",
+      "y_axis": "Multiple Metrics",
+      "x_axis": "Month",
+      "y2_axis": "",
+      "plot_kind": "line",
+      "y_range_from": null,
+      "x_range_from": null,
+      "y_range_to": null,
+      "x_range_to": null
+    },
+    "annotations": [],
+    "revision": 3
+  },
+  "internal_cache": {
+    "requester": { "email": "user@example.com" },
+    "x_columns": [{ "id": "month_769267d0", "label": "Month" }],
+    "y_columns": [
+      { "id": "total_opened_email_rows_85cfa19b", "label": "Total Opened Email Rows" },
+      { "id": "total_started_session_1e39adaf", "label": "Total Started Session" },
+      { "id": "conversion_rate_to_started_session_045b81d1", "label": "Conversion Rate to Started Session" },
+      { "id": "total_clicked_email_89466466", "label": "Total Clicked Email" },
+      { "id": "conversion_rate_to_clicked_email_e283c54a", "label": "Conversion Rate to Clicked Email" },
+      { "id": "metric_customer_9628_c_2_cd_count_distinct_y_pg_yus_7_rc", "label": "Count Distinct Customer" }
+    ],
+    "y2_columns": [
+      { "id": "none", "label": "No Y2", "type": "string" },
+      { "id": "compute-count_record_percent", "label": "Computed % of Count Record", "type": "number" },
+      { "id": "compute-percent", "label": "Computed % of Total", "type": "number" },
+      { "id": "compute-first_percent", "label": "Computed % of First Metric", "type": "number" },
+      { "id": "total_opened_email_rows_85cfa19b", "label": "Total Opened Email Rows" },
+      { "id": "total_started_session_1e39adaf", "label": "Total Started Session" },
+      { "id": "conversion_rate_to_started_session_045b81d1", "label": "Conversion Rate to Started Session" },
+      { "id": "total_clicked_email_89466466", "label": "Total Clicked Email" },
+      { "id": "conversion_rate_to_clicked_email_e283c54a", "label": "Conversion Rate to Clicked Email" },
+      { "id": "metric_customer_9628_c_2_cd_count_distinct_y_pg_yus_7_rc", "label": "Count Distinct Customer" }
+    ]
+  }
+}

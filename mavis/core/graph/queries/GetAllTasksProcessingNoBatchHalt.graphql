@@ -1,0 +1,17 @@
+query GetAllTasksProcessingNoBatchHalt($datacenter_region: datacenter_region_enum) {
+  tasks: company_task(
+    where: {
+      company: { batch_halt: { _eq: false }, status: { _eq: active }, datacenter_region: { _eq: $datacenter_region } }
+      category: { _eq: processing }
+    }
+  ) {
+    id
+    task_slug
+    schedule
+    executions {
+      status
+      started_at
+      created_at
+    }
+  }
+}

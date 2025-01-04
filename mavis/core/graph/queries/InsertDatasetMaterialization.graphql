@@ -1,0 +1,21 @@
+mutation InsertDatasetMaterialization(
+  $dataset_id: uuid!
+  $type: materialization_type_enum!
+  $group_slug: String
+  $label: String!
+  $updated_by: uuid
+  $external_link: String
+) {
+  inserted_dataset_materialization: insert_dataset_materialization_one(
+    object: {
+      updated_by: $updated_by
+      dataset_id: $dataset_id
+      group_slug: $group_slug
+      type: $type
+      label: $label
+      external_link: $external_link
+    }
+  ) {
+    id
+  }
+}

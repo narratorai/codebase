@@ -1,0 +1,30 @@
+name: Approve release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  pr-sync-production:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - uses: tretuna/sync-branches@1.4.0
+        with:
+          CONTENT_COMPARISON: true
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          FROM_BRANCH: 'main'
+          TO_BRANCH: 'main-k8s'
+          PULL_REQUEST_BODY: |
+            <!-- PLEASE: Feel free to make edits to this template in `.github/workflows/approve_release.yml` -->
+
+            This is an automated PR created on merge to the `main` branch. Changes can continue to be merged to `main` and will stage here.
+
+            > **Merging this PR will release changes to production.**
+
+            ### Release checklist
+
+            - [ ] A release window has been set, and staff is available to triage any issues
+            - [ ] Risk-based manual and/or automated tests have been run __(Please document manual testing in this PR via comments)__
+            - [ ] If needed, new configuration/environment variables have been added to the production environment
+            - [ ] Any required changes to downstream services (mavis, graph, etc) are already in production

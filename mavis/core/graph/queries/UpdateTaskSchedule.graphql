@@ -1,0 +1,8 @@
+mutation UpdateTaskSchedule($id: uuid!, $schedule: String!) {
+  update_company_task_by_pk(
+    pk_columns: { id: $id }
+    _set: { schedule: $schedule }
+  ) {
+    id
+  }
+}

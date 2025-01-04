@@ -1,0 +1,23 @@
+query GetDocuments {
+  terms: document_live(limit: 1, order_by: [{ created_at: desc }], where: { slug: { _eq: "terms" } }) {
+    created_at
+    id
+    markdown
+    name
+    slug
+  }
+  privacy: document_live(limit: 1, order_by: [{ created_at: desc }], where: { slug: { _eq: "privacy-policy" } }) {
+    created_at
+    id
+    markdown
+    name
+    slug
+  }
+  dpa: document_live(limit: 1, order_by: [{ created_at: desc }], where: { slug: { _eq: "data-processing-addendum" } }) {
+    created_at
+    id
+    markdown
+    name
+    slug
+  }
+}

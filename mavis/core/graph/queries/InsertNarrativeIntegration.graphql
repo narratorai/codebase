@@ -1,0 +1,7 @@
+mutation InsertNarrativeIntegration($narrative_id: uuid, $kind: narrative_integration_kind_enum) {
+  insert_narrative_integrations_one(object: {narrative_id: $narrative_id, kind: $kind}) {
+    kind
+    narrative_id
+    id
+  }
+}

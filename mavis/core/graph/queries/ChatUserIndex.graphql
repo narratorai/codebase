@@ -1,0 +1,13 @@
+query ChatUserIndex($company_id: uuid!, $user_id: uuid!) {
+  chat(
+    where: { company_table: { company_id: { _eq: $company_id } }, created_by: { _eq: $user_id } }
+    order_by: { created_at: desc }
+  ) {
+    id
+    table_id
+    created_by
+    created_at
+    question
+    rating
+  }
+}

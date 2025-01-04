@@ -1,0 +1,8 @@
+query GetVersions($limit: Int = 1, $offset: Int = 0, $related_to: tag_relations_enum = activity, $id: uuid!) {
+  versions(where: {related_to: {_eq: $related_to}, related_id: {_eq: $id}}, offset: $offset, limit: $limit, order_by: {created_at: desc}) {
+    id
+    created_at
+    s3_key
+    user_id
+  }
+}

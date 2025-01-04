@@ -1,0 +1,5 @@
+mutation InsertChat($question: String!, $table_id: uuid!, $created_by: uuid!) {
+  insert_chat_one(object: { question: $question, summary: $question, table_id: $table_id, created_by: $created_by }) {
+    id
+  }
+}

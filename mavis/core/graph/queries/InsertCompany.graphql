@@ -1,0 +1,20 @@
+mutation InsertCompany(
+  $name: String!
+  $created_for: uuid!
+  $slug: String!
+  $is_demo: Boolean
+  $region: datacenter_region_enum
+) {
+  insert_company_one(
+    object: {
+      name: $name
+      created_for: $created_for
+      slug: $slug
+      demo_company: $is_demo
+      allow_narrator_employee_access: true
+      datacenter_region: $region
+    }
+  ) {
+    id
+  }
+}

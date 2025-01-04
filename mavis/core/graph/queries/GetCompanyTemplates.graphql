@@ -1,0 +1,27 @@
+query GetCompanyTemplates($company_id: uuid) {
+  company_narrative_templates(
+    where: {
+      company_id: { _eq: $company_id }
+      templates: { local_iteration: { _eq: 0 } }
+    }
+    order_by: { created_at: desc }
+  ) {
+    templates(
+      order_by: { global_version: desc, customer_iteration: desc }
+      limit: 1
+    ) {
+      id
+      name
+      question
+      description
+      customer_iteration
+      local_iteration
+      global_version
+      category
+      in_free_tier
+      state
+      type
+      display_companies_using
+    }
+  }
+}

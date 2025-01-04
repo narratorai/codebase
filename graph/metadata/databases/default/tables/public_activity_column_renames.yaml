@@ -1,0 +1,62 @@
+table:
+  name: activity_column_renames
+  schema: public
+object_relationships:
+  - name: activity
+    using:
+      manual_configuration:
+        column_mapping:
+          related_to_id: id
+        insertion_order: null
+        remote_table:
+          name: activity
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - casting
+        - created_at
+        - description
+        - has_data
+        - id
+        - label
+        - name
+        - related_to
+        - related_to_id
+        - type
+        - updated_at
+      filter:
+        activity:
+          company_id:
+            _eq: X-Hasura-Company-Id
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - casting
+        - description
+        - has_data
+        - label
+        - name
+        - related_to
+        - related_to_id
+        - type
+      filter:
+        _and:
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin
+          - activity:
+              company_id:
+                _eq: X-Hasura-Company-Id
+      check: null

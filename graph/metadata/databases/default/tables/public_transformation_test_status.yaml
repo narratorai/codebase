@@ -1,0 +1,4 @@
+table:
+  name: transformation_test_status
+  schema: public
+is_enum: true

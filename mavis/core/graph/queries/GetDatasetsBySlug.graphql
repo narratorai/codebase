@@ -1,0 +1,9 @@
+query GetDatasetsBySlug($company_id: uuid!, $slugs: [String!]!) {
+    dataset(where: { slug: { _in: $slugs }, company_id: { _eq: $company_id } }) {
+        id
+        name
+        slug
+        description
+        status
+    }
+}

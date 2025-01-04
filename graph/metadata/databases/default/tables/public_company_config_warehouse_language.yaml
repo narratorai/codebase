@@ -1,0 +1,4 @@
+table:
+  name: company_config_warehouse_language
+  schema: public
+is_enum: true

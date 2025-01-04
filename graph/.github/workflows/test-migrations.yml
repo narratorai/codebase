@@ -1,0 +1,66 @@
+name: Test Migrations
+
+on:
+  push:
+    branches:
+    paths:
+      # This file!
+      - .github/workflows/test-migrations.yml
+      # Test files
+      - tests/**
+      # Any new migrations pushed
+      - migrations/**
+      - metadata/**
+      # The codegen package
+      - packages/codegen/*
+      # The run migrations script
+      - scripts/run_migrations.sh
+      # Or any dependencies
+      - yarn.lock
+
+jobs:
+  test-migrations:
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+
+    services:
+      postgres:
+        image: postgres:15.4-alpine
+        env:
+          POSTGRES_HOST_AUTH_METHOD: 'trust'
+        ports:
+          - 5432:5432
+        # the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+      hasura:
+        image: hasura/graphql-engine:v2.37.0-ce
+        env:
+          HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/postgres
+          GRAPH_TRIGGER_INGEST_URL: test
+          GRAPH_TRIGGER_INGEST_API_KEY: ci
+        ports:
+          - 8080:8080
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: yarn
+
+      - name: install
+        run: |
+          yarn install --immutable
+          curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | bash
+      # Run migrations against an empty db and run tests
+      - name: Test Migrations
+        run: |
+          ./scripts/run_migrations.sh local
+          yarn hasura seed apply --file test_data.sql --database-name default
+          yarn jest tests --verbose --runInBand
+
+      # Test codegen
+      - name: Test Codegen
+        run: yarn workspace @narratorai/graph-codegen run generate

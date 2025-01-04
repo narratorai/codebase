@@ -1,0 +1,59 @@
+{{- if .Values.mavisWorkerBouncer.enable -}}
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: pods-delete
+rules:
+  - apiGroups: ['']
+    resources: ['pods']
+    verbs: ['list', 'delete']
+
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: pods-delete
+subjects:
+  - kind: ServiceAccount
+    name: mavis-worker-bouncer-sa
+    namespace: {{ .Values.mavisWorkerBouncer.namespace | default "backend" }}
+roleRef:
+  kind: ClusterRole
+  name: pods-delete
+  apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: mavis-worker-bouncer-sa
+
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: mavis-worker-bouncer-cron
+spec:
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+      name: bouncer-cron
+    spec:
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          containers:
+            - name: mavis-worker-bouncer-cron
+              image: "{{ .Values.image.repositoryWorkerBouncer }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+              imagePullPolicy: {{ .Values.image.pullPolicy }}
+              envFrom:
+              - secretRef:
+                  name: my-secrets
+              resources: {}
+          restartPolicy: Never
+          serviceAccountName: mavis-worker-bouncer-sa
+  schedule: '*/30 * * * *'
+status: {}
+{{- end -}}

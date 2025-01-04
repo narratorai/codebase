@@ -1,0 +1,2182 @@
+{
+  "all_columns": [
+    {
+      "filters": [],
+      "label": "email",
+      "name": "customer",
+      "output": true,
+      "source_details": {
+        "activity_kind": "limiting",
+        "activity_slug": "session"
+      },
+      "source_kind": "activity",
+      "type": "string"
+    },
+    {
+      "filters": [],
+      "label": "segment_id",
+      "name": "source_id",
+      "output": true,
+      "source_details": {
+        "activity_kind": "limiting",
+        "activity_slug": "session"
+      },
+      "source_kind": "activity",
+      "type": "string"
+    },
+    {
+      "filters": [
+        {
+          "operator": ">",
+          "value": "2018-10-01"
+        }
+      ],
+      "label": "first_session_at",
+      "name": "ts",
+      "output": true,
+      "source_details": {
+        "activity_kind": "limiting",
+        "activity_slug": "session"
+      },
+      "source_kind": "activity",
+      "type": "timestamp"
+    },
+    {
+      "filters": [],
+      "label": "device",
+      "name": "device",
+      "output": true,
+      "source_details": {
+        "activity_kind": "limiting",
+        "activity_slug": "session"
+      },
+      "source_kind": "enrichment",
+      "type": "string"
+    },
+    {
+      "filters": [],
+      "label": "session_source",
+      "name": "session_source",
+      "output": true,
+      "source_details": {
+        "activity_kind": "limiting",
+        "activity_slug": "session"
+      },
+      "source_kind": "enrichment",
+      "type": "string"
+    },
+    {
+      "filters": [],
+      "label": "session_kind",
+      "name": "session_kind",
+      "output": true,
+      "source_details": {
+        "activity_kind": "limiting",
+        "activity_slug": "session"
+      },
+      "source_kind": "enrichment",
+      "type": "string"
+    },
+    {
+      "filters": [],
+      "label": "survey_email_captured_at",
+      "name": "ts",
+      "output": true,
+      "source_details": {
+        "activity_kind": "limiting",
+        "activity_slug": "survey_email_captured"
+      },
+      "source_kind": "activity",
+      "type": "timestamp"
+    },
+    {
+      "filters": [],
+      "label": "survey_wizard_completed_at",
+      "name": "ts",
+      "output": true,
+      "source_details": {
+        "activity_kind": "conversion",
+        "activity_slug": "survey_wizard_completed"
+      },
+      "source_kind": "activity",
+      "type": "timestamp"
+    },
+    {
+      "filters": [],
+      "label": "photos_received_at",
+      "name": "ts",
+      "output": true,
+      "source_details": {
+        "activity_kind": "append",
+        "activity_slug": "photos_recieved"
+      },
+      "source_kind": "activity",
+      "type": "timestamp"
+    },
+    {
+      "filters": [],
+      "label": "name",
+      "name": "name",
+      "output": true,
+      "source_details": {
+        "table": "v_customers"
+      },
+      "source_kind": "customer",
+      "type": "string"
+    },
+    {
+      "filters": [],
+      "label": "converted_to_survey_wizard_completed",
+      "name": "",
+      "output": true,
+      "source_details": {
+        "activity_kind": "conversion",
+        "activity_slug": "survey_wizard_completed",
+        "cases": [
+          {
+            "column": "survey_wizard_completed_at",
+            "filter": {
+              "operator": "is_not_null",
+              "value": null
+            },
+            "value": 1,
+            "value_kind": "number"
+          }
+        ],
+        "kind": "ifttt",
+        "value": 0,
+        "value_kind": "number"
+      },
+      "source_kind": "computed",
+      "type": "string"
+    },
+    {
+      "filters": [],
+      "label": "ordered_impression_kit_at",
+      "name": "ts",
+      "output": true,
+      "source_details": {
+        "activity_kind": "conversion",
+        "activity_slug": "ordered_impression_kit"
+      },
+      "source_kind": "activity",
+      "type": "timestamp"
+    },
+    {
+      "id": "converted_to_ordered_impression_kit_UUID",
+      "filters": [],
+      "label": "converted_to_ordered_impression_kit",
+      "name": "",
+      "output": true,
+      "source_details": {
+        "activity_kind": "conversion",
+        "activity_slug": "ordered_impression_kit",
+        "cases": [
+          {
+            "column": "ordered_impression_kit_at",
+            "filter": {
+              "operator": "is_not_null",
+              "value": null
+            },
+            "value": 1,
+            "value_kind": "number"
+          }
+        ],
+        "kind": "ifttt",
+        "value": 0,
+        "value_kind": "number"
+      },
+      "source_kind": "computed",
+      "type": "string"
+    },
+    {
+      "filters": [],
+      "label": "days_from_session_to_ordered_impression_kit",
+      "name": "",
+      "output": true,
+      "source_details": {
+        "activity_kind": "conversion",
+        "activity_slug": "ordered_impression_kit",
+        "column": "first_session_at",
+        "kind": "time_between",
+        "second_column": "ordered_impression_kit_at",
+        "segmentation": "days"
+      },
+      "source_kind": "computed",
+      "type": "string"
+    },
+    {
+      "filters": [],
+      "label": "session_attribution",
+      "name": "",
+      "output": true,
+      "source_details": {
+        "column": "session_source",
+        "delimiter": " - ",
+        "kind": "string_concatenate_multi_column",
+        "second_column": "session_kind"
+      },
+      "source_kind": "computed",
+      "type": "string"
+    },
+    {
+      "filters": [],
+      "label": "sa_row_number",
+      "name": "sa_row_number",
+      "output": true,
+      "source_details": {
+        "full_order": [
+          "first_session_at"
+        ],
+        "group": [
+          "session_attribution"
+        ],
+        "kind": "row_number"
+      },
+      "source_kind": "computed",
+      "type": "number"
+    },
+    {
+      "filters": [],
+      "label": "sa_count",
+      "name": "sa_count",
+      "output": true,
+      "source_details": {
+        "group": [
+          "session_attribution"
+        ],
+        "kind": "count"
+      },
+      "source_kind": "computed",
+      "type": "number"
+    },
+    {
+      "filters": [],
+      "label": "sa_percent_of_total",
+      "name": "sa_percent_of_total",
+      "output": true,
+      "source_details": {
+        "column": "sa_count",
+        "group": [
+          "session_attribution"
+        ],
+        "kind": "percent_of_total"
+      },
+      "source_kind": "computed",
+      "type": "number"
+    },
+    {
+      "filters": [],
+      "label": "categorized_source",
+      "name": "",
+      "output": true,
+      "source_details": {
+        "cases": [
+          {
+            "column": "session_kind",
+            "filter": {
+              "operator": "=",
+              "value": "Referral"
+            },
+            "value": "NOT Direct-Organic-Search",
+            "value_kind": "string"
+          },
+          {
+            "column": "session_source",
+            "filter": {
+              "operator": "=",
+              "value": "Organic"
+            },
+            "value": "Direct-Organic-Search",
+            "value_kind": "string"
+          },
+          {
+            "column": "session_kind",
+            "filter": {
+              "operator": "is_not_null",
+              "value": null
+            },
+            "value": "is set test",
+            "value_kind": "string"
+          },
+          {
+            "column": "session_kind",
+            "filter": {
+              "operator": "in",
+              "value": [
+                "Direct",
+                "Search"
+              ]
+            },
+            "value": "****Direct-Organic-Search",
+            "value_kind": "string"
+          }
+        ],
+        "kind": "ifttt",
+        "value": "NOT Direct-Organic-Search",
+        "value_kind": "string"
+      },
+      "source_kind": "computed",
+      "type": "string"
+    },
+    {
+      "filters": [],
+      "label": "decimated_session",
+      "name": "",
+      "output": true,
+      "source_details": {
+        "column": "first_session_at",
+        "kind": "time_truncate",
+        "resolution": 5,
+        "segmentation": "minute"
+      },
+      "source_kind": "computed",
+      "type": "timestamp"
+    }
+  ],
+  "metrics": {
+    "columns": [
+      {
+        "body": [],
+        "column_name": "email",
+        "id": "email",
+        "global": {
+          "name": "Duplicates",
+          "type": "number",
+          "value": 0
+        }
+      },
+      {
+        "id": "segment_id",
+        "kind": "approx",
+        "label": "customer",
+        "metrics": [
+          {"name": null, "value": 2435},
+          {"name": "frank@Narrator.Ai", "value": 1240},
+          {"name": "francine@Narrator.Ai", "value": 378},
+          {"name": "frankness@Narrator.Ai", "value": 278}
+        ],
+        "metrics_type": "distribution",
+        "type": "string"
+      },
+      {
+        "id": "first_session_at",
+        "kind": "approx",
+        "label": "first_session_at",
+        "metrics": [
+          {"name": "Min Time", "value": "2018-02-15T16:08:03.058"},
+          {"name": "Max Time", "value": "2019-07-20T19:19:57.907"}
+        ],
+        "metrics_type": "min_max",
+        "type": "timestamp"
+      },
+      {
+        "body": [
+          {
+            "name": "% mobile",
+            "type": "percent",
+            "value": 0.651409222189025
+          },
+          {
+            "name": "% desktop",
+            "type": "percent",
+            "value": 0.348590777810975
+          }
+        ],
+        "column_name": "device",
+        "id": "id_device",
+        "global": {
+          "name": "% Nulls",
+          "type": "percent",
+          "value": 0.0
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "% Paid",
+            "type": "percent",
+            "value": 0.8458453673272914
+          },
+          {
+            "name": "% Organic",
+            "type": "percent",
+            "value": 0.15415463267270857
+          }
+        ],
+        "column_name": "session_source",
+        "id": "session_source",
+        "global": {
+          "name": "% Nulls",
+          "type": "percent",
+          "value": 0.0
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "% Social",
+            "type": "percent",
+            "value": 0.8300302094744879
+          },
+          {
+            "name": "% Search",
+            "type": "percent",
+            "value": 0.08677090595226239
+          },
+          {
+            "name": "% Direct",
+            "type": "percent",
+            "value": 0.07813962752713872
+          },
+          {
+            "name": "% Referral",
+            "type": "percent",
+            "value": 0.004733924243933207
+          },
+          {
+            "name": "% Email",
+            "type": "percent",
+            "value": 0.0003253328021777379
+          }
+        ],
+        "column_name": "session_kind",
+        "id": "session_kind",
+        "global": {
+          "name": "% Nulls",
+          "type": "percent",
+          "value": 0.0
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "Min Date",
+            "type": "date",
+            "value": "2017-12-17"
+          },
+          {
+            "name": "Max Date",
+            "type": "date",
+            "value": "2018-12-02"
+          }
+        ],
+        "column_name": "survey_email_captured_at",
+        "id": "survey_email_captured_at",
+        "global": {
+          "name": "% Nulls",
+          "type": "percent",
+          "value": 0.0
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "Min Date",
+            "type": "date",
+            "value": "2017-12-17"
+          },
+          {
+            "name": "Max Date",
+            "type": "date",
+            "value": "2018-12-02"
+          }
+        ],
+        "column_name": "survey_wizard_completed_at",
+        "id": "survey_wizard_completed_at",
+        "global": {
+          "name": "% Nulls",
+          "type": "percent",
+          "value": 0.2597948411512797
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "Min Date",
+            "type": "date",
+            "value": "2017-11-30"
+          },
+          {
+            "name": "Max Date",
+            "type": "date",
+            "value": "2018-12-02"
+          }
+        ],
+        "column_name": "photos_received_at",
+        "id": "photos_received_at",
+        "global": {
+          "name": "% Nulls",
+          "type": "percent",
+          "value": 0.9845035355044318
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "peter yu",
+            "type": "number",
+            "value": 3.0
+          },
+          {
+            "name": "christopher hall",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "april howard",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "samantha garcia",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "ashley johnson",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "diana martinez",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "jeannette peterson",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "mary hudson",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "tiffany williamson",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "james davis",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "jose garcia",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "jonathan thompson",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "amber thompson ",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "javier lopez",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "andrea reyes",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "heather williams",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "kaitlyn wilson",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "melissa smith",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "lisa watson",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "april grant",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "audrey johnson",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "jeffrey green",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "jessica lee",
+            "type": "number",
+            "value": 2.0
+          },
+          {
+            "name": "danielle hall",
+            "type": "number",
+            "value": 2.0
+          }
+        ],
+        "column_name": "name",
+        "id": "customer_name",
+        "global": {
+          "name": "Duplicates",
+          "type": "number",
+          "value": 24
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "% 1",
+            "type": "percent",
+            "value": 0.7402051588487203
+          },
+          {
+            "name": "% 0",
+            "type": "percent",
+            "value": 0.25979484115127977
+          }
+        ],
+        "column_name": "converted_to_survey_wizard_completed",
+        "id": "converted_to_survey_wizard_completed_UUID",
+        "global": {
+          "name": "% Nulls",
+          "type": "percent",
+          "value": 0.0
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "Min Date",
+            "type": "date",
+            "value": "2017-11-24"
+          },
+          {
+            "name": "Max Date",
+            "type": "date",
+            "value": "2018-12-02"
+          }
+        ],
+        "column_name": "ordered_impression_kit_at",
+        "id": "ordered_impression_kit_at",
+        "global": {
+          "name": "% Nulls",
+          "type": "percent",
+          "value": 0.9459482787238986
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "% 0",
+            "type": "percent",
+            "value": 0.9459482787238986
+          },
+          {
+            "name": "% 1",
+            "type": "percent",
+            "value": 0.05405172127610132
+          }
+        ],
+        "column_name": "converted_to_ordered_impression_kit",
+        "id": "converted_to_ordered_impression_kit_UUID",
+        "global": {
+          "name": "% Nulls",
+          "type": "percent",
+          "value": 0.0
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "% nan",
+            "type": "percent",
+            "value": 0.9459482787238986
+          },
+          {
+            "name": "% 0.0",
+            "type": "percent",
+            "value": 0.041197755867609466
+          },
+          {
+            "name": "% 1.0",
+            "type": "percent",
+            "value": 0.0020980646017992894
+          },
+          {
+            "name": "% 2.0",
+            "type": "percent",
+            "value": 0.0010955084154964645
+          },
+          {
+            "name": "% 15.0",
+            "type": "percent",
+            "value": 0.0006041894897586561
+          },
+          {
+            "name": "% 5.0",
+            "type": "percent",
+            "value": 0.0005045978156226139
+          },
+          {
+            "name": "% 3.0",
+            "type": "percent",
+            "value": 0.0004913189257378083
+          },
+          {
+            "name": "% 4.0",
+            "type": "percent",
+            "value": 0.0004846794807954055
+          },
+          {
+            "name": "% 6.0",
+            "type": "percent",
+            "value": 0.00046476114596819706
+          },
+          {
+            "name": "% 17.0",
+            "type": "percent",
+            "value": 0.00037844836171696045
+          },
+          {
+            "name": "% 16.0",
+            "type": "percent",
+            "value": 0.00037180891677455764
+          },
+          {
+            "name": "% 7.0",
+            "type": "percent",
+            "value": 0.0003518905819473492
+          },
+          {
+            "name": "% 8.0",
+            "type": "percent",
+            "value": 0.00028549613252332103
+          },
+          {
+            "name": "% 19.0",
+            "type": "percent",
+            "value": 0.0002722172426385154
+          },
+          {
+            "name": "% 18.0",
+            "type": "percent",
+            "value": 0.0002722172426385154
+          },
+          {
+            "name": "% 14.0",
+            "type": "percent",
+            "value": 0.00025893835275370977
+          },
+          {
+            "name": "% 9.0",
+            "type": "percent",
+            "value": 0.00025229890781130695
+          },
+          {
+            "name": "% 22.0",
+            "type": "percent",
+            "value": 0.00023902001792650135
+          },
+          {
+            "name": "% 10.0",
+            "type": "percent",
+            "value": 0.00022574112804169571
+          },
+          {
+            "name": "% 13.0",
+            "type": "percent",
+            "value": 0.0002191016830992929
+          },
+          {
+            "name": "% 12.0",
+            "type": "percent",
+            "value": 0.00021246223815689008
+          },
+          {
+            "name": "% 21.0",
+            "type": "percent",
+            "value": 0.00019918334827208445
+          },
+          {
+            "name": "% 11.0",
+            "type": "percent",
+            "value": 0.00019254390332968163
+          },
+          {
+            "name": "% 23.0",
+            "type": "percent",
+            "value": 0.00016598612356007037
+          },
+          {
+            "name": "% 24.0",
+            "type": "percent",
+            "value": 0.00015934667861766756
+          }
+        ],
+        "column_name": "days_from_session_to_ordered_impression_kit",
+        "id": "days_from_session_to_ordered_impression_kit",
+        "global": {
+          "name": "% Nulls",
+          "type": "percent",
+          "value": 0.0
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "% Paid - Social",
+            "type": "percent",
+            "value": 0.7810443846894399
+          },
+          {
+            "name": "% Organic - Direct",
+            "type": "percent",
+            "value": 0.07184543372174086
+          },
+          {
+            "name": "% Paid - Search",
+            "type": "percent",
+            "value": 0.057583905985459614
+          },
+          {
+            "name": "% Organic - Social",
+            "type": "percent",
+            "value": 0.04898582478504797
+          },
+          {
+            "name": "% Organic - Search",
+            "type": "percent",
+            "value": 0.029186999966802775
+          },
+          {
+            "name": "% Paid - Direct",
+            "type": "percent",
+            "value": 0.006294193805397869
+          },
+          {
+            "name": "% Organic - Referral",
+            "type": "percent",
+            "value": 0.004136374199116954
+          },
+          {
+            "name": "% Paid - Referral",
+            "type": "percent",
+            "value": 0.0005975500448162533
+          },
+          {
+            "name": "% Paid - Email",
+            "type": "percent",
+            "value": 0.0003253328021777379
+          }
+        ],
+        "column_name": "session_attribution",
+        "id": "session_attribution",
+        "global": {
+          "name": "% Nulls",
+          "type": "percent",
+          "value": 0.0
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "25 Percentile",
+            "type": "number",
+            "value": 8057.0
+          },
+          {
+            "name": "Median",
+            "type": "number",
+            "value": 42330.0
+          },
+          {
+            "name": "75 Percentile",
+            "type": "number",
+            "value": 79983.5
+          },
+          {
+            "name": "Average",
+            "type": "number",
+            "value": 46827.0
+          }
+        ],
+        "column_name": "sa_row_number",
+        "id": "sa_row_number",
+        "global": {
+          "name": "Values Available",
+          "type": "number",
+          "value": 150615.0
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "25 Percentile",
+            "type": "number",
+            "value": 117637.0
+          },
+          {
+            "name": "Median",
+            "type": "number",
+            "value": 117637.0
+          },
+          {
+            "name": "75 Percentile",
+            "type": "number",
+            "value": 117637.0
+          },
+          {
+            "name": "Average",
+            "type": "number",
+            "value": 93654.0
+          }
+        ],
+        "column_name": "sa_count",
+        "id": "sa_count",
+        "global": {
+          "name": "Values Available",
+          "type": "number",
+          "value": 150615.0
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "25 Percentile",
+            "type": "number",
+            "value": 0.0
+          },
+          {
+            "name": "Median",
+            "type": "number",
+            "value": 0.0
+          },
+          {
+            "name": "75 Percentile",
+            "type": "number",
+            "value": 0.0
+          },
+          {
+            "name": "Average",
+            "type": "number",
+            "value": 0.0
+          }
+        ],
+        "column_name": "sa_percent_of_total",
+        "id": "sa_percent_of_total",
+        "global": {
+          "name": "Values Available",
+          "type": "number",
+          "value": 150615.0
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "% is set test",
+            "type": "percent",
+            "value": 0.8452478172824752
+          },
+          {
+            "name": "% Direct-Organic-Search",
+            "type": "percent",
+            "value": 0.1500182584735916
+          },
+          {
+            "name": "% NOT Direct-Organic-Search",
+            "type": "percent",
+            "value": 0.004733924243933207
+          }
+        ],
+        "column_name": "categorized_source",
+        "id": "categorized_source",
+        "global": {
+          "name": "% Nulls",
+          "type": "percent",
+          "value": 0.0
+        }
+      },
+      {
+        "body": [
+          {
+            "name": "Min Date",
+            "type": "date",
+            "value": "2018-10-01"
+          },
+          {
+            "name": "Max Date",
+            "type": "date",
+            "value": "2018-12-02"
+          }
+        ],
+        "column_name": "decimated_session",
+        "id": "decimated_session",
+        "global": {
+          "name": "% Nulls",
+          "type": "percent",
+          "value": 0.0
+        }
+      }
+    ],
+    "conversions": {
+      "ordered_impression_kit": 0.05405172127610132,
+      "survey_wizard_completed": 0.7402051588487203
+    },
+    "total_rows": 50615
+  },
+  "query": "WITH\nlimiting_table AS (\n\tSELECT\n\t\t  a.join_customer\n\t\t ,  a.join_ts\n\t\t ,  email\n\t\t ,  segment_id\n\t\t ,  first_session_at\n\t\t ,  device\n\t\t ,  session_source\n\t\t ,  session_kind\n\t\t ,  survey_email_captured_at\n\tFROM (\n\t\tSELECT\n\t\t\t NVL(s.customer, s.source_id) AS  join_customer\n\t\t\t , s.customer AS  email\n\t\t\t , s.source_id AS  segment_id\n\t\t\t , s.ts AS  first_session_at\n\t\t\t , e.device AS  device\n\t\t\t , e.session_source AS  session_source\n\t\t\t , e.session_kind AS  session_kind\n\t\t\t , s.ts AS  join_ts\n\t\tFROM dw.mv_activity_stream AS s\n\t\tLEFT OUTER JOIN dw.mv_enriched_pages AS e\n\t\t\tON ( s.activity_id = e.enriched_activity_id )\n\t\tWHERE s.activity = 'session' \n\t\t\tAND s.ts > '2018-10-01' \n\t\t\tAND s.activity_occurrence = 1\n\t) AS a\n\tJOIN (\n\t\tSELECT\n\t\t\t NVL(s.customer, s.source_id) AS  join_customer\n\t\t\t , s.ts AS  survey_email_captured_at\n\t\t\t , s.ts AS  join_ts\n\t\tFROM dw.mv_activity_stream AS s\n\t\tWHERE s.activity = 'survey_email_captured' \n\t\t\tAND s.activity_occurrence = 1\n\t) AS b\n\t\tON (a.join_customer = b.join_customer)\n),\npivoted_table AS (\n\tSELECT\n\t\t NVL(s.customer, s.source_id) AS  join_customer\n\t\t , MIN(s.ts) AS  min_ts\n\t\t , MIN(CASE \n\t\t\tWHEN s.activity = 'survey_wizard_completed' then s.ts \n\t\t\tELSE null\n\t\t END) AS  survey_wizard_completed_at\n\t\t , MIN(CASE \n\t\t\tWHEN s.activity = 'photos_recieved' then s.ts \n\t\t\tELSE null\n\t\t END) AS  photos_received_at\n\t\t , MIN(CASE \n\t\t\tWHEN s.activity = 'ordered_impression_kit' then s.ts \n\t\t\tELSE null\n\t\t END) AS  ordered_impression_kit_at\n\tFROM dw.mv_activity_stream AS s\n\tWHERE (s.activity_occurrence = 1 \n\t\tAND s.activity IN ('photos_recieved', 'survey_wizard_completed', 'ordered_impression_kit')) \n\tGROUP BY NVL(s.customer, s.source_id)\n)\nSELECT\n\t  email\n\t ,  segment_id\n\t ,  first_session_at\n\t ,  device\n\t ,  session_source\n\t ,  session_kind\n\t ,  survey_email_captured_at\n\t ,  survey_wizard_completed_at\n\t ,  photos_received_at\n\t ,  name\n\t ,  converted_to_survey_wizard_completed\n\t ,  ordered_impression_kit_at\n\t ,  converted_to_ordered_impression_kit\n\t ,  days_from_session_to_ordered_impression_kit\n\t ,  session_attribution\n\t ,  sa_row_number\n\t ,  sa_count\n\t ,  sa_percent_of_total\n\t ,  categorized_source\n\t ,  decimated_session\nFROM (\n\tSELECT\n\t\t  email\n\t\t ,  segment_id\n\t\t ,  first_session_at\n\t\t ,  device\n\t\t ,  session_source\n\t\t ,  session_kind\n\t\t ,  survey_email_captured_at\n\t\t ,  survey_wizard_completed_at\n\t\t ,  photos_received_at\n\t\t ,  name\n\t\t ,  ordered_impression_kit_at\n\t\t ,  converted_to_survey_wizard_completed\n\t\t ,  converted_to_ordered_impression_kit\n\t\t ,  days_from_session_to_ordered_impression_kit\n\t\t ,  session_attribution\n\t\t ,  categorized_source\n\t\t ,  decimated_session\n\t\t ,  sa_row_number\n\t\t ,  sa_count\n\t\t , RATIO_TO_REPORT(sa_count) over (partition by session_attribution) AS  sa_percent_of_total\n\tFROM (\n\t\tSELECT\n\t\t\t  email\n\t\t\t ,  segment_id\n\t\t\t ,  first_session_at\n\t\t\t ,  device\n\t\t\t ,  session_source\n\t\t\t ,  session_kind\n\t\t\t ,  survey_email_captured_at\n\t\t\t ,  survey_wizard_completed_at\n\t\t\t ,  photos_received_at\n\t\t\t ,  name\n\t\t\t ,  ordered_impression_kit_at\n\t\t\t ,  converted_to_survey_wizard_completed\n\t\t\t ,  converted_to_ordered_impression_kit\n\t\t\t ,  days_from_session_to_ordered_impression_kit\n\t\t\t ,  session_attribution\n\t\t\t ,  categorized_source\n\t\t\t ,  decimated_session\n\t\t\t , ROW_NUMBER() over (partition by session_attribution order by first_session_at) AS  sa_row_number\n\t\t\t , COUNT(*) over (partition by session_attribution) AS  sa_count\n\t\tFROM (\n\t\t\tSELECT\n\t\t\t\t  email\n\t\t\t\t ,  segment_id\n\t\t\t\t ,  first_session_at\n\t\t\t\t ,  device\n\t\t\t\t ,  session_source\n\t\t\t\t ,  session_kind\n\t\t\t\t ,  survey_email_captured_at\n\t\t\t\t ,  survey_wizard_completed_at\n\t\t\t\t ,  photos_received_at\n\t\t\t\t ,  name\n\t\t\t\t ,  ordered_impression_kit_at\n\t\t\t\t , CASE \n\t\t\t\t\tWHEN \"survey_wizard_completed_at\" is NOT NULL THEN 1 \n\t\t\t\t\tELSE 0\n\t\t\t\t END AS  converted_to_survey_wizard_completed\n\t\t\t\t , CASE \n\t\t\t\t\tWHEN \"ordered_impression_kit_at\" is NOT NULL THEN 1 \n\t\t\t\t\tELSE 0\n\t\t\t\t END AS  converted_to_ordered_impression_kit\n\t\t\t\t , DATE_DIFF('days', first_session_at::TIMESTAMP, ordered_impression_kit_at::TIMESTAMP) AS  days_from_session_to_ordered_impression_kit\n\t\t\t\t ,  NVL(session_source,'') || ' - ' || NVL(session_kind,'')  AS  session_attribution\n\t\t\t\t , CASE \n\t\t\t\t\tWHEN \"session_kind\" = 'Referral' THEN 'NOT Direct-Organic-Search' \n\t\t\t\t\tWHEN \"session_source\" = 'Organic' THEN 'Direct-Organic-Search' \n\t\t\t\t\tWHEN \"session_kind\" is NOT NULL THEN 'is set test' \n\t\t\t\t\tWHEN \"session_kind\" in ('Direct', 'Search') THEN '****Direct-Organic-Search' \n\t\t\t\t\tELSE 'NOT Direct-Organic-Search'\n\t\t\t\t END AS  categorized_source\n\t\t\t\t , DATE_TRUNC('hour', first_session_at::TIMESTAMP) + DATE_PART('minute', first_session_at::TIMESTAMP)::int / 5 * interval '5 minute'  AS  decimated_session\n\t\t\tFROM (\n\t\t\t\tSELECT\n\t\t\t\t\t  email\n\t\t\t\t\t ,  segment_id\n\t\t\t\t\t ,  first_session_at\n\t\t\t\t\t ,  device\n\t\t\t\t\t ,  session_source\n\t\t\t\t\t ,  session_kind\n\t\t\t\t\t ,  survey_email_captured_at\n\t\t\t\t\t ,  survey_wizard_completed_at\n\t\t\t\t\t ,  photos_received_at\n\t\t\t\t\t ,  name\n\t\t\t\t\t ,  ordered_impression_kit_at\n\t\t\t\tFROM limiting_table AS l\n\t\t\t\tLEFT OUTER JOIN pivoted_table AS p\n\t\t\t\t\tON (l.join_customer = p.join_customer)\n\t\t\t\tLEFT OUTER JOIN dw.v_customers AS c\n\t\t\t\t\tON (l.join_customer = c.customer)\n\t\t\t)\n\t\t)\n\t)\n)\nORDER BY decimated_session desc",
+  "query_definition": {
+    "override_sql": null,
+    "query": {
+      "activities": [
+        {
+          "config": {
+            "customer_table": "v_customers",
+            "activity_stream": "mv_activity_stream",
+            "enrichment_column": "enriched_activity_id",
+            "enrichment_table": "mv_enriched_pages",
+            "has_source": true
+          },
+          "did": true,
+          "kind": "limiting",
+          "occurence_after_time": false,
+          "occurrence": "first",
+          "relationships": [],
+          "slug": "session",
+          "id": "session_UUID"
+        },
+        {
+          "config": {
+            "customer_table": "v_customers",
+            "activity_stream": "mv_activity_stream",
+            "enrichment_column": null,
+            "enrichment_table": null,
+            "has_source": true
+          },
+          "did": true,
+          "kind": "limiting",
+          "occurence_after_time": false,
+          "occurrence": "first",
+          "relationships": [],
+          "slug": "survey_email_captured"
+        },
+        {
+          "config": {
+            "customer_table": "v_customers",
+            "activity_stream": "mv_activity_stream",
+            "enrichment_column": null,
+            "enrichment_table": null,
+            "has_source": true
+          },
+          "did": true,
+          "kind": "append",
+          "occurence_after_time": false,
+          "occurrence": "first",
+          "relationships": [],
+          "slug": "photos_recieved"
+        },
+        {
+          "config": {
+            "customer_table": "v_customers",
+            "activity_stream": "mv_activity_stream",
+            "enrichment_column": null,
+            "enrichment_table": null,
+            "has_source": true
+          },
+          "kind": "conversion",
+          "occurrence": "first",
+          "slug": "survey_wizard_completed",
+          "id": "survey_wizard_completed_UUID"
+        },
+        {
+          "config": {
+            "customer_table": "v_customers",
+            "activity_stream": "mv_activity_stream",
+            "enrichment_column": null,
+            "enrichment_table": null,
+            "has_source": true
+          },
+          "kind": "conversion",
+          "occurrence": "first",
+          "slug": "ordered_impression_kit",
+          "id": "ordered_impression_kit_UUID"
+        }
+      ],
+      "columns": [
+        {
+          "filters": [],
+          "id": "email",
+          "label": "email",
+          "name": "customer",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session"
+          },
+          "source_kind": "activity",
+          "type": "string"
+        },
+        {
+          "filters": [],
+          "id": "segment_id",
+          "label": "segment_id",
+          "name": "source_id",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "session_UUID"
+          },
+          "source_kind": "activity",
+          "type": "string"
+        },
+        {
+          "filters": [
+            {
+              "operator": ">",
+              "value": "2018-10-01"
+            }
+          ],
+          "id": "first_session_at",
+          "label": "first_session_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session"
+          },
+          "source_kind": "activity",
+          "type": "timestamp"
+        },
+        {
+          "filters": [],
+          "id": "id_device",
+          "label": "device",
+          "name": "device",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session"
+          },
+          "source_kind": "enrichment",
+          "type": "string"
+        },
+        {
+          "filters": [],
+          "id": "session_source",
+          "label": "session_source",
+          "name": "session_source",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session"
+          },
+          "source_kind": "enrichment",
+          "type": "string"
+        },
+        {
+          "filters": [],
+          "id": "session_kind",
+          "label": "session_kind",
+          "name": "session_kind",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session"
+          },
+          "source_kind": "enrichment",
+          "type": "string"
+        },
+        {
+          "filters": [],
+          "id": "survey_email_captured_at",
+          "label": "survey_email_captured_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "survey_email_captured"
+          },
+          "source_kind": "activity",
+          "type": "timestamp"
+        },
+        {
+          "filters": [],
+          "id": "survey_wizard_completed_at",
+          "label": "survey_wizard_completed_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "survey_wizard_completed"
+          },
+          "source_kind": "activity",
+          "type": "timestamp"
+        },
+        {
+          "filters": [],
+          "id": "photos_received_at",
+          "label": "photos_received_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "append",
+            "activity_slug": "photos_recieved"
+          },
+          "source_kind": "activity",
+          "type": "timestamp"
+        },
+        {
+          "filters": [],
+          "id": "customer_name",
+          "label": "name",
+          "name": "name",
+          "output": true,
+          "source_details": {
+            "table": "v_customers"
+          },
+          "source_kind": "customer",
+          "type": "string"
+        },
+        {
+          "filters": [],
+          "id": "converted_to_survey_wizard_completed_UUID",
+          "label": "converted_to_survey_wizard_completed",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "survey_wizard_completed",
+            "cases": [
+              {
+                "column": "survey_wizard_completed_at",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null
+                },
+                "value": 1,
+                "value_kind": "number"
+              }
+            ],
+            "kind": "ifttt",
+            "value": 0,
+            "value_kind": "number"
+          },
+          "source_kind": "computed",
+          "type": "number"
+        },
+        {
+          "filters": [],
+          "id": "ordered_impression_kit_at",
+          "label": "ordered_impression_kit_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit"
+          },
+          "source_kind": "activity",
+          "type": "timestamp"
+        },
+        {
+          "filters": [],
+          "id": "converted_to_ordered_impression_kit_UUID",
+          "label": "converted_to_ordered_impression_kit",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+            "cases": [
+              {
+                "column": "ordered_impression_kit_at",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null
+                },
+                "value": 1,
+                "value_kind": "number"
+              }
+            ],
+            "kind": "ifttt",
+            "value": 0,
+            "value_kind": "number"
+          },
+          "source_kind": "computed",
+          "type": "number"
+        },
+        {
+          "filters": [],
+          "id": "days_from_session_to_ordered_impression_kit",
+          "label": "days_from_session_to_ordered_impression_kit",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+            "column": "first_session_at",
+            "kind": "time_between",
+            "second_column": "ordered_impression_kit_at",
+            "segmentation": "days"
+          },
+          "source_kind": "computed",
+          "type": "number"
+        },
+        {
+          "filters": [],
+          "id": "session_attribution",
+          "label": "session_attribution",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "column": "session_source",
+            "delimiter": " - ",
+            "kind": "string_concatenate_multi_column",
+            "second_column": "session_kind"
+          },
+          "source_kind": "computed",
+          "type": "string"
+        },
+        {
+          "filters": [],
+          "id": "sa_row_number",
+          "label": "sa_row_number",
+          "name": "sa_row_number",
+          "output": true,
+          "source_details": {
+            "full_order": [
+              "first_session_at"
+            ],
+            "group": [
+              "session_attribution"
+            ],
+            "kind": "row_number"
+          },
+          "source_kind": "computed",
+          "type": "number"
+        },
+        {
+          "filters": [],
+          "id": "sa_count",
+          "label": "sa_count",
+          "name": "sa_count",
+          "output": true,
+          "source_details": {
+            "group": [
+              "session_attribution"
+            ],
+            "kind": "count"
+          },
+          "source_kind": "computed",
+          "type": "number"
+        },
+        {
+          "filters": [],
+          "id": "sa_percent_of_total",
+          "label": "sa_percent_of_total",
+          "name": "sa_percent_of_total",
+          "output": true,
+          "source_details": {
+            "column": "sa_count",
+            "group": [
+              "session_attribution"
+            ],
+            "kind": "percent_of_total"
+          },
+          "source_kind": "computed",
+          "type": "number"
+        },
+        {
+          "filters": [],
+          "id": "categorized_source",
+          "label": "categorized_source",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "cases": [
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "=",
+                  "value": "Referral"
+                },
+                "value": "NOT Direct-Organic-Search",
+                "value_kind": "string"
+              },
+              {
+                "column": "session_source",
+                "filter": {
+                  "operator": "=",
+                  "value": "Organic"
+                },
+                "value": "Direct-Organic-Search",
+                "value_kind": "string"
+              },
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null
+                },
+                "value": "is set test",
+                "value_kind": "string"
+              },
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "in",
+                  "value": [
+                    "Direct",
+                    "Search"
+                  ]
+                },
+                "value": "****Direct-Organic-Search",
+                "value_kind": "string"
+              }
+            ],
+            "kind": "ifttt",
+            "value": "NOT Direct-Organic-Search",
+            "value_kind": "string"
+          },
+          "source_kind": "computed",
+          "type": "string"
+        },
+        {
+          "filters": [],
+          "id": "decimated_session",
+          "label": "decimated_session",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "column": "first_session_at",
+            "kind": "time_truncate",
+            "resolution": 5,
+            "segmentation": "minute"
+          },
+          "source_kind": "computed",
+          "type": "timestamp"
+        }
+      ],
+      "activity_stream": "mv_activity_stream",
+      "all_groups": [
+        {
+            "name": "Group by Device",
+            "slug": "group_by_device",
+            "column_ids": [
+                "device"
+            ],
+            "computed_columns": [],
+            "metrics": [
+                {
+                    "id": "metrics_total_events",
+                    "label": "total_events",
+                    "agg_function": "COUNT",
+                    "column_id": "*",
+                    "filters": [],
+                    "pivot": []
+                },
+                {
+                    "id": "metrics_total_survey_wizard_completed",
+                    "label": "total_survey_wizard_completed",
+                    "agg_function": "SUM",
+                    "column_id": "converted_to_survey_wizard_completed",
+                    "filters": [],
+                    "pivot": []
+                }
+            ],
+            "pivot": [],
+            "order": [
+              {
+                "column_id": "metrics_total_events",
+                "order_direction": "asc"
+              }
+            ]
+        }
+      ],
+      "order": [
+        {
+          "column_id": "decimated_session",
+          "order_direction": "desc"
+        }
+      ]
+    }
+  },
+  "results": {
+    "columns": [
+      "email",
+      "segment_id",
+      "first_session_at",
+      "device",
+      "session_source",
+      "session_kind",
+      "survey_email_captured_at",
+      "photos_received_at",
+      "name",
+      "survey_wizard_completed_at",
+      "converted_to_survey_wizard_completed",
+      "ordered_impression_kit_at",
+      "converted_to_ordered_impression_kit",
+      "days_from_session_to_ordered_impression_kit",
+      "session_attribution",
+      "sa_row_number",
+      "sa_count",
+      "sa_percent_of_total",
+      "categorized_source",
+      "decimated_session"
+    ],
+    "data": [
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 0,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-02 14:30:00",
+        "device": "mobile",
+        "email": "juancbello@hotmail.com",
+        "first_session_at": "2018-12-02 19:33:55.708000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 623,
+        "segment_id": "f8506c3c-27c3-48c7-b89a-f5689aa736c2",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-02 14:38:09.601000-05:00",
+        "survey_wizard_completed_at": null
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 0,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-02 14:25:00",
+        "device": "desktop",
+        "email": "mbbany1@gmail.com",
+        "first_session_at": "2018-12-02 19:28:27.479000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 622,
+        "segment_id": "47fe0234-9ee1-4f5f-af46-febde6f2b9a2",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-02 14:34:26.558000-05:00",
+        "survey_wizard_completed_at": null
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 0,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-02 12:05:00",
+        "device": "desktop",
+        "email": "majinbee@gmail.com",
+        "first_session_at": "2018-12-02 17:05:24.711000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 621,
+        "segment_id": "95ebdef7-2829-49d7-9383-78188d5714e5",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-02 12:07:52.695000-05:00",
+        "survey_wizard_completed_at": null
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 0,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-02 08:50:00",
+        "device": "desktop",
+        "email": "seanoffshore@gmail.com",
+        "first_session_at": "2018-12-02 13:54:32.656000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 620,
+        "segment_id": "897d1915-bb84-42df-84f8-3c1c6098cfba",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-02 08:56:34.556000-05:00",
+        "survey_wizard_completed_at": null
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 0,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-02 07:45:00",
+        "device": "mobile",
+        "email": "alexturnbull01@icloud.com",
+        "first_session_at": "2018-12-02 12:47:21.562000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 619,
+        "segment_id": "231c1561-5529-4b82-971d-dd61b3bef886",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-02 07:51:56.675000-05:00",
+        "survey_wizard_completed_at": null
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 21:40:00",
+        "device": "desktop",
+        "email": "timmygod820@gmail.com",
+        "first_session_at": "2018-12-02 02:42:14.934000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 618,
+        "segment_id": "4ba367c3-cdde-488c-a69e-0e1bac5e2d58",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 21:44:33.522000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 21:47:19.898000-05:00"
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 21:20:00",
+        "device": "mobile",
+        "email": "blondy168@gmail.com",
+        "first_session_at": "2018-12-02 02:21:01.088000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 616,
+        "segment_id": "076c76d8-22bf-402f-9bb6-9ec3497ea4a9",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 21:23:28.895000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 21:26:43.893000-05:00"
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 21:20:00",
+        "device": "desktop",
+        "email": "memorales22@gmail.com",
+        "first_session_at": "2018-12-02 02:23:57.917000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 617,
+        "segment_id": "1e276067-fc2c-42aa-b2eb-4704d0553165",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 21:29:23.337000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 21:33:02.802000-05:00"
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 0,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 19:10:00",
+        "device": "desktop",
+        "email": "ramonjgzz98@gmail.com",
+        "first_session_at": "2018-12-02 00:13:34.050000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 615,
+        "segment_id": "9c3214f6-7742-4077-bba8-f78314838caa",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 19:17:23.709000-05:00",
+        "survey_wizard_completed_at": null
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 1,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": 0.0,
+        "decimated_session": "2018-12-01 18:15:00",
+        "device": "desktop",
+        "email": "shaquita.marshall@ymail.com",
+        "first_session_at": "2018-12-01 23:18:56.233000+00:00",
+        "name": "shaquita marshall",
+        "ordered_impression_kit_at": "2018-12-01 23:29:21.990000+00:00",
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 614,
+        "segment_id": "b848aa3c-c22b-405a-b9b3-8fd236347620",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 18:22:05.788000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 18:25:06.319000-05:00"
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 17:15:00",
+        "device": "desktop",
+        "email": "debbiefoxmiller@gmail.com",
+        "first_session_at": "2018-12-01 22:15:37.097000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 613,
+        "segment_id": "c0babd54-74a7-4921-b675-615aefc80bee",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 17:21:51.156000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 17:29:24.029000-05:00"
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 17:10:00",
+        "device": "desktop",
+        "email": "ellybowen93@gmail.com",
+        "first_session_at": "2018-12-01 22:11:23.461000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 611,
+        "segment_id": "5042058d-8cfa-490e-b5d0-60d39ca43c64",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 17:13:23.905000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 17:15:29.894000-05:00"
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 17:10:00",
+        "device": "desktop",
+        "email": "gina_frucci@yahoo.com",
+        "first_session_at": "2018-12-01 22:14:24.356000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 612,
+        "segment_id": "bee26f67-0843-47ab-bbb6-eeb63ecfbcf0",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 17:17:11.475000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 17:19:43.342000-05:00"
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 16:40:00",
+        "device": "desktop",
+        "email": "kattt.kattt16@gmail.com",
+        "first_session_at": "2018-12-01 21:44:56.321000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 610,
+        "segment_id": "913ee071-fa3a-45bf-8acf-4bfe5d6f2669",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 16:52:47.586000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 16:57:01.873000-05:00"
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 16:00:00",
+        "device": "desktop",
+        "email": "chrissy1251@gmail.com",
+        "first_session_at": "2018-12-01 21:03:35.519000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 609,
+        "segment_id": "ccb95e11-8550-4dd8-b2ce-49ace4724467",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 16:06:24.164000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 16:08:59.469000-05:00"
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 1,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": 0.0,
+        "decimated_session": "2018-12-01 15:40:00",
+        "device": "desktop",
+        "email": "mlcrotty88@comcast.net",
+        "first_session_at": "2018-12-01 20:42:07.755000+00:00",
+        "name": "cullen crotty",
+        "ordered_impression_kit_at": "2018-12-01 22:34:06.822000+00:00",
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 607,
+        "segment_id": "b749debf-6cd5-49e6-8a69-e85ecf7b08c2",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 15:44:05.012000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 15:47:06.447000-05:00"
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 15:40:00",
+        "device": "desktop",
+        "email": "o1075597@nwytg.net",
+        "first_session_at": "2018-12-01 20:44:13.766000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 608,
+        "segment_id": "39c826d6-92da-43eb-a383-ed2ffae55ea1",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 15:47:09.095000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 15:51:09.072000-05:00"
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 0,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 13:40:00",
+        "device": "desktop",
+        "email": "emilyasolo@gmail.com",
+        "first_session_at": "2018-12-01 18:43:08.503000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 606,
+        "segment_id": "e2309cc0-bd26-45dd-9f7c-577218bed2b2",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 13:45:34.099000-05:00",
+        "survey_wizard_completed_at": null
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 1,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": 0.0,
+        "decimated_session": "2018-12-01 12:05:00",
+        "device": "desktop",
+        "email": "landlmerritt@yahoo.com",
+        "first_session_at": "2018-12-01 17:06:22.888000+00:00",
+        "name": "laura merritt",
+        "ordered_impression_kit_at": "2018-12-01 17:15:22.137000+00:00",
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 605,
+        "segment_id": "91d193af-70c7-4b6a-bc78-2837027cd4ee",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 12:08:56.806000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 12:13:01.989000-05:00"
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 10:20:00",
+        "device": "desktop",
+        "email": "zachbrozowski@gmail.com",
+        "first_session_at": "2018-12-01 15:24:59.490000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 604,
+        "segment_id": "d9490e1f-e4b8-44e7-a754-1c6b9c3fbb7a",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 10:26:28.750000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 10:27:44.931000-05:00"
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 0,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 09:50:00",
+        "device": "desktop",
+        "email": "m.akinsarica@gmail.com",
+        "first_session_at": "2018-12-01 14:53:50.645000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 603,
+        "segment_id": "77766409-bef6-48f2-9b3f-954e75577212",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 09:56:18.124000-05:00",
+        "survey_wizard_completed_at": null
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 0,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 08:30:00",
+        "device": "desktop",
+        "email": "kelvin-nelms@hotmail.com",
+        "first_session_at": "2018-12-01 13:31:48.667000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 602,
+        "segment_id": "5f333b94-62bf-4320-bb37-6a2477a28e31",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 08:34:03.983000-05:00",
+        "survey_wizard_completed_at": null
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 0,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 07:40:00",
+        "device": "desktop",
+        "email": "cherylmorgan1980@gmail.com",
+        "first_session_at": "2018-12-01 12:44:47.360000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 601,
+        "segment_id": "f00fefdc-c1fa-4a09-a7c7-9f936237a8f0",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 08:35:30.620000-05:00",
+        "survey_wizard_completed_at": null
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 0,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 06:15:00",
+        "device": "desktop",
+        "email": "bmc.9455@gmail.com",
+        "first_session_at": "2018-12-01 11:19:44.566000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 600,
+        "segment_id": "b00ed327-6a71-4c60-a758-f1e1080287d5",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 06:22:45.141000-05:00",
+        "survey_wizard_completed_at": null
+      },
+      {
+        "categorized_source": "NOT Direct-Organic-Search",
+        "converted_to_ordered_impression_kit": 0,
+        "converted_to_survey_wizard_completed": 1,
+        "days_from_session_to_ordered_impression_kit": null,
+        "decimated_session": "2018-12-01 05:55:00",
+        "device": "mobile",
+        "email": "renee.mc.nz@gmail.com",
+        "first_session_at": "2018-12-01 10:57:55.293000+00:00",
+        "name": null,
+        "ordered_impression_kit_at": null,
+        "photos_received_at": null,
+        "sa_count": 623,
+        "sa_percent_of_total": 0.00160513643659711,
+        "sa_row_number": 599,
+        "segment_id": "d86cb7e3-f8f0-4637-b9cf-c71c09054ada",
+        "session_attribution": "Organic - Referral",
+        "session_kind": "Referral",
+        "session_source": "Organic",
+        "survey_email_captured_at": "2018-12-01 06:02:41.527000-05:00",
+        "survey_wizard_completed_at": "2018-12-01 06:07:40.593000-05:00"
+      }
+    ],
+    "columns_mapping": [
+      {
+        "id": "email",
+        "label": "email"
+      },
+      {
+        "id": "segment_id",
+        "label": "segment_id"
+      },
+      {
+        "id": "first_session_at",
+        "label": "first_session_at"
+      },
+      {
+        "id": "id_device",
+        "label": "device"
+      },
+      {
+        "id": "session_source",
+        "label": "session_source"
+      },
+      {
+        "id": "session_kind",
+        "label": "session_kind"
+      },
+      {
+        "id": "survey_email_captured_at",
+        "label": "survey_email_captured_at"
+      },
+      {
+        "id": "survey_wizard_completed_at",
+        "label": "survey_wizard_completed_at"
+      },
+      {
+        "id": "photos_received_at",
+        "label": "photos_received_at"
+      },
+      {
+        "id": "customer_name",
+        "label": "name"
+      },
+      {
+        "id": "converted_to_survey_wizard_completed_UUID",
+        "label": "converted_to_survey_wizard_completed"
+      },
+      {
+        "id": "ordered_impression_kit_at",
+        "label": "ordered_impression_kit_at"
+      },
+      {
+        "id": "converted_to_ordered_impression_kit_UUID",
+        "label": "converted_to_ordered_impression_kit"
+      },
+      {
+        "id": "days_from_session_to_ordered_impression_kit",
+        "label": "days_from_session_to_ordered_impression_kit"
+      },
+      {
+        "id": "session_attribution",
+        "label": "session_attribution"
+      },
+      {
+        "id": "sa_row_number",
+        "label": "sa_row_number"
+      },
+      {
+        "id": "sa_count",
+        "label": "sa_count"
+      },
+      {
+        "id": "sa_percent_of_total",
+        "label": "sa_percent_of_total"
+      },
+      {
+        "id": "categorized_source",
+        "label": "categorized_source"
+      },
+      {
+        "id": "decimated_session",
+        "label": "decimated_session"
+      }
+    ]
+  },
+  "returning_rows": 1000
+}

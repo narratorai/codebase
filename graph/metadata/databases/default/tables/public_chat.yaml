@@ -1,0 +1,64 @@
+table:
+  name: chat
+  schema: public
+object_relationships:
+  - name: company_table
+    using:
+      foreign_key_constraint_on: table_id
+  - name: user
+    using:
+      foreign_key_constraint_on: created_by
+array_relationships:
+  - name: tags
+    using:
+      manual_configuration:
+        column_mapping:
+          id: chat_id
+        insertion_order: null
+        remote_table:
+          name: chat_tags
+          schema: public
+  - name: training_requests
+    using:
+      foreign_key_constraint_on:
+        column: chat_id
+        table:
+          name: training_request
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - created_by
+        - id
+        - messages
+        - question
+        - rating
+        - table_id
+        - updated_at
+      filter:
+        _and:
+          - _exists:
+              _table:
+                name: company
+                schema: public
+              _where:
+                id:
+                  _eq: X-Hasura-Company-Id
+          - _or:
+              - created_by:
+                  _eq: X-Hasura-User-Id
+              - _exists:
+                  _table:
+                    name: company_user
+                    schema: public
+                  _where:
+                    _and:
+                      - user_id:
+                          _eq: X-Hasura-User-Id
+                      - company_id:
+                          _eq: X-Hasura-Company-Id
+                      - role:
+                          _eq: admin
+    comment: ""

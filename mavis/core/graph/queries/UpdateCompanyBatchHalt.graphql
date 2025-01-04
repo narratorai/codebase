@@ -1,0 +1,16 @@
+mutation UpdateCompanyBatchHalt(
+  $id: uuid!
+  $batch_halt: Boolean!
+  $user_id: uuid!
+) {
+  update_company_by_pk(
+    pk_columns: { id: $id }
+    _set: {
+      batch_halt: $batch_halt
+      batch_halted_at: "now()"
+      batch_halted_by: $user_id
+    }
+  ) {
+    id
+  }
+}

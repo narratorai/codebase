@@ -1,0 +1,11 @@
+query GetCompanyUserApiKey($id: uuid!) {
+  api_key: company_user_api_key_by_pk(id: $id) {
+    id
+    revoked_at
+    company_user {
+      user {
+        id
+      }
+    }
+  }
+}

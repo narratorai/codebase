@@ -1,0 +1,10 @@
+query GetActiveTransformationMaintenance($id: uuid!, $last_updated_at: timestamptz!) {
+  transformation_maintenance(where: {transformation_id: {_eq: $id}, _or: [{ended_at: {_is_null: true}}, {ended_at: {_gte: $last_updated_at}}]}, order_by: {ended_at: desc_nulls_first}) {
+    id
+    kind
+    notes
+    started_at
+    ended_at
+    transformation_id
+  }
+}

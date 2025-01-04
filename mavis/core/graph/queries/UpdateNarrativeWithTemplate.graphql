@@ -1,0 +1,17 @@
+mutation UpdateNarrativeWithTemplate(
+  $company_id: uuid!
+  $slug: String!
+  $template_id: uuid!
+) {
+  update_narrative(
+    _set: { template_id: $template_id }
+    where: {
+      company_id: { _eq: $company_id }
+      slug: { _eq: $slug }
+    }
+  ) {
+    returning {
+      id
+    }
+  }
+}

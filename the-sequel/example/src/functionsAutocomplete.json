@@ -1,0 +1,725 @@
+{
+  "all_functions": [
+    {
+      "name": "contains",
+      "display_name": "contains",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "checks if a string is contained in the columns",
+      "documentation": "",
+      "sql": "${1:left} ilike '%${2:right_value}%'"
+    },
+    {
+      "name": "starts_with",
+      "display_name": "starts_with",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "checks if a column starts with a string",
+      "documentation": "",
+      "sql": "${1:left} ilike '${2:right_value}%'"
+    },
+    {
+      "name": "ends_with",
+      "display_name": "ends_with",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "checks if a column ends with a string",
+      "documentation": "",
+      "sql": "${1:left} ilike '%${2:right_value}'"
+    },
+    {
+      "name": "is_null",
+      "display_name": "is_null",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "checks if column is NULL",
+      "documentation": "",
+      "sql": "${1:left} is NULL"
+    },
+    {
+      "name": "is_in",
+      "display_name": "is_in",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "Checks if column is in the set of values",
+      "documentation": "",
+      "sql": "${1:left} in (${2:right}) "
+    },
+    {
+      "name": "greater_than",
+      "display_name": "greater_than",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "Checks if column is greater than a value",
+      "documentation": "",
+      "sql": "${1:left} > ${2:right} "
+    },
+    {
+      "name": "less_than",
+      "display_name": "less_than",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "Checks if column is less than a value",
+      "documentation": "",
+      "sql": "${1:left} < ${2:right} "
+    },
+    {
+      "name": "greater_than_equal",
+      "display_name": "greater_than_equal",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "Checks if column is greater than or equal to value",
+      "documentation": "",
+      "sql": "${1:left} >= ${2:right} "
+    },
+    {
+      "name": "less_than_equal",
+      "display_name": "less_than_equal",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "Checks if column is less than or equal to value",
+      "documentation": "",
+      "sql": "${1:left} <= ${2:right} "
+    },
+    {
+      "name": "equal",
+      "display_name": "equal",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "Checks if column is equal to another column",
+      "documentation": "",
+      "sql": "${1:left} = ${2:right} "
+    },
+    {
+      "name": "not_equal",
+      "display_name": "not_equal",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "Checks if column is NOT equal to anoter column",
+      "documentation": "",
+      "sql": "${1:left} <> ${2:right} "
+    },
+    {
+      "name": "not_contain",
+      "display_name": "not_contain",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "Checks if string is NOT contained in a column",
+      "documentation": "",
+      "sql": "${1:left} not ilike '%${2:right_value}%'"
+    },
+    {
+      "name": "not_starts_with",
+      "display_name": "not_starts_with",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "Checks if column does NOT start with a string",
+      "documentation": "",
+      "sql": "${1:left} not ilike '${2:right_value}%'"
+    },
+    {
+      "name": "not_end_with",
+      "display_name": "not_end_with",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "Checks if column does NOT end with a string",
+      "documentation": "",
+      "sql": "${1:left} not ilike '%${2:right_value}'"
+    },
+    {
+      "name": "not_is_null",
+      "display_name": "not_is_null",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "Checks if column is NOT NULL",
+      "documentation": "",
+      "sql": "${1:left} is not NULL"
+    },
+    {
+      "name": "not_is_in",
+      "display_name": "not_is_in",
+      "kind": "operators",
+      "output_type": "boolean",
+      "description": "Checks if column is NOT in an array of values",
+      "documentation": "",
+      "sql": "${1:left} not in (${2:right})"
+    },
+    {
+      "name": "epoch_to_timestamp",
+      "display_name": "Epoch to Timestamp",
+      "kind": "functions",
+      "output_type": "timestamp",
+      "description": "Converts EPoch time to timestamp",
+      "documentation": "",
+      "sql": "timestamp 'epoch' + ${1:column} * interval '1 second'"
+    },
+    {
+      "name": "now",
+      "display_name": "now",
+      "kind": "functions",
+      "output_type": "timestamp",
+      "description": "Current timestamp in UTC",
+      "documentation": "",
+      "sql": "SYSDATE"
+    },
+    {
+      "name": "local_now",
+      "display_name": "local_now",
+      "kind": "functions",
+      "output_type": "timestamp",
+      "description": "Current timestamp in local timezone",
+      "documentation": "",
+      "sql": "CONVERT_TIMEZONE('${1:timezone}', SYSDATE)"
+    },
+    {
+      "name": "date_trunc",
+      "display_name": "Truncate Time",
+      "kind": "functions",
+      "output_type": "timestamp",
+      "description": "Truncates a column to the nearest resolution.",
+      "documentation": "This will take a time column like 2019-03-02 and make it to the begining of the resolution.\nIf Month then it will be 2019-03-01",
+      "sql": "DATE_TRUNC('${1:resolution}', ${2:column})"
+    },
+    {
+      "name": "date_add",
+      "display_name": "Add To Date",
+      "kind": "functions",
+      "output_type": "timestamp",
+      "description": "Adds a time interval with a specific resolution to a timestamp",
+      "documentation": "",
+      "sql": "DATE_ADD('${1:resolution}', ${2:interval}, ${3:column})"
+    },
+    {
+      "name": "date_diff",
+      "display_name": "Diff Date",
+      "kind": "functions",
+      "output_type": "integer",
+      "description": "Gets the resolution (day, week, ..) between 2 timestamp",
+      "documentation": "",
+      "sql": "DATE_DIFF('${1:resolution}', ${2:from_column}, ${3:to_column})"
+    },
+    {
+      "name": "date_to_now",
+      "display_name": "Date to Now",
+      "kind": "functions",
+      "output_type": "integer",
+      "description": "Gets the Days, Weeks,... from a column to NOW",
+      "documentation": "",
+      "sql": "DATE_DIFF('${1:resolution}', ${2:from_column}, SYSDATE)"
+    },
+    {
+      "name": "time_add",
+      "display_name": "Add To Time",
+      "kind": "functions",
+      "output_type": "timestamp",
+      "description": "Adds a time interval to a timestamp",
+      "documentation": "",
+      "sql": "DATE_ADD('${1:resolution}', ${2:interval}, ${3:column})"
+    },
+    {
+      "name": "time_diff",
+      "display_name": "Diff Time",
+      "kind": "functions",
+      "output_type": "integer",
+      "description": "Gets the resolution (day, week, ..) between 2 timestamp",
+      "documentation": "",
+      "sql": "DATE_DIFF('${1:resolution}', ${2:from_column}, ${3:to_column})"
+    },
+    {
+      "name": "time_to_now",
+      "display_name": "time_to_now",
+      "kind": "functions",
+      "output_type": "integer",
+      "description": "Gets the Days, Weeks,... from a column to NOW",
+      "documentation": "",
+      "sql": "DATE_DIFF('${1:resolution}', ${2:from_column}, SYSDATE)"
+    },
+    {
+      "name": "date_trunc_resolution",
+      "display_name": "Truncate Time Bucket",
+      "kind": "functions",
+      "output_type": "timestamp",
+      "description": "Truncates the timestamp by a bucketed resolution i.e. every 5 minutes",
+      "documentation": "",
+      "sql": "DATE_ADD('${1:resolution}', (floor(DATE_DIFF('${1:resolution}', '1990-01-01'::TIMESTAMP, ${2:column})/${3:segmentation})*${3:segmentation})::INTEGER, '1990-01-01'::TIMESTAMP)"
+    },
+    {
+      "name": "date_part",
+      "display_name": "date_part",
+      "kind": "functions",
+      "output_type": "string",
+      "description": "Gets the part of a date (i.e. dow, month, ...)",
+      "documentation": "",
+      "sql": "DATE_PART('${1:resolution}', ${2:column})"
+    },
+    {
+      "name": "nullif",
+      "display_name": "nullif",
+      "kind": "functions",
+      "output_type": "column",
+      "description": "Returns null if the column matches the value",
+      "documentation": "",
+      "sql": "nullif(${1:column}, ${2:value})"
+    },
+    {
+      "name": "nvl",
+      "display_name": "nvl",
+      "kind": "functions",
+      "output_type": "column",
+      "description": "Returns the first column if it is not null else returns second column",
+      "documentation": "",
+      "sql": "NVL(${1:first_column}, ${2:second_column})"
+    },
+    {
+      "name": "coalesce",
+      "display_name": "coalesce",
+      "kind": "functions",
+      "output_type": "column",
+      "description": "Returns the first column if it is not null else returns second column",
+      "documentation": "",
+      "sql": "COALESCE(${1:first_column}, ${2:second_column})"
+    },
+    {
+      "name": "replace",
+      "display_name": "replace",
+      "kind": "functions",
+      "output_type": "string",
+      "description": "Replaces a string in a column with a different string",
+      "documentation": "",
+      "sql": "REPLACE(${1:column}, '${2:remove_string}', '${3:add_string}')"
+    },
+    {
+      "name": "lower",
+      "display_name": "lower",
+      "kind": "functions",
+      "output_type": "string",
+      "description": "lowers a column",
+      "documentation": "",
+      "sql": "LOWER(${1:column})"
+    },
+    {
+      "name": "length",
+      "display_name": "length",
+      "kind": "functions",
+      "output_type": "integer",
+      "description": "finds the length of column",
+      "documentation": "",
+      "sql": "LENGTH(${1:column})"
+    },
+    {
+      "name": "snake_case",
+      "display_name": "snake_case",
+      "kind": "functions",
+      "output_type": "string",
+      "description": "snake cases a column",
+      "documentation": "",
+      "sql": "LOWER(REPLACE(${1:column}, ' ', '_'))"
+    },
+    {
+      "name": "concat",
+      "display_name": "concat",
+      "kind": "functions",
+      "output_type": "string",
+      "description": "Concatinates 2 columns",
+      "documentation": "",
+      "sql": "CONCAT(${1:first_column}, ${2:second_column})"
+    },
+    {
+      "name": "substring",
+      "display_name": "substring",
+      "kind": "functions",
+      "output_type": "string",
+      "description": "Get a piece of string that starts at a position and is length long",
+      "documentation": "",
+      "sql": "SUBSTRING(${1:column}, ${2:position}, ${3:length})"
+    },
+    {
+      "name": "strpos",
+      "display_name": "strpos",
+      "kind": "functions",
+      "output_type": "integer",
+      "description": "Finds the position of a string in a column",
+      "documentation": "",
+      "sql": "STRPOS(${1:column}, '${2:piece}')"
+    },
+    {
+      "name": "floor",
+      "display_name": "floor",
+      "kind": "functions",
+      "output_type": "integer",
+      "description": "rounds a number down",
+      "documentation": "",
+      "sql": "floor(${1:column})"
+    },
+    {
+      "name": "random",
+      "display_name": "Random",
+      "kind": "functions",
+      "output_type": "float",
+      "description": "Generates a random number from 0 to 1",
+      "documentation": "",
+      "sql": "random()"
+    },
+    {
+      "name": "decimate_number",
+      "display_name": "decimate_number",
+      "kind": "functions",
+      "output_type": "integer",
+      "description": "Buckets a number (i.e. bucket money by $5 groups)",
+      "documentation": "",
+      "sql": "FLOOR(${1:column}/${2:segmentation}) * ${2:segmentation}"
+    },
+    {
+      "name": "string_between",
+      "display_name": "string_between",
+      "kind": "functions",
+      "output_type": "string",
+      "description": "Finds the string in the column between 2 strings",
+      "documentation": "",
+      "sql": "NULLIF(CASE WHEN strpos(${1:column}, '${2:from_piece}') >0 and strpos(${1:column}, '${3:to_piece}') > 0 and length(${1:column}) - strpos(REVERSE(${1:column}), '${3:to_piece}')> strpos(${1:column}, '${2:from_piece}') THEN SUBSTRING(${1:column}, strpos(${1:column}, '${2:from_piece}') + 1 , length(${1:column})- strpos(REVERSE(${1:column}), '${3:to_piece}') - strpos(${1:column}, '${2:from_piece}') ) END, '')"
+    },
+    {
+      "name": "greatest",
+      "display_name": "greatest",
+      "kind": "functions",
+      "output_type": "float",
+      "description": "Finds the MAX between the 2 columns",
+      "documentation": "",
+      "sql": "GREATEST(${1:first_column}, ${2:second_column})"
+    },
+    {
+      "name": "least",
+      "display_name": "least",
+      "kind": "functions",
+      "output_type": "float",
+      "description": "Finds the MIN between the 2 columns",
+      "documentation": "",
+      "sql": "LEAST(${1:first_column}, ${2:second_column})"
+    },
+    {
+      "name": "sqrt",
+      "display_name": "sqrt",
+      "kind": "functions",
+      "output_type": "float",
+      "description": "Finds the SQRT of a column",
+      "documentation": "",
+      "sql": "SQRT(${1:column})"
+    },
+    {
+      "name": "percentile_cont_window",
+      "display_name": "Percentile Cont Window",
+      "kind": "functions",
+      "output_type": "float",
+      "description": "Compute the Continuous percentile for a window ",
+      "documentation": "",
+      "sql": "PERCENTILE_CONT(${2:percentile}) within group (ORDER BY ${1:column}) over (partition by ${3:group})"
+    },
+    {
+      "name": "ratio_to_report",
+      "display_name": "ratio_to_report",
+      "kind": "functions",
+      "output_type": "float",
+      "description": "Computes the SUM divided by the COUNT(*)  within a group ",
+      "documentation": "",
+      "sql": "RATIO_TO_REPORT(${1:column}) OVER (PARTITION BY ${2:group})"
+    },
+    {
+      "name": "percent_of_total_all",
+      "display_name": "percent_of_total_all",
+      "kind": "functions",
+      "output_type": "float",
+      "description": "Computes the SUM divided by the COUNT(*) for the entire dataset",
+      "documentation": "",
+      "sql": "RATIO_TO_REPORT(${1:column}) OVER ()"
+    },
+    {
+      "name": "row_number_empty",
+      "display_name": "row_number_raw",
+      "kind": "functions",
+      "output_type": "integer",
+      "description": "computes the row number of the data (random)",
+      "documentation": "",
+      "sql": "ROW_NUMBER() over ()"
+    },
+    {
+      "name": "row_number_all",
+      "display_name": "row_number",
+      "kind": "functions",
+      "output_type": "integer",
+      "description": "computes the row number ordered by order",
+      "documentation": "",
+      "sql": "ROW_NUMBER() over (ORDER BY ${1:order})"
+    },
+    {
+      "name": "row_number_w_group",
+      "display_name": "row_number_w_group",
+      "kind": "functions",
+      "output_type": "integer",
+      "description": "Computes the row number within a group ordered by order",
+      "documentation": "",
+      "sql": "ROW_NUMBER() over (PARTITION by ${1:group} ORDER BY ${2:order})"
+    },
+    {
+      "name": "count_window",
+      "display_name": "count_window",
+      "kind": "functions",
+      "output_type": "integer",
+      "description": "count the total rows in a group",
+      "documentation": "",
+      "sql": "COUNT(${1:column}) over (PARTITION by ${2:group})"
+    },
+    {
+      "name": "running_total",
+      "display_name": "running_total",
+      "kind": "functions",
+      "output_type": "float",
+      "description": "Sums all the rows within the group in the declared order",
+      "documentation": "",
+      "sql": "SUM(${1:column}) over (PARTITION by ${2:group} ORDER BY ${3:order} ROWS UNBOUNDED PRECEDING)"
+    },
+    {
+      "name": "running_total_all",
+      "display_name": "running_total_all",
+      "kind": "functions",
+      "output_type": "float",
+      "description": "Sums all the rows in the declared order",
+      "documentation": "",
+      "sql": "SUM(${1:column}) over (ORDER BY ${2:order} ROWS UNBOUNDED PRECEDING)"
+    },
+    {
+      "name": "moving_average",
+      "display_name": "moving_average",
+      "kind": "functions",
+      "output_type": "float",
+      "description": "Computes the rollowing average in the group in a window ordered by window_size",
+      "documentation": "",
+      "sql": "AVG(${1:column}) over (PARTITION by ${2:group} ORDER BY ${3:order} ROWS ${4:window_size} PRECEDING)"
+    },
+    {
+      "name": "moving_average_all",
+      "display_name": "moving_average_all",
+      "kind": "functions",
+      "output_type": "float",
+      "description": "Computes the rollowing average in a window ordered by window_size",
+      "documentation": "",
+      "sql": "AVG(${1:column}) over (ORDER BY ${2:order} ROWS ${3:window_size} PRECEDING)"
+    },
+    {
+      "name": "lead",
+      "display_name": "lead",
+      "kind": "functions",
+      "output_type": "column",
+      "description": "Returns the row after the current row within a group",
+      "documentation": "",
+      "sql": "LEAD(${1:column}) over (PARTITION by ${2:group} ORDER BY ${3:order})"
+    },
+    {
+      "name": "lag",
+      "display_name": "lag",
+      "kind": "functions",
+      "output_type": "column",
+      "description": "Returns the row before the current row within a group",
+      "documentation": "",
+      "sql": "LAG(${1:column}) over (PARTITION by ${2:group} ORDER BY ${3:order})"
+    },
+    {
+      "name": "lead_all",
+      "display_name": "lead_all",
+      "kind": "functions",
+      "output_type": "column",
+      "description": "Returns the row after the current row",
+      "documentation": "",
+      "sql": "LEAD(${1:column}) over (ORDER BY ${2:order})"
+    },
+    {
+      "name": "lag_all",
+      "display_name": "lag_all",
+      "kind": "functions",
+      "output_type": "column",
+      "description": "Returns the row before the current row",
+      "documentation": "",
+      "sql": "LAG(${1:column}) over (ORDER BY ${2:order})"
+    },
+    {
+      "name": "first_value_window",
+      "display_name": "first_value_window",
+      "kind": "functions",
+      "output_type": "column",
+      "description": "Returns the first row in the window",
+      "documentation": "",
+      "sql": "FIRST_VALUE(${1:column}) over (PARTITION by ${2:group} ORDER BY ${3:order} rows between unbounded preceding and unbounded following)"
+    },
+    {
+      "name": "last_value_window",
+      "display_name": "last_value_window",
+      "kind": "functions",
+      "output_type": "column",
+      "description": "Returns the last value in the window",
+      "documentation": "",
+      "sql": "LAST_VALUE(${1:column}) over (PARTITION by ${2:group} ORDER BY ${3:order} rows between unbounded preceding and unbounded following)"
+    },
+    {
+      "name": "window_func_w_group_and_order",
+      "display_name": "window_func_w_group_and_order",
+      "kind": "functions",
+      "output_type": "string",
+      "description": "freehand SQL function (DO NOT USE)",
+      "documentation": "",
+      "sql": "${1:function}(${2:column}) over (PARTITION by ${3:group} ORDER BY ${4:order})"
+    },
+    {
+      "name": "window_func_w_group_and_order_w_preceeding",
+      "display_name": "window_func_w_group_and_order_w_preceeding",
+      "kind": "functions",
+      "output_type": "string",
+      "description": "freehand SQL function (DO NOT USE)",
+      "documentation": "",
+      "sql": "${1:function}(${2:column}) over (PARTITION by ${3:group} ORDER BY ${4:order} ROWS ${5:window} PRECEDING)"
+    },
+    {
+      "name": "window_func_w_group",
+      "display_name": "window_func_w_group",
+      "kind": "functions",
+      "output_type": "string",
+      "description": "freehand SQL function (DO NOT USE)",
+      "documentation": "",
+      "sql": "${1:function}(${2:column}) over (PARTITION by ${3:group})"
+    },
+    {
+      "name": "window_func_w_order",
+      "display_name": "window_func_w_order",
+      "kind": "functions",
+      "output_type": "string",
+      "description": "freehand SQL function (DO NOT USE)",
+      "documentation": "",
+      "sql": "${1:function}(${2:column}) over (ORDER by ${3:order})"
+    },
+    {
+      "name": "single_column_function",
+      "display_name": "single_column_function",
+      "kind": "functions",
+      "output_type": "string",
+      "description": "freehand SQL function (DO NOT USE)",
+      "documentation": "",
+      "sql": "${1:function}(${2:column})"
+    },
+    {
+      "name": "two_column_function",
+      "display_name": "two_column_function",
+      "kind": "functions",
+      "output_type": "string",
+      "description": "freehand SQL function (DO NOT USE)",
+      "documentation": "",
+      "sql": "${1:function}(${2:first_column}, ${3:second_column})"
+    },
+    {
+      "name": "count_all",
+      "display_name": "count_all",
+      "kind": "agg_functions",
+      "output_type": "integer",
+      "description": "Counts the number of rows",
+      "documentation": "",
+      "sql": "COUNT(1)"
+    },
+    {
+      "name": "count",
+      "display_name": "count",
+      "kind": "agg_functions",
+      "output_type": "integer",
+      "description": "Counts the total non null values in the column",
+      "documentation": "",
+      "sql": "COUNT(${1:column})"
+    },
+    {
+      "name": "count_distinct",
+      "display_name": "count_distinct",
+      "kind": "agg_functions",
+      "output_type": "integer",
+      "description": "Counts the distict values in the column",
+      "documentation": "",
+      "sql": "COUNT(DISTINCT ${1:column})"
+    },
+    {
+      "name": "sum",
+      "display_name": "sum",
+      "kind": "agg_functions",
+      "output_type": "float",
+      "description": "computes the sum of a column",
+      "documentation": "",
+      "sql": "SUM(${1:column})"
+    },
+    {
+      "name": "average",
+      "display_name": "average",
+      "kind": "agg_functions",
+      "output_type": "float",
+      "description": "Computes the average of a column",
+      "documentation": "",
+      "sql": "AVG(1.0*${1:column})"
+    },
+    {
+      "name": "max",
+      "display_name": "max",
+      "kind": "agg_functions",
+      "output_type": "column",
+      "description": "Computes the maximum value of a column",
+      "documentation": "",
+      "sql": "MAX(${1:column})"
+    },
+    {
+      "name": "min",
+      "display_name": "min",
+      "kind": "agg_functions",
+      "output_type": "column",
+      "description": "Computes the minimum value of the column",
+      "documentation": "",
+      "sql": "MIN(${1:column})"
+    },
+    {
+      "name": "median",
+      "display_name": "median",
+      "kind": "agg_functions",
+      "output_type": "float",
+      "description": "Computes the Continuous Median",
+      "documentation": "",
+      "sql": "PERCENTILE_CONT(.5) WITHIN GROUP (ORDER BY ${1:column})"
+    },
+    {
+      "name": "percentile_cont",
+      "display_name": "percentile_cont",
+      "kind": "agg_functions",
+      "output_type": "float",
+      "description": "Computes the Continuous Percentile (median is .5 percentile but interpolated)",
+      "documentation": "",
+      "sql": "PERCENTILE_CONT(${1:percentile}) WITHIN GROUP (ORDER BY ${2:column})"
+    },
+    {
+      "name": "first_value",
+      "display_name": "first_value",
+      "kind": "agg_functions",
+      "output_type": "column",
+      "description": "Return the first value the column based on the timestamp values of base_column",
+      "documentation": "",
+      "sql": "SUBSTRING(MIN(CONCAT(DATE_TRUNC('second', ${1:base_column}), ${2:column})),20, 1000)"
+    },
+    {
+      "name": "last_value",
+      "display_name": "last_value",
+      "kind": "agg_functions",
+      "output_type": "column",
+      "description": "Finds the last value in the column based on the timestamp values of the base_column",
+      "documentation": "",
+      "sql": "SUBSTRING(MAX(CONCAT(DATE_TRUNC('second', ${1:base_column}), ${2:column})),20, 1000)"
+    },
+    {
+      "name": "stddev",
+      "display_name": "stddev",
+      "kind": "agg_functions",
+      "output_type": "float",
+      "description": "Finds the standard deviation of a column",
+      "documentation": "",
+      "sql": "STDDEV(${1:column})"
+    }
+  ],
+  "missing": []
+}

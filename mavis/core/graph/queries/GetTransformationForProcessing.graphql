@@ -1,0 +1,54 @@
+query GetTransformationForProcessing($id: uuid!) {
+  transformation: transformation_by_pk(id: $id) {
+    id
+    name
+    delete_window
+    has_source
+    do_not_delete_on_resync
+    is_aliasing
+    kind
+    max_days_to_insert
+    mutable_day_window
+    last_resynced_at
+    next_resync_at
+    single_activity
+    notify_row_count_percent_change
+    do_not_update_on_percent_change
+    slug
+    allow_future_data
+    start_data_after
+    table
+    update_type
+    production_queries(order_by: { created_at: desc_nulls_last }, limit: 1) {
+      id
+      sql
+      updated_at
+      updated_by
+    }
+    column_renames {
+      id
+      created_at
+      name
+      label
+      type
+      casting
+    }
+    depends_on_transformations {
+      depends_on_transformation_id
+    }
+    activities {
+      activity_id
+      activity {
+        id
+        slug
+        row_count
+      }
+    }
+    query_updates(where: { rows_inserted: { _gt: 0 } }, order_by: { processed_at: desc_nulls_last }, limit: 10) {
+      created_at
+      rows_inserted
+      from_sync_time
+      to_sync_time
+    }
+  }
+}

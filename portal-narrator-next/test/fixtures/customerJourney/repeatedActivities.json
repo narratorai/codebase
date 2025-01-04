@@ -1,0 +1,110 @@
+[
+  {
+      "ts": "2021-11-22T07:01:34",
+      "activity_occurrence": 3,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "zboncak_feest_and_koss",
+      "_id": 510388303776837440,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/careers",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "3eb6e10a809729a1d871ec300f826158",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/careers",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#BB20B9",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2021-11-22T06:58:34",
+      "activity_occurrence": 2,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "zboncak_feest_and_koss",
+      "_id": 1707366435833704700,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "dae0b8a1d4992a73a2ea076c2ca89d2a",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#BB20B9",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2021-11-22T06:55:34",
+      "activity_occurrence": 1,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "zboncak_feest_and_koss",
+      "_id": 3021783354321177000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "51787cdb3f06de5e062bbed53ab10ae0",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#BB20B9",
+      "activity_name": "Employee Viewed Webpage"
+  }
+]

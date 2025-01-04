@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+
+    *:focus-visible {
+      outline: none;
+    }
+  }
+
+  h1 {
+    @apply text-3xl;
+    @apply font-semibold;
+  }
+
+  h2 {
+    @apply text-2xl;
+    @apply font-semibold;
+  }
+
+  h3 {
+    @apply text-xl;
+    @apply font-semibold;
+  }
+
+  h4 {
+    @apply text-lg;
+    @apply font-semibold;
+  }
+
+  h5 {
+    @apply text-base;
+    @apply font-semibold;
+  }
+
+  b {
+    @apply font-semibold;
+  }
+
+  i {
+    @apply italic;
+  }
+}
+
+@layer components {
+  .vertical-divider-gray-200 {
+    @apply border-l;
+    @apply h-full;
+    @apply border-gray-200;
+  }
+
+  .panel-resize-handle {
+    @apply border-r;
+    @apply border-gray-200;
+  }
+
+  .box-gray-100 {
+    @apply bordered-gray-100;
+
+    @apply hover:border-purple-600;
+    @apply hover:outline hover:outline-2 hover:outline-purple-600;
+    @apply hover:shadow-md;
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "company_admin",
+  "description": "Admin users of Narrator.ai who can manage their company",
+  "permissions": []
+}

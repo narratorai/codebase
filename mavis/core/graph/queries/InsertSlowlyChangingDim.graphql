@@ -1,0 +1,18 @@
+mutation InsertSlowlyChangingDim(
+  $table_id: uuid!
+  $dim_table_id: uuid!
+  $slowly_changing_ts_column: String
+) {
+  insert_slowly_changing_customer_dims_one(object:{
+    	table_id: $table_id
+      dim_table_id: $dim_table_id
+      slowly_changing_ts_column: $slowly_changing_ts_column
+    }
+    on_conflict: {
+      constraint: slowly_changing_customer_dims_table_id_dim_table_id_key
+      update_columns: [slowly_changing_ts_column]
+    }
+  ) {
+      id
+  }
+}

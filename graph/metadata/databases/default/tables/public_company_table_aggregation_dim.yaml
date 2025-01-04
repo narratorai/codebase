@@ -1,0 +1,10 @@
+table:
+  name: company_table_aggregation_dim
+  schema: public
+object_relationships:
+  - name: company_table
+    using:
+      foreign_key_constraint_on: company_table_id
+  - name: dim_table
+    using:
+      foreign_key_constraint_on: dim_table_id

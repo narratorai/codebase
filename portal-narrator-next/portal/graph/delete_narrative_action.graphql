@@ -1,0 +1,9 @@
+mutation DeleteNarrativeAction($id: uuid!) {
+  delete_narrative_company_timelines(where: { id: { _eq: $id } }) {
+    affected_rows
+    returning {
+      id
+      name
+    }
+  }
+}

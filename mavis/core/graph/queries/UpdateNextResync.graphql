@@ -1,0 +1,11 @@
+mutation UpdateNextResync(
+    $transformation_id: uuid!
+    $next_resync_at: timestamptz
+) {
+    update_transformation_by_pk(
+        _set: { next_resync_at: $next_resync_at }
+        pk_columns: { id: $transformation_id }
+    ) {
+        id
+    }
+}

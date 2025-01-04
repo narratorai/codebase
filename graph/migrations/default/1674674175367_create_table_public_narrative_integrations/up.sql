@@ -1,0 +1,2 @@
+CREATE TABLE "public"."narrative_integrations" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "created_at" timestamptz NOT NULL DEFAULT now(), "narrative_id" uuid NOT NULL, "task_id" uuid NOT NULL, "kind" text NOT NULL, PRIMARY KEY ("id") , FOREIGN KEY ("narrative_id") REFERENCES "public"."narrative"("id") ON UPDATE cascade ON DELETE cascade, FOREIGN KEY ("task_id") REFERENCES "public"."company_task"("id") ON UPDATE cascade ON DELETE cascade);
+CREATE EXTENSION IF NOT EXISTS pgcrypto;

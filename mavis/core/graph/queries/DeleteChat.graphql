@@ -1,0 +1,6 @@
+mutation DeleteChat($id: uuid!) {
+  delete_chat_by_pk(id: $id) {
+    id
+    table_id
+  }
+}

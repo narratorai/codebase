@@ -1,0 +1,10 @@
+query ListCompanySqlQueries($company_id: uuid!) {
+  company_sql_queries(where: { related_id: { _eq: $company_id } }) {
+    id
+    name
+    sql
+    created_at
+    updated_at
+    updated_by
+  }
+}

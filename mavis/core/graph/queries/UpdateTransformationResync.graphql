@@ -1,0 +1,17 @@
+mutation UpdateTransformationResync(
+  $transformation_id: uuid!
+  $last_resynced_at: timestamptz
+  $next_resync_at: timestamptz
+) {
+  update_transformation(
+    where: { id: { _eq: $transformation_id } }
+    _set: {
+      last_resynced_at: $last_resynced_at
+      next_resync_at: $next_resync_at
+    }
+  ){
+    returning {
+      id
+    }
+  }
+}

@@ -1,0 +1,26 @@
+query GetTransformationSimple($id: uuid!) {
+  transformation: transformation_by_pk(id: $id) {
+    id
+    kind
+    update_type
+    slug
+    name
+    updated_at
+    start_data_after
+    table
+    current_query {
+      sql
+      updated_at
+    }
+    company {
+      slug
+    }
+    column_renames {
+    id
+    created_at
+    name
+    type
+    casting
+  }
+  }
+}

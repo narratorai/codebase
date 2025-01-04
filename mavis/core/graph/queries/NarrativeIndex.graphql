@@ -1,0 +1,19 @@
+query NarrativeIndex($company_id: uuid!) {
+  narrative(where: {company_id: {_eq: $company_id}, state:{_neq:archived}}, order_by: [{ updated_at: desc }]) {
+    created_by
+    description
+    name
+    id
+    slug
+    state
+    type
+    updated_at
+    narrative_runs(order_by: [{ created_at: desc }], limit: 10) {
+      s3_key
+    }
+    tags {
+      tag_id
+      updated_at
+    }
+  }
+}

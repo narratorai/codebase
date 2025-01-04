@@ -1,0 +1,21 @@
+mutation UpdateCompanyTablePartition(
+    $id: uuid!
+    $manually_partition_activity: Boolean
+) {
+    update_company_table_by_pk(
+        pk_columns: { id: $id }
+        _set: {
+            manually_partition_activity: $manually_partition_activity
+        }
+    ) {
+        id
+    }
+    update_company_by_pk(
+        pk_columns: { id: $id }
+        _set: {
+            updated_at: "now()"
+        }
+    ){
+        slug
+    }
+}

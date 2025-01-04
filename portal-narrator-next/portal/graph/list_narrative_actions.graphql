@@ -1,0 +1,15 @@
+subscription ListNarrativeActions($narrative_slug: String!, $company_id: uuid!) {
+  narrative(where: { _and: { company_id: { _eq: $company_id }, slug: { _eq: $narrative_slug } } }) {
+    id
+    actions(order_by: [{ happened_at: asc }]) {
+      id
+      name
+      description
+      happened_at
+      created_at
+      related_to
+      related_to_id
+      updated_at
+    }
+  }
+}

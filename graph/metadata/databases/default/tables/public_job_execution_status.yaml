@@ -1,0 +1,4 @@
+table:
+  name: job_execution_status
+  schema: public
+is_enum: true

@@ -1,0 +1,28 @@
+mutation CreateNarrativeAction(
+  $name: String!
+  $description: String
+  $happened_at: date!
+  $narrative_id: uuid!
+  $related_to: String!
+) {
+  insert_narrative_company_timelines(
+    objects: {
+      name: $name
+      description: $description
+      happened_at: $happened_at
+      related_to_id: $narrative_id
+      related_to: $related_to
+    }
+  ) {
+    returning {
+      id
+      name
+      description
+      happened_at
+      created_at
+      updated_at
+      related_to
+      related_to_id
+    }
+  }
+}

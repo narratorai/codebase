@@ -1,0 +1,70 @@
+/*!
+ * Global Print Styles
+ */
+
+@media print {
+  @page {
+    margin: 1cm;
+  }
+
+  /* this forces the browser to print background graphics by default rather than graying them out */
+  * {
+    -webkit-print-color-adjust: exact; /* Chrome, Safari, Edge */
+    print-color-adjust: exact; /*Firefox*/
+  }
+
+  /* 
+    Need to set a fixed width. If we set 100% the page will effectively
+    size down to content, which is too narrow, causing the text to be huge 
+  */
+  html,
+  body {
+    width: 11in !important;
+    overflow: visible !important;
+  }
+
+  /* Hide various parts from the site */
+  #sideNav,
+  #layoutSider,
+  #smallScreenMsg,
+  .headroom-wrapper {
+    display: none !important;
+  }
+
+  .antd5-dropdown-menu {
+    display: none !important;
+  }
+
+  #layoutRoot {
+    overflow: initial !important;
+  }
+
+  #layoutMain {
+    height: auto !important;
+    max-width: none !important;
+  }
+
+  .antd5-skeleton.plot-placeholder {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  .antd5-skeleton.plot-placeholder::after {
+    content: 'Plot not loaded. Scroll through entire report and try printing again';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 6rem;
+    border: 2px solid #ccc;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  .antd5-notification {
+    display: none;
+  }
+}

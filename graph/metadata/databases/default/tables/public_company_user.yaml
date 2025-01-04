@@ -1,0 +1,141 @@
+table:
+  name: company_user
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: company_id
+  - name: preferences
+    using:
+      manual_configuration:
+        column_mapping:
+          id: company_user_id
+        insertion_order: null
+        remote_table:
+          name: company_user_preferences
+          schema: public
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+array_relationships:
+  - name: notifications
+    using:
+      foreign_key_constraint_on:
+        column: company_user_id
+        table:
+          name: company_user_notifications
+          schema: public
+  - name: team_users
+    using:
+      foreign_key_constraint_on:
+        column: company_user_id
+        table:
+          name: team_user
+          schema: public
+  - name: user_access_roles
+    using:
+      foreign_key_constraint_on:
+        column: company_user_id
+        table:
+          name: user_access_role
+          schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin
+      columns:
+        - company_id
+        - first_name
+        - job_title
+        - last_name
+        - phone
+        - role
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - company_id
+        - created_at
+        - first_name
+        - from_sso
+        - id
+        - job_title
+        - last_name
+        - phone
+        - role
+        - updated_at
+        - user_id
+      filter:
+        _or:
+          - user_id:
+              _eq: X-Hasura-User-Id
+          - company:
+              _and:
+                - id:
+                    _eq: X-Hasura-Company-Id
+                - demo_company:
+                    _ne: true
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - first_name
+        - job_title
+        - last_name
+        - phone
+        - role
+      filter:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin
+      check:
+        company_id:
+          _eq: X-Hasura-Company-Id
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        _and:
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin
+          - user_id:
+              _ne: X-Hasura-User-Id
+          - company_id:
+              _eq: X-Hasura-Company-Id

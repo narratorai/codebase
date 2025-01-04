@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>icon 12/02 rectangle-override/Download</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M7,5.5 L8.39644616,5.5 C8.53451735,5.5 8.64644616,5.61192881 8.64644616,5.75 C8.64644616,5.81630417 8.62010692,5.87989269 8.57322277,5.92677679 L5.99999687,8.5 L3.42677616,5.9267766 C3.32914514,5.82914548 3.32914522,5.67085423 3.42677634,5.57322321 C3.47366043,5.52633917 3.53724887,5.5 3.60355294,5.5 L4.99956184,5.5 L4.99956184,1 L7,1 L7,5.5 Z M10,10 L10,7 L11,7 L11,10.5 C11,10.7761424 10.7761424,11 10.5,11 L1.5,11 C1.22385763,11 1,10.7761424 1,10.5 L1,7 L2,7 L2,10 L10,10 Z" id="download-path-1"></path>
+    </defs>
+    <g id="icon-12/02-rectangle-override/Download" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="download-mask-2" fill="white">
+            <use xlink:href="#download-path-1"></use>
+        </mask>
+        <use id="Combined-Shape" fill="#000000" fill-rule="nonzero" xlink:href="#download-path-1"></use>
+        <g id="Fill/Black/100" mask="url(#download-mask-2)">
+            <rect fill="#FFFFFF" x="0" y="0" width="12" height="12"></rect>
+            <rect id="Rectangle" fill="#000000" fill-rule="evenodd" x="0" y="0" width="12" height="12"></rect>
+        </g>
+    </g>
+</svg>

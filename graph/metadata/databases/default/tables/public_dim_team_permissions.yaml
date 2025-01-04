@@ -1,0 +1,3 @@
+table:
+  name: dim_team_permissions
+  schema: public

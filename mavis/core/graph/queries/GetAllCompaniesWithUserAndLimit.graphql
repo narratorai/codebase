@@ -1,0 +1,24 @@
+query GetAllCompaniesWithUserAndLimit {
+  company(where: { status: { _neq: archived }, demo_company: { _eq: false }, slug: { _nin: ["narrator"] } }) {
+    id
+    slug
+    created_at
+    status
+    demo_company
+    name
+    created_for_user {
+      email
+    }
+    company_users(where: { user: { role: { _neq: internal_admin } } }) {
+      id
+      role
+    }
+    service_limits(where: { deleted_at: { _is_null: true } }) {
+      user_limit
+      admin_user_limit
+      start_on
+      end_on
+      monthly_price
+    }
+  }
+}

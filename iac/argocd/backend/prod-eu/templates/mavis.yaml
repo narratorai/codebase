@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.spec.apps.maviseu.name | default "mavis-eu" }}
+  namespace: {{ .Values.argoNamespace | default "argocd" }}
+  labels:
+    {{- toYaml .Values.labels | nindent 4 }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    notifications.argoproj.io/subscribe.on-deployed.slack: argocd
+    argocd.argoproj.io/sync-wave: "1"
+    argocd-image-updater.argoproj.io/image-list: "mavis=479493230127.dkr.ecr.eu-west-1.amazonaws.com/mavis:1.x, mavis-worker=479493230127.dkr.ecr.eu-west-1.amazonaws.com/mavis-worker:1.x"
+    argocd-image-updater.argoproj.io/mavis.pull-secret: ext:/scripts/ecr2-login.sh
+    argocd-image-updater.argoproj.io/mavis-worker.pull-secret: ext:/scripts/ecr2-login.sh
+    argocd-image-updater.argoproj.io/update-strategy: semver
+    argocd-image-updater.argoproj.io/write-back-method: argocd
+spec:
+  project: {{ .Values.argoProject | default "default" }}
+  destination:
+    namespace: {{ .Values.spec.apps.maviseu.namespace | default "backend" }}
+    server: {{ .Values.destinationServer | default .Values.spec.destination.server }}
+  source:
+    repoURL: {{ .Values.spec.apps.maviseu.repoURL }}
+    targetRevision: {{ .Values.spec.apps.maviseu.targetRevision }}
+    path: {{ .Values.spec.apps.maviseu.path }}
+    helm:
+    {{- toYaml .Values.spec.apps.maviseu.helm | nindent 6 }}
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=false

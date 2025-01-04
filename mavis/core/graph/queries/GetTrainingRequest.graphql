@@ -1,0 +1,18 @@
+query GetTrainingRequest($id: uuid!) {
+  training_request_by_pk(id: $id) {
+    chat_id
+    created_by
+    context
+    company_id
+    dataset_id
+    group_slug
+    plot_slug
+    email_requester
+    email_sent_at
+    status_updated_at
+    email_context
+    status
+    type
+    training_id
+  }
+}

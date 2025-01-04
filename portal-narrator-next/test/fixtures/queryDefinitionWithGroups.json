@@ -1,0 +1,333 @@
+{
+    "override_sql": null,
+    "query": {
+        "activities": [
+            {
+                "did": true,
+                "kind": "limiting",
+                "occurence_after_time": false,
+                "occurrence": "all",
+                "occurrence_value": 1,
+                "relationships": [],
+                "config": {
+                    "activity_stream": "activity_stream",
+                    "customer_table": "users",
+                    "enrichment_table": null,
+                    "has_source": true
+                },
+                "slug": "marketing_session",
+                "filters": [],
+                "id": "session-9eb23e7f-9b9c-41f9-a61f-d68d7774304d"
+            }
+        ],
+        "columns": [
+            {
+                "id": "limiting_marketing_session_ts",
+                "filters": [],
+                "label": "marketing_session_at",
+                "name": "ts",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "limiting",
+                    "activity_id": "session-9eb23e7f-9b9c-41f9-a61f-d68d7774304d",
+                    "enrichment_table": null
+                },
+                "source_kind": "activity",
+                "type": "timestamp"
+            },
+            {
+                "id": "limiting_marketing_session_customer",
+                "filters": [],
+                "label": "customer",
+                "name": "customer",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "limiting",
+                    "activity_id": "session-9eb23e7f-9b9c-41f9-a61f-d68d7774304d",
+                    "enrichment_table": null
+                },
+                "source_kind": "activity",
+                "type": "string"
+            },
+            {
+                "id": "limiting_marketing_session_utm_source",
+                "filters": [],
+                "label": "utm_source",
+                "name": "utm_source",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "limiting",
+                    "activity_id": "session-9eb23e7f-9b9c-41f9-a61f-d68d7774304d",
+                    "enrichment_table": "enriched_pages"
+                },
+                "source_kind": "enrichment",
+                "type": "string"
+            },
+            {
+                "id": "limiting_marketing_session_referral_kind",
+                "filters": [],
+                "label": "referral_kind",
+                "name": "referral_kind",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "limiting",
+                    "activity_id": "session-9eb23e7f-9b9c-41f9-a61f-d68d7774304d",
+                    "enrichment_table": "enriched_pages"
+                },
+                "source_kind": "enrichment",
+                "type": "string"
+            },
+            {
+                "id": "session_month",
+                "filters": [],
+                "name": "",
+                "output": true,
+                "source_details": {
+                    "kind": "time_truncate",
+                    "column_id": "limiting_marketing_session_ts",
+                    "resolution": "1",
+                    "segmentation": "month"
+                },
+                "source_kind": "computed",
+                "type": "timestamp",
+                "label": "session_month"
+            }
+        ],
+        "activity_stream": "activity_stream",
+        "all_groups": [
+            {
+                "name": "Month",
+                "slug": "month",
+                "_column_ids": [
+                    "session_month"
+                ],
+                "columns": [
+                    {
+                        "id": "month_session_month",
+                        "filters": [],
+                        "label": "session_month",
+                        "name": "",
+                        "output": true,
+                        "type": "timestamp",
+                        "column_id": "session_month",
+                        "pivoted": false
+                    }
+                ],
+                "computed_columns": [],
+                "metrics": [
+                    {
+                        "_pre_pivot_column_id": null,
+                        "_pre_pivot_column_label": null,
+                        "id": "metrics_total_events",
+                        "label": "total_events",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [],
+                        "type": "number"
+                    }
+                ],
+                "pivot": [],
+                "order": [
+                    {
+                        "column_id": "month_session_month",
+                        "order_direction": "asc"
+                    }
+                ]
+            },
+            {
+                "name": "Utm",
+                "slug": "utm",
+                "_column_ids": [
+                    "limiting_marketing_session_utm_source"
+                ],
+                "columns": [
+                    {
+                        "id": "utm_limiting_marketing_session_utm_source",
+                        "filters": [],
+                        "label": "utm_source",
+                        "name": "",
+                        "output": true,
+                        "type": "string",
+                        "column_id": "limiting_marketing_session_utm_source",
+                        "pivoted": false
+                    }
+                ],
+                "computed_columns": [],
+                "metrics": [
+                    {
+                        "_pre_pivot_column_id": null,
+                        "_pre_pivot_column_label": null,
+                        "id": "metrics_total_events",
+                        "label": "total_events",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [],
+                        "type": "number"
+                    }
+                ],
+                "pivot": [],
+                "order": [
+                    {
+                        "column_id": "metrics_total_events",
+                        "order_direction": "desc"
+                    }
+                ]
+            },
+            {
+                "name": "Session and Utm",
+                "slug": "session_and_utm",
+                "_column_ids": [
+                    "session_month",
+                    "limiting_marketing_session_utm_source"
+                ],
+                "columns": [
+                    {
+                        "id": "session_and_utm_session_month",
+                        "filters": [],
+                        "label": "session_month",
+                        "name": "",
+                        "output": true,
+                        "type": "timestamp",
+                        "column_id": "session_month",
+                        "pivoted": false
+                    },
+                    {
+                        "id": "session_and_utm_limiting_marketing_session_utm_source",
+                        "filters": [],
+                        "label": "utm_source",
+                        "name": "",
+                        "output": true,
+                        "type": "string",
+                        "column_id": "limiting_marketing_session_utm_source",
+                        "pivoted": false
+                    }
+                ],
+                "computed_columns": [],
+                "metrics": [
+                    {
+                        "_pre_pivot_column_id": null,
+                        "_pre_pivot_column_label": null,
+                        "id": "metrics_total_events",
+                        "label": "total_events",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [],
+                        "type": "number"
+                    }
+                ],
+                "pivot": [],
+                "order": [
+                    {
+                        "column_id": "session_and_utm_session_month",
+                        "order_direction": "asc"
+                    }
+                ]
+            },
+            {
+                "name": "month and referral kind",
+                "slug": "month_and_referral_kind",
+                "_column_ids": [
+                    "session_month",
+                    "limiting_marketing_session_referral_kind"
+                ],
+                "columns": [
+                    {
+                        "id": "month_and_referral_kind_session_month",
+                        "filters": [],
+                        "label": "session_month",
+                        "name": "",
+                        "output": true,
+                        "type": "timestamp",
+                        "column_id": "session_month",
+                        "pivoted": false
+                    },
+                    {
+                        "id": "month_and_referral_kind_limiting_marketing_session_referral_kind",
+                        "filters": [],
+                        "label": "referral_kind",
+                        "name": "",
+                        "output": true,
+                        "type": "string",
+                        "column_id": "limiting_marketing_session_referral_kind",
+                        "pivoted": false
+                    }
+                ],
+                "computed_columns": [],
+                "metrics": [
+                    {
+                        "_pre_pivot_column_id": null,
+                        "_pre_pivot_column_label": null,
+                        "id": "metrics_total_events",
+                        "label": "total_events",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [],
+                        "type": "number"
+                    }
+                ],
+                "pivot": [],
+                "order": [
+                    {
+                        "column_id": "month_and_referral_kind_session_month",
+                        "order_direction": "asc"
+                    }
+                ]
+            },
+            {
+                "name": "Referral Kind",
+                "slug": "referral_kind",
+                "_column_ids": [
+                    "limiting_marketing_session_referral_kind"
+                ],
+                "columns": [
+                    {
+                        "id": "referral_kind_limiting_marketing_session_referral_kind",
+                        "filters": [],
+                        "label": "referral_kind",
+                        "name": "",
+                        "output": true,
+                        "type": "string",
+                        "column_id": "limiting_marketing_session_referral_kind",
+                        "pivoted": false
+                    }
+                ],
+                "computed_columns": [],
+                "metrics": [
+                    {
+                        "_pre_pivot_column_id": null,
+                        "_pre_pivot_column_label": null,
+                        "id": "metrics_total_events",
+                        "label": "total_events",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [],
+                        "type": "number"
+                    }
+                ],
+                "pivot": [],
+                "order": [
+                    {
+                        "column_id": "metrics_total_events",
+                        "order_direction": "desc"
+                    }
+                ]
+            }
+        ],
+        "order": [
+            {
+                "column_id": "limiting_marketing_session_ts",
+                "order_direction": "desc"
+            }
+        ]
+    }
+}

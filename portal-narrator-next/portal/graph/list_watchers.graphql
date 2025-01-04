@@ -1,0 +1,8 @@
+query ListWatchers($user_id: uuid!) {
+  watcher(where: { user_id: { _eq: $user_id } }) {
+    id
+    related_id
+    related_to
+    updated_at
+  }
+}

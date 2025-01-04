@@ -1,0 +1,52 @@
+query ListRequests($company_id: uuid!) {
+  training_request(where: { company_id: { _eq: $company_id } }, order_by: { created_at: desc_nulls_last }) {
+    id
+    created_at
+    created_by
+    context
+    email_context
+    email_requester
+    email_sent_at
+    type
+    updated_at
+    status_updated_at
+    status
+    assignee {
+      accepted_terms_at
+      accepted_terms_version
+      created_at
+      email
+      id
+      role
+      updated_at
+      company_users(where: { company_id: { _eq: $company_id } }) {
+        id
+        first_name
+        last_name
+        job_title
+        user_id
+        company {
+          id
+        }
+      }
+    }
+    llm_training {
+      id
+      question
+    }
+    user {
+      id
+      email
+      company_users(where: { company_id: { _eq: $company_id } }) {
+        id
+        first_name
+        last_name
+        job_title
+        user_id
+        company {
+          id
+        }
+      }
+    }
+  }
+}

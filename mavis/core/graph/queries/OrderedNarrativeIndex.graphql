@@ -1,0 +1,15 @@
+query OrderedNarrativeIndex($company_id: uuid!){ #, $user_id: uuid) {
+  narrative(where: {company_id: {_eq: $company_id}, state: {_neq: archived}}) {
+    id
+    created_by
+    updated_at
+    name
+    slug
+    description
+    state
+    # tags(where: {company_tag: {tag: {_eq: "recently_viewed"}, user_id: {_eq: $user_id}}}) {
+    #   tag_id
+    #   updated_at
+    # }
+  }
+}

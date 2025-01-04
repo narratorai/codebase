@@ -1,0 +1,65 @@
+table:
+  name: narrative_company_timelines
+  schema: public
+object_relationships:
+  - name: narrative
+    using:
+      manual_configuration:
+        column_mapping:
+          related_to_id: id
+        insertion_order: null
+        remote_table:
+          name: narrative
+          schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        narrative:
+          company:
+            id:
+              _eq: X-Hasura-Company-Id
+      columns:
+        - description
+        - happened_at
+        - name
+        - related_to
+        - related_to_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - description
+        - happened_at
+        - id
+        - name
+        - related_to
+        - related_to_id
+        - updated_at
+      filter:
+        narrative:
+          company:
+            id:
+              _eq: X-Hasura-Company-Id
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - description
+        - happened_at
+        - name
+      filter:
+        narrative:
+          company:
+            id:
+              _eq: X-Hasura-Company-Id
+      check: null
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        narrative:
+          company:
+            id:
+              _eq: X-Hasura-Company-Id

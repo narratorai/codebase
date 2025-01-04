@@ -1,0 +1,14 @@
+query GetCompanyTag($company_id: uuid!, $tag: String!) {
+  company_tags(
+    where: {
+      company_id: { _eq: $company_id }
+      tag: { _eq: $tag }
+    }
+  ) {
+    id
+    tag
+    color
+    user_id
+    description
+  }
+}

@@ -1,0 +1,10 @@
+subscription ActivityIndexNeedsUpdating($company_slug: String!) {
+  all_activities: activity(
+    where: { company: { slug: { _eq: $company_slug } } }
+    order_by: { updated_at: desc }
+    limit: 1
+  ) {
+    id
+    updated_at
+  }
+}

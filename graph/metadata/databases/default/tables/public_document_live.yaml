@@ -1,0 +1,13 @@
+table:
+  name: document_live
+  schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - id
+        - markdown
+        - name
+        - slug
+      filter: {}

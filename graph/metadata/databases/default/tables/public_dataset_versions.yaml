@@ -1,0 +1,3 @@
+table:
+  name: dataset_versions
+  schema: public

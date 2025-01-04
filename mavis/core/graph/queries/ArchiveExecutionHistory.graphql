@@ -1,0 +1,5 @@
+mutation ArchiveExecutionHistory($before: timestamptz!) {
+  delete_task_execution(where: {created_at: {_lt: $before}}) {
+    affected_rows
+  }
+}

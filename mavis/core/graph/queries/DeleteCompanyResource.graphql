@@ -1,0 +1,5 @@
+mutation DeleteCompanyResource($id: uuid!) {
+  delete_company_resources_by_pk(id: $id) {
+    id
+  }
+}

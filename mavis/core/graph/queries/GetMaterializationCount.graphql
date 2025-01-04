@@ -1,0 +1,7 @@
+query GetMaterializationCount($company_id: uuid!) {
+    dataset_materialization_aggregate(where: {dataset: {company_id: {_eq: $company_id}}}){
+        aggregate {
+        count
+        }
+    }
+}

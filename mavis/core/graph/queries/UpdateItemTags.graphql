@@ -1,0 +1,21 @@
+mutation UpdateItemTags($tag_ids: [uuid!]!, $related_to: tag_relations_enum!, $related_id: uuid!, $tag_inputs: [tag_insert_input!]!) {
+  delete_tag(
+    where: {
+      related_to: { _eq: $related_to }
+      related_id: { _eq: $related_id }
+      company_tag: { user_id: { _is_null: true } }
+      tag_id: { _nin: $tag_ids }
+    }
+  ) {
+    affected_rows
+  }
+  insert_tag(
+    objects: $tag_inputs
+    on_conflict: {
+      constraint: tag_tag_id_related_to_related_id_key
+      update_columns: []
+    }
+  ) {
+    affected_rows
+  }
+}

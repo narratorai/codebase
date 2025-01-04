@@ -1,0 +1,2215 @@
+[
+    {
+        "ad_source": "",
+        "the_day": "2018-02-15",
+        "attribution_source": "Not Attributed",
+        "activity": {
+            "survey_email_captured": {
+                "total_customers": 85,
+                "total_revenue": null,
+                "total_cac": null
+            },
+            "ordered_impression_kit": {
+                "total_customers": 1,
+                "total_revenue": 71.25,
+                "total_cac": null
+            }
+        }
+    },
+    {
+        "ad_source": "",
+        "the_day": "2018-02-15",
+        "attribution_source": "Paid Direct",
+        "activity": {
+            "survey_email_captured": {
+                "total_customers": 1,
+                "total_revenue": null,
+                "session_breakdown": {
+                    "2018-02-15": {
+                        "total_customers": 1,
+                        "total_cac": null,
+                        "session_total_customers": 1,
+                        "utm_breakdown": {
+                            "Brand%20(Broad)": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "candidco",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": null
+                            }
+                        },
+                        "session_total_cac": null
+                    }
+                },
+                "total_cac": null
+            }
+        }
+    },
+    {
+        "ad_source": "",
+        "the_day": "2018-02-15",
+        "attribution_source": "Paid Referral",
+        "activity": {
+            "survey_email_captured": {
+                "total_customers": 2,
+                "total_revenue": null,
+                "session_breakdown": {
+                    "2018-02-15": {
+                        "total_customers": 2,
+                        "total_cac": null,
+                        "session_total_customers": 3,
+                        "utm_breakdown": {
+                            "Competitors%20(Exact)": {
+                                "session_total_cac": null,
+                                "session_domain": "com",
+                                "session_total_customers": 1
+                            },
+                            "Aligners%20(Phrase)": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "com",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": null
+                            },
+                            "Brand%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "android",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": null
+                            }
+                        },
+                        "session_total_cac": null
+                    }
+                },
+                "total_cac": null
+            }
+        }
+    },
+    {
+        "ad_source": "adwords",
+        "the_day": "2018-02-15",
+        "attribution_source": "Paid Search",
+        "activity": {
+            "survey_email_captured": {
+                "total_customers": 12,
+                "total_revenue": null,
+                "session_breakdown": {
+                    "2018-02-15": {
+                        "session_total_clicks": 44,
+                        "total_cac": 40.92,
+                        "session_total_customers": 21,
+                        "utm_breakdown": {
+                            "Competitors%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": 10.23,
+                                "session_domain": "google",
+                                "session_total_customers": 3,
+                                "total_customers": 2,
+                                "total_cac": 6.82
+                            },
+                            "Aligners%20(Phrase)": {
+                                "total_revenue": null,
+                                "session_total_cac": 3.41,
+                                "session_domain": "google",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 3.41
+                            },
+                            "Brand%20(Phrase)": {
+                                "total_revenue": null,
+                                "session_total_cac": 6.82,
+                                "session_domain": "google",
+                                "session_total_customers": 2,
+                                "total_customers": 2,
+                                "total_cac": 6.82
+                            },
+                            "Other%20(Phrase)": {
+                                "session_total_cac": 3.41,
+                                "session_domain": "google",
+                                "session_total_customers": 1
+                            },
+                            "Other%20(Broad)": {
+                                "total_revenue": null,
+                                "session_total_cac": 13.64,
+                                "session_domain": "google",
+                                "session_total_customers": 4,
+                                "total_customers": 2,
+                                "total_cac": 6.82
+                            },
+                            "Braces%20(Phrase)": {
+                                "total_revenue": null,
+                                "session_total_cac": 6.82,
+                                "session_domain": "google",
+                                "session_total_customers": 2,
+                                "total_customers": 1,
+                                "total_cac": 3.41
+                            },
+                            "Braces%20(Exact)": {
+                                "session_total_cac": 3.41,
+                                "session_domain": "google",
+                                "session_total_customers": 1
+                            },
+                            "Brand%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": 13.64,
+                                "session_domain": "google",
+                                "session_total_customers": 4,
+                                "total_customers": 3,
+                                "total_cac": 10.23
+                            },
+                            "Aligners%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": 6.82,
+                                "session_domain": "google",
+                                "session_total_customers": 2,
+                                "total_customers": 1,
+                                "total_cac": 3.41
+                            },
+                            "Other%20(Exact)": {
+                                "session_total_cac": 3.41,
+                                "session_domain": "google",
+                                "session_total_customers": 1
+                            }
+                        },
+                        "total_customers": 12,
+                        "ad_breakdown": {
+                            "Braces (Phrase)": {
+                                "clicks": 6,
+                                "spent": 10.69
+                            },
+                            "Competitors (Exact)": {
+                                "clicks": 5,
+                                "spent": 14.2
+                            },
+                            "Brand (Broad)": {
+                                "clicks": 0,
+                                "spent": 0
+                            },
+                            "Aligners (Exact)": {
+                                "clicks": 3,
+                                "spent": 10.52
+                            },
+                            "Aligners (Broad)": {
+                                "clicks": 0,
+                                "spent": 0
+                            },
+                            "Other (Phrase)": {
+                                "clicks": 1,
+                                "spent": 1.14
+                            },
+                            "Competitors (Phrase)": {
+                                "clicks": 1,
+                                "spent": 2.5
+                            },
+                            "Aligners (Phrase)": {
+                                "clicks": 2,
+                                "spent": 5.48
+                            },
+                            "Braces (Exact)": {
+                                "clicks": 3,
+                                "spent": 7.32
+                            },
+                            "Brand (Phrase)": {
+                                "clicks": 2,
+                                "spent": 1.14
+                            },
+                            "Other (Exact)": {
+                                "clicks": 2,
+                                "spent": 2.98
+                            },
+                            "Shopping - Candid": {
+                                "clicks": 3,
+                                "spent": 2.73
+                            },
+                            "Braces (Broad)": {
+                                "clicks": 3,
+                                "spent": 2
+                            },
+                            "Brand (Exact)": {
+                                "clicks": 8,
+                                "spent": 7.43
+                            },
+                            "Competitors (Broad)": {
+                                "clicks": 2,
+                                "spent": 1.47
+                            },
+                            "Other (Broad)": {
+                                "clicks": 3,
+                                "spent": 2.03
+                            }
+                        },
+                        "session_total_cac": 71.61000000000001,
+                        "session_total_spent": 71.63
+                    }
+                },
+                "total_cac": 40.92
+            },
+            "ordered_impression_kit": {
+                "total_customers": 1,
+                "total_revenue": 95,
+                "session_breakdown": {
+                    "2018-02-15": {
+                        "session_total_clicks": 44,
+                        "total_cac": 23.88,
+                        "session_total_customers": 3,
+                        "utm_breakdown": {
+                            "Braces%20(Exact)": {
+                                "session_total_cac": 23.88,
+                                "session_domain": "google",
+                                "session_total_customers": 1
+                            },
+                            "Brand%20(Exact)": {
+                                "total_revenue": 95,
+                                "session_total_cac": 47.75,
+                                "session_domain": "google",
+                                "session_total_customers": 2,
+                                "total_customers": 1,
+                                "total_cac": 23.88
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "Braces (Phrase)": {
+                                "clicks": 6,
+                                "spent": 10.69
+                            },
+                            "Competitors (Exact)": {
+                                "clicks": 5,
+                                "spent": 14.2
+                            },
+                            "Brand (Broad)": {
+                                "clicks": 0,
+                                "spent": 0
+                            },
+                            "Aligners (Exact)": {
+                                "clicks": 3,
+                                "spent": 10.52
+                            },
+                            "Aligners (Broad)": {
+                                "clicks": 0,
+                                "spent": 0
+                            },
+                            "Other (Phrase)": {
+                                "clicks": 1,
+                                "spent": 1.14
+                            },
+                            "Competitors (Phrase)": {
+                                "clicks": 1,
+                                "spent": 2.5
+                            },
+                            "Aligners (Phrase)": {
+                                "clicks": 2,
+                                "spent": 5.48
+                            },
+                            "Braces (Exact)": {
+                                "clicks": 3,
+                                "spent": 7.32
+                            },
+                            "Brand (Phrase)": {
+                                "clicks": 2,
+                                "spent": 1.14
+                            },
+                            "Other (Exact)": {
+                                "clicks": 2,
+                                "spent": 2.98
+                            },
+                            "Shopping - Candid": {
+                                "clicks": 3,
+                                "spent": 2.73
+                            },
+                            "Braces (Broad)": {
+                                "clicks": 3,
+                                "spent": 2
+                            },
+                            "Brand (Exact)": {
+                                "clicks": 8,
+                                "spent": 7.43
+                            },
+                            "Competitors (Broad)": {
+                                "clicks": 2,
+                                "spent": 1.47
+                            },
+                            "Other (Broad)": {
+                                "clicks": 3,
+                                "spent": 2.03
+                            }
+                        },
+                        "session_total_cac": 71.63,
+                        "session_total_spent": 71.63
+                    }
+                },
+                "total_cac": 23.88
+            }
+        }
+    },
+    {
+        "ad_source": "facebook",
+        "the_day": "2018-02-15",
+        "attribution_source": "Paid Social",
+        "activity": {
+            "survey_email_captured": {
+                "total_customers": 91,
+                "total_revenue": null,
+                "session_breakdown": {
+                    "2018-02-15": {
+                        "session_total_clicks": 141,
+                        "total_cac": 179.96000000000004,
+                        "session_total_customers": 183,
+                        "utm_breakdown": {
+                            "p-p-2": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 8,
+                                "total_customers": 30,
+                                "total_cac": 60.66
+                            },
+                            "p-ppe": {
+                                "total_revenue": null,
+                                "session_total_cac": 2.02,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 2.02
+                            },
+                            "p-ac": {
+                                "total_revenue": null,
+                                "session_total_cac": 2.02,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 2.02
+                            },
+                            "p-p-3": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 5,
+                                "total_customers": 11,
+                                "total_cac": 22.24
+                            },
+                            "p-vv": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 3,
+                                "total_customers": 8,
+                                "total_cac": 16.18
+                            },
+                            "p-p-4": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 10,
+                                "total_customers": 38,
+                                "total_cac": 76.84
+                            }
+                        },
+                        "total_customers": 89,
+                        "ad_breakdown": {
+                            "LG - Prospecting - VV": {
+                                "clicks": 17,
+                                "spent": 33.61
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 50,
+                                "spent": 97.88
+                            },
+                            "LG - Prospecting - P - 3": {
+                                "clicks": 37,
+                                "spent": 47.26
+                            },
+                            "LG - Retargeting - P": {
+                                "clicks": 12,
+                                "spent": 55.34
+                            },
+                            "LG - Prospecting -  PPE": {
+                                "clicks": 8,
+                                "spent": 22.64
+                            },
+                            "LG - Prospecting - P - 4": {
+                                "clicks": 17,
+                                "spent": 60.75
+                            }
+                        },
+                        "session_total_cac": 317.49,
+                        "session_total_spent": 317.48
+                    },
+                    "2018-01-25": {
+                        "session_total_clicks": 1289,
+                        "total_cac": 22.5,
+                        "session_total_customers": 166,
+                        "utm_breakdown": {
+                            "p-p-2": {
+                                "total_revenue": null,
+                                "session_total_cac": 2024.9,
+                                "session_domain": "facebook",
+                                "session_total_customers": 90,
+                                "total_customers": 1,
+                                "total_cac": 22.5
+                            },
+                            "r-p": {
+                                "session_total_cac": 292.49,
+                                "session_domain": "facebook",
+                                "session_total_customers": 13
+                            },
+                            "p-ac": {
+                                "session_total_cac": 1034.95,
+                                "session_domain": "facebook",
+                                "session_total_customers": 46
+                            },
+                            "lg-relaunch-jan18": {
+                                "session_total_cac": null,
+                                "session_domain": "snap",
+                                "session_total_customers": 17
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "LG - Retargeting - P": {
+                                "clicks": 152,
+                                "spent": 598.73
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 1137,
+                                "spent": 2753.6
+                            }
+                        },
+                        "session_total_cac": 3352.34,
+                        "session_total_spent": 3352.33
+                    },
+                    "2018-01-26": {
+                        "session_total_clicks": 1020,
+                        "total_cac": 10.61,
+                        "session_total_customers": 330,
+                        "utm_breakdown": {
+                            "p-p-2": {
+                                "session_total_cac": 2239.47,
+                                "session_domain": "facebook",
+                                "session_total_customers": 211
+                            },
+                            "r-p": {
+                                "session_total_cac": 42.45,
+                                "session_domain": "facebook",
+                                "session_total_customers": 4
+                            },
+                            "p-ac": {
+                                "total_revenue": null,
+                                "session_total_cac": 668.66,
+                                "session_domain": "facebook",
+                                "session_total_customers": 63,
+                                "total_customers": 1,
+                                "total_cac": 10.61
+                            },
+                            "lg-relaunch-jan18": {
+                                "session_total_cac": null,
+                                "session_domain": "snap",
+                                "session_total_customers": 52
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "LG - Retargeting - P": {
+                                "clicks": 157,
+                                "spent": 571.57
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 863,
+                                "spent": 2379.01
+                            }
+                        },
+                        "session_total_cac": 2950.58,
+                        "session_total_spent": 2950.5800000000004
+                    }
+                },
+                "total_cac": 213.07000000000002
+            },
+            "ordered_impression_kit": {
+                "total_customers": 1,
+                "total_revenue": 95,
+                "session_breakdown": {
+                    "2018-01-02": {
+                        "session_total_clicks": 2630,
+                        "total_cac": 642.73,
+                        "session_total_customers": 2,
+                        "utm_breakdown": {
+                            "p-p": {
+                                "total_revenue": 95,
+                                "session_total_cac": 1285.47,
+                                "session_domain": "facebook",
+                                "session_total_customers": 2,
+                                "total_customers": 1,
+                                "total_cac": 642.73
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "LG - Retargeting - P": {
+                                "clicks": 146,
+                                "spent": 368.68
+                            },
+                            "LG - Prospecting - AC": {
+                                "clicks": 1771,
+                                "spent": 1359.93
+                            },
+                            "LG - Prospecting - P": {
+                                "clicks": 713,
+                                "spent": 1485.06
+                            }
+                        },
+                        "session_total_cac": 1285.47,
+                        "session_total_spent": 3213.6699999999996
+                    }
+                },
+                "total_cac": 642.73
+            }
+        }
+    },
+    {
+        "ad_source": "",
+        "the_day": "2018-02-15",
+        "attribution_source": "Paid Social",
+        "activity": {
+            "survey_email_captured": {
+                "total_customers": 19,
+                "total_revenue": null,
+                "session_breakdown": {
+                    "2018-02-15": {
+                        "total_customers": 19,
+                        "total_cac": null,
+                        "session_total_customers": 183,
+                        "utm_breakdown": {
+                            "p-p-2": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 8,
+                                "total_customers": 5,
+                                "total_cac": null
+                            },
+                            "p-ppe": {
+                                "session_total_cac": 2.02,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1
+                            },
+                            "p-ac": {
+                                "session_total_cac": 2.02,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1
+                            },
+                            "p-p-3": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 5,
+                                "total_customers": 4,
+                                "total_cac": null
+                            },
+                            "p-vv": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 3,
+                                "total_customers": 2,
+                                "total_cac": null
+                            },
+                            "p-p-4": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 10,
+                                "total_customers": 8,
+                                "total_cac": null
+                            }
+                        },
+                        "session_total_cac": 317.49
+                    }
+                },
+                "total_cac": null
+            }
+        }
+    },
+    {
+        "ad_source": "",
+        "the_day": "2018-02-14",
+        "attribution_source": "Not Attributed",
+        "activity": {
+            "survey_email_captured": {
+                "total_customers": 148,
+                "total_revenue": null,
+                "total_cac": null
+            },
+            "ordered_aligner_set": {
+                "total_customers": 4,
+                "total_revenue": 7350,
+                "total_cac": null
+            },
+            "ordered_impression_kit": {
+                "total_customers": 6,
+                "total_revenue": 405.25,
+                "total_cac": null
+            }
+        }
+    },
+    {
+        "ad_source": "",
+        "the_day": "2018-02-14",
+        "attribution_source": "Paid Referral",
+        "activity": {
+            "survey_email_captured": {
+                "total_customers": 3,
+                "total_revenue": null,
+                "session_breakdown": {
+                    "2018-02-15": {
+                        "total_customers": 1,
+                        "total_cac": null,
+                        "session_total_customers": 3,
+                        "utm_breakdown": {
+                            "Competitors%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "com",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": null
+                            },
+                            "Aligners%20(Phrase)": {
+                                "session_total_cac": null,
+                                "session_domain": "com",
+                                "session_total_customers": 1
+                            },
+                            "Brand%20(Exact)": {
+                                "session_total_cac": null,
+                                "session_domain": "android",
+                                "session_total_customers": 1
+                            }
+                        },
+                        "session_total_cac": null
+                    },
+                    "2018-02-14": {
+                        "total_customers": 2,
+                        "total_cac": null,
+                        "session_total_customers": 2,
+                        "utm_breakdown": {
+                            "Other%20(Phrase)": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "co",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": null
+                            },
+                            "Other%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "android",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": null
+                            }
+                        },
+                        "session_total_cac": null
+                    }
+                },
+                "total_cac": null
+            }
+        }
+    },
+    {
+        "ad_source": "adwords",
+        "the_day": "2018-02-14",
+        "attribution_source": "Paid Search",
+        "activity": {
+            "survey_email_captured": {
+                "total_customers": 41,
+                "total_revenue": null,
+                "session_breakdown": {
+                    "2018-02-15": {
+                        "session_total_clicks": 44,
+                        "total_cac": 27.28,
+                        "session_total_customers": 21,
+                        "utm_breakdown": {
+                            "Competitors%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": 10.23,
+                                "session_domain": "google",
+                                "session_total_customers": 3,
+                                "total_customers": 1,
+                                "total_cac": 3.41
+                            },
+                            "Aligners%20(Phrase)": {
+                                "session_total_cac": 3.41,
+                                "session_domain": "google",
+                                "session_total_customers": 1
+                            },
+                            "Brand%20(Phrase)": {
+                                "session_total_cac": 6.82,
+                                "session_domain": "google",
+                                "session_total_customers": 2
+                            },
+                            "Other%20(Phrase)": {
+                                "total_revenue": null,
+                                "session_total_cac": 3.41,
+                                "session_domain": "google",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 3.41
+                            },
+                            "Other%20(Broad)": {
+                                "total_revenue": null,
+                                "session_total_cac": 13.64,
+                                "session_domain": "google",
+                                "session_total_customers": 4,
+                                "total_customers": 1,
+                                "total_cac": 3.41
+                            },
+                            "Braces%20(Phrase)": {
+                                "total_revenue": null,
+                                "session_total_cac": 6.82,
+                                "session_domain": "google",
+                                "session_total_customers": 2,
+                                "total_customers": 1,
+                                "total_cac": 3.41
+                            },
+                            "Braces%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": 3.41,
+                                "session_domain": "google",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 3.41
+                            },
+                            "Brand%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": 13.64,
+                                "session_domain": "google",
+                                "session_total_customers": 4,
+                                "total_customers": 1,
+                                "total_cac": 3.41
+                            },
+                            "Aligners%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": 6.82,
+                                "session_domain": "google",
+                                "session_total_customers": 2,
+                                "total_customers": 1,
+                                "total_cac": 3.41
+                            },
+                            "Other%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": 3.41,
+                                "session_domain": "google",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 3.41
+                            }
+                        },
+                        "total_customers": 8,
+                        "ad_breakdown": {
+                            "Braces (Phrase)": {
+                                "clicks": 6,
+                                "spent": 10.69
+                            },
+                            "Competitors (Exact)": {
+                                "clicks": 5,
+                                "spent": 14.2
+                            },
+                            "Brand (Broad)": {
+                                "clicks": 0,
+                                "spent": 0
+                            },
+                            "Aligners (Exact)": {
+                                "clicks": 3,
+                                "spent": 10.52
+                            },
+                            "Aligners (Broad)": {
+                                "clicks": 0,
+                                "spent": 0
+                            },
+                            "Other (Phrase)": {
+                                "clicks": 1,
+                                "spent": 1.14
+                            },
+                            "Competitors (Phrase)": {
+                                "clicks": 1,
+                                "spent": 2.5
+                            },
+                            "Aligners (Phrase)": {
+                                "clicks": 2,
+                                "spent": 5.48
+                            },
+                            "Braces (Exact)": {
+                                "clicks": 3,
+                                "spent": 7.32
+                            },
+                            "Brand (Phrase)": {
+                                "clicks": 2,
+                                "spent": 1.14
+                            },
+                            "Other (Exact)": {
+                                "clicks": 2,
+                                "spent": 2.98
+                            },
+                            "Shopping - Candid": {
+                                "clicks": 3,
+                                "spent": 2.73
+                            },
+                            "Braces (Broad)": {
+                                "clicks": 3,
+                                "spent": 2
+                            },
+                            "Brand (Exact)": {
+                                "clicks": 8,
+                                "spent": 7.43
+                            },
+                            "Competitors (Broad)": {
+                                "clicks": 2,
+                                "spent": 1.47
+                            },
+                            "Other (Broad)": {
+                                "clicks": 3,
+                                "spent": 2.03
+                            }
+                        },
+                        "session_total_cac": 71.61000000000001,
+                        "session_total_spent": 71.63
+                    },
+                    "2018-02-14": {
+                        "session_total_clicks": 363,
+                        "total_cac": 404.09999999999997,
+                        "session_total_customers": 55,
+                        "utm_breakdown": {
+                            "Aligners%20(Phrase)": {
+                                "total_revenue": null,
+                                "session_total_cac": 25.26,
+                                "session_domain": "google",
+                                "session_total_customers": 2,
+                                "total_customers": 1,
+                                "total_cac": 12.63
+                            },
+                            "Other%20(Broad)": {
+                                "session_total_cac": 12.63,
+                                "session_domain": "google",
+                                "session_total_customers": 1
+                            },
+                            "Braces%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": 88.39,
+                                "session_domain": "google",
+                                "session_total_customers": 7,
+                                "total_customers": 3,
+                                "total_cac": 37.88
+                            },
+                            "Brand%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": 113.65,
+                                "session_domain": "google",
+                                "session_total_customers": 9,
+                                "total_customers": 6,
+                                "total_cac": 75.77
+                            },
+                            "Competitors%20(Phrase)": {
+                                "total_revenue": null,
+                                "session_total_cac": 25.26,
+                                "session_domain": "google",
+                                "session_total_customers": 2,
+                                "total_customers": 1,
+                                "total_cac": 12.63
+                            },
+                            "Aligners%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": 75.77,
+                                "session_domain": "google",
+                                "session_total_customers": 6,
+                                "total_customers": 4,
+                                "total_cac": 50.51
+                            },
+                            "Other%20(Phrase)": {
+                                "total_revenue": null,
+                                "session_total_cac": 37.88,
+                                "session_domain": "google",
+                                "session_total_customers": 3,
+                                "total_customers": 2,
+                                "total_cac": 25.26
+                            },
+                            "Brand%20(Phrase)": {
+                                "total_revenue": null,
+                                "session_total_cac": 63.14,
+                                "session_domain": "google",
+                                "session_total_customers": 5,
+                                "total_customers": 4,
+                                "total_cac": 50.51
+                            },
+                            "Competitors%20(Exact)": {
+                                "total_revenue": null,
+                                "session_total_cac": 113.65,
+                                "session_domain": "google",
+                                "session_total_customers": 9,
+                                "total_customers": 6,
+                                "total_cac": 75.77
+                            },
+                            "Braces%20(Phrase)": {
+                                "total_revenue": null,
+                                "session_total_cac": 37.88,
+                                "session_domain": "google",
+                                "session_total_customers": 3,
+                                "total_customers": 3,
+                                "total_cac": 37.88
+                            },
+                            "Braces%20(Broad)": {
+                                "total_revenue": null,
+                                "session_total_cac": 50.51,
+                                "session_domain": "google",
+                                "session_total_customers": 4,
+                                "total_customers": 2,
+                                "total_cac": 25.26
+                            },
+                            "Other%20(Exact)": {
+                                "session_total_cac": 50.51,
+                                "session_domain": "google",
+                                "session_total_customers": 4
+                            }
+                        },
+                        "total_customers": 32,
+                        "ad_breakdown": {
+                            "Braces (Phrase)": {
+                                "clicks": 20,
+                                "spent": 31.44
+                            },
+                            "Competitors (Exact)": {
+                                "clicks": 35,
+                                "spent": 127
+                            },
+                            "Brand (Broad)": {
+                                "clicks": 2,
+                                "spent": 1.47
+                            },
+                            "Aligners (Exact)": {
+                                "clicks": 26,
+                                "spent": 94.96
+                            },
+                            "Aligners (Broad)": {
+                                "clicks": 1,
+                                "spent": 0.72
+                            },
+                            "Other (Phrase)": {
+                                "clicks": 15,
+                                "spent": 22.77
+                            },
+                            "Competitors (Phrase)": {
+                                "clicks": 8,
+                                "spent": 11.52
+                            },
+                            "Aligners (Phrase)": {
+                                "clicks": 14,
+                                "spent": 39.96
+                            },
+                            "Braces (Exact)": {
+                                "clicks": 27,
+                                "spent": 99.54
+                            },
+                            "Brand (Phrase)": {
+                                "clicks": 24,
+                                "spent": 35.4
+                            },
+                            "Other (Exact)": {
+                                "clicks": 35,
+                                "spent": 87.13
+                            },
+                            "Shopping - Candid": {
+                                "clicks": 22,
+                                "spent": 24.29
+                            },
+                            "Braces (Broad)": {
+                                "clicks": 20,
+                                "spent": 13.74
+                            },
+                            "Brand (Exact)": {
+                                "clicks": 81,
+                                "spent": 83.01
+                            },
+                            "Competitors (Broad)": {
+                                "clicks": 4,
+                                "spent": 2.46
+                            },
+                            "Other (Broad)": {
+                                "clicks": 29,
+                                "spent": 19.11
+                            }
+                        },
+                        "session_total_cac": 694.53,
+                        "session_total_spent": 694.52
+                    },
+                    "2017-11-22": {
+                        "session_total_clicks": 130,
+                        "total_cac": 180.52,
+                        "session_total_customers": 1,
+                        "utm_breakdown": {
+                            "Generic": {
+                                "total_revenue": null,
+                                "session_total_cac": 180.52,
+                                "session_domain": "google",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 180.52
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "Brand": {
+                                "clicks": 43,
+                                "spent": 30.4
+                            },
+                            "Competitors": {
+                                "clicks": 6,
+                                "spent": 24.08
+                            },
+                            "Generic": {
+                                "clicks": 81,
+                                "spent": 126.04
+                            }
+                        },
+                        "session_total_cac": 180.52,
+                        "session_total_spent": 180.52
+                    }
+                },
+                "total_cac": 611.9
+            },
+            "ordered_aligner_set": {
+                "total_customers": 2,
+                "total_revenue": 3700,
+                "session_breakdown": {
+                    "2018-01-09": {
+                        "session_total_clicks": 826,
+                        "total_cac": 2484.97,
+                        "session_total_customers": 1,
+                        "utm_breakdown": {
+                            "Competitors (Exact)": {
+                                "total_revenue": 1900,
+                                "session_total_cac": 2484.97,
+                                "session_domain": "google",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 2484.97
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "Braces (Phrase)": {
+                                "clicks": 115,
+                                "spent": 256.36
+                            },
+                            "Competitors (Exact)": {
+                                "clicks": 59,
+                                "spent": 348.77
+                            },
+                            "Brand (Broad)": {
+                                "clicks": 4,
+                                "spent": 1.53
+                            },
+                            "Aligners (Exact)": {
+                                "clicks": 24,
+                                "spent": 106.12
+                            },
+                            "Aligners (Broad)": {
+                                "clicks": 1,
+                                "spent": 0.72
+                            },
+                            "Other (Phrase)": {
+                                "clicks": 55,
+                                "spent": 100.08
+                            },
+                            "Competitors (Phrase)": {
+                                "clicks": 46,
+                                "spent": 120.19
+                            },
+                            "Aligners (Phrase)": {
+                                "clicks": 18,
+                                "spent": 43.64
+                            },
+                            "Braces (Exact)": {
+                                "clicks": 220,
+                                "spent": 758.17
+                            },
+                            "Brand (Phrase)": {
+                                "clicks": 34,
+                                "spent": 42.77
+                            },
+                            "Other (Exact)": {
+                                "clicks": 41,
+                                "spent": 162.45
+                            },
+                            "01.05.18 landing page - Competitors (Exact)": {
+                                "clicks": 52,
+                                "spent": 350.67
+                            },
+                            "Shopping - Candid": {
+                                "clicks": 42,
+                                "spent": 73.85
+                            },
+                            "Braces (Broad)": {
+                                "clicks": 15,
+                                "spent": 9.91
+                            },
+                            "Brand (Exact)": {
+                                "clicks": 72,
+                                "spent": 90.36
+                            },
+                            "Competitors (Broad)": {
+                                "clicks": 6,
+                                "spent": 3.79
+                            },
+                            "Other (Broad)": {
+                                "clicks": 22,
+                                "spent": 15.59
+                            }
+                        },
+                        "session_total_cac": 2484.97,
+                        "session_total_spent": 2484.97
+                    },
+                    "2018-01-05": {
+                        "session_total_clicks": 622,
+                        "total_cac": 974.37,
+                        "session_total_customers": 2,
+                        "utm_breakdown": {
+                            "Brand (Exact)": {
+                                "session_total_cac": 974.37,
+                                "session_domain": "google",
+                                "session_total_customers": 1
+                            },
+                            "Aligners (Phrase)": {
+                                "total_revenue": 1800,
+                                "session_total_cac": 974.37,
+                                "session_domain": "google",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 974.37
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "Braces (Phrase)": {
+                                "clicks": 106,
+                                "spent": 244.48
+                            },
+                            "Competitors (Exact)": {
+                                "clicks": 104,
+                                "spent": 599.96
+                            },
+                            "Brand (Broad)": {
+                                "clicks": 4,
+                                "spent": 2.53
+                            },
+                            "Aligners (Exact)": {
+                                "clicks": 17,
+                                "spent": 75.59
+                            },
+                            "Aligners (Broad)": {
+                                "clicks": 0,
+                                "spent": 0
+                            },
+                            "Other (Phrase)": {
+                                "clicks": 27,
+                                "spent": 48.74
+                            },
+                            "Competitors (Phrase)": {
+                                "clicks": 23,
+                                "spent": 58.15
+                            },
+                            "Aligners (Phrase)": {
+                                "clicks": 22,
+                                "spent": 52.29
+                            },
+                            "Braces (Exact)": {
+                                "clicks": 139,
+                                "spent": 514.46
+                            },
+                            "Brand (Phrase)": {
+                                "clicks": 15,
+                                "spent": 27.37
+                            },
+                            "Other (Exact)": {
+                                "clicks": 32,
+                                "spent": 100.5
+                            },
+                            "Shopping - Candid": {
+                                "clicks": 33,
+                                "spent": 96.79
+                            },
+                            "Braces (Broad)": {
+                                "clicks": 4,
+                                "spent": 2.74
+                            },
+                            "Brand (Exact)": {
+                                "clicks": 85,
+                                "spent": 117.28
+                            },
+                            "Competitors (Broad)": {
+                                "clicks": 3,
+                                "spent": 2.14
+                            },
+                            "Other (Broad)": {
+                                "clicks": 8,
+                                "spent": 5.71
+                            }
+                        },
+                        "session_total_cac": 1948.74,
+                        "session_total_spent": 1948.73
+                    }
+                },
+                "total_cac": 3459.3399999999997
+            },
+            "ordered_impression_kit": {
+                "total_customers": 4,
+                "total_revenue": 308.75,
+                "session_breakdown": {
+                    "2018-02-15": {
+                        "session_total_clicks": 44,
+                        "total_cac": 47.76,
+                        "session_total_customers": 3,
+                        "utm_breakdown": {
+                            "Braces%20(Exact)": {
+                                "total_revenue": 95,
+                                "session_total_cac": 23.88,
+                                "session_domain": "google",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 23.88
+                            },
+                            "Brand%20(Exact)": {
+                                "total_revenue": 95,
+                                "session_total_cac": 47.75,
+                                "session_domain": "google",
+                                "session_total_customers": 2,
+                                "total_customers": 1,
+                                "total_cac": 23.88
+                            }
+                        },
+                        "total_customers": 2,
+                        "ad_breakdown": {
+                            "Braces (Phrase)": {
+                                "clicks": 6,
+                                "spent": 10.69
+                            },
+                            "Competitors (Exact)": {
+                                "clicks": 5,
+                                "spent": 14.2
+                            },
+                            "Brand (Broad)": {
+                                "clicks": 0,
+                                "spent": 0
+                            },
+                            "Aligners (Exact)": {
+                                "clicks": 3,
+                                "spent": 10.52
+                            },
+                            "Aligners (Broad)": {
+                                "clicks": 0,
+                                "spent": 0
+                            },
+                            "Other (Phrase)": {
+                                "clicks": 1,
+                                "spent": 1.14
+                            },
+                            "Competitors (Phrase)": {
+                                "clicks": 1,
+                                "spent": 2.5
+                            },
+                            "Aligners (Phrase)": {
+                                "clicks": 2,
+                                "spent": 5.48
+                            },
+                            "Braces (Exact)": {
+                                "clicks": 3,
+                                "spent": 7.32
+                            },
+                            "Brand (Phrase)": {
+                                "clicks": 2,
+                                "spent": 1.14
+                            },
+                            "Other (Exact)": {
+                                "clicks": 2,
+                                "spent": 2.98
+                            },
+                            "Shopping - Candid": {
+                                "clicks": 3,
+                                "spent": 2.73
+                            },
+                            "Braces (Broad)": {
+                                "clicks": 3,
+                                "spent": 2
+                            },
+                            "Brand (Exact)": {
+                                "clicks": 8,
+                                "spent": 7.43
+                            },
+                            "Competitors (Broad)": {
+                                "clicks": 2,
+                                "spent": 1.47
+                            },
+                            "Other (Broad)": {
+                                "clicks": 3,
+                                "spent": 2.03
+                            }
+                        },
+                        "session_total_cac": 71.63,
+                        "session_total_spent": 71.63
+                    },
+                    "2018-02-13": {
+                        "session_total_clicks": 477,
+                        "total_cac": 144.05,
+                        "session_total_customers": 6,
+                        "utm_breakdown": {
+                            "Braces%20(Phrase)": {
+                                "session_total_cac": 144.05,
+                                "session_domain": "google",
+                                "session_total_customers": 1
+                            },
+                            "Braces%20(Exact)": {
+                                "session_total_cac": 288.1,
+                                "session_domain": "google",
+                                "session_total_customers": 2
+                            },
+                            "Other%20(Phrase)": {
+                                "total_revenue": 71.25,
+                                "session_total_cac": 144.05,
+                                "session_domain": "google",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 144.05
+                            },
+                            "Brand%20(Exact)": {
+                                "session_total_cac": 288.1,
+                                "session_domain": "google",
+                                "session_total_customers": 2
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "Braces (Phrase)": {
+                                "clicks": 30,
+                                "spent": 44.94
+                            },
+                            "Competitors (Exact)": {
+                                "clicks": 31,
+                                "spent": 107.61
+                            },
+                            "Brand (Broad)": {
+                                "clicks": 3,
+                                "spent": 1.7
+                            },
+                            "Aligners (Exact)": {
+                                "clicks": 31,
+                                "spent": 97.08
+                            },
+                            "Aligners (Broad)": {
+                                "clicks": 1,
+                                "spent": 0.57
+                            },
+                            "Other (Phrase)": {
+                                "clicks": 29,
+                                "spent": 39.06
+                            },
+                            "Competitors (Phrase)": {
+                                "clicks": 3,
+                                "spent": 2.88
+                            },
+                            "Aligners (Phrase)": {
+                                "clicks": 32,
+                                "spent": 89.36
+                            },
+                            "Braces (Exact)": {
+                                "clicks": 53,
+                                "spent": 160.99
+                            },
+                            "Brand (Phrase)": {
+                                "clicks": 36,
+                                "spent": 48.32
+                            },
+                            "Other (Exact)": {
+                                "clicks": 37,
+                                "spent": 93.9
+                            },
+                            "Shopping - Candid": {
+                                "clicks": 24,
+                                "spent": 21.14
+                            },
+                            "Braces (Broad)": {
+                                "clicks": 33,
+                                "spent": 21.47
+                            },
+                            "Brand (Exact)": {
+                                "clicks": 103,
+                                "spent": 113.48
+                            },
+                            "Competitors (Broad)": {
+                                "clicks": 0,
+                                "spent": 0
+                            },
+                            "Other (Broad)": {
+                                "clicks": 31,
+                                "spent": 21.79
+                            }
+                        },
+                        "session_total_cac": 864.3,
+                        "session_total_spent": 864.29
+                    },
+                    "2018-02-05": {
+                        "session_total_clicks": 654,
+                        "total_cac": 222.35,
+                        "session_total_customers": 6,
+                        "utm_breakdown": {
+                            "Braces (Phrase)": {
+                                "session_total_cac": 222.35,
+                                "session_domain": "google",
+                                "session_total_customers": 1
+                            },
+                            "Braces (Exact)": {
+                                "session_total_cac": 222.35,
+                                "session_domain": "google",
+                                "session_total_customers": 1
+                            },
+                            "Competitors (Exact)": {
+                                "session_total_cac": 222.35,
+                                "session_domain": "google",
+                                "session_total_customers": 1
+                            },
+                            "Other (Exact)": {
+                                "session_total_cac": 222.35,
+                                "session_domain": "google",
+                                "session_total_customers": 1
+                            },
+                            "Brand (Exact)": {
+                                "session_total_cac": 222.35,
+                                "session_domain": "google",
+                                "session_total_customers": 1
+                            },
+                            "Competitors (Phrase)": {
+                                "total_revenue": 47.5,
+                                "session_total_cac": 222.35,
+                                "session_domain": "google",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 222.35
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "Braces (Phrase)": {
+                                "clicks": 51,
+                                "spent": 65.62
+                            },
+                            "Competitors (Exact)": {
+                                "clicks": 52,
+                                "spent": 145.26
+                            },
+                            "Brand (Broad)": {
+                                "clicks": 5,
+                                "spent": 3.41
+                            },
+                            "Aligners (Exact)": {
+                                "clicks": 30,
+                                "spent": 126.92
+                            },
+                            "Aligners (Broad)": {
+                                "clicks": 1,
+                                "spent": 0.69
+                            },
+                            "Other (Phrase)": {
+                                "clicks": 32,
+                                "spent": 44.76
+                            },
+                            "Competitors (Phrase)": {
+                                "clicks": 42,
+                                "spent": 89.83
+                            },
+                            "Aligners (Phrase)": {
+                                "clicks": 21,
+                                "spent": 51.79
+                            },
+                            "Braces (Exact)": {
+                                "clicks": 194,
+                                "spent": 447.39
+                            },
+                            "Brand (Phrase)": {
+                                "clicks": 21,
+                                "spent": 29.15
+                            },
+                            "Other (Exact)": {
+                                "clicks": 46,
+                                "spent": 126.77
+                            },
+                            "Shopping - Candid": {
+                                "clicks": 25,
+                                "spent": 23.33
+                            },
+                            "Braces (Broad)": {
+                                "clicks": 24,
+                                "spent": 16.55
+                            },
+                            "Brand (Exact)": {
+                                "clicks": 98,
+                                "spent": 154.29
+                            },
+                            "Competitors (Broad)": {
+                                "clicks": 4,
+                                "spent": 2.74
+                            },
+                            "Other (Broad)": {
+                                "clicks": 8,
+                                "spent": 5.6
+                            }
+                        },
+                        "session_total_cac": 1334.1,
+                        "session_total_spent": 1334.1
+                    }
+                },
+                "total_cac": 414.15999999999997
+            }
+        }
+    },
+    {
+        "ad_source": "facebook",
+        "the_day": "2018-02-14",
+        "attribution_source": "Paid Social",
+        "activity": {
+            "survey_email_captured": {
+                "total_customers": 660,
+                "total_revenue": null,
+                "session_breakdown": {
+                    "2018-02-15": {
+                        "session_total_clicks": 141,
+                        "total_cac": 133.46,
+                        "session_total_customers": 183,
+                        "utm_breakdown": {
+                            "p-p-2": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 8,
+                                "total_customers": 13,
+                                "total_cac": 26.29
+                            },
+                            "p-ppe": {
+                                "session_total_cac": 2.02,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1
+                            },
+                            "p-ac": {
+                                "session_total_cac": 2.02,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1
+                            },
+                            "p-p-3": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 5,
+                                "total_customers": 20,
+                                "total_cac": 40.44
+                            },
+                            "p-vv": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 3,
+                                "total_customers": 14,
+                                "total_cac": 28.31
+                            },
+                            "p-p-4": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 10,
+                                "total_customers": 19,
+                                "total_cac": 38.42
+                            }
+                        },
+                        "total_customers": 66,
+                        "ad_breakdown": {
+                            "LG - Prospecting - VV": {
+                                "clicks": 17,
+                                "spent": 33.61
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 50,
+                                "spent": 97.88
+                            },
+                            "LG - Prospecting - P - 3": {
+                                "clicks": 37,
+                                "spent": 47.26
+                            },
+                            "LG - Retargeting - P": {
+                                "clicks": 12,
+                                "spent": 55.34
+                            },
+                            "LG - Prospecting -  PPE": {
+                                "clicks": 8,
+                                "spent": 22.64
+                            },
+                            "LG - Prospecting - P - 4": {
+                                "clicks": 17,
+                                "spent": 60.75
+                            }
+                        },
+                        "session_total_cac": 317.49,
+                        "session_total_spent": 317.48
+                    },
+                    "2018-02-14": {
+                        "session_total_clicks": 3127,
+                        "total_cac": 5477.95,
+                        "session_total_customers": 1037,
+                        "utm_breakdown": {
+                            "p-p-3": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 5,
+                                "total_customers": 25,
+                                "total_cac": 231.33
+                            },
+                            "p-ppe": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 1,
+                                "total_customers": 2,
+                                "total_cac": 18.51
+                            },
+                            "p-p4": {
+                                "total_revenue": null,
+                                "session_total_cac": 101.79,
+                                "session_domain": "facebook",
+                                "session_total_customers": 11,
+                                "total_customers": 6,
+                                "total_cac": 55.52
+                            },
+                            "p-p-4": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 52,
+                                "total_customers": 491,
+                                "total_cac": 4543.37
+                            },
+                            "p-p-2": {
+                                "total_revenue": null,
+                                "session_total_cac": null,
+                                "session_domain": "instagram",
+                                "session_total_customers": 23,
+                                "total_customers": 58,
+                                "total_cac": 536.69
+                            },
+                            "r-p": {
+                                "total_revenue": null,
+                                "session_total_cac": 9.25,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 9.25
+                            },
+                            "p-vv": {
+                                "total_revenue": null,
+                                "session_total_cac": 83.28,
+                                "session_domain": "facebook",
+                                "session_total_customers": 9,
+                                "total_customers": 9,
+                                "total_cac": 83.28
+                            }
+                        },
+                        "total_customers": 592,
+                        "ad_breakdown": {
+                            "LG - Prospecting - VV": {
+                                "clicks": 79,
+                                "spent": 158.82
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 430,
+                                "spent": 828.75
+                            },
+                            "LG - Prospecting - P - 3": {
+                                "clicks": 179,
+                                "spent": 354.44
+                            },
+                            "LG - Retargeting - P": {
+                                "clicks": 80,
+                                "spent": 307.49
+                            },
+                            "LG - Prospecting -  PPE": {
+                                "clicks": 63,
+                                "spent": 160.48
+                            },
+                            "LG - Prospecting - P - 4": {
+                                "clicks": 2296,
+                                "spent": 7036.18
+                            }
+                        },
+                        "session_total_cac": 8846.15,
+                        "session_total_spent": 8846.16
+                    },
+                    "2018-01-09": {
+                        "session_total_clicks": 1944,
+                        "total_cac": 17.44,
+                        "session_total_customers": 4,
+                        "utm_breakdown": {
+                            "p-ic-2": {
+                                "total_revenue": null,
+                                "session_total_cac": 17.44,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 17.44
+                            },
+                            "p-p-2": {
+                                "session_total_cac": 17.44,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1
+                            },
+                            "p-ac": {
+                                "session_total_cac": 17.44,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1
+                            },
+                            "p-p": {
+                                "session_total_cac": 17.44,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "LG - Retargeting - P": {
+                                "clicks": 355,
+                                "spent": 913.61
+                            },
+                            "LG - Prospecting - IC - 2": {
+                                "clicks": 479,
+                                "spent": 728.27
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 1110,
+                                "spent": 2298.88
+                            }
+                        },
+                        "session_total_cac": 69.76,
+                        "session_total_spent": 3940.76
+                    },
+                    "2018-02-05": {
+                        "session_total_clicks": 2052,
+                        "total_cac": 6.78,
+                        "session_total_customers": 745,
+                        "utm_breakdown": {
+                            "p-p-3": {
+                                "total_revenue": null,
+                                "session_total_cac": 2899.73,
+                                "session_domain": "facebook",
+                                "session_total_customers": 428,
+                                "total_customers": 1,
+                                "total_cac": 6.78
+                            },
+                            "p-p-2": {
+                                "session_total_cac": 271,
+                                "session_domain": "facebook",
+                                "session_total_customers": 40
+                            },
+                            "p-video": {
+                                "session_total_cac": null,
+                                "session_domain": "pinterest",
+                                "session_total_customers": 6
+                            },
+                            "p-ac": {
+                                "session_total_cac": 1829.27,
+                                "session_domain": "facebook",
+                                "session_total_customers": 270
+                            },
+                            "p-search-traffic": {
+                                "session_total_cac": null,
+                                "session_domain": "pinterest",
+                                "session_total_customers": 1
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "LG - Retargeting - P": {
+                                "clicks": 81,
+                                "spent": 323.75
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 190,
+                                "spent": 479.56
+                            },
+                            "LG - Prospecting - P - 3": {
+                                "clicks": 1781,
+                                "spent": 4196.69
+                            }
+                        },
+                        "session_total_cac": 5000,
+                        "session_total_spent": 5000
+                    }
+                },
+                "total_cac": 5635.629999999998
+            },
+            "ordered_aligner_set": {
+                "total_customers": 1,
+                "total_revenue": 1900,
+                "session_breakdown": {
+                    "2018-01-07": {
+                        "session_total_clicks": 2186,
+                        "total_cac": 3639.2,
+                        "session_total_customers": 1,
+                        "utm_breakdown": {
+                            "r-p": {
+                                "total_revenue": 1900,
+                                "session_total_cac": 3639.2,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 3639.2
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "LG - Retargeting - P": {
+                                "clicks": 301,
+                                "spent": 621
+                            },
+                            "LG - Prospecting - IC - 2": {
+                                "clicks": 1435,
+                                "spent": 2012.96
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 450,
+                                "spent": 1005.24
+                            }
+                        },
+                        "session_total_cac": 3639.2,
+                        "session_total_spent": 3639.2
+                    }
+                },
+                "total_cac": 3639.2
+            },
+            "ordered_impression_kit": {
+                "total_customers": 17,
+                "total_revenue": 1377.5,
+                "session_breakdown": {
+                    "2018-02-13": {
+                        "session_total_clicks": 2950,
+                        "total_cac": 2679.54,
+                        "session_total_customers": 10,
+                        "utm_breakdown": {
+                            "p-p-3": {
+                                "total_revenue": 71.25,
+                                "session_total_cac": 1786.36,
+                                "session_domain": "facebook",
+                                "session_total_customers": 2,
+                                "total_customers": 1,
+                                "total_cac": 893.18
+                            },
+                            "p-p-4": {
+                                "total_revenue": 166.25,
+                                "session_total_cac": 7145.44,
+                                "session_domain": "facebook",
+                                "session_total_customers": 8,
+                                "total_customers": 2,
+                                "total_cac": 1786.36
+                            }
+                        },
+                        "total_customers": 3,
+                        "ad_breakdown": {
+                            "LG - Retargeting - P": {
+                                "clicks": 83,
+                                "spent": 285.85
+                            },
+                            "LG - Prospecting -  PPE": {
+                                "clicks": 55,
+                                "spent": 155.38
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 193,
+                                "spent": 366.74
+                            },
+                            "LG - Prospecting - P - 3": {
+                                "clicks": 260,
+                                "spent": 427.77
+                            },
+                            "LG - Prospecting - P - 4": {
+                                "clicks": 2359,
+                                "spent": 7696.06
+                            }
+                        },
+                        "session_total_cac": 8931.8,
+                        "session_total_spent": 8931.800000000001
+                    },
+                    "2018-01-30": {
+                        "session_total_clicks": 1363,
+                        "total_cac": 333.09,
+                        "session_total_customers": 12,
+                        "utm_breakdown": {
+                            "p-p-3": {
+                                "session_total_cac": 999.26,
+                                "session_domain": "facebook",
+                                "session_total_customers": 3
+                            },
+                            "r-p": {
+                                "session_total_cac": 333.09,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1
+                            },
+                            "p-ac": {
+                                "session_total_cac": 1998.53,
+                                "session_domain": "facebook",
+                                "session_total_customers": 6
+                            },
+                            "p-p-2": {
+                                "total_revenue": 95,
+                                "session_total_cac": 666.18,
+                                "session_domain": "facebook",
+                                "session_total_customers": 2,
+                                "total_customers": 1,
+                                "total_cac": 333.09
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "LG - Retargeting - P": {
+                                "clicks": 210,
+                                "spent": 661.55
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 277,
+                                "spent": 768.99
+                            },
+                            "LG - Prospecting - P - 3": {
+                                "clicks": 876,
+                                "spent": 2566.51
+                            }
+                        },
+                        "session_total_cac": 3997.0600000000004,
+                        "session_total_spent": 3997.05
+                    },
+                    "2018-02-14": {
+                        "session_total_clicks": 3127,
+                        "total_cac": 5686.82,
+                        "session_total_customers": 14,
+                        "utm_breakdown": {
+                            "p-p-2": {
+                                "total_revenue": 95,
+                                "session_total_cac": 1263.74,
+                                "session_domain": "facebook",
+                                "session_total_customers": 2,
+                                "total_customers": 1,
+                                "total_cac": 631.87
+                            },
+                            "p-p4": {
+                                "total_revenue": 71.25,
+                                "session_total_cac": 631.87,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 631.87
+                            },
+                            "p-p-4": {
+                                "total_revenue": 570,
+                                "session_total_cac": 5686.82,
+                                "session_domain": "facebook",
+                                "session_total_customers": 9,
+                                "total_customers": 6,
+                                "total_cac": 3791.21
+                            },
+                            "p-p-3": {
+                                "total_revenue": 95,
+                                "session_total_cac": 1263.74,
+                                "session_domain": "facebook",
+                                "session_total_customers": 2,
+                                "total_customers": 1,
+                                "total_cac": 631.87
+                            }
+                        },
+                        "total_customers": 9,
+                        "ad_breakdown": {
+                            "LG - Prospecting - VV": {
+                                "clicks": 79,
+                                "spent": 158.82
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 430,
+                                "spent": 828.75
+                            },
+                            "LG - Prospecting - P - 3": {
+                                "clicks": 179,
+                                "spent": 354.44
+                            },
+                            "LG - Retargeting - P": {
+                                "clicks": 80,
+                                "spent": 307.49
+                            },
+                            "LG - Prospecting -  PPE": {
+                                "clicks": 63,
+                                "spent": 160.48
+                            },
+                            "LG - Prospecting - P - 4": {
+                                "clicks": 2296,
+                                "spent": 7036.18
+                            }
+                        },
+                        "session_total_cac": 8846.17,
+                        "session_total_spent": 8846.16
+                    },
+                    "2018-02-10": {
+                        "session_total_clicks": 1560,
+                        "total_cac": 416.67,
+                        "session_total_customers": 12,
+                        "utm_breakdown": {
+                            "p-p-3": {
+                                "session_total_cac": 1250,
+                                "session_domain": "facebook",
+                                "session_total_customers": 3
+                            },
+                            "p-p-4": {
+                                "total_revenue": 71.25,
+                                "session_total_cac": 3750,
+                                "session_domain": "facebook",
+                                "session_total_customers": 9,
+                                "total_customers": 1,
+                                "total_cac": 416.67
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "LG - Retargeting - P": {
+                                "clicks": 48,
+                                "spent": 181.7
+                            },
+                            "LG - Prospecting -  PPE": {
+                                "clicks": 44,
+                                "spent": 158.33
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 38,
+                                "spent": 82.75
+                            },
+                            "LG - Prospecting - P - 3": {
+                                "clicks": 338,
+                                "spent": 803.93
+                            },
+                            "LG - Prospecting - P - 4": {
+                                "clicks": 1092,
+                                "spent": 3773.29
+                            }
+                        },
+                        "session_total_cac": 5000,
+                        "session_total_spent": 5000
+                    },
+                    "2018-01-15": {
+                        "session_total_clicks": 1159,
+                        "total_cac": 1490.57,
+                        "session_total_customers": 1,
+                        "utm_breakdown": {
+                            "p-p-2": {
+                                "total_revenue": 47.5,
+                                "session_total_cac": 1490.57,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 1490.57
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "LG - Retargeting - P": {
+                                "clicks": 245,
+                                "spent": 972.3
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 914,
+                                "spent": 2008.83
+                            }
+                        },
+                        "session_total_cac": 1490.57,
+                        "session_total_spent": 2981.13
+                    },
+                    "2018-01-24": {
+                        "session_total_clicks": 1100,
+                        "total_cac": 3252.57,
+                        "session_total_customers": 1,
+                        "utm_breakdown": {
+                            "p-p-2": {
+                                "total_revenue": 47.5,
+                                "session_total_cac": 3252.57,
+                                "session_domain": "facebook",
+                                "session_total_customers": 1,
+                                "total_customers": 1,
+                                "total_cac": 3252.57
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "LG - Retargeting - P": {
+                                "clicks": 160,
+                                "spent": 588.66
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 940,
+                                "spent": 2663.91
+                            }
+                        },
+                        "session_total_cac": 3252.57,
+                        "session_total_spent": 3252.5699999999997
+                    },
+                    "2018-02-02": {
+                        "session_total_clicks": 2072,
+                        "total_cac": 416.67,
+                        "session_total_customers": 13,
+                        "utm_breakdown": {
+                            "p-p-3": {
+                                "session_total_cac": 1666.67,
+                                "session_domain": "facebook",
+                                "session_total_customers": 4
+                            },
+                            "p-video": {
+                                "session_total_cac": null,
+                                "session_domain": "pinterest",
+                                "session_total_customers": 1
+                            },
+                            "p-ac": {
+                                "total_revenue": 47.5,
+                                "session_total_cac": 2083.33,
+                                "session_domain": "facebook",
+                                "session_total_customers": 5,
+                                "total_customers": 1,
+                                "total_cac": 416.67
+                            },
+                            "p-p-2": {
+                                "session_total_cac": 1250,
+                                "session_domain": "facebook",
+                                "session_total_customers": 3
+                            }
+                        },
+                        "total_customers": 1,
+                        "ad_breakdown": {
+                            "LG - Retargeting - P": {
+                                "clicks": 170,
+                                "spent": 545.6
+                            },
+                            "LG - Prospecting - P - 2": {
+                                "clicks": 290,
+                                "spent": 686.28
+                            },
+                            "LG - Prospecting - P - 3": {
+                                "clicks": 1612,
+                                "spent": 3768.12
+                            }
+                        },
+                        "session_total_cac": 5000,
+                        "session_total_spent": 5000
+                    }
+                },
+                "total_cac": 14275.93
+            }
+        }
+    }
+]

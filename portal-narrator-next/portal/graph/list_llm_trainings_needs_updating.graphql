@@ -1,0 +1,9 @@
+subscription TrainingIndexNeedsUpdating($company_id: uuid!) {
+  all_trainings: llm_training(
+    where: { company_table: { company_id: { _eq: $company_id } } }
+    order_by: { updated_at: desc }
+  ) {
+    id
+    updated_at
+  }
+}

@@ -1,0 +1,26 @@
+mutation InsertDataset(
+  $company_id: uuid
+  $slug: String
+  $name: String
+  $description: String
+  $created_by: uuid
+  $updated_by: uuid
+  $hide_from_index: Boolean
+  $locked: Boolean
+) {
+  insert_dataset_one(
+    object: {
+      company_id: $company_id
+      created_by: $created_by
+      description: $description
+      updated_by: $updated_by
+      name: $name
+      slug: $slug
+      hide_from_index: $hide_from_index
+      locked: $locked
+    }
+  ) {
+    id
+    slug
+  }
+}

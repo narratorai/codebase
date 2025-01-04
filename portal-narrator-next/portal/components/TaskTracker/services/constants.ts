@@ -1,0 +1,5 @@
+export const RUN_TRANSFORMATIONS_SLUG = 'run_transformations'
+export const TASK_CATEGORY_PROCESSING = 'processing'
+export const TASK_CATEGORY_MATERIALIZATIONS = 'materializations'
+export const TASK_CATEGORY_NARRATIVES = 'narratives'
+export const TASK_CATEGORY_ALERTS = 'alerts'

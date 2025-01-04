@@ -1,0 +1,37 @@
+query GetDimsWithDependencies($company_id: uuid!) {
+  dim_tables: dim_table(where: { company_id: { _eq: $company_id } }) {
+    id
+    schema_: schema
+    table
+    join_key
+    activities {
+      activity_id
+      slowly_changing_ts_column
+      activity {
+        maintainer_id
+      }
+    }
+    customer_table {
+      maintainer_id
+      activity_stream
+    }
+    slowly_changing_customer_dims {
+      table_id
+      slowly_changing_ts_column
+    }
+    company_table_aggregations {
+      company_table_id
+      company_table {
+        id
+        maintainer_id
+      }
+    }
+    maintenances(where: { ended_at: { _is_null: true } }) {
+      id
+      kind
+      started_at
+      activity_id
+      notes
+    }
+  }
+}

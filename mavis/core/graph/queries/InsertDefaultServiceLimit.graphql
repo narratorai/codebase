@@ -1,0 +1,28 @@
+mutation InsertDefaultServiceLimit($company_id: uuid!, $disable_on: timestamptz) {
+    insert_service_limit_one(
+        object: {
+            # activity_limit: 5
+            # activity_stream_limit: 1
+            # row_limit: "500000000"
+            # narrative_limit: 0
+            # user_limit: 25
+            # transformation_limit: 10
+            disable_on: $disable_on
+            monthly_price: 0
+            name: "Startup"
+            company_id: $company_id
+        }
+    ) {
+        id
+        transformation_limit
+        row_limit
+        narrative_limit
+        materialization_limit
+        dataset_limit
+        activity_stream_limit
+        activity_limit
+        name,
+        monthly_price,
+        disable_on
+    }
+}

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mavis-heartbeat-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mavis-heartbeat
+  template:
+    metadata:
+      labels:
+        app: mavis-heartbeat
+    spec:
+      serviceAccountName: mavis-heartbeat-deployment
+      containers:
+        - name: heartbeat
+          image: "{{ .Values.image.repositoryHeartbeat }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            - secretRef:
+                name: my-secrets # If your Celery worker needs secrets, add them here
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}

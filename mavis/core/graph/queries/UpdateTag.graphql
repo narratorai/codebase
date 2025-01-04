@@ -1,0 +1,8 @@
+mutation UpdateTag($id: uuid!, $color: String!, $tag: String,  $description: String) {
+  update_company_tags_by_pk(
+    pk_columns: { id: $id }
+    _set: { color: $color, tag: $tag, description: $description }
+  ) {
+    id
+  }
+}

@@ -1,0 +1,21 @@
+query OnboardingData($company_id: uuid!) {
+  datasets: dataset(where: { company_id: { _eq: $company_id } }, order_by: { created_at: asc }, limit: 1) {
+    id
+  }
+
+  transformations: transformation(
+    where: { company_id: { _eq: $company_id } }
+    order_by: { created_at: asc }
+    limit: 1
+  ) {
+    id
+  }
+
+  productionQueries: transformation(
+    where: { company_id: { _eq: $company_id }, production_queries: { id: { _is_null: false } } }
+    order_by: { created_at: asc }
+    limit: 1
+  ) {
+    id
+  }
+}

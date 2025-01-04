@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#makeDatasetFeatureMapping creates an object for each dataset old_id and all its feature mappings 1`] = `
+[
+  {
+    "_dataset_mapping_old_id": "oldId12345",
+    "old_id": "featureOldId098134",
+  },
+  {
+    "_dataset_mapping_old_id": "oldId12345",
+    "old_id": "featureOldId782389",
+  },
+  {
+    "_dataset_mapping_old_id": "oldId90398",
+    "old_id": "featureOldId098a08",
+  },
+  {
+    "_dataset_mapping_old_id": "oldId90398",
+    "old_id": "featureOldId98af93",
+  },
+]
+`;

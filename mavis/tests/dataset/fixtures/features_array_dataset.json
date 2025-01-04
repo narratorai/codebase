@@ -1,0 +1,1915 @@
+{
+  "fields": {},
+  "query": {
+    "activities": [
+      {
+        "id": "started_pro_subscription9ef7e341",
+        "name": "Started Pro Subscription",
+        "slug": ["started_pro_subscription"],
+        "activity_ids": ["67287b31-4a26-4342-af0b-24ca478bddb9"],
+        "did": true,
+        "occurrence": "all",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "limiting"
+      },
+      {
+        "id": "started_sessionc9f9584b",
+        "name": "Started Session",
+        "slug": ["started_session"],
+        "activity_ids": ["f4cd1899-d0e4-4da4-a9db-c7fd3faaf09a"],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "before"
+          },
+          {
+            "slug": "within_time",
+            "relationship_time": "day",
+            "relationship_time_value": 30
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "last_before"
+      },
+      {
+        "id": "email_link_clicked1fcd0860",
+        "name": "Email Link Clicked",
+        "slug": ["clicked_email_link"],
+        "activity_ids": ["19b931b4-d147-410b-9831-489cf1b3eca4"],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "before"
+          },
+          {
+            "slug": "within_time",
+            "relationship_time": "day",
+            "relationship_time_value": 30
+          }
+        ],
+        "filters": [
+          {
+            "activity_column_name": "feature_2",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "filter": {
+              "operator": "not_contains_any",
+              "kind": "value",
+              "value": ["password reset", "validation"],
+              "or_null": false,
+              "from_type": null,
+              "from_value": null,
+              "from_value_kind": "value",
+              "from_value_resolution": null,
+              "to_type": null,
+              "to_value": null,
+              "to_value_kind": "value",
+              "to_value_resolution": null
+            }
+          }
+        ],
+        "kind": "append",
+        "relationship_slug": "last_before",
+        "temp_id": "0['clicked_email_link']"
+      },
+      {
+        "id": "payment_transactions38acda63",
+        "name": "Payment Transactions",
+        "slug": ["payment"],
+        "activity_ids": ["629a8e58-7a0d-4561-a8ba-600e7096dbd1"],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "before"
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "last_before"
+      }
+    ],
+    "columns": [
+      {
+        "id": "activity_id77d8e677",
+        "name": "activity_id",
+        "label": "Activity Id",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_pro_subscription9ef7e341",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ts81287f4f",
+        "name": "ts",
+        "label": "Timestamp",
+        "output": true,
+        "filters": [
+          {
+            "operator": "greater_than_equal",
+            "value": "2022-01-01T05:00:00.000Z",
+            "kind": "value",
+            "or_null": false,
+            "value_resolution": "date"
+          }
+        ],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_pro_subscription9ef7e341",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "customer30481ab3",
+        "name": "customer",
+        "label": "Customer",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_pro_subscription9ef7e341",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "feature_1c64f4e3a",
+        "name": "feature_1",
+        "label": "Plan Type",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_pro_subscription9ef7e341",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "feature_20672ba08",
+        "name": "feature_2",
+        "label": "Trial Plan",
+        "output": true,
+        "filters": [],
+        "mavis_type": "boolean",
+        "group_func": null,
+        "type": "boolean",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_pro_subscription9ef7e341",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "activity_occurrencefd34c205",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "group_func": null,
+        "type": "number",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_pro_subscription9ef7e341",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ts40440760",
+        "name": "ts",
+        "label": "Last Before Started Session Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "started_sessionc9f9584b",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_started_sessiondb9f5732",
+        "name": null,
+        "label": "Did Started Session Before",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts40440760)",
+          "activity_kind": "append",
+          "activity_id": "started_sessionc9f9584b",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_started_session485e1475",
+        "name": null,
+        "label": "Days From Started Session",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', ts40440760, join_ts.local)",
+          "activity_kind": "append",
+          "activity_id": "started_sessionc9f9584b",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "utm_source_channel_grouping168c8753",
+        "name": "utm_source_channel_grouping",
+        "label": "Last Touch Channel",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "started_sessionc9f9584b",
+          "enrichment_table": "enrichment_table",
+          "enrichment_table_column": "activity_id",
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ts6341a8e8",
+        "name": "ts",
+        "label": "Last Before Email Link Clicked Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "email_link_clicked1fcd0860",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_clicked_email_linke8597c1c",
+        "name": null,
+        "label": "Did Email Link Clicked Before",
+        "output": true,
+        "filters": [
+          {
+            "operator": "equal",
+            "value": "1",
+            "kind": "value",
+            "or_null": false
+          }
+        ],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts6341a8e8)",
+          "activity_kind": "append",
+          "activity_id": "email_link_clicked1fcd0860",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_clicked_email_linkd6734adb",
+        "name": null,
+        "label": "Days From Email Link Clicked",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', ts6341a8e8, join_ts.local)",
+          "activity_kind": "append",
+          "activity_id": "email_link_clicked1fcd0860",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "linkc13576e7",
+        "name": "link",
+        "label": "Last Before Email Link Clicked Link",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "email_link_clicked1fcd0860",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "feature_260b7d153",
+        "name": "feature_2",
+        "label": "Last Before Campaign Name",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "email_link_clicked1fcd0860",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ts8463344a",
+        "name": "ts",
+        "label": "Last Before Payment Transactions Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "payment_transactions38acda63",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_paymentfc1f3d35",
+        "name": null,
+        "label": "Did Payment Transactions Before",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts8463344a)",
+          "activity_kind": "append",
+          "activity_id": "payment_transactions38acda63",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_paymentf74a590b",
+        "name": null,
+        "label": "Days From Payment Transactions",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', ts8463344a, join_ts.local)",
+          "activity_kind": "append",
+          "activity_id": "payment_transactions38acda63",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "feature_3a438eca0",
+        "name": "feature_3",
+        "label": "Last Before Pro Type",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "payment_transactions38acda63",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "activity_occurrencef3779f80",
+        "name": "activity_occurrence",
+        "label": "Last Before Payment Transactions Activity Occurrence",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "group_func": null,
+        "type": "number",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "payment_transactions38acda63",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "revenue_impactac32fbf9",
+        "name": "revenue_impact",
+        "label": "Last Before Payment Transactions Revenue Impact",
+        "output": true,
+        "filters": [],
+        "mavis_type": "float",
+        "group_func": ["sum#revenue"],
+        "type": "number",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "payment_transactions38acda63",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "feature_1757b1188",
+        "name": "feature_1",
+        "label": "Last Before Purchase Description Frequency",
+        "output": true,
+        "filters": [
+          {
+            "operator": "not_contains",
+            "value": "recurring",
+            "kind": "value",
+            "or_null": false
+          }
+        ],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "payment_transactions38acda63",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "month_of_timestamp23368073",
+        "name": null,
+        "label": "Month of Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": null,
+        "type": "timestamp",
+        "group_func": [],
+        "source_kind": "computed",
+        "source_details": {
+          "kind": "freehand_function",
+          "raw_string": "date_trunc('month', ts81287f4f)"
+        }
+      }
+    ],
+    "all_groups": [
+      {
+        "name": "by Month Of Timestamp",
+        "slug": "month_of_timestamp3e748466",
+        "columns": [
+          {
+            "id": "month_of_timestamp_7f9acc1b",
+            "filters": [],
+            "label": "Month of Timestamp",
+            "name": "",
+            "output": true,
+            "mavis_type": "timestamp",
+            "type": "timestamp",
+            "source_kind": "group",
+            "column_id": "month_of_timestamp23368073",
+            "pivoted": false,
+            "column_kind": "group"
+          },
+          {
+            "id": "month_of_timestamp3e748466_last_touch_channel",
+            "filters": [],
+            "label": "Last Touch Channel",
+            "name": "",
+            "output": true,
+            "type": "string",
+            "column_id": "utm_source_channel_grouping168c8753",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_started_pro_subscription_rows_0041c2a2",
+            "label": "Total Started Pro Subscription Rows",
+            "agg_function": "COUNT_ALL",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "number",
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_started_session_10e67827",
+            "label": "Total Started Session",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_sessiondb9f5732",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_started_session_d4f175dc",
+            "label": "Percent of Started Session",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_sessiondb9f5732",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_started_session_7e2bcf6e",
+            "label": "Average Days From Started Session",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_started_session485e1475",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_email_link_clicked_475cc41d",
+            "label": "Total Email Link Clicked",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_clicked_email_linke8597c1c",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_email_link_clicked_a681097d",
+            "label": "Percent of Email Link Clicked",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_clicked_email_linke8597c1c",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_email_link_clicked_26b92432",
+            "label": "Average Days From Email Link Clicked",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_clicked_email_linkd6734adb",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_payment_transactions_d21ba373",
+            "label": "Total Payment Transactions",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paymentfc1f3d35",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_payment_transactions_f80537af",
+            "label": "Percent of Payment Transactions",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paymentfc1f3d35",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_payment_transactions_f16c6034",
+            "label": "Average Days From Payment Transactions",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_paymentf74a590b",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_last_before_payment_transactions_revenue_impact_99fe9759",
+            "label": "Total Last Before Payment Transactions Revenue Impact",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "revenue_impactac32fbf9",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "revenue",
+            "type": "float",
+            "column_kind": "metrics"
+          }
+        ],
+        "computed_columns": [],
+        "pivot": [],
+        "parent_filters": [],
+        "order": [
+          {
+            "column_id": "month_of_timestamp_7f9acc1b",
+            "order_direction": "desc"
+          }
+        ],
+        "plots": [
+          {
+            "name": "Total Started Pro Subscription Rows by Month of Timestamp",
+            "slug": "total_started_pro_subscription_rows_by_month_of_timestamp",
+            "config": {
+              "dataset": {
+                "slug": "6843a1a6_0afd_41b0_baea_ad3363147614",
+                "group_slug": "month_of_timestamp3e748466",
+                "plot_slug": null
+              },
+              "columns": {
+                "y2_available": true,
+                "ys": ["total_started_pro_subscription_rows_0041c2a2"],
+                "xs": ["month_of_timestamp_7f9acc1b"],
+                "color_bys": [],
+                "y2": null,
+                "advance_editing": false,
+                "x_name": "X Column: Month of Timestamp",
+                "color_name": null
+              },
+              "traces": [
+                {
+                  "y_column": "total_started_pro_subscription_rows_0041c2a2",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "number",
+                  "color": "#35a1ff",
+                  "name": "Total Started Pro Subscription Rows",
+                  "default_shown": true,
+                  "line_type": "solid"
+                }
+              ],
+              "axes": {
+                "title": "Total Started Pro Subscription Rows by Month of Timestamp",
+                "y_axis": "Total Started Pro Subscription Rows",
+                "x_axis": "Month of Timestamp",
+                "y2_axis": "",
+                "plot_kind": "line",
+                "y_range_from": null,
+                "x_range_from": null,
+                "y_range_to": null,
+                "x_range_to": null,
+                "limit_top": null,
+                "cluster_x_values": false
+              },
+              "annotations": [],
+              "revision": 2,
+              "show_change": false
+            }
+          }
+        ]
+      },
+      {
+        "name": "by Last Touch Channel",
+        "slug": "last_touch_channel3b194e1e",
+        "columns": [
+          {
+            "id": "last_touch_channel_d11c748d",
+            "filters": [],
+            "label": "Last Touch Channel",
+            "name": "",
+            "output": true,
+            "mavis_type": "string",
+            "type": "string",
+            "source_kind": "group",
+            "column_id": "utm_source_channel_grouping168c8753",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_started_pro_subscription_rows_c32330f1",
+            "label": "Total Started Pro Subscription Rows",
+            "agg_function": "COUNT_ALL",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "number",
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_started_session_97368437",
+            "label": "Total Started Session",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_sessiondb9f5732",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_started_session_ca29257c",
+            "label": "Average Days From Started Session",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_started_session485e1475",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_email_link_clicked_90073c8b",
+            "label": "Total Email Link Clicked",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_clicked_email_linke8597c1c",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_email_link_clicked_59b16494",
+            "label": "Percent of Email Link Clicked",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_clicked_email_linke8597c1c",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_email_link_clicked_2c28d548",
+            "label": "Average Days From Email Link Clicked",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_clicked_email_linkd6734adb",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_payment_transactions_7baeaf0e",
+            "label": "Total Payment Transactions",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paymentfc1f3d35",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_payment_transactions_5a48dc43",
+            "label": "Percent of Payment Transactions",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paymentfc1f3d35",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_payment_transactions_65387fe1",
+            "label": "Average Days From Payment Transactions",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_paymentf74a590b",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_last_before_payment_transactions_revenue_impact_d991e510",
+            "label": "Total Last Before Payment Transactions Revenue Impact",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "revenue_impactac32fbf9",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "revenue",
+            "type": "float",
+            "column_kind": "metrics"
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "percent_of_started_session587fecf5",
+            "name": null,
+            "label": "Percent of Started Session",
+            "output": true,
+            "filters": [],
+            "mavis_type": null,
+            "type": "float",
+            "group_func": [],
+            "source_kind": "computed",
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "percent_of_total_all(total_started_pro_subscription_rows_c32330f1)"
+            },
+            "column_kind": "computed"
+          }
+        ],
+        "pivot": [],
+        "parent_filters": [],
+        "order": [
+          {
+            "column_id": "total_started_pro_subscription_rows_c32330f1",
+            "order_direction": "desc"
+          }
+        ],
+        "plots": []
+      },
+      {
+        "name": "by Last Before Campaign Name",
+        "slug": "last_before_campaign_name95646bba",
+        "columns": [
+          {
+            "id": "last_before_campaign_name_9ffbb6dc",
+            "filters": [],
+            "label": "Last Before Campaign Name",
+            "name": "",
+            "output": true,
+            "mavis_type": "string",
+            "type": "string",
+            "source_kind": "group",
+            "column_id": "feature_260b7d153",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_started_pro_subscription_rows_744d4f61",
+            "label": "Total Started Pro Subscription Rows",
+            "agg_function": "COUNT_ALL",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "number",
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_started_session_0e67f11b",
+            "label": "Total Started Session",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_sessiondb9f5732",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_started_session_41afb58a",
+            "label": "Percent of Started Session",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_sessiondb9f5732",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_started_session_374bcbbe",
+            "label": "Average Days From Started Session",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_started_session485e1475",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_email_link_clicked_aaf67421",
+            "label": "Total Email Link Clicked",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_clicked_email_linke8597c1c",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_email_link_clicked_15a75191",
+            "label": "Average Days From Email Link Clicked",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_clicked_email_linkd6734adb",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_payment_transactions_7f7988bc",
+            "label": "Total Payment Transactions",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paymentfc1f3d35",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_payment_transactions_c00cfe24",
+            "label": "Percent of Payment Transactions",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paymentfc1f3d35",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_payment_transactions_d907404f",
+            "label": "Average Days From Payment Transactions",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_paymentf74a590b",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_last_before_payment_transactions_revenue_impact_ab2e619b",
+            "label": "Total Last Before Payment Transactions Revenue Impact",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "revenue_impactac32fbf9",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "revenue",
+            "type": "float",
+            "column_kind": "metrics"
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "percent_of_email_link_clicked35ff6d1d",
+            "name": null,
+            "label": "Percent of Email Link Clicked",
+            "output": true,
+            "filters": [],
+            "mavis_type": null,
+            "type": "float",
+            "group_func": [],
+            "source_kind": "computed",
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "percent_of_total_all(total_started_pro_subscription_rows_744d4f61)"
+            },
+            "column_kind": "computed"
+          }
+        ],
+        "pivot": [],
+        "parent_filters": [],
+        "order": [
+          {
+            "column_id": "total_started_pro_subscription_rows_744d4f61",
+            "order_direction": "desc"
+          }
+        ],
+        "plots": []
+      },
+      {
+        "name": "by Month Of Timestamp & Campaign",
+        "slug": "month_of_timestamp_3_e_748466_1",
+        "columns": [
+          {
+            "id": "month_of_timestamp_7f9acc1b",
+            "filters": [],
+            "label": "Month of Timestamp",
+            "name": "",
+            "output": true,
+            "mavis_type": "timestamp",
+            "type": "timestamp",
+            "source_kind": "group",
+            "column_id": "month_of_timestamp23368073",
+            "pivoted": false,
+            "column_kind": "group"
+          },
+          {
+            "id": "month_of_timestamp_3_e_748466_1_last_before_campaign_name",
+            "filters": [],
+            "label": "Last Before Campaign Name",
+            "name": "",
+            "output": true,
+            "type": "string",
+            "column_id": "feature_260b7d153",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_started_pro_subscription_rows_0041c2a2",
+            "label": "Total Started Pro Subscription Rows",
+            "agg_function": "COUNT_ALL",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "number",
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_started_session_10e67827",
+            "label": "Total Started Session",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_sessiondb9f5732",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_started_session_d4f175dc",
+            "label": "Percent of Started Session",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_sessiondb9f5732",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_started_session_7e2bcf6e",
+            "label": "Average Days From Started Session",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_started_session485e1475",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_email_link_clicked_475cc41d",
+            "label": "Total Email Link Clicked",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_clicked_email_linke8597c1c",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_email_link_clicked_a681097d",
+            "label": "Percent of Email Link Clicked",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_clicked_email_linke8597c1c",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_email_link_clicked_26b92432",
+            "label": "Average Days From Email Link Clicked",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_clicked_email_linkd6734adb",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_payment_transactions_d21ba373",
+            "label": "Total Payment Transactions",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paymentfc1f3d35",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_payment_transactions_f80537af",
+            "label": "Percent of Payment Transactions",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paymentfc1f3d35",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_payment_transactions_f16c6034",
+            "label": "Average Days From Payment Transactions",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_paymentf74a590b",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_last_before_payment_transactions_revenue_impact_99fe9759",
+            "label": "Total Last Before Payment Transactions Revenue Impact",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "revenue_impactac32fbf9",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "revenue",
+            "type": "float",
+            "column_kind": "metrics"
+          }
+        ],
+        "computed_columns": [],
+        "pivot": [],
+        "parent_filters": [],
+        "order": [
+          {
+            "column_id": "month_of_timestamp_7f9acc1b",
+            "order_direction": "desc"
+          }
+        ],
+        "plots": [
+          {
+            "name": "Total Started Pro Subscription Rows by Month of Timestamp",
+            "slug": "total_started_pro_subscription_rows_by_month_of_timestamp",
+            "config": {
+              "dataset": {
+                "slug": "6843a1a6_0afd_41b0_baea_ad3363147614",
+                "group_slug": "month_of_timestamp3e748466",
+                "plot_slug": null
+              },
+              "columns": {
+                "y2_available": true,
+                "ys": ["total_started_pro_subscription_rows_0041c2a2"],
+                "xs": ["month_of_timestamp_7f9acc1b"],
+                "color_bys": [],
+                "y2": null,
+                "advance_editing": false,
+                "x_name": "X Column: Month of Timestamp",
+                "color_name": null
+              },
+              "traces": [
+                {
+                  "y_column": "total_started_pro_subscription_rows_0041c2a2",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "number",
+                  "color": "#35a1ff",
+                  "name": "Total Started Pro Subscription Rows",
+                  "default_shown": true,
+                  "line_type": "solid"
+                }
+              ],
+              "axes": {
+                "title": "Total Started Pro Subscription Rows by Month of Timestamp",
+                "y_axis": "Total Started Pro Subscription Rows",
+                "x_axis": "Month of Timestamp",
+                "y2_axis": "",
+                "plot_kind": "line",
+                "y_range_from": null,
+                "x_range_from": null,
+                "y_range_to": null,
+                "x_range_to": null,
+                "limit_top": null,
+                "cluster_x_values": false
+              },
+              "annotations": [],
+              "revision": 2,
+              "show_change": false
+            }
+          }
+        ]
+      },
+      {
+        "name": "by Last Before Email Link Clicked Link",
+        "slug": "last_before_email_link_clicked_link5706e3f1",
+        "columns": [
+          {
+            "id": "last_before_email_link_clicked_link_8ed63ec5",
+            "filters": [],
+            "label": "Last Before Email Link Clicked Link",
+            "name": "",
+            "output": true,
+            "mavis_type": "string",
+            "type": "string",
+            "source_kind": "group",
+            "column_id": "linkc13576e7",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_started_pro_subscription_rows_f6f2f8f2",
+            "label": "Total Started Pro Subscription Rows",
+            "agg_function": "COUNT_ALL",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "number",
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_started_session_bcb64392",
+            "label": "Total Started Session",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_sessiondb9f5732",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_started_session_97c2657f",
+            "label": "Percent of Started Session",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_sessiondb9f5732",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_started_session_c68affbc",
+            "label": "Average Days From Started Session",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_started_session485e1475",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_email_link_clicked_d25adabc",
+            "label": "Total Email Link Clicked",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_clicked_email_linke8597c1c",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_email_link_clicked_60b946e9",
+            "label": "Average Days From Email Link Clicked",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_clicked_email_linkd6734adb",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_payment_transactions_0dd48a82",
+            "label": "Total Payment Transactions",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paymentfc1f3d35",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_payment_transactions_6ac6ad82",
+            "label": "Percent of Payment Transactions",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paymentfc1f3d35",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_payment_transactions_a36bcec8",
+            "label": "Average Days From Payment Transactions",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_paymentf74a590b",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_last_before_payment_transactions_revenue_impact_0cc24e87",
+            "label": "Total Last Before Payment Transactions Revenue Impact",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "revenue_impactac32fbf9",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "revenue",
+            "type": "float",
+            "column_kind": "metrics"
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "percent_of_email_link_clicked03749415",
+            "name": null,
+            "label": "Percent of Email Link Clicked",
+            "output": true,
+            "filters": [],
+            "mavis_type": null,
+            "type": "float",
+            "group_func": [],
+            "source_kind": "computed",
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "percent_of_total_all(total_started_pro_subscription_rows_f6f2f8f2)"
+            },
+            "column_kind": "computed"
+          }
+        ],
+        "pivot": [],
+        "parent_filters": [],
+        "order": [
+          {
+            "column_id": "total_started_pro_subscription_rows_f6f2f8f2",
+            "order_direction": "desc"
+          }
+        ],
+        "plots": []
+      },
+      {
+        "name": "by Month Of Timestamp & Last Touch Channel",
+        "slug": "month_of_timestamp_last_touch_channelb53f1be6",
+        "columns": [
+          {
+            "id": "month_of_timestamp_d34c4e80",
+            "filters": [],
+            "label": "Month of Timestamp",
+            "name": "",
+            "output": true,
+            "mavis_type": "timestamp",
+            "type": "timestamp",
+            "source_kind": "group",
+            "column_id": "month_of_timestamp23368073",
+            "pivoted": false,
+            "column_kind": "group"
+          },
+          {
+            "id": "last_touch_channel_d69f8ff0",
+            "filters": [],
+            "label": "Last Touch Channel",
+            "name": "",
+            "output": true,
+            "mavis_type": "string",
+            "type": "string",
+            "source_kind": "group",
+            "column_id": "utm_source_channel_grouping168c8753",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_started_pro_subscription_rows_b4976422",
+            "label": "Total Started Pro Subscription Rows",
+            "agg_function": "COUNT_ALL",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "number",
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_started_session_94b22810",
+            "label": "Total Started Session",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_sessiondb9f5732",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_started_session_1fe35646",
+            "label": "Average Days From Started Session",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_started_session485e1475",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_email_link_clicked_6144af5b",
+            "label": "Total Email Link Clicked",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_clicked_email_linke8597c1c",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_email_link_clicked_a67390e5",
+            "label": "Percent of Email Link Clicked",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_clicked_email_linke8597c1c",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_email_link_clicked_aa6caf66",
+            "label": "Average Days From Email Link Clicked",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_clicked_email_linkd6734adb",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_payment_transactions_c13e05c3",
+            "label": "Total Payment Transactions",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paymentfc1f3d35",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_payment_transactions_66a4f153",
+            "label": "Percent of Payment Transactions",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paymentfc1f3d35",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_payment_transactions_34ee2d50",
+            "label": "Average Days From Payment Transactions",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_paymentf74a590b",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_last_before_payment_transactions_revenue_impact_a438b903",
+            "label": "Total Last Before Payment Transactions Revenue Impact",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "revenue_impactac32fbf9",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "revenue",
+            "type": "float",
+            "column_kind": "metrics"
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "percent_of_started_session095af8d6",
+            "name": null,
+            "label": "Percent of Started Session",
+            "output": true,
+            "filters": [],
+            "mavis_type": null,
+            "type": "float",
+            "group_func": [],
+            "source_kind": "computed",
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "ratio_to_report(total_started_pro_subscription_rows_b4976422, [month_of_timestamp_d34c4e80])"
+            },
+            "column_kind": "computed"
+          }
+        ],
+        "pivot": [],
+        "parent_filters": [],
+        "order": [
+          {
+            "column_id": "month_of_timestamp_d34c4e80",
+            "order_direction": "desc"
+          },
+          {
+            "column_id": "last_touch_channel_d69f8ff0",
+            "order_direction": "asc"
+          }
+        ],
+        "plots": []
+      }
+    ],
+    "order": [
+      {
+        "column_id": "ts81287f4f",
+        "order_direction": "desc"
+      }
+    ],
+    "activity_stream": "activity_stream",
+    "swapped_ids": [
+      {
+        "group_slug": "last_before_campaign_name95646bba",
+        "old_id": "last_before_campaign_name95646bba_timestamp",
+        "new_id": "last_before_campaign_name_9ffbb6dc"
+      }
+    ],
+    "columns_order": {
+      "last_before_campaign_name95646bba": {
+        "order": [
+          "activity_id77d8e677",
+          "ts81287f4f",
+          "customer30481ab3",
+          "feature_1c64f4e3a",
+          "feature_20672ba08",
+          "activity_occurrencefd34c205",
+          "ts40440760",
+          "did_started_sessiondb9f5732",
+          "day_started_session485e1475",
+          "utm_source_channel_grouping168c8753",
+          "ts6341a8e8",
+          "did_clicked_email_linke8597c1c",
+          "day_clicked_email_linkd6734adb",
+          "linkc13576e7",
+          "feature_260b7d153",
+          "ts8463344a",
+          "did_paymentfc1f3d35",
+          "day_paymentf74a590b",
+          "feature_3a438eca0",
+          "activity_occurrencef3779f80",
+          "revenue_impactac32fbf9",
+          "feature_1757b1188",
+          "month_of_timestamp23368073"
+        ],
+        "left_pinned": [],
+        "right_pinned": []
+      },
+      "last_touch_channel3b194e1e": {
+        "order": [
+          "last_before_campaign_name_9ffbb6dc",
+          "total_started_pro_subscription_rows_744d4f61",
+          "total_started_session_0e67f11b",
+          "percent_of_started_session_41afb58a",
+          "average_days_from_started_session_374bcbbe",
+          "total_email_link_clicked_aaf67421",
+          "average_days_from_email_link_clicked_15a75191",
+          "percent_of_email_link_clicked35ff6d1d",
+          "total_payment_transactions_7f7988bc",
+          "percent_of_payment_transactions_c00cfe24",
+          "average_days_from_payment_transactions_d907404f",
+          "total_last_before_payment_transactions_revenue_impact_ab2e619b",
+          "month_of_timestampe67e5a0d"
+        ],
+        "left_pinned": [],
+        "right_pinned": []
+      },
+      "last_before_email_link_clicked_link5706e3f1": {
+        "order": [
+          "last_before_campaign_name_9ffbb6dc",
+          "total_started_pro_subscription_rows_744d4f61",
+          "total_started_session_0e67f11b",
+          "percent_of_started_session_41afb58a",
+          "average_days_from_started_session_374bcbbe",
+          "total_email_link_clicked_aaf67421",
+          "average_days_from_email_link_clicked_15a75191",
+          "percent_of_email_link_clicked35ff6d1d",
+          "total_payment_transactions_7f7988bc",
+          "percent_of_payment_transactions_c00cfe24",
+          "average_days_from_payment_transactions_d907404f",
+          "total_last_before_payment_transactions_revenue_impact_ab2e619b"
+        ],
+        "left_pinned": [],
+        "right_pinned": []
+      },
+      "parent": {
+        "order": [
+          "last_before_campaign_name_9ffbb6dc",
+          "total_started_pro_subscription_rows_744d4f61",
+          "total_started_session_0e67f11b",
+          "percent_of_started_session_41afb58a",
+          "average_days_from_started_session_374bcbbe",
+          "total_email_link_clicked_aaf67421",
+          "average_days_from_email_link_clicked_15a75191",
+          "percent_of_email_link_clicked35ff6d1d",
+          "total_payment_transactions_7f7988bc",
+          "percent_of_payment_transactions_c00cfe24",
+          "average_days_from_payment_transactions_d907404f",
+          "total_last_before_payment_transactions_revenue_impact_ab2e619b"
+        ],
+        "left_pinned": [],
+        "right_pinned": []
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#makeHighlightData should highlight text that matches the search value 1`] = `
+<DocumentFragment>
+  <span>
+    <span
+      class="highlighted-value"
+    >
+      narra
+    </span>
+    tor
+  </span>
+</DocumentFragment>
+`;
+
+exports[`#makeHighlightData should not highlight any text if there is no match: "narrator" 1`] = `
+<DocumentFragment>
+  narrator
+</DocumentFragment>
+`;

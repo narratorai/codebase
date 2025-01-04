@@ -1,0 +1,39 @@
+# Query used at the GET /api/analyses and GET /api/dashboards endpoints
+
+query GetAllNarratives($company_id: uuid!, $user_id: uuid!, $type: narrative_types_enum!, $limit: Int!, $offset: Int!) {
+  narrative_aggregate(where: { company_id: { _eq: $company_id }, state: { _neq: archived }, type: { _eq: $type } }) {
+    aggregate {
+      totalCount: count
+    }
+  }
+  narratives: narrative(
+    where: { company_id: { _eq: $company_id }, state: { _neq: archived }, type: { _eq: $type } }
+    order_by: [{ updated_at: desc }]
+    limit: $limit
+    offset: $offset
+  ) {
+    id
+    slug
+    name
+    description
+    state
+    snapshots: narrative_runs(order_by: [{ created_at: desc }], limit: 10) {
+      id
+      created_at
+    }
+    tags(where: { company_tag: { _or: [{ user_id: { _eq: $user_id } }, { user_id: { _is_null: true } }] } }) {
+      id
+      tag: company_tag {
+        id
+        name: tag
+      }
+      created_at
+    }
+    updated_by: updated_by_user {
+      id
+      email
+    }
+    created_at
+    updated_at
+  }
+}

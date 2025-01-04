@@ -1,0 +1,35 @@
+query GetAllActivitiesFull($company_id: uuid!) {
+  all_activities: activity(where: {company_id: {_eq: $company_id}}) {
+    category
+    description
+    id
+    name
+    slug
+    status
+    validated
+    next_index_at
+    updated_at
+    company_table {
+      activity_stream
+    }
+    activity_maintenances(where: {ended_at: {_is_null: true}}) {
+      started_at
+      notes
+      kind
+      id
+    }
+    column_renames {
+      id
+      name
+      has_data
+    }
+
+    transformations {
+      transformation {
+        id
+        name
+        slug
+      }
+    }
+  }
+}

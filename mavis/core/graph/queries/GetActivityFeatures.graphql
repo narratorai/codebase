@@ -1,0 +1,17 @@
+query GetActivityFeatures($table_id: uuid!) {
+  all_activities: activity(where: { table_id: { _eq: $table_id } }) {
+    column_renames {
+      id
+      label
+      type
+      name
+      has_data
+    }
+    slug
+    name
+    description
+    transformations {
+      transformation_id
+    }
+  }
+}

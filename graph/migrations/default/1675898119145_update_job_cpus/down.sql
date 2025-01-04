@@ -1,0 +1,3 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- UPDATE company_job SET batch_vcpus = NULL WHERE batch_vcpus = 1;

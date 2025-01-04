@@ -1,0 +1,29 @@
+table:
+  name: production_tranformation_sql_queries
+  schema: public
+object_relationships:
+  - name: transformation
+    using:
+      manual_configuration:
+        column_mapping:
+          transformation_id: id
+        insertion_order: null
+        remote_table:
+          name: transformation
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - id
+        - created_at
+        - updated_at
+        - sql
+        - notes
+        - updated_by
+        - transformation_id
+        - related_kind
+      filter:
+        transformation:
+          company_id:
+            _eq: X-Hasura-Company-Id

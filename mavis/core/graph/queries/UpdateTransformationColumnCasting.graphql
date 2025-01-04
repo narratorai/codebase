@@ -1,0 +1,8 @@
+mutation UpdateTransformationColumnCasting($id: uuid!, $casting: String!) {
+    update_column_renames_by_pk(
+        pk_columns: { id: $id }
+        _set: { casting: $casting }
+    ) {
+        id
+    }
+}

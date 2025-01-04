@@ -1,0 +1,5 @@
+subscription ListDatasetsNeedsUpdate($company_id: uuid!) {
+  dataset(where: { company_id: { _eq: $company_id } }) {
+    id
+  }
+}

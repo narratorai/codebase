@@ -1,0 +1,18 @@
+subscription ListDimTables($company_id: uuid!) {
+  dim_table(where: { company_id: { _eq: $company_id } }) {
+    id
+    table
+    join_key
+    schema
+    maintenances(where: { ended_at: { _is_null: true } }) {
+      id
+      kind
+      notes
+      started_at
+      ended_at
+      maintenance_kind {
+        description
+      }
+    }
+  }
+}

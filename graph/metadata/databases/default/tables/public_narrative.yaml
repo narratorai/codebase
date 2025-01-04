@@ -1,0 +1,206 @@
+table:
+  name: narrative
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: company_id
+  - name: company_category
+    using:
+      foreign_key_constraint_on: category_id
+  - name: company_task
+    using:
+      foreign_key_constraint_on: task_id
+  - name: metric
+    using:
+      foreign_key_constraint_on: metric_id
+  - name: requested_by_user
+    using:
+      foreign_key_constraint_on: requested_by
+  - name: updated_by_user
+    using:
+      foreign_key_constraint_on: updated_by
+  - name: user
+    using:
+      foreign_key_constraint_on: created_by
+array_relationships:
+  - name: actions
+    using:
+      manual_configuration:
+        column_mapping:
+          id: related_to_id
+        insertion_order: null
+        remote_table:
+          name: narrative_company_timelines
+          schema: public
+  - name: compiled_versions
+    using:
+      manual_configuration:
+        column_mapping:
+          id: narrative_id
+        insertion_order: null
+        remote_table:
+          name: compiled_narratives
+          schema: public
+  - name: dependent_narratives
+    using:
+      foreign_key_constraint_on:
+        column: narrative_id
+        table:
+          name: narrative_narratives
+          schema: public
+  - name: integrations
+    using:
+      foreign_key_constraint_on:
+        column: narrative_id
+        table:
+          name: narrative_integrations
+          schema: public
+  - name: narrative_datasets
+    using:
+      foreign_key_constraint_on:
+        column: narrative_id
+        table:
+          name: narrative_datasets
+          schema: public
+  - name: narrative_runs
+    using:
+      manual_configuration:
+        column_mapping:
+          company_id: company_id
+          slug: narrative_slug
+        insertion_order: null
+        remote_table:
+          name: narrative_runs
+          schema: public
+  - name: tags
+    using:
+      manual_configuration:
+        column_mapping:
+          id: narrative_id
+        insertion_order: null
+        remote_table:
+          name: narrative_tags
+          schema: public
+  - name: team_permissions
+    using:
+      manual_configuration:
+        column_mapping:
+          id: narrative_id
+        insertion_order: null
+        remote_table:
+          name: narrative_team_permissions
+          schema: public
+  - name: versions
+    using:
+      manual_configuration:
+        column_mapping:
+          id: narrative_id
+        insertion_order: null
+        remote_table:
+          name: narrative_versions
+          schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - created_by:
+              _eq: X-Hasura-User-Id
+      columns:
+        - category_id
+        - company_id
+        - created_by
+        - description
+        - name
+        - requested_by
+        - slug
+        - type
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - category_id
+        - company_id
+        - created_at
+        - created_by
+        - description
+        - id
+        - last_config_updated_at
+        - name
+        - requested_by
+        - slug
+        - snapshot_updated_at
+        - state
+        - task_id
+        - template_id
+        - type
+        - updated_at
+        - updated_by
+      filter:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - _or:
+              - state:
+                  _eq: live
+              - created_by:
+                  _eq: X-Hasura-User-Id
+      allow_aggregations: true
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - category_id
+        - description
+        - last_viewed_at
+        - name
+        - requested_by
+        - state
+        - type
+      filter:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - _or:
+              - user:
+                  id:
+                    _eq: X-Hasura-User-Id
+              - _exists:
+                  _table:
+                    name: company_user
+                    schema: public
+                  _where:
+                    _and:
+                      - company_id:
+                          _eq: X-Hasura-Company-Id
+                      - user_id:
+                          _eq: X-Hasura-User-Id
+                      - role:
+                          _eq: admin
+      check: null
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - _or:
+              - user:
+                  id:
+                    _eq: X-Hasura-User-Id
+              - _exists:
+                  _table:
+                    name: company_user
+                    schema: public
+                  _where:
+                    _and:
+                      - company_id:
+                          _eq: X-Hasura-Company-Id
+                      - user_id:
+                          _eq: X-Hasura-User-Id
+                      - role:
+                          _eq: admin

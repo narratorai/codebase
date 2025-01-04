@@ -1,0 +1,4 @@
+table:
+  name: clouds
+  schema: public
+is_enum: true

@@ -1,0 +1,14 @@
+mutation InsertCompanyOrg(
+    $company_id: uuid!
+    $org_id: String!
+) {
+    insert_company_auth0_one(
+        object: {
+            company_id: $company_id
+            org_id: $org_id
+        }
+    ) {
+        id
+        org_id
+    }
+}

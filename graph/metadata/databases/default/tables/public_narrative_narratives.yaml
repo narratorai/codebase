@@ -1,0 +1,27 @@
+table:
+  name: narrative_narratives
+  schema: public
+object_relationships:
+  - name: depends_on_narrative
+    using:
+      foreign_key_constraint_on: depends_on_narrative_id
+  - name: narrative
+    using:
+      foreign_key_constraint_on: narrative_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - depends_on_narrative_id
+        - id
+        - narrative_id
+        - updated_at
+      filter:
+        _and:
+          - narrative:
+              company_id:
+                _eq: X-Hasura-Company-Id
+          - depends_on_narrative:
+              company_id:
+                _eq: X-Hasura-Company-Id

@@ -1,0 +1,56 @@
+fragment NarrativeRunsFields on narrative_runs {
+  id
+  created_at
+  narrative_slug
+  is_actionable
+  s3_key
+  narrative {
+    name
+    slug
+    state
+    updated_at
+    task_id
+    id
+    description
+    company_category {
+      category
+      created_at
+      id
+    }
+  }
+}
+
+query NarrativeRunsDateRange($narrative_slug: String!, $company_id: uuid!, $from: timestamptz!, $to: timestamptz!) {
+  latest: narrative_runs(
+    where: { narrative: { slug: { _eq: $narrative_slug }, company_id: { _eq: $company_id } } }
+    order_by: [{ created_at: desc }]
+    limit: 20
+  ) {
+    id
+    ...NarrativeRunsFields
+  }
+  range: narrative_runs(
+    where: {
+      narrative: { slug: { _eq: $narrative_slug }, company_id: { _eq: $company_id } }
+      created_at: { _gte: $from, _lte: $to }
+    }
+    order_by: [{ created_at: desc }]
+  ) {
+    id
+    ...NarrativeRunsFields
+  }
+}
+
+subscription NarrativeRunsUpdates($narrative_slug: String!, $company_id: uuid!, $from: timestamptz!) {
+  narrative_runs(
+    where: {
+      narrative: { slug: { _eq: $narrative_slug }, company_id: { _eq: $company_id } }
+      created_at: { _gt: $from }
+    }
+    order_by: [{ created_at: desc }]
+    limit: 1
+  ) {
+    id
+    ...NarrativeRunsFields
+  }
+}

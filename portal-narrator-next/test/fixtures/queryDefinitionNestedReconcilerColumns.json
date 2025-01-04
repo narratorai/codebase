@@ -1,0 +1,755 @@
+{
+  "override_sql": null,
+  "query": {
+    "activities": [
+      {
+        "did": true,
+        "kind": "limiting",
+        "occurence_after_time": false,
+        "occurrence": "first",
+        "occurrence_value": 1,
+        "relationships": [],
+        "config": {
+          "activity_stream": "activity_stream",
+          "customer_table": "customer",
+          "enrichment_table": null,
+          "has_source": true
+        },
+        "slug": "purchased_product",
+        "filters": [],
+        "id": "viewed_card_DWvjSn69"
+      },
+      {
+        "did": true,
+        "kind": "append",
+        "occurence_after_time": false,
+        "occurrence": "metric",
+        "occurrence_value": "COUNT",
+        "relationships": [],
+        "config": {
+          "activity_stream": "activity_stream",
+          "customer_table": "customer",
+          "enrichment_table": null,
+          "has_source": true
+        },
+        "slug": "purchased_product",
+        "filters": [],
+        "id": "viewed_card_P4H8tnK1"
+      },
+      {
+        "did": true,
+        "kind": "append",
+        "occurence_after_time": false,
+        "occurrence": "first",
+        "occurrence_value": 1,
+        "relationships": [],
+        "config": {
+          "activity_stream": "activity_stream",
+          "customer_table": "customer",
+          "enrichment_table": null,
+          "has_source": true
+        },
+        "slug": "viewed_card",
+        "filters": [],
+        "id": "viewed_card_WOGriqjP"
+      },
+      {
+        "did": true,
+        "kind": "append",
+        "occurence_after_time": false,
+        "occurrence": "last",
+        "occurrence_value": 1,
+        "relationships": [],
+        "config": {
+          "activity_stream": "activity_stream",
+          "customer_table": "customer",
+          "enrichment_table": null,
+          "has_source": true
+        },
+        "slug": "purchased_product",
+        "filters": [],
+        "id": "viewed_card_qnzljvBp"
+      }
+    ],
+    "columns": [
+      {
+        "id": "limiting_viewed_card_DWvjSn69_ts",
+        "filters": [],
+        "label": "purchased_product_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "viewed_card_DWvjSn69",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "timestamp",
+        "mavis_type": "timestamp"
+      },
+      {
+        "id": "limiting_viewed_card_DWvjSn69_customer",
+        "filters": [],
+        "label": "customer",
+        "name": "customer",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "viewed_card_DWvjSn69",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "string",
+        "mavis_type": "string"
+      },
+      {
+        "id": "limiting_viewed_card_DWvjSn69_join_customer",
+        "filters": [],
+        "label": "unique_customer_identifier",
+        "name": "join_customer",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "viewed_card_DWvjSn69",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "string",
+        "mavis_type": "string"
+      },
+      {
+        "id": "append_viewed_card_P4H8tnK1_activity_id",
+        "filters": [],
+        "label": "metric_purchased_product_id",
+        "name": "activity_id",
+        "output": true,
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "viewed_card_P4H8tnK1",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "integer",
+        "mavis_type": "string"
+      },
+      {
+        "id": "append_viewed_card_WOGriqjP_ts",
+        "filters": [],
+        "label": "first_viewed_card_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "viewed_card_WOGriqjP",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "timestamp",
+        "mavis_type": "timestamp"
+      },
+      {
+        "id": "append_viewed_card_qnzljvBp_ts",
+        "filters": [],
+        "label": "last_purchased_product_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "viewed_card_qnzljvBp",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "timestamp",
+        "mavis_type": "timestamp"
+      },
+      {
+        "id": "viewing_months",
+        "filters": [],
+        "label": "active_weeks_with_nulls",
+        "name": "",
+        "output": false,
+        "source_details": {
+          "kind": "time_between",
+          "column_id": "limiting_viewed_card_DWvjSn69_ts",
+          "second_column_id": "append_viewed_card_qnzljvBp_ts",
+          "segmentation": "week"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "active_weeks_filter",
+        "filters": [],
+        "label": "active weeks filter",
+        "name": "",
+        "output": false,
+        "source_details": {
+          "kind": "ifttt",
+          "cases": [
+            {
+              "filters": [
+                {
+                  "column_id": "limiting_viewed_card_DWvjSn69_ts",
+                  "filter": {
+                    "operator": "greater_than",
+                    "value": "viewing_months",
+                    "kind": "column_id",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "viewing_months",
+              "value_kind": "column_id"
+            }
+          ],
+          "value_kind": "number",
+          "value": "0"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "active_weeks",
+        "filters": [],
+        "label": "active_weeks",
+        "name": "",
+        "output": false,
+        "source_details": {
+          "kind": "ifttt",
+          "cases": [
+            {
+              "filters": [
+                {
+                  "column_id": "viewing_months",
+                  "filter": {
+                    "operator": "not_is_null",
+                    "value": "",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "viewing_months",
+              "value_kind": "column_id"
+            }
+          ],
+          "value_kind": "number",
+          "value": "0"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "views_per_week",
+        "filters": [],
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "math_operation_multi_column",
+          "column_id": "append_viewed_card_P4H8tnK1_activity_id",
+          "operation": "/",
+          "second_column_id": "active_weeks_plus_1"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null,
+        "label": "views_per_week"
+      },
+      {
+        "id": "active_weeks_plus_1",
+        "filters": [],
+        "label": "active_weeks_plus_1",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "math_operation",
+          "column_id": "active_weeks",
+          "operation": "+",
+          "number": "1"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "decimated_views_per_week",
+        "filters": [
+          {
+            "kind": "column_id",
+            "value": "active_weeks",
+            "operator": "greater_than",
+            "or_null": false
+          }
+        ],
+        "label": "decimated_views_per_week_old",
+        "name": "",
+        "output": false,
+        "source_details": {
+          "kind": "number_decimate",
+          "column_id": "views_per_week",
+          "number": "5"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "decimated_views_per_week_ybQOkigP",
+        "filters": [],
+        "label": "decimated_views_per_week",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "ifttt",
+          "cases": [
+            {
+              "filters": [
+                {
+                  "column_id": "append_viewed_card_P4H8tnK1_activity_id",
+                  "filter": {
+                    "operator": "is_null",
+                    "value": "",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value_kind": "number",
+              "value": "-1"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "views_per_week",
+                  "filter": {
+                    "operator": "greater_than_equal",
+                    "value": "150",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "150",
+              "value_kind": "number"
+            }
+          ],
+          "value_kind": "column_id",
+          "value": "decimated_views_per_week"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "revenue_generated",
+        "filters": [
+          {
+            "kind": "column_id",
+            "value": "decimated_views_per_week_ybQOkigP",
+            "operator": "greater_than",
+            "or_null": false
+          }
+        ],
+        "label": "revenue_generated",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "math_operation",
+          "column_id": "append_viewed_card_P4H8tnK1_activity_id",
+          "operation": "*",
+          "number": ".1"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "signed_up_at_XWYCNKn7",
+        "filters": [],
+        "label": "month_of_first_purchase",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_truncate",
+          "column_id": "limiting_viewed_card_DWvjSn69_ts",
+          "resolution": "1",
+          "segmentation": "month"
+        },
+        "source_kind": "computed",
+        "type": "timestamp",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "viewer_segmentation",
+        "filters": [],
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "ifttt",
+          "cases": [
+            {
+              "filters": [
+                {
+                  "column_id": "views_per_week",
+                  "filter": {
+                    "operator": "equal",
+                    "value": "0",
+                    "kind": "value",
+                    "or_null": true
+                  }
+                }
+              ],
+              "value": "0 Inactive",
+              "value_kind": "string"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "views_per_week",
+                  "filter": {
+                    "operator": "less_than_equal",
+                    "value": "5",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "0 -5 Active",
+              "value_kind": "string"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "views_per_week",
+                  "filter": {
+                    "operator": "less_than_equal",
+                    "value": "30",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value_kind": "string",
+              "value": "6 - 30 Super"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "views_per_week",
+                  "filter": {
+                    "operator": "less_than_equal",
+                    "value": "85",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value_kind": "string",
+              "value": "31 - 85 Super Duper"
+            }
+          ],
+          "value_kind": "string",
+          "value": "86+ Elite"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null,
+        "label": "viewer_segmentation"
+      }
+    ],
+    "activity_stream": "activity_stream",
+    "all_groups": [
+      {
+        "name": "Views Per Week ",
+        "slug": "views_per_week",
+        "_column_ids": [
+          "decimated_views_per_week_ybQOkigP"
+        ],
+        "columns": [
+          {
+            "id": "views_per_week_decimated_views_per_week_ybQOkigP",
+            "filters": [],
+            "label": "decimated_views_per_week",
+            "name": "",
+            "output": true,
+            "type": "number",
+            "column_id": "decimated_views_per_week_ybQOkigP",
+            "pivoted": false
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "views_per_week_cumulative_revenue_generated",
+            "filters": [],
+            "label": "cumulative_revenue_generated",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "running_total",
+              "column_id": "metric_revenue_generated_sum_b_rcbgv_ry",
+              "order": [
+                {
+                  "column_id": "views_per_week_decimated_views_per_week_ybQOkigP",
+                  "order_direction": "desc"
+                }
+              ]
+            },
+            "source_kind": "computed",
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "views_per_week_average_revenue_per_customer",
+            "filters": [],
+            "label": "average_revenue_per_customer",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "math_operation_multi_column",
+              "column_id": "views_per_week_cumulative_revenue_generated",
+              "operation": "/",
+              "second_column_id": "views_per_week_cumulative_customer_count"
+            },
+            "source_kind": "computed",
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "views_per_week_percent_of_total_customers",
+            "filters": [],
+            "label": "percent_of_total_customers",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "percent_of_total",
+              "column_id": "metrics_total_events"
+            },
+            "source_kind": "computed",
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "views_per_week_cumulative_percent_of_total_customers",
+            "filters": [],
+            "label": "cumulative_percent_of_total_customers",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "running_total",
+              "column_id": "views_per_week_percent_of_total_customers",
+              "order": [
+                {
+                  "column_id": "views_per_week_decimated_views_per_week_ybQOkigP",
+                  "order_direction": "desc"
+                }
+              ]
+            },
+            "source_kind": "computed",
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "views_per_week_revenue_diff",
+            "filters": [],
+            "label": "revenue_diff",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "{views_per_week_average_revenue_per_customer} - lag_all(\n{views_per_week_average_revenue_per_customer},\n{views_per_week_decimated_views_per_week_ybQOkigP})"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "views_per_week_cumulative_customer_count",
+            "filters": [],
+            "label": "cumulative_customer_count",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "running_total",
+              "column_id": "metrics_total_events",
+              "order": [
+                {
+                  "column_id": "views_per_week_decimated_views_per_week_ybQOkigP",
+                  "order_direction": "desc"
+                }
+              ]
+            },
+            "source_kind": "computed",
+            "type": "number",
+            "_auto_generated_by": null
+          }
+        ],
+        "metrics": [
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metrics_total_events",
+            "label": "total_customers",
+            "agg_function": "COUNT_ALL",
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metric_revenue_generated_sum_b_rcbgv_ry",
+            "label": "revenue_generated",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "revenue_generated",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          }
+        ],
+        "pivot": [],
+        "order": [
+          {
+            "column_id": "views_per_week_decimated_views_per_week_ybQOkigP",
+            "order_direction": "asc"
+          }
+        ],
+        "parent_filters": [
+          {
+            "filter": {
+              "operator": "not_equal",
+              "value": "-1",
+              "kind": "value",
+              "or_null": false
+            },
+            "column_id": "decimated_views_per_week_ybQOkigP"
+          }
+        ],
+        "_fieldIndex": 0,
+        "_isEdit": true
+      },
+      {
+        "name": "Viewer Segmentation",
+        "slug": "viewer_segmentation",
+        "_column_ids": [
+          "viewer_segmentation"
+        ],
+        "columns": [
+          {
+            "id": "viewer_segmentation_viewer_segmentation",
+            "filters": [],
+            "label": "viewer_segmentation",
+            "name": "",
+            "output": true,
+            "type": "string",
+            "column_id": "viewer_segmentation",
+            "pivoted": false
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "viewer_segmentation_revenue_per_customer",
+            "filters": [],
+            "label": "avg_revenue_per_customer",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "math_operation_multi_column",
+              "column_id": "metric_revenue_generated_sum_4_qp_51_dtr",
+              "operation": "/",
+              "second_column_id": "metric_limiting_viewed_card_d_wvj_sn_69_customer_count_distinct_a_1_owbrh_z"
+            },
+            "source_kind": "computed",
+            "type": "number",
+            "_auto_generated_by": null
+          }
+        ],
+        "metrics": [
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metrics_total_events",
+            "label": "total_viewers",
+            "agg_function": "COUNT_ALL",
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metric_revenue_generated_sum_4_qp_51_dtr",
+            "label": "sum_revenue_generated",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "revenue_generated",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metric_limiting_viewed_card_d_wvj_sn_69_customer_count_distinct_a_1_owbrh_z",
+            "label": "count_distinct_viewers",
+            "agg_function": "COUNT_DISTINCT",
+            "output": true,
+            "column_id": "limiting_viewed_card_DWvjSn69_customer",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metric_revenue_generated_median_ud_9_c_4_isx",
+            "label": "median_revenue_per_customer",
+            "agg_function": "MEDIAN",
+            "output": true,
+            "column_id": "revenue_generated",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          }
+        ],
+        "pivot": [],
+        "order": [
+          {
+            "column_id": "metrics_total_events",
+            "order_direction": "desc"
+          }
+        ],
+        "parent_filters": [
+          {
+            "filter": {
+              "operator": "greater_than",
+              "value": "0",
+              "kind": "value",
+              "or_null": false
+            },
+            "column_id": "append_viewed_card_P4H8tnK1_activity_id"
+          }
+        ]
+      }
+    ],
+    "order": [
+      {
+        "column_id": "limiting_viewed_card_DWvjSn69_ts",
+        "order_direction": "desc"
+      }
+    ]
+  }
+}

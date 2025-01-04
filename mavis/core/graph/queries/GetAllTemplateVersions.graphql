@@ -1,0 +1,18 @@
+query GetAllTemplateVersions($name: String) {
+  narrative_template(where: {name: {_eq: $name}}, order_by: [{ global_version: desc }, { customer_iteration: desc }, { local_iteration: desc }], limit: 100) {
+    id
+    name
+    question
+    created_by
+    description
+    state
+    global_version
+    display_companies_using
+    kind
+    customer_iteration
+    local_iteration
+    narrative_template_kind {
+      value
+    }
+  }
+}

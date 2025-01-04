@@ -1,0 +1,5 @@
+# Ignore files with AUTH0_KEYWORD_REPLACE_MAPPINGS that break prettier parsing
+
+config/connections/GSuiteInternal.json
+config/connections/google-oauth2.json
+config/connections/windowslive.json

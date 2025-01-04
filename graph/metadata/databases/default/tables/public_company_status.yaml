@@ -1,0 +1,4 @@
+table:
+  name: company_status
+  schema: public
+is_enum: true

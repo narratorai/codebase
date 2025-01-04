@@ -1,0 +1,20 @@
+query GetCompanyUsers($company_id: uuid!) {
+  company_user(where: {company_id: {_eq: $company_id}}) {
+    id
+    user_id
+    first_name
+    last_name
+    phone
+    user {
+      email
+    }
+    team_users {
+      team_id
+    }
+    user_access_roles {
+      role
+    }
+    created_at
+    updated_at
+  }
+}

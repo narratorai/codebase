@@ -1,0 +1,10 @@
+apiVersion: v2
+name: argo-rollouts
+description: A Helm chart for Argo Rollouts
+type: application
+version: 0.1.0
+appVersion: "1.0"
+dependencies:
+- name: argo-workflows
+  version: 0.30.0
+  repository: https://argoproj.github.io/argo-helm

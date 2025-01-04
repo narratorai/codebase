@@ -1,0 +1,10 @@
+query GetTemplate($id: uuid!) {
+  narrative_template_by_pk(id: $id) {
+    id
+    name
+    question
+    type
+    description
+    template
+  }
+}

@@ -1,0 +1,9 @@
+<svg viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.5 11V14C19.5 15.0665 18.5665 16 17.5 16H15L9.5 19V16H7.5C6.43352 16 5.5 15.0665 5.5 14V7C5.5 5.93352 6.43352 5 7.5 5H12.5M14 7.5C14 7.5 16.5 7.60318 16.5 5C16.5 7.60318 19 7.5 19 7.5C19 7.5 16.5 7.5 16.5 10C16.5 7.5 14 7.5 14 7.5ZM11.5 9.5C11.5 10.6471 11.8529 11 13 11C11.8529 11 11.5 11.3529 11.5 12.5C11.5 11.3529 11.1471 11 10 11C11.1471 11 11.5 10.6471 11.5 9.5Z" stroke="url(#gradient_chat_7310)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <defs>
+        <linearGradient id="gradient_chat_7310" x1="5.5" y1="5" x2="20.8675" y2="16.8278" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#D759F7"/>
+        <stop offset="1" stop-color="#E84861"/>
+        </linearGradient>
+    </defs>
+</svg>

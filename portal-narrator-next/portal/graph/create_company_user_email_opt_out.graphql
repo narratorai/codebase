@@ -1,0 +1,11 @@
+mutation CreateCompanyUserEmailOptOut($email_opt_out: Boolean!, $company_user_id: uuid!) {
+  insert_company_user_preferences(
+    objects: { email_opt_out: $email_opt_out, company_user_id: $company_user_id }
+    on_conflict: { constraint: company_user_preferences_user_id_key, update_columns: email_opt_out }
+  ) {
+    returning {
+      id
+      email_opt_out
+    }
+  }
+}

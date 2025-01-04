@@ -1,0 +1,6 @@
+query GetViewTag($company_id: uuid!) {
+  company_tags(where: {company_id: {_eq: $company_id}, tag: {_eq: "recently_viewed"}}) {
+    id
+    tag
+  }
+}

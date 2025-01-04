@@ -1,0 +1,5 @@
+mutation DeleteDataset($id: uuid!) {
+  delete_dataset_by_pk(id: $id) {
+    id
+  }
+}

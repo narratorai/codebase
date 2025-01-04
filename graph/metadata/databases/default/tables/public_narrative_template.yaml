@@ -1,0 +1,75 @@
+table:
+  name: narrative_template
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: company_id
+  - name: narrative_template_kind
+    using:
+      foreign_key_constraint_on: kind
+  - name: user
+    using:
+      manual_configuration:
+        column_mapping:
+          created_by: id
+        insertion_order: null
+        remote_table:
+          name: user
+          schema: public
+array_relationships:
+  - name: narratives
+    using:
+      manual_configuration:
+        column_mapping:
+          id: template_id
+        insertion_order: null
+        remote_table:
+          name: narrative
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - description
+        - display_companies_using
+        - id
+        - in_free_tier
+        - name
+        - preview_narrative_json
+        - question
+        - state
+        - template
+        - updated_at
+      filter:
+        _or:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - state:
+              _eq: published_globally
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - description
+        - name
+        - question
+        - template
+      filter:
+        _and:
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin
+          - company_id:
+              _eq: X-Hasura-Company-Id
+      check: null

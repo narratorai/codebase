@@ -1,0 +1,59 @@
+query TransformationIndexWDependency($company_id: uuid!) {
+  all_transformations: transformation(where: {company_id: {_eq: $company_id}}, order_by: [{ next_resync_at: asc_nulls_last }]) {
+    id
+    kind
+    updated_at
+    name
+    next_resync_at
+    last_diff_data_and_insert_at
+    has_source
+    is_aliasing
+    remove_customers
+    mutable_day_window
+    delete_window
+    table
+    task_id
+    slug
+    update_type
+    column_renames {
+        name
+    }
+    depends_on_transformations {
+      depends_on_transformation_id
+    }
+    activities {
+      activity {
+        id
+        slug
+        row_count
+        name
+        activity_maintenances(where: {ended_at: {_is_null: true}}) {
+          started_at
+          notes
+          kind
+          id
+        }
+      }
+    }
+    run_after_transformations {
+      run_after_transformation_id
+    }
+    production_queries_aggregate {
+      aggregate {
+        count
+      }
+    }
+    transformation_maintenances(where: {ended_at: {_is_null: true}}) {
+      started_at
+      notes
+      kind
+      id
+    }
+
+    query_updates(where: {rows_inserted: {_gt: 0}}, order_by: {processed_at: desc_nulls_last}, limit: 1) {
+      rows_inserted
+      from_sync_time
+      to_sync_time
+    }
+  }
+}

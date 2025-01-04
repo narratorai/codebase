@@ -1,0 +1,472 @@
+{
+    "override_sql": null,
+    "query": {
+        "activities": [
+            {
+                "did": true,
+                "kind": "limiting",
+                "occurence_after_time": false,
+                "occurrence": "all",
+                "relationships": [],
+                "config": {
+                    "activity_stream": "mv_activity_stream",
+                    "customer_table": null,
+                    "enrichment_table": "mv_enriched_pages",
+                    "has_source": true
+                },
+                "slug": "session"
+            },
+            {
+                "did": true,
+                "kind": "conversion",
+                "occurence_after_time": false,
+                "occurrence": "first",
+                "relationships": [],
+                "config": {
+                    "activity_stream": "mv_activity_stream",
+                    "customer_table": null,
+                    "enrichment_table": null,
+                    "has_source": false
+                },
+                "slug": "ordered_impression_kit"
+            }
+        ],
+        "columns": [
+            {
+                "id": "limiting_session_ts",
+                "filters": [],
+                "label": "session_at",
+                "name": "ts",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "limiting",
+                    "activity_slug": "session"
+                },
+                "source_kind": "activity",
+                "type": "timestamp"
+            },
+            {
+                "id": "limiting_session_customer",
+                "filters": [],
+                "label": "email",
+                "name": "customer",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "limiting",
+                    "activity_slug": "session"
+                },
+                "source_kind": "activity",
+                "type": "string"
+            },
+            {
+                "id": "limiting_session_utm_campaign",
+                "filters": [],
+                "label": "utm_campaign",
+                "name": "utm_campaign",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "limiting",
+                    "activity_slug": "session"
+                },
+                "source_kind": "enrichment",
+                "type": "string"
+            },
+            {
+                "id": "limiting_session_utm_source",
+                "filters": [],
+                "label": "utm_source",
+                "name": "utm_source",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "limiting",
+                    "activity_slug": "session"
+                },
+                "source_kind": "enrichment",
+                "type": "string"
+            },
+            {
+                "id": "limiting_session_session_source",
+                "filters": [],
+                "label": "session_source",
+                "name": "session_source",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "limiting",
+                    "activity_slug": "session"
+                },
+                "source_kind": "enrichment",
+                "type": "string"
+            },
+            {
+                "id": "limiting_session_session_kind",
+                "filters": [],
+                "label": "session_kind",
+                "name": "session_kind",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "limiting",
+                    "activity_slug": "session"
+                },
+                "source_kind": "enrichment",
+                "type": "string"
+            },
+            {
+                "id": "customer_table_city",
+                "filters": [],
+                "label": "city",
+                "name": "city",
+                "output": true,
+                "source_details": {
+                    "table": "v_customers"
+                },
+                "source_kind": "customer",
+                "type": "string"
+            },
+            {
+                "id": "customer_table_zip",
+                "filters": [],
+                "label": "zip",
+                "name": "zip",
+                "output": true,
+                "source_details": {
+                    "table": "v_customers"
+                },
+                "source_kind": "customer",
+                "type": "string"
+            },
+            {
+                "id": "customer_table_doctor_email",
+                "filters": [],
+                "label": "doctor_email",
+                "name": "doctor_email",
+                "output": true,
+                "source_details": {
+                    "table": "v_customers"
+                },
+                "source_kind": "customer",
+                "type": "string"
+            },
+            {
+                "id": "conversion_ordered_impression_kit_ts",
+                "filters": [],
+                "label": "converted_to_ordered_impression_kit_at",
+                "name": "ts",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "conversion",
+                    "activity_slug": "ordered_impression_kit"
+                },
+                "source_kind": "activity",
+                "type": "timestamp"
+            },
+            {
+                "id": "converted_to_ordered_impression_kit",
+                "filters": [],
+                "label": "converted_to_ordered_impression_kit",
+                "name": "",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "conversion",
+                    "activity_slug": "ordered_impression_kit",
+                    "cases": [
+                        {
+                            "column_id": "conversion_ordered_impression_kit_ts",
+                            "filter": {
+                                "operator": "is_not_null",
+                                "value": null
+                            },
+                            "value": 1,
+                            "value_kind": "number"
+                        }
+                    ],
+                    "kind": "ifttt",
+                    "value": 0,
+                    "value_kind": "number"
+                },
+                "source_kind": "computed",
+                "type": "boolean"
+            },
+            {
+                "id": "days_to_ordered_impression_kit",
+                "filters": [],
+                "label": "days_to_ordered_impression_kit",
+                "name": "",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "conversion",
+                    "activity_slug": "ordered_impression_kit",
+                    "column_id": "limiting_session_ts",
+                    "kind": "time_between",
+                    "second_column_id": "conversion_ordered_impression_kit_ts",
+                    "segmentation": "days"
+                },
+                "source_kind": "computed",
+                "type": "number"
+            },
+            {
+                "id": "add_time",
+                "filters": [
+                    {
+                        "operator": "greater_than",
+                        "value": "conversion_ordered_impression_kit_ts",
+                        "kind": "column_id",
+                        "or_null": false
+                    }
+                ],
+                "label": "add_time",
+                "name": "",
+                "output": true,
+                "source_details": {
+                    "kind": "time_add",
+                    "column_id": "limiting_session_ts",
+                    "number": "5",
+                    "segmentation": "minute"
+                },
+                "source_kind": "computed",
+                "type": "timestamp"
+            },
+            {
+                "id": "truncate_added_time",
+                "filters": [],
+                "label": "truncate_added_time",
+                "name": "",
+                "output": true,
+                "source_details": {
+                    "kind": "time_truncate",
+                    "column_id": "add_time",
+                    "resolution": "1",
+                    "segmentation": "hour"
+                },
+                "source_kind": "computed",
+                "type": "timestamp"
+            },
+            {
+                "id": "replace_doctor_email",
+                "filters": [],
+                "label": "replace_doctor_email",
+                "name": "",
+                "output": true,
+                "source_details": {
+                    "kind": "replace",
+                    "remove_str": "@candid",
+                    "replace_str": "CANDID",
+                    "column_id": "customer_table_doctor_email"
+                },
+                "source_kind": "computed",
+                "type": "string"
+            }
+        ],
+        "activity_stream": "mv_activity_stream",
+        "all_groups": [
+            {
+                "name": "Utm Source Group",
+                "slug": "utm_source_group",
+                "_column_ids": [
+                    "limiting_session_utm_source"
+                ],
+                "columns": [
+                    {
+                        "id": "utm_source_group_limiting_session_utm_source",
+                        "column_id": "limiting_session_utm_source",
+                        "filters": [],
+                        "label": "utm_source",
+                        "output": true,
+                        "type": "string",
+                        "pivoted": false
+                    }
+                ],
+                "computed_columns": [],
+                "metrics": [
+                    {
+                        "_pre_pivot_column_id": null,
+                        "_pre_pivot_column_label": null,
+                        "id": "metrics_total_events",
+                        "label": "total_events",
+                        "agg_function": "COUNT",
+                        "output": true,
+                        "column_id": "*",
+                        "filters": [],
+                        "pivot": [],
+                        "type": "number"
+                    },
+                    {
+                        "_pre_pivot_column_id": null,
+                        "_pre_pivot_column_label": null,
+                        "id": "metric_total_ordered_impression_kit",
+                        "label": "total_ordered_impression_kit",
+                        "agg_function": "SUM",
+                        "output": true,
+                        "column_id": "converted_to_ordered_impression_kit",
+                        "filters": [],
+                        "pivot": [],
+                        "type": "number"
+                    },
+                    {
+                        "_pre_pivot_column_id": null,
+                        "_pre_pivot_column_label": null,
+                        "id": "metric_days_to_ordered_impression_kit_avg",
+                        "label": "avg_days_to_ordered_impression_kit",
+                        "agg_function": "AVG",
+                        "output": true,
+                        "column_id": "days_to_ordered_impression_kit",
+                        "filters": [],
+                        "pivot": [],
+                        "type": "number"
+                    }
+                ],
+                "spend": {
+                    "joins": [
+                        {
+                            "column_id": "utm_source_group_limiting_session_utm_source",
+                            "spend_column": "week"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "id": "_spend_column_spend",
+                            "filters": [],
+                            "label": "spend",
+                            "name": "spend",
+                            "output": true,
+                            "type": "float"
+                        },
+                        {
+                            "id": "_spend_column_clicks",
+                            "filters": [],
+                            "label": "clicks",
+                            "name": "clicks",
+                            "output": true,
+                            "type": "integer"
+                        },
+                        {
+                            "id": "_spend_column_impressions",
+                            "filters": [],
+                            "label": "impressions",
+                            "name": "impressions",
+                            "output": true,
+                            "type": "integer"
+                        }
+                    ],
+                    "_distribute_output": false
+                },
+                "pivot": [],
+                "order": []
+            },
+            {
+                "name": "Kind and Source",
+                "slug": "kind_and_source",
+                "_column_ids": [
+                    "limiting_session_session_source",
+                    "limiting_session_session_kind"
+                ],
+                "columns": [
+                    {
+                        "id": "kind_and_source_limiting_session_session_source",
+                        "column_id": "limiting_session_session_source",
+                        "filters": [],
+                        "label": "session_source",
+                        "output": true,
+                        "type": "string",
+                        "pivoted": false
+                    },
+                    {
+                        "id": "kind_and_source_limiting_session_session_kind",
+                        "column_id": "limiting_session_session_kind",
+                        "filters": [],
+                        "label": "session_kind",
+                        "output": true,
+                        "type": "string",
+                        "pivoted": false
+                    }
+                ],
+                "computed_columns": [
+                    {
+                        "id": "replace_organic",
+                        "filters": [],
+                        "label": "replace_organic",
+                        "name": "",
+                        "output": true,
+                        "source_details": {
+                            "kind": "replace",
+                            "remove_str": "Organic",
+                            "replace_str": "Stuff",
+                            "column_id": "kind_and_source_limiting_session_session_source"
+                        },
+                        "source_kind": "computed",
+                        "type": "string"
+                    },
+                    {
+                        "id": "replace_organic_raw",
+                        "filters": [],
+                        "label": "replace_organic_raw",
+                        "name": "",
+                        "output": true,
+                        "source_details": {
+                            "kind": "freehand_function",
+                            "raw_string": "replace({kind_and_source_limiting_session_session_source}, 'Stuff', 'Organic')"
+                        },
+                        "source_kind": "computed",
+                        "type": "string"
+                    },
+                    {
+                        "id": "divide_ordered_impression_kit",
+                        "filters": [],
+                        "label": "divide_ordered_impression_kit",
+                        "name": "",
+                        "output": true,
+                        "source_details": {
+                            "kind": "math_operation",
+                            "operation": "/",
+                            "number": "4",
+                            "column_id": "metric_total_ordered_impression_kit"
+                        },
+                        "source_kind": "computed",
+                        "type": "number"
+                    },
+                    {
+                        "id": "divide_ordered_impression_kit_raw",
+                        "filters": [],
+                        "label": "divide_ordered_impression_kit_raw",
+                        "name": "",
+                        "output": true,
+                        "source_details": {
+                            "kind": "freehand_function",
+                            "raw_string": "{metric_total_ordered_impression_kit}/4"
+                        },
+                        "source_kind": "computed",
+                        "type": "number"
+                    }
+                ],
+                "metrics": [
+                    {
+                        "_pre_pivot_column_id": null,
+                        "_pre_pivot_column_label": null,
+                        "id": "metrics_total_events",
+                        "label": "total_events",
+                        "agg_function": "COUNT",
+                        "output": true,
+                        "column_id": "*",
+                        "filters": [],
+                        "pivot": [],
+                        "type": "number"
+                    },
+                    {
+                        "_pre_pivot_column_id": null,
+                        "_pre_pivot_column_label": null,
+                        "id": "metric_total_ordered_impression_kit",
+                        "label": "total_ordered_impression_kit",
+                        "agg_function": "SUM",
+                        "output": true,
+                        "column_id": "converted_to_ordered_impression_kit",
+                        "filters": [],
+                        "pivot": [],
+                        "type": "number"
+                    }
+                ],
+                "pivot": [],
+                "order": []
+            }
+        ],
+        "order": []
+    }
+}

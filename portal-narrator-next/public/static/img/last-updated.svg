@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M27,27 L37,27 L37,31 L27,31 L23,31 L23,11 L27,11 L27,27 Z M6.8876798,43.6274236 L3.14230088,46.7701697 L3.74533332,35.8209071 L14.6329675,37.1283555 L10.7231764,40.4090598 C14.5521582,44.4671616 19.9802911,47 26,47 C37.5979797,47 47,37.5979797 47,26 C47,14.4020203 37.5979797,5 26,5 C14.4020203,5 5,14.4020203 5,26 C5,26.674568 5.03180592,27.3417072 5.0939999,28 L0.075779267,28 C0.0255658521,27.3399168 0,26.672944 0,26 C0,11.6405965 11.6405965,0 26,0 C40.3594035,0 52,11.6405965 52,26 C52,40.3594035 40.3594035,52 26,52 C18.4425697,52 11.6382415,48.7755864 6.8876798,43.6274236 Z" id="path-last-updated"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon-/-Time-Refresh" transform="translate(-4.000000, -4.000000)">
+            <g id="Color-/-Black-/-500">
+                <g transform="translate(4.000000, 4.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-last-updated"></use>
+                    </mask>
+                    <use id="Mask" fill="#242424" fill-rule="nonzero" xlink:href="#path-last-updated"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

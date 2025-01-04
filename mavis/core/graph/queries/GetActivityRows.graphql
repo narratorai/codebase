@@ -1,0 +1,6 @@
+query GetActivityRows($id: uuid!) {
+  activity_by_pk(id: $id) {
+    row_count
+    name
+  }
+}

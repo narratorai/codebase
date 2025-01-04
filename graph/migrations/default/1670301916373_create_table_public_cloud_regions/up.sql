@@ -1,0 +1,1 @@
+CREATE TABLE "public"."cloud_regions" ("name" text NOT NULL, "region" text NOT NULL, "cloud" text NOT NULL, PRIMARY KEY ("name","region","cloud") );COMMENT ON TABLE "public"."cloud_regions" IS E'Map cloud in clouds for regions';

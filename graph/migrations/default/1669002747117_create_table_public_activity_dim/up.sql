@@ -1,0 +1,2 @@
+CREATE TABLE "public"."activity_dim" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "created_at" timestamptz NOT NULL DEFAULT now(), "activity_id" uuid NOT NULL, "table_schema" text NOT NULL, "table_name" text NOT NULL, "join_column" text, PRIMARY KEY ("id") , FOREIGN KEY ("activity_id") REFERENCES "public"."activity"("id") ON UPDATE cascade ON DELETE cascade, UNIQUE ("table_schema", "table_name"));COMMENT ON TABLE "public"."activity_dim" IS E'replacement to enriched_transformation_activity';
+CREATE EXTENSION IF NOT EXISTS pgcrypto;

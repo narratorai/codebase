@@ -1,0 +1,16 @@
+query GetRecentTransformationTests($transformation_id: uuid!, $start_at: timestamptz) {
+  tests: transformation_test(
+    order_by: [{ created_at: desc }]
+    where: { transformation_id: { _eq: $transformation_id }, created_at: { _gt: $start_at } }
+  ) {
+    name
+    id
+    data
+    created_at
+    ran_data_from
+    query
+    content
+    status
+    updated_at
+  }
+}

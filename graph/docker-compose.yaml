@@ -1,0 +1,59 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:12.8-alpine
+    ports:
+      # Expose graph db to host on post 54321 to avoid conflict with any local postgres
+      - '54321:5432'
+    restart: always
+    environment:
+      # Disable password
+      # NOTE do not use this flag in production!!!
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: 'pg_isready -U postgres || exit 1'
+      interval: 5s
+      timeout: 5s
+  graphql-engine:
+    # Use our docker image, so it has our extra deps
+    build: .
+    # But don't use the custom entrypoint because it expects a secrets manager formatted db connection string
+    entrypoint: ['']
+    # Reset the start command b/c we override entrypoint
+    command: ['graphql-engine', 'serve']
+    ports:
+      - '8080:8080'
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: always
+    environment:
+      # see https://hasura.io/docs/1.0/graphql/manual/deployment/graphql-engine-flags/reference.html#command-flags
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/postgres
+      # This should be set on deployments, cant set it here because it requires an admin secret or access key to be set
+      # HASURA_GRAPHQL_UNAUTHORIZED_ROLE: 'unauthorized'
+      HASURA_GRAPHQL_ENABLE_TELEMETRY: 'false'
+      # Stringify certain Postgres numeric types, specifically bigint, numeric, decimal and double precision as they don’t fit into the IEEE-754 spec for JSON encoding-decoding.
+      HASURA_GRAPHQL_STRINGIFY_NUMERIC_TYPES: 'true'
+      # We do not run a console with our server so that we can make use of Hasura's migrations features
+      # See the readme for more detailss on how to use the Hasura console
+      HASURA_GRAPHQL_ENABLE_CONSOLE: 'false'
+      # Be warned, logs will eat up your docker disk space
+      # We log much more for deployments: startup, http-log, webhook-log, websocket-log, query-log
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, query-log
+
+      ## uncomment next line to set an admin secret
+      # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+
+      # Event Ingest Env Vars -- These are required for the event trigger
+      # They are injected in the run_local.sh script
+      GRAPH_TRIGGER_INGEST_URL: ${GRAPH_TRIGGER_INGEST_URL}
+      GRAPH_TRIGGER_INGEST_API_KEY: ${GRAPH_TRIGGER_INGEST_API_KEY}
+    healthcheck:
+      test: 'curl --silent --fail http://localhost:8080/healthz || exit 1'
+      interval: 5s
+      timeout: 3s
+volumes:
+  db_data:

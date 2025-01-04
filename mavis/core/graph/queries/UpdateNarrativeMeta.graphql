@@ -1,0 +1,10 @@
+mutation UpdateNarrativeMeta($company_id: uuid!, $slug: String!, $name: String, $description: String) {
+  update_narrative(
+    where: { company_id: { _eq: $company_id }, slug: { _eq: $slug } }
+    _set: { name: $name, description: $description }
+  ) {
+    returning {
+      id
+    }
+  }
+}

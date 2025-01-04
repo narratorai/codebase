@@ -1,0 +1,9 @@
+query GetAllCustomFunctions($company_id: uuid!) {
+  custom_function(where: {company_id: {_eq: $company_id}}) {
+    id
+    input_count
+    name
+    text_to_replace
+    description
+  }
+}

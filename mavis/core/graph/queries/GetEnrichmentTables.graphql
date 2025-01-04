@@ -1,0 +1,29 @@
+query GetEnrichmentTables($company_id: uuid!) {
+  all_transformations: transformation(
+    where: { company_id: { _eq: $company_id }, kind: { _in: [spend, enrichment, customer_attribute] } }
+  ) {
+    id
+    name
+    kind
+    slug
+    update_type
+    table
+    task_id
+    column_renames {
+      name
+      type
+      label
+      casting
+      id
+    }
+    production_queries(order_by: { created_at: desc_nulls_last }, limit: 1) {
+      sql
+      updated_by
+    }
+    production_queries_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+}

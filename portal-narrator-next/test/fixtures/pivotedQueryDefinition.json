@@ -1,0 +1,418 @@
+{
+    "override_sql": null,
+    "query": {
+        "activities": [
+            {
+                "did": true,
+                "kind": "limiting",
+                "occurence_after_time": false,
+                "occurrence": "all",
+                "occurrence_value": 1,
+                "relationships": [],
+                "config": {
+                    "activity_stream": "activity_stream",
+                    "customer_table": "customer",
+                    "enrichment_table": null,
+                    "has_source": true
+                },
+                "slug": "updated_customer_status",
+                "filters": [],
+                "id": "updated_customer_status_JNR9CqBb"
+            }
+        ],
+        "columns": [
+            {
+                "id": "limiting_updated_customer_status_JNR9CqBb_feature_1",
+                "filters": [],
+                "label": "member_status",
+                "name": "feature_1",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "limiting",
+                    "activity_id": "updated_customer_status_JNR9CqBb",
+                    "enrichment_table": null
+                },
+                "source_kind": "activity",
+                "type": "string",
+                "mavis_type": "string"
+            },
+            {
+                "id": "limiting_updated_customer_status_JNR9CqBb_customer",
+                "filters": [],
+                "label": "customer",
+                "name": "customer",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "limiting",
+                    "activity_id": "updated_customer_status_JNR9CqBb",
+                    "enrichment_table": null
+                },
+                "source_kind": "activity",
+                "type": "string",
+                "mavis_type": "string"
+            },
+            {
+                "id": "limiting_updated_customer_status_JNR9CqBb_ts",
+                "filters": [],
+                "label": "updated_customer_status_at",
+                "name": "ts",
+                "output": true,
+                "source_details": {
+                    "activity_kind": "limiting",
+                    "activity_id": "updated_customer_status_JNR9CqBb",
+                    "enrichment_table": null
+                },
+                "source_kind": "activity",
+                "type": "timestamp",
+                "mavis_type": "timestamp"
+            },
+            {
+                "id": "updated_customer_status_at_VzuSg09K",
+                "filters": [],
+                "label": "month_of_updated_customer_status_at",
+                "name": "",
+                "output": true,
+                "source_details": {
+                    "kind": "time_truncate",
+                    "column_id": "limiting_updated_customer_status_JNR9CqBb_ts",
+                    "resolution": "1",
+                    "segmentation": "month"
+                },
+                "source_kind": "computed",
+                "type": "timestamp",
+                "_auto_generated_by": null
+            }
+        ],
+        "activity_stream": "activity_stream",
+        "all_groups": [
+            {
+                "name": "by month by status",
+                "slug": "by_month_by_status",
+                "_column_ids": [
+                    "updated_customer_status_at_VzuSg09K",
+                    "limiting_updated_customer_status_JNR9CqBb_feature_1"
+                ],
+                "columns": [
+                    {
+                        "id": "by_month_by_status_updated_customer_status_at_VzuSg09K",
+                        "filters": [],
+                        "label": "month_of_updated_customer_status_at",
+                        "name": "",
+                        "output": true,
+                        "type": "timestamp",
+                        "column_id": "updated_customer_status_at_VzuSg09K",
+                        "pivoted": false
+                    },
+                    {
+                        "id": "by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1",
+                        "filters": [],
+                        "label": "member_status",
+                        "name": "",
+                        "output": true,
+                        "type": "string",
+                        "column_id": "limiting_updated_customer_status_JNR9CqBb_feature_1",
+                        "pivoted": true
+                    }
+                ],
+                "computed_columns": [
+                    {
+                        "id": "by_month_by_status_running_total_of_status",
+                        "filters": [],
+                        "label": "running_total_of_status",
+                        "name": "",
+                        "output": true,
+                        "source_details": {
+                            "kind": "running_total",
+                            "column_id": "metrics_total_events",
+                            "group_column_ids": [
+                                "by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1"
+                            ],
+                            "order": [
+                                {
+                                    "column_id": "by_month_by_status_updated_customer_status_at_VzuSg09K",
+                                    "order_direction": "asc"
+                                }
+                            ]
+                        },
+                        "source_kind": "computed",
+                        "type": "number",
+                        "_auto_generated_by": null
+                    }
+                ],
+                "metrics": [
+                    {
+                        "_pre_pivot_column_id": null,
+                        "_pre_pivot_column_label": null,
+                        "id": "metrics_total_events",
+                        "label": "count_records",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [],
+                        "type": "number",
+                        "_auto_generated_by": null
+                    },
+                    {
+                        "_pre_pivot_column_id": "metrics_total_events",
+                        "_pre_pivot_column_label": "count_records",
+                        "id": "metrics_total_events_became_starter_user",
+                        "label": "count_records_became_starter_user",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [
+                            {
+                                "column_id": "by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1",
+                                "value": "became_starter_user"
+                            }
+                        ],
+                        "type": "number",
+                        "_auto_generated_by": "create-pivot"
+                    },
+                    {
+                        "_pre_pivot_column_id": "metrics_total_events",
+                        "_pre_pivot_column_label": "count_records",
+                        "id": "metrics_total_events_became_active_user",
+                        "label": "count_records_became_active_user",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [
+                            {
+                                "column_id": "by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1",
+                                "value": "became_active_user"
+                            }
+                        ],
+                        "type": "number",
+                        "_auto_generated_by": "create-pivot"
+                    },
+                    {
+                        "_pre_pivot_column_id": "metrics_total_events",
+                        "_pre_pivot_column_label": "count_records",
+                        "id": "metrics_total_events_became_elite_user",
+                        "label": "count_records_became_elite_user",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [
+                            {
+                                "column_id": "by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1",
+                                "value": "became_elite_user"
+                            }
+                        ],
+                        "type": "number",
+                        "_auto_generated_by": "create-pivot"
+                    },
+                    {
+                        "_pre_pivot_column_id": "metrics_total_events",
+                        "_pre_pivot_column_label": "count_records",
+                        "id": "metrics_total_events_became_super_user",
+                        "label": "count_records_became_super_user",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [
+                            {
+                                "column_id": "by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1",
+                                "value": "became_super_user"
+                            }
+                        ],
+                        "type": "number",
+                        "_auto_generated_by": "create-pivot"
+                    }
+                ],
+                "pivot": [],
+                "order": [],
+                "parent_filters": []
+            },
+            {
+                "name": "DEBUG by month status",
+                "slug": "by_month_by_status 1",
+                "_column_ids": [
+                    "updated_customer_status_at_VzuSg09K",
+                    "limiting_updated_customer_status_JNR9CqBb_feature_1"
+                ],
+                "columns": [
+                    {
+                        "id": "by_month_by_status_updated_customer_status_at_VzuSg09K",
+                        "filters": [],
+                        "label": "month_of_updated_customer_status_at",
+                        "name": "",
+                        "output": true,
+                        "type": "timestamp",
+                        "column_id": "updated_customer_status_at_VzuSg09K",
+                        "pivoted": false
+                    },
+                    {
+                        "id": "by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1",
+                        "filters": [],
+                        "label": "member_status",
+                        "name": "",
+                        "output": true,
+                        "type": "string",
+                        "column_id": "limiting_updated_customer_status_JNR9CqBb_feature_1",
+                        "pivoted": true
+                    }
+                ],
+                "computed_columns": [
+                    {
+                        "id": "by_month_by_status_running_total_of_status",
+                        "filters": [],
+                        "label": "running_total_of_status",
+                        "name": "",
+                        "output": true,
+                        "source_details": {
+                            "kind": "running_total",
+                            "column_id": "metrics_total_events",
+                            "group_column_ids": [
+                                "by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1"
+                            ],
+                            "order": [
+                                {
+                                    "column_id": "by_month_by_status_updated_customer_status_at_VzuSg09K",
+                                    "order_direction": "asc"
+                                }
+                            ]
+                        },
+                        "source_kind": "computed",
+                        "type": "number",
+                        "_auto_generated_by": null
+                    },
+                    {
+                        "id": "by_month_by_status 1_Raw string Test",
+                        "filters": [],
+                        "label": "Raw string Test",
+                        "name": "",
+                        "output": true,
+                        "source_details": {
+                            "kind": "freehand_function",
+                            "raw_string": "replace({by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1}, 'this', 'that')"
+                        },
+                        "source_kind": "computed",
+                        "type": "string",
+                        "_auto_generated_by": null
+                    }
+                ],
+                "metrics": [
+                    {
+                        "_pre_pivot_column_id": null,
+                        "_pre_pivot_column_label": null,
+                        "id": "metrics_total_events",
+                        "label": "count_records",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [],
+                        "type": "number",
+                        "_auto_generated_by": null
+                    },
+                    {
+                        "_pre_pivot_column_id": "metrics_total_events",
+                        "_pre_pivot_column_label": "count_records",
+                        "id": "metrics_total_events_inactive",
+                        "label": "count_records inactive",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [
+                            {
+                                "column_id": "by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1",
+                                "value": "inactive"
+                            }
+                        ],
+                        "type": "number",
+                        "_auto_generated_by": "create-pivot"
+                    },
+                    {
+                        "_pre_pivot_column_id": "metrics_total_events",
+                        "_pre_pivot_column_label": "count_records",
+                        "id": "metrics_total_events_starter",
+                        "label": "count_records starter",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [
+                            {
+                                "column_id": "by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1",
+                                "value": "starter"
+                            }
+                        ],
+                        "type": "number",
+                        "_auto_generated_by": "create-pivot"
+                    },
+                    {
+                        "_pre_pivot_column_id": "metrics_total_events",
+                        "_pre_pivot_column_label": "count_records",
+                        "id": "metrics_total_events_active",
+                        "label": "count_records active",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [
+                            {
+                                "column_id": "by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1",
+                                "value": "active"
+                            }
+                        ],
+                        "type": "number",
+                        "_auto_generated_by": "create-pivot"
+                    },
+                    {
+                        "_pre_pivot_column_id": "metrics_total_events",
+                        "_pre_pivot_column_label": "count_records",
+                        "id": "metrics_total_events_super",
+                        "label": "count_records super",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [
+                            {
+                                "column_id": "by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1",
+                                "value": "super"
+                            }
+                        ],
+                        "type": "number",
+                        "_auto_generated_by": "create-pivot"
+                    },
+                    {
+                        "_pre_pivot_column_id": "metrics_total_events",
+                        "_pre_pivot_column_label": "count_records",
+                        "id": "metrics_total_events_elite",
+                        "label": "count_records elite",
+                        "agg_function": "COUNT_ALL",
+                        "output": true,
+                        "column_id": null,
+                        "filters": [],
+                        "pivot": [
+                            {
+                                "column_id": "by_month_by_status_limiting_updated_customer_status_JNR9CqBb_feature_1",
+                                "value": "elite"
+                            }
+                        ],
+                        "type": "number",
+                        "_auto_generated_by": "create-pivot"
+                    }
+                ],
+                "pivot": [],
+                "order": [],
+                "parent_filters": []
+            }
+        ],
+        "order": [
+            {
+                "column_id": "limiting_updated_customer_status_JNR9CqBb_ts",
+                "order_direction": "desc"
+            }
+        ]
+    }
+}

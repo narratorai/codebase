@@ -1,0 +1,56 @@
+table:
+  name: sql_queries
+  schema: public
+object_relationships:
+  - name: related_activity
+    using:
+      manual_configuration:
+        column_mapping:
+          related_id: id
+        insertion_order: null
+        remote_table:
+          name: activity
+          schema: public
+  - name: related_company
+    using:
+      manual_configuration:
+        column_mapping:
+          related_id: id
+        insertion_order: null
+        remote_table:
+          name: company
+          schema: public
+  - name: related_transformation
+    using:
+      manual_configuration:
+        column_mapping:
+          related_id: id
+        insertion_order: null
+        remote_table:
+          name: transformation
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - id
+        - name
+        - notes
+        - related_id
+        - related_kind
+        - related_to
+        - sql
+        - updated_at
+        - updated_by
+      filter:
+        _or:
+          - related_activity:
+              company_id:
+                _eq: X-Hasura-Company-Id
+          - related_transformation:
+              company_id:
+                _eq: X-Hasura-Company-Id
+          - related_company:
+              id:
+                _eq: X-Hasura-Company-Id

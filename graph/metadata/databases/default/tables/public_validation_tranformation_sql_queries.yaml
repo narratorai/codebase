@@ -1,0 +1,38 @@
+table:
+  name: validation_tranformation_sql_queries
+  schema: public
+object_relationships:
+  - name: alert
+    using:
+      manual_configuration:
+        column_mapping:
+          id: query_id
+        insertion_order: null
+        remote_table:
+          name: company_query_alert
+          schema: public
+  - name: transformation
+    using:
+      manual_configuration:
+        column_mapping:
+          transformation_id: id
+        insertion_order: null
+        remote_table:
+          name: transformation
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - id
+        - notes
+        - related_kind
+        - sql
+        - transformation_id
+        - updated_at
+        - updated_by
+      filter:
+        transformation:
+          company_id:
+            _eq: X-Hasura-Company-Id

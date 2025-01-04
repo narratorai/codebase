@@ -1,0 +1,88 @@
+query GetActivityDependency(
+  $company_id: uuid!
+  $activity_ids: [uuid!]
+  $recent_tag_ids: [uuid!]
+  $from_time: timestamptz
+) {
+  all_activities: activity(
+    where: { company_id: { _eq: $company_id }, id: { _in: $activity_ids } }
+  ) {
+    id
+    name
+    category
+    description
+    company_table {
+      activity_stream
+    }
+    datasets {
+      dataset {
+        id
+        slug
+        name
+        hide_from_index
+        tags(
+          limit: 1
+          order_by: { created_at: desc }
+          where: { tag_id: { _in: $recent_tag_ids } }
+        ) {
+          created_at
+        }
+        tags_aggregate(
+          where: {
+            tag_id: { _in: $recent_tag_ids }
+            created_at: { _gt: $from_time }
+          }
+        ) {
+          aggregate {
+            count
+          }
+        }
+        dependent_narratives {
+          narrative {
+            id
+            slug
+            last_viewed_at
+            name
+            tags(
+              limit: 1
+              order_by: { created_at: desc }
+              where: { tag_id: { _in: $recent_tag_ids } }
+            ) {
+              created_at
+            }
+            tags_aggregate(
+              where: {
+                tag_id: { _in: $recent_tag_ids }
+                created_at: { _gt: $from_time }
+              }
+            ) {
+              aggregate {
+                count
+              }
+            }
+          }
+        }
+        materializations {
+          task_id
+          id
+          type
+          label
+        }
+      }
+    }
+    transformations {
+      transformation {
+        id
+        name
+        production_queries(
+          order_by: [{ updated_at: desc_nulls_last }]
+          limit: 1
+        ) {
+          sql
+          updated_at
+          updated_by
+        }
+      }
+    }
+  }
+}

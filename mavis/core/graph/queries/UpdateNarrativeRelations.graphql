@@ -1,0 +1,12 @@
+mutation UpdateNarrativeRelations($narrative_id: uuid!, $narrative_datasets: [narrative_datasets_insert_input!]!) {
+  delete_narrative_datasets(where: {narrative_id: {_eq: $narrative_id}}) {
+    returning {
+      id
+    }
+  }
+  insert_narrative_datasets(objects: $narrative_datasets) {
+    returning {
+      id
+    }
+  }
+}

@@ -1,0 +1,2 @@
+CREATE TABLE "public"."user_training_question" ("llm_training_id" uuid NOT NULL, "created_by" uuid NOT NULL, "question" text NOT NULL, "id" uuid NOT NULL DEFAULT gen_random_uuid(), "created_at" Timestamp NOT NULL DEFAULT now(), "updated_at" timestamptz NOT NULL DEFAULT now(), PRIMARY KEY ("id") , UNIQUE ("id"));COMMENT ON TABLE "public"."user_training_question" IS E'Represents questions by users about llm_trainings';
+CREATE EXTENSION IF NOT EXISTS pgcrypto;

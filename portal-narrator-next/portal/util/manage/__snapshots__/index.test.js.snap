@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#makeMiniMapOpenOverrides creates openSchemasOverride and openTablesOverride 1`] = `
+{
+  "openSchemasOverride": {
+    "affirm": true,
+    "shopify": true,
+  },
+  "openTablesOverride": {
+    "affirm.charges": true,
+  },
+}
+`;

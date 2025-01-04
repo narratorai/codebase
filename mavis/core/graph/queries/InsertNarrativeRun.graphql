@@ -1,0 +1,17 @@
+mutation InsertNarrativeRun(
+  $company_id: uuid!
+  $narrative_slug: String!
+  $s3_key: String!
+  $is_actionable: Boolean = false
+) {
+  insert_narrative_runs_one(
+    object: {
+      company_id: $company_id
+      is_actionable: $is_actionable
+      narrative_slug: $narrative_slug
+      s3_key: $s3_key
+    }
+  ) {
+    id
+  }
+}

@@ -1,0 +1,15 @@
+mutation UpdateTransformationUpdateType(
+  $transformation_id: uuid!
+  $update_type: transformation_update_types_enum!
+) {
+  update_transformation(
+    where: { id: { _eq: $transformation_id } }
+    _set: {
+      update_type: $update_type
+    }
+  ){
+    returning {
+      id
+    }
+  }
+}

@@ -1,0 +1,15 @@
+name: Task check
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+jobs:
+  task-check:
+    # Skip for dependabot PRs
+    if: ${{ !contains( github.head_ref, 'dependabot' ) }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kentaro-m/task-completed-checker-action@v0.1.2
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'

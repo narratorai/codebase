@@ -1,0 +1,8 @@
+mutation InsertTeam($company_id: uuid!, $name: String!) {
+  insert_team_one(
+    object: { name: $name, company_id: $company_id }
+    on_conflict: { constraint: team_company_id_name_key, update_columns: [name] }
+  ) {
+    id
+  }
+}

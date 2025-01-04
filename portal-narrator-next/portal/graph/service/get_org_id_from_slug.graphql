@@ -1,0 +1,6 @@
+query PortalServiceGetOrgIdFromSlug($slug: String!) {
+  company_auth0(where: { company: { slug: { _eq: $slug } } }) {
+    id
+    org_id
+  }
+}

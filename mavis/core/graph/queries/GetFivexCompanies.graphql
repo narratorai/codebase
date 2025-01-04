@@ -1,0 +1,10 @@
+query GetFivexCompanies {
+  company(where: {created_for_user: {email: {_eq: "platformadmin@5x.co"}}, status: {_neq: archived}}) {
+    id
+    name
+    created_at
+    created_for_user {
+      email
+    }
+  }
+}

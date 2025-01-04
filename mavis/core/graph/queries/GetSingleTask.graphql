@@ -1,0 +1,15 @@
+query GetSingleTask($id: uuid!) {
+  company_task_by_pk(id: $id) {
+    id
+    task_slug
+    schedule
+    category
+    function_name
+    function_path
+    kwargs
+    company {
+      id
+      slug
+    }
+  }
+}

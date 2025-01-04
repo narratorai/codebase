@@ -1,0 +1,38 @@
+query GetTemplateByName($name: String) {
+  narrative_template(where: {name: {_eq: $name}}, order_by: [{ global_version: desc }, { customer_iteration: desc }, { local_iteration: desc }], limit: 100) {
+    id
+    name
+    created_by
+    description
+    category
+    customer_iteration
+    global_version
+    state
+    question
+    narrative_template_kind {
+      value
+    }
+    display_companies_using
+    in_free_tier
+    kind
+    local_iteration
+    narratives(order_by: [{ updated_at: desc }], limit: 500, where: {state: {_neq: archived}}) {
+      slug
+      name
+      type
+      updated_at
+      id
+
+      narrative_runs(order_by: { created_at: desc_nulls_last }, limit: 1) {
+        s3_key
+
+      }
+
+      company {
+        id
+        name
+        slug
+      }
+    }
+  }
+}

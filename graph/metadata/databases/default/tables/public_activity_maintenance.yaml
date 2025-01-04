@@ -1,0 +1,29 @@
+table:
+  name: activity_maintenance
+  schema: public
+object_relationships:
+  - name: activity
+    using:
+      foreign_key_constraint_on: activity_id
+  - name: dim_table
+    using:
+      foreign_key_constraint_on: dim_table_id
+  - name: maintenance_kind
+    using:
+      foreign_key_constraint_on: kind
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - activity_id
+        - created_at
+        - ended_at
+        - id
+        - kind
+        - notes
+        - started_at
+        - updated_at
+      filter:
+        activity:
+          company_id:
+            _eq: X-Hasura-Company-Id

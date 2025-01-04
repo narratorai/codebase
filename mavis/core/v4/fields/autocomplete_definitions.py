@@ -1,0 +1,127 @@
+VALUE_AUTOCOMPLETE = [
+    dict(
+        label="human_format",
+        insertText="human_format('${2:kind_to_format}')",
+        detail="Supports formats for revenue, percent, string (if number or string then don't pass second variable)",
+        kind=2,
+        calledOn="value",
+        returns="value",
+    ),
+    dict(
+        label="hf",
+        insertText="hf('${2:format_variable}')",
+        detail="Supports formats for revenue, percent, string - like human_format but can accept a variable",
+        calledOn="value",
+        returns="value",
+    ),
+]
+
+# Note: lots of these are based on real functions. Can maybe extract
+# their docstrings
+ROW_AUTOCOMPLETE = [
+    dict(
+        label="filter",
+        insertText="filter('${1:column}', '${2:condition}', '${3:value}')",
+        description="Filters a table by comparing a column with a condition",
+        calledOn="group",
+        returns="group",
+    ),
+    dict(
+        label="first_record",
+        insertText="first_record('${1:column}')",
+        description="Returns the first entry for the given column",
+        calledOn="group",
+        returns="value",
+    ),
+    dict(
+        label="last_record",
+        insertText="last_record('${1:column}')",
+        description="Returns the last entry for the given column",
+        calledOn="group",
+        returns="value",
+    ),
+    dict(
+        label="min",
+        insertText="min('${1:column}')",
+        description="Returns the minimum value for the given column",
+        calledOn="group",
+        returns="value",
+    ),
+    dict(
+        label="max",
+        insertText="max('${1:column}')",
+        description="Returns the maximum value for the given column",
+        calledOn="group",
+        returns="value",
+    ),
+    dict(
+        label="sum",
+        insertText="sum('${1:column}')",
+        description="Returns the sum of all values for the given column",
+        calledOn="group",
+        returns="value",
+    ),
+    dict(
+        label="average",
+        insertText="average('${1:column}')",
+        description="Returns the average of all values for the given column",
+        calledOn="group",
+        returns="value",
+    ),
+    dict(
+        label="median",
+        insertText="median('${1:column}')",
+        description="Returns the median of all values for the given column",
+        calledOn="group",
+        returns="value",
+    ),
+    dict(
+        label="median_high",
+        insertText="median_high('${1:column}')",
+        description="Returns the high median of all values for the given column. A high median will always return an actual value found in the data",
+        calledOn="group",
+        returns="value",
+    ),
+    dict(
+        label="median_low",
+        insertText="median_low('${1:column}')",
+        description="Returns the low median of all values for the given column. A low median will always return an actual value found in the data",
+        calledOn="group",
+        returns="value",
+    ),
+    dict(
+        label="sum",
+        insertText="sum('${1:column}')",
+        description="Returns the sum of all values for the given column",
+        calledOn="group",
+        returns="value",
+    ),
+    dict(
+        label="stdev",
+        insertText="stdev('${1:column}')",
+        description="Returns the standard deviation of all values for the given column",
+        calledOn="group",
+        returns="value",
+    ),
+    dict(
+        label="variance",
+        insertText="variance('${1:column}')",
+        description="Returns the variance of all values for the given column",
+        calledOn="group",
+        returns="value",
+    ),
+    dict(
+        label="harmonic_mean",
+        insertText="harmonic_mean('${1:column}')",
+        description="Returns the harmonic mean of all values for the given column",
+        calledOn="group",
+        returns="value",
+    ),
+    dict(
+        label="all",
+        insertText="all('${1:column}')",
+        description="Returns all values for the given column",
+        calledOn="group",
+        returns="group",
+    ),
+]

@@ -1,0 +1,7 @@
+query GetDatasetCount($company_id: uuid!) {
+    dataset_aggregate(where: {company_id: {_eq: $company_id}}) {
+        aggregate {
+        count
+        }
+    }
+}

@@ -1,0 +1,125 @@
+[
+  {
+      "ts": "2021-11-22T07:16:42.423649",
+      "activity_occurrence": 5,
+      "activity": "viewed_page",
+      "revenue_impact": null,
+      "_id": 530360285460147140,
+      "features": [
+          {
+              "label": "Ad Source",
+              "value": "/promo",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Referring Domain",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Device",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "74e6dc3c73a462f30ccdd877c41a90cb",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/promo",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#078C16",
+      "activity_name": "Viewed Website"
+  },
+  {
+      "ts": "2021-11-22T07:15:43.423649",
+      "activity_occurrence": 2,
+      "activity": "started_checkout",
+      "revenue_impact": null,
+      "_id": -1589039413316430800,
+      "features": [
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "9d806547a07b9b89de54c10ab0ec4ec8st",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/checkout",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#262C9B",
+      "activity_name": "Started Checkout"
+  },
+  {
+      "ts": "2021-11-22T07:15:42.423649",
+      "activity_occurrence": 4,
+      "activity": "viewed_page",
+      "revenue_impact": null,
+      "_id": 1025377082808353800,
+      "features": [
+          {
+              "label": "Ad Source",
+              "value": "/checkout",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Referring Domain",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Device",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "9d806547a07b9b89de54c10ab0ec4ec8",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/checkout",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#078C16",
+      "activity_name": "Viewed Website"
+  }
+]

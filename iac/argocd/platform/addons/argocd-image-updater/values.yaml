@@ -1,0 +1,48 @@
+argocd-image-updater:
+  config:
+    argocd:
+      grpcWeb: true
+      serverAddress: "argo-cd-argocd-server.argocd.svc.cluster.local:443"
+      insecure: true
+      plaintext: false
+      token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcmdvY2QiLCJzdWIiOiJuZXN0b3JhczphcGlLZXkiLCJuYmYiOjE2OTIyMDA1NTgsImlhdCI6MTY5MjIwMDU1OCwianRpIjoiNzBhZGE1ODAtOGI4ZC00NjI1LTk4ODEtZmFkZGMxYjRjNmFjIn0.xxbnozyRuDVIAdF0SE37vxHKTcYUdDhK2O5jlJ_WAdM"
+
+    registries:
+      - name: ECR
+        api_url: https://479493230127.dkr.ecr.us-east-1.amazonaws.com
+        prefix: 479493230127.dkr.ecr.us-east-1.amazonaws.com   # before v0.12 this needed to be set empty, prefix: ""
+        default: true  # not supported before v0.12
+        ping: yes
+        insecure: no
+        credentials: ext:/scripts/ecr-login.sh  #script name should match here and in authScripts
+        credsexpire: 11h
+        tagsortmode: none
+      - name: ECR2
+        api_url: https://479493230127.dkr.ecr.eu-west-1.amazonaws.com
+        prefix: 479493230127.dkr.ecr.eu-west-1.amazonaws.com   # before v0.12 this needed to be set empty, prefix: ""
+        default: false  # not supported before v0.12
+        ping: yes
+        insecure: no
+        credentials: ext:/scripts/ecr2-login.sh  #script name should match here and in authScripts
+        credsexpire: 11h
+        tagsortmode: none
+
+  extraEnv:
+    - name: AWS_REGION
+      value: "us-east-1"
+
+  authScripts:
+    enabled: true
+    scripts:
+      ecr-login.sh: |   # notice script name matches above    
+        #!/bin/sh
+        aws ecr --region $AWS_REGION get-authorization-token --output text --query 'authorizationData[].authorizationToken' | base64 -d
+      ecr2-login.sh: |   # notice script name matches above    
+        #!/bin/sh
+        aws ecr --region eu-west-1 get-authorization-token --output text --query 'authorizationData[].authorizationToken' | base64 -d        
+
+  serviceAccount:
+    create: true
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::479493230127:role/mgmt-argocd-image-updater-sa-irsa
+    name: "argocd-image-updater-sa"

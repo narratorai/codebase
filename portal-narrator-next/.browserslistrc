@@ -1,0 +1,7 @@
+# Browsers that we support
+# See https://browsersl.ist to visualize
+
+defaults
+>0.3%
+not dead
+not op_mini all

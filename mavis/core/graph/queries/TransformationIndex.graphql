@@ -1,0 +1,20 @@
+query TransformationIndex($company_id: uuid!) {
+  all_transformations: transformation(where: {company_id: {_eq: $company_id}},  order_by: { updated_at: desc }) {
+    id
+    slug
+    name
+    kind
+    created_at
+    update_type
+    table
+    task_id
+    activities {
+      activity_id
+    }
+    production_queries_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+}

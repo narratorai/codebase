@@ -1,0 +1,16 @@
+subscription NarrativeConfigUpdated($narrative_slug: String!, $company_id: uuid!) {
+  narrative(where: { _and: { company_id: { _eq: $company_id }, slug: { _eq: $narrative_slug } } }) {
+    id
+    last_config_updated_at
+    updated_by
+    updated_by_user {
+      id
+      email
+      company_users(where: { company_id: { _eq: $company_id } }) {
+        id
+        first_name
+        last_name
+      }
+    }
+  }
+}

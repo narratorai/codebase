@@ -1,0 +1,7 @@
+query GetTransformationCount($company_id: uuid!) {
+    transformation_aggregate(where: {company_id: {_eq: $company_id}}) {
+        aggregate {
+        count
+        }
+    }
+}

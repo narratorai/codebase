@@ -1,0 +1,5 @@
+mutation DeleteTagItems($tag_id: uuid!) {
+  delete_tag(where: { tag_id: { _eq: $tag_id } }) {
+    affected_rows
+  }
+}

@@ -1,0 +1,8 @@
+subscription GetCompanyBatchHalt($id: uuid!) {
+  company(limit: 1, where: { id: { _eq: $id } }) {
+    id
+    batch_halt
+    batch_halted_by
+    batch_halted_at
+  }
+}

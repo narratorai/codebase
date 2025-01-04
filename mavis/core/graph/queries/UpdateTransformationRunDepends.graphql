@@ -1,0 +1,30 @@
+mutation UpdateTransformationRunDepends(
+  $transformation_id: uuid!
+  $run_afters: [transformation_run_after_insert_input!]!
+  $depends_on: [transformation_depends_on_insert_input!]!
+) {
+   delete_transformation_run_after(
+      where: { transformation_id: { _eq: $transformation_id } }
+    ) {
+      returning {
+        id
+      }
+    }
+    delete_transformation_depends_on(
+      where: { transformation_id: { _eq: $transformation_id } }
+    ) {
+      returning {
+        id
+      }
+    }
+    insert_transformation_run_after(objects: $run_afters) {
+      returning {
+        id
+      }
+    }
+    insert_transformation_depends_on(objects: $depends_on) {
+      returning {
+        id
+      }
+  }
+}

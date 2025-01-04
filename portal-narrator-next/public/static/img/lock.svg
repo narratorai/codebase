@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="61px" viewBox="0 0 46 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11,26 L36,26 L36,15 C36,8.372583 30.4035594,3 23.5,3 C16.5964406,3 11,8.372583 11,15 L11,26 Z M39,26 L44,26 C45.1045695,26 46,26.8954305 46,28 L46,59 C46,60.1045695 45.1045695,61 44,61 L2,61 C0.8954305,61 1.3527075e-16,60.1045695 0,59 L0,28 C-1.3527075e-16,26.8954305 0.8954305,26 2,26 L8,26 L8,15 C8,6.71572875 14.9395864,1.33226763e-15 23.5,0 C32.0604136,-1.55431223e-15 39,6.71572875 39,15 L39,26 Z" id="path-lock"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon-/-Lock">
+            <g>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-lock"></use>
+                </mask>
+                <use id="Mask" fill="#979797" fill-rule="nonzero" xlink:href="#path-lock"></use>
+            </g>
+        </g>
+    </g>
+</svg>

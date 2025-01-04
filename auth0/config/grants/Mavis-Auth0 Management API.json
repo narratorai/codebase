@@ -1,0 +1,29 @@
+{
+  "client_id": "Mavis",
+  "audience": "https://narrator.auth0.com/api/v2/",
+  "scope": [
+    "read:users",
+    "update:users",
+    "delete:users",
+    "create:users",
+    "read:connections",
+    "read:organizations",
+    "update:organizations",
+    "create:organizations",
+    "delete:organizations",
+    "create:organization_members",
+    "read:organization_members",
+    "delete:organization_members",
+    "create:organization_connections",
+    "read:organization_connections",
+    "update:organization_connections",
+    "delete:organization_connections",
+    "create:organization_member_roles",
+    "read:organization_member_roles",
+    "delete:organization_member_roles",
+    "create:organization_invitations",
+    "read:organization_invitations",
+    "delete:organization_invitations",
+    "read:organizations_summary"
+  ]
+}

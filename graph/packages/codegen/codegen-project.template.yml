@@ -1,0 +1,31 @@
+# This config is meant to be used by projects that have this package installed!
+# Introspect a generated schema and a project and generate types and a client for that project
+
+overwrite: true
+schema: ${SCHEMA_PATH}
+
+config:
+  typesPrefix: 'I'
+  scalars:
+    DateTime: Date
+    JSON: '{ [key: string]: any }'
+  useTypeImports: true
+  dedupeFragments: true
+  exportFragmentSpreadSubTypes: true
+
+documents:
+  - ${PROJECT_SRC_ROOT}/**/*.ts
+  - ${PROJECT_SRC_ROOT}/**/*.tsx
+  - ${PROJECT_SRC_ROOT}/**/*.graphql
+  - '!${PROJECT_SRC_ROOT}/${PROECT_OUTPUT_DIR}/generated/**/*'
+
+generates:
+  ${PROJECT_SRC_ROOT}/${PROECT_OUTPUT_DIR}/generated/index.tsx:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+    config:
+      # gqlImport: '@apollo/client#gql'
+      pureMagicComment: true
+      preResolveTypes: true

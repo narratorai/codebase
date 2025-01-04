@@ -1,0 +1,9 @@
+# https://community.netlify.com/t/how-to-ignore-a-gemfile-when-building-a-site/3741/16
+return true if ENV['NETLIFY']
+
+# similar to above but for vercel
+return true if ENV['VERCEL_GITHUB_COMMIT_SHA']
+
+source "https://rubygems.org"
+
+gem 'pgsync', '0.7.1'

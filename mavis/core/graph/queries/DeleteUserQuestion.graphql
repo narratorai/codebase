@@ -1,0 +1,5 @@
+mutation DeleteUserQuestion($id: uuid !) {
+  delete_user_training_question_by_pk(id: $id) {
+    id
+  }
+}

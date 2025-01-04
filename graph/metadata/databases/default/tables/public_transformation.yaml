@@ -1,0 +1,184 @@
+table:
+  name: transformation
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: company_id
+  - name: company_category
+    using:
+      foreign_key_constraint_on: category_id
+  - name: company_task
+    using:
+      foreign_key_constraint_on: task_id
+  - name: current_query
+    using:
+      manual_configuration:
+        column_mapping:
+          id: transformation_id
+        insertion_order: null
+        remote_table:
+          name: current_tranformation_sql_queries
+          schema: public
+array_relationships:
+  - name: activities
+    using:
+      foreign_key_constraint_on:
+        column: transformation_id
+        table:
+          name: transformation_activities
+          schema: public
+  - name: column_renames
+    using:
+      manual_configuration:
+        column_mapping:
+          id: related_to_id
+        insertion_order: null
+        remote_table:
+          name: transformation_column_renames
+          schema: public
+  - name: depends_on_transformations
+    using:
+      foreign_key_constraint_on:
+        column: transformation_id
+        table:
+          name: transformation_depends_on
+          schema: public
+  - name: enriched_activities
+    using:
+      foreign_key_constraint_on:
+        column: transformation_id
+        table:
+          name: tranformation_enriched_activities
+          schema: public
+  - name: production_queries
+    using:
+      manual_configuration:
+        column_mapping:
+          id: transformation_id
+        insertion_order: null
+        remote_table:
+          name: production_tranformation_sql_queries
+          schema: public
+  - name: query_updates
+    using:
+      foreign_key_constraint_on:
+        column: transformation_id
+        table:
+          name: query_updates
+          schema: public
+  - name: question_answers
+    using:
+      manual_configuration:
+        column_mapping:
+          id: transformation_id
+        insertion_order: null
+        remote_table:
+          name: transformation_questions
+          schema: public
+  - name: run_after_transformations
+    using:
+      foreign_key_constraint_on:
+        column: transformation_id
+        table:
+          name: transformation_run_after
+          schema: public
+  - name: scratchpad_queries
+    using:
+      manual_configuration:
+        column_mapping:
+          id: transformation_id
+        insertion_order: null
+        remote_table:
+          name: scratchpad_tranformation_sql_queries
+          schema: public
+  - name: tests
+    using:
+      foreign_key_constraint_on:
+        column: transformation_id
+        table:
+          name: transformation_test
+          schema: public
+  - name: transformation_maintenances
+    using:
+      foreign_key_constraint_on:
+        column: transformation_id
+        table:
+          name: transformation_maintenance
+          schema: public
+  - name: validation_queries
+    using:
+      manual_configuration:
+        column_mapping:
+          id: transformation_id
+        insertion_order: null
+        remote_table:
+          name: validation_tranformation_sql_queries
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - allow_future_data
+        - company_id
+        - created_at
+        - delete_window
+        - do_not_delete_on_resync
+        - has_source
+        - id
+        - is_aliasing
+        - kind
+        - last_diff_data_and_insert_at
+        - last_identity_resolution_updated_at
+        - last_resynced_at
+        - max_days_to_insert
+        - mutable_day_window
+        - name
+        - next_resync_at
+        - notes
+        - notify_row_count_percent_change
+        - remove_customers
+        - single_activity
+        - slug
+        - start_data_after
+        - table
+        - update_type
+        - updated_at
+        - updated_by
+      filter:
+        company_id:
+          _eq: X-Hasura-Company-Id
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - delete_window
+        - do_not_delete_on_resync
+        - has_source
+        - is_aliasing
+        - kind
+        - max_days_to_insert
+        - mutable_day_window
+        - name
+        - notes
+        - slug
+        - start_data_after
+        - table
+        - update_type
+      filter:
+        _and:
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin
+          - company_id:
+              _eq: X-Hasura-Company-Id
+      check: null

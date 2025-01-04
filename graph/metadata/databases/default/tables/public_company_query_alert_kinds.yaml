@@ -1,0 +1,4 @@
+table:
+  name: company_query_alert_kinds
+  schema: public
+is_enum: true

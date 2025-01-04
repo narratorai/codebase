@@ -1,0 +1,23 @@
+mutation UpdateTest(
+    $id: uuid!
+    $status: transformation_test_status_enum!
+    $content: String
+    $sql_query: String
+    $validate_data_from: timestamptz
+    $data: String
+) {
+    update_transformation_test(
+        where: { id: { _eq: $id } }
+        _set: {
+            status: $status
+            query: $sql_query
+            content: $content
+            ran_data_from: $validate_data_from
+            data: $data
+        }
+    ) {
+        returning {
+            id
+        }
+    }
+}

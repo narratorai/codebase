@@ -1,0 +1,23 @@
+mutation InsertQueryUpdate(
+  $transformation_id: uuid!
+  $from_sync_time: timestamptz!
+  $to_sync_time: timestamptz
+  $rows_inserted: Int
+  $update_duration: Int
+  $update_kind: transformation_update_types_enum
+) {
+  insert_query_updates(
+    objects: {
+      rows_inserted: $rows_inserted
+      from_sync_time: $from_sync_time
+      to_sync_time: $to_sync_time
+      transformation_id: $transformation_id
+      update_duration: $update_duration
+      update_kind: $update_kind
+    }
+  ) {
+    returning {
+      id
+    }
+  }
+}

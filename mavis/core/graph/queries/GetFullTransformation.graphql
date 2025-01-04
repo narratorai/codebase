@@ -1,0 +1,53 @@
+query GetFullTransformation($id: uuid!) {
+  transformation: transformation_by_pk(id: $id) {
+    id
+    slug
+    name
+    updated_at
+    updated_by
+    delete_window
+    has_source
+    do_not_delete_on_resync
+    is_aliasing
+    kind
+    max_days_to_insert
+    mutable_day_window
+    last_resynced_at
+    next_resync_at
+    task_id
+    single_activity
+    notify_row_count_percent_change
+    do_not_update_on_percent_change
+    remove_customers
+    allow_future_data
+    start_data_after
+    table
+    update_type
+    validation_queries{
+      id
+    }
+    current_query {
+      sql
+    }
+    production_queries(order_by: { created_at: desc_nulls_last }, limit: 1) {
+      id
+      sql
+      updated_at
+      updated_by
+    }
+    run_after_transformations {
+      run_after_transformation_id
+    }
+    depends_on_transformations {
+      depends_on_transformation_id
+    }
+    activities {
+      activity_id
+      activity {
+        id
+        slug
+        name
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "antd-custom-monorepo",
+  "version": "1.2.1",
+  "private": true,
+  "workspaces": [
+    "lib",
+    "theme",
+    "example"
+  ],
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "scripts": {
+    "build": "yarn workspace @narratorai/antd-custom build",
+    "test": "yarn workspace @narratorai/antd-custom test",
+    "storybook": "yarn workspace @narratorai/antd-custom storybook",
+    "example": "yarn workspace antd-custom-example dev",
+    "lint": "tsdx lint --fix",
+    "lerna:semantic-release": "HUSKY=0 lerna exec --ignore antd-custom-example --concurrency 1 --stream --prefix -- semantic-release",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lerna": "^7.0.2",
+    "prettier": "^2.8.8",
+    "semantic-release": "^20.1.0",
+    "semantic-release-monorepo": "^7.0.5"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "dependencies": {
+    "rc-util": "5.33.1"
+  },
+  "resolutions": {
+    "rc-util": "5.33.1"
+  }
+}

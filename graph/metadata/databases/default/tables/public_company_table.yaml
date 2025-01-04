@@ -1,0 +1,67 @@
+table:
+  name: company_table
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: company_id
+  - name: customer_dim
+    using:
+      foreign_key_constraint_on: customer_dim_table_id
+  - name: maintainer
+    using:
+      foreign_key_constraint_on: maintainer_id
+array_relationships:
+  - name: activities
+    using:
+      foreign_key_constraint_on:
+        column: table_id
+        table:
+          name: activity
+          schema: public
+  - name: aggregation_dims
+    using:
+      foreign_key_constraint_on:
+        column: company_table_id
+        table:
+          name: company_table_aggregation_dim
+          schema: public
+  - name: slowly_changing_customer_dims
+    using:
+      foreign_key_constraint_on:
+        column: table_id
+        table:
+          name: slowly_changing_customer_dims
+          schema: public
+  - name: team_permissions
+    using:
+      manual_configuration:
+        column_mapping:
+          id: table_id
+        insertion_order: null
+        remote_table:
+          name: table_team_permissions
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - activity_stream
+        - company_id
+        - created_at
+        - customer_dim_table_id
+        - customer_label
+        - customer_table
+        - default_time_between
+        - id
+        - identifier
+        - index_table
+        - is_imported
+        - maintainer_id
+        - manually_partition_activity
+        - row_count
+        - schema_name
+        - updated_at
+      filter:
+        company_id:
+          _eq: X-Hasura-Company-Id

@@ -1,0 +1,15 @@
+query GetAllCompaniesForUser($user_id: uuid!) {
+  company_user(where: { user_id: { _eq: $user_id } }) {
+    id
+    user_id
+    company_id
+    company {
+      name
+    }
+    phone
+    user {
+      email
+    }
+    first_name
+  }
+}

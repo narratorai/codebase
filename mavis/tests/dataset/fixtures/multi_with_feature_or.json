@@ -1,0 +1,906 @@
+{
+    "fields": {},
+    "query": {
+      "activities": [
+        {
+          "id": "updated_subscription09b3d3a5",
+          "name": "Updated Subscription",
+          "slug": [
+            "updated_subscription"
+          ],
+          "activity_ids": [
+            "4becff8a-10d4-46bf-9835-b9657b84dcce"
+          ],
+          "did": true,
+          "occurrence": "last",
+          "occurrence_value": null,
+          "resolution_filter": null,
+          "config": {
+            "has_source": false,
+            "activity_stream": "company_stream"
+          },
+          "relationships": [],
+          "filters": [],
+          "kind": "limiting"
+        },
+        {
+          "id": "created_manufacturing_run_or_created_sales_order_or_created_purchase_order_or_created_metric_transactionb91035cb",
+          "name": "Created Manufacturing Run Or Created Sales Order Or Created Purchase Order Or Created Metrc Transaction",
+          "slug": [
+            "created_manufacturing_run",
+            "created_sales_order",
+            "created_purchase_order",
+            "created_metric_transaction"
+          ],
+          "activity_ids": [
+            "78118e03-435d-4147-802a-bf61be5e432e",
+            "a7048e4f-f808-4a32-be3c-0a43e239aa1e",
+            "954bab8f-884d-4d04-b791-0c1055044fd7",
+            "7743bf75-0198-4848-8960-6c58be16b0d7"
+          ],
+          "did": true,
+          "occurrence": "metric",
+          "occurrence_value": null,
+          "resolution_filter": null,
+          "config": {
+            "has_source": false,
+            "activity_stream": "company_stream"
+          },
+          "relationships": [],
+          "filters": [
+            {
+              "activity_column_name": "ts",
+              "enrichment_table": null,
+              "enrichment_table_column": null,
+              "filter": {
+                "operator": "time_range",
+                "kind": "value",
+                "value": "",
+                "or_null": false,
+                "from_type": "relative",
+                "from_value": "7",
+                "from_value_kind": "value",
+                "from_value_resolution": "day",
+                "to_type": "now",
+                "to_value": null,
+                "to_value_kind": "value",
+                "to_value_resolution": null
+              }
+            }
+          ],
+          "kind": "append",
+          "relationship_slug": "agg_all_ever"
+        },
+        {
+          "id": "submitted_nps_score74cee0f2",
+          "name": "Submitted Nps Score",
+          "slug": [
+            "submitted_nps_score"
+          ],
+          "activity_ids": [
+            "7efaab19-eb43-4b7b-8203-1ad742328c1c"
+          ],
+          "did": true,
+          "occurrence": "last",
+          "occurrence_value": null,
+          "resolution_filter": null,
+          "config": {
+            "has_source": false,
+            "activity_stream": "company_stream"
+          },
+          "relationships": [],
+          "filters": [
+            {
+              "activity_column_name": "feature_3",
+              "enrichment_table": null,
+              "enrichment_table_column": null,
+              "filter": {
+                "operator": "equal",
+                "kind": "value",
+                "value": "true",
+                "or_null": false,
+                "from_type": null,
+                "from_value": null,
+                "from_value_kind": "value",
+                "from_value_resolution": null,
+                "to_type": null,
+                "to_value": null,
+                "to_value_kind": "value",
+                "to_value_resolution": null
+              }
+            }
+          ],
+          "kind": "append",
+          "relationship_slug": "last_ever",
+          "temp_id": "0['submitted_nps_score']"
+        },
+        {
+          "id": "closed_won_deal9facf4b6",
+          "name": "Closed Won Deal",
+          "slug": [
+            "closed_won_deal"
+          ],
+          "activity_ids": [
+            "c33d1d62-d38c-40d2-9af6-471bb656ca1c"
+          ],
+          "did": true,
+          "occurrence": "first",
+          "occurrence_value": null,
+          "resolution_filter": null,
+          "config": {
+            "has_source": false,
+            "activity_stream": "company_stream"
+          },
+          "relationships": [],
+          "filters": [],
+          "kind": "append",
+          "relationship_slug": "first_ever"
+        },
+        {
+          "id": "received_invoicea0678b3f",
+          "name": "Received Invoice",
+          "slug": [
+            "received_invoice"
+          ],
+          "activity_ids": [
+            "7ce52af6-88be-4a0e-8ce8-fbf974cebabb"
+          ],
+          "did": true,
+          "occurrence": "metric",
+          "occurrence_value": null,
+          "resolution_filter": null,
+          "config": {
+            "has_source": true,
+            "activity_stream": "company_stream"
+          },
+          "relationships": [],
+          "filters": [],
+          "kind": "append",
+          "relationship_slug": "agg_all_ever"
+        },
+        {
+          "id": "paid_invoice8366c02a",
+          "name": "Paid Invoice",
+          "slug": [
+            "paid_invoice"
+          ],
+          "activity_ids": [
+            "09a6f706-24f5-4c3e-865f-fa148e129751"
+          ],
+          "did": true,
+          "occurrence": "metric",
+          "occurrence_value": null,
+          "resolution_filter": null,
+          "config": {
+            "has_source": true,
+            "activity_stream": "company_stream"
+          },
+          "relationships": [],
+          "filters": [],
+          "kind": "append",
+          "relationship_slug": "agg_all_ever"
+        },
+        {
+          "id": "closed_won_deal88f770c2",
+          "name": "Closed Won Deal",
+          "slug": [
+            "closed_won_deal"
+          ],
+          "activity_ids": [
+            "c33d1d62-d38c-40d2-9af6-471bb656ca1c"
+          ],
+          "did": true,
+          "occurrence": "last",
+          "occurrence_value": null,
+          "resolution_filter": null,
+          "config": {
+            "has_source": true,
+            "activity_stream": "company_stream"
+          },
+          "relationships": [],
+          "filters": [],
+          "kind": "append",
+          "relationship_slug": "last_ever"
+        }
+      ],
+      "columns": [
+        {
+          "id": "activity_idf9981793",
+          "name": "activity_id",
+          "label": "Last Activity Id",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "updated_subscription09b3d3a5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "ts0469ee84",
+          "name": "ts",
+          "label": "Timestamp",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": null,
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "updated_subscription09b3d3a5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "customera15e5205",
+          "name": "customer",
+          "label": "Customer",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "updated_subscription09b3d3a5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "feature_174621cf0",
+          "name": "feature_1",
+          "label": "Last Update Kind",
+          "output": true,
+          "filters": [
+            {
+              "operator": "not_equal",
+              "value": "churn",
+              "kind": "value",
+              "or_null": false
+            }
+          ],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "updated_subscription09b3d3a5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "revenue_impactd8ab7f38",
+          "name": "revenue_impact",
+          "label": "Current Subscription Value",
+          "output": true,
+          "filters": [],
+          "mavis_type": "float",
+          "group_func": [
+            "sum"
+          ],
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "updated_subscription09b3d3a5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          },
+          "display_format": "revenue"
+        },
+        {
+          "id": "customer_cityb9b7434f",
+          "filters": [],
+          "label": "City",
+          "name": "city",
+          "output": true,
+          "source_details": {
+            "table": "customer",
+            "activity_id": "updated_subscription09b3d3a5"
+          },
+          "source_kind": "customer",
+          "mavis_type": "string",
+          "type": "string"
+        },
+        {
+          "id": "customer_lifecycle_stagedc9b98b8",
+          "filters": [],
+          "label": "Lifecycle Stage",
+          "name": "lifecycle_stage",
+          "output": true,
+          "source_details": {
+            "table": "customer",
+            "activity_id": "updated_subscription09b3d3a5"
+          },
+          "source_kind": "customer",
+          "mavis_type": "string",
+          "type": "string"
+        },
+        {
+          "id": "customer_hubspot_company_link29404b57",
+          "filters": [],
+          "label": "Hubspot Company Link",
+          "name": "hubspot_company_link",
+          "output": true,
+          "source_details": {
+            "table": "customer",
+            "activity_id": "updated_subscription09b3d3a5"
+          },
+          "source_kind": "customer",
+          "mavis_type": "string",
+          "type": "string"
+        },
+        {
+          "id": "count_tsf4bbaff4",
+          "name": "ts",
+          "label": "Total Transactions In Last 7 Days",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": [
+            "sum",
+            "average"
+          ],
+          "type": "integer",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "created_manufacturing_run_or_created_sales_order_or_created_purchase_order_or_created_metric_transactionb91035cb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": "count"
+          }
+        },
+        {
+          "id": "max_ts79b67713",
+          "name": "ts",
+          "label": "Last Used Product at",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": [
+            "max"
+          ],
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "created_manufacturing_run_or_created_sales_order_or_created_purchase_order_or_created_metric_transactionb91035cb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": "max"
+          }
+        },
+        {
+          "id": "ts32d8d79c",
+          "name": "ts",
+          "label": "Last Ever Submitted Nps Score Timestamp",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": null,
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "submitted_nps_score74cee0f2",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "feature_16b186f8f",
+          "name": "feature_1",
+          "label": "Last NPS Score",
+          "output": true,
+          "filters": [],
+          "mavis_type": "float",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "submitted_nps_score74cee0f2",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "feature_3a5fc90d9",
+          "name": "feature_3",
+          "label": "NPS Score Submitted By",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "submitted_nps_score74cee0f2",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "tsb8d789a9",
+          "name": "ts",
+          "label": "First Ever Closed Won Deal Timestamp",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": null,
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "closed_won_deal9facf4b6",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "sum_revenue_impact985893a3",
+          "name": "revenue_impact",
+          "label": "Total Invoiced",
+          "output": true,
+          "filters": [],
+          "mavis_type": "float",
+          "group_func": [
+            "sum",
+            "average"
+          ],
+          "type": "float",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "received_invoicea0678b3f",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": "sum"
+          }
+        },
+        {
+          "id": "sum_revenue_impact8171a000",
+          "name": "revenue_impact",
+          "label": "Total Paid",
+          "output": true,
+          "filters": [],
+          "mavis_type": "float",
+          "group_func": [
+            "sum",
+            "average"
+          ],
+          "type": "float",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "paid_invoice8366c02a",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": "sum"
+          }
+        },
+        {
+          "id": "ts611cfd84",
+          "name": "ts",
+          "label": "Last Deal Closed At",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": null,
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "closed_won_deal88f770c2",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "feature_397d2eccb",
+          "name": "feature_3",
+          "label": "Sales Person",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "closed_won_deal88f770c2",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "id_tenure_in_months_8xx_jyeim",
+          "filters": [],
+          "label": "Tenure in Months",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "kind": "time_to_now",
+            "segmentation": "month",
+            "column_id": "tsb8d789a9"
+          },
+          "source_kind": "computed",
+          "type": "number",
+          "_auto_generated_by": null
+        },
+        {
+          "id": "days_from_last_used_product_at618a9ec2",
+          "name": null,
+          "label": "Days since last Transaction",
+          "output": true,
+          "filters": [],
+          "mavis_type": null,
+          "type": "integer",
+          "group_func": [],
+          "source_kind": "computed",
+          "source_details": {
+            "kind": "freehand_function",
+            "raw_string": "date_diff('day', max_ts79b67713, local_now())"
+          }
+        },
+        {
+          "id": "day_of_last_ever_submitted_nps_score_timestampa9d803d5",
+          "name": null,
+          "label": "Last NPS Date",
+          "output": true,
+          "filters": [],
+          "mavis_type": null,
+          "type": "timestamp",
+          "group_func": [],
+          "source_kind": "computed",
+          "source_details": {
+            "kind": "freehand_function",
+            "raw_string": "date_trunc('day', ts32d8d79c)"
+          },
+          "display_format": "date"
+        }
+      ],
+      "all_groups": [
+        {
+          "is_parent": true,
+          "name": "Organized",
+          "slug": "parent_duplicate",
+          "parent_filters": [],
+          "columns": [],
+          "metrics": [
+            {
+              "id": "max_created_manufacturing_run_or_created_sales_order_or_created_purchase_order_or_created_metric_transaction_timestamp_ever_63c3debf",
+              "label": "Max Created Manufacturing Run Or Created Sales Order Or Created Purchase Order Or Created Metric Transaction Timestamp Ever",
+              "agg_function": "MAX",
+              "conditioned_on_columns": null,
+              "output": true,
+              "column_id": "max_ts79b67713",
+              "filters": [],
+              "pivot": [],
+              "mavis_type": null,
+              "display_format": null,
+              "type": "timestamp",
+              "column_kind": "metrics"
+            }
+          ],
+          "computed_columns": [],
+          "pivot": [],
+          "order": [
+            {
+              "column_id": "ts0469ee84",
+              "order_direction": "desc"
+            }
+          ],
+          "_column_ids": [],
+          "hidden_column_ids": [
+            "activity_idf9981793",
+            "ts0469ee84",
+            "tsb8d789a9",
+            "customer_cityb9b7434f",
+            "feature_174621cf0",
+            "customer_lifecycle_stagedc9b98b8",
+            "max_ts79b67713",
+            "ts32d8d79c"
+          ]
+        },
+        {
+          "is_parent": true,
+          "name": "WTF CUSTOMERS",
+          "slug": "parent_duplicate_1",
+          "parent_filters": [
+            {
+              "filter": {
+                "operator": "not_equal",
+                "value": "customer",
+                "kind": "value",
+                "or_null": false
+              },
+              "column_id": "customer_lifecycle_stagedc9b98b8"
+            }
+          ],
+          "columns": [],
+          "metrics": [],
+          "computed_columns": [],
+          "pivot": [],
+          "order": [
+            {
+              "column_id": "ts0469ee84",
+              "order_direction": "desc"
+            }
+          ],
+          "_column_ids": []
+        },
+        {
+          "name": "by All",
+          "slug": "allf9c43624",
+          "columns": [],
+          "metrics": [
+            {
+              "id": "total_customers_ef860e0f",
+              "label": "Total Customers",
+              "agg_function": "COUNT_ALL",
+              "conditioned_on_columns": null,
+              "output": true,
+              "column_id": null,
+              "filters": [],
+              "pivot": [],
+              "mavis_type": null,
+              "display_format": "number",
+              "type": "integer",
+              "column_kind": "metrics"
+            },
+            {
+              "id": "total_current_subscription_value_43755d44",
+              "label": "MRR",
+              "agg_function": "SUM",
+              "conditioned_on_columns": null,
+              "output": true,
+              "column_id": "revenue_impactd8ab7f38",
+              "filters": [],
+              "pivot": [],
+              "mavis_type": null,
+              "display_format": "revenue",
+              "type": "float",
+              "column_kind": "metrics"
+            }
+          ],
+          "computed_columns": [],
+          "pivot": [],
+          "parent_filters": [],
+          "order": [
+            {
+              "column_id": "total_customers_ef860e0f",
+              "order_direction": "desc"
+            }
+          ],
+          "plots": []
+        },
+        {
+          "is_parent": true,
+          "name": "At Risk",
+          "slug": "parent_duplicate_2",
+          "parent_filters": [
+            {
+              "filter": {
+                "operator": "equal",
+                "value": "0",
+                "kind": "value",
+                "or_null": false
+              },
+              "column_id": "count_tsf4bbaff4"
+            },
+            {
+              "filter": {
+                "operator": "less_than",
+                "value": "7",
+                "kind": "value",
+                "or_null": true
+              },
+              "column_id": "feature_16b186f8f"
+            }
+          ],
+          "columns": [],
+          "metrics": [
+            {
+              "id": "max_created_manufacturing_run_or_created_sales_order_or_created_purchase_order_or_created_metric_transaction_timestamp_ever_63c3debf",
+              "label": "Max Created Manufacturing Run Or Created Sales Order Or Created Purchase Order Or Created Metric Transaction Timestamp Ever",
+              "agg_function": "MAX",
+              "conditioned_on_columns": null,
+              "output": true,
+              "column_id": "max_ts79b67713",
+              "filters": [],
+              "pivot": [],
+              "mavis_type": null,
+              "display_format": null,
+              "type": "timestamp",
+              "column_kind": "metrics"
+            }
+          ],
+          "computed_columns": [],
+          "pivot": [],
+          "order": [
+            {
+              "column_id": "revenue_impactd8ab7f38",
+              "order_direction": "desc"
+            }
+          ],
+          "_column_ids": [],
+          "hidden_column_ids": [
+            "activity_idf9981793",
+            "ts0469ee84",
+            "tsb8d789a9",
+            "customer_cityb9b7434f",
+            "feature_174621cf0",
+            "customer_lifecycle_stagedc9b98b8",
+            "max_ts79b67713",
+            "ts32d8d79c",
+            "count_tsf4bbaff4"
+          ]
+        },
+        {
+          "is_parent": true,
+          "name": "Best Customers",
+          "slug": "parent_duplicate_2_1",
+          "parent_filters": [
+            {
+              "filter": {
+                "operator": "greater_than",
+                "kind": "value",
+                "or_null": false,
+                "value": "10"
+              },
+              "column_id": "count_tsf4bbaff4"
+            },
+            {
+              "filter": {
+                "operator": "greater_than",
+                "kind": "value",
+                "or_null": true,
+                "value": "7"
+              },
+              "column_id": "feature_16b186f8f"
+            }
+          ],
+          "columns": [],
+          "metrics": [
+            {
+              "id": "max_created_manufacturing_run_or_created_sales_order_or_created_purchase_order_or_created_metric_transaction_timestamp_ever_63c3debf",
+              "label": "Max Created Manufacturing Run Or Created Sales Order Or Created Purchase Order Or Created Metric Transaction Timestamp Ever",
+              "agg_function": "MAX",
+              "conditioned_on_columns": null,
+              "output": true,
+              "column_id": "max_ts79b67713",
+              "filters": [],
+              "pivot": [],
+              "mavis_type": null,
+              "display_format": null,
+              "type": "timestamp",
+              "column_kind": "metrics"
+            }
+          ],
+          "computed_columns": [],
+          "pivot": [],
+          "order": [
+            {
+              "column_id": "revenue_impactd8ab7f38",
+              "order_direction": "desc"
+            }
+          ],
+          "_column_ids": [],
+          "hidden_column_ids": [
+            "activity_idf9981793",
+            "ts0469ee84",
+            "tsb8d789a9",
+            "customer_cityb9b7434f",
+            "feature_174621cf0",
+            "customer_lifecycle_stagedc9b98b8",
+            "max_ts79b67713",
+            "ts32d8d79c",
+            "count_tsf4bbaff4"
+          ]
+        }
+      ],
+      "order": [
+        {
+          "column_id": "ts0469ee84",
+          "order_direction": "desc"
+        }
+      ],
+      "activity_stream": "company_stream",
+      "swapped_ids": [],
+      "columns_order": {
+        "parent_duplicate": {
+          "order": [
+            "customera15e5205",
+            "feature_397d2eccb",
+            "revenue_impactd8ab7f38",
+            "count_tsf4bbaff4",
+            "days_from_last_used_product_at618a9ec2",
+            "feature_16b186f8f",
+            "day_of_last_ever_submitted_nps_score_timestampa9d803d5",
+            "id_tenure_in_months_8xx_jyeim",
+            "sum_revenue_impact985893a3",
+            "sum_revenue_impact8171a000",
+            "ts611cfd84",
+            "customer_hubspot_company_link29404b57",
+            "feature_3a5fc90d9"
+          ],
+          "left_pinned": [
+            "customera15e5205"
+          ],
+          "right_pinned": []
+        },
+        "parent": {
+          "order": [
+            "activity_idf9981793",
+            "ts0469ee84",
+            "anonymous_customer_id972bd0a4",
+            "customera15e5205",
+            "feature_174621cf0",
+            "customer_lifecycle_stagedc9b98b8",
+            "revenue_impactd8ab7f38",
+            "customer_description8d7028c0",
+            "customer_notes7719878c",
+            "customer_sales_person4d1721c2",
+            "customer_cityb9b7434f",
+            "count_tsf4bbaff4",
+            "max_ts79b67713",
+            "ts32d8d79c",
+            "feature_16b186f8f",
+            "feature_3a5fc90d9",
+            "tsb8d789a9",
+            "sum_revenue_impact985893a3",
+            "sum_revenue_impact8171a000",
+            "id_tenure_in_months_8xx_jyeim",
+            "days_from_last_used_product_at618a9ec2"
+          ],
+          "left_pinned": [],
+          "right_pinned": []
+        },
+        "parent_duplicate_2_1": {
+          "order": [
+            "customera15e5205",
+            "revenue_impactd8ab7f38",
+            "customer_hubspot_company_link29404b57",
+            "feature_16b186f8f",
+            "feature_3a5fc90d9",
+            "sum_revenue_impact985893a3",
+            "sum_revenue_impact8171a000",
+            "ts611cfd84",
+            "feature_397d2eccb",
+            "id_tenure_in_months_8xx_jyeim",
+            "days_from_last_used_product_at618a9ec2",
+            "day_of_last_ever_submitted_nps_score_timestampa9d803d5"
+          ],
+          "left_pinned": [
+            "customera15e5205"
+          ],
+          "right_pinned": []
+        }
+      }
+    }
+  }

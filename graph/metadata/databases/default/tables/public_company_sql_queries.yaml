@@ -1,0 +1,78 @@
+table:
+  name: company_sql_queries
+  schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        _and:
+          - related_id:
+              _eq: X-Hasura-Company-Id
+          - related_to:
+              _eq: company
+      columns:
+        - name
+        - notes
+        - related_id
+        - related_to
+        - sql
+        - updated_by
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - id
+        - name
+        - notes
+        - related_id
+        - sql
+        - updated_at
+        - updated_by
+      filter:
+        related_id:
+          _eq: X-Hasura-Company-Id
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - name
+        - notes
+        - sql
+        - updated_by
+      filter:
+        _and:
+          - related_id:
+              _eq: X-Hasura-Company-Id
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin
+      check: null
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        _and:
+          - related_id:
+              _eq: X-Hasura-Company-Id
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin

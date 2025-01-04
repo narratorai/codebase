@@ -1,0 +1,4 @@
+table:
+  name: datacenter_region
+  schema: public
+is_enum: true

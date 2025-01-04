@@ -1,0 +1,5 @@
+mutation DeleteDim($id: uuid!) {
+  delete_dim_table_by_pk(id: $id) {
+    id
+  }
+}

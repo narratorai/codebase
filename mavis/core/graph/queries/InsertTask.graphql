@@ -1,0 +1,30 @@
+mutation InsertTask(
+  $company_id: uuid!
+  $slug: String!
+  $schedule: String!
+  $category: company_task_category_enum
+  $description: String
+  $function_name: String
+  $function_path: String
+  $kwargs: String
+  $internal_only: Boolean = false
+  $label: String
+) {
+  inserted_task: insert_company_task_one(
+    object: {
+      company_id: $company_id
+      schedule: $schedule
+      task_slug: $slug
+      label: $label
+      category: $category
+      description: $description
+      internal_only: $internal_only
+      function_name: $function_name
+      function_path: $function_path
+      kwargs: $kwargs
+    }
+    on_conflict: { constraint: company_task_company_id_task_slug_key, update_columns: [schedule, description, label] }
+  ) {
+    id
+  }
+}

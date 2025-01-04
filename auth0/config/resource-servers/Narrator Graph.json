@@ -1,0 +1,11 @@
+{
+  "name": "Narrator Graph",
+  "identifier": "graph_narrator",
+  "allow_offline_access": true,
+  "skip_consent_for_verifiable_first_party_clients": true,
+  "token_lifetime": 1209600,
+  "token_lifetime_for_web": 7202,
+  "signing_alg": "RS256",
+  "enforce_policies": true,
+  "token_dialect": "access_token_authz"
+}

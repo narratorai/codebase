@@ -1,0 +1,10 @@
+# This extends the default postgres service and mounts a pg_dump file to restore
+# Used by run_local script for local dev purposes
+# Not in the main docker-compose because it will fail if the dump file does not exist!
+version: '3.7'
+services:
+  postgres:
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      # Mounted here will cause the db to restore on build
+      - ./.tmp/dbexport.sql:/docker-entrypoint-initdb.d/dbexport.sql

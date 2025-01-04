@@ -1,0 +1,24 @@
+query GetNarrativeBySlug($company_id: uuid!, $slug: String) {
+  narrative(where: {slug: {_eq: $slug}, company_id: {_eq: $company_id}}) {
+    id
+    created_at
+    name
+    type
+    slug
+    description
+    state
+    created_by
+    narrative_runs(order_by: {created_at: desc_nulls_last}, limit: 10) {
+      is_actionable
+      created_at
+      s3_key
+    }
+    narrative_datasets{
+      dataset {
+        id
+        slug
+        name
+      }
+    }
+  }
+}

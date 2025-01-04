@@ -1,0 +1,29 @@
+mutation UpdateNarrative($id: uuid!, $name: String!, $description: String) {
+  narrative: update_narrative_by_pk(pk_columns: { id: $id }, _set: { name: $name, description: $description }) {
+    id
+    slug
+    name
+    description
+    type
+    created_at
+    updated_at
+    created_by
+    company_task{
+      id
+      schedule
+    }
+    tags {
+      id
+      updated_at
+      tag_id
+      company_tag {
+        tag
+        user_id
+      }
+    }
+    teams: team_permissions {
+      id: team_id
+      can_edit
+    }
+  }
+}

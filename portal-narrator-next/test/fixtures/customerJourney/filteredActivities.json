@@ -1,0 +1,1082 @@
+[
+  {
+      "ts": "2017-12-31T19:35:34",
+      "activity_occurrence": 1,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": -6836407041199246000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "d3ea4b343852ad1d5e03a8188a867b6b",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:36:34",
+      "activity_occurrence": 2,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": 5357983960109437000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "a29e471d646f1a0156ae0f293790e779",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:38:34",
+      "activity_occurrence": 3,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": 6825315731203969000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "b14d5a570f12e49a802aa7f2286467a4",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:40:34",
+      "activity_occurrence": 4,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": 7308269693041849000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/careers",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "52c0babd3decad12a341a486e06e5aa7",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/careers",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:40:34",
+      "activity_occurrence": 5,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": 4658228608797189000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/solutions",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "90abb85d71902882bbcbb609a58f2070",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/solutions",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:42:34",
+      "activity_occurrence": 6,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": 3620216711842730500,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "4e55c894fba9961dbf820e21174ab667",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:42:34",
+      "activity_occurrence": 7,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": 1420050260928389000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "c8887800f7d25e9c982e19329d03d279",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:44:34",
+      "activity_occurrence": 8,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": -989423415755259800,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/solutions",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "7d9c168ed8dbd4888f3f12eb1bb3d16b",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/solutions",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:47:34",
+      "activity_occurrence": 9,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": 6619759807366947000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "91cf511af5fa09f71d52d2599689a03b",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:49:34",
+      "activity_occurrence": 10,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": 1069430914399989500,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "394075523ee015135ae93bbe28b5866d",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:53:34",
+      "activity_occurrence": 11,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": 145011115020937760,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "f41afae295cbc03faebd18aa8d3ae25e",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:56:34",
+      "activity_occurrence": 12,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": -2655511251248654300,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "9162c3bd12d0802e674ee9bce46b3fee",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:56:34",
+      "activity_occurrence": 13,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": 279730454197247070,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "7d6479c4daa89c8b1e2c723e203cc33f",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:58:34",
+      "activity_occurrence": 14,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": -5111254981815372000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "4bc8ca353f6edd138af5e8de54322d2f",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T19:59:34",
+      "activity_occurrence": 15,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": 7478171304264117000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/careers",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "0d65247ce77cefa0c006ed756d9ae6c5",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/careers",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:00:34",
+      "activity_occurrence": 16,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": -7873470157545550000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/solutions",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "f3db6bda6f6960d2e52c4949d712d18f",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/solutions",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:01:34",
+      "activity_occurrence": 17,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": -1921402662488310800,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/careers",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "9c4b8dd2aaaab4ef2bb7d20410fed7a6",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/careers",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:02:29",
+      "activity_occurrence": 1,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "schoen-mosciski",
+      "_id": -4651031192085086000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "e5af7519e392b8ab423ba191e1f519e2",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:02:34",
+      "activity_occurrence": 18,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "armstrong-hermann",
+      "_id": 4877241276737265000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/solutions",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "ee25a38fc14bb6b6d9b22f5891f2f380",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/solutions",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:05:29",
+      "activity_occurrence": 2,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "schoen-mosciski",
+      "_id": -292978197746774600,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/demo",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "fa098ce88c164b6dca7c55d2d1f24ddb",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/demo",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:11:29",
+      "activity_occurrence": 3,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "schoen-mosciski",
+      "_id": -3961373363150686000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/pricing",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "58f4356220588a8fb41261dcbe45a7bf",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/pricing",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:13:29",
+      "activity_occurrence": 4,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "schoen-mosciski",
+      "_id": 8856009797891529000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/solutions",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "6226cc8bffe3cd3e7245eab605e80631",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/solutions",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:13:29",
+      "activity_occurrence": 5,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "schoen-mosciski",
+      "_id": 6401020972909144000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "6c18d7c30c8037fa01f5f9cd460d0c8c",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:16:29",
+      "activity_occurrence": 6,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "schoen-mosciski",
+      "_id": -7152674133469483000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "cf710f4c2ec6c0e23736ba00c75c7d1d",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:20:29",
+      "activity_occurrence": 7,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "schoen-mosciski",
+      "_id": -7183178695168878000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "d1e4d18bed2e1b038114d9b1a5cab2a7",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:21:29",
+      "activity_occurrence": 8,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "schoen-mosciski",
+      "_id": 7653890150948940000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "1488da61fd0a60d6cb18c7366d175436",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:22:29",
+      "activity_occurrence": 9,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "schoen-mosciski",
+      "_id": -8858759898542167000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/careers",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "45560a242629084155db667dc7af29c9",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/careers",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:23:29",
+      "activity_occurrence": 10,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "schoen-mosciski",
+      "_id": 1714561741662544400,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "8c71819f9464c3e8a6846266156e4a9e",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:24:29",
+      "activity_occurrence": 11,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "schoen-mosciski",
+      "_id": -5766622184599234000,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "dd3afd22092a42afb8166baf66c605be",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  },
+  {
+      "ts": "2017-12-31T20:24:29",
+      "activity_occurrence": 12,
+      "activity": "employee_viewed_webpage",
+      "revenue_impact": null,
+      "customer": "schoen-mosciski",
+      "_id": -129923070547930030,
+      "features": [
+          {
+              "label": "Path",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "165cdf2537f157273bf599d57bc31857",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Page URL",
+              "value": "www.narrator-demo.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#6F1AD2",
+      "activity_name": "Employee Viewed Webpage"
+  }
+]

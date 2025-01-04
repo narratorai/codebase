@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+
+set -e
+
+echo "Updating python (if necessary)..."
+pyenv install --skip-existing
+echo "Setting up virtualenv..."
+
+pyenv exec python -m venv venv --upgrade-deps --prompt "mavis/python$(pyenv local)"
+venv/bin/pip install --upgrade wheel
+
+echo "Python virtual environment setup:"
+echo "- Please run \`source venv/bin/activate\` to activate the environment"
+echo "- Run \`pip install -U -r requirements-dev.txt\` to install all development dependencies,"
+echo "  or \`pip install -U -r requirements.txt\` to install only production dependencies"

@@ -1,0 +1,81 @@
+[project]
+name = "mavis"
+version = "1.0.0"
+requires-python = ">=3.11"
+
+[tool.bandit]
+exclude = [
+    ".cache",
+    "venv",
+    "**/.serverless",
+    "node_modules",
+    "core/graph/queries",
+]
+skips = ["B101"]
+
+[tool.codespell]
+skip = "pyproject.toml,.git,.gitignore,node_modules,yarn.lock,openapi,venv,htmlcov,junit.xml,core/graph/queries/*.py,core/graph/queries/**/*.py,core/graph/service-schema.json,core/graph/user-schema.json,tests/dataset/fixtures/*.json,tests/dataset/fixtures/**/*.sql,.tmp,.pytest_cache,core/v4/query_mapping/config.py"
+builtin = "clear,rare,usage,code,names,en-GB_to_en-US"
+ignore-words-list = "analyse,analyses,thead,ans,arange,ba,cancelled,cancelling,fle,iam,iff,Jupyter,master,nin,od,orginal,reencode,referer,uint,whitelist,ws,zar"
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+markers = ["api: mark a test as an api test.", "slow: mark test as slow."]
+addopts = "--strict-config --strict-markers --maxfail=3 --cov-report=term --cov-report=html --cov-report=xml"
+filterwarnings = [
+    # moto uses imp, which is deprecated in favor of importlib
+    "ignore:the imp module is deprecated:DeprecationWarning",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+ignore = [
+    # Do not enforce line length; black does this for code and we do not care about comments / docs
+    "E501",
+    "B904",
+    "B905",
+    "B008",
+    "PIE810",
+    "PLR0912",
+    "PLR0911",
+    "PLR0913",
+    "PLR0915",
+    "PLR1711",
+    "PLR5501",
+    "PLR2004",
+    "PLW0120",
+    "PLW2901",
+    "S101",
+    "S105",
+    "S113",
+]
+select = [
+    "ASYNC",
+    "B",
+    "COM818",
+    "E",
+    "F",
+    "ICN",
+    "INP",
+    "PIE",
+    "PL",
+    "S",
+    "T10",
+]
+exclude = ["core/graph/queries/", "core/graph/sync_client/"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query"]
+
+[tool.ariadne-codegen]
+remote_schema_url = "https://graph.us.narrator.ai/v1/graphql"
+remote_schema_headers = { "Authorization" = "$GRAPH_TOKEN" }
+queries_path = "core/graph/queries"
+async_client = false
+target_package_name = "sync_client"
+target_package_path = "core/graph"
+include_comments = false
+plugins = ["gql_codegen.plugins.NarratorPlugin"]

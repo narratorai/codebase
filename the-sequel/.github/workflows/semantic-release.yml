@@ -1,0 +1,57 @@
+name: Semantic Release
+
+on:
+  push:
+    branches:
+      - master
+      - next
+
+jobs:
+  release:
+    if: "!contains(github.event.commits[0].message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          cache: yarn
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: install
+        run: yarn install --frozen-lockfile --pure-lockfile --non-interactive --summary
+
+      - name: build
+        run: yarn build
+        env:
+          NODE_ENV: production
+
+      - name: release
+        uses: cycjimmy/semantic-release-action@v4
+        id: semantic
+        with:
+          extra_plugins: |
+            @semantic-release/git
+            @semantic-release/changelog
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GH_TOKEN }}
+
+      - name: Upload to S3
+        if: steps.semantic.outputs.new_release_published == 'true'
+        uses: reggionick/s3-deploy@v3
+        with:
+          folder: dist/static
+          bucket: assetsinfrastack-assetsbuckete5c0e90f-19is5glcqpnyt/the-sequel
+          bucket-region: us-east-1
+          private: true
+          cache: 31536000
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOYER_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOYER_AWS_SECRET_ACCESS_KEY }}

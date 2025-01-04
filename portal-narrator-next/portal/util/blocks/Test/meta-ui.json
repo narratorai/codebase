@@ -1,0 +1,67 @@
+{
+  "schema": {
+    "title": "A registration form",
+    "description": "Able to specify meta UI stuff",
+    "type": "object",
+    "properties": {
+      "firstName": {
+        "type": "string",
+        "title": "First name",
+        "meta_ui": {
+          "widget": "textarea"
+        }
+      },
+      "lastName": {
+        "type": "string",
+        "title": "Last name"
+      },
+      "foo": {
+        "type": "object",
+        "properties": {
+          "sql_with_table_example": {
+            "type": "string",
+            "default": "select * from dw.activity_stream limit 10;",
+            "meta_ui": {
+              "widget": "SqlWithTableWidget"
+            }
+          },
+          "sql_example": {
+            "type": "string",
+            "meta_ui": {
+              "widget": "SqlWidget"
+            }
+          },
+          "markdown_example": {
+            "type": "string",
+            "meta_ui": {
+              "widget": "MarkdownWidget"
+            }
+          },
+          "empty": {
+            "type": "string"
+          }
+        }
+      },
+      "baz": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "meta_ui": {
+                "widget": "textarea"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "data": {
+    "firstName": "This should be a textarea",
+    "foo": {
+      "markdown": "# This is a header\n\nThis is body copy"
+    }
+  }
+}

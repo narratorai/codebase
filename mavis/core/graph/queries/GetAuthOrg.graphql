@@ -1,0 +1,8 @@
+query GetAuthOrg($company_id: uuid!) {
+ auth: company_auth0(where: { company_id: {_eq: $company_id}}) {
+      org_id
+      connection_id
+      enforce_sso
+      disable_sso
+    }
+  }

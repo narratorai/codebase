@@ -1,0 +1,5 @@
+mutation UpdateRole($id:uuid!, $role: company_user_role_enum!) {
+        update_company_user_by_pk(pk_columns: {id: $id}, _set: {role: $role}) {
+            id
+        }
+        }

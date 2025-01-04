@@ -1,0 +1,7 @@
+mutation DeleteActivityTag($activity_tag_id: uuid!) {
+  delete_activity_tags(where: { id: { _eq: $activity_tag_id } }) {
+    returning {
+      id
+    }
+  }
+}

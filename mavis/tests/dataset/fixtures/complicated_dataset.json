@@ -1,0 +1,1228 @@
+{
+  "fields": {},
+  "query": {
+    "activities": [
+      {
+        "id": "started_sessioncebf69e7",
+        "name": "Started Session",
+        "slug": ["started_session"],
+        "activity_ids": ["22e38afd-3145-47c1-92d4-9d4f51163f53"],
+        "did": true,
+        "occurrence": "all",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "limiting"
+      },
+      {
+        "id": "completed_ordera4f0f14d",
+        "name": "Completed Order",
+        "slug": ["completed_order"],
+        "activity_ids": ["e134737e-e96a-4f10-8bdb-385773ded546"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "within_cohort"
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_in_between"
+      },
+      {
+        "id": "paid_invoicefc4a1ad5",
+        "name": "Paid Invoice",
+        "slug": ["paid_invoice"],
+        "activity_ids": ["88e5a889-34ee-44c4-bc2d-acc9ea45198c"],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "before"
+          },
+          {
+            "slug": "within_time",
+            "relationship_time": "day",
+            "relationship_time_value": 30
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "last_before"
+      },
+      {
+        "id": "attended_meeting5a739076",
+        "name": "Attended Meeting",
+        "slug": ["attended_meeting"],
+        "activity_ids": ["5aa800c5-edf3-4798-97da-1741c62dc8e0"],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "before"
+          },
+          {
+            "slug": "within_time",
+            "relationship_time": "day",
+            "relationship_time_value": 20
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "last_before"
+      },
+      {
+        "id": "paid_invoice22279cc2",
+        "name": "Paid Invoice",
+        "slug": ["paid_invoice"],
+        "activity_ids": ["88e5a889-34ee-44c4-bc2d-acc9ea45198c"],
+        "did": true,
+        "occurrence": "metric",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "agg_all_ever"
+      },
+      {
+        "id": "purchased_product3f1133d5",
+        "name": "Purchased Product",
+        "slug": ["purchased_product"],
+        "activity_ids": ["eb722048-652a-490a-90d6-2b92af282ff6"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "cohort_column",
+            "cohort_column_name": "customer-platform",
+            "column_name": "feature_1",
+            "column_name_enrichment_table": null,
+            "operator": "equal"
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_ever"
+      },
+      {
+        "id": "purchased_product9fa096f3",
+        "name": "Purchased Product",
+        "slug": ["purchased_product"],
+        "activity_ids": ["eb722048-652a-490a-90d6-2b92af282ff6"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "cohort_column",
+            "cohort_column_name": "utm_campaign",
+            "column_name": "feature_1",
+            "column_name_enrichment_table": null,
+            "operator": "equal"
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_ever"
+      },
+      {
+        "id": "solved_ticketa16c9c1d",
+        "name": "Solved Ticket",
+        "slug": ["solved_ticket"],
+        "activity_ids": ["ba1df73d-a2a4-4cc0-a765-840942818a34"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "within_cohort"
+          },
+          {
+            "slug": "relative_to",
+            "relation": "before",
+            "relative_occurrence": "first",
+            "relative_to_activity_slug": ["paid_invoice"],
+            "or_null": true
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_in_between"
+      },
+      {
+        "id": "viewed_paywall57f271f1",
+        "name": "Viewed Paywall",
+        "slug": ["viewed_paywall"],
+        "activity_ids": ["1c4f39b3-cc38-4313-bd51-36347104820c"],
+        "did": true,
+        "occurrence": "metric",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "before"
+          },
+          {
+            "slug": "within_time",
+            "relationship_time": "minute",
+            "relationship_time_value": 30
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "agg_all_before"
+      },
+      {
+        "id": "attended_meeting38fb6b07",
+        "name": "Attended Meeting",
+        "slug": ["attended_meeting"],
+        "activity_ids": ["5aa800c5-edf3-4798-97da-1741c62dc8e0"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_ever"
+      }
+    ],
+    "columns": [
+      {
+        "id": "activity_id4c4e2b95",
+        "name": "activity_id",
+        "label": "Activity Id",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_sessioncebf69e7",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ts05226dd4",
+        "name": "ts",
+        "label": "Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_sessioncebf69e7",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "customerbd016d99",
+        "name": "customer",
+        "label": "Customer",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_sessioncebf69e7",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "join_customer405cc033",
+        "name": "join_customer",
+        "label": "Unique Identifier",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_sessioncebf69e7",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "feature_177c9e5c6",
+        "name": "feature_1",
+        "label": "Ad Source",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_sessioncebf69e7",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "feature_21e2005f5",
+        "name": "feature_2",
+        "label": "Referring Domain",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_sessioncebf69e7",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "feature_359693951",
+        "name": "feature_3",
+        "label": "Device",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_sessioncebf69e7",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "link2cea0669",
+        "name": "link",
+        "label": "Link",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_sessioncebf69e7",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "activity_occurrence4a49fb01",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "group_func": null,
+        "type": "number",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_sessioncebf69e7",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "utm_campaigne6e72e60",
+        "name": "utm_campaign",
+        "label": "Utm Campaign",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "started_sessioncebf69e7",
+          "enrichment_table": "enriched_pages",
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ts23e99bc8",
+        "name": "ts",
+        "label": "First In Between Completed Order Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "completed_ordera4f0f14d",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_completed_order52bace2d",
+        "name": null,
+        "label": "Did Completed Order Between",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts23e99bc8)",
+          "activity_kind": "append",
+          "activity_id": "completed_ordera4f0f14d",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_completed_order7f3e2c3c",
+        "name": null,
+        "label": "Days To Completed Order",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, ts23e99bc8)",
+          "activity_kind": "append",
+          "activity_id": "completed_ordera4f0f14d",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "ts0d4e8bca",
+        "name": "ts",
+        "label": "Last Before Paid Invoice Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "paid_invoicefc4a1ad5",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_paid_invoice49b5ab3d",
+        "name": null,
+        "label": "Did Paid Invoice Before",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts0d4e8bca)",
+          "activity_kind": "append",
+          "activity_id": "paid_invoicefc4a1ad5",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_paid_invoiceb7eaa47e",
+        "name": null,
+        "label": "Days From Paid Invoice",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', ts0d4e8bca, join_ts.local)",
+          "activity_kind": "append",
+          "activity_id": "paid_invoicefc4a1ad5",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "ts414435a5",
+        "name": "ts",
+        "label": "Last Before Attended Meeting Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "attended_meeting5a739076",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_attended_meeting49c4d208",
+        "name": null,
+        "label": "Did Attended Meeting Before",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts414435a5)",
+          "activity_kind": "append",
+          "activity_id": "attended_meeting5a739076",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_attended_meetingd3265268",
+        "name": null,
+        "label": "Days From Attended Meeting",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', ts414435a5, join_ts.local)",
+          "activity_kind": "append",
+          "activity_id": "attended_meeting5a739076",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "count_tsc853371b",
+        "name": "ts",
+        "label": "Total Paid Invoices Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": ["sum", "average"],
+        "type": "integer",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "paid_invoice22279cc2",
+          "enrichment_table": null,
+          "applied_function": "count"
+        }
+      },
+      {
+        "id": "ts7c99b079",
+        "name": "ts",
+        "label": "First Ever Purchased Product Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "purchased_product3f1133d5",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_purchased_product91e211e5",
+        "name": null,
+        "label": "Did Purchased Product Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts7c99b079)",
+          "activity_kind": "append",
+          "activity_id": "purchased_product3f1133d5",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_purchased_productb23265bb",
+        "name": null,
+        "label": "Days From Purchased Product",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', ts7c99b079, join_ts.local)",
+          "activity_kind": "append",
+          "activity_id": "purchased_product3f1133d5",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "ts94090aa3",
+        "name": "ts",
+        "label": "First Ever Purchased Product Timestamp 1",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "purchased_product9fa096f3",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_purchased_product23285b45",
+        "name": null,
+        "label": "Did Purchased Product Ever 1",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts94090aa3)",
+          "activity_kind": "append",
+          "activity_id": "purchased_product9fa096f3",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_purchased_product58706329",
+        "name": null,
+        "label": "Days From Purchased Product 1",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', ts94090aa3, join_ts.local)",
+          "activity_kind": "append",
+          "activity_id": "purchased_product9fa096f3",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "ts6d2f6a85",
+        "name": "ts",
+        "label": "First In Between Solved Ticket Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "solved_ticketa16c9c1d",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_solved_ticket080424ff",
+        "name": null,
+        "label": "Did Solved Ticket Between",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts6d2f6a85)",
+          "activity_kind": "append",
+          "activity_id": "solved_ticketa16c9c1d",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_solved_ticket4df0c02c",
+        "name": null,
+        "label": "Days To Solved Ticket",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, ts6d2f6a85)",
+          "activity_kind": "append",
+          "activity_id": "solved_ticketa16c9c1d",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "count_tse1154ce8",
+        "name": "ts",
+        "label": "Total Viewed Paywalls Before",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": ["sum", "average"],
+        "type": "integer",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "viewed_paywall57f271f1",
+          "enrichment_table": null,
+          "applied_function": "count"
+        }
+      },
+      {
+        "id": "ts7f40f3ee",
+        "name": "ts",
+        "label": "First Ever Attended Meeting Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "attended_meeting38fb6b07",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_attended_meetingb2b23d28",
+        "name": null,
+        "label": "Did Attended Meeting Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts7f40f3ee)",
+          "activity_kind": "append",
+          "activity_id": "attended_meeting38fb6b07",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_attended_meeting4dfc24aa",
+        "name": null,
+        "label": "Days From Attended Meeting 1",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', ts7f40f3ee, join_ts.local)",
+          "activity_kind": "append",
+          "activity_id": "attended_meeting38fb6b07",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "month_of_timestampf59bbced",
+        "name": null,
+        "label": "Month of Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": null,
+        "type": "timestamp",
+        "group_func": [],
+        "source_kind": "computed",
+        "source_details": {
+          "kind": "freehand_function",
+          "raw_string": "date_trunc('month', ts05226dd4)"
+        }
+      }
+    ],
+    "all_groups": [
+      {
+        "name": "by Month Of Timestamp",
+        "slug": "month_of_timestamp78e81c5d",
+        "columns": [
+          {
+            "id": "month_of_timestamp_157f2481",
+            "filters": [],
+            "label": "Month of Timestamp",
+            "name": "",
+            "output": true,
+            "mavis_type": "timestamp",
+            "type": "timestamp",
+            "source_kind": "group",
+            "column_id": "month_of_timestampf59bbced",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_started_session_rows_1069ec61",
+            "label": "Total Started Session Rows",
+            "agg_function": "COUNT_ALL",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "number",
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_completed_order_between_37d0f9ea",
+            "label": "Total Completed Order Between",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_completed_order52bace2d",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_completed_order_between_1776bf68",
+            "label": "Conversion Rate to Completed Order Between",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_completed_order52bace2d",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_to_completed_order_3e4a3eab",
+            "label": "Average Days To Completed Order",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_completed_order7f3e2c3c",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_paid_invoice_dd3f8517",
+            "label": "Total Paid Invoice",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paid_invoice49b5ab3d",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_paid_invoice_f2e7600e",
+            "label": "Percent of Paid Invoice",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_paid_invoice49b5ab3d",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_paid_invoice_40fe2ec0",
+            "label": "Average Days From Paid Invoice",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_paid_invoiceb7eaa47e",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_attended_meeting_810d4346",
+            "label": "Total Attended Meeting",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_attended_meeting49c4d208",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "percent_of_attended_meeting_709a2291",
+            "label": "Percent of Attended Meeting",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_attended_meeting49c4d208",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_attended_meeting_4f95ee4c",
+            "label": "Average Days From Attended Meeting",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_attended_meetingd3265268",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_paid_invoices_ever_a084aa6c",
+            "label": "Total Paid Invoices Ever",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "count_tsc853371b",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_total_paid_invoices_ever_369d43ff",
+            "label": "Average Total Paid Invoices Ever",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "count_tsc853371b",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_purchased_product_ever_254f4cb8",
+            "label": "Total Purchased Product Ever",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_purchased_product91e211e5",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_purchased_product_ever_92cfe7f7",
+            "label": "Conversion Rate to Purchased Product Ever",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_purchased_product91e211e5",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_purchased_product_308c870f",
+            "label": "Average Days From Purchased Product",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_purchased_productb23265bb",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_purchased_product_ever_1_75a699c8",
+            "label": "Total Purchased Product Ever 1",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_purchased_product23285b45",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_purchased_product_ever_1_c1fe8d04",
+            "label": "Conversion Rate to Purchased Product Ever 1",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_purchased_product23285b45",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_purchased_product_1_4acbb01e",
+            "label": "Average Days From Purchased Product 1",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_purchased_product58706329",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_solved_ticket_between_05093981",
+            "label": "Total Solved Ticket Between",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_solved_ticket080424ff",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_solved_ticket_between_65613689",
+            "label": "Conversion Rate to Solved Ticket Between",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_solved_ticket080424ff",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_to_solved_ticket_b7004a4b",
+            "label": "Average Days To Solved Ticket",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_solved_ticket4df0c02c",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_viewed_paywalls_before_b63a9621",
+            "label": "Total Viewed Paywalls Before",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "count_tse1154ce8",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_total_viewed_paywalls_before_7cdbc754",
+            "label": "Average Total Viewed Paywalls Before",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "count_tse1154ce8",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_attended_meeting_ever_56ef1430",
+            "label": "Total Attended Meeting Ever",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_attended_meetingb2b23d28",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_attended_meeting_ever_64231a64",
+            "label": "Conversion Rate to Attended Meeting Ever",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_attended_meetingb2b23d28",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_from_attended_meeting_1_545d5a7a",
+            "label": "Average Days From Attended Meeting 1",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_attended_meeting4dfc24aa",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          }
+        ],
+        "computed_columns": [],
+        "pivot": [],
+        "parent_filters": [],
+        "order": [
+          {
+            "column_id": "month_of_timestamp_157f2481",
+            "order_direction": "desc"
+          }
+        ],
+        "plots": []
+      }
+    ],
+    "order": [
+      {
+        "column_id": "ts05226dd4",
+        "order_direction": "desc"
+      }
+    ],
+    "activity_stream": "activity_stream",
+    "swapped_ids": [],
+    "columns_order": {}
+  }
+}

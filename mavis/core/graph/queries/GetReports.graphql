@@ -1,0 +1,13 @@
+query GetReports($ids: [uuid!]!) {
+  reports: narrative(where: { id: { _in: $ids } }) {
+    id
+    type
+    updated_at
+    compiled_versions(limit: 1, order_by: { created_at: desc }) {
+      id
+      created_at
+      s3_key
+    }
+    task_id
+  }
+}

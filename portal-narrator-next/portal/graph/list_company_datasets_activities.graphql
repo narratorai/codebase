@@ -1,0 +1,11 @@
+query ListCompanyDatasetActivities($company_id: uuid!) {
+  dataset_activities(where: { activity: { company_id: { _eq: $company_id } } }) {
+    id
+    dataset_id
+    activity {
+      id
+      name
+      slug
+    }
+  }
+}

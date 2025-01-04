@@ -1,0 +1,5 @@
+mutation DeleteTemplate($id: uuid!) {
+  delete_narrative_template_by_pk(id: $id) {
+    id
+  }
+}

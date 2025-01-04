@@ -1,0 +1,5 @@
+{
+  "name": "internal_admin",
+  "description": "Internal users with full access. Should be used sparsely, and protected carefully.",
+  "permissions": []
+}

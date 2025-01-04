@@ -1,0 +1,39 @@
+mutation InsertNarrativeTemplate(
+  $name: String!
+  $template: String!
+  $global_version: Int
+  $local_iteration: Int
+  $customer_iteration: Int
+  $kind: narrative_template_kinds_enum
+  $created_by: uuid
+  $question: String
+  $description: String
+  $category: String
+  $state: narrative_template_states_enum
+  $display_company_using: Int
+  $in_free_tier: Boolean
+  $company_id: uuid
+  $type: narrative_types_enum
+) {
+  insert_narrative_template_one(
+    object: {
+      name: $name
+      template: $template
+      global_version: $global_version
+      local_iteration: $local_iteration
+      customer_iteration: $customer_iteration
+      kind: $kind
+      question: $question
+      created_by: $created_by
+      description: $description
+      state: $state
+      display_companies_using: $display_company_using
+      in_free_tier: $in_free_tier
+      company_id: $company_id
+      category: $category
+      type: $type
+    }
+  ) {
+    id
+  }
+}

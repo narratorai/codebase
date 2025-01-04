@@ -1,0 +1,26 @@
+table:
+  name: transformation_maintenance
+  schema: public
+object_relationships:
+  - name: maintenance_kind
+    using:
+      foreign_key_constraint_on: kind
+  - name: transformation
+    using:
+      foreign_key_constraint_on: transformation_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - ended_at
+        - id
+        - kind
+        - notes
+        - started_at
+        - transformation_id
+        - updated_at
+      filter:
+        transformation:
+          company_id:
+            _eq: X-Hasura-Company-Id

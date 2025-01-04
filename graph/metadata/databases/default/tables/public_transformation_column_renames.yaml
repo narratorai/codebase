@@ -1,0 +1,61 @@
+table:
+  name: transformation_column_renames
+  schema: public
+object_relationships:
+  - name: transformation
+    using:
+      manual_configuration:
+        column_mapping:
+          related_to_id: id
+        insertion_order: null
+        remote_table:
+          name: transformation
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - id
+        - created_at
+        - updated_at
+        - name
+        - label
+        - type
+        - casting
+        - description
+        - related_to
+        - related_to_id
+        - has_data
+        - transformation_id
+      filter:
+        transformation:
+          company_id:
+            _eq: X-Hasura-Company-Id
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - casting
+        - description
+        - has_data
+        - label
+        - name
+        - type
+      filter:
+        _and:
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin
+          - transformation:
+              company_id:
+                _eq: X-Hasura-Company-Id
+      check: null

@@ -1,0 +1,17 @@
+mutation InsertQueryAlert(
+    $alert_kind: company_query_alert_kinds_enum = returns_no_rows
+    $email: String
+    $query_id: uuid
+    $updated_by: uuid
+) {
+    insert_company_query_alert_one(
+        object: {
+            alert_kind: $alert_kind
+            email: $email
+            query_id: $query_id
+            updated_by: $updated_by
+        }
+    ) {
+        id
+    }
+}

@@ -1,0 +1,21 @@
+subscription GetLastRunTransformation($company_slug: String!) {
+  task_execution(
+    order_by: [{ started_at: desc }]
+    where: {
+      task: { company: { slug: { _eq: $company_slug } }, task_slug: { _eq: "run_transformations" } }
+      _and: { started_at: { _is_null: false } }
+    }
+    limit: 1
+  ) {
+    id
+    started_at
+    completed_at
+    status
+    task {
+      id
+      created_at
+      schedule
+      task_slug
+    }
+  }
+}

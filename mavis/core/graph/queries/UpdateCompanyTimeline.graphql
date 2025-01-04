@@ -1,0 +1,8 @@
+mutation UpdateCompanyTimeline($id: uuid!, $happened_at: date!, $name: String!, $description: String) {
+  update_company_timeline_by_pk(
+    pk_columns: { id: $id }
+    _set: { happened_at: $happened_at, description: $description, name: $name }
+  ) {
+    id
+  }
+}

@@ -1,0 +1,7 @@
+query GetCompanyTable($id: uuid!) {
+  company_table_by_pk(id: $id) {
+    team_permissions {
+      team_id
+    }
+  }
+}

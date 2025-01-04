@@ -1,0 +1,5 @@
+mutation UpdateActivityCategory($id: uuid!, $category_id: uuid!) {
+  update_activity_by_pk(_set: {category_id: $category_id}, pk_columns: {id: $id}) {
+    id
+  }
+}

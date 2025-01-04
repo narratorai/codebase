@@ -1,0 +1,7 @@
+mutation DeleteColumns($id: uuid!, $related_to: column_rename_relations_enum!) {
+  delete_column_renames(where: { related_to: { _eq: $related_to }, related_to_id: { _eq: $id } }) {
+    returning {
+      id
+    }
+  }
+}

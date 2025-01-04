@@ -1,0 +1,11 @@
+query GetDatasetBasic($id: uuid!) {
+  dataset_by_pk(id: $id) {
+    name
+    description
+    status
+    slug
+    created_by
+    locked
+    company_id
+  }
+}

@@ -1,0 +1,64 @@
+query GetDatasetBySlug($company_id: uuid!, $slug: String!, $user_id: uuid!) {
+  dataset(
+    where: { company_id: { _eq: $company_id }, slug: { _eq: $slug } }
+    order_by: [{ created_at: desc }]
+    limit: 1
+  ) {
+    id
+    created_at
+    created_by
+    description
+    last_viewed_at
+    name
+    slug
+    status
+    locked
+    updated_at
+    hide_from_index
+    company_category {
+      id
+      category
+      created_at
+    }
+    tags(where: { company_tag: { _or: [{ user_id: { _eq: $user_id } }, { user_id: { _is_null: true } }] } }) {
+      id
+      updated_at
+      company_tag {
+        id
+        tag
+        color
+        user_id
+      }
+    }
+    materializations {
+      id
+      label
+      type
+      days_to_resync
+      group_slug
+      column_id
+      webhook_url
+      user_ids
+      external_link
+      company_task {
+        id
+        schedule
+        task_slug
+        updated_at
+        description
+        category
+      }
+    }
+    user {
+      id
+      email
+      company_users {
+        first_name
+        last_name
+        id
+        role
+        user_id
+      }
+    }
+  }
+}

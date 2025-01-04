@@ -1,0 +1,7 @@
+export { default as Avatar } from './Avatar'
+export { default as AvatarButton } from './AvatarButton'
+export { default as AvatarDetails } from './AvatarDetails'
+export { default as AvatarDetailsButton } from './AvatarDetailsButton'
+export { default as AvatarGroup } from './AvatarGroup'
+export type { Color, IAvatar, IAvatarDetails } from './interfaces'
+export * as COLORS from './palette'

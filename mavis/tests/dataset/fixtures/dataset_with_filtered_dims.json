@@ -1,0 +1,529 @@
+{
+    "fields": {},
+    "query": {
+      "activities": [
+        {
+          "id": "amoney_raised_2d0512c5",
+          "name": "Money Raised",
+          "slug": [
+            "money_raised"
+          ],
+          "activity_ids": [
+            "72fc3a60-c619-439c-83a7-a06599569be5"
+          ],
+          "did": true,
+          "occurrence": "all",
+          "occurrence_value": null,
+          "force_recompute_occurrence": null,
+          "resolution_filter": null,
+          "config": {
+            "has_source": true,
+            "activity_stream": "activity_stream"
+          },
+          "relationships": [],
+          "filters": [
+            {
+              "filter": {
+                "operator": "contains",
+                "kind": "value",
+                "value": "hi",
+                "or_null": false,
+                "from_type": null,
+                "from_value": null,
+                "from_value_kind": "value",
+                "from_value_resolution": null,
+                "to_type": null,
+                "to_value": null,
+                "to_value_kind": "value",
+                "to_value_resolution": null,
+                "value_resolution": null
+              },
+              "activity_column": {
+                "id": "aevent_type_72a85a0a",
+                "name": "event_type",
+                "label": "Event Type",
+                "output": true,
+                "filters": [],
+                "mavis_type": "string",
+                "group_func": null,
+                "type": "string",
+                "source_kind": "activity",
+                "source_details": {
+                  "activity_kind": "limiting",
+                  "activity_id": "amoney_raised_afb1210c",
+                  "enrichment_table": {
+                    "schema": "calendly",
+                    "table": "events",
+                    "join_key": "_id"
+                  },
+                  "enrichment_table_column": "activity_id",
+                  "applied_function": null
+                }
+              },
+              "activity_column_name": "event_type",
+              "column_type": "string",
+              "enrichment_table": {
+                "schema": "calendly",
+                "table": "events",
+                "join_key": "_id"
+              },
+              "enrichment_table_column": "activity_id"
+            }
+          ],
+          "kind": "limiting",
+          "temp_id": "0['money_raised']"
+        },
+        {
+          "id": "amoney_raised_ace131b9",
+          "name": "Money Raised",
+          "slug": [
+            "money_raised"
+          ],
+          "activity_ids": [
+            "72fc3a60-c619-439c-83a7-a06599569be5"
+          ],
+          "did": true,
+          "occurrence": "first",
+          "occurrence_value": null,
+          "force_recompute_occurrence": null,
+          "resolution_filter": null,
+          "config": {
+            "has_source": true,
+            "activity_stream": "activity_stream"
+          },
+          "relationships": [
+            {
+              "slug": "within_cohort"
+            },
+            {
+              "operator": "equal",
+              "slug": "cohort_column",
+              "cohort_column": {
+                "id": "aevent_type_5b4c95a4",
+                "name": "event_type",
+                "label": "Event Type",
+                "output": true,
+                "filters": [],
+                "mavis_type": "string",
+                "group_func": null,
+                "type": "string",
+                "source_kind": "activity",
+                "source_details": {
+                  "activity_kind": "append",
+                  "activity_id": "amoney_raised_efe127ad",
+                  "enrichment_table": {
+                    "schema": "calendly",
+                    "table": "events",
+                    "join_key": "_id"
+                  },
+                  "enrichment_table_column": "activity_id",
+                  "applied_function": null
+                }
+              },
+              "append_column": {
+                "id": "aquestions_and_responses_ef4788a1",
+                "name": "questions_and_responses",
+                "label": "Questions And Responses",
+                "output": true,
+                "filters": [],
+                "mavis_type": "string",
+                "group_func": null,
+                "type": "string",
+                "source_kind": "activity",
+                "source_details": {
+                  "activity_kind": "append",
+                  "activity_id": "amoney_raised_efe127ad",
+                  "enrichment_table": {
+                    "schema": "calendly",
+                    "table": "events",
+                    "join_key": "_id"
+                  },
+                  "enrichment_table_column": "activity_id",
+                  "applied_function": null
+                }
+              },
+              "column_name": "questions_and_responses",
+              "cohort_column_name": "event_type",
+              "cohort_column_enrichment_table": null,
+              "column_name_enrichment_table": {
+                "schema": "calendly",
+                "table": "events",
+                "join_key": "_id"
+              },
+              "column_name_enrichment_table_column": null
+            }
+          ],
+          "filters": [
+            {
+              "filter": {
+                "operator": "contains",
+                "kind": "value",
+                "value": "k",
+                "or_null": false,
+                "from_type": null,
+                "from_value": null,
+                "from_value_kind": "value",
+                "from_value_resolution": null,
+                "to_type": null,
+                "to_value": null,
+                "to_value_kind": "value",
+                "to_value_resolution": null,
+                "value_resolution": null
+              },
+              "activity_column": {
+                "id": "atracking_a652b0a8",
+                "name": "tracking",
+                "label": "Tracking",
+                "output": true,
+                "filters": [],
+                "mavis_type": "string",
+                "group_func": null,
+                "type": "string",
+                "source_kind": "activity",
+                "source_details": {
+                  "activity_kind": "append",
+                  "activity_id": "amoney_raised_efe127ad",
+                  "enrichment_table": {
+                    "schema": "calendly",
+                    "table": "events",
+                    "join_key": "_id"
+                  },
+                  "enrichment_table_column": "activity_id",
+                  "applied_function": null
+                }
+              },
+              "activity_column_name": "tracking",
+              "column_type": "string",
+              "enrichment_table": {
+                "schema": "calendly",
+                "table": "events",
+                "join_key": "_id"
+              },
+              "enrichment_table_column": "activity_id"
+            }
+          ],
+          "kind": "append",
+          "relationship_slug": "first_in_between",
+          "temp_id": "1['money_raised']"
+        }
+      ],
+      "columns": [
+        {
+          "id": "aactivity_id_f9bbffaa",
+          "name": "activity_id",
+          "label": "Activity Id",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "amoney_raised_2d0512c5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "ats_3d79641b",
+          "name": "ts",
+          "label": "Timestamp",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": null,
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "amoney_raised_2d0512c5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "acustomer_9101d414",
+          "name": "customer",
+          "label": "Customer",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "amoney_raised_2d0512c5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "ajoin_customer_eb3d31e3",
+          "name": "join_customer",
+          "label": "Unique Identifier",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "amoney_raised_2d0512c5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "aactivity_77745d88",
+          "name": "activity",
+          "label": "Activity",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "amoney_raised_2d0512c5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_1_997e370c",
+          "name": "feature_1",
+          "label": "Description",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "amoney_raised_2d0512c5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_2_3bfdd596",
+          "name": "feature_2",
+          "label": "Account Type",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "amoney_raised_2d0512c5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_3_1b3ce182",
+          "name": "feature_3",
+          "label": "Name",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "amoney_raised_2d0512c5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "arevenue_impact_9d8d2cad",
+          "name": "revenue_impact",
+          "label": "Revenue Impact",
+          "output": true,
+          "filters": [],
+          "mavis_type": "float",
+          "group_func": [
+            "sum"
+          ],
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "amoney_raised_2d0512c5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "alink_29fb6a4e",
+          "name": "link",
+          "label": "Link",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "amoney_raised_2d0512c5",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "a_fivetran_synced_6dddfa0e",
+          "name": "_fivetran_synced",
+          "label": "Fivetran Synced",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": null,
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "amoney_raised_2d0512c5",
+            "enrichment_table": {
+              "schema": "calendly",
+              "table": "events",
+              "join_key": "_id"
+            },
+            "enrichment_table_column": "activity_id",
+            "applied_function": null
+          }
+        },
+        {
+          "id": "avendor_balance_3fc86904",
+          "filters": [],
+          "label": "Balance",
+          "name": "balance",
+          "output": true,
+          "source_details": {
+            "table": {
+              "schema": "quickbooks",
+              "table": "vendor",
+              "join_key": "id"
+            },
+            "activity_id": "amoney_raised_2d0512c5"
+          },
+          "source_kind": "customer",
+          "mavis_type": "number",
+          "type": "number"
+        },
+        {
+          "id": "avendor_billing_address_id_8e9d9f4b",
+          "filters": [],
+          "label": "Billing Address Id",
+          "name": "billing_address_id",
+          "output": true,
+          "source_details": {
+            "table": {
+              "schema": "quickbooks",
+              "table": "vendor",
+              "join_key": "id"
+            },
+            "activity_id": "amoney_raised_2d0512c5"
+          },
+          "source_kind": "customer",
+          "mavis_type": "string",
+          "type": "string"
+        },
+        {
+          "id": "ats_4ccc4745",
+          "name": "ts",
+          "label": "Next Money Raiseds Timestamp",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": null,
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "amoney_raised_ace131b9",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "adid_money_raised_d8bd4bb5",
+          "name": null,
+          "label": "Did Repeat Money Raised",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "type": "integer",
+          "group_func": [
+            "sum",
+            "average"
+          ],
+          "source_kind": "computed",
+          "source_details": {
+            "raw_string": "exists(ats_4ccc4745)",
+            "activity_kind": "append",
+            "activity_id": "amoney_raised_ace131b9",
+            "enrichment_table": null
+          }
+        }
+      ],
+      "all_groups": [],
+      "order": [
+        {
+          "column_id": "ats_3d79641b",
+          "order_direction": "desc"
+        }
+      ],
+      "activity_stream": "activity_stream",
+      "swapped_ids": [],
+      "columns_order": {
+        "parent": {
+          "order": [
+            "aactivity_id_f9bbffaa",
+            "ats_3d79641b",
+            "acustomer_9101d414",
+            "ajoin_customer_eb3d31e3",
+            "aactivity_77745d88",
+            "afeature_1_997e370c",
+            "afeature_2_3bfdd596",
+            "afeature_3_1b3ce182",
+            "arevenue_impact_9d8d2cad",
+            "alink_29fb6a4e",
+            "aactivity_occurrence_e0ee7e9b",
+            "aevent_type_0747d1ee",
+            "a_fivetran_synced_6dddfa0e",
+            "ats_4ccc4745",
+            "adid_money_raised_d8bd4bb5",
+            "aday_money_raised_821b4d23",
+            "a_fivetran_synced_d80f7e9e",
+            "aevent_type_a66c0e61"
+          ],
+          "left_pinned": [],
+          "right_pinned": []
+        }
+      },
+      "story": {
+        "content": []
+      }
+    }
+  }

@@ -1,0 +1,68 @@
+table:
+  name: activity_tags
+  schema: public
+object_relationships:
+  - name: activity
+    using:
+      manual_configuration:
+        column_mapping:
+          activity_id: id
+        insertion_order: null
+        remote_table:
+          name: activity
+          schema: public
+  - name: company_tag
+    using:
+      manual_configuration:
+        column_mapping:
+          tag_id: id
+        insertion_order: null
+        remote_table:
+          name: company_tags
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - activity_id
+        - created_at
+        - id
+        - tag_id
+      filter:
+        _and:
+          - company_tag:
+              company_id:
+                _eq: X-Hasura-Company-Id
+          - _or:
+              - company_tag:
+                  user_id:
+                    _is_null: true
+              - company_tag:
+                  user_id:
+                    _eq: X-Hasura-User-Id
+    comment: ""
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        _and:
+          - company_tag:
+              company_id:
+                _eq: X-Hasura-Company-Id
+          - _or:
+              - _exists:
+                  _table:
+                    name: company_user
+                    schema: public
+                  _where:
+                    _and:
+                      - role:
+                          _eq: admin
+                      - user_id:
+                          _eq: X-Hasura-User-Id
+                      - company_id:
+                          _eq: X-Hasura-Company-Id
+              - company_tag:
+                  user_id:
+                    _eq: X-Hasura-User-Id
+    comment: ""

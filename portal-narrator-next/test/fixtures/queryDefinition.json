@@ -1,0 +1,299 @@
+{
+  "override_sql": null,
+  "query": {
+    "activities": [
+      {
+        "config": {
+          "activity_stream": "mv_activity_stream",
+          "customer_table": null,
+          "enrichment_table": "mv_enriched_pages",
+          "has_source": true
+        },
+        "did": true,
+        "kind": "limiting",
+        "occurence_after_time": false,
+        "occurrence": "all",
+        "relationships": [],
+        "slug": "session"
+      },
+      {
+        "config": {
+          "activity_stream": "mv_activity_stream",
+          "customer_table": null,
+          "enrichment_table": null,
+          "has_source": true
+        },
+        "did": true,
+        "kind": "limiting",
+        "occurence_after_time": false,
+        "occurrence": "first",
+        "relationships": [
+          {
+            "referencing": "session",
+            "slug": "after"
+          }
+        ],
+        "slug": "survey_email_captured"
+      },
+      {
+        "config": {
+          "activity_stream": "mv_activity_stream",
+          "customer_table": null,
+          "enrichment_table": null,
+          "has_source": false
+        },
+        "did": true,
+        "kind": "append",
+        "occurence_after_time": false,
+        "occurrence": "first",
+        "relationships": [],
+        "slug": "photos_recieved"
+      },
+      {
+        "config": {
+          "activity_stream": "mv_activity_stream",
+          "customer_table": null,
+          "enrichment_table": null,
+          "has_source": true
+        },
+        "did": true,
+        "kind": "conversion",
+        "occurence_after_time": false,
+        "occurrence": "first",
+        "relationships": [],
+        "slug": "survey_wizard_completed"
+      },
+      {
+        "config": {
+          "activity_stream": "mv_activity_stream",
+          "customer_table": null,
+          "enrichment_table": null,
+          "has_source": false
+        },
+        "did": true,
+        "kind": "conversion",
+        "occurence_after_time": false,
+        "occurrence": "first",
+        "relationships": [],
+        "slug": "ordered_impression_kit"
+      }
+    ],
+    "activity_stream": "mv_activity_stream",
+    "all_groups": [],
+    "columns": [
+      {
+        "filters": [],
+        "id": "limiting_session_ts",
+        "label": "session_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_slug": "session"
+        },
+        "source_kind": "activity",
+        "type": "timestamp"
+      },
+      {
+        "filters": [],
+        "id": "limiting_session_customer",
+        "label": "email",
+        "name": "customer",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_slug": "session"
+        },
+        "source_kind": "activity",
+        "type": "string"
+      },
+      {
+        "filters": [],
+        "id": "limiting_session_utm_source",
+        "label": "utm_source",
+        "name": "utm_source",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_slug": "session"
+        },
+        "source_kind": "enrichment",
+        "type": "string"
+      },
+      {
+        "filters": [],
+        "id": "limiting_survey_email_captured_ts",
+        "label": "survey_email_captured_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_slug": "survey_email_captured"
+        },
+        "source_kind": "activity",
+        "type": "timestamp"
+      },
+      {
+        "filters": [],
+        "id": "limiting_survey_email_captured_feature_1",
+        "label": "title",
+        "name": "feature_1",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_slug": "survey_email_captured"
+        },
+        "source_kind": "activity",
+        "type": "string"
+      },
+      {
+        "filters": [],
+        "id": "append_photos_recieved_ts",
+        "label": "first_photos_received_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "append",
+          "activity_slug": "photos_recieved"
+        },
+        "source_kind": "activity",
+        "type": "timestamp"
+      },
+      {
+        "filters": [],
+        "id": "conversion_survey_wizard_completed_ts",
+        "label": "converted_to_survey_wizard_completed_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_slug": "survey_wizard_completed"
+        },
+        "source_kind": "activity",
+        "type": "timestamp"
+      },
+      {
+        "filters": [],
+        "id": "converted_to_survey_wizard_completed",
+        "label": "converted_to_survey_wizard_completed",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_slug": "survey_wizard_completed",
+          "cases": [
+            {
+              "column_id": "conversion_survey_wizard_completed_ts",
+              "filter": {
+                "operator": "is_not_null",
+                "value": null
+              },
+              "value": 1,
+              "value_kind": "number"
+            }
+          ],
+          "kind": "ifttt",
+          "value": 0,
+          "value_kind": "number"
+        },
+        "source_kind": "computed",
+        "type": "boolean"
+      },
+      {
+        "filters": [],
+        "id": "days_to_survey_wizard_completed",
+        "label": "days_to_survey_wizard_completed",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_slug": "survey_wizard_completed",
+          "column_id": "limiting_session_ts",
+          "kind": "time_between",
+          "second_column_id": "conversion_survey_wizard_completed_ts",
+          "segmentation": "days"
+        },
+        "source_kind": "computed",
+        "type": "number"
+      },
+      {
+        "filters": [],
+        "id": "conversion_ordered_impression_kit_ts",
+        "label": "converted_to_ordered_impression_kit_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_slug": "ordered_impression_kit"
+        },
+        "source_kind": "activity",
+        "type": "timestamp"
+      },
+      {
+        "filters": [],
+        "id": "converted_to_ordered_impression_kit",
+        "label": "converted_to_ordered_impression_kit",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_slug": "ordered_impression_kit",
+          "cases": [
+            {
+              "column_id": "conversion_ordered_impression_kit_ts",
+              "filter": {
+                "operator": "is_not_null",
+                "value": null
+              },
+              "value": 1,
+              "value_kind": "number"
+            }
+          ],
+          "kind": "ifttt",
+          "value": 0,
+          "value_kind": "number"
+        },
+        "source_kind": "computed",
+        "type": "boolean"
+      },
+      {
+        "filters": [],
+        "id": "days_to_ordered_impression_kit",
+        "label": "days_to_ordered_impression_kit",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_slug": "ordered_impression_kit",
+          "column_id": "limiting_session_ts",
+          "kind": "time_between",
+          "second_column_id": "conversion_ordered_impression_kit_ts",
+          "segmentation": "days"
+        },
+        "source_kind": "computed",
+        "type": "number"
+      },
+      {
+        "filters": [],
+        "id": "replace_utm",
+        "label": "replace_utm",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "column_id": "limiting_session_utm_source",
+          "kind": "replace",
+          "remove_str": "utm",
+          "replace_str": "not_UTM"
+        },
+        "source_kind": "computed",
+        "type": "string"
+      }
+    ],
+    "order": [
+      {
+          "column_id": "limiting_session_ts",
+          "order_direction": "desc"
+      }
+    ]
+  }
+}

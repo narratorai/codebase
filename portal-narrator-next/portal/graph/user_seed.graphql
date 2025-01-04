@@ -1,0 +1,39 @@
+query UserSeed($user_email: String!) {
+  user(limit: 1, where: { email: { _eq: $user_email } }) {
+    id
+    role
+    email
+    accepted_terms_at
+    accepted_terms_version
+    company_users(where: { company: { status: { _neq: archived } } }) {
+      id
+      role
+      first_name
+      last_name
+      phone
+      from_sso
+      company {
+        id
+        status
+        name
+        slug
+        status
+        demo_company
+      }
+      preferences {
+        id
+        profile_picture
+        email_opt_out
+        created_at
+        updated_at
+      }
+    }
+  }
+  terms: document_live(limit: 1, order_by: [{ created_at: desc }], where: { slug: { _eq: "terms" } }) {
+    created_at
+    id
+    markdown
+    name
+    slug
+  }
+}

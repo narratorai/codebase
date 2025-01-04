@@ -1,0 +1,117 @@
+table:
+  name: company_task
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: company_id
+array_relationships:
+  - name: company_query_alerts
+    using:
+      foreign_key_constraint_on:
+        column: task_id
+        table:
+          name: company_query_alert
+          schema: public
+  - name: dataset_materializations
+    using:
+      foreign_key_constraint_on:
+        column: task_id
+        table:
+          name: dataset_materialization
+          schema: public
+  - name: executions
+    using:
+      foreign_key_constraint_on:
+        column: task_id
+        table:
+          name: task_execution
+          schema: public
+  - name: narratives
+    using:
+      foreign_key_constraint_on:
+        column: task_id
+        table:
+          name: narrative
+          schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - internal_only:
+              _ne: true
+      columns:
+        - category
+        - company_id
+        - description
+        - schedule
+        - task_slug
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - category
+        - company_id
+        - created_at
+        - description
+        - id
+        - internal_only
+        - schedule
+        - task_slug
+        - updated_at
+      filter:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - internal_only:
+              _ne: true
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - schedule
+      filter:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - internal_only:
+              _ne: true
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin
+      check:
+        company_id:
+          _eq: X-Hasura-Company-Id
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - internal_only:
+              _ne: true
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin

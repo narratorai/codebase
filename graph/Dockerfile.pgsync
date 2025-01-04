@@ -1,0 +1,70 @@
+FROM ruby:3.2.2-slim-buster
+
+WORKDIR /graph-sync
+
+RUN apt-get update && \
+    apt-get upgrade --no-install-recommends -y && \
+    apt-get install --no-install-recommends -y \
+      build-essential \
+      curl \
+      gnupg \
+      groff \
+      jq \
+      libpq-dev \
+      unzip
+
+# Install AWS CLI v2
+# https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html
+RUN curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o /tmp/awscliv2.zip \
+    && unzip -q /tmp/awscliv2.zip -d /opt \
+    && /opt/aws/install -i /usr/local/aws-cli -b /usr/local/bin \
+    && rm /tmp/awscliv2.zip \
+    && rm -rf /opt/aws \
+    && aws --version
+ENV AWS_PAGER=""
+
+# Install node
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
+    apt-get install -y nodejs
+
+# Install yarn
+RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | tee /usr/share/keyrings/yarnkey.gpg >/dev/null && \
+    echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+    apt-get update && apt-get --no-install-recommends -y install yarn
+
+# Install pgsync
+COPY Gemfile .
+COPY Gemfile.lock .
+RUN bundle config set --local frozen 'true' && \
+    bundle config set --local deployment 'true' && \
+    bundle config build.pg --with-pg-config=/usr/bin/pg_config && \
+    bundle install --no-cache && \
+    bundle binstubs pgsync --standalone --path $GEM_HOME/bin && \
+    bundle clean
+
+# Cleanup system dependencies
+RUN apt-get remove -y \
+    build-essential \
+    curl \
+    gnupg \
+    unzip \
+    && \
+    apt-get autoremove -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Install hasura-cli
+RUN curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | bash
+ENV HASURA_GRAPHQL_ENABLE_TELEMETRY=false
+
+# Copy config files and scripts
+COPY scripts/ scripts/
+COPY config.yaml .
+COPY metadata/ metadata/
+COPY migrations/ migrations/
+COPY .pgsync.yml .
+
+# Configure hasura for running inside docker
+RUN sed -i 's/localhost/host.docker.internal/g' config.yaml
+
+ENTRYPOINT [ "/bin/bash" ]

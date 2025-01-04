@@ -1,0 +1,7 @@
+mutation DeleteCompanySqlQuery($query_id: uuid!) {
+  delete_company_sql_queries(where: { id: { _eq: $query_id } }) {
+    returning {
+      id
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="111px" height="126px" viewBox="0 0 111 126" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group 6</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6">
+            <g id="Group-4-Copy-3">
+                <path d="M2,0 L109,0 C110.104569,-2.02906125e-16 111,0.8954305 111,2 L111,104.336271 C111,105.440841 110.104569,106.336271 109,106.336271 L46.0488134,106.336271 C45.6435131,106.336271 45.2477772,106.45941 44.9140331,106.689373 L16.8886644,126 L16.8886644,108.336271 C16.8886644,107.231702 15.9932339,106.336271 14.8886644,106.336271 L2,106.336271 C0.8954305,106.336271 -2.9605826e-14,105.440841 0,104.336271 L0,2 C-1.3527075e-16,0.8954305 0.8954305,2.02906125e-16 2,0 Z" id="Rectangle" fill="#E5E5E5" transform="translate(55.500000, 63.000000) scale(-1, 1) translate(-55.500000, -63.000000) "></path>
+                <text id="NARRATOR" font-family="SourceSansPro-Black, Source Sans Pro" font-size="16" font-weight="700" letter-spacing="1.10000002" fill="#000000">
+                    <tspan x="12" y="82">NARRATOR</tspan>
+                </text>
+            </g>
+            <g id="Group-3-Copy-5" transform="translate(34.000000, 14.000000)">
+                <polygon id="Rectangle-Copy-30" fill="#F04E4F" points="3 1.5 22 20.9774775 41 1.5 41 32.9954955 22 47.5 3 32.9954955"></polygon>
+                <path d="M22,36.1558442 L22,21.1948052 L7.17647059,21.1948052 C7.17647059,12.9320515 13.8131908,6.23376623 22,6.23376623 C30.1868092,6.23376623 36.8235294,12.9320515 36.8235294,21.1948052 C36.8235294,29.4575589 30.1868092,36.1558442 22,36.1558442 Z" id="Combined-Shape-Copy-21" fill="#382554" transform="translate(22.000000, 21.194805) rotate(135.000000) translate(-22.000000, -21.194805) "></path>
+                <path d="M14.5882353,3.11688312 L29.4117647,3.11688312 L29.4117647,18.0779221 C21.2249555,18.0779221 14.5882353,11.3796368 14.5882353,3.11688312 Z" id="Combined-Shape-Copy-22" fill="#298DCC" transform="translate(22.000000, 10.597403) rotate(135.000000) translate(-22.000000, -10.597403) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

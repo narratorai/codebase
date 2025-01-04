@@ -1,0 +1,22 @@
+mutation UpdateCompanyTable(
+  $id: uuid!
+  $identifier: String
+  $default_time_between: String
+  $is_imported: Boolean
+  $customer_dim_table_id: uuid
+  $maintainer_id: uuid
+
+) {
+  update_company_table_by_pk(
+    pk_columns: { id: $id }
+    _set: {
+      identifier: $identifier
+      default_time_between: $default_time_between
+      is_imported: $is_imported
+      customer_dim_table_id: $customer_dim_table_id
+      maintainer_id: $maintainer_id
+    }
+  ) {
+    id
+  }
+}

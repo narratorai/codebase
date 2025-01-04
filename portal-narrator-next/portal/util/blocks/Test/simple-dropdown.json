@@ -1,0 +1,26 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "dataset": {
+        "type": "string",
+        "title": "Dataset",
+        "enum": ["marketing_overview", "sessions_by_day"]
+      },
+      "column": {
+        "type": "array",
+        "title": "Column",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": ["last_session_at", "customer", "conversion_to_lead"],
+          "enumNames": ["Last Session At", "customer", "conversion_to_lead"]
+        }
+      }
+    },
+    "required": ["dataset"]
+  },
+  "data": {
+    "dataset": "marketing_overview"
+  }
+}

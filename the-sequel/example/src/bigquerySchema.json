@@ -1,0 +1,108 @@
+{
+  "warehouse": {
+    "e-topic-234517.demo": [
+      {
+        "table_name": "numbers",
+        "name": "e-topic-234517.demo.numbers",
+        "columns": ["number"]
+      },
+      {
+        "table_name": "words",
+        "name": "e-topic-234517.demo.words",
+        "columns": ["id", "word"]
+      }
+    ],
+    "e-topic-234517.narrator": [
+      {
+        "table_name": "activity_stream",
+        "name": "e-topic-234517.narrator.activity_stream",
+        "columns": [
+          "_activity_source",
+          "_run_at",
+          "activity",
+          "activity_id",
+          "activity_occurrence",
+          "activity_repeated_at",
+          "customer",
+          "feature_1",
+          "feature_2",
+          "feature_3",
+          "link",
+          "revenue_impact",
+          "revenue_impact_currency",
+          "source",
+          "source_id",
+          "ts"
+        ]
+      }
+    ],
+    "narrator-g-store-demo.narrator2": [
+      {
+        "table_name": "activity_stream",
+        "name": "narrator-g-store-demo.narrator2.activity_stream",
+        "columns": [
+          "_activity_source",
+          "_run_at",
+          "activity",
+          "activity_id",
+          "activity_occurrence",
+          "activity_repeated_at",
+          "customer",
+          "feature_1",
+          "feature_2",
+          "feature_3",
+          "link",
+          "revenue_impact",
+          "revenue_impact_currency",
+          "source",
+          "source_id",
+          "ts"
+        ]
+      },
+      {
+        "table_name": "covid_19",
+        "name": "narrator-g-store-demo.narrator2.covid_19",
+        "columns": [
+          "_activity_source",
+          "_run_at",
+          "activity",
+          "activity_id",
+          "activity_occurrence",
+          "activity_repeated_at",
+          "customer",
+          "feature_1",
+          "feature_2",
+          "feature_3",
+          "link",
+          "revenue_impact",
+          "revenue_impact_currency",
+          "source",
+          "source_id",
+          "ts"
+        ]
+      },
+      {
+        "table_name": "hacker_news",
+        "name": "narrator-g-store-demo.narrator2.hacker_news",
+        "columns": [
+          "_activity_source",
+          "_run_at",
+          "activity",
+          "activity_id",
+          "activity_occurrence",
+          "activity_repeated_at",
+          "customer",
+          "feature_1",
+          "feature_2",
+          "feature_3",
+          "link",
+          "revenue_impact",
+          "revenue_impact_currency",
+          "source",
+          "source_id",
+          "ts"
+        ]
+      }
+    ]
+  }
+}

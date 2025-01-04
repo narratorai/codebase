@@ -1,0 +1,4 @@
+table:
+  name: company_config_core_version
+  schema: public
+is_enum: true

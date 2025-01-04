@@ -1,0 +1,12 @@
+mutation UpdateCompanyTemplates($company_id: uuid!, $templates_input: [company_narrative_templates_insert_input!]!) {
+  delete_company_narrative_templates(where: {company_id: {_eq: $company_id}}) {
+    returning {
+      id
+    }
+  }
+  insert_company_narrative_templates(objects: $templates_input) {
+    returning {
+      id
+    }
+  }
+}

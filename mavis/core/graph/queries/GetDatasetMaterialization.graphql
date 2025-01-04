@@ -1,0 +1,14 @@
+query GetDatasetMaterialization($id: uuid!) {
+  materialization: dataset_materialization_by_pk(id: $id) {
+    id
+    created_at
+    dataset_id
+    group_slug
+    label
+    type
+    task_id
+    company_task {
+      schedule
+    }
+  }
+}

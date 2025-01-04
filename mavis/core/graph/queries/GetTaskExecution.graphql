@@ -1,0 +1,16 @@
+query GetTaskExecution($task_execution_id: uuid!) {
+  task_execution_by_pk(id: $task_execution_id) {
+    id
+    is_running
+    status
+    orchestration_id
+    task_id
+    details
+    task {
+      id
+      function_name
+      function_path
+      kwargs
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "With export",
+  "description": "",
+  "report_metrics": [
+    {
+      "_is_editing": false,
+      "_report_distribution_columns": [],
+      "metric_labels": [],
+      "reportable_type": "Segment",
+      "reportable_id": "9c69f044-cd75-4110-a3b4-738d70fb4a57"
+    }
+  ],
+  "report_type": "export",
+  "crontab": "0 8 * * *",
+  "_schedule": {
+    "send_every_time_unit": "day",
+    "send_at_time": 8
+  },
+  "followers": [
+    {
+      "user_id": "e5a9787d-5aad-44da-af52-670f5aa26bfc",
+      "kind": "sftp",
+      "sftp_prefix": "prefix",
+      "sftp_folder": "folder"
+    },
+    {
+      "user_id": "e5a9787d-5aad-44da-af52-670f5aa26bfc",
+      "kind": "google_sheet",
+      "google_sheet_key": "key"
+    },
+    {
+      "user_id": "e5a9787d-5aad-44da-af52-670f5aa26bfc",
+      "kind": "webhook",
+      "webhook_url": "http://lala.com"
+    },
+    {
+      "user_id": "e5a9787d-5aad-44da-af52-670f5aa26bfc",
+      "kind": "email"
+    },
+    {
+      "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091",
+      "kind": "email"
+    }
+  ],
+  "_followers": [
+    {
+      "user_id": "e5a9787d-5aad-44da-af52-670f5aa26bfc",
+      "send_email": true
+    },
+    {
+      "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091",
+      "send_email": true
+    }
+  ],
+  "_export": {
+    "webhook_urls": [
+      "http://lala.com"
+    ],
+    "sftp": true,
+    "sftp_prefix": "prefix",
+    "sftp_folder": "folder",
+    "google_sheet": true,
+    "google_sheet_key": "key",
+    "webhooks": true
+  },
+  "_selected_follower": null
+}

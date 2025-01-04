@@ -1,0 +1,1 @@
+CREATE TABLE "public"."datacenter_region" ("value" text, "description" text, PRIMARY KEY ("value") , UNIQUE ("value"));COMMENT ON TABLE "public"."datacenter_region" IS E'Enum table: determines which endpoints a company should use';

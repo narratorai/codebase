@@ -1,0 +1,4 @@
+table:
+  name: question_answer_relations
+  schema: public
+is_enum: true

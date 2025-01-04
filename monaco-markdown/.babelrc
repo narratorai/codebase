@@ -1,0 +1,24 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions"]
+        }
+      }
+    ],
+    "@babel/typescript"
+  ],
+  "plugins": [
+    "transform-class-properties",
+    [
+      "module-resolver",
+      {
+        "extensions": [".js", ".ts"],
+        "root": ["./src/js"]
+      }
+    ],
+    ["@babel/plugin-transform-typescript", { "allowNamespaces": true }]
+  ]
+}

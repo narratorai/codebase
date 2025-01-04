@@ -1,0 +1,19 @@
+mutation InsertTest(
+    $name: String!
+    $transformation_id: uuid!
+    $validate_data_from: timestamptz
+    $updated_by: uuid
+) {
+    insert_transformation_test(
+        objects: {
+            name: $name
+            transformation_id: $transformation_id
+            ran_data_from: $validate_data_from
+            updated_by: $updated_by
+        }
+    ) {
+        returning {
+            id
+        }
+    }
+}

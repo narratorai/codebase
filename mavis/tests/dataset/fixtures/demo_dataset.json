@@ -1,0 +1,476 @@
+{
+  "fields": {},
+  "query": {
+    "activities": [
+      {
+        "id": "opened_emailf3abfcac",
+        "name": "Opened Email",
+        "slug": ["opened_email"],
+        "activity_ids": ["18ad573f-352e-420f-bb55-2de4a8187d59"],
+        "did": true,
+        "occurrence": "all",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "limiting"
+      },
+      {
+        "id": "started_sessiona11a1ddd",
+        "name": "Started Session",
+        "slug": ["started_session"],
+        "activity_ids": ["22e38afd-3145-47c1-92d4-9d4f51163f53"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "within_cohort"
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_in_between"
+      },
+      {
+        "id": "completed_orderbacf6f79",
+        "name": "Completed Order",
+        "slug": ["completed_order"],
+        "activity_ids": ["e134737e-e96a-4f10-8bdb-385773ded546"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "within_cohort"
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_in_between"
+      }
+    ],
+    "columns": [
+      {
+        "id": "activity_id637d01ff",
+        "name": "activity_id",
+        "label": "Activity Id",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "opened_emailf3abfcac",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "tsf354ef91",
+        "name": "ts",
+        "label": "Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "opened_emailf3abfcac",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "customerdb99d500",
+        "name": "customer",
+        "label": "Customer",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "opened_emailf3abfcac",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "feature_14268c980",
+        "name": "feature_1",
+        "label": "Campaign Type",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "opened_emailf3abfcac",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "activity_occurrence2c2eccd7",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "group_func": null,
+        "type": "number",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "opened_emailf3abfcac",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ts1a06a4b4",
+        "name": "ts",
+        "label": "First In Between Started Session Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "started_sessiona11a1ddd",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_started_session911fbb39",
+        "name": null,
+        "label": "Did Started Session Between",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts1a06a4b4)",
+          "activity_kind": "append",
+          "activity_id": "started_sessiona11a1ddd",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_started_session0c652195",
+        "name": null,
+        "label": "Days To Started Session",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, ts1a06a4b4)",
+          "activity_kind": "append",
+          "activity_id": "started_sessiona11a1ddd",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "ts28760e8c",
+        "name": "ts",
+        "label": "First In Between Completed Order Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "completed_orderbacf6f79",
+          "enrichment_table": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_completed_orderf51e0138",
+        "name": null,
+        "label": "Did Completed Order Between",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts28760e8c)",
+          "activity_kind": "append",
+          "activity_id": "completed_orderbacf6f79",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_completed_order68385512",
+        "name": null,
+        "label": "Days To Completed Order",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, ts28760e8c)",
+          "activity_kind": "append",
+          "activity_id": "completed_orderbacf6f79",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "month_of_timestamp577f7858",
+        "name": null,
+        "label": "Month of Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": null,
+        "type": "timestamp",
+        "group_func": [],
+        "source_kind": "computed",
+        "source_details": {
+          "kind": "freehand_function",
+          "raw_string": "date_trunc('month', tsf354ef91)"
+        }
+      }
+    ],
+    "all_groups": [
+      {
+        "name": "by Month Of Timestamp",
+        "slug": "month_of_timestampd11bd812",
+        "columns": [
+          {
+            "id": "month_of_timestamp_51edff93",
+            "filters": [],
+            "label": "Month of Timestamp",
+            "name": "",
+            "output": true,
+            "mavis_type": "timestamp",
+            "type": "timestamp",
+            "source_kind": "group",
+            "column_id": "month_of_timestamp577f7858",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_opened_email_rows_0efde843",
+            "label": "Total Opened Email Rows",
+            "agg_function": "COUNT_ALL",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "number",
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_started_session_between_dd33a204",
+            "label": "Total Started Session Between",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_session911fbb39",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_started_session_between_8a11ebda",
+            "label": "Conversion Rate to Started Session Between",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_session911fbb39",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_to_started_session_22a1105b",
+            "label": "Average Days To Started Session",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_started_session0c652195",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_completed_order_between_1aa2dd8f",
+            "label": "Total Completed Order Between",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_completed_orderf51e0138",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_completed_order_between_f06fff09",
+            "label": "Conversion Rate to Completed Order Between",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_completed_orderf51e0138",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_to_completed_order_dc9a62cd",
+            "label": "Average Days To Completed Order",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_completed_order68385512",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          }
+        ],
+        "computed_columns": [],
+        "pivot": [],
+        "parent_filters": [],
+        "order": [
+          {
+            "column_id": "month_of_timestamp_51edff93",
+            "order_direction": "desc"
+          }
+        ],
+        "plots": [
+          {
+            "name": "Conversion Rate by Month of Timestamp",
+            "slug": "conversion_rate_by_month_of_timestamp",
+            "config": {
+              "dataset": {
+                "slug": "9ecf58fa_8462_4b6c_a42b_1464680f73e4",
+                "group_slug": "month_of_timestampd11bd812",
+                "plot_slug": null
+              },
+              "columns": {
+                "y2_available": true,
+                "ys": [
+                  "conversion_rate_to_started_session_between_8a11ebda",
+                  "conversion_rate_to_completed_order_between_f06fff09"
+                ],
+                "xs": ["month_of_timestamp_51edff93"],
+                "color_bys": [],
+                "y2": null,
+                "advance_editing": false,
+                "x_name": "X Column: Month of Timestamp",
+                "color_name": null
+              },
+              "traces": [
+                {
+                  "y_column": "conversion_rate_to_started_session_between_8a11ebda",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "percent",
+                  "color": "#35a1ff",
+                  "name": "Conversion Rate To Started Session Between",
+                  "default_shown": true,
+                  "line_type": "solid"
+                },
+                {
+                  "y_column": "conversion_rate_to_completed_order_between_f06fff09",
+                  "color_id": "",
+                  "remove": false,
+                  "yaxis": "y",
+                  "format": "percent",
+                  "color": "#dc3912",
+                  "name": "Conversion Rate To Completed Order Between",
+                  "default_shown": true,
+                  "line_type": "solid"
+                }
+              ],
+              "axes": {
+                "title": "Conversion Rate by Month of Timestamp",
+                "y_axis": "Conversion Rate",
+                "x_axis": "Month of Timestamp",
+                "y2_axis": "",
+                "plot_kind": "line",
+                "y_range_from": null,
+                "x_range_from": null,
+                "y_range_to": null,
+                "x_range_to": null,
+                "limit_top": null,
+                "cluster_x_values": false
+              },
+              "annotations": [],
+              "revision": 3
+            }
+          }
+        ]
+      }
+    ],
+    "order": [
+      {
+        "column_id": "tsf354ef91",
+        "order_direction": "desc"
+      }
+    ],
+    "activity_stream": "activity_stream",
+    "swapped_ids": [],
+    "columns_order": {}
+  }
+}

@@ -1,0 +1,7 @@
+query GetPopularTags($company_id: uuid!) {
+  company_tags(where: { company_id: { _eq: $company_id }, tag: { _in: ["popular", "recently_viewed"] } }) {
+    id
+    tag
+    color
+  }
+}

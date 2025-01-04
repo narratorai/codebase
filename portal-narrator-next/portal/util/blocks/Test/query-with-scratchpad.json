@@ -1,0 +1,19 @@
+{
+  "schema": {
+    "type": "object"
+  },
+  "ui_schema" : {
+    "ui:field": "QueryWithScratchpadField"
+  },
+  "data": {
+    "field_slug": "query_with_scratchpad",
+    "current_query": {
+      "id" : "fun-uuid",
+      "sql" : "select *\nfrom dw.activity_stream"
+    },
+    "scratchpad" : {
+      "id" : "uuid-again",
+      "notes": "## Markdown with sql\n\n```sql\nselect count(*) from dw.activity_stream\n```"
+    }
+  }
+}

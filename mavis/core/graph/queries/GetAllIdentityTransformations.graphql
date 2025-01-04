@@ -1,0 +1,26 @@
+query GetAllIdentityTransformations($company_id: uuid!) {
+  all_transformations: transformation(where: {company_id: {_eq: $company_id}, has_source: {_eq: true}}) {
+    id
+    kind
+    name
+    next_resync_at
+    last_diff_data_and_insert_at
+    has_source
+    is_aliasing
+    remove_customers
+    mutable_day_window
+    delete_window
+    table
+    slug
+    update_type
+    column_renames {
+      id
+      name
+      label
+      has_data
+      type
+      casting
+      description
+    }
+  }
+}

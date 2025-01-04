@@ -1,0 +1,93 @@
+{
+  "activities": [
+    {
+      "first_seen": "2017-08-01 19:57:32.611000-04:00",
+      "slug": "session"
+    }
+  ],
+  "columns": [
+    {
+      "definition": "e._id",
+      "kind": "string",
+      "label": null,
+      "name": "activity_id"
+    },
+    {
+      "definition": "e._created",
+      "kind": "timestamp",
+      "label": null,
+      "name": "ts"
+    },
+    {
+      "definition": "case when nullif(regexp_replace(e.contact_phone_, '([^0-9.])'), '')  is not null then 'phone_number' end",
+      "kind": "string",
+      "label": null,
+      "name": "source"
+    },
+    {
+      "definition": "nullif(regexp_replace(e.contact_phone_, '([^0-9.])'), '')",
+      "kind": "string",
+      "label": null,
+      "name": "source_id"
+    },
+    {
+      "definition": "lower(e.contact_email_)",
+      "kind": "string",
+      "label": null,
+      "name": "customer"
+    },
+    {
+      "definition": "case \n\t\twhen e.type in ('open', 'click') then 'email_' || e.type \n\t\twhen e.type in ('contact_tag_added') then e.type\n\t\twhen e.type in ('sms_sent', 'sms_reply') then e.type\n\tend",
+      "kind": "string",
+      "label": null,
+      "name": "activity"
+    },
+    {
+      "definition": "case \n\t\twhen e.type in ('open', 'click') then e.campaign_name_\n\t\twhen e.type in ('contact_tag_added') then e.\"tag\"\n\t\twhen e.type in ('sms_sent', 'sms_reply') then e.campaign_name_\n\tend::varchar(255)",
+      "kind": "string",
+      "label": "Tag",
+      "name": "feature_1"
+    },
+    {
+      "definition": "case \n\t\twhen e.type in ('open', 'click') then e.campaign_message_subject_\n\t\twhen e.type in ('contact_tag_added') then e.contact_tags_\n\t\twhen e.type in ('sms_sent') then e.sms_successful_::varchar(255)\n\t\twhen e.type in ('sms_reply') then e.sms_reply_\n\tend::varchar(255)",
+      "kind": "string",
+      "label": "Current Tags",
+      "name": "feature_2"
+    },
+    {
+      "definition": null,
+      "kind": "string",
+      "label": null,
+      "name": "feature_3"
+    },
+    {
+      "definition": null,
+      "kind": "revenue",
+      "label": null,
+      "name": "revenue_impact"
+    },
+    {
+      "definition": "case \n\t\twhen e.type in ('open', 'click') then 'https://candidco.activehosted.com/report/#/campaign/'|| e.campaign_message_id_ || '/message'\n\t\telse  'https://candidco.activehosted.com/app/contacts/' || e.contact_id_  \n\tend::varchar(255)",
+      "kind": "string",
+      "label": null,
+      "name": "link"
+    }
+  ],
+  "directory_type": "stream_tables",
+  "enrichment": [
+    {
+      "column": "enriched_activity_id",
+      "table": "mv_enriched_pages"
+    }
+  ],
+  "slug": "sessions",
+  "source": "Activity Stream",
+  "source_notes": null,
+  "sql": "select activity_id, date_add('minutes', -1, ts) as ts, source, source_id, customer, 'session' as activity, feature_1, feature_2, feature_3, revenue_impact, link\nfrom(\nselect activity_id, ts at time zone 'utc' as ts, source, source_id, customer, feature_1, feature_2, feature_3, revenue_impact, link,\n        lag(s.ts at time zone 'utc') over (partition by nvl(customer, source_id) order by ts) as last_ts\nfrom {schema}.{table} s\nwhere activity in ('page_view') and ts > DATE_ADD('hour', -1, '{last_run_at}'::TIMESTAMP)\n)s\nwhere date_diff('minutes', last_ts, s.ts) >=30 or last_ts is null\n",
+  "tables": [
+    {
+      "alias": "s",
+      "table": "{schema}.{table}"
+    }
+  ]
+}

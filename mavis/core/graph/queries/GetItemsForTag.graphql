@@ -1,0 +1,20 @@
+query GetItemsForTag($tag_id: uuid!) {
+  company_tags_by_pk(id: $tag_id) {
+    tagged_items {
+      activity {
+        id
+        name
+        table_id
+      }
+      dataset {
+        id
+        name
+      }
+      narrative {
+        id
+        name
+        type
+      }
+    }
+  }
+}

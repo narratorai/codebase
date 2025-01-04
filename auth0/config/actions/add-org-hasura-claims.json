@@ -1,0 +1,37 @@
+{
+  "name": "add-org-hasura-claims",
+  "code": "config/actions/add-org-hasura-claims/code.js",
+  "runtime": "node16",
+  "status": "built",
+  "dependencies": [
+    {
+      "name": "graphql-request",
+      "version": "5.1.0"
+    },
+    {
+      "name": "auth0",
+      "version": "3.2.0"
+    },
+    {
+      "name": "@sentry/node",
+      "version": "7.37.2"
+    }
+  ],
+  "secrets": [
+    {
+      "name": "SENTRY_DSN",
+      "value": "##SENTRY_DSN##"
+    },
+    {
+      "name": "GRAPH_MGMT_CLIENT_SECRET",
+      "value": "##GRAPH_MGMT_CLIENT_SECRET##"
+    }
+  ],
+  "supported_triggers": [
+    {
+      "id": "post-login",
+      "version": "v3"
+    }
+  ],
+  "deployed": true
+}

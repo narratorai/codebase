@@ -1,0 +1,1 @@
+This directory serves as a Python package housing the essential plugin and hook definitions intended for use with the [ariadne-codegen](https://github.com/mirumee/ariadne-codegen/blob/main/PLUGINS.md) package.

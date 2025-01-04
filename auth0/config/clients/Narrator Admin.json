@@ -1,0 +1,53 @@
+{
+  "is_token_endpoint_ip_header_trusted": false,
+  "name": "Narrator Admin",
+  "is_first_party": true,
+  "oidc_conformant": true,
+  "sso_disabled": false,
+  "cross_origin_auth": false,
+  "allowed_clients": [],
+  "allowed_logout_urls": [
+    "http://localhost:3000",
+    "https://admin.narrator.ai",
+    "https://graph-admin-*.dev.narrator.ai"
+  ],
+  "callbacks": [
+    "https://##CUSTOM_TENANT_DOMAIN##/login/callback",
+    "http://localhost:3000/callback",
+    "https://admin.narrator.ai/callback",
+    "https://graph-admin-*.dev.narrator.ai/callback"
+  ],
+  "native_social_login": {
+    "apple": {
+      "enabled": false
+    },
+    "facebook": {
+      "enabled": false
+    }
+  },
+  "description": "Internal Only Admin UI",
+  "refresh_token": {
+    "expiration_type": "non-expiring",
+    "idle_token_lifetime": 1296000,
+    "infinite_idle_token_lifetime": true,
+    "infinite_token_lifetime": true,
+    "leeway": 0,
+    "token_lifetime": 2592000,
+    "rotation_type": "non-rotating"
+  },
+  "jwt_configuration": {
+    "alg": "RS256",
+    "lifetime_in_seconds": 36000,
+    "secret_encoded": false
+  },
+  "client_aliases": [],
+  "token_endpoint_auth_method": "none",
+  "app_type": "spa",
+  "grant_types": ["authorization_code", "implicit", "refresh_token"],
+  "web_origins": [
+    "http://localhost:3000",
+    "https://admin.narrator.ai",
+    "https://graph-admin-*.dev.narrator.ai"
+  ],
+  "custom_login_page_on": true
+}

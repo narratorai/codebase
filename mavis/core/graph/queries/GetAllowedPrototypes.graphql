@@ -1,0 +1,6 @@
+query GetAllowedPrototypes($company_id: uuid) {
+  company_prototypes(where: {company_id: {_eq: $company_id}}) {
+    block_slug
+    id
+  }
+}

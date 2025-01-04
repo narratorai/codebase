@@ -1,0 +1,72 @@
+name: Test
+
+on:
+  pull_request:
+
+jobs:
+  test-migrations:
+    runs-on: ubuntu-latest
+    environment:
+      name: Preview
+
+    services:
+      postgres:
+        image: postgres:15.4-alpine
+        env:
+          POSTGRES_HOST_AUTH_METHOD: 'trust'
+        ports:
+          - 5432:5432
+        # the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+      hasura:
+        image: hasura/graphql-engine:v2.37.0-ce
+        env:
+          HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/postgres
+          HASURA_GRAPHQL_ENABLE_CONSOLE: true
+        ports:
+          - 8080:8080
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: yarn
+      - name: Setup yarn
+        run: yarn set version berry
+      - name: Run install
+        run: |
+          yarn install --immutable
+          curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | bash
+      - name: Run migrations (local)
+        run: |
+          yarn hasura metadata apply
+          yarn hasura migrate apply --all-databases
+          yarn hasura metadata reload
+      - name: Seed db
+        run: yarn hasura seed apply --file ../../seeds/default/test_data.sql --database-name default
+      - name: Run jest
+        run: yarn jest tests --ci --verbose --runInBand
+
+  test-npm-release:
+    runs-on: ubuntu-latest
+    environment:
+      name: Preview
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: yarn
+      - name: Setup yarn
+        run: yarn set version berry
+      - name: Run install
+        run: yarn install --immutable
+      - name: Release NPM package (dry run)
+        run: yarn semantic-release --dry-run
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

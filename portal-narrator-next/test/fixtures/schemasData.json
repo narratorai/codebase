@@ -1,0 +1,82 @@
+{
+  "ahmed_data": [
+      {
+          "table_name": "github_dump",
+          "name": "ahmed_data.github_dump",
+          "columns": [
+              "author",
+              "commit",
+              "date",
+              "details",
+              "repo"
+          ]
+      },
+      {
+        "table_name": "activities",
+        "name": "api_db_public.activities",
+        "columns": [
+            "_fivetran_deleted",
+            "_fivetran_synced",
+            "category_id",
+            "company_id",
+            "created_at",
+            "deleted_at",
+            "description",
+            "id",
+            "is_key",
+            "is_pending",
+            "kind",
+            "level",
+            "name",
+            "script_lifecycle",
+            "slug",
+            "status",
+            "updated_at"
+        ]
+    }
+  ],
+  "api_db_public": [
+      {
+          "table_name": "activities",
+          "name": "api_db_public.activities",
+          "columns": [
+              "_fivetran_deleted",
+              "_fivetran_synced",
+              "category_id",
+              "company_id",
+              "created_at",
+              "deleted_at",
+              "description",
+              "id",
+              "is_key",
+              "is_pending",
+              "kind",
+              "level",
+              "name",
+              "script_lifecycle",
+              "slug",
+              "status",
+              "updated_at"
+          ]
+      },
+      {
+          "table_name": "annotations",
+          "name": "api_db_public.annotations",
+          "columns": [
+              "_fivetran_deleted",
+              "_fivetran_synced",
+              "company_id",
+              "created_at",
+              "deleted_at",
+              "description",
+              "happened_at",
+              "id",
+              "kind",
+              "name",
+              "segment_id",
+              "updated_at",
+              "user_id"
+          ]
+      }
+    ]
+}

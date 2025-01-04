@@ -1,0 +1,8 @@
+mutation InsertUserRole($company_user_id: uuid!, $role: access_role_enum!) {
+  insert_user_access_role_one(
+    object: { company_user_id: $company_user_id, role: $role }
+    on_conflict: { update_columns: [], constraint: user_access_role_company_user_id_role_key }
+  ) {
+    id
+  }
+}

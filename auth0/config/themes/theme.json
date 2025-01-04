@@ -1,0 +1,75 @@
+{
+  "colors": {
+    "primary_button": "#0059d6",
+    "primary_button_label": "#ffffff",
+    "secondary_button_border": "#c9cace",
+    "secondary_button_label": "#1e212a",
+    "base_focus_color": "#635dff",
+    "base_hover_color": "#000000",
+    "links_focused_components": "#635dff",
+    "header": "#1e212a",
+    "body_text": "#1e212a",
+    "widget_background": "#ffffff",
+    "widget_border": "#c9cace",
+    "input_labels_placeholders": "#65676e",
+    "input_filled_text": "#000000",
+    "input_border": "#c9cace",
+    "input_background": "#ffffff",
+    "icons": "#65676e",
+    "error": "#d03c38",
+    "success": "#13a688"
+  },
+  "fonts": {
+    "font_url": "",
+    "reference_text_size": 16,
+    "title": {
+      "bold": false,
+      "size": 150
+    },
+    "subtitle": {
+      "bold": false,
+      "size": 87.5
+    },
+    "body_text": {
+      "bold": false,
+      "size": 87.5
+    },
+    "buttons_text": {
+      "bold": false,
+      "size": 100
+    },
+    "input_labels": {
+      "bold": false,
+      "size": 100
+    },
+    "links": {
+      "bold": true,
+      "size": 87.5
+    },
+    "links_style": "underlined"
+  },
+  "borders": {
+    "button_border_weight": 1,
+    "buttons_style": "rounded",
+    "button_border_radius": 3,
+    "input_border_weight": 1,
+    "inputs_style": "rounded",
+    "input_border_radius": 3,
+    "widget_corner_radius": 5,
+    "widget_border_weight": 0,
+    "show_widget_shadow": true
+  },
+  "widget": {
+    "logo_position": "center",
+    "logo_url": "https://assets.narrator.ai/brand/narrator-logo-mark-150.png",
+    "logo_height": 56,
+    "header_text_alignment": "left",
+    "social_buttons_layout": "top"
+  },
+  "page_background": {
+    "page_layout": "center",
+    "background_color": "#ffffff",
+    "background_image_url": "https://assets.narrator.ai/brand/holographic_hero.svg"
+  },
+  "displayName": "Narrator Theme"
+}

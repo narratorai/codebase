@@ -1,0 +1,13 @@
+{
+    "id": "testId",
+    "slug": "test-co",
+    "name": "Test Company",
+    "feed_recommendations": [
+      {
+        "category": "User Most Common and Last Created - Last 5 Used Slugs",
+        "recommendation_id": "960534b1-9618-43d5-9021-70f8adb51931",
+        "recommendation_type": "Activity",
+        "recommendation_slug": "portal_session"
+      }
+    ]
+}

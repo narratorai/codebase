@@ -1,0 +1,8 @@
+query GetAllTags($company_id: uuid!) {
+  company_tags(where: { company_id: { _eq: $company_id }, user_id: { _is_null: true } }) {
+    id
+    tag
+    color
+    description
+  }
+}

@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#createInitialScriptsFormValue isNew customer table make initial script with customer table 1`] = `
+{
+  "_activities_generated": [],
+  "_diff": {
+    "original": {},
+    "show": false,
+  },
+  "column_overrides": [
+    {
+      "kind": "string",
+      "name": "activity_id",
+    },
+    {
+      "kind": "timestamp",
+      "name": "ts",
+    },
+    {
+      "kind": "string",
+      "name": "source",
+    },
+    {
+      "kind": "string",
+      "name": "source_id",
+    },
+    {
+      "kind": "string",
+      "name": "customer",
+    },
+    {
+      "kind": "string",
+      "name": "activity",
+    },
+    {
+      "kind": "string",
+      "name": "feature_1",
+    },
+    {
+      "kind": "string",
+      "name": "feature_2",
+    },
+    {
+      "kind": "string",
+      "name": "feature_3",
+    },
+    {
+      "kind": "number",
+      "name": "revenue_impact",
+    },
+    {
+      "kind": "string",
+      "name": "link",
+    },
+  ],
+  "created_by": "hotmcbuttbutt@hotmail.com",
+  "enriched_scripts": [],
+  "kind": "materialized_view",
+  "sql": "SELECT
+     global_customer_identifier AS "customer"
+     , customer_attribute_n AS attribute_name
+     
+     
+FROM ",
+  "stream_table": "activity_stream",
+  "table_name": "customer",
+  "type": "customer_attribute",
+}
+`;
+
+exports[`#createInitialScriptsFormValue isNew make initial script 1`] = `
+{
+  "_activities_generated": [],
+  "_diff": {
+    "original": {},
+    "show": false,
+  },
+  "column_overrides": [
+    {
+      "kind": "string",
+      "name": "activity_id",
+    },
+    {
+      "kind": "timestamp",
+      "name": "ts",
+    },
+    {
+      "kind": "string",
+      "name": "source",
+    },
+    {
+      "kind": "string",
+      "name": "source_id",
+    },
+    {
+      "kind": "string",
+      "name": "customer",
+    },
+    {
+      "kind": "string",
+      "name": "activity",
+    },
+    {
+      "kind": "string",
+      "name": "feature_1",
+    },
+    {
+      "kind": "string",
+      "name": "feature_2",
+    },
+    {
+      "kind": "string",
+      "name": "feature_3",
+    },
+    {
+      "kind": "number",
+      "name": "revenue_impact",
+    },
+    {
+      "kind": "string",
+      "name": "link",
+    },
+  ],
+  "created_by": "hotmcbuttbutt@hotmail.com",
+  "enriched_scripts": [],
+  "kind": null,
+  "sql": "SELECT
+     unique_identifier AS "activity_id"
+     , immutable_time  AS "ts"
+     , NULL AS "source"
+     , NULL AS "source_id"
+     , global_identifier AS "customer"
+     , 'activity_name'  AS "activity"
+     , NULL AS "feature_1"
+     , NULL AS "feature_2"
+     , NULL AS "feature_3"
+     , NULL AS "revenue_impact"
+     , NULL AS "link"
+FROM ",
+  "stream_table": "activity_stream",
+  "table_name": null,
+  "type": "stream",
+}
+`;
+
+exports[`#getActivitiesGenerated keeps activities that were generated and were still being generated and removes the ones that are no longer being generated. The list will not include activities the rails app already knows about. 1`] = `
+[
+  {
+    "name": "This One Should Be In Snapshot With Pending Status",
+    "script_lifecycle": "pending",
+    "slug": "this_one_should_be_in_snapshot_with_pending_status",
+    "status": "live",
+  },
+  {
+    "script_lifecycle": "pending",
+    "slug": "load_segment_agg",
+    "status": "ignored",
+  },
+  {
+    "category": null,
+    "deleted_at": null,
+    "description": "The activity metrics page was loaded",
+    "id": "b75747d0-b4d0-4b05-89b3-bd29428cccc3",
+    "is_key": false,
+    "kind": "funnel",
+    "level": 1200,
+    "name": "Was Retired",
+    "script_lifecycle": "live",
+    "slug": "was_retired",
+    "status": "live",
+    "updated_at": "2019-01-01T17:00:49.816Z",
+  },
+  {
+    "category": null,
+    "deleted_at": null,
+    "description": "",
+    "id": "1614fd41-5f99-48b3-8462-d5cdd7832c97",
+    "is_key": false,
+    "kind": "funnel",
+    "level": 1100,
+    "name": "Run Segment",
+    "script_lifecycle": "live",
+    "slug": "run_segment",
+    "status": "live",
+    "updated_at": "2019-01-01T17:00:49.792Z",
+  },
+]
+`;
+
+exports[`#mergeQueryColumnLabelsIntoColumnOverrides merges column labels from query into only configurably form column_overrides 1`] = `
+[
+  {
+    "kind": "number",
+    "label": "Custom Column Name",
+    "name": "feature_1",
+  },
+  {
+    "kind": "timestamp",
+    "label": "fancy timestamp",
+    "name": "ts",
+  },
+  {
+    "kind": "string",
+    "name": "activity",
+  },
+]
+`;
+
+exports[`#mergeQueryColumnLabelsIntoColumnOverrides will make null a label that was previously set in the query if it comes as null in named_columns 1`] = `
+[
+  {
+    "kind": "number",
+    "label": null,
+    "name": "feature_1",
+  },
+]
+`;

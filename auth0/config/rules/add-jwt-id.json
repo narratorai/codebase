@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "script": "./add-jwt-id.js",
+  "name": "Add JTI to token",
+  "order": 1,
+  "stage": "login_success"
+}

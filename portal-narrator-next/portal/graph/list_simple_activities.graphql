@@ -1,0 +1,12 @@
+query SimpleActivities($company_slug: String!) {
+  all_activities: activity(
+    where: { company: { slug: { _eq: $company_slug } } }
+    order_by: { company_category: { category: desc_nulls_last } }
+  ) {
+    id
+    created_at
+    updated_at
+    slug
+    name
+  }
+}

@@ -1,0 +1,13 @@
+mutation UpdateDatasource(
+    $company_id: uuid!
+    $warehouse: company_config_warehouse_language_enum!
+    $status: company_status_enum!
+    $project_id: String
+) {
+    update_company_by_pk(
+        pk_columns: { id: $company_id }
+        _set: { status: $status, project_id: $project_id, warehouse_language: $warehouse }
+    ) {
+        id
+    }
+}

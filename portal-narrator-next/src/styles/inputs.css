@@ -1,0 +1,53 @@
+input {
+  &[type='checkbox'],
+  &[type='radio'] {
+    @apply border-gray-100;
+
+    @apply hover:border-purple-600;
+
+    &:checked {
+      @apply text-purple-600;
+      @apply hover:bg-purple-900;
+    }
+
+    &:disabled {
+      @apply bg-gray-50 !important;
+      @apply border-gray-100 !important;
+    }
+  }
+
+  &[type='checkbox'] {
+    @apply rounded;
+  }
+
+  &[type='radio'] {
+    @apply rounded-full;
+  }
+
+  &[type='text'] {
+    @apply p-2;
+    @apply rounded-lg;
+    @apply shadow-sm;
+
+    &:disabled {
+      @apply bg-gray-50;
+      @apply text-gray-300;
+      @apply border-gray-200;
+    }
+
+    &.error {
+      @apply border-red-600;
+
+      &:focus {
+        @apply ring-red-600;
+      }
+    }
+  }
+}
+
+textarea {
+  @apply border;
+  @apply border-gray-100;
+  @apply resize-none;
+  @apply rounded-lg;
+}

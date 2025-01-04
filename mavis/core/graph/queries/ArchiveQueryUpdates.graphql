@@ -1,0 +1,5 @@
+mutation ArchiveQueryUpdates($before: timestamptz!) {
+  delete_query_updates(where: {created_at: {_lt: $before}}) {
+    affected_rows
+  }
+}

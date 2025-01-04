@@ -1,0 +1,22 @@
+query ActivityIndex($company_id: uuid!) {
+  all_activities: activity(where: {company_id: {_eq: $company_id}},
+      order_by: { table_id: asc }) {
+    id
+    name
+    slug
+    description
+    category
+    updated_at
+    table_id
+    row_count
+    maintainer_id
+    company_table {
+      activity_stream
+      maintainer_id
+    }
+    activity_maintenances(where: {ended_at: {_is_null: true}}){
+      id
+      kind
+    }
+  }
+}

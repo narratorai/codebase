@@ -1,0 +1,16 @@
+query GetAlert($id: uuid!) {
+  company_query_alert_by_pk(id: $id) {
+    id
+    alert_kind
+    email
+    sql_query {
+      sql
+      related_id
+      related_to
+      notes
+    }
+    company_task {
+      task_slug
+    }
+  }
+}

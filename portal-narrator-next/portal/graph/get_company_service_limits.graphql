@@ -1,0 +1,29 @@
+query GetCompanyServiceLimits($company_slug: String!) {
+  service_limit(
+    where: {
+      deleted_at: { _is_null: true }
+      start_on: { _lte: "now()" }
+      end_on: { _gte: "now()" }
+      company: { slug: { _eq: $company_slug } }
+    }
+    order_by: [{ created_at: desc }]
+  ) {
+    id
+    name
+    created_at
+    updated_at
+    deleted_at
+    start_on
+    end_on
+    disable_on
+    activity_limit
+    activity_stream_limit
+    dataset_limit
+    materialization_limit
+    narrative_limit
+    run_transformations_daily_limit
+    transformation_limit
+    admin_user_limit
+    monthly_price
+  }
+}

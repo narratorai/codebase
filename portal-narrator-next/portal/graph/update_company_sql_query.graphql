@@ -1,0 +1,12 @@
+mutation UpdateCompanySqlQuery($company_id: uuid!, $query_id: uuid!, $name: String!, $sql: String!) {
+  update_company_sql_queries(
+    where: { _and: { related_id: { _eq: $company_id }, id: { _eq: $query_id } } }
+    _set: { name: $name, sql: $sql }
+  ) {
+    returning {
+      id
+      name
+      sql
+    }
+  }
+}

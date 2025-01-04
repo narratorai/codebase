@@ -1,0 +1,11 @@
+query GetBasicActivities($ids: [uuid!]!) {
+    activities: activity(
+        where: { id: { _in: $ids }}
+    ) {
+        id
+        slug
+        name
+        description
+        status
+    }
+}

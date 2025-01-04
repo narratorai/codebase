@@ -1,0 +1,30 @@
+{
+  "schema": {
+    "type": "object",
+    "anyOf": [
+      {
+        "title": "First method",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "title": "First name"
+          },
+          "lastName": {
+            "type": "string",
+            "title": "Last name"
+          }
+        }
+      },
+      {
+        "title": "Second method",
+        "properties": {
+          "idCode": {
+            "type": "string",
+            "title": "ID code"
+          }
+        }
+      }
+    ]
+  },
+  "data": {}
+}

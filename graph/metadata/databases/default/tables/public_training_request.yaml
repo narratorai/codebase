@@ -1,0 +1,81 @@
+table:
+  name: training_request
+  schema: public
+object_relationships:
+  - name: assignee
+    using:
+      manual_configuration:
+        column_mapping:
+          assigned_to: id
+        insertion_order: null
+        remote_table:
+          name: user
+          schema: public
+  - name: chat
+    using:
+      foreign_key_constraint_on: chat_id
+  - name: company
+    using:
+      manual_configuration:
+        column_mapping:
+          company_id: id
+        insertion_order: null
+        remote_table:
+          name: company
+          schema: public
+  - name: dataset
+    using:
+      foreign_key_constraint_on: dataset_id
+  - name: llm_training
+    using:
+      foreign_key_constraint_on: training_id
+  - name: user
+    using:
+      foreign_key_constraint_on: created_by
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - assigned_to
+        - chat_id
+        - company_id
+        - context
+        - created_at
+        - created_by
+        - dataset_id
+        - email_context
+        - email_requester
+        - email_sent_at
+        - group_slug
+        - id
+        - plot_slug
+        - status
+        - status_updated_at
+        - training_id
+        - type
+        - updated_at
+      filter:
+        _and:
+          - _exists:
+              _table:
+                name: company
+                schema: public
+              _where:
+                id:
+                  _eq: X-Hasura-Company-Id
+          - _or:
+              - created_by:
+                  _eq: X-Hasura-User-Id
+              - _exists:
+                  _table:
+                    name: company_user
+                    schema: public
+                  _where:
+                    _and:
+                      - user_id:
+                          _eq: X-Hasura-User-Id
+                      - company_id:
+                          _eq: X-Hasura-Company-Id
+                      - role:
+                          _eq: admin
+    comment: ""

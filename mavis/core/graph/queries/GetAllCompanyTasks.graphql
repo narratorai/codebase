@@ -1,0 +1,18 @@
+query GetAllCompanyTasks($datacenter_region: datacenter_region_enum) {
+  company(where: { status: { _eq: active }, datacenter_region: { _eq: $datacenter_region } }) {
+    id
+    slug
+    batch_halt
+    datacenter_region
+    timezone
+    tasks {
+      id
+      created_at
+      task_slug
+      schedule
+      function_name
+      function_path
+      kwargs
+    }
+  }
+}

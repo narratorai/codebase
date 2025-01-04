@@ -1,0 +1,28 @@
+mutation UpdateDatasetRelations($dataset_id: uuid!, $updated_by: uuid!, $activity_ids: [uuid!]!, $activity_inputs: [dataset_activities_insert_input!]!) {
+  # Delete activities not in the provided list
+  delete_dataset_activities(
+    where: {
+      dataset_id: {_eq: $dataset_id},
+      activity_id: {_nin: $activity_ids}
+    }
+  ) {
+    affected_rows
+  }
+  insert_dataset_activities(
+    objects: $activity_inputs,
+    on_conflict: {
+      constraint: dataset_activities_dataset_id_activity_id_key,
+      update_columns: []
+    }
+  ) {
+    affected_rows
+  }
+
+  # Update the dataset's last_config_updated_at and updated_by
+  update_dataset_by_pk(
+    pk_columns: {id: $dataset_id},
+    _set: {last_config_updated_at: "now()", updated_by: $updated_by}
+  ) {
+    id
+  }
+}

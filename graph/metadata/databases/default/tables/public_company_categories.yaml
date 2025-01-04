@@ -1,0 +1,32 @@
+table:
+  name: company_categories
+  schema: public
+array_relationships:
+  - name: activities
+    using:
+      foreign_key_constraint_on:
+        column: category_id
+        table:
+          name: activity
+          schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        company_id:
+          _eq: X-Hasura-Company-Id
+      columns:
+        - category
+        - company_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - category
+        - color
+        - company_id
+        - created_at
+        - id
+      filter:
+        company_id:
+          _eq: X-Hasura-Company-Id

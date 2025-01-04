@@ -1,0 +1,6 @@
+export { default as ContentScrollArea } from './ContentScrollArea'
+export { default as Item } from './Item'
+export { default as MultiSelect } from './MultiSelect'
+export { default as MultiSelectContent } from './MultiSelectContent'
+export { default as MultiSelectDefaultTrigger } from './MultiSelectDefaultTrigger'
+export { default as MultiSelectTrigger } from './MultiSelectTrigger'

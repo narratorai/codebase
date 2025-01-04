@@ -1,0 +1,10 @@
+apiVersion: v2
+name: aws-cloudwatch-metrics
+description: A Helm chart for installing AWS CloudWatch metrics
+type: application
+version: 0.1.0
+appVersion: "1.0"
+dependencies:
+- name: aws-cloudwatch-metrics
+  version: 0.0.9
+  repository: https://aws.github.io/eks-charts

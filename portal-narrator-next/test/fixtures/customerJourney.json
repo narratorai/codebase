@@ -1,0 +1,61 @@
+{
+    "data": {
+        "columns": [
+            "_id",
+            "ts",
+            "activity",
+            "feature_1",
+            "revenue_impact"
+        ],
+        "rows": [
+            {
+                "_id": 2462082,
+                "ts": "2017-08-22 20:47:58-04",
+                "activity": "test-slug",
+                "name": "Ticket New",
+                "feature_1": "incident",
+                "revenue_impact": null
+            },
+            {
+                "_id": 2462088,
+                "ts": "2017-08-22 21:28:39-04",
+                "activity": "test-slug",
+                "name": "Ticket New",
+                "feature_1": "incident",
+                "revenue_impact": null
+            },
+            {
+                "_id": 2462112,
+                "ts": "2017-08-23 21:15:14-04",
+                "activity": "test-slug",
+                "name": "Ticket New",
+                "feature_1": "incident",
+                "revenue_impact": null
+            },
+            {
+                "_id": 2462118,
+                "ts": "2017-08-23 21:41:14-04",
+                "activity": "test-slug",
+                "name": "Ticket New",
+                "feature_1": "incident",
+                "revenue_impact": null
+            },
+            {
+                "_id": 2462124,
+                "ts": "2017-08-23 22:31:30-04",
+                "activity": "test-slug",
+                "name": "Ticket New",
+                "feature_1": "incident",
+                "revenue_impact": null
+            },
+            {
+                "_id": 2462130,
+                "ts": "2017-08-23 23:20:05-04",
+                "activity": "test-slug",
+                "name": "Ticket New",
+                "feature_1": "incident",
+                "revenue_impact": null
+            }
+        ]
+    }
+}

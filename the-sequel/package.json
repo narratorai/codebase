@@ -1,0 +1,62 @@
+{
+  "name": "@narratorai/the-sequel",
+  "version": "4.5.3",
+  "description": "A sql editor",
+  "main": "dist/main.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*",
+    "!dist/report.html",
+    "README.md"
+  ],
+  "author": "cdussud",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack --mode=development --watch",
+    "build": "webpack --mode=production",
+    "test": "jest",
+    "release": "semantic-release",
+    "prepare": "husky install"
+  },
+  "peerDependencies": {
+    "react": ">=17.x",
+    "react-dom": ">=17.x"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/jest": "^29.5.2",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "@types/react-measure": "^2.0.6",
+    "babel-jest": "^29.5.0",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.8.1",
+    "file-loader": "^6.2.0",
+    "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "semantic-release": "^21.0.5",
+    "source-map-loader": "^4.0.1",
+    "style-loader": "^3.3.3",
+    "ts-jest": "^29.1.0",
+    "ts-loader": "^9.4.3",
+    "typescript": "^4.9.3",
+    "webpack": "^5.88.0",
+    "webpack-bundle-analyzer": "^4.9.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "monaco-editor": "0.30.1",
+    "react-measure": "2.5.2",
+    "react-monaco-editor": "0.44.0"
+  },
+  "resolutions": {
+    "monaco-editor": "0.30.1"
+  }
+}

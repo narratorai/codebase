@@ -1,0 +1,18 @@
+[run]
+# https://coverage.readthedocs.io/en/latest/config.html#run
+
+# measure branch coverage
+branch = True
+
+omit =
+    # omit test files themselves
+    tests/*
+    # omit graph query files since they are generated code
+    core/graph/queries/*
+    core/graph/sync_client/*
+
+[report]
+# https://coverage.readthedocs.io/en/latest/config.html#report
+
+skip_empty = True
+sort = Cover

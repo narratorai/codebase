@@ -1,0 +1,116 @@
+table:
+  name: user
+  schema: public
+array_relationships:
+  - name: company_users
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: company_user
+          schema: public
+  - name: user_activities
+    using:
+      foreign_key_constraint_on:
+        column: maintainer_id
+        table:
+          name: activity
+          schema: public
+  - name: user_company_tables
+    using:
+      foreign_key_constraint_on:
+        column: maintainer_id
+        table:
+          name: company_table
+          schema: public
+  - name: user_datasets
+    using:
+      foreign_key_constraint_on:
+        column: created_by
+        table:
+          name: dataset
+          schema: public
+  - name: user_narrative_templates
+    using:
+      foreign_key_constraint_on:
+        column: created_by
+        table:
+          name: narrative_template
+          schema: public
+  - name: user_narratives
+    using:
+      foreign_key_constraint_on:
+        column: created_by
+        table:
+          name: narrative
+          schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        _exists:
+          _table:
+            name: company_user
+            schema: public
+          _where:
+            _and:
+              - user_id:
+                  _eq: X-Hasura-User-Id
+              - role:
+                  _eq: admin
+              - company_id:
+                  _eq: X-Hasura-Company-Id
+      set:
+        role: user
+      columns:
+        - email
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - accepted_terms_at
+        - accepted_terms_version
+        - created_at
+        - email
+        - id
+        - role
+        - updated_at
+      filter:
+        _or:
+          - id:
+              _eq: X-Hasura-User-Id
+          - company_users:
+              company:
+                _and:
+                  - id:
+                      _eq: X-Hasura-Company-Id
+                  - demo_company:
+                      _ne: true
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - accepted_terms_at
+        - accepted_terms_version
+        - updated_at
+      filter:
+        _or:
+          - id:
+              _eq: X-Hasura-User-Id
+          - _and:
+              - company_users:
+                  company_id:
+                    _eq: X-Hasura-Company-Id
+              - _exists:
+                  _table:
+                    name: company_user
+                    schema: public
+                  _where:
+                    _and:
+                      - company_id:
+                          _eq: X-Hasura-Company-Id
+                      - user_id:
+                          _eq: X-Hasura-User-Id
+                      - role:
+                          _eq: admin
+      check: null

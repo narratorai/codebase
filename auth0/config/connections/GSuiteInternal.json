@@ -1,0 +1,28 @@
+{
+  "options": {
+    "email": true,
+    "scope": [
+      "email",
+      "profile"
+    ],
+    "domain": "narrator.ai",
+    "profile": true,
+    "icon_url": "https://assets.narrator.ai/brand/narrator-logo-mark-150-black.png",
+    "client_id": "##GSUITE_INTERNAL_CLIENT_ID##",
+    "ext_groups": true,
+    "ext_is_admin": true,
+    "client_secret": "##GSUITE_INTERNAL_CLIENT_SECRET##",
+    "tenant_domain": "narrator.ai",
+    "domain_aliases": ["narrator.ai", "narratordata.com"],
+    "api_enable_users": true,
+    "ext_agreed_terms": true,
+    "ext_is_suspended": true,
+    "handle_login_from_social": true
+  },
+  "strategy": "google-apps",
+  "name": "GSuiteInternal",
+  "is_domain_connection": false,
+  "show_as_button": false,
+  "display_name": "Internal Login",
+  "enabled_clients": @@GSUITE_INTERNAL_ENABLED_CLIENTS@@
+}

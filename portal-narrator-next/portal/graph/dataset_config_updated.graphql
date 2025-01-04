@@ -1,0 +1,16 @@
+subscription DatasetConfigUpdated($company_id: uuid!, $dataset_id: uuid!) {
+  dataset(where: { company_id: { _eq: $company_id }, id: { _eq: $dataset_id } }) {
+    id
+    last_config_updated_at
+    updated_by
+    updated_by_user {
+      id
+      email
+      company_users(where: { company_id: { _eq: $company_id } }) {
+        id
+        first_name
+        last_name
+      }
+    }
+  }
+}

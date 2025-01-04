@@ -1,0 +1,4 @@
+table:
+  name: watcher_relation
+  schema: public
+is_enum: true

@@ -1,0 +1,5 @@
+mutation DeleteMetricTag($metric_tag_id: uuid) {
+  delete_tag(where: { id: { _eq: $metric_tag_id } }) {
+    returning { id }
+  }
+}

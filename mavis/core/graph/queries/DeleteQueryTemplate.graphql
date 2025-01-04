@@ -1,0 +1,5 @@
+mutation DeleteQueryTemplate($id: uuid!) {
+  delete_query_template_by_pk(id: $id) {
+    id
+  }
+}

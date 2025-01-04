@@ -1,0 +1,5 @@
+mutation UpdateExecutionStatus($id: uuid!, $status: task_execution_status_enum!) {
+  update_task_execution_by_pk(pk_columns: { id: $id }, _set: { status: $status }) {
+    id
+  }
+}

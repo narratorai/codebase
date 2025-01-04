@@ -1,0 +1,14 @@
+query GetTransformationForProduction($id: uuid!) {
+  transformation: transformation_by_pk(id: $id) {
+    id
+    name
+    slug
+    table
+    update_type
+    production_queries(order_by: { created_at: desc_nulls_last }, limit: 1) {
+      created_at
+      sql
+      updated_by
+    }
+  }
+}

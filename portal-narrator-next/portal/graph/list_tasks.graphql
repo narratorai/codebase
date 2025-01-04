@@ -1,0 +1,71 @@
+fragment TaskExecutionFields on company_task {
+  id
+  created_at
+  task_slug
+  schedule
+  updated_at
+  category
+  description
+  internal_only
+  # limit 2 for running tasks so we can show time ago of previous execution
+  executions(limit: 2, order_by: [{ started_at: desc_nulls_last }]) {
+    id
+    status
+    started_at
+    completed_at
+    details
+  }
+  dataset_materializations {
+    id
+    type
+    external_link
+    task_id
+    dataset {
+      id
+      slug
+    }
+  }
+  narratives {
+    id
+    name
+    slug
+    type
+    narrative_runs(limit: 1) {
+      id
+    }
+  }
+  company_query_alerts {
+    id
+    sql_query {
+      id
+      related_to
+      related_id
+      related_kind
+    }
+  }
+}
+
+subscription TaskTrackerNeedsUpdate($company_slug: String!) {
+  company_task(order_by: [{ created_at: desc }], where: { company: { slug: { _eq: $company_slug } } }) {
+    id
+    created_at
+    task_slug
+    schedule
+    updated_at
+    # limit 2 for running tasks so we can show time ago of previous execution
+    executions(limit: 2, order_by: [{ started_at: desc_nulls_last }]) {
+      id
+      status
+      started_at
+      completed_at
+      details
+    }
+  }
+}
+
+query TaskTracker($company_slug: String!) {
+  company_task(order_by: [{ created_at: desc }], where: { company: { slug: { _eq: $company_slug } } }) {
+    id
+    ...TaskExecutionFields
+  }
+}

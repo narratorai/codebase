@@ -1,0 +1,3 @@
+export const TRAINING_INDEX_TOP_BAR_HEIGHT = 64
+export const TRAINING_HEADER_Z_INDEX = 2
+export const TRAINING_CONTENT_Z_INDEX = 1

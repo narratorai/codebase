@@ -1,0 +1,19 @@
+{
+  "type": "EDIT_COMPUTATION_SUBMIT",
+  "column": {
+      "id": null,
+      "filters": [],
+      "label": "Group Func in Parent",
+      "name": "",
+      "output": true,
+      "source_details": {
+          "kind": "freehand_function",
+          "raw_string": "iff(not_is_null(linka0da20a2), '1', '0')"
+      },
+      "source_kind": "computed",
+      "type": "string",
+      "_auto_generated_by": null
+  },
+  "isEdit": false,
+  "groupSlug": null
+}

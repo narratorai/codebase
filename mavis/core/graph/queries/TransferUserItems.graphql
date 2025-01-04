@@ -1,0 +1,38 @@
+mutation TransferUserItems(
+  $company_id: uuid!
+  $user_id: uuid!
+  $new_user_id: uuid!
+) {
+  update_dataset(
+    where: { company_id: { _eq: $company_id }, created_by: { _eq: $user_id } }
+    _set: { created_by: $new_user_id }
+  ) {
+    returning {
+      id
+    }
+  }
+  update_narrative(
+    where: { company_id: { _eq: $company_id }, created_by: { _eq: $user_id } }
+    _set: { created_by: $new_user_id }
+  ) {
+    returning {
+      id
+    }
+  }
+  update_chat(
+    where: {company_table:{company_id: {_eq: $company_id}}, created_by: {_eq: $user_id}}
+    _set: {created_by: $new_user_id}
+  ) {
+    returning {
+      id
+    }
+  }
+  update_transformation(
+    where: { company_id: { _eq: $company_id }, updated_by: { _eq: $user_id } }
+    _set: { updated_by: $new_user_id }
+  ) {
+    returning {
+      id
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "schema": {
+    "title": "Simple Example",
+    "description": "Simple Example with dependencies",
+    "type": "object",
+    "properties": {
+      "append": {
+        "title": "Choose an Activity",
+        "type": "object",
+        "properties": {
+          "activity_slug": {
+            "title": "Which activity has the data you want?",
+            "enum": [
+              "recieved_referral",
+              "earned_points",
+              "played_game",
+              "referred_friend",
+              "received_loyalty_top_up"
+            ],
+            "type": "string",
+            "meta_ui": {
+              "update_ui": true,
+              "process_data": false,
+              "help": "Here are some metrics on how this activity relates to the cohort _____"
+            }
+          }
+        },
+        "required": [
+          "activity_slug"
+        ],
+        "dependencies": {
+          "activity_slug": {
+            "properties": {
+              "billing_address": {
+                "type": "string",
+                "meta_ui": {
+                  "help": "Billing help!"
+                }
+              }
+            },
+            "oneOf": [
+              {
+                "properties": {
+                  "activity_slug": {
+                    "enum": [
+                      "recieved_referral",
+                      "earned_points",
+                      "played_game",
+                      "referred_friend",
+                      "received_loyalty_top_up"
+                    ]
+                  },
+                  "relationship": {
+                    "type": "object",
+                    "properties": {
+                      "relationship_slug": {
+                        "title": "Define Narrator Grammer relationship",
+                        "enum": [
+                          "first_ever",
+                          "last_ever",
+                          "last_before",
+                          "first_in_between",
+                          "last_in_between",
+                          "agg_all_in_between",
+                          "agg_all_ever",
+                          "agg_all_before"
+                        ],
+                        "enumNames": [
+                          "First Ever",
+                          "Last Ever",
+                          "Last Before",
+                          "First In Between",
+                          "Last In Between",
+                          "Agg All In Between",
+                          "Agg All Ever",
+                          "Agg All Before"
+                        ],
+                        "default": "first_in_between",
+                        "meta_ui": {
+                          "help": "If you are confused by the grammer check out our helpful simulator _______"
+                        }
+                      }
+                    },
+                    "required": [
+                      "relationship_slug"
+                    ],
+                    "dependencies": {
+                      "relationship_slug": {
+                        "oneOf": [
+                          {
+                            "properties": {
+                              "relationship_slug": {
+                                "enum": [
+                                  "first_ever",
+                                  "last_ever",
+                                  "last_before",
+                                  "first_in_between",
+                                  "last_in_between",
+                                  "agg_all_in_between",
+                                  "agg_all_ever",
+                                  "agg_all_before"
+                                ]
+                              },
+                              "columns": {
+                                "title": "Choose the columns you want to add",
+                                "type": "array",
+                                "items": {
+                                  "type": "string",
+                                  "enum": [],
+                                  "enumNames": [],
+                                  "meta_ui": {
+                                    "help": "Columns help!"
+                                  }
+                                },
+                                "uniqueItems": true,
+                                "default": []
+                              }
+                            },
+                            "required": [
+                              "columns"
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "required": []
+              }
+            ]
+          }
+        }
+      }
+    },
+    "required": [
+      "dataset"
+    ]
+  },
+  "data": {}
+}

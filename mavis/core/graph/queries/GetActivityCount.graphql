@@ -1,0 +1,7 @@
+query GetActivityCount($table_id: uuid!) {
+    activity_aggregate(where: {table_id: {_eq: $table_id}}) {
+        aggregate {
+        count
+        }
+    }
+}

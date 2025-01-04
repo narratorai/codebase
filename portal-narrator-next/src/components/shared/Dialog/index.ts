@@ -1,0 +1,5 @@
+export { default as DialogContent } from './DialogContent'
+export { default as DialogHeader } from './DialogHeader'
+export { default as DialogOverlay } from './DialogOverlay'
+export { default as DialogTrigger } from './DialogTrigger'
+export { Root as Dialog } from '@radix-ui/react-dialog'

@@ -1,0 +1,9 @@
+{
+  "schema": {
+    "type": "object"
+  },
+  "ui_schema": {
+    "ui:field": "ConfettiField"
+  },
+  "data": {}
+}

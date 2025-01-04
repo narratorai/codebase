@@ -1,0 +1,44 @@
+table:
+  name: metric_tags
+  schema: public
+object_relationships:
+  - name: company_tag
+    using:
+      manual_configuration:
+        column_mapping:
+          tag_id: id
+        insertion_order: null
+        remote_table:
+          name: company_tags
+          schema: public
+  - name: metric
+    using:
+      manual_configuration:
+        column_mapping:
+          metric_id: id
+        insertion_order: null
+        remote_table:
+          name: metric
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - updated_at
+        - id
+        - metric_id
+        - tag_id
+      filter:
+        _and:
+          - metric:
+              company:
+                id:
+                  _eq: X-Hasura-Company-Id
+          - _or:
+              - company_tag:
+                  user_id:
+                    _is_null: true
+              - company_tag:
+                  user_id:
+                    _eq: X-Hasura-User-Id

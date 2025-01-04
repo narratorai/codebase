@@ -1,0 +1,8 @@
+mutation InsertDimTable($company_id: uuid!, $schema: String!, $table: String!, $join_key: String) {
+  insert_dim_table_one(
+    object: { company_id: $company_id, schema: $schema, table: $table, join_key: $join_key }
+    on_conflict: { constraint: dim_table_table_schema_company_id_key, update_columns: [join_key] }
+  ) {
+    id
+  }
+}

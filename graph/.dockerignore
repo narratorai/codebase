@@ -1,0 +1,10 @@
+*
+!config.yaml
+!metadata/*
+!migrations/*
+!scripts/*
+!Gemfile
+!Gemfile.lock
+!package.json
+!yarn.lock
+!.pgsync.yml

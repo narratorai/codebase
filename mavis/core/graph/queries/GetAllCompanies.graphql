@@ -1,0 +1,8 @@
+query GetAllCompanies {
+  company(where: {status: {_eq: active}}) {
+    id
+    name
+    slug
+    datacenter_region
+  }
+}

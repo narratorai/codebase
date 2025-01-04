@@ -1,0 +1,20 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "percent": {
+        "type": "number",
+        "title": "Percent"
+      }
+    },
+    "required": ["percent"]
+  },
+  "ui_schema" : {
+    "percent": {
+      "ui:widget": "PercentWidget"
+    }
+  },
+  "data": {
+    "percent": 0.4
+  }
+}

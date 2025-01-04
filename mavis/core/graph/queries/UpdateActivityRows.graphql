@@ -1,0 +1,5 @@
+mutation UpdateActivityRows($id: uuid!, $row_count: Int!) {
+  update_activity_by_pk(pk_columns: {id: $id}, _set: {row_count: $row_count}) {
+    id
+  }
+}

@@ -1,0 +1,21 @@
+mutation UpdateActivity(
+  $id: uuid!
+  $name: String!
+  $description: String
+  $updated_by: String
+  $maintainer_id: uuid
+) {
+  update_activity(
+    where: { id: { _eq: $id } }
+    _set: {
+      name: $name
+      description: $description
+      updated_by: $updated_by
+      maintainer_id: $maintainer_id
+    }
+  ) {
+    returning {
+      id
+    }
+  }
+}

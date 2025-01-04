@@ -1,0 +1,8 @@
+mutation InsertTag($color: String!, $company_id: uuid!, $tag: String!, $user_id: uuid, $description: String) {
+  inserted_tag: insert_company_tags_one(
+    object: { color: $color, company_id: $company_id, tag: $tag, user_id: $user_id, description: $description }
+    on_conflict: { constraint: company_tags_tag_company_id_user_id_key, update_columns: [description] }
+  ) {
+    id
+  }
+}

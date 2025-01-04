@@ -1,0 +1,18 @@
+query GetDim($id: uuid!) {
+  dim_table_by_pk(id: $id) {
+    id
+    schema_: schema
+    table
+    join_key
+    description
+    columns {
+      id
+      name
+      label
+      type
+    }
+    team_permissions{
+      team_id
+    }
+  }
+}

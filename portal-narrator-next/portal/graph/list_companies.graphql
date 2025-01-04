@@ -1,0 +1,15 @@
+# List all non-archived companies
+# Used:
+# - when no company slug is present on /
+# - to populate the company select dropdown
+
+query GetCompanies {
+  companies: company(where: { status: { _neq: archived } }, order_by: [{ slug: asc }]) {
+    id
+    name
+    slug
+    status
+    demo_company
+    __typename
+  }
+}

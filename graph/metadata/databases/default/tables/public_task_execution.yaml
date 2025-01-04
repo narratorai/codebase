@@ -1,0 +1,37 @@
+table:
+  name: task_execution
+  schema: public
+object_relationships:
+  - name: task
+    using:
+      foreign_key_constraint_on: task_id
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        task:
+          company:
+            id:
+              _eq: X-Hasura-Company-Id
+      set:
+        by_user: x-hasura-User-Id
+      columns:
+        - task_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - by_user
+        - completed_at
+        - created_at
+        - details
+        - id
+        - started_at
+        - status
+        - task_id
+        - updated_at
+      filter:
+        task:
+          company_id:
+            _eq: X-Hasura-Company-Id
+      limit: 100

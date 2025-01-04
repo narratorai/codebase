@@ -1,0 +1,7 @@
+query GetAllUsers($company_id: uuid!) {
+  user(where: { _or: [{ role: { _eq: internal_admin } }, { company_users: { company_id: { _eq: $company_id } } }] }) {
+    id
+    email
+    role
+  }
+}

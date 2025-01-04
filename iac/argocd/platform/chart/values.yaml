@@ -1,0 +1,101 @@
+# Global Values
+repoUrl: 'https://github.com/narratorai/platform-iac.git'
+targetRevision: ''
+region: ''
+account: ''
+clusterName: ''
+destinationServer: ''
+argoNamespace: ''
+argoProject: ''
+
+
+# Argo Rollout Values
+argoRollouts:
+  enable: false
+  serviceAccountName:
+
+argoWorkflows:
+  enable: false
+  serviceAccountName:
+
+argocdImageUpdater:
+  enable: false
+  serviceAccountName:
+
+awsCloudWatchMetrics:
+  enable: false
+  serviceAccountName:
+
+awsLoadBalancerController:
+  enable: false
+  serviceAccountName:
+  podDisruptionBudget:
+    maxUnavailable: 1
+  respectIgnoreDifferences: true
+  ignoreDifferences:
+    - group: ""
+      kind: "Secret"
+      jsonPointers:
+        - /data
+    - group: "admissionregistration.k8s.io"
+      kind: "MutatingWebhookConfiguration"
+      jqPathExpressions:
+        - '.webhooks[]?.clientConfig.caBundle'
+    - group: "admissionregistration.k8s.io"
+      kind: "ValidatingWebhookConfiguration"
+      jqPathExpressions:
+        - '.webhooks[]?.clientConfig.caBundle'
+
+awsNodeTerminationHandler:
+  enable: false
+
+awsForFluentBit:
+  enable: false
+  logGroupName:
+  serviceAccountName:
+
+calico:
+  enable: false
+  installation:
+  kubernetesProvider: "EKS"
+
+doppler:
+  enable: false
+
+externalDns:
+  enable: false
+  serviceAccountName:
+  zoneIdFilter:
+
+externalSecrets:
+  enable: false
+
+karpenter:
+  enable: false
+  serviceAccountName:
+  controllerClusterEndpoint:
+  awsDefaultInstanceProfile:
+
+grafana:
+  enable: false
+
+metricsServer:
+  enable: false
+
+prometheus:
+  enable: false
+  createNamespace: true
+  serviceAccountName:
+  roleArn:
+  ampWorkspaceUrl:
+
+promtheusNodeExporter:
+  enable: false
+  serviceAccountName:
+
+reloader:
+  enable: false
+
+# Thanos Values
+thanos:
+  enable: false

@@ -1,0 +1,598 @@
+{
+    "fields": {},
+    "query": {
+      "activities": [
+        {
+          "id": "aconsidered_ordering_ingredient_d2fdf3bb",
+          "name": "Considered Ordering Ingredient",
+          "slug": [
+            "considered_ordering_ingredient"
+          ],
+          "activity_ids": [
+            "b9b8a042-e7f8-497f-a76b-c60dd10a965b"
+          ],
+          "did": true,
+          "occurrence": "all",
+          "occurrence_value": null,
+          "force_recompute_occurrence": null,
+          "resolution_filter": null,
+          "config": {
+            "has_source": false,
+            "activity_stream": "activity_stream"
+          },
+          "relationships": [],
+          "filters": [],
+          "kind": "limiting",
+          "ii": 0
+        },
+        {
+          "id": "aconsidered_ordering_ingredient_66e9d651",
+          "name": "Considered Ordering Ingredient",
+          "slug": [
+            "considered_ordering_ingredient"
+          ],
+          "activity_ids": [
+            "b9b8a042-e7f8-497f-a76b-c60dd10a965b"
+          ],
+          "did": true,
+          "occurrence": "last",
+          "occurrence_value": null,
+          "force_recompute_occurrence": null,
+          "resolution_filter": null,
+          "config": {
+            "has_source": false,
+            "activity_stream": "activity_stream"
+          },
+          "relationships": [
+            {
+              "slug": "before"
+            },
+            {
+              "operator": "equal",
+              "slug": "cohort_column",
+              "cohort_column": {
+                "id": "afeature_stock_ingredient_id_97578fda",
+                "name": "feature_stock_ingredient_id",
+                "label": "Stock Ingredient Id",
+                "output": true,
+                "filters": [],
+                "mavis_type": "integer",
+                "group_func": null,
+                "type": "number",
+                "source_kind": "activity",
+                "source_details": {
+                  "activity_kind": "append",
+                  "activity_id": "aconsidered_ordering_ingredient_66e9d651",
+                  "enrichment_table": null,
+                  "enrichment_table_column": null,
+                  "slowly_changing_ts_column": null,
+                  "applied_function": null
+                }
+              },
+              "append_column": {
+                "id": "afeature_stock_ingredient_id_3991aab1",
+                "name": "feature_stock_ingredient_id",
+                "label": "Stock Ingredient Id",
+                "output": true,
+                "filters": [],
+                "mavis_type": "integer",
+                "group_func": null,
+                "type": "number",
+                "source_kind": "activity",
+                "source_details": {
+                  "activity_kind": "append",
+                  "activity_id": "aconsidered_ordering_ingredient_66e9d651",
+                  "enrichment_table": null,
+                  "enrichment_table_column": null,
+                  "slowly_changing_ts_column": null,
+                  "applied_function": null
+                }
+              },
+              "column_name": "feature_stock_ingredient_id",
+              "cohort_column_name": "feature_stock_ingredient_id",
+              "cohort_column_enrichment_table": null,
+              "column_name_enrichment_table": null,
+              "column_name_enrichment_table_column": null
+            }
+          ],
+          "filters": [
+            {
+              "filter": {
+                "operator": "equal",
+                "kind": "value",
+                "value": "True",
+                "or_null": false,
+                "from_type": null,
+                "from_value": null,
+                "from_value_kind": "value",
+                "from_value_resolution": null,
+                "to_type": null,
+                "to_value": null,
+                "to_value_kind": "value",
+                "to_value_resolution": null,
+                "value_resolution": null
+              },
+              "activity_column": {
+                "id": "afeature_did_order_a7da9d33",
+                "name": "feature_did_order",
+                "label": "Did Order",
+                "output": true,
+                "filters": [],
+                "mavis_type": "boolean",
+                "group_func": null,
+                "type": "boolean",
+                "source_kind": "activity",
+                "source_details": {
+                  "activity_kind": "append",
+                  "activity_id": "aconsidered_ordering_ingredient_66e9d651",
+                  "enrichment_table": null,
+                  "enrichment_table_column": null,
+                  "slowly_changing_ts_column": null,
+                  "applied_function": null
+                }
+              },
+              "activity_column_name": "feature_did_order",
+              "column_type": "boolean",
+              "enrichment_table": null,
+              "enrichment_table_column": null
+            }
+          ],
+          "kind": "append",
+          "relationship_slug": "last_before",
+          "ii": 1
+        }
+      ],
+      "columns": [
+        {
+          "id": "aactivity_id_00042ecb",
+          "name": "activity_id",
+          "label": "Activity Id",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "ats_996f54d1",
+          "name": "ts",
+          "label": "Timestamp",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": null,
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "acustomer_f44d790b",
+          "name": "customer",
+          "label": "Customer",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "arevenue_impact_43e19e85",
+          "name": "revenue_impact",
+          "label": "Revenue Impact",
+          "output": true,
+          "filters": [],
+          "mavis_type": "float",
+          "group_func": [
+            "sum"
+          ],
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "alink_816d4811",
+          "name": "link",
+          "label": "Link",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "aactivity_occurrence_d58059ae",
+          "name": "activity_occurrence",
+          "label": "Activity Occurrence",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_did_order_a1b2cc29",
+          "name": "feature_did_order",
+          "label": "Did Order",
+          "output": true,
+          "filters": [],
+          "mavis_type": "boolean",
+          "group_func": null,
+          "type": "boolean",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_ingredient_id_83c9f21c",
+          "name": "feature_ingredient_id",
+          "label": "Ingredient Id",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_is_swapped_65397899",
+          "name": "feature_is_swapped",
+          "label": "Is Swapped",
+          "output": true,
+          "filters": [],
+          "mavis_type": "boolean",
+          "group_func": null,
+          "type": "boolean",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_ordered_product_id_ee71488f",
+          "name": "feature_ordered_product_id",
+          "label": "Ordered Product Id",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_ordered_quantity_b4f58834",
+          "name": "feature_ordered_quantity",
+          "label": "Ordered Quantity",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_order_id_e097c3df",
+          "name": "feature_order_id",
+          "label": "Order Id",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_product_requirement_0bc313a1",
+          "name": "feature_product_requirement",
+          "label": "Product Requirement",
+          "output": true,
+          "filters": [],
+          "mavis_type": "float",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_recipe_id_7fd2731b",
+          "name": "feature_recipe_id",
+          "label": "Recipe Id",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_stock_ingredient_id_9056d371",
+          "name": "feature_stock_ingredient_id",
+          "label": "Stock Ingredient Id",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aconsidered_ordering_ingredient_d2fdf3bb",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "ats_2b782072",
+          "name": "ts",
+          "label": "Last Before Considered Ordering Ingredients Timestamp",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": null,
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "aconsidered_ordering_ingredient_66e9d651",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "adid_considered_ordering_ingred_a97b98d8",
+          "name": null,
+          "label": "Did Considered Ordering Ingredient Before",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "type": "integer",
+          "group_func": [
+            "sum",
+            "average"
+          ],
+          "source_kind": "computed",
+          "source_details": {
+            "raw_string": "exists(ats_2b782072)",
+            "activity_kind": "append",
+            "activity_id": "aconsidered_ordering_ingredient_66e9d651",
+            "enrichment_table": null
+          }
+        },
+        {
+          "id": "aminute_considered_ordering_ing_d6109cae",
+          "name": null,
+          "label": "Minutes From Considered Ordering Ingredient",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "type": "integer",
+          "group_func": [
+            "average"
+          ],
+          "source_kind": "computed",
+          "source_details": {
+            "raw_string": "time_diff('minute', ats_2b782072, join_ts.local)",
+            "activity_kind": "append",
+            "activity_id": "aconsidered_ordering_ingredient_66e9d651",
+            "enrichment_table": null
+          }
+        },
+        {
+          "id": "aactivity_id_341b3ee3",
+          "name": "activity_id",
+          "label": "Last Before Considered Ordering Ingredients Activity Id",
+          "output": true,
+          "filters": [
+            {
+              "operator": "equal",
+              "value": "338375-58041-215151",
+              "kind": "value",
+              "or_null": false
+            }
+          ],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "aconsidered_ordering_ingredient_66e9d651",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_product_requirement_17aaf623",
+          "name": "feature_product_requirement",
+          "label": "Last Before Product Requirement activity",
+          "output": true,
+          "filters": [],
+          "mavis_type": "float",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "aconsidered_ordering_ingredient_66e9d651",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "aproduct_requirement_153539f7",
+          "name": "product_requirement",
+          "label": "Last Before Product Requirement enriched",
+          "output": true,
+          "filters": [],
+          "mavis_type": "float",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "aconsidered_ordering_ingredient_66e9d651",
+            "enrichment_table": "enriched_ingredients",
+            "enrichment_table_column": "feature_ingredient_id",
+            "slowly_changing_ts_column": null,
+            "applied_function": null
+          }
+        }
+      ],
+      "all_groups": [],
+      "order": [
+        {
+          "column_id": "ats_996f54d1",
+          "order_direction": "desc"
+        }
+      ],
+      "activity_stream": "activity_stream",
+      "swapped_ids": [],
+      "columns_order": {
+        "parent": {
+          "order": [
+            "aactivity_id_00042ecb",
+            "ats_996f54d1",
+            "acustomer_f44d790b",
+            "arevenue_impact_43e19e85",
+            "alink_816d4811",
+            "aactivity_occurrence_d58059ae",
+            "afeature_did_order_a1b2cc29",
+            "afeature_ingredient_id_83c9f21c",
+            "afeature_is_swapped_65397899",
+            "afeature_ordered_product_id_ee71488f",
+            "afeature_ordered_quantity_b4f58834",
+            "afeature_order_id_e097c3df",
+            "afeature_product_requirement_0bc313a1",
+            "afeature_recipe_id_7fd2731b",
+            "afeature_stock_ingredient_id_9056d371",
+            "ats_2b782072",
+            "adid_considered_ordering_ingred_a97b98d8",
+            "aminute_considered_ordering_ing_d6109cae",
+            "aactivity_id_341b3ee3",
+            "afeature_product_requirement_17aaf623",
+            "aproduct_requirement_153539f7"
+          ],
+          "left_pinned": [],
+          "right_pinned": []
+        }
+      },
+      "story": {
+        "content": []
+      }
+    }
+  }

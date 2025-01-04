@@ -1,0 +1,1 @@
+export const ACTIVITY_CARD_ROW_LENGTH = 3

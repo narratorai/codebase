@@ -1,0 +1,55 @@
+# Query used at the GET /api/activities endpoint
+query GetAllActivities($graph_filter: activity_bool_exp!, $limit: Int, $offset: Int, $favorite_tag_id: uuid!) {
+  activity_aggregate(where: $graph_filter) {
+    aggregate {
+      totalCount: count
+    }
+  }
+  activities: activity(where: $graph_filter, order_by: { table_id: asc }, limit: $limit, offset: $offset) {
+    id
+    slug
+    name
+    description
+    row_count
+    tags(where: { tag_id: { _eq: $favorite_tag_id } }) {
+      id
+    }
+    category: company_category {
+      id
+      name: category
+      color
+    }
+    alerts: activity_maintenances(where: { ended_at: { _is_null: true } }) {
+      id
+      kind
+      notes
+      started_at
+    }
+    table_id
+    created_at
+    updated_at
+    column_renames {
+      id
+      label
+      type
+      name
+      has_data
+    }
+    activity_dims {
+      activity_join_column
+      slowly_changing_ts_column
+      dim_table {
+        id
+        schema_: schema
+        table
+        join_key
+        columns {
+          id
+          name
+          type
+          label
+        }
+      }
+    }
+  }
+}

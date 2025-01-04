@@ -1,0 +1,24 @@
+query GetTransformationsForActivity($activity_id: uuid!) {
+  transformation_activities(where: { activity_id: { _eq: $activity_id } }) {
+    activity_id
+    transformation {
+      id
+      slug
+      name
+      kind
+      task_id
+      update_type
+      production_queries(order_by: { created_at: desc_nulls_last }, limit: 1) {
+        sql
+        updated_by
+      }
+      column_renames {
+        type
+        label
+        name
+        casting
+        has_data
+      }
+    }
+  }
+}

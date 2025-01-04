@@ -1,0 +1,7 @@
+query GetTeamPermissions($related_to: String!, $related_id: uuid!) {
+  team_permission(where: { related_to: { _eq: $related_to }, related_id: { _eq: $related_id } }) {
+    id
+    team_id
+    can_edit
+  }
+}

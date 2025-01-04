@@ -1,0 +1,12 @@
+query GetNarrativeTask($id: uuid!) {
+  narrative_by_pk(id: $id) {
+    id
+    name
+    slug
+    company_task {
+      id
+      label
+      schedule
+    }
+  }
+}

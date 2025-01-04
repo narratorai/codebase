@@ -1,0 +1,20 @@
+mutation InsertCompanyTimeline(
+  $related_id: uuid!
+  $related_to: company_timeline_relations_enum!
+  $happened_at: date!
+  $name: String!
+  $description: String
+) {
+  insert_company_timeline: insert_company_timeline_one(
+    object: {
+      happened_at: $happened_at
+      description: $description
+      name: $name
+      related_to: $related_to
+      related_to_id: $related_id
+    }
+  ) {
+      id
+
+  }
+}

@@ -1,0 +1,2786 @@
+[
+  {
+    "id": "ab5af04e-9796-402b-9f15-0a84d790ca4c",
+    "slug": "email_sent",
+    "name": "Email Sent",
+    "description": "Email sent to a customer. Indicated by Type = 6. Data Source is Pardot.",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "5472cd8f-aab8-4a4e-8dd5-522098c044ac",
+        "name": "customer",
+        "label": "Customer",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d04777d0-3fb7-40b0-814a-46c6c2a849ac",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "6a7652dc-62ad-4682-95d2-26d6b96b5e72",
+        "name": "ts",
+        "label": "Sent At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "84765a24-3036-48f7-abd6-c55dc54e8167",
+        "name": "feature_2",
+        "label": "Subject",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d9732d15-e454-474c-8f77-e3683d1c1ac4",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "1b38f999-c36b-4b90-935f-c45a975d1651",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "579ec1c4-298c-4bdd-bf25-4e9cb4709ec7",
+        "name": "feature_1",
+        "label": "Email Name",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8e62a997-6db9-405e-80ed-fa672fecc2dd",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "207cc66e-f921-42f6-a10d-16520e9cc721",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "4d62d9da-976f-4977-9251-2353147b87d3",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b84579bf-e244-40a2-9a16-62d7d381bf1b",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "c4dee277-41a0-4a75-a514-c79f5fb7fa34",
+        "name": "link",
+        "label": "Link",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "7e641291-eaca-40c7-9b31-30acaf62be3d",
+    "slug": "started_session",
+    "name": "Started Session",
+    "description": "",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "eb591075-0417-4a50-bfb6-d2fd535cc219",
+        "name": "activity_id",
+        "label": "Activity Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "80c5c30a-1dc7-4271-a8cb-c9bdca277f5a",
+        "name": "ts",
+        "label": "Ts",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "ddd5d464-37f7-4ed4-9278-17965a72ee9b",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "49e5c1fb-7fb9-4d29-82ab-b8b1df4e1dbc",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8f6318e3-a6cc-4630-8078-55358dd80021",
+        "name": "customer",
+        "label": "Email",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "ac527b76-92dd-4615-82a2-47016e9e3f17",
+        "name": "feature_1",
+        "label": "Activity",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f4816292-b26a-40bf-84c8-0f5e5b65ee85",
+        "name": "feature_2",
+        "label": "Page Path",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "c8e42ff0-331e-409b-bba0-49c0a5a7783e",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "763c4e8d-7a07-4102-86ce-1b59d130199b",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "3a69c81d-fb4a-4c17-aff0-1c6781ee4120",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "82ecd5dd-6ddb-4715-bbb0-d08f2d94f34c",
+        "name": "link",
+        "label": "Link",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "bfac41da-acb0-48cb-9140-fe7891d00dcf",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "fed819b4-2594-4e57-a446-781e80d4b94e",
+    "slug": "subscribed_to_newsletter",
+    "name": "Subscribed To Newsletter",
+    "description": "Customer submitted the pardot form to subscribe to a newsletter where the detail = \"Newsletter Signup\". Source: Pardot",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "a3968d3a-0877-4ebe-893e-794b69c50b22",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0cd857d6-7733-49ef-9975-7ea19ad4a055",
+        "name": "customer",
+        "label": "Email",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b8cde0cb-3239-46e3-8fd4-6457ee904db3",
+        "name": "feature_1",
+        "label": "Form Name",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "2c8285c7-fec9-4b6c-becd-032f3962f0df",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "97ae872f-781c-431f-84bb-0bf01df40631",
+        "name": "ts",
+        "label": "Signed Up at",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "05c5ab9e-e7b0-43f4-954b-e747879d44b8",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "707692b0-9db7-4ca8-9906-e06dad6c49f9",
+        "name": "link",
+        "label": "CRM Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "317a4e2a-21ec-4910-8c50-6f58223cc588",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "ae163d8e-9285-4e95-afdf-74e20799f415",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "cfdc5840-c0f3-438f-8d6f-0ed572bfd6f0",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "af830fa4-4038-465b-93d8-5b4828df01b1",
+        "name": "feature_2",
+        "label": "Feature 2",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "af52572d-cdad-4744-966f-53f9b4ca2d8f",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "3ef6fb5a-266f-4356-a242-7fdda246c6e8",
+    "slug": "opportunity_was_lost",
+    "name": "Opportunity Was Lost",
+    "description": "Customer became a lost opportunity (based on Salesforce Opportunity Stage: \"Closed Lost\")",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "7c6d0518-17d9-4889-b31b-d6af8ef1fc77",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "57bb474c-1492-44a9-9c07-8907a660449c",
+        "name": "ts",
+        "label": "Timestamp",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "5d41d3ed-65aa-490d-b6e7-08f65aedfae8",
+        "name": "customer",
+        "label": "Customer",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "1dde6578-41d3-4f83-99fb-9df0a82a901a",
+        "name": "feature_1",
+        "label": "Opportunity Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "9d109289-1919-4311-8a97-0b3db1b576d8",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "4cf32b1b-4949-4fca-bfcb-49d4e3733065",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "544fd0fa-c627-4b3c-aef9-6dda23d81e87",
+        "name": "feature_2",
+        "label": "Feature 2",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "509cd585-9551-44c1-b705-3b3a30b7cbcc",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "2e5a29fa-6eb8-4724-b097-f37e4d931e5f",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "88a427db-34d5-4bf5-be00-56f8dd27b32d",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b99a12f6-5f16-4d75-8171-7c8578eb1884",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "cd4d5969-c57c-436b-af74-72056ffd4b02",
+        "name": "link",
+        "label": "Link",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "a03772cf-d4f1-4428-afa5-eaacc6ad4dc2",
+    "slug": "made_payment",
+    "name": "Made Payment",
+    "description": "Customer made a payment on their invoice (could be partial payment)",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "4abeb493-06c0-4bfa-b6e0-57619ee89e8d",
+        "name": "activity_id",
+        "label": "Payment Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "fc0b2a1c-d3b8-4491-b751-bab9a29e4be8",
+        "name": "ts",
+        "label": "Date",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f8243700-9ca6-4cec-b96a-125e6a822ac3",
+        "name": "feature_1",
+        "label": "Payment Type",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "fdb6efdb-9c0d-46ad-b05f-8cefc9ffbf96",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8e2aeea1-2dab-45b4-8f57-90fba3103121",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0f24667f-3ff6-45c3-9646-fcc32efd2812",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "5104ac15-0c9b-4d66-8568-3b212e3f9148",
+        "name": "customer",
+        "label": "Email",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "695d72f5-65bf-4521-86dc-1ca7b1b46e7e",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "3efe942e-9078-4ba0-bf68-70a4d1a2af5f",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d25dedb5-1cfe-4848-b7e5-484bccf4e630",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e351adaa-144b-4198-9dac-2f3f9cf1587a",
+        "name": "feature_2",
+        "label": "Feature 2",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "88f569be-e6f9-428e-be46-c9b9f69792c2",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "47cf325d-8363-4ad1-9b13-046767476f25",
+    "slug": "completed_kira",
+    "name": "Completed Kira",
+    "description": "Customer completed Kira Talent (based on Salesforce Opportunity Stage: \"Kira Talent Complete\")",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "beb1d41c-65d9-4820-8573-deaee08b793b",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "9e5a69ba-a8df-4256-b2cd-74f64b35b4b2",
+        "name": "ts",
+        "label": "Timestamp",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "4f2a10d3-7b54-4eaa-b2e8-ae50c94a3ef7",
+        "name": "customer",
+        "label": "Customer",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "284529f8-3c7d-4f94-9c16-73fc23239dcf",
+        "name": "feature_1",
+        "label": "Opportunity Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "73e6a430-9330-49d0-8e1e-06d13e26400a",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "3092a598-b36e-4e5f-a6c2-caba6534c255",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8ec9ebc1-5b51-4222-b0c6-c6c0c591f8f9",
+        "name": "feature_2",
+        "label": "Feature 2",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "55e0b149-5159-469a-9c91-793787dd5504",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "3575e847-822c-4de5-ab7d-5dc1acdf67f0",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "156409bc-59b8-40e9-be4f-c269f5c812d1",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b1071a52-0aba-45f6-abf3-79f609206fba",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "4078d9cd-9a7e-4b70-b8f5-b5f4fe51db10",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "b48906be-d20b-409f-a92e-bc7e16886c3b",
+    "slug": "registered_event",
+    "name": "Registered Event",
+    "description": "Someone registered for an event. Source: Eventbrite. ",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "6874e722-cf8a-4f3b-96ef-715584d38188",
+        "name": "feature_1",
+        "label": "Event Name",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0b2e52c0-6705-456d-8aed-a0a19811048b",
+        "name": "activity_id",
+        "label": "Order Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "1b378b7a-2b32-42d2-a9a4-0311191a96a2",
+        "name": "ts",
+        "label": "Registered At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0ceb16c1-b1d7-4de1-9c25-eaab0b3ae5c6",
+        "name": "customer",
+        "label": "Email",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "2c8d935b-2296-4648-a9f0-7bbff07e0196",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "3e6119e5-1db3-4683-bf3c-8ff23b365ba2",
+        "name": "feature_2",
+        "label": "Venue Name",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8a4a705d-8618-42c7-9abf-d0d07e86af80",
+        "name": "feature_3",
+        "label": "Ticket Class Name",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d83e4d2f-99a1-42a3-99ec-a3c06ada11ec",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "2aedd6a5-fad0-405e-97e2-95d1785e1db7",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0ad186e6-e295-45d0-97b3-8895090effb5",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "aa15a801-579e-4737-9b3d-55779c307090",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "45b9c5da-3b21-464f-86b1-ecdfdbec9575",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "9020f584-41a2-4032-ad55-2e2a4e72feff",
+    "slug": "completed_tech_challenge",
+    "name": "Completed Tech Challenge",
+    "description": "Customer completed a tech challenge (based on Salesforce Opportunity Stage: \"Tech Challenge ... \")",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "cf1cf72f-bc7d-4dd0-8bc0-7174b1fd5dc8",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8f55822e-aa10-4c02-97ae-f0e05f26433c",
+        "name": "ts",
+        "label": "Timestamp",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b72e487a-e304-4ab9-af33-b014b8228df9",
+        "name": "customer",
+        "label": "Customer",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "1553b1ee-60c3-4871-836c-f6a846c70a13",
+        "name": "feature_1",
+        "label": "Opportunity Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "46bcff48-11ac-449c-8068-88fd11f14c65",
+        "name": "feature_2",
+        "label": "Tech Challenge Type",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "ed64daba-4dc2-4e4a-a14e-e642560f71a3",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8ae68f25-6ec3-4810-9a2f-4d3492d397cd",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e979819e-b016-4362-8619-cb797ff18c5c",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "84beab04-a53e-4ae9-ac8f-6064f06667ac",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "7b4c0787-b7e1-4c4a-b673-eb375527c9bc",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "a50c0584-c82e-4c28-97fe-c37d22db7fdc",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "aa513ffb-bf7a-4fbf-a5ec-855b1e77b58a",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "bd3d8069-cac7-453f-83d4-e82b4dd257cf",
+    "slug": "submitted_application",
+    "name": "Submitted Application",
+    "description": "Customer submitted an application (bootcamp or continuing education) via Pardot form.",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "3c8cae51-c1a1-405c-8229-a4d4c3e4d0e7",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "7e17622f-4efd-4e1c-917c-06b2545a4bbe",
+        "name": "ts",
+        "label": "Submitted At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "61caff73-5499-4275-86aa-4b78d1bde6d2",
+        "name": "customer",
+        "label": "Email",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "35fc0f56-2127-49cf-80be-3a229e6a52df",
+        "name": "feature_1",
+        "label": "Applied To",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "74fdc765-f6ca-48f7-bd0e-e034a412f788",
+        "name": "feature_2",
+        "label": "Program Of Interest",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "170602a2-635d-4c85-8578-65c88f2374a6",
+        "name": "feature_3",
+        "label": "Payment Method",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "39185345-3c67-46e5-9f5a-de6f17da663c",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "784fbe60-89ad-423f-a2bb-9b8b09e9aa48",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "c2d8a8c0-76a7-4de8-af7a-24bd2168895d",
+        "name": "link",
+        "label": "CRM link",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "bb19e0d4-459d-4d7a-a8d9-13eee0c478bb",
+        "name": "source",
+        "label": "Source",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "9d362d1f-c641-464a-907f-a6a6af78ca70",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e516272d-4952-41fd-a8be-fcf5e426b752",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "35d04790-a73e-4e5b-a601-20d8ba91f789",
+    "slug": "received_acceptance_decision",
+    "name": "Received Acceptance Decision",
+    "description": "Customer application was approved (based on Salesforce Opportunity Stage: \"Application Approved\")",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "fcabb1ba-8c10-4d1a-9c67-a8b57ca933e2",
+        "name": "ts",
+        "label": "Timestamp",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "530b6ce2-749d-4c8e-898b-1cc2ea9296b8",
+        "name": "customer",
+        "label": "Email",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f16c0950-f86a-4f28-b2b5-93a74c364fc0",
+        "name": "feature_1",
+        "label": "Opportunity Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d536be3e-f7e2-47ce-a5a8-468e13cef6b7",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b8432749-3673-4e92-af7e-a1fe261c97c0",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "60aa9f9c-b667-4872-a808-5ef1f4987089",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "688e200c-b5a2-4460-b4f8-d4d1b157e516",
+        "name": "feature_2",
+        "label": "Feature 2",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "040c1bf4-3fec-4051-8153-06189148dcc6",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "1e572a9f-cc1b-4acb-b5e6-6397bb7a26b4",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "2c2d17dd-b88b-4949-b175-2d21869db297",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "94641bd7-6526-4290-a63f-a522ae5b77bd",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "927f0dd1-130f-4af6-8639-769a98705ed4",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "d45c39db-95e9-45e6-8b4a-2052ddd51ed4",
+    "slug": "opened_email",
+    "name": "Opened Email",
+    "description": "Customer opened an email that was sent to them via pardot",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "3e2b8696-09a9-4944-a682-c5a4706400be",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0092876c-76f0-4005-9c36-907c487e19df",
+        "name": "ts",
+        "label": "Created At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b24087a1-9eda-400f-9394-89188fac0383",
+        "name": "customer",
+        "label": "Email",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "fe7d6769-3734-4b0a-9a45-b65b801fb972",
+        "name": "feature_2",
+        "label": "Subject",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "cea3d293-39c2-4022-9859-1afc3d7ac2b6",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "be4da75b-b6a6-4822-9ac6-d656eb340911",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "5086f689-920b-433f-b7ce-f9ad1779607c",
+        "name": "feature_1",
+        "label": "Email Name",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "72d4c0c2-4728-4ef6-8f83-2b2ab5ea2013",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "81670a9e-e285-4fbe-839c-8a6ca31f37f1",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "90c50164-19b0-4388-a8c1-5e24d7b1df3c",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f1c56361-0965-4778-b85e-e47742db8fa8",
+        "name": "link",
+        "label": "Link",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f206f989-4b21-4d20-8846-dd5f6f7a8658",
+        "name": "source",
+        "label": "Source",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "b819771f-31a5-4b68-89ab-25f49c64c1e6",
+    "slug": "viewed_page",
+    "name": "Viewed Page",
+    "description": "Customer viewed a page on the website. Data source segment and snowplow (where the url is not localhost)",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "815825aa-3c56-42c8-ab70-c916a09d6288",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "aa41cc71-580a-453c-a0ff-649f3ccb6d0f",
+        "name": "ts",
+        "label": "Ts",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e6f0228a-1733-4d5c-a9db-93029df54b32",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "173b219b-7b05-4df3-a1b4-a5140d0e7f8c",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d2ed0be8-74c5-4b89-9e95-f6f2c1ecf2f4",
+        "name": "customer",
+        "label": "Email",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "9a08440c-0d13-41d7-8acf-4bdf1dab4e0c",
+        "name": "feature_1",
+        "label": "Page Title",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "fffb9cbe-239f-40ce-9d04-6e58f77b9b3e",
+        "name": "feature_2",
+        "label": "Path",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f9f719bb-4a86-459c-8848-1da3d0a17a21",
+        "name": "link",
+        "label": "URL",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "c501273c-e177-418b-9661-6c440d96a5a0",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "bf2990a1-be07-49c6-b596-fce8758329a8",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f61bdf85-fa84-4a9a-9f64-fe1244d55dbf",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "32c46a5c-e0e1-41da-a7f3-eb64fc6024a3",
+        "name": "feature_3",
+        "label": "Device",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "8673620f-4f59-44fd-82a7-752f55d8729e",
+    "slug": "received_rejected_decision",
+    "name": "Received Rejected Decision",
+    "description": "Customer application was rejected (based on Salesforce Opportunity Stage: \"Rejected\")",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "764f7482-8dba-4ac5-96b0-53e653358a22",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f893f9a8-91a9-4bf7-8c8c-ae588dfe016d",
+        "name": "ts",
+        "label": "Timestamp",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "a2dc11a3-c6ca-4e32-97ed-287774396d6a",
+        "name": "customer",
+        "label": "Email",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e0f521c6-4979-4872-81b4-c74126cc12ad",
+        "name": "feature_1",
+        "label": "Opportunity Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b3a88c10-e76d-4586-a24b-e26145612274",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "7c8868fe-dbfe-41f6-a891-97e020681cda",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "508cacec-53b8-447c-9c32-9449ee55a7b7",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d9f7932e-750e-43fb-bdf4-1fb8b8be2223",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "6f3d34fc-3834-4704-8cbf-df583fcc6426",
+        "name": "feature_2",
+        "label": "Feature 2",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "9958088c-a649-48d2-8a38-4549d0bfa4c8",
+        "name": "link",
+        "label": "Link",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "2f3d1f31-a2bf-49b1-a931-ba0a4b9b486b",
+        "name": "source",
+        "label": "Source",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "acca6810-0b80-4fbe-9211-da4d46cb639e",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "fe2e8699-8007-4fcd-b3b4-9dcce8b4b3ea",
+    "slug": "lead_created",
+    "name": "Lead Created",
+    "description": "A new lead was created in Pardot or Salesforce. The pardot lead source is based on the campaign name while the Salesforce lead source is based on the lead source field.",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "0102878c-3272-4775-b444-5a93b3049880",
+        "name": "ts",
+        "label": "Created Date",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "7bb18e78-48ec-4881-8163-2cbef188ff19",
+        "name": "customer",
+        "label": "Email",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "6ce7cb1e-3607-45d8-bc2f-ad480d106af8",
+        "name": "feature_2",
+        "label": "lead source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "11042cfa-995d-45c1-a042-511f731138be",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "9309df5a-c6f9-4217-8e88-cfa2916c4a47",
+        "name": "link",
+        "label": "CRM URL",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "224170a2-bb4a-4192-ab45-f6184320db94",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "09b40c9e-f7f4-4d32-95d1-7798ea59fc42",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "266b4ed6-e9a8-4d9b-b9a9-944d9cacfd60",
+        "name": "feature_1",
+        "label": "Lead System",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "54eeb26d-39c5-455d-b01f-c8b4b9a813ce",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "63795294-76ea-4f1e-8ec3-1b96ce8bc72c",
+        "name": "source",
+        "label": "Source",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e9a5eaa3-1633-4bdd-91dd-213e062fac84",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "647c0722-49b3-4e82-908c-2b5d85130cf2",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "88fb473a-5eda-49c2-a17b-dfa89106d4c4",
+    "slug": "clicked_email",
+    "name": "Clicked Email",
+    "description": "Customer clicked a link within an email (often to download course content). Based on the Email Tracker data from Pardot.",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "4d354103-6cb0-4eb2-bee5-029a2003b819",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "4e846d06-0ab7-4539-8437-e5d007f10f14",
+        "name": "ts",
+        "label": "Clicked At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8d9154c2-4497-48d5-a611-f3eee56ccae1",
+        "name": "customer",
+        "label": "Customer",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "fa56aec4-2549-4eda-b271-3891566dbda3",
+        "name": "feature_1",
+        "label": "Email Name",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "65bde132-f69f-4538-9273-399347fe744d",
+        "name": "feature_2",
+        "label": "Subject",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "ca9683da-f60d-41da-b1c5-8043b6c74c1b",
+        "name": "feature_3",
+        "label": "Email ID",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e68c5c45-e391-44e3-9f08-f65ebb5d57f8",
+        "name": "link",
+        "label": "Link Clicked",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "345cddc1-91ec-4744-b7ef-5acd7abf4f8c",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "12903712-0f73-4710-8655-e10ceae703a1",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "17caba7d-95c8-47cc-943f-a327ba319d33",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "26355af9-5c55-417b-8fd3-3479abbe0da9",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "4ceb388a-677f-4b36-aa9e-360233f849cb",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "7f684a1f-854c-4ca3-8482-6f398d9b1047",
+    "slug": "opportunity_created",
+    "name": "Opportunity Created",
+    "description": "Opportunity was created for this customer in salesforce",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "69f86bb2-c71f-4ec7-bab7-0d48a81a04b5",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "cacd4637-7109-45a8-be2e-6f6e99136e9b",
+        "name": "ts",
+        "label": "Created Date",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "7a8c8663-d3c5-42f7-a205-5b5ff74f0ab3",
+        "name": "customer",
+        "label": "Customer",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "bf8245cc-391e-44d2-9ef8-20290caee143",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "47d56600-4bd6-4ec3-957c-67277b60d928",
+        "name": "feature_1",
+        "label": "Created By",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "a501ac8e-cfb6-4945-b3bb-1e204fc39018",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d0ca9614-b968-4524-8b3a-a764abda1c41",
+        "name": "feature_2",
+        "label": "Feature 2",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f06dd3dc-104f-4fa4-94fa-e361ece7ba30",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "dbf93575-9ed8-4229-841d-76b8b90331c7",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d3512e06-c46d-46c7-aaa4-ccc7f550f5a8",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "9af2cc86-ab87-4db9-bd6a-55e3470fe755",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "c76ccdff-1b85-404d-a0dc-00eaff3c136f",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "1b5d764e-114d-4ab7-b1b8-296790d48e60",
+    "slug": "received_invoice",
+    "name": "Received Invoice",
+    "description": "Customer was sent an invoice via Xero. Deleted and voided invoices have been removed. ",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "ca86a735-d3c8-4d19-ae02-e0b25e841f67",
+        "name": "activity_id",
+        "label": "Invoice Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "6f39ba94-7ef3-4a2a-a211-999a70d83117",
+        "name": "ts",
+        "label": "Date",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "7b6f3925-ea6f-4e4b-805d-141c482e748e",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "89fc085d-dc7d-4238-ba08-29fb07d8b74f",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "dbddcf44-878e-4263-9456-00cebdfda788",
+        "name": "customer",
+        "label": "Email",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8cd08427-f4e9-45a4-9967-0dd7089ccbfd",
+        "name": "feature_1",
+        "label": "Due Date",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "31a81f70-6fb2-4487-9e1c-2cd4fb727f63",
+        "name": "feature_2",
+        "label": "Type",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f2f2bf1d-7256-4aad-9e39-4bc4ab478b4c",
+        "name": "feature_3",
+        "label": "Line Amount Types",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "1826af8d-92e4-4e53-9f5a-3cf3606efa91",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "3b614cea-a4e2-4c3f-9183-763ee0c270d8",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b7459cf8-27cf-49b3-926a-5f6a3bc512a3",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "313c6342-de07-46b3-9dc0-83b080263bb2",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "fe9b01f1-fa8a-40d0-a7f8-a12514218262",
+    "slug": "joined_waitlist",
+    "name": "Joined Waitlist",
+    "description": "Customer was added to the waitlist (based on Salesforce Opportunity Stage: \"Wait List\")",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "d4f3c109-b63d-4289-8acf-24121ccd40a5",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "53f21df4-c170-446c-bc75-8c5c51f6706e",
+        "name": "ts",
+        "label": "Timestamp",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "a4756b51-7b30-4551-b063-9f163efab1bd",
+        "name": "customer",
+        "label": "Customer",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "310dc39e-ac1e-4dd6-837d-64fb74f922e3",
+        "name": "feature_1",
+        "label": "Opportunity Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d70bea4c-2f39-454d-a644-fdaf4bff0917",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f3f53555-abd9-4da5-91e7-806c0c2ac5fe",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "feed14ad-5cda-40ca-ad5a-29f445df8bd3",
+        "name": "feature_2",
+        "label": "Feature 2",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "bfb40cf0-0ac0-45dd-87ad-2f4595ca20c2",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "c22ba49e-5e8b-4a74-880b-2862ddb625d2",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8c2ba44e-dde7-4dfe-ab23-bc8d793b943d",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "778198e7-ebff-4bd3-9530-1e2a59753b8a",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0041150e-6a4a-4172-be22-71c293057452",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "4f1d6d45-e314-4ceb-92c0-6eb6b66272b6",
+    "slug": "bounced_email",
+    "name": "Bounced Email",
+    "description": "Pardot email was not delivered. Indicated by Type = 13.  Data source: Pardot",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "ccd8e28e-2886-484c-9e44-cf8403a9be84",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "a61121c4-b678-44e5-aabf-72f3a7fc2050",
+        "name": "ts",
+        "label": "Bounced At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "a647d4f6-ce49-4b80-9bcd-b5fc7be58185",
+        "name": "customer",
+        "label": "Customer",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "45e7286d-48fd-4af6-a100-0abcc221d2ec",
+        "name": "feature_1",
+        "label": "Email Name",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "2a56e757-7ace-45f9-8cad-33bdc1aed220",
+        "name": "feature_2",
+        "label": "Subject",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b0e8a328-1e35-4d59-8049-8f274504c137",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "eff62d64-b1bd-4c21-b12d-ff1a80a9d990",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "fde80f57-1b37-4797-93bb-07e03627d665",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "aaaa6058-0839-40dc-a647-6eddc84635ad",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f0a3a432-d50a-4b86-979c-cfdafd91e022",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "eaaa718c-2d52-499b-a92c-b23197df7dd0",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d1d0ff68-6922-4680-8523-76d86d913e14",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "dfd220cc-160c-4793-865c-8402ad2348bc",
+    "slug": "downloaded_marketing_content",
+    "name": "Downloaded Marketing Content",
+    "description": "Customer clicked a link in an email to download a file (marketing content). This can be a Course Package, Student Outcomes Report, 101 Report, etc. ",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "c48d6ee1-edd7-443b-b5b5-923034df6643",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "a87041ec-0433-4d50-956b-a4308151a59e",
+        "name": "ts",
+        "label": "Downloaded At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "572e82e5-c335-4377-9faa-ab03ee37b2d2",
+        "name": "customer",
+        "label": "Email",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b7c25b3e-bd89-41b4-a543-b54f2968d670",
+        "name": "feature_1",
+        "label": "Content Type",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "76cb2a81-9589-44c4-bf41-0a29988a67b6",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8bdaf4d5-6583-4e6d-8010-7a05b3187f1a",
+        "name": "feature_2",
+        "label": "File Name",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b56e5435-44d2-4a23-b97f-f8964ac5de7d",
+        "name": "feature_3",
+        "label": "Campaign Name",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e72a2d25-a1ac-4d35-9506-9c2a39f5face",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "258f3628-24b7-4655-bad9-599c15136b87",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "693b99fd-9290-464b-934f-d67ea2eca35d",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "ccea0bdf-9476-4787-9a38-cabd8bb9cc9c",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "13fbc6d5-c3f7-4ad8-bec8-f14723071f53",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "a8528ab7-684f-4f7a-b516-431b9405a769",
+    "slug": "submitted_chat_message",
+    "name": "Submitted Chat Message",
+    "description": "Someone submitted a message via chat from the website. Source: LiveChat. The ticket source indicates whether or not the ticket was submitted while a live rep was available to respond.",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "cfdaf9f7-bc52-4352-8758-754d64992df4",
+        "name": "ts",
+        "label": " Created",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "60951146-502d-488b-8252-f9595d9b90df",
+        "name": "activity_id",
+        "label": " Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "4f3164f0-76a5-46fc-b409-4b3c9f98c845",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e61769de-8973-4434-9fa4-be1d80ff2fd9",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "81cb14b1-38af-4181-82de-d58c53fa83bd",
+        "name": "feature_2",
+        "label": "Subject",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "eb840173-d2fe-49aa-bc41-87c0f4f5493d",
+        "name": "feature_3",
+        "label": "Message",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "26e50adc-6a9c-4d5d-8104-e75e2a622b19",
+        "name": "link",
+        "label": "From URL",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "a2206591-6d12-4120-b8cc-0a4ff302fda3",
+        "name": "customer",
+        "label": "Email",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "a76f6ebe-7113-41d3-8c0b-1d79f3ea900e",
+        "name": "feature_1",
+        "label": "Submitted From",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "fee9acea-610a-4d8f-9d69-5975232fa40a",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8bcef935-54b7-4fe4-b10a-1f54bbd4e3c3",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "4e681c44-34fd-4be6-883e-8d0a8453b1dd",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "ebfc3c88-f1bd-4c24-9eae-1ca3325990cc",
+    "slug": "fully_paid_invoice",
+    "name": "Fully Paid Invoice",
+    "description": "Customer fully completed paying the amount on their invoice (sometimes they split it up into payments, see Made Payment activity). Data source: Xero. All payments where status is paid and fully paid date is set.",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "1f1a54dc-fee6-477f-8911-8a47edf46d20",
+        "name": "activity_id",
+        "label": "Invoice Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e2e1d30c-a77f-469e-be63-958f7627744e",
+        "name": "customer",
+        "label": "Email",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "359f4a4b-20a3-4b98-b247-097cdf5c5c45",
+        "name": "feature_1",
+        "label": "Due Date",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "08953162-d534-43b3-a5d9-28ecf839394f",
+        "name": "feature_2",
+        "label": "Type",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "7341d8e9-e1af-487f-b299-9f66787d2a5e",
+        "name": "feature_3",
+        "label": "Line Amount Types",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "ee9536d8-6bb5-41b6-a478-00511da11865",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0d7e12b2-9008-436d-8981-888ff5d5e3c4",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e75f9c44-e07d-40d2-9336-772b9816ebe1",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "927c94ae-00a7-4aad-8f3e-bd9e25e42ba7",
+        "name": "ts",
+        "label": "Fully Paid On Date",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f24cbbe1-efef-443f-82a4-d2fec541b4e1",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "4bd9ce8c-839a-41a5-bd0d-f117f0bd4214",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "4c38064d-0a7a-4ef3-82e6-0b1804ac0ecb",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "62ddfbf1-667d-4253-8b8f-0e6dde72ab8b",
+    "slug": "scheduled_meeting",
+    "name": "Scheduled Meeting",
+    "description": "Customer signed up for a meeting (general meeting or interview) via Calendly.",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "5bdf7769-7c94-4409-9851-1459abd6692f",
+        "name": "customer",
+        "label": "Email",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "49611dc8-ca82-4d6a-9c27-ede9972e7f25",
+        "name": "feature_1",
+        "label": "Event Name",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "aee840d5-11c5-454c-89c1-f0965281ca2f",
+        "name": "feature_2",
+        "label": "Cancellation Reason",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "a48ae36a-7d1a-4c10-a2ae-7b4bf4ede2a5",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "67da5056-be49-4d8d-b215-8c4267f42c6f",
+        "name": "activity_id",
+        "label": " Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "255cd4c4-9068-414a-ae49-cb1676e6a816",
+        "name": "ts",
+        "label": " Created",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "c0a9ab7b-d871-49c2-af50-40d81f59e723",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "cdc28eaf-52ab-4d55-ad13-d2e2078f96b7",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "a09a60fb-8382-4661-ac02-99c58d18548d",
+        "name": "feature_3",
+        "label": "Event Duration",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "624527a2-3199-4180-be06-f7efaab6fcd7",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "df3e80fb-4069-4e22-ad96-cf34c8fed52c",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "f295f985-9b21-491b-bbd8-851f816715c8",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "8272b94e-6379-4243-b5b4-655f76c50ca1",
+    "slug": "unsubscribed_email",
+    "name": "Unsubscribed Email",
+    "description": "Customer unsubscribed from emails (via Pardot email opt out). Opt out is indicated by type = 12. Data source: Pardot.",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "0c01e7a4-ce3b-4a4c-8f97-3a7beb195ce0",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "2160b3e5-b9c4-48b7-a7b0-397b5e4a1519",
+        "name": "customer",
+        "label": "Email",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "7266c138-036e-411a-b78f-08947d6d66c0",
+        "name": "feature_1",
+        "label": "Email Name",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "7f9c53bc-3c0b-4d3c-845d-ac407a7abb42",
+        "name": "feature_2",
+        "label": "Subject",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "971635c2-1f1e-4afc-9399-4da3c568f2e2",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "169a736c-a855-44e2-96c4-311874510897",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0ab17d42-e5a6-4e42-9623-465ead66014c",
+        "name": "ts",
+        "label": "Opted Out At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "c540858f-1ed9-4e84-9c58-d561073fb8c4",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "4721dc5c-3759-432a-bdec-e97f60fdf5e8",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "6a22812f-af87-43f0-aedd-ceb98a5b2f96",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "2db8467e-87c6-482e-b4b3-1eb405fdff82",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "6ecef7d3-0776-40c6-91d2-780aec7d1b4d",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "962f5a99-8e92-4007-956f-dbd3f6d0e28e",
+    "slug": "registered_for_tour",
+    "name": "Registered For Tour",
+    "description": "Customer signed up for a tour (based on Pardot \"Campus Tour\" form submission)",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "5e867808-635f-4962-bf6b-c1e365e65fd1",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e3f99cf3-2d9a-402f-a245-b109490636cd",
+        "name": "ts",
+        "label": "Registered At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8c03b0fe-85d9-4057-8324-c0bdf0d03c95",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d39b178d-4a5d-48d5-a63a-0a0df7396354",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "c14de399-04da-44ed-a921-19d065578f04",
+        "name": "customer",
+        "label": "Email",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "dfc2f487-760a-48b0-9155-f3e575102b62",
+        "name": "feature_1",
+        "label": "Form Name",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "10ddf7b5-8455-47c9-b391-7a3d26a92a67",
+        "name": "link",
+        "label": "CRM link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "c6af21ed-7d9a-49d1-956b-0aaf6cfe32fd",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "ea2788fc-3dec-43c7-a2ae-673b8f50a974",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "bded066b-9152-419b-9a31-8446a2241eee",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b8226aed-dc77-4eef-abaa-c405ea8fb206",
+        "name": "feature_2",
+        "label": "Feature 2",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d8d8c615-2910-47dd-8448-36dcc79e146e",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "dcc753f7-6460-4f47-a0e5-19eafca97f08",
+    "slug": "identified_visitor",
+    "name": "Identified Visitor",
+    "description": "For user mapping purposes only. Visitor became identified on the website. Not recommended for use in analysis.",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "e4c0a17a-5625-4864-9fed-2de08be4cf7f",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "9d443b8b-25cd-4701-8d1d-0de38d78b1dd",
+        "name": "customer",
+        "label": "Email",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b2959883-ed15-43c5-805c-af7fda66f249",
+        "name": "feature_1",
+        "label": "Path ",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "48853eff-a0bb-4474-a7c8-0d303f5cc2a6",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "3dbec918-311e-46d7-aec5-922ccee70f02",
+        "name": "activity_id",
+        "label": "ID",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0a886263-291a-4610-86e3-76814a7ed11c",
+        "name": "ts",
+        "label": "Ts",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e6522263-03bc-4dcd-adcc-b9b07792ebb7",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8636a6a2-980d-4748-b1c0-fe3de8e57dfe",
+        "name": "feature_2",
+        "label": "Device",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "40c10f0f-bf3e-4e52-91a0-3445116b8315",
+        "name": "feature_3",
+        "label": "Identied On",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b1bd3fb6-6a75-4ec7-8170-65efb2d938eb",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "eb365cdf-0d36-4407-8b41-4ea37a7c52f1",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b433ede9-f296-4f09-9b84-f2904d306448",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "bfea7a0f-6c19-4373-acc5-e36ac2db25b9",
+    "slug": "completed_interview",
+    "name": "Completed Interview",
+    "description": "Customer completed an interview (based on Salesforce Opportunity Stage: \"Interview Completed.\")",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "e2f0dfa0-f9e0-4e7b-ab36-334ed3194d6e",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "e123fc3d-c394-4bb6-9355-6dbb56688a4a",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "5435c734-37de-4984-982b-eff29097b35c",
+        "name": "ts",
+        "label": "Timestamp",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "912a28ab-6aa9-41f1-8846-8a6a019de9da",
+        "name": "customer",
+        "label": "Customer",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0d4d65be-c2b2-4cbe-8e5b-4498a155bd71",
+        "name": "feature_1",
+        "label": "Opportunity ID",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "411fd1a5-3574-45ac-99f0-8784ddd2e3b7",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b573df57-fca8-4c13-bc02-13a68522b439",
+        "name": "feature_2",
+        "label": "Feature 2",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "022492b7-0c1e-4413-b26c-9ba4f62fd5ff",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "7edb80ba-f319-473c-9ab1-5f53b352c3b2",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0042a469-67dc-4ee2-a45f-a63ed0858587",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "97fcdef2-e09c-461a-9e48-b16f2371cefe",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "ddfa1f31-f9af-4a43-9011-8444cf07af55",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "259886ca-a247-4c7f-8648-b31a8dd452e3",
+    "slug": "opportunity_was_won",
+    "name": "Opportunity Was Won",
+    "description": "Customer became a won opportunity (based on Salesforce Opportunity Stage: \"Closed Won\")",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "be29f5ef-2f94-4ad4-800c-d79b29a25095",
+        "name": "feature_1",
+        "label": "Opportunity Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "724595c1-7d08-472b-ad49-5772ac5fea65",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "ead8cd65-4db4-4233-b3d9-0499b28167d2",
+        "name": "activity_id",
+        "label": "Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "cb317f8d-a72c-4c4b-b26f-7b4b02706029",
+        "name": "ts",
+        "label": "Timestamp",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "988ac353-aa06-4a85-a252-79ea570dc02e",
+        "name": "customer",
+        "label": "Customer",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "a850313d-bb4e-41e5-ba2f-d0a6b5c4be93",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "03bcdfdf-8bbb-476f-b6d2-29f3a1026a53",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "c6329995-0b27-4ff0-8972-8943457eb290",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "03a702e5-9891-4afd-ba58-f47f966afe61",
+        "name": "feature_2",
+        "label": "Feature 2",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "8557deca-da7c-41ba-a1c7-e11d96018e1b",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "13922691-6b04-4e91-ade6-e4736c550369",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "99fff61b-eda4-4df0-8062-246b49460b70",
+        "name": "link",
+        "label": "Link",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  },
+  {
+    "id": "93045021-822e-4358-8a43-c91b650ea2a1",
+    "slug": "viewed_course",
+    "name": "Viewed Course",
+    "description": "Customer views a course on the website. Indicated when the URL path equals /course/. Source: Snowplow. ",
+    "category": null,
+    "validated": false,
+    "status": "live",
+    "column_renames": [
+      {
+        "id": "727f592d-0a38-4923-acfc-def2abf84c03",
+        "name": "feature_1",
+        "label": "Course",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "a78cb322-6a6c-4672-96f7-088290b6b981",
+        "name": "activity_repeated_at",
+        "label": "Activity Repeated At",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0348ae14-0b9b-4167-bffb-a85b92f66c9f",
+        "name": "activity_id",
+        "label": "Event Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b86efab3-87c4-44ea-9c20-2a3e51f0a435",
+        "name": "ts",
+        "label": "Ts",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "ab417988-8d56-4e29-a29f-c524a7867d36",
+        "name": "source",
+        "label": "Source",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "d28c7a85-c060-4fc4-a29f-841bd06f76da",
+        "name": "source_id",
+        "label": "Source Id",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "3b0ab618-a5f5-4b76-81b2-00cfd9a7217c",
+        "name": "customer",
+        "label": "Email",
+        "has_data": false,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "b916255c-8f89-49f2-b266-90b98967f3c0",
+        "name": "link",
+        "label": "URL",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "0ec8cc03-4064-4636-9de2-4a8e1fa9d000",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "26001847-9b4d-44b9-89ae-fb20fb4afedb",
+        "name": "feature_2",
+        "label": "Feature 2",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "c9a5442d-35dc-4585-a413-e9b45a3f3ce1",
+        "name": "feature_3",
+        "label": "Feature 3",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      },
+      {
+        "id": "bb6ec5e7-0171-44d2-864e-1b02dc55d4c3",
+        "name": "revenue_impact",
+        "label": "Revenue Impact",
+        "has_data": true,
+        "__typename": "activity_column_renames"
+      }
+    ],
+    "__typename": "activity"
+  }
+]

@@ -1,0 +1,19 @@
+mutation InsertTransformationActivity(
+  $activity_id: uuid!
+  $transformation_id: uuid!
+) {
+  insert_transformation_activities(
+    objects: {
+      activity_id: $activity_id
+      transformation_id: $transformation_id
+    }
+    on_conflict: {
+      constraint: transformation_activities_transformation_id_activity_id_key
+      update_columns: []
+    }
+  ) {
+    returning {
+      id
+    }
+  }
+}

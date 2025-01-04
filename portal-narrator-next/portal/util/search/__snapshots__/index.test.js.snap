@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#getShownColumnsAndValues creates proper highlights for column names 1`] = `
+[
+  {
+    "column": {
+      "friendly_name": "description",
+      "name": "description",
+      "values": [
+        {
+          "percent_of_total": 0.11,
+          "total_rows": 1,
+          "value": "one description",
+        },
+        {
+          "percent_of_total": 0.33,
+          "total_rows": 3,
+          "value": "two description",
+        },
+      ],
+    },
+    "highlightedLabel": {
+      "noMarkup": "description",
+      "raw": "<span class="highlighted">description</span>",
+    },
+    "shownValues": [
+      {
+        "originalValue": "one description",
+        "percent_of_total": 0.11,
+        "total_rows": 1,
+        "value": "one description",
+      },
+      {
+        "originalValue": "two description",
+        "percent_of_total": 0.33,
+        "total_rows": 3,
+        "value": "two description",
+      },
+    ],
+  },
+]
+`;
+
+exports[`#getShownColumnsAndValues creates proper highlights for column values 1`] = `
+[
+  {
+    "column": {
+      "friendly_name": "stream_table",
+      "name": "stream_table",
+      "values": [
+        {
+          "percent_of_total": 0.11,
+          "total_rows": 1,
+          "value": "account_stream",
+        },
+        {
+          "percent_of_total": 0.33,
+          "total_rows": 3,
+          "value": "mv_activity_stream",
+        },
+        {
+          "percent_of_total": 0.11,
+          "total_rows": 1,
+          "value": "people_stream",
+        },
+      ],
+    },
+    "highlightedLabel": null,
+    "shownValues": [
+      {
+        "exactMatch": true,
+        "matched": true,
+        "originalValue": "mv_activity_stream",
+        "percent_of_total": 0.33,
+        "total_rows": 3,
+        "value": <Styled(Component)
+          value="<span class="highlighted">mv_activity_stream</span>"
+        />,
+      },
+    ],
+  },
+]
+`;
+
+exports[`#makeHighlightObjects creates an object that contains the highlighted text and the original text minus the markup 1`] = `
+[
+  {
+    "noMarkup": "View Cohort Analyses",
+    "raw": "View Cohort <span class="highlighted">Analyses</span>",
+  },
+  {
+    "noMarkup": "View Segment Aggs",
+    "raw": "View Segment <span class="highlighted">Aggs</span>",
+  },
+  {
+    "noMarkup": "View Actvities",
+    "raw": "View <span class="highlighted">Actvities</span>",
+  },
+  {
+    "noMarkup": "View Accounts",
+    "raw": "View <span class="highlighted">Accounts</span>",
+  },
+  {
+    "noMarkup": "View Admin",
+    "raw": "View <span class="highlighted">Admin</span>",
+  },
+]
+`;
+
+exports[`#mapFieldsToHighlight creates the query object for a set of terms strips the score boosting modifier from the field name (i.e. ^2) for highlight 1`] = `
+{
+  "highlight": {
+    "fields": [
+      {
+        "name": {},
+      },
+      {
+        "description": {},
+      },
+      {
+        "feature_and_enrichment_attributes.label": {},
+      },
+      {
+        "feature_and_enrichment_attributes.values.value": {},
+      },
+    ],
+    "fragment_size": 26,
+    "post_tags": [
+      "</span>",
+    ],
+    "pre_tags": [
+      "<span class="highlighted">",
+    ],
+  },
+  "query": {
+    "function_score": {
+      "field_value_factor": {
+        "factor": 3,
+        "field": "level",
+        "missing": 1,
+        "modifier": "log",
+      },
+      "query": {
+        "dis_max": {
+          "queries": [
+            {
+              "multi_match": {
+                "boost": 20,
+                "fields": [
+                  "name^3",
+                  "description",
+                  "feature_and_enrichment_attributes.label^2",
+                  "feature_and_enrichment_attributes.values.value",
+                ],
+                "query": "find me",
+                "type": "phrase",
+              },
+            },
+            {
+              "multi_match": {
+                "boost": 10,
+                "fields": [
+                  "name^3",
+                  "description",
+                  "feature_and_enrichment_attributes.label^2",
+                  "feature_and_enrichment_attributes.values.value",
+                ],
+                "query": "find me",
+                "type": "phrase_prefix",
+              },
+            },
+            {
+              "multi_match": {
+                "boost": 5,
+                "fields": [
+                  "name^3",
+                  "description",
+                  "feature_and_enrichment_attributes.label^2",
+                  "feature_and_enrichment_attributes.values.value",
+                ],
+                "query": "find me",
+                "type": "best_fields",
+              },
+            },
+            {
+              "multi_match": {
+                "fields": [
+                  "name^3",
+                  "description",
+                  "feature_and_enrichment_attributes.label^2",
+                  "feature_and_enrichment_attributes.values.value",
+                ],
+                "query": "me",
+                "type": "phrase_prefix",
+              },
+            },
+          ],
+        },
+      },
+    },
+  },
+}
+`;

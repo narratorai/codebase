@@ -1,0 +1,8 @@
+mutation UpdateNarrativeTemplate($id: uuid!, $template: String!) {
+    update_narrative_template_by_pk(
+        pk_columns: { id: $id }
+        _set: { template: $template }
+    ) {
+        id
+    }
+}

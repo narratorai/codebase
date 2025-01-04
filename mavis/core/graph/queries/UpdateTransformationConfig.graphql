@@ -1,0 +1,37 @@
+mutation UpdateTransformationConfig(
+  $transformation_id: uuid!
+  $update_type: transformation_update_types_enum!
+  $has_source: Boolean
+  $is_aliasing: Boolean
+  $delete_window: Int
+  $do_not_delete_on_resync: Boolean
+  $allow_future_data: Boolean
+  $start_data_after: date
+  $max_days_to_insert: Int
+  $mutable_day_window: Int
+  $remove_customers: Boolean
+  $notify_row_count_percent_change: numeric
+  $do_not_update_on_percent_change: Boolean
+  $task_id: uuid
+) {
+  update_transformation_by_pk(
+    pk_columns: { id: $transformation_id }
+    _set: {
+      update_type: $update_type
+      has_source: $has_source
+      is_aliasing: $is_aliasing
+      remove_customers: $remove_customers
+      delete_window: $delete_window
+      mutable_day_window: $mutable_day_window
+      do_not_delete_on_resync: $do_not_delete_on_resync
+      allow_future_data: $allow_future_data
+      start_data_after: $start_data_after
+      max_days_to_insert: $max_days_to_insert
+      notify_row_count_percent_change: $notify_row_count_percent_change
+      do_not_update_on_percent_change: $do_not_update_on_percent_change
+      task_id: $task_id
+    }
+  ) {
+    id
+  }
+}

@@ -1,0 +1,27 @@
+query GetFullTask($id: uuid!) {
+  company_task_by_pk(id: $id) {
+    id
+    task_slug
+    label
+    schedule
+    category
+    internal_only
+    dataset_materializations {
+      type
+      label
+      column_id
+      external_link
+      dataset {
+        id
+        slug
+        name
+      }
+    }
+    narratives {
+      id
+      slug
+      name
+      type
+    }
+  }
+}

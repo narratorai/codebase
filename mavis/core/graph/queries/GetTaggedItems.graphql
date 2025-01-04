@@ -1,0 +1,9 @@
+query GetTaggedItems($company_id: uuid!) {
+  tag(where: {company_tag: {company_id: {_eq: $company_id}}}) {
+    related_id
+    related_to
+    tag_id
+    updated_at
+    id
+  }
+}

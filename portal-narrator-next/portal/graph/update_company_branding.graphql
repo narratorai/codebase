@@ -1,0 +1,13 @@
+mutation UpdateCompanyBranding($company_id: uuid!, $logo_url: String, $branding_color: String, $plot_colors: String) {
+  update_company(
+    where: { id: { _eq: $company_id } }
+    _set: { branding_color: $branding_color, logo_url: $logo_url, plot_colors: $plot_colors }
+  ) {
+    returning {
+      id
+      logo_url
+      branding_color
+      plot_colors
+    }
+  }
+}

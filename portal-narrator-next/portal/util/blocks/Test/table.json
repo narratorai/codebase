@@ -1,0 +1,52 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "columns": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "data_index": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "rows": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "ui_schema": {
+    "ui:field": "TableField"
+  },
+  "data": {
+    "columns": [
+      {
+        "title": "First Name",
+        "data_index": "first_name"
+      },
+      {
+        "title": "Last Name",
+        "data_index": "last_name"
+      }
+    ],
+    "rows": [
+      {
+        "first_name": "Deandra",
+        "last_name": "Reynolds"
+      },
+      {
+        "first_name": "Charlie",
+        "last_name": "Kelly"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+table:
+  name: sql_query_kinds
+  schema: public
+is_enum: true

@@ -1,0 +1,43 @@
+query GetTasks($ids: [uuid!]) {
+  company_task(where: { id: { _in: $ids } }) {
+    id
+    task_slug
+    label
+    schedule
+    category
+    internal_only
+    dataset_materializations {
+      type
+      label
+      column_id
+      external_link
+      dataset {
+        id
+        slug
+        name
+      }
+    }
+    narratives {
+      id
+      slug
+      name
+      type
+    }
+    company_query_alerts {
+      sql_query {
+        related_transformation {
+          id
+          name
+        }
+      }
+    }
+    executions(order_by: [{ started_at: desc_nulls_last }], limit: 5) {
+      id
+      orchestration_id
+      status
+      started_at
+      completed_at
+      details
+    }
+  }
+}

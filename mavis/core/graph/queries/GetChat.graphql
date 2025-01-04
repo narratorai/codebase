@@ -1,0 +1,8 @@
+query GetChat($id: uuid!) {
+  chat_by_pk(id: $id) {
+    id
+    created_by
+    table_id
+    question
+  }
+}

@@ -1,0 +1,8 @@
+query ListCompanyCategories($company_id: uuid!) {
+  company_categories(where: { company_id: { _eq: $company_id } }) {
+    id
+    category
+    created_at
+    company_id
+  }
+}

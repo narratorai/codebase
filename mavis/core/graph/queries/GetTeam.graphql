@@ -1,0 +1,13 @@
+query GetTeam($id: uuid!) {
+  team_by_pk(id: $id) {
+    name
+    id
+    created_at
+    users {
+      company_user {
+        id
+        user_id
+      }
+    }
+  }
+}

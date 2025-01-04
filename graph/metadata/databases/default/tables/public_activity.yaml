@@ -1,0 +1,168 @@
+table:
+  name: activity
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: company_id
+  - name: company_category
+    using:
+      foreign_key_constraint_on: category_id
+  - name: company_table
+    using:
+      foreign_key_constraint_on: table_id
+  - name: maintainer
+    using:
+      manual_configuration:
+        column_mapping:
+          maintainer_id: id
+        insertion_order: null
+        remote_table:
+          name: user
+          schema: public
+array_relationships:
+  - name: activity_dims
+    using:
+      foreign_key_constraint_on:
+        column: activity_id
+        table:
+          name: activity_dim
+          schema: public
+  - name: activity_maintenances
+    using:
+      foreign_key_constraint_on:
+        column: activity_id
+        table:
+          name: activity_maintenance
+          schema: public
+  - name: column_renames
+    using:
+      manual_configuration:
+        column_mapping:
+          id: related_to_id
+        insertion_order: null
+        remote_table:
+          name: activity_column_renames
+          schema: public
+  - name: datasets
+    using:
+      foreign_key_constraint_on:
+        column: activity_id
+        table:
+          name: dataset_activities
+          schema: public
+  - name: enriched_by
+    using:
+      manual_configuration:
+        column_mapping:
+          id: activity_id
+        insertion_order: null
+        remote_table:
+          name: tranformation_enriched_activities
+          schema: public
+  - name: question_answers
+    using:
+      manual_configuration:
+        column_mapping:
+          id: activity_id
+        insertion_order: null
+        remote_table:
+          name: activity_questions
+          schema: public
+  - name: tags
+    using:
+      manual_configuration:
+        column_mapping:
+          id: activity_id
+        insertion_order: null
+        remote_table:
+          name: activity_tags
+          schema: public
+  - name: team_permissions
+    using:
+      manual_configuration:
+        column_mapping:
+          id: activity_id
+        insertion_order: null
+        remote_table:
+          name: activity_team_permissions
+          schema: public
+  - name: timeline
+    using:
+      manual_configuration:
+        column_mapping:
+          id: related_to_id
+        insertion_order: null
+        remote_table:
+          name: activity_company_timelines
+          schema: public
+  - name: transformations
+    using:
+      foreign_key_constraint_on:
+        column: activity_id
+        table:
+          name: transformation_activities
+          schema: public
+  - name: validation_queries
+    using:
+      manual_configuration:
+        column_mapping:
+          id: activity_id
+        insertion_order: null
+        remote_table:
+          name: validation_activity_sql_queries
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - category
+        - company_id
+        - created_at
+        - description
+        - feature_distributions
+        - id
+        - last_indexed_at
+        - maintenance_ended_at
+        - maintenance_started_at
+        - name
+        - next_index_at
+        - slug
+        - status
+        - table_id
+        - time_plots
+        - updated_at
+        - updated_by
+        - validated
+      filter:
+        company_id:
+          _eq: X-Hasura-Company-Id
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - category
+        - description
+        - feature_distributions
+        - name
+        - slug
+        - status
+        - time_plots
+        - validated
+      filter:
+        _and:
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin
+          - company_id:
+              _eq: X-Hasura-Company-Id
+      check: null

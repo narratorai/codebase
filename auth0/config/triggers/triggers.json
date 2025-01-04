@@ -1,0 +1,14 @@
+{
+  "post-login": [
+    {
+      "action_name": "add-org-hasura-claims",
+      "display_name": "add-org-hasura-claims"
+    }
+  ],
+  "pre-user-registration": [
+    {
+      "action_name": "verify-graph-user",
+      "display_name": "verify-graph-user"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+query GetNarrativeBySlug($slug: String!, $company_id: uuid!, $user_id: uuid!) {
+  narrative(where: { slug: { _eq: $slug }, company_id: { _eq: $company_id } }) {
+    id
+    name
+    slug
+    state
+    created_at
+    created_by
+    description
+    type
+    snapshot_updated_at
+    company_category {
+      category
+      created_at
+      id
+    }
+    company_task {
+      category
+      schedule
+      task_slug
+      id
+    }
+    updated_at
+    actions(order_by: [{ happened_at: asc }]) {
+      id
+      name
+      description
+      happened_at
+      created_at
+      related_to
+      related_to_id
+      updated_at
+    }
+    tags(where: { company_tag: { _or: [{ user_id: { _eq: $user_id } }, { user_id: { _is_null: true } }] } }) {
+      id
+      updated_at
+      company_tag {
+        id
+        tag
+        color
+        user_id
+      }
+    }
+    narrative_datasets {
+      id
+      dataset_id
+      narrative_id
+      created_at
+      updated_at
+      dataset {
+        id
+        name
+        slug
+        status
+        description
+        category
+        created_by
+        created_at
+        company_category {
+          id
+          category
+          color
+        }
+      }
+    }
+    narrative_runs(order_by: [{ created_at: desc }], limit: 1) {
+      id
+      narrative_slug
+      s3_key
+      created_at
+      is_actionable
+    }
+  }
+}

@@ -1,0 +1,6 @@
+query GetAllRoles {
+  access_role {
+    value
+    description
+  }
+}

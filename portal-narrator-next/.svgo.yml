@@ -1,0 +1,10 @@
+plugins:
+  - name: 'preset-default'
+    active: true
+    params:
+      overrides:
+        cleanupIds: false
+        removeViewBox: false
+        removeUselessStrokeAndFill: false
+  - name: 'prefixIds'
+    active: true

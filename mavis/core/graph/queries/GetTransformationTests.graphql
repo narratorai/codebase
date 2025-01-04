@@ -1,0 +1,16 @@
+query GetTransformationTests($transformation_id: uuid!, $ids: [uuid!]!) {
+    tests: transformation_test(
+        order_by: [{ created_at: desc }]
+        where: { transformation_id: { _eq: $transformation_id } , id: {_in: $ids}}
+    ) {
+        name
+        id
+        data
+        created_at
+        ran_data_from
+        query
+        content
+        status
+        updated_at
+    }
+}

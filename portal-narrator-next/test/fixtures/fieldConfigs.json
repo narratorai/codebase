@@ -1,0 +1,526 @@
+[
+  {
+    "name": "last_month_txns",
+    "kind": "dataset_metric",
+    "format": {},
+    "value": {
+      "dataset_slug": "content_and_transactions",
+      "group_slug": "month",
+      "column_id": "metrics_total_events",
+      "function": "first",
+      "lookups": [
+        {
+          "lookup_column_id": "month_completed_transaction_at_UNSbQ8i_x",
+          "lookup_column_value": null,
+          "min_lookup_value": "{last_month}",
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": ["last_month"]
+  },
+  {
+    "name": "last_month_conv_to_completed_transaction",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "content_and_transactions",
+      "group_slug": "month",
+      "column_id": "month_computed_conversion_to_completed_transaction_e_H0w91_5",
+      "function": "first",
+      "lookups": [
+        {
+          "lookup_column_id": "month_completed_transaction_at_UNSbQ8i_x",
+          "lookup_column_value": null,
+          "min_lookup_value": "{last_month}",
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": ["last_month"]
+  },
+  {
+    "name": "last_month_conv_rate_to_tapped_card_before",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "content_and_transactions",
+      "group_slug": "month",
+      "column_id": "month_computed_conversion_to_viewed_card_3EPS9pQid",
+      "function": "first",
+      "lookups": [
+        {
+          "lookup_column_id": "month_completed_transaction_at_UNSbQ8i_x",
+          "lookup_column_value": null,
+          "min_lookup_value": "{last_month}",
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": ["last_month"]
+  },
+  {
+    "name": "member_percent_of_total_transactions_last_month",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "content_and_transactions",
+      "group_slug": "month_1",
+      "column_id": "month_1_percent_of_total_transactions",
+      "function": "first",
+      "lookups": [
+        {
+          "lookup_column_id": "month_completed_transaction_at_UNSbQ8i_x",
+          "lookup_column_value": null,
+          "min_lookup_value": "{last_month}",
+          "max_lookup_value": null
+        },
+        {
+          "lookup_column_id": "month_and_member_is_member",
+          "lookup_column_value": "Member",
+          "min_lookup_value": null,
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": ["last_month"]
+  },
+  {
+    "name": "member_last_month_conversion_rate_to_tapped_card_before",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "content_and_transactions",
+      "group_slug": "month_1",
+      "column_id": "month_computed_conversion_to_viewed_card_3EPS9pQid",
+      "function": "first",
+      "lookups": [
+        {
+          "lookup_column_id": "month_completed_transaction_at_UNSbQ8i_x",
+          "lookup_column_value": null,
+          "min_lookup_value": "{last_month}",
+          "max_lookup_value": null
+        },
+        {
+          "lookup_column_id": "month_and_member_is_member",
+          "lookup_column_value": "Member",
+          "min_lookup_value": null,
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": ["last_month"]
+  },
+  {
+    "name": "TRVL_percent_of_total_taps",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "content_viewed_before_transactions",
+      "group_slug": "category_distribution",
+      "column_id": "category_distribution_percent_of_total_taps",
+      "function": null,
+      "lookups": [
+        {
+          "lookup_column_id": "category_distribution_limiting_viewed_card_pWfILgd0I_feature_1",
+          "lookup_column_value": "TRVL",
+          "min_lookup_value": null,
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "TRVL_percent_of_total_taps_w_transactions",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "content_viewed_before_transactions",
+      "group_slug": "category_distribution",
+      "column_id": "category_distribution_percent_of_total_taps_WC9D9BuNL",
+      "function": null,
+      "lookups": [
+        {
+          "lookup_column_id": "category_distribution_limiting_viewed_card_pWfILgd0I_feature_1",
+          "lookup_column_value": "TRVL",
+          "min_lookup_value": null,
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "LSTN_percent_of_total_taps",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "content_viewed_before_transactions",
+      "group_slug": "category_distribution",
+      "column_id": "category_distribution_percent_of_total_taps",
+      "function": null,
+      "lookups": [
+        {
+          "lookup_column_id": "category_distribution_limiting_viewed_card_pWfILgd0I_feature_1",
+          "lookup_column_value": "LSTN",
+          "min_lookup_value": null,
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "LSTN_percent_of_total_taps_w_transactions",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "content_viewed_before_transactions",
+      "group_slug": "category_distribution",
+      "column_id": "category_distribution_percent_of_total_taps_WC9D9BuNL",
+      "function": null,
+      "lookups": [
+        {
+          "lookup_column_id": "category_distribution_limiting_viewed_card_pWfILgd0I_feature_1",
+          "lookup_column_value": "LSTN",
+          "min_lookup_value": null,
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "percent_of_all_transactions_tapped_LSTN",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "content_and_transactions",
+      "group_slug": "impact_of_viewing_content_2",
+      "column_id": "impact_of_viewing_content_2_percent_of_all_transactions",
+      "function": null,
+      "lookups": [
+        {
+          "lookup_column_id": "impact_of_viewing_content_members_1_did_view_content_teIdow_Tu",
+          "lookup_column_value": "Tapped LSTN Card",
+          "min_lookup_value": null,
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "max_conversion_rate_to_completed_transaction",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "content_and_transactions",
+      "group_slug": "impact_of_viewing_content_2",
+      "column_id": "impact_of_viewing_content_computed_conversion_to_completed_transaction_e_H0w91_5",
+      "function": "max",
+      "lookups": []
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "max_conversion_rate_to_completed_transaction_did_view_lstn_content",
+    "kind": "dataset_metric",
+    "format": {},
+    "value": {
+      "dataset_slug": "content_and_transactions",
+      "group_slug": "impact_of_viewing_content_2",
+      "column_id": "impact_of_viewing_content_members_1_did_view_content_teIdow_Tu",
+      "function": null,
+      "lookups": [
+        {
+          "lookup_column_id": "impact_of_viewing_content_computed_conversion_to_completed_transaction_e_H0w91_5",
+          "lookup_column_value": "{max_conversion_rate_to_completed_transaction}"
+        }
+      ]
+    },
+    "field_depends_on": ["max_conversion_rate_to_completed_transaction"]
+  },
+  {
+    "name": "min_conversion_rate_to_completed_transaction",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "content_and_transactions",
+      "group_slug": "impact_of_viewing_content_2",
+      "column_id": "impact_of_viewing_content_computed_conversion_to_completed_transaction_e_H0w91_5",
+      "function": "min",
+      "lookups": []
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "min_conversion_rate_to_completed_transaction_did_view_lstn_content",
+    "kind": "dataset_metric",
+    "format": {},
+    "value": {
+      "dataset_slug": "content_and_transactions",
+      "group_slug": "impact_of_viewing_content_2",
+      "column_id": "impact_of_viewing_content_members_1_did_view_content_teIdow_Tu",
+      "function": null,
+      "lookups": [
+        {
+          "lookup_column_id": "impact_of_viewing_content_computed_conversion_to_completed_transaction_e_H0w91_5",
+          "lookup_column_value": "{min_conversion_rate_to_completed_transaction}"
+        }
+      ]
+    },
+    "field_depends_on": ["min_conversion_rate_to_completed_transaction"]
+  },
+  {
+    "name": "monthly_member_transactions",
+    "kind": "dataset_metric",
+    "format": {},
+    "value": {
+      "dataset_slug": "content_and_transactions",
+      "group_slug": "month_1",
+      "column_id": "metrics_total_events",
+      "function": "first",
+      "lookups": [
+        {
+          "lookup_column_id": "month_completed_transaction_at_UNSbQ8i_x",
+          "lookup_column_value": null,
+          "min_lookup_value": "{last_month}",
+          "max_lookup_value": null
+        },
+        {
+          "lookup_column_id": "month_and_member_is_member",
+          "lookup_column_value": "Member",
+          "min_lookup_value": null,
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": ["last_month"]
+  },
+  {
+    "name": "min_month_of_completed_transaction_at",
+    "kind": "dataset_metric",
+    "format": {},
+    "value": {
+      "dataset_slug": "content_and_transactions",
+      "group_slug": "month",
+      "column_id": "month_completed_transaction_at_UNSbQ8i_x",
+      "function": "min",
+      "lookups": []
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "max_month_of_completed_transaction_at",
+    "kind": "dataset_metric",
+    "format": {},
+    "value": {
+      "dataset_slug": "content_and_transactions",
+      "group_slug": "month",
+      "column_id": "month_completed_transaction_at_UNSbQ8i_x",
+      "function": "max",
+      "lookups": []
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "min_month_of_tapped_card_at",
+    "kind": "dataset_metric",
+    "format": {},
+    "value": {
+      "dataset_slug": "card_taps_with_swipes",
+      "group_slug": "month",
+      "column_id": "month_tapped_card_at_pn56ti8X",
+      "function": "min",
+      "lookups": []
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "max_month_of_tapped_card_at",
+    "kind": "dataset_metric",
+    "format": {},
+    "value": {
+      "dataset_slug": "card_taps_with_swipes",
+      "group_slug": "month",
+      "column_id": "month_tapped_card_at_pn56ti8X",
+      "function": "max",
+      "lookups": []
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "min_month_of_tapped_card_at",
+    "kind": "dataset_metric",
+    "format": {},
+    "value": {
+      "dataset_slug": "card_taps_with_swipes",
+      "group_slug": "month",
+      "column_id": "month_tapped_card_at_pn56ti8X",
+      "function": "min",
+      "lookups": []
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "max_category_tapped",
+    "kind": "dataset_metric",
+    "format": {},
+    "value": {
+      "dataset_slug": "content_viewed_before_transactions",
+      "group_slug": "category_distribution",
+      "column_id": "metrics_total_events",
+      "function": "max",
+      "lookups": []
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "max_category_tapped_category",
+    "kind": "dataset_metric",
+    "format": {},
+    "value": {
+      "dataset_slug": "content_viewed_before_transactions",
+      "group_slug": "category_distribution",
+      "column_id": "category_distribution_limiting_viewed_card_pWfILgd0I_feature_1",
+      "function": null,
+      "lookups": [
+        {
+          "lookup_column_id": "metrics_total_events",
+          "lookup_column_value": "{max_category_tapped}"
+        }
+      ]
+    },
+    "field_depends_on": ["max_category_tapped"]
+  },
+  {
+    "name": "last_month_total_taps",
+    "kind": "dataset_metric",
+    "format": {},
+    "value": {
+      "dataset_slug": "card_taps_with_swipes",
+      "group_slug": "month",
+      "column_id": "metrics_total_events",
+      "function": "first",
+      "lookups": [
+        {
+          "lookup_column_id": "month_tapped_card_at_pn56ti8X",
+          "lookup_column_value": null,
+          "min_lookup_value": "{last_month}",
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": ["last_month"]
+  },
+  {
+    "name": "last_month_total_swipes",
+    "kind": "dataset_metric",
+    "format": {},
+    "value": {
+      "dataset_slug": "card_taps_with_swipes",
+      "group_slug": "month",
+      "column_id": "metric_append_swiped_card_i_3_mxl_chk_ts_sum_5_grca_rk_1",
+      "function": "first",
+      "lookups": [
+        {
+          "lookup_column_id": "month_tapped_card_at_pn56ti8X",
+          "lookup_column_value": null,
+          "min_lookup_value": "{last_month}",
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": ["last_month"]
+  },
+  {
+    "name": "no_swipe_percent_of_total",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "card_taps_with_swipes",
+      "group_slug": "total_swiped_cards_distribution",
+      "column_id": "total_swiped_cards_distribution_percent_of_total",
+      "function": null,
+      "lookups": [
+        {
+          "lookup_column_id": "total_swiped_cards_distribution_append_swiped_card_I3mxlCHK_ts",
+          "lookup_column_value": "0",
+          "min_lookup_value": null,
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "cards_shown",
+    "kind": "value",
+    "format": null,
+    "value": "$$eval({last_month_total_taps} + {last_month_total_swipes})",
+    "field_depends_on": ["last_month_total_swipes", "last_month_total_taps"]
+  },
+  {
+    "name": "engagement_rate",
+    "kind": "value",
+    "format": "percent",
+    "value": "$$eval({last_month_total_taps}/({last_month_total_taps} + {last_month_total_swipes}))",
+    "field_depends_on": ["last_month_total_swipes", "last_month_total_taps"]
+  },
+  {
+    "name": "percent_diff_in_distribution_local_trvl",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "card_taps_with_swipes",
+      "group_slug": "tap_type_and_category_1_1",
+      "column_id": "tap_type_and_category_1_percent_diff_in_distribution",
+      "function": null,
+      "lookups": [
+        {
+          "lookup_column_id": "tap_type_and_category_grouped_local_and_trvl_content",
+          "lookup_column_value": "Local and TRVL",
+          "min_lookup_value": null,
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "engagement_rate_local_trvl",
+    "kind": "value",
+    "format": "percent",
+    "value": "$$eval({engagement_rate}*(1+{percent_diff_in_distribution_local_trvl}))",
+    "field_depends_on": ["engagement_rate", "percent_diff_in_distribution_local_trvl"]
+  },
+  {
+    "name": "percent_of_LCL_trvl",
+    "kind": "dataset_metric",
+    "format": "percent",
+    "value": {
+      "dataset_slug": "card_taps_with_swipes",
+      "group_slug": "tap_type_and_category_1_1",
+      "column_id": "tap_type_and_category_percent_of_total_taps",
+      "function": null,
+      "lookups": [
+        {
+          "lookup_column_id": "tap_type_and_category_grouped_local_and_trvl_content",
+          "lookup_column_value": "Local and TRVL",
+          "min_lookup_value": null,
+          "max_lookup_value": null
+        }
+      ]
+    },
+    "field_depends_on": []
+  },
+  {
+    "name": "dist_all_category",
+    "kind": "value",
+    "format": "percent",
+    "value": "$$eval(1-{percent_of_LCL_trvl})",
+    "field_depends_on": ["percent_of_LCL_trvl"]
+  }
+]

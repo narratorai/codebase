@@ -1,0 +1,25 @@
+query GetFreeTemplates($company_id: uuid!) {
+  narrative_template(
+    order_by: { global_version: desc, customer_iteration: desc }
+    where: {
+      _or: [
+        {company_id: { _eq: $company_id }},
+        {in_free_tier: { _eq: true }}
+      ]
+    }
+  ) {
+    id
+    name
+    company_id
+    question
+    category
+    description
+    customer_iteration
+    local_iteration
+    global_version
+    state
+    in_free_tier
+    type
+    display_companies_using
+  }
+}

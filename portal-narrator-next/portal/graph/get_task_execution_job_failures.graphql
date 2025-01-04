@@ -1,0 +1,10 @@
+query GetTaskExecutionJobFailures($task_execution_id: uuid!) {
+  task_execution(where: { id: { _eq: $task_execution_id } }) {
+    id
+    details
+    task {
+      id
+      task_slug
+    }
+  }
+}

@@ -1,0 +1,10 @@
+mutation UpdateSqlQuery($id: uuid!, $sql: String!, $notes: String, $updated_by: String) {
+  updated_query: update_sql_queries_by_pk(
+    pk_columns: { id: $id }
+    _set: { sql: $sql, notes: $notes, updated_by: $updated_by }
+  ) {
+    id
+    updated_by
+    updated_at
+  }
+}

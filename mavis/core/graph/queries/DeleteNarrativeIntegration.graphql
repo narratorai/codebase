@@ -1,0 +1,5 @@
+mutation DeleteNarrativeIntegration($id: uuid!) {
+  delete_narrative_integrations_by_pk(id: $id) {
+    id
+  }
+}

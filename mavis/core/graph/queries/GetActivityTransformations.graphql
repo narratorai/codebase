@@ -1,0 +1,29 @@
+query GetActivityTransformations($id: uuid!) {
+  activity_transform: activity_by_pk(id: $id) {
+    column_renames {
+      id
+      label
+      type
+      name
+      has_data
+      casting
+    }
+    status
+    transformations {
+      transformation {
+        id
+        column_renames {
+          type
+          label
+          name
+          casting
+          has_data
+        }
+      }
+    }
+    id
+    slug
+    name
+    description
+  }
+}

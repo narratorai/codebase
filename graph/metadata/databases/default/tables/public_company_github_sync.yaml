@@ -1,0 +1,24 @@
+table:
+  name: company_github_sync
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: company_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - id
+        - company_id
+        - user_id
+        - installation_id
+        - target_repo
+        - created_at
+        - updated_at
+      filter:
+        company_id:
+          _eq: X-Hasura-Company-Id

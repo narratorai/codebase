@@ -1,0 +1,16 @@
+query GetServiceLimit($company_id: uuid!) {
+  service_limit(where: {company_id: {_eq: $company_id}, deleted_at: {_is_null: true}}) {
+    id
+    transformation_limit
+    row_limit
+    narrative_limit
+    materialization_limit
+    dataset_limit
+    activity_stream_limit
+    activity_limit
+    name,
+    monthly_price,
+    disable_on
+
+  }
+}

@@ -1,0 +1,32 @@
+version: 2
+registries:
+  npm-registry-registry-npmjs-org:
+    type: npm-registry
+    url: https://registry.npmjs.org
+    token: '${{secrets.NPM_REGISTRY_REGISTRY_NPMJS_ORG_TOKEN}}'
+
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    assignees:
+      - josuemontano
+    ignore:
+      - dependency-name: less-loader
+        versions:
+          - 8.1.0
+      - dependency-name: '@types/react-dom'
+        versions:
+          - 17.0.2
+      - dependency-name: typescript
+        versions:
+          - 4.2.3
+    registries:
+      - npm-registry-registry-npmjs-org
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10

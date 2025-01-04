@@ -1,0 +1,26 @@
+mutation InsertCompanyResources(
+    $company_id: uuid!
+    $s3_bucket: String!
+    $kms_key: String!
+    $company_role: String!
+  	$read_policy: String!
+  	$write_policy: String!
+) {
+    insert_company_resources_one(
+        object: {
+            company_id: $company_id
+            s3_bucket: $s3_bucket
+            kms_key: $kms_key
+            company_role: $company_role
+            read_policy: $read_policy
+            write_policy: $write_policy
+        }
+    on_conflict: {
+      constraint: company_resources_company_id_key
+      update_columns: []
+    }
+    )
+    {
+        id
+    }
+}

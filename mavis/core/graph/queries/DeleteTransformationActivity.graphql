@@ -1,0 +1,15 @@
+mutation DeleteTransformationActivity(
+    $activity_id: uuid!
+    $transformation_id: uuid!
+) {
+    delete_transformation_activities(
+        where: {
+            transformation_id: { _eq: $transformation_id }
+            activity_id: { _eq: $activity_id }
+        }
+    ) {
+        returning {
+            id
+        }
+    }
+}

@@ -1,0 +1,11 @@
+mutation CreateCompanyTaskWatcher($user_id: uuid!, $task_id: uuid!) {
+  insert_watcher(objects: { related_to: company_task, related_id: $task_id, user_id: $user_id }) {
+    returning {
+      id
+      company_task {
+        id
+        task_slug
+      }
+    }
+  }
+}

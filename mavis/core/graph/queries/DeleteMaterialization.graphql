@@ -1,0 +1,9 @@
+mutation DeleteMaterialization($id: uuid!) {
+  delete_dataset_materialization_by_pk(id: $id) {
+    id
+    dataset_id
+    label
+    type
+    task_id
+  }
+}

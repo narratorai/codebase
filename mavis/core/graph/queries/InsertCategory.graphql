@@ -1,0 +1,8 @@
+mutation InsertCategory($company_id: uuid!, $category: String!, $color: String!) {
+  inserted_category: insert_company_categories_one(
+    object: { category: $category, company_id: $company_id, color: $color }
+    on_conflict: { constraint: company_categories_category_company_id_key, update_columns: [category, color] }
+  ) {
+    id
+  }
+}

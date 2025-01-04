@@ -1,0 +1,46 @@
+table:
+  name: transformation_activities
+  schema: public
+object_relationships:
+  - name: activity
+    using:
+      foreign_key_constraint_on: activity_id
+  - name: transformation
+    using:
+      foreign_key_constraint_on: transformation_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - id
+        - created_at
+        - transformation_id
+        - activity_id
+      filter:
+        transformation:
+          company_id:
+            _eq: X-Hasura-Company-Id
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - activity_id
+        - transformation_id
+      filter:
+        _and:
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin
+          - transformation:
+              company_id:
+                _eq: X-Hasura-Company-Id
+      check: null

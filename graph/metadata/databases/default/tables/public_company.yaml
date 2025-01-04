@@ -1,0 +1,170 @@
+table:
+  name: company
+  schema: public
+object_relationships:
+  - name: auth0
+    using:
+      manual_configuration:
+        column_mapping:
+          id: company_id
+        insertion_order: null
+        remote_table:
+          name: company_auth0
+          schema: public
+  - name: created_by_user
+    using:
+      foreign_key_constraint_on: created_by
+  - name: created_for_user
+    using:
+      manual_configuration:
+        column_mapping:
+          created_for: id
+        insertion_order: null
+        remote_table:
+          name: user
+          schema: public
+  - name: resources
+    using:
+      manual_configuration:
+        column_mapping:
+          id: company_id
+        insertion_order: null
+        remote_table:
+          name: company_resources
+          schema: public
+array_relationships:
+  - name: activities
+    using:
+      foreign_key_constraint_on:
+        column: company_id
+        table:
+          name: activity
+          schema: public
+  - name: company_tags
+    using:
+      foreign_key_constraint_on:
+        column: company_id
+        table:
+          name: company_tags
+          schema: public
+  - name: company_users
+    using:
+      foreign_key_constraint_on:
+        column: company_id
+        table:
+          name: company_user
+          schema: public
+  - name: github_sync
+    using:
+      foreign_key_constraint_on:
+        column: company_id
+        table:
+          name: company_github_sync
+          schema: public
+  - name: groups
+    using:
+      foreign_key_constraint_on:
+        column: company_id
+        table:
+          name: group
+          schema: public
+  - name: service_limits
+    using:
+      foreign_key_constraint_on:
+        column: company_id
+        table:
+          name: service_limit
+          schema: public
+  - name: tables
+    using:
+      foreign_key_constraint_on:
+        column: company_id
+        table:
+          name: company_table
+          schema: public
+  - name: tasks
+    using:
+      foreign_key_constraint_on:
+        column: company_id
+        table:
+          name: company_task
+          schema: public
+  - name: teams
+    using:
+      foreign_key_constraint_on:
+        column: company_id
+        table:
+          name: team
+          schema: public
+  - name: transformations
+    using:
+      foreign_key_constraint_on:
+        column: company_id
+        table:
+          name: transformation
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - allow_narrator_employee_access
+        - batch_halt
+        - batch_halted_at
+        - batch_halted_by
+        - branding_color
+        - cache_minutes
+        - created_at
+        - currency_used
+        - datacenter_region
+        - demo_company
+        - id
+        - logo_url
+        - materialize_schema
+        - name
+        - plot_colors
+        - production_schema
+        - slug
+        - spend_table
+        - status
+        - timezone
+        - updated_at
+        - warehouse_default_schemas
+        - website
+      filter:
+        company_users:
+          user:
+            id:
+              _eq: X-Hasura-User-Id
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - allow_narrator_employee_access
+        - batch_halt
+        - batch_halted_at
+        - batch_halted_by
+        - branding_color
+        - logo_url
+        - name
+        - plot_colors
+        - timezone
+        - website
+      filter:
+        _and:
+          - id:
+              _eq: X-Hasura-Company-Id
+          - _exists:
+              _table:
+                name: company_user
+                schema: public
+              _where:
+                _and:
+                  - company_id:
+                      _eq: X-Hasura-Company-Id
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - role:
+                      _eq: admin
+      check:
+        id:
+          _eq: X-Hasura-Company-Id

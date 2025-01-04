@@ -1,0 +1,5 @@
+mutation DeleteNarrative($id: uuid!) {
+  delete_narrative_by_pk(id: $id) {
+    id
+  }
+}

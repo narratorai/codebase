@@ -1,0 +1,22 @@
+query GetDimMaintenance($dim_table_id: uuid!, $last_updated_at: timestamptz!) {
+  activity_maintenance(
+    where: {
+      dim_table_id: { _eq: $dim_table_id }
+      _or: [
+        { ended_at: { _is_null: true } }
+        { ended_at: { _gte: $last_updated_at } }
+      ]
+    }
+    order_by: { ended_at: desc_nulls_first }
+  ) {
+    id
+    kind
+    notes
+    started_at
+    ended_at
+    activity_id
+    maintenance_kind {
+      description
+    }
+  }
+}

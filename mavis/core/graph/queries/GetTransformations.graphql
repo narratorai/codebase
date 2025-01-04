@@ -1,0 +1,55 @@
+query GetTransformations($ids: [uuid!]!) {
+              transformation(where: {id: {_in: $ids}}) {
+                id
+                slug
+                name
+                created_at
+                updated_at
+                table
+                kind
+                next_resync_at
+                update_type
+                delete_window
+                has_source
+                is_aliasing
+                remove_customers
+                do_not_delete_on_resync
+                notify_row_count_percent_change
+                validation_queries {
+                  id
+                }
+                run_after_transformations {
+                  id
+                }
+                depends_on_transformations {
+                  id
+                }
+                current_query {
+                  sql
+                }
+                production_queries(limit: 1, order_by: {updated_at: desc}) {
+                  id
+                  updated_at
+                  updated_by
+                }
+    						company_task{
+                  id
+                  executions(limit: 1, order_by: {created_at: desc}){
+                    started_at
+                    status
+                  }
+                }
+                transformation_maintenances {
+                  id
+                  kind
+                  started_at
+                  notes
+                }
+                activities {
+                  activity {
+                    id
+                    name
+                  }
+                }
+              }
+            }

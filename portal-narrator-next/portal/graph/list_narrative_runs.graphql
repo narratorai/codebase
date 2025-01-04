@@ -1,0 +1,25 @@
+query ListNarrativeRuns($narrative_slug: String!, $company_id: uuid!) {
+  narrative_runs(
+    order_by: [{ created_at: desc }]
+    where: { narrative: { slug: { _eq: $narrative_slug }, company_id: { _eq: $company_id } } }
+  ) {
+    id
+    created_at
+    narrative_slug
+    s3_key
+    narrative {
+      name
+      slug
+      state
+      updated_at
+      task_id
+      id
+      description
+      company_category {
+        category
+        created_at
+        id
+      }
+    }
+  }
+}

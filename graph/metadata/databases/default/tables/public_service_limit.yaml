@@ -1,0 +1,37 @@
+table:
+  name: service_limit
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: company_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - activity_limit
+        - activity_stream_limit
+        - admin_user_limit
+        - company_id
+        - created_at
+        - dataset_limit
+        - deleted_at
+        - disable_on
+        - end_on
+        - id
+        - materialization_limit
+        - monthly_price
+        - monthly_templates_from_library_limit
+        - name
+        - narrative_limit
+        - row_limit
+        - run_transformations_daily_limit
+        - start_on
+        - total_templates_from_library_limit
+        - transformation_limit
+        - updated_at
+        - user_limit
+      filter:
+        company:
+          id:
+            _eq: X-Hasura-Company-Id

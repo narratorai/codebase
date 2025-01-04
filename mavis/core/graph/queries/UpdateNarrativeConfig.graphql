@@ -1,0 +1,8 @@
+mutation UpdateNarrativeConfig($narrative_id: uuid!, $updated_by: uuid!) {
+  update_narrative_by_pk(
+    pk_columns: { id: $narrative_id }
+    _set: { last_config_updated_at: "now()", updated_by: $updated_by }
+  ) {
+    id
+  }
+}

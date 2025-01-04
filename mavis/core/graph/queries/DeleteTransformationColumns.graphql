@@ -1,0 +1,12 @@
+mutation DeleteTransformationColumns($transformation_id: uuid!) {
+    delete_column_renames(
+        where: {
+            related_to: { _eq: transformation }
+            related_to_id: { _eq: $transformation_id }
+        }
+    ) {
+        returning {
+            id
+        }
+    }
+}

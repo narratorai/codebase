@@ -1,0 +1,25 @@
+mutation CreateNewActivity(
+  $company_id: uuid!
+  $slug: String!
+  $table_id: uuid!
+  $name: String!
+  $description: String
+  $maintainer_id: uuid
+  $updated_by: String
+) {
+  insert_activity_one(
+    object: {
+      company_id: $company_id
+      name: $name
+      description: $description
+      updated_by: $updated_by
+      slug: $slug
+      table_id: $table_id
+      maintainer_id: $maintainer_id
+    }
+  ) {
+    id
+    name
+    slug
+  }
+}

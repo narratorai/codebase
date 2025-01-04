@@ -1,0 +1,25 @@
+query GetLastExecutedTasks(
+  $company_id: uuid!
+  $from_date: timestamptz!
+  $category: company_task_category_enum!
+) {
+  task_execution(
+    order_by: [{ started_at: asc }]
+
+    where: {
+      task: { company_id: { _eq: $company_id }, internal_only: { _eq: false }, category: { _eq: $category } }
+      started_at: { _gt: $from_date}
+    }
+  ) {
+    id
+    started_at
+    completed_at
+    status
+    details
+    task {
+      schedule
+      task_slug
+      category
+    }
+  }
+}

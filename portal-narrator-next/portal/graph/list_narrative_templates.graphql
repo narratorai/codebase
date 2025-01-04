@@ -1,0 +1,26 @@
+query ListNarrativeTemplates {
+  templates: narrative_template(order_by: [{ updated_at: desc }]) {
+    id
+    name
+    question
+    description
+    in_free_tier
+    display_companies_using
+    state
+    template
+    preview_narrative_json
+    user {
+      id
+      email
+      company_users(limit: 1) {
+        id
+        first_name
+        last_name
+        preferences {
+          id
+          profile_picture
+        }
+      }
+    }
+  }
+}

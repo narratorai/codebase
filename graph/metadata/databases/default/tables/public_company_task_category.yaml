@@ -1,0 +1,4 @@
+table:
+  name: company_task_category
+  schema: public
+is_enum: true

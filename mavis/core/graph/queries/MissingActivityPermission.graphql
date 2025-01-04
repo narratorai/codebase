@@ -1,0 +1,6 @@
+query MissingActivityPermission($table_id: uuid!, $team_ids: [uuid!]) {
+  activity(where: { table_id: { _eq: $table_id }, team_permissions: { team_id: { _nin: $team_ids } } }) {
+    id
+    name
+  }
+}

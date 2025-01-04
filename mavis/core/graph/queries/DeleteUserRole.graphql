@@ -1,0 +1,7 @@
+mutation DeleteUserRole($company_user_id: uuid!, $role: access_role_enum) {
+  delete_user_access_role(where: { company_user_id: { _eq: $company_user_id }, role: { _eq: $role } }) {
+    returning {
+      id
+    }
+  }
+}

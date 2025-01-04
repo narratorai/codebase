@@ -1,0 +1,13 @@
+**/build
+**/coverage
+node_modules
+**/node_modules
+
+**/cdk.out
+infra/**/*.js
+
+!.eslintrc.js
+
+packages/codegen/generated/**
+
+**/*.d.ts

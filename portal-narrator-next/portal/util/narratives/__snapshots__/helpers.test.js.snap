@@ -1,0 +1,655 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`helpers #getDatasetsFromNarrativeConfig gets datasets used in Narrative 1`] = `
+[
+  {
+    "group_slug": "monthly_trend",
+    "slug": "purchase_retention",
+  },
+  {
+    "group_slug": "monthly_trend_too",
+    "slug": "purchase_retention",
+  },
+  {
+    "group_slug": "purchase_occurrence",
+    "slug": "purchase_retention",
+  },
+  {
+    "group_slug": "month_and_occurrence_range",
+    "slug": "purchase_retention",
+  },
+  {
+    "group_slug": "monthly_trend_1",
+    "slug": "purchase_retention",
+  },
+  {
+    "group_slug": "month_and_occurrence_range_1",
+    "slug": "purchase_retention",
+  },
+  {
+    "group_slug": "monthly_trend_2",
+    "slug": "purchase_retention",
+  },
+]
+`;
+
+exports[`helpers #getVisibleFileOptions returns options in the correct format 1`] = `
+[
+  {
+    "label": "Oct 26th 2022, 8:00pm EDT",
+    "value": "2022-10-27",
+  },
+  {
+    "label": "Sep 26th 2022, 8:00pm EDT",
+    "value": "2022-9-27",
+  },
+  {
+    "label": "Aug 26th 2022, 8:00pm EDT",
+    "value": "2022-8-27",
+  },
+]
+`;
+
+exports[`helpers #makeFileOptions returns options in the correct format 1`] = `
+[
+  {
+    "label": "Oct 26th 2022, 8:00pm EDT",
+    "value": "2022-10-27",
+  },
+  {
+    "label": "Sep 26th 2022, 8:00pm EDT",
+    "value": "2022-9-27",
+  },
+  {
+    "label": "Aug 26th 2022, 8:00pm EDT",
+    "value": "2022-8-27",
+  },
+]
+`;
+
+exports[`helpers #makeFiles returns files in the correct format 1`] = `
+[
+  {
+    "key": "prod/mavis/caches/narratives/testing/valid/2022-10-27.json",
+    "name": "2022-10-27",
+  },
+  {
+    "key": "prod/mavis/caches/narratives/testing/valid/2022-9-27.json",
+    "name": "2022-9-27",
+  },
+  {
+    "key": "prod/mavis/caches/narratives/testing/valid/2022-8-27.json",
+    "name": "2022-8-27",
+  },
+]
+`;
+
+exports[`helpers #parseFormValues parses field_configs array empty 1`] = `
+{
+  "field_configs": [],
+  "narrative": {
+    "sections": [],
+  },
+}
+`;
+
+exports[`helpers #parseFormValues parses field_configs array string input 1`] = `
+{
+  "field_configs": [
+    {
+      "ok": "hi",
+    },
+    {
+      "test": true,
+    },
+  ],
+  "narrative": {
+    "sections": [],
+  },
+}
+`;
+
+exports[`helpers #parseFormValues parses plot_options from JSON string to object 1`] = `
+{
+  "datasets": [
+    {
+      "group_slug": "monthly_trend",
+      "metric_column_ids": [],
+      "slug": "purchase_retention",
+    },
+    {
+      "group_slug": "purchase_occurrence",
+      "metric_column_ids": [],
+      "slug": "purchase_retention",
+    },
+    {
+      "group_slug": "month_and_occurrence_range",
+      "metric_column_ids": [],
+      "slug": "purchase_retention",
+    },
+    {
+      "group_slug": "monthly_trend_1",
+      "metric_column_ids": [],
+      "slug": "purchase_retention",
+    },
+    {
+      "group_slug": "month_and_occurrence_range_1",
+      "metric_column_ids": [],
+      "slug": "purchase_retention",
+    },
+    {
+      "group_slug": "monthly_trend_2",
+      "metric_column_ids": [],
+      "slug": "purchase_retention",
+    },
+  ],
+  "field_configs": [],
+  "fields": {
+    "bug_workaround": true,
+  },
+  "narrative": {
+    "goal": "The goal of this analysis is to understand how the customers who make purchases behave with future purchases.  Is there anything unique about our customers who purchase often? How do all these behaviors change over time?",
+    "key_takeaways": [
+      {
+        "explanation": "Overall your conversion to another purchase has been consistent.",
+        "title": "Conistent Conversion",
+        "value": 1,
+      },
+      {
+        "explanation": "Our paid customers have been becoming less likely to purchase agian.",
+        "title": "Paid Customer Behavior",
+        "value": 0,
+      },
+      {
+        "explanation": "Our Core customer group >5 purchaes is becoming less likely to purchase again",
+        "title": "Behavior on repeat Customers",
+        "value": -1,
+      },
+      {
+        "explanation": "Our core >5 purchases paid customers are negatively accelerating in conversion to purchase again.",
+        "title": "Change in Behavior on repeat Customers",
+        "value": -1,
+      },
+    ],
+    "question": "How do customers who purchase an asset behave?",
+    "recommendation": [
+      {
+        "break_on": "bug_workaround",
+        "explanation": "Identify what happened during the month of April that seems to have caused a negative acceleration of the likelihood to purchase again from our core customer group.",
+        "title": "Identify the cause of the recent decline in core customer group in the last couple of months",
+      },
+      {
+        "explanation": "Identify what happened during the month of April that seems to have caused a negative acceleration of the likelihood to purchase again from our core customer group.",
+        "title": "Identify the cause of the recent decline in core customer group in the last couple of months",
+      },
+    ],
+    "sections": [
+      {
+        "approach": "Let's look at the high level key metrics and see if anything is changing in time and see if we can identify something to dive deeper into.",
+        "content": [
+          {
+            "dataset": "purchase_retention",
+            "group_slug": "monthly_trend",
+            "plot_options": {
+              "layout": {
+                "showlegend": false,
+                "title": {
+                  "text": "Overall Purchase Events",
+                },
+                "xaxis": {
+                  "title": {
+                    "text": "Month (PST)",
+                  },
+                },
+                "yaxis": {
+                  "title": {
+                    "text": "Total Purchases",
+                  },
+                },
+              },
+              "metric_label": "Total Events",
+              "metric_title": "",
+              "type": "line",
+            },
+            "type": "plot",
+          },
+          {
+            "plot_config": {
+              "dataset_slug": "purchase_retention",
+              "group_slug": "monthly_trend_too",
+              "layout": {
+                "showlegend": false,
+                "title": {
+                  "text": "Overall Purchase Events",
+                },
+                "xaxis": {
+                  "title": {
+                    "text": "Month (PST)",
+                  },
+                },
+                "yaxis": {
+                  "title": {
+                    "text": "Total Purchases",
+                  },
+                },
+              },
+              "type": "line",
+            },
+            "type": "custom_plot",
+          },
+          {
+            "text": "The total number of purchases seems to be slightly decreasing.",
+            "type": "body",
+          },
+          {
+            "dataset": "purchase_retention",
+            "group_slug": "monthly_trend",
+            "plot_options": {
+              "layout": {
+                "showlegend": false,
+                "title": {
+                  "text": "Overall Purchase GMV",
+                },
+                "xaxis": {
+                  "title": {
+                    "text": "Month",
+                  },
+                },
+                "yaxis": {
+                  "tickformat": "$,s",
+                  "title": {
+                    "text": "GMV",
+                  },
+                },
+              },
+              "metric_label": "Gmv",
+              "metric_title": "",
+              "type": "line",
+            },
+            "type": "plot",
+          },
+          {
+            "text": "Our customers have been consistently giving us around $2.6m per month. This means that our current customers are spending more money per purchase, which we will dive into later, but let's breakdown why the total purchases have been decreasing.",
+            "type": "body",
+          },
+          {
+            "dataset": "purchase_retention",
+            "group_slug": "monthly_trend",
+            "plot_options": {
+              "layout": {
+                "showlegend": false,
+                "title": {
+                  "text": "Overall Purchase to Next Purchase Conversion",
+                },
+                "xaxis": {
+                  "title": {
+                    "text": "Month",
+                  },
+                },
+                "yaxis": {
+                  "tickformat": "%",
+                  "title": {
+                    "text": "Conversion Rate to Next Purchase",
+                  },
+                },
+              },
+              "metric_label": "Conversion Rate To Purchased Product",
+              "metric_title": "",
+              "type": "line",
+            },
+            "type": "plot",
+          },
+          {
+            "text": "The conversion rate for customers repurchasing assets seems to be dropping slightly in the last couple of months.",
+            "type": "body",
+          },
+        ],
+        "takeaway": {
+          "title": "The conversion rate has been consistent but started declining in the last couple of months",
+        },
+        "title": "Overall purchase behavior",
+      },
+      {
+        "approach": "Let's break down all our purchases by occurrence (1st, 2nd, etc). Is the drop in conversion rate caused by new customers not purchasing, or loyal customers purchasing less frequently?",
+        "content": [
+          {
+            "dataset": "purchase_retention",
+            "group_slug": "purchase_occurrence",
+            "plot_options": {
+              "layout": {
+                "title": {
+                  "text": "Conversion Rate to Next Purchase",
+                },
+                "xaxis": {
+                  "title": {
+                    "text": "Purchase Occurrence",
+                  },
+                },
+                "yaxis": {
+                  "tickformat": "%",
+                  "title": {
+                    "text": "Conversion Rate to Next Purchase",
+                  },
+                },
+              },
+              "metric_label": "Conversion Rate To Purchased Product",
+              "metric_title": "",
+              "type": "line",
+            },
+            "type": "plot",
+          },
+          {
+            "text": "As our customers purchase they become more likely to purchase again. This is known as negative churn and is a great sign!",
+            "type": "body",
+          },
+          {
+            "text": "We will group these customers into logical purchase occurrence buckets based on the biggest change in behavior. First group are customers who did their first purchase since it is the biggest increase. Second group is those who purchased their 2nd through 5th asset because that is when customers' conversion changes. The final group is >5th purchase because that is when the conversion rate settles.",
+            "type": "body",
+          },
+          {
+            "dataset": "purchase_retention",
+            "group_slug": "month_and_occurrence_range",
+            "plot_options": {
+              "layout": {
+                "annotations": [
+                  {
+                    "arrowcolor": "#666768",
+                    "arrowhead": 2,
+                    "arrowsize": 1,
+                    "arrowwidth": 2,
+                    "ax": 0,
+                    "ay": 40,
+                    "showarrow": true,
+                    "text": "decline starts",
+                    "x": "2019-04-01",
+                    "xref": "x",
+                    "y": 0.9743,
+                    "yref": "y",
+                  },
+                ],
+                "title": {
+                  "text": "Conversion Rate to Next Purchase",
+                },
+                "xaxis": {
+                  "title": {
+                    "text": "Purchase Occurrence",
+                  },
+                },
+                "yaxis": {
+                  "tickformat": "%",
+                  "title": {
+                    "text": "Conversion Rate to Next Purchase",
+                  },
+                },
+              },
+              "metric_label": "Conversion Rate To Purchased Product",
+              "metric_title": "",
+              "type": "line",
+            },
+            "type": "plot",
+          },
+          {
+            "text": "We see that our core customer group's (customers who have purchased 5 or more products) conversion rate to next purchase has started declining around April.  We need to check if this is for customers who are paying for products or those purchasing free products.",
+            "type": "body",
+          },
+        ],
+        "takeaway": {
+          "title": "The core customer group of >5 purchases seems to be recently declining at a faster rate",
+        },
+        "title": "Purchase behavior for repeat purchases",
+      },
+      {
+        "approach": "Let's break down all our purchases by free and paid and see if this matters.",
+        "content": [
+          {
+            "dataset": "purchase_retention",
+            "group_slug": "monthly_trend_1",
+            "plot_options": {
+              "layout": {
+                "title": {
+                  "text": "Conversion Rate to Next Purchase (Free vs Paid)",
+                },
+                "xaxis": {
+                  "title": {
+                    "text": "Month (PST)",
+                  },
+                },
+                "yaxis": {
+                  "title": {
+                    "text": "Total Purchases",
+                  },
+                },
+              },
+              "metric_label": "Total Events",
+              "metric_title": "",
+              "type": "line",
+            },
+            "type": "plot",
+          },
+          {
+            "text": "If our conversion rate is decreasing, could this impact have been masked by free purchases?",
+            "type": "body",
+          },
+          {
+            "dataset": "purchase_retention",
+            "group_slug": "monthly_trend_1",
+            "plot_options": {
+              "layout": {
+                "title": {
+                  "text": "Conversion Rate to Next Purchase (Free vs Paid)",
+                },
+                "xaxis": {
+                  "title": {
+                    "text": "Month (PST)",
+                  },
+                },
+                "yaxis": {
+                  "tickformat": "%",
+                  "title": {
+                    "text": "Conversion Rate to Another Purchase",
+                  },
+                },
+              },
+              "metric_label": "Conversion Rate To Purchased Product",
+              "metric_title": "",
+              "type": "line",
+            },
+            "type": "plot",
+          },
+          {
+            "text": "Our conversion rate for paid customers has been decreasing rapidly in recent days.  Why didn't we didn't see this in GMV?",
+            "type": "body",
+          },
+          {
+            "dataset": "purchase_retention",
+            "group_slug": "monthly_trend_1",
+            "plot_options": {
+              "layout": {
+                "title": {
+                  "text": "AVG GMV per customer",
+                },
+                "xaxis": {
+                  "title": {
+                    "text": "Month (PST)",
+                  },
+                },
+                "yaxis": {
+                  "tickformat": "$,s",
+                  "title": {
+                    "text": "Avg Gmv Per Customer",
+                  },
+                },
+              },
+              "metric_label": "Avg Gmv Per Customer",
+              "metric_title": "",
+              "type": "line",
+            },
+            "type": "plot",
+          },
+          {
+            "text": "For our paid customers the AVG GMV per customer is actually growing.",
+            "type": "body",
+          },
+          {
+            "text": "We learned that our core customers (customers who have purchased 5 or more products) are dropping in conversion rate and paid orders are dropping also, so let's combine them.",
+            "type": "body",
+          },
+        ],
+        "takeaway": {
+          "title": "Our Paid customers are significantly more affected than our free customers",
+        },
+        "title": "Purchase behavior, Free vs Paid Purchases",
+      },
+      {
+        "approach": "Lets break down the conversion rate by both paid and purchase occurrence",
+        "content": [
+          {
+            "dataset": "purchase_retention",
+            "group_slug": "month_and_occurrence_range_1",
+            "plot_options": {
+              "layout": {
+                "title": {
+                  "text": "Conversion Rate Over Time",
+                },
+                "xaxis": {
+                  "title": {
+                    "text": "Purchase Month",
+                  },
+                },
+                "yaxis": {
+                  "tickformat": "%",
+                  "title": {
+                    "text": "Conversion Rate to Next Purchase",
+                  },
+                },
+              },
+              "metric_label": "Conversion Rate To Purchased Product",
+              "metric_title": "",
+              "type": "line",
+            },
+            "type": "plot",
+          },
+          {
+            "text": "We can see a similar pattern that we saw earlier with conversion rate to next purchase over time but notice it is consistently affecting paid customers more intensely.",
+            "type": "body",
+          },
+          {
+            "dataset": "purchase_retention",
+            "group_slug": "month_and_occurrence_range_1",
+            "plot_options": {
+              "hidden_traces": [
+                "2-5 - Free",
+                "1 - Free",
+                "2-5 - Paid",
+                "1 - Paid",
+              ],
+              "layout": {
+                "title": {
+                  "text": "Conversion Rate Over Time",
+                },
+                "xaxis": {
+                  "title": {
+                    "text": "Purchase Month",
+                  },
+                },
+                "yaxis": {
+                  "tickformat": "%",
+                  "title": {
+                    "text": "Conversion Rate to Next Purchase",
+                  },
+                },
+              },
+              "metric_label": "Conversion Rate To Purchased Product",
+              "metric_title": "",
+              "type": "line",
+            },
+            "type": "plot",
+          },
+          {
+            "text": "1. We can see that most of our paid customers are becoming less likely to purchase, but most importantly the core customer group of > 5 paid purchases drops off too.",
+            "type": "body",
+          },
+          {
+            "text": "2. This decline seems to be accelerating starting in April 2019",
+            "type": "body",
+          },
+          {
+            "dataset": "purchase_retention",
+            "group_slug": "month_and_occurrence_range_1",
+            "plot_options": {
+              "hidden_traces": [
+                "2-5 - Free",
+                "1 - Free",
+                ">5 - Free",
+              ],
+              "layout": {
+                "title": {
+                  "text": "GMV over time by occurrence range and is free or paid",
+                },
+                "xaxis": {
+                  "title": {
+                    "text": "Purchase Month",
+                  },
+                },
+                "yaxis": {
+                  "tickformat": "$,s",
+                  "title": {
+                    "text": "GMV",
+                  },
+                },
+              },
+              "metric_label": "Gmv",
+              "metric_title": "",
+              "type": "line",
+            },
+            "type": "plot",
+          },
+          {
+            "text": "This is bad because most our money comes from the > 5 paid group",
+            "type": "body",
+          },
+        ],
+        "takeaway": {
+          "title": "Our core group of >5 purchases, paid is declining in its purchases.",
+        },
+        "title": "How is core group of paid, frequent purchasers converting?",
+      },
+      {
+        "approach": "Let's see the overall impact to conversion rate.",
+        "content": [
+          {
+            "dataset": "purchase_retention",
+            "group_slug": "monthly_trend_2",
+            "plot_options": {
+              "layout": {
+                "title": {
+                  "text": "Conversion Rate to Another Purchase (Before and After April)",
+                },
+                "xaxis": {
+                  "title": {
+                    "text": "Cohort",
+                  },
+                },
+                "yaxis": {
+                  "title": {
+                    "text": "Conversion Rate",
+                    "tickformat": "%",
+                  },
+                },
+              },
+              "metric_label": "Conversion Rate To Purchased Product",
+              "metric_title": "",
+              "type": "line",
+            },
+            "type": "plot",
+          },
+        ],
+        "takeaway": {
+          "title": "After April we had an 18% drop in conversion rate.",
+        },
+        "title": "Impact of April's Recent Change on or Core >5 Purchases Customers",
+      },
+    ],
+  },
+}
+`;

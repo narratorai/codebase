@@ -1,0 +1,10 @@
+table:
+  name: narrative_integrations
+  schema: public
+object_relationships:
+  - name: company_task
+    using:
+      foreign_key_constraint_on: task_id
+  - name: narrative
+    using:
+      foreign_key_constraint_on: narrative_id

@@ -1,0 +1,44 @@
+query GetDataset($id: uuid!) {
+  dataset_by_pk(id: $id) {
+    name
+    description
+    status
+    slug
+    locked
+    company_category {
+      category
+    }
+    user {
+      id
+      role
+      email
+    }
+    materializations {
+      id
+      type
+      company_task {
+        id
+        task_slug
+        schedule
+        description
+      }
+      label
+      column_id
+      group_slug
+      sheet_key
+      days_to_resync
+    }
+    dependent_narratives(where:{narrative: {state: {_neq: archived}}}) {
+      narrative {
+        id
+        name
+        created_by
+        task_id
+        template_id
+        user {
+          email
+        }
+      }
+    }
+  }
+}

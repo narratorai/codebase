@@ -1,0 +1,13 @@
+query GetChats($ids: [uuid!]!) {
+  chats: chat(where: { id: { _in: $ids } }) {
+    id
+    table_id
+    summary
+    detailed_summary
+    created_by
+    created_at
+    tags {
+      tag_id
+    }
+  }
+}

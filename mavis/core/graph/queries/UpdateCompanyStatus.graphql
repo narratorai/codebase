@@ -1,0 +1,11 @@
+mutation UpdateCompanyStatus(
+  $company_id: uuid!
+  $status: company_status_enum!
+) {
+    update_company(
+        where: {id: {_eq: $company_id}},
+        _set: {status: $status}
+    ) {
+        affected_rows
+    }
+}

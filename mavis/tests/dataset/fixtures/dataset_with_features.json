@@ -1,0 +1,710 @@
+{
+  "fields": {},
+  "query": {
+    "activities": [
+      {
+        "id": "areceived_email_e72cb168",
+        "name": "Received Email",
+        "slug": [
+          "received_email"
+        ],
+        "activity_ids": [
+          "145ef9d5-3d8c-4728-904d-c39f0fa5e69a"
+        ],
+        "did": true,
+        "occurrence": "all",
+        "occurrence_value": null,
+        "force_recompute_occurrence": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "limiting",
+        "ii": 0
+      },
+      {
+        "id": "astarted_marketing_session_26150898",
+        "name": "Started Marketing Session",
+        "slug": [
+          "started_marketing_session"
+        ],
+        "activity_ids": [
+          "1a0a177e-cda2-4200-8d25-f19c901deb4f"
+        ],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "force_recompute_occurrence": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "before"
+          },
+          {
+            "slug": "within_time",
+            "relationship_time": "day",
+            "relationship_time_value": 30
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "last_before",
+        "ii": 1
+      },
+      {
+        "id": "acompany_started_subscription_44ca1b20",
+        "name": "Company Started Subscription",
+        "slug": [
+          "company_started_subscription"
+        ],
+        "activity_ids": [
+          "6b2d8e82-f26a-47a7-97a2-4c457e4e54e3"
+        ],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "force_recompute_occurrence": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_ever",
+        "ii": 2
+      },
+      {
+        "id": "aviewed_dashboard_9ec9003e",
+        "name": "Viewed Dashboard",
+        "slug": [
+          "viewed_dashboard"
+        ],
+        "activity_ids": [
+          "f277203a-5f1d-4da3-be10-1758356cb661"
+        ],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "force_recompute_occurrence": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "within_cohort"
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_in_between",
+        "ii": 3
+      }
+    ],
+    "columns": [
+      {
+        "id": "aactivity_id_2329e939",
+        "name": "activity_id",
+        "label": "Activity Id",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "areceived_email_e72cb168",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ats_4c918714",
+        "name": "ts",
+        "label": "Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "areceived_email_e72cb168",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "acustomer_e38522f2",
+        "name": "customer",
+        "label": "Customer",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "areceived_email_e72cb168",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ajoin_customer_53e93dbd",
+        "name": "join_customer",
+        "label": "Unique Identifier",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "areceived_email_e72cb168",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "afeature_1_9ba62772",
+        "name": "feature_1",
+        "label": "Tag",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "areceived_email_e72cb168",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "afeature_2_e27542a3",
+        "name": "feature_2",
+        "label": "Subject",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "areceived_email_e72cb168",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "afeature_3_3cbb08e8",
+        "name": "feature_3",
+        "label": "Body",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "areceived_email_e72cb168",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "alink_ecd9f3c9",
+        "name": "link",
+        "label": "Link",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "areceived_email_e72cb168",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "aactivity_occurrence_c57e25fd",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "group_func": null,
+        "type": "number",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "areceived_email_e72cb168",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ats_b96b8a6c",
+        "name": "ts",
+        "label": "Last Before Started Marketing Sessions Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "astarted_marketing_session_26150898",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "adid_started_marketing_session_2fe82fb8",
+        "name": null,
+        "label": "Did Started Marketing Session Before",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ats_b96b8a6c)",
+          "activity_kind": "append",
+          "activity_id": "astarted_marketing_session_26150898",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "aday_started_marketing_session_85a7fff8",
+        "name": null,
+        "label": "Days From Started Marketing Session",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', ats_b96b8a6c, join_ts.local)",
+          "activity_kind": "append",
+          "activity_id": "astarted_marketing_session_26150898",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "aad_source_d0d8d317",
+        "name": "ad_source",
+        "label": "Last Before Ad Source",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "astarted_marketing_session_26150898",
+          "enrichment_table": {
+            "schema": "dw_internal",
+            "table": "enriched_pages",
+            "join_key": "enriched_activity_id",
+            "join_key_type": "string"
+          },
+          "enrichment_table_column": "activity_id",
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "adevice_253a3387",
+        "name": "device",
+        "label": "Last Before Device",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "astarted_marketing_session_26150898",
+          "enrichment_table": {
+            "schema": "dw_internal",
+            "table": "enriched_pages",
+            "join_key": "enriched_activity_id",
+            "join_key_type": "string"
+          },
+          "enrichment_table_column": "activity_id",
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "aenriched_activity_id_00586918",
+        "name": "enriched_activity_id",
+        "label": "Last Before Started Marketing Sessions Enriched Activity Id",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "astarted_marketing_session_26150898",
+          "enrichment_table": {
+            "schema": "dw_internal",
+            "table": "enriched_pages",
+            "join_key": "enriched_activity_id",
+            "join_key_type": "string"
+          },
+          "enrichment_table_column": "activity_id",
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "aenriched_ts_6715bb63",
+        "name": "enriched_ts",
+        "label": "Last Before Started Marketing Sessions Enriched Ts",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "astarted_marketing_session_26150898",
+          "enrichment_table": {
+            "schema": "dw_internal",
+            "table": "enriched_pages",
+            "join_key": "enriched_activity_id",
+            "join_key_type": "string"
+          },
+          "enrichment_table_column": "activity_id",
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "afbclid_fc3cb447",
+        "name": "fbclid",
+        "label": "Last Before Fbclid",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "astarted_marketing_session_26150898",
+          "enrichment_table": {
+            "schema": "dw_internal",
+            "table": "enriched_pages",
+            "join_key": "enriched_activity_id",
+            "join_key_type": "string"
+          },
+          "enrichment_table_column": "activity_id",
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "aip_address_ca7d9191",
+        "name": "ip_address",
+        "label": "Last Before Ip Address",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "astarted_marketing_session_26150898",
+          "enrichment_table": {
+            "schema": "dw_internal",
+            "table": "enriched_pages",
+            "join_key": "enriched_activity_id",
+            "join_key_type": "string"
+          },
+          "enrichment_table_column": "activity_id",
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ats_1ec9ea40",
+        "name": "ts",
+        "label": "First Ever Company Started Subscriptions Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "acompany_started_subscription_44ca1b20",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "adid_company_started_subscripti_04982d37",
+        "name": null,
+        "label": "Did Company Started Subscription Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ats_1ec9ea40)",
+          "activity_kind": "append",
+          "activity_id": "acompany_started_subscription_44ca1b20",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "aday_company_started_subscripti_8fd6feae",
+        "name": null,
+        "label": "Days From Company Started Subscription",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', ats_1ec9ea40, join_ts.local)",
+          "activity_kind": "append",
+          "activity_id": "acompany_started_subscription_44ca1b20",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "alink_b7e55a2c",
+        "name": "link",
+        "label": "First Ever Company Started Subscriptions Link",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "acompany_started_subscription_44ca1b20",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ats_0d877d50",
+        "name": "ts",
+        "label": "First In Between Viewed Dashboards Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "aviewed_dashboard_9ec9003e",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "adid_viewed_dashboard_7c00d3de",
+        "name": null,
+        "label": "Did Viewed Dashboard Between",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ats_0d877d50)",
+          "activity_kind": "append",
+          "activity_id": "aviewed_dashboard_9ec9003e",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "aday_viewed_dashboard_f17caa94",
+        "name": null,
+        "label": "Days To Viewed Dashboard",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, ats_0d877d50)",
+          "activity_kind": "append",
+          "activity_id": "aviewed_dashboard_9ec9003e",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "afeature_company_slug_51c5c87b",
+        "name": "feature_company_slug",
+        "label": "First In Between Company Slug",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "aviewed_dashboard_9ec9003e",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "afeature_slug_efceef5c",
+        "name": "feature_slug",
+        "label": "First In Between Slug",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "aviewed_dashboard_9ec9003e",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "slowly_changing_ts_column": null,
+          "applied_function": null
+        }
+      }
+    ],
+    "all_groups": [],
+    "order": [
+      {
+        "column_id": "ats_4c918714",
+        "order_direction": "desc"
+      }
+    ],
+    "activity_stream": "activity_stream",
+    "swapped_ids": [],
+    "columns_order": {
+      "parent": {
+        "order": [
+          "aactivity_id_2329e939",
+          "ats_4c918714",
+          "acustomer_e38522f2",
+          "ajoin_customer_53e93dbd",
+          "afeature_1_9ba62772",
+          "afeature_2_e27542a3",
+          "afeature_3_3cbb08e8",
+          "alink_ecd9f3c9",
+          "aactivity_occurrence_c57e25fd",
+          "ats_b96b8a6c",
+          "adid_started_marketing_session_2fe82fb8",
+          "aday_started_marketing_session_85a7fff8",
+          "aad_source_d0d8d317",
+          "adevice_253a3387",
+          "aenriched_activity_id_00586918",
+          "aenriched_ts_6715bb63",
+          "afbclid_fc3cb447",
+          "aip_address_ca7d9191",
+          "ats_1ec9ea40",
+          "adid_company_started_subscripti_04982d37",
+          "aday_company_started_subscripti_8fd6feae",
+          "alink_b7e55a2c",
+          "ats_0d877d50",
+          "adid_viewed_dashboard_7c00d3de",
+          "aday_viewed_dashboard_f17caa94",
+          "afeature_company_slug_51c5c87b",
+          "afeature_slug_efceef5c"
+        ],
+        "left_pinned": [],
+        "right_pinned": []
+      }
+    },
+    "story": {
+      "content": []
+    }
+  }
+}

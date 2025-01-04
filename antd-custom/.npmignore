@@ -1,0 +1,6 @@
+~*
+dist/report.html
+/example
+/test
+.vscode
+.github

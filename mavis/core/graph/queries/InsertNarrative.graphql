@@ -1,0 +1,42 @@
+mutation InsertNarrative(
+    $company_id: uuid!
+    $state: status_enum!
+    $task_id: uuid
+    $slug: String!
+    $name: String!
+    $description: String
+    $template_id: uuid
+    $category_id: uuid
+    $created_by: uuid!
+    $updated_by: uuid!
+    $requested_by: uuid
+    $type: narrative_types_enum
+    $metric_id: uuid
+) {
+    insert_narrative_one(
+        object: {
+            company_id: $company_id
+            category_id: $category_id
+            created_by: $created_by
+            updated_by: $updated_by
+            requested_by: $requested_by
+            description: $description
+            template_id: $template_id
+            name: $name
+            slug: $slug
+            state: $state
+            task_id: $task_id
+            type: $type
+            metric_id: $metric_id
+        }
+        on_conflict: {
+            constraint: narrative_company_id_slug_key
+            update_columns: [created_by, description, name, category_id, state, task_id, updated_by, requested_by, type]
+        }
+    ) {
+        id
+        narrative_datasets {
+        dataset_id
+        }
+    }
+}

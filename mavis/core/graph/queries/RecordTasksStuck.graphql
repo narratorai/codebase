@@ -1,0 +1,12 @@
+mutation RecordTasksStuck($before: timestamptz!) {
+  update: update_task_execution(
+      where: {status: {_nin: [complete, failed, cancelled]}, created_at: {_lt: $before}},
+      _set: {status: cancelled, completed_at: "now()"},
+      _append: { details: { stuck: true } }
+  ){
+    affected_rows
+    returning {
+      id
+    }
+  }
+}

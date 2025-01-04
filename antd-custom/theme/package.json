@@ -1,0 +1,7 @@
+{
+  "name": "@narratorai/theme",
+  "author": "Narrator AI Engineering <engineering@narrator.ai>",
+  "version": "1.2.0",
+  "license": "UNLICENSED",
+  "main": "theme.js"
+}

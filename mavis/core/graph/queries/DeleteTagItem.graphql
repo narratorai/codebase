@@ -1,0 +1,7 @@
+mutation DeleteTagItem($related_id: uuid!, $related_to: tag_relations_enum!, $tag_id: uuid!) {
+  delete_tag(where: { related_id: { _eq: $related_id }, related_to: { _eq: $related_to }, tag_id: { _eq: $tag_id } }) {
+    returning {
+      id
+    }
+  }
+}

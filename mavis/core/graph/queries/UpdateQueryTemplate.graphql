@@ -1,0 +1,23 @@
+mutation UpdateQueryTemplate(
+  $id: uuid!
+  $sql_query: String!
+  $data_source: String!
+  $updated_by: uuid!
+  $schema_names: String!
+  $transformation_kind: transformation_kinds_enum!
+  $transformation_update_type: transformation_update_types_enum!
+) {
+  update_query_template_by_pk(
+    pk_columns: { id: $id }
+    _set: {
+      data_source: $data_source
+      query: $sql_query
+      schema_names: $schema_names
+      transformation_kind: $transformation_kind
+      transformation_update_type: $transformation_update_type
+      updated_by: $updated_by
+    }
+  ) {
+    id
+  }
+}

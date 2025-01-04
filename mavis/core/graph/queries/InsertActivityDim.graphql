@@ -1,0 +1,21 @@
+mutation InsertActivityDim(
+  $activity_id: uuid!
+  $dim_table_id: uuid!
+  $activity_join_column: String
+  $slowly_changing_ts_column: String
+) {
+  insert_activity_dim_one(
+    object: {
+      activity_id: $activity_id
+      dim_table_id: $dim_table_id
+      activity_join_column: $activity_join_column
+      slowly_changing_ts_column: $slowly_changing_ts_column
+    }
+    on_conflict: {
+      constraint: activity_dim_activity_id_dim_table_id_key
+      update_columns: [activity_join_column, slowly_changing_ts_column]
+    }
+  ) {
+      id
+  }
+}

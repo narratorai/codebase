@@ -1,0 +1,24 @@
+mutation CreateNarrative(
+  $company_id: uuid!
+  $name: String!
+  $slug: String!
+  $narrative_description: String
+  $created_by: uuid!
+  $category_id: uuid
+) {
+  insert_narrative(
+    objects: {
+      company_id: $company_id
+      name: $name
+      description: $narrative_description
+      created_by: $created_by
+      slug: $slug
+      category_id: $category_id
+    }
+  ) {
+    returning {
+      id
+      slug
+    }
+  }
+}

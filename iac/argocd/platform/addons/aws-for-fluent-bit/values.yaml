@@ -1,0 +1,8 @@
+serviceAccount:
+  create: true
+  name: prod-aws-for-fluent-bit-sa-irsa
+
+cloudWatchLogs:
+  enabled: true
+  region: us-east-1
+  logGroupName: prod-k8s

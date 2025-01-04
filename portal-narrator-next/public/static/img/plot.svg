@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="47px" height="40px" viewBox="0 0 47 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon - Plot</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M36.7195776,7.48546366 L29.2985793,8.39664768 L28.6892326,3.43391692 L44.5075645,1.49166998 L46.3663158,16.6299841 L41.403585,17.2393308 L40.5942107,10.6475057 L28.2261204,26.4779394 L19.5911123,19.2775765 L10.4162094,31.0849578 L6.46805258,28.0170501 L18.8184443,12.1230635 L27.4639248,19.3321589 L36.7195776,7.48546366 Z M5.5,34.5 L41.5,34.5 L41.5,39.5 L0.5,39.5 L0.5,0.5 L5.5,0.5 L5.5,34.5 Z" id="path-plot"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon-/-Plot" transform="translate(-7.000000, -10.000000)">
+            <g id="Icon-Color">
+                <g transform="translate(7.000000, 10.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-plot"></use>
+                    </mask>
+                    <use id="Icon---Plot" fill="#242424" fill-rule="nonzero" xlink:href="#path-plot"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

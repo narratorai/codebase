@@ -1,0 +1,30 @@
+{
+  "client_id": "Flavortown",
+  "audience": "https://##AUTH0_TENANT_NAME##/api/v2/",
+  "scope": [
+    "read:users",
+    "update:users",
+    "create:users",
+    "read:users_app_metadata",
+    "update:users_app_metadata",
+    "create:users_app_metadata",
+    "read:roles",
+    "read:organizations",
+    "update:organizations",
+    "create:organizations",
+    "delete:organizations",
+    "create:organization_members",
+    "read:organization_members",
+    "delete:organization_members",
+    "create:organization_connections",
+    "read:organization_connections",
+    "update:organization_connections",
+    "delete:organization_connections",
+    "create:organization_member_roles",
+    "read:organization_member_roles",
+    "delete:organization_member_roles",
+    "create:organization_invitations",
+    "read:organization_invitations",
+    "delete:organization_invitations"
+  ]
+}

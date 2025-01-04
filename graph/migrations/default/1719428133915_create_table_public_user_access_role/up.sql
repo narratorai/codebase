@@ -1,0 +1,2 @@
+CREATE TABLE "public"."user_access_role" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "created_at" timestamptz NOT NULL DEFAULT now(), "user_id" uuid NOT NULL, "role" text NOT NULL, PRIMARY KEY ("id") , FOREIGN KEY ("role") REFERENCES "public"."access_role"("value") ON UPDATE cascade ON DELETE cascade, FOREIGN KEY ("user_id") REFERENCES "public"."user"("id") ON UPDATE cascade ON DELETE cascade, UNIQUE ("user_id", "role"));
+CREATE EXTENSION IF NOT EXISTS pgcrypto;

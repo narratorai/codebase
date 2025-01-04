@@ -1,0 +1,3 @@
+{
+  "app": "npx ts-node bin/auth-infra.ts"
+}

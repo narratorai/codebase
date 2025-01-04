@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+    <g fill="none" fill-rule="evenodd">
+        <use fill="#000" fill-rule="nonzero" xlink:href="#a"/>
+        <g fill="#666768">
+            <path d="M8.583 7.826L12 11.243l-.757.757-3.417-3.417a4.818 4.818 0 1 1 .757-.757zm-3.765.74a3.748 3.748 0 1 0 0-7.495 3.748 3.748 0 0 0 0 7.495z"/>
+        </g>
+    </g>
+</svg>

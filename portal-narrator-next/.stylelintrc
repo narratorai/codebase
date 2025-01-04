@@ -1,0 +1,15 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-recommended"],
+  "customSyntax": "postcss-styled-syntax",
+  "rules": {
+    "annotation-no-unknown": true,
+    "declaration-property-value-no-unknown": true,
+    "function-name-case": "lower",
+    "function-no-unknown": true,
+    "no-empty-source": true,
+    "property-no-vendor-prefix": true,
+    "value-keyword-case": "lower",
+    "value-no-vendor-prefix": true,
+    "media-query-no-invalid": null
+  }
+}

@@ -1,0 +1,37 @@
+# Introspect graph as a ADMIN (internal only!) and output types and a schema
+# This generates the schema that is published with the package
+
+overwrite: true
+schema:
+  'http://localhost:8080/v1/graphql':
+    headers:
+      'x-hasura-role': 'admin'
+
+config:
+  typesPrefix: 'I'
+  scalars:
+    DateTime: Date
+    JSON: '{ [key: string]: any }'
+  immutableTypes: true
+  useTypeImports: true
+  dedupeFragments: true
+  exportFragmentSpreadSubTypes: true
+  # NOTE: do not do this in the project config, we can only flatten when generating types from graph introspection
+  flattenGeneratedTypes: true
+
+generates:
+  generated/admin/schema.graphql:
+    plugins:
+      - 'schema-ast'
+
+  generated/admin/graphql.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-resolvers'
+
+  generated/admin/graphql.schema.json:
+    plugins:
+      - 'introspection'
+    config:
+      minify: true

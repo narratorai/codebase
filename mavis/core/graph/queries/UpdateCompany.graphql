@@ -1,0 +1,38 @@
+ mutation UpdateCompany(
+        $id: uuid!
+        $name: String
+        $cache_minutes: Int
+        $materialize_schema: String
+        $warehouse_schema: String
+        $timezone: String
+        $website: String
+        $start_data_on: date
+        $warehouse_default_schemas: String
+        $currency_used: String
+        $dataset_row_threshold: Int
+        $dataset_default_filter_days: Int
+        $use_time_boundary: Boolean
+        $week_day_offset: Int
+    ) {
+        update_company_by_pk(
+            pk_columns: { id: $id }
+            _set: {
+                name: $name
+                cache_minutes: $cache_minutes
+                materialize_schema: $materialize_schema
+                production_schema: $warehouse_schema
+                timezone: $timezone
+                website: $website
+                start_data_on: $start_data_on
+                warehouse_default_schemas: $warehouse_default_schemas
+                use_time_boundary: $use_time_boundary
+                currency_used: $currency_used
+                dataset_row_threshold: $dataset_row_threshold
+                dataset_default_filter_days: $dataset_default_filter_days
+                week_day_offset: $week_day_offset
+                updated_at: "now()"
+            }
+        ) {
+            id
+        }
+    }

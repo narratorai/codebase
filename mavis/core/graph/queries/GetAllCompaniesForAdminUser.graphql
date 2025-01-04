@@ -1,0 +1,15 @@
+query GetAllCompaniesForAdminUser($user_id: uuid!) {
+  company_user(where: { user_id: { _eq: $user_id }, role: { _eq: admin } }) {
+    id
+    user_id
+    company_id
+    company {
+      name
+    }
+    phone
+    user {
+      email
+    }
+    first_name
+  }
+}

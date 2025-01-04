@@ -1,0 +1,1109 @@
+{
+  "schema": {
+    "title": "Transformation Context",
+    "description": "A way to create/edit a Transformation",
+    "type": "object",
+    "properties": {
+      "slug": {
+        "enum": [
+          "added_ticket_comment",
+          "dataset_actions",
+          "page_view_actions",
+          "save_narrative",
+          "started_portal_session",
+          "submitted_new_ticket",
+          "support_tag_added",
+          "updated_zendesk",
+          "viewed_marketing_page",
+          "viewed_portal_page"
+        ],
+        "enumNames": [
+          "Added Ticket Comment",
+          "Dataset Actions",
+          "Page View Actions",
+          "Save Narrative",
+          "Started Portal Session",
+          "Submitted New Ticket",
+          "Support Tag Added",
+          "Updated Zendesk",
+          "Viewed Marketing Page",
+          "Viewed Portal Page"
+        ],
+        "type": "string",
+        "title": "Load the Transformation"
+      },
+      "name": {
+        "type": "string",
+        "title": "Transformation Name"
+      },
+      "notes": {
+        "type": "string",
+        "title": "Notes"
+      },
+      "update_config": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "stream",
+              "enrichment",
+              "customer_attribute"
+            ],
+            "enumNames": [
+              "Stream",
+              "Enrichment",
+              "Customer Attribute"
+            ],
+            "type": "string",
+            "title": "Kind"
+          },
+          "table": {
+            "type": "string",
+            "examples": [
+              "activity_stream"
+            ],
+            "title": "Table"
+          }
+        },
+        "title": "Processing Configuration",
+        "dependencies": {
+          "kind": {
+            "oneOf": [
+              {
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "customer_attribute"
+                    ]
+                  },
+                  "update_type": {
+                    "enum": [
+                      "materialized_view"
+                    ],
+                    "enumNames": [
+                      "Materialized View"
+                    ],
+                    "type": "string",
+                    "title": "Update Type",
+                    "description": "How do you want to updated the table?"
+                  }
+                },
+                "required": []
+              },
+              {
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "enrichment"
+                    ]
+                  },
+                  "update_type": {
+                    "enum": [
+                      "regular",
+                      "mutable",
+                      "single_run"
+                    ],
+                    "enumNames": [
+                      "Regular",
+                      "Mutable",
+                      "Single Run"
+                    ],
+                    "type": "string",
+                    "title": "Update Type",
+                    "description": "How do you want to updated the table?"
+                  },
+                  "enriched_activities": {
+                    "type": "array",
+                    "items": {
+                      "enum": [],
+                      "enumNames": [],
+                      "type": "string"
+                    },
+                    "uniqueItems": true,
+                    "title": "activity"
+                  },
+                  "advanced_config": {
+                    "type": "boolean",
+                    "title": " Advanced Editing"
+                  }
+                },
+                "required": [],
+                "dependencies": {
+                  "advanced_config": {
+                    "oneOf": [
+                      {
+                        "properties": {
+                          "advanced_config": {
+                            "enum": [
+                              false
+                            ]
+                          }
+                        },
+                        "required": []
+                      },
+                      {
+                        "properties": {
+                          "advanced_config": {
+                            "enum": [
+                              true
+                            ]
+                          },
+                          "has_source": {
+                            "type": "boolean",
+                            "default": false,
+                            "title": "Requires Identity Resolution"
+                          },
+                          "is_aliasing": {
+                            "type": "boolean",
+                            "title": "Is Aliasing"
+                          },
+                          "do_not_delete_on_resync": {
+                            "type": "boolean",
+                            "title": "Do NOT delete old data when resyncing"
+                          },
+                          "delete_window": {
+                            "type": "number",
+                            "title": "Delete the last ___ days on every insert"
+                          },
+                          "mutable_time_window": {
+                            "type": "number",
+                            "title": "Diff the data from the last ___ days with every update"
+                          },
+                          "depends_on": {
+                            "type": "array",
+                            "items": {
+                              "enum": [
+                                "added_ticket_comment",
+                                "dataset_actions",
+                                "page_view_actions",
+                                "save_narrative",
+                                "started_portal_session",
+                                "submitted_new_ticket",
+                                "support_tag_added",
+                                "updated_zendesk",
+                                "viewed_marketing_page",
+                                "viewed_portal_page"
+                              ],
+                              "enumNames": [
+                                "Added Ticket Comment",
+                                "Dataset Actions",
+                                "Page View Actions",
+                                "Save Narrative",
+                                "Started Portal Session",
+                                "Submitted New Ticket",
+                                "Support Tag Added",
+                                "Updated Zendesk",
+                                "Viewed Marketing Page",
+                                "Viewed Portal Page"
+                              ],
+                              "type": "string"
+                            },
+                            "uniqueItems": true,
+                            "title": "Depends on",
+                            "description": "If any of these scripts are resynced, this transform will also resync"
+                          },
+                          "run_after": {
+                            "type": "array",
+                            "items": {
+                              "enum": [
+                                "added_ticket_comment",
+                                "dataset_actions",
+                                "page_view_actions",
+                                "save_narrative",
+                                "started_portal_session",
+                                "submitted_new_ticket",
+                                "support_tag_added",
+                                "updated_zendesk",
+                                "viewed_marketing_page",
+                                "viewed_portal_page"
+                              ],
+                              "enumNames": [
+                                "Added Ticket Comment",
+                                "Dataset Actions",
+                                "Page View Actions",
+                                "Save Narrative",
+                                "Started Portal Session",
+                                "Submitted New Ticket",
+                                "Support Tag Added",
+                                "Updated Zendesk",
+                                "Viewed Marketing Page",
+                                "Viewed Portal Page"
+                              ],
+                              "type": "string"
+                            },
+                            "uniqueItems": true,
+                            "title": "Run After",
+                            "description": "This transform will sync the data after all these scripts"
+                          },
+                          "start_data_after": {
+                            "type": "string",
+                            "format": "date",
+                            "title": "Only Insert Data After"
+                          },
+                          "max_days_to_insert": {
+                            "type": "number",
+                            "title": "Max Days to Insert",
+                            "description": "This will not check to see how much data can it insert and simply insert using this increment (very useful for very slow queries that cannot complete)"
+                          }
+                        },
+                        "required": []
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "stream"
+                    ]
+                  },
+                  "update_type": {
+                    "enum": [
+                      "regular",
+                      "mutable",
+                      "single_run"
+                    ],
+                    "enumNames": [
+                      "Regular",
+                      "Mutable",
+                      "Single Run"
+                    ],
+                    "type": "string",
+                    "title": "Update Type",
+                    "description": "How do you want to updated the table?"
+                  },
+                  "activities": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "examples": []
+                    },
+                    "uniqueItems": true,
+                    "title": "Activities Generated by this Transformation",
+                    "description": "Do not edit these activities, just add new ones if the script missed something"
+                  },
+                  "advanced_config": {
+                    "type": "boolean",
+                    "title": " Advanced Editing",
+                    "description": "DO NOT EDIT Unless you know what your doing"
+                  }
+                },
+                "required": [],
+                "dependencies": {
+                  "advanced_config": {
+                    "oneOf": [
+                      {
+                        "properties": {
+                          "advanced_config": {
+                            "enum": [
+                              false
+                            ]
+                          }
+                        },
+                        "required": []
+                      },
+                      {
+                        "properties": {
+                          "advanced_config": {
+                            "enum": [
+                              true
+                            ]
+                          },
+                          "has_source": {
+                            "type": "boolean",
+                            "default": false,
+                            "title": "Requires Identity Resolution"
+                          },
+                          "is_aliasing": {
+                            "type": "boolean",
+                            "title": "Is Aliasing"
+                          },
+                          "do_not_delete_on_resync": {
+                            "type": "boolean",
+                            "title": "Do NOT delete old data when resyncing"
+                          },
+                          "delete_window": {
+                            "type": "number",
+                            "title": "Delete the last ___ days on every insert"
+                          },
+                          "mutable_time_window": {
+                            "type": "number",
+                            "title": "Diff the data from the last ___ days with every update"
+                          },
+                          "depends_on": {
+                            "type": "array",
+                            "items": {
+                              "enum": [
+                                "added_ticket_comment",
+                                "dataset_actions",
+                                "page_view_actions",
+                                "save_narrative",
+                                "started_portal_session",
+                                "submitted_new_ticket",
+                                "support_tag_added",
+                                "updated_zendesk",
+                                "viewed_marketing_page",
+                                "viewed_portal_page"
+                              ],
+                              "enumNames": [
+                                "Added Ticket Comment",
+                                "Dataset Actions",
+                                "Page View Actions",
+                                "Save Narrative",
+                                "Started Portal Session",
+                                "Submitted New Ticket",
+                                "Support Tag Added",
+                                "Updated Zendesk",
+                                "Viewed Marketing Page",
+                                "Viewed Portal Page"
+                              ],
+                              "type": "string"
+                            },
+                            "uniqueItems": true,
+                            "title": "Depends on",
+                            "description": "If any of these scripts are resynced, this transform will also resync"
+                          },
+                          "run_after": {
+                            "type": "array",
+                            "items": {
+                              "enum": [
+                                "added_ticket_comment",
+                                "dataset_actions",
+                                "page_view_actions",
+                                "save_narrative",
+                                "started_portal_session",
+                                "submitted_new_ticket",
+                                "support_tag_added",
+                                "updated_zendesk",
+                                "viewed_marketing_page",
+                                "viewed_portal_page"
+                              ],
+                              "enumNames": [
+                                "Added Ticket Comment",
+                                "Dataset Actions",
+                                "Page View Actions",
+                                "Save Narrative",
+                                "Started Portal Session",
+                                "Submitted New Ticket",
+                                "Support Tag Added",
+                                "Updated Zendesk",
+                                "Viewed Marketing Page",
+                                "Viewed Portal Page"
+                              ],
+                              "type": "string"
+                            },
+                            "uniqueItems": true,
+                            "title": "Run After",
+                            "description": "This transform will sync the data after all these scripts"
+                          },
+                          "start_data_after": {
+                            "type": "string",
+                            "format": "date",
+                            "title": "Only Insert Data After"
+                          },
+                          "max_days_to_insert": {
+                            "type": "number",
+                            "title": "Max Days to Insert",
+                            "description": "This will not check to see how much data can it insert and simply insert using this increment (very useful for very slow queries that cannot complete)"
+                          }
+                        },
+                        "required": []
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "show_columns": {
+        "type": "boolean",
+        "deafult": false,
+        "title": "Show Default Columns"
+      },
+      "current_script": {
+        "type": "object",
+        "properties": {
+          "copy_from": {
+            "enum": [
+              "added_ticket_comment",
+              "dataset_actions",
+              "page_view_actions",
+              "save_narrative",
+              "started_portal_session",
+              "submitted_new_ticket",
+              "support_tag_added",
+              "updated_zendesk",
+              "viewed_marketing_page",
+              "viewed_portal_page"
+            ],
+            "enumNames": [
+              "Added Ticket Comment",
+              "Dataset Actions",
+              "Page View Actions",
+              "Save Narrative",
+              "Started Portal Session",
+              "Submitted New Ticket",
+              "Support Tag Added",
+              "Updated Zendesk",
+              "Viewed Marketing Page",
+              "Viewed Portal Page"
+            ],
+            "type": "string",
+            "title": "Copy Query from Script",
+            "description": "THE SQL MUST BE EMPTY FOR THIS TO RUN!"
+          },
+          "sql": {
+            "type": "string",
+            "title": "Query"
+          },
+          "last_edited_at": {
+            "type": "string",
+            "default": "2020-04-01T18:56:27.064447",
+            "title": "Last Edited At"
+          },
+          "last_edited_by": {
+            "type": "string",
+            "title": "Last Edited By"
+          }
+        },
+        "title": "Current Script",
+        "description": "THIS IS NOT THE TRANSFORMATION THAT IS RUNNIN IN PRODUCTION. (Scroll to the botom to see the production version)"
+      },
+      "deploying": {
+        "type": "object",
+        "properties": {
+          "validate_query": {
+            "type": "boolean",
+            "title": " Validate Query"
+          },
+          "validation_status": {
+            "enum": [
+              "Not Run",
+              "FAIL",
+              "PASS"
+            ],
+            "enumNames": [
+              "Not Run",
+              "FAIL",
+              "PASS"
+            ],
+            "type": "string",
+            "default": "Not Run",
+            "title": "Validation Results"
+          },
+          "content": {
+            "type": "string",
+            "title": "Process Results"
+          }
+        },
+        "title": "Deploying",
+        "dependencies": {
+          "validation_status": {
+            "oneOf": [
+              {
+                "properties": {
+                  "validation_status": {
+                    "enum": [
+                      "FAIL",
+                      "Not Run"
+                    ]
+                  }
+                },
+                "required": []
+              },
+              {
+                "properties": {
+                  "validation_status": {
+                    "enum": [
+                      "PASS"
+                    ]
+                  },
+                  "push_to_prod": {
+                    "type": "boolean",
+                    "title": "Push To Production"
+                  }
+                },
+                "required": []
+              }
+            ]
+          }
+        }
+      },
+      "all_tests": {
+        "type": "object",
+        "properties": {
+          "validate_data_from": {
+            "type": "string",
+            "format": "date",
+            "default": "2020-01-01T00:00:00",
+            "title": "Validate data from"
+          },
+          "run_tests": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "check_activities",
+                "check_id_duplication",
+                "check_missing_columns",
+                "check_null_columns",
+                "get_stream_context",
+                "check_decimation",
+                "update_column_names",
+                "check_sources"
+              ],
+              "enumNames": [
+                "Check Activities",
+                "Check Id Duplication",
+                "Check Missing Columns",
+                "Check Null Columns",
+                "Get Stream Context",
+                "Check Decimation",
+                "Update Column Names",
+                "Check Sources"
+              ],
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "title": "Run a Test"
+          },
+          "tests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "Name"
+                },
+                "status": {
+                  "type": "string",
+                  "title": "Status"
+                },
+                "ran_at": {
+                  "type": "string",
+                  "title": "Ran At"
+                },
+                "validate_data_from": {
+                  "type": "string",
+                  "title": "Validated data From"
+                },
+                "content": {
+                  "type": "string",
+                  "title": "Content"
+                },
+                "show_sql": {
+                  "type": "boolean",
+                  "title": "show SQL Query"
+                }
+              },
+              "dependencies": {
+                "show_sql": {
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "show_sql": {
+                          "enum": [
+                            true
+                          ]
+                        },
+                        "query": {
+                          "type": "string",
+                          "title": "query"
+                        }
+                      },
+                      "required": []
+                    },
+                    {
+                      "properties": {
+                        "show_sql": {
+                          "enum": [
+                            false
+                          ]
+                        }
+                      },
+                      "required": []
+                    }
+                  ]
+                }
+              }
+            },
+            "title": "Ran Tests"
+          }
+        },
+        "title": "Tests"
+      },
+      "production_queries": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "sql": {
+              "type": "string",
+              "title": "SQL"
+            },
+            "pushed_at": {
+              "type": "string",
+              "title": "Pushed to Prod at"
+            },
+            "pushed_by": {
+              "type": "string",
+              "title": "Pushed to prod by"
+            }
+          }
+        },
+        "title": "Production Version",
+        "description": "The first one in this list is the current production transform (only showing last 10)"
+      },
+      "syncing": {
+        "type": "object",
+        "properties": {
+          "last_resynced_at": {
+            "type": "string",
+            "title": "Last Resynced"
+          },
+          "next_resynced_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Next Resynced Scheduled"
+          }
+        },
+        "title": "Major Syncing Events"
+      },
+      "show_non_zero": {
+        "type": "boolean",
+        "default": false,
+        "title": " Only Show non Zero Updates"
+      },
+      "validations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "sql": {
+              "type": "string",
+              "title": "SQL"
+            },
+            "notes": {
+              "type": "string",
+              "title": "Validation Notes"
+            },
+            "validated_by": {
+              "type": "string",
+              "default": "System",
+              "title": "Validated By"
+            },
+            "validated_at": {
+              "type": "string",
+              "format": "date-time",
+              "default": "2020-04-01T18:56:27.064447",
+              "title": "Validated At"
+            }
+          }
+        },
+        "title": "Validation",
+        "description": "Log the validation of the activity"
+      },
+      "questions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "question": {
+              "type": "string",
+              "title": "Question"
+            },
+            "answer": {
+              "type": "string",
+              "title": "Answer"
+            },
+            "asker": {
+              "type": "string",
+              "title": "Asked By"
+            },
+            "answered_by": {
+              "type": "string",
+              "default": "System",
+              "title": "Answer By"
+            },
+            "answered_at": {
+              "type": "string",
+              "format": "date-time",
+              "default": "2020-04-01T18:56:27.064447",
+              "title": "Answer At"
+            }
+          }
+        },
+        "title": "Question/Answer",
+        "description": "Log questions and answers about the activity"
+      }
+    },
+    "dependencies": {
+      "show_columns": {
+        "oneOf": [
+          {
+            "properties": {
+              "show_columns": {
+                "enum": [
+                  true
+                ]
+              },
+              "columns": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "title": "Activity Stream Column"
+                    },
+                    "label": {
+                      "type": "string",
+                      "title": "Initial Display Name for Product"
+                    },
+                    "type": {
+                      "enum": [
+                        "date",
+                        "timestamp",
+                        "string",
+                        "text",
+                        "bigint",
+                        "integer",
+                        "float",
+                        "number",
+                        "boolean",
+                        "structure"
+                      ],
+                      "enumNames": [
+                        "Date",
+                        "Timestamp",
+                        "String",
+                        "Text",
+                        "Bigint",
+                        "Integer",
+                        "Float",
+                        "Number",
+                        "Boolean",
+                        "Structure"
+                      ],
+                      "type": "string",
+                      "title": "Source Data Type"
+                    },
+                    "casting": {
+                      "enum": [
+                        "string",
+                        "float"
+                      ],
+                      "enumNames": [
+                        "String",
+                        "Float"
+                      ],
+                      "type": "string",
+                      "title": "Applied Casting when Running"
+                    }
+                  }
+                },
+                "title": "Column Renames",
+                "description": "Used to initialize the activities (can be edited per activity)"
+              }
+            },
+            "required": []
+          },
+          {
+            "properties": {
+              "show_columns": {
+                "enum": [
+                  false
+                ]
+              }
+            },
+            "required": []
+          }
+        ]
+      },
+      "show_non_zero": {
+        "oneOf": [
+          {
+            "properties": {
+              "show_non_zero": {
+                "enum": [
+                  true
+                ]
+              },
+              "updates": {
+                "type": "string",
+                "title": "All Updates"
+              }
+            },
+            "required": []
+          },
+          {
+            "properties": {
+              "show_non_zero": {
+                "enum": [
+                  false
+                ]
+              },
+              "updates_non_zero": {
+                "type": "string",
+                "title": "Non-Zero Updates"
+              }
+            },
+            "required": []
+          }
+        ]
+      }
+    }
+  },
+  "ui_schema": {
+    "ui:tabs": {
+      "tabs": [
+        {
+          "label": "Tab A",
+          "property_names": ["slug", "notes", "show_columns"]
+        }
+      ]
+    },
+    "slug": {
+      "ui:options": {
+        "process_data": true,
+        "update_schema": true
+      }
+    },
+    "notes": {
+      "ui:widget": "MarkdownWidget",
+      "ui:options": {
+        "bottom_border": true,
+        "default_height": 140
+      }
+    },
+    "show_columns": {
+      "ui:widget": "BooleanToggleWidget"
+    },
+    "internal_notes": {
+      "ui:widget": "MarkdownWidget",
+      "ui:options": {
+        "default_height": 140,
+        "backgroundColor": "red"
+      }
+    },
+    "update_config": {
+      "ui:options": {
+        "orderable": false,
+        "removable": false
+      }
+    },
+    "current_script": {
+      "ui:options": {
+        "flex_direction": "row",
+        "flex_wrap": "wrap"
+      },
+      "copy_from": {
+        "ui:widget": "hidden",
+        "ui:options": {
+          "process_data": true
+        }
+      },
+      "sql": {
+        "ui:widget": "SqlWithTableWidget",
+        "ui:options": {
+          "default_height": 540,
+          "process_data": true,
+          "inner_box_props": {
+            "width": "50%"
+          } 
+        }
+      },
+      "last_edited_at": {
+        "ui:options": {
+          "outer_box_props": {
+            "width": "50%",
+            "pr": "4px"
+          }
+        },
+        "ui:disabled": true
+      },
+      "last_edited_by": {
+        "ui:options": {
+          "outer_box_props": {
+            "width": "50%",
+            "pl": "4px"
+          }
+        },
+        "ui:disabled": true
+      }
+    },
+    "columns": {
+      "items": {
+        "name": {
+          "ui:disabled": true
+        }
+      },
+      "ui:options": {
+        "orderable": false,
+        "addable": false,
+        "removable": false
+      }
+    },
+    "deploying": {
+      "validate_query": {
+        "ui:widget": "BooleanButtonWidget",
+        "ui:options": {
+          "process_data": true,
+          "button_type": "tertiary",
+          "tiny": true
+        }
+      },
+      "validation_status": {
+        "ui:disabled": true
+      },
+      "push_to_prod": {
+        "ui:options": {
+          "process_data": true
+        }
+      },
+      "content": {
+        "ui:widget": "MarkdownRenderWidget",
+        "ui:disabled": true
+      },
+      "ui:order": [
+        "validate_query",
+        "validation_status",
+        "push_to_prod",
+        "content"
+      ]
+    },
+    "all_tests": {
+      "run_tests": {
+        "ui:options": {
+          "process_data": true
+        }
+      },
+      "tests": {
+        "items": {
+          "name": {
+            "ui:disabled": true
+          },
+          "status": {
+            "ui:disabled": true
+          },
+          "ran_at": {
+            "ui:disabled": true
+          },
+          "validate_data_from": {
+            "ui:disabled": true
+          },
+          "content": {
+            "ui:widget": "MarkdownRenderWidget",
+            "ui:disabled": true
+          },
+          "query": {
+            "ui:widget": "SqlWidget",
+            "ui:disabled": true
+          }
+        },
+        "ui:options": {
+          "orderable": false,
+          "removable": false,
+          "addable": false
+        }
+      }
+    },
+    "production_queries": {
+      "items": {
+        "sql": {
+          "ui:widget": "SqlWidget",
+          "ui:disabled": true
+        },
+        "pushed_at": {
+          "ui:disabled": true
+        },
+        "pushed_by": {
+          "ui:disabled": true
+        }
+      },
+      "ui:options": {
+        "orderable": false,
+        "removable": false,
+        "addable": false
+      }
+    },
+    "syncing": {
+      "last_resynced_at": {
+        "ui:disabled": true
+      },
+      "last_resynced_reason": {
+        "ui:disabled": true
+      }
+    },
+    "updates_non_zero": {
+      "ui:widget": "MarkdownRenderWidget"
+    },
+    "updates": {
+      "ui:widget": "MarkdownRenderWidget"
+    },
+    "validations": {
+      "items": {
+        "sql": {
+          "ui:widget": "SqlWithTableWidget",
+          "ui:options": {
+            "default_height": 400
+          }
+        },
+        "notes": {
+          "ui:widget": "MarkdownWidget",
+          "ui:options": {
+            "default_height": 140
+          }
+        }
+      },
+      "ui:options": {
+        "orderable": true
+      }
+    },
+    "questions": {
+      "items": {
+        "question": {
+          "ui:widget": "MarkdownWidget",
+          "ui:options": {
+            "default_height": 140
+          }
+        },
+        "answer": {
+          "ui:widget": "MarkdownWidget",
+          "ui:options": {
+            "default_height": 140
+          }
+        }
+      },
+      "ui:options": {
+        "orderable": true
+      }
+    },
+    "ui:order": [
+      "slug",
+      "name",
+      "notes",
+      "internal_notes",
+      "update_config",
+      "current_script",
+      "show_columns",
+      "columns",
+      "deploying",
+      "validate_from_date",
+      "all_tests",
+      "syncing",
+      "show_non_zero",
+      "updates",
+      "updates_non_zero",
+      "validations",
+      "questions",
+      "production_queries",
+      "mark_for_delete"
+    ]
+  },
+  "data": {}
+}

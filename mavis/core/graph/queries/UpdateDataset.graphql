@@ -1,0 +1,19 @@
+mutation UpdateDataset(
+    $id: uuid!
+    $name: String
+    $description: String
+    $hide_from_index: Boolean
+    $locked: Boolean
+) {
+    update_dataset_by_pk(
+        pk_columns: { id: $id }
+        _set: {
+            name: $name
+            description: $description
+            hide_from_index: $hide_from_index
+            locked: $locked
+        }
+    ) {
+        id
+    }
+}

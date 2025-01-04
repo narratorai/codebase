@@ -1,0 +1,30 @@
+mutation InsertActivityMaintenance(
+  $activity_id: uuid
+  $dim_table_id: uuid
+  $kind: maintenance_kinds_enum
+  $notes: String = ""
+) {
+  insert_activity_maintenance_one(
+    object: {
+      kind: $kind
+      notes: $notes
+      started_at: "now()"
+      activity_id: $activity_id
+      dim_table_id: $dim_table_id
+    }
+  ) {
+    activity_id
+    id
+    kind
+    notes
+    started_at
+    ended_at
+    activity{
+      name
+      table_id
+    }
+    maintenance_kind {
+      description
+    }
+  }
+}

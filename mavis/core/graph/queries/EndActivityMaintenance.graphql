@@ -1,0 +1,6 @@
+
+mutation EndActivityMaintenance($activity_id: uuid!) {
+  update_activity_maintenance(where: { ended_at: { _is_null: true }, activity_id: { _eq: $activity_id } }, _set: { ended_at: "now()" }) {
+    affected_rows
+  }
+}

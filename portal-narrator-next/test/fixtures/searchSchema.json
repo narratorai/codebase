@@ -1,0 +1,211 @@
+[
+    {
+        "_index": "candidco_schemas",
+        "_type": "_doc",
+        "_id": "shopify",
+        "_score": 1,
+        "_source": {
+            "schema": "shopify",
+            "tables": [
+                {
+                    "table": "discount_code",
+                    "columns": [
+                        {
+                            "column": "id",
+                            "meta": "bigint (64)"
+                        },
+                        {
+                            "column": "price_rule_id",
+                            "meta": "bigint (64)"
+                        },
+                        {
+                            "column": "code",
+                            "meta": "character varying (256)"
+                        },
+                        {
+                            "column": "created_at",
+                            "meta": "timestamp without time zone (0)"
+                        },
+                        {
+                            "column": "_fivetran_synced",
+                            "meta": "timestamp without time zone (0)"
+                        }
+                    ]
+                },
+                {
+                    "table": "order_tag",
+                    "columns": [
+                        {
+                            "column": "index",
+                            "meta": "integer (32)"
+                        },
+                        {
+                            "column": "order_id",
+                            "meta": "bigint (64)"
+                        },
+                        {
+                            "column": "value",
+                            "meta": "character varying (256)"
+                        },
+                        {
+                            "column": "_fivetran_synced",
+                            "meta": "timestamp without time zone (0)"
+                        }
+                    ]
+                },
+                {
+                    "table": "order_discount_code",
+                    "columns": [
+                        {
+                            "column": "index",
+                            "meta": "integer (32)"
+                        },
+                        {
+                            "column": "order_id",
+                            "meta": "bigint (64)"
+                        },
+                        {
+                            "column": "code",
+                            "meta": "character varying (256)"
+                        },
+                        {
+                            "column": "amount",
+                            "meta": "double precision (53)"
+                        },
+                        {
+                            "column": "_fivetran_synced",
+                            "meta": "timestamp without time zone (0)"
+                        }
+                    ]
+                }
+            ]
+        },
+        "highlight": {
+            "tables.table": [
+                "discount_code",
+                "order_discount_code"
+            ]
+        }
+    },
+    {
+        "_index": "candidco_schemas",
+        "_type": "_doc",
+        "_id": "affirm",
+        "_score": 1,
+        "_source": {
+            "schema": "affirm",
+            "tables": [
+                {
+                    "table": "charges",
+                    "columns": [
+                        {
+                            "column": "_id",
+                            "meta": "character varying (128)"
+                        },
+                        {
+                            "column": "_index",
+                            "meta": "integer (32)"
+                        },
+                        {
+                            "column": "_created",
+                            "meta": "timestamp without time zone (0)"
+                        },
+                        {
+                            "column": "_ip",
+                            "meta": "character varying (256)"
+                        },
+                        {
+                            "column": "expires",
+                            "meta": "timestamp without time zone (0)"
+                        },
+                        {
+                            "column": "billing_last_name",
+                            "meta": "character varying (256)"
+                        },
+                        {
+                            "column": "shipping_state",
+                            "meta": "character varying (256)"
+                        },
+                        {
+                            "column": "discount_amount",
+                            "meta": "bigint (64)"
+                        },
+                        {
+                            "column": "pending",
+                            "meta": "boolean (0)"
+                        },
+                        {
+                            "column": "financing_program",
+                            "meta": "character varying (256)"
+                        },
+                        {
+                            "column": "merchant_id",
+                            "meta": "character varying (256)"
+                        },
+                        {
+                            "column": "payable",
+                            "meta": "bigint (64)"
+                        },
+                        {
+                            "column": "balance",
+                            "meta": "bigint (64)"
+                        },
+                        {
+                            "column": "currency",
+                            "meta": "character varying (256)"
+                        },
+                        {
+                            "column": "details",
+                            "meta": "character varying (256)"
+                        },
+                        {
+                            "column": "refundable",
+                            "meta": "boolean (0)"
+                        },
+                        {
+                            "column": "id",
+                            "meta": "character varying (256)"
+                        },
+                        {
+                            "column": "billing_first_name",
+                            "meta": "character varying (256)"
+                        },
+                        {
+                            "column": "events",
+                            "meta": "character varying (512)"
+                        },
+                        {
+                            "column": "amount",
+                            "meta": "bigint (64)"
+                        },
+                        {
+                            "column": "shipping_zipcode",
+                            "meta": "character varying (256)"
+                        },
+                        {
+                            "column": "void",
+                            "meta": "boolean (0)"
+                        },
+                        {
+                            "column": "merchant_external_reference",
+                            "meta": "bigint (64)"
+                        },
+                        {
+                            "column": "created",
+                            "meta": "timestamp without time zone (0)"
+                        },
+                        {
+                            "column": "discount_code",
+                            "meta": "character varying (256)"
+                        }
+                    ]
+                }
+            ]
+        },
+        "highlight": {
+            "tables.columns.column": [
+                "discount_code"
+            ]
+        }
+    }
+]

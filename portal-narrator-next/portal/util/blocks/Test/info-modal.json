@@ -1,0 +1,90 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "dataset": {
+        "type": "string",
+        "title": "Dataset",
+        "enum": ["marketing_overview", "sessions_by_day"]
+      },
+      "column": {
+        "type": "array",
+        "title": "Column",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": ["last_session_at", "customer", "conversion_to_lead"],
+          "enumNames": ["Last Session At", "customer", "conversion_to_lead"]
+        }
+      },
+      "column_with_both": {
+        "type": "array",
+        "title": "Column With Both",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": ["last_session_at", "customer", "conversion_to_lead"],
+          "enumNames": ["Last Session At", "customer", "conversion_to_lead"]
+        }
+      },
+      "checkbox1": {
+        "type": "boolean",
+        "title": "Checkbox",
+        "default": false
+      },
+      "checkbox_with_both": {
+        "type": "boolean",
+        "title": "Checkbox With Both",
+        "default": false
+      },
+      "boolean_button_widget": {
+        "type": "boolean",
+        "title": "Boolean Button Widget"
+      },
+      "boolean_toggle_widget": {
+        "type": "boolean",
+        "title": "Boolean Toggle Widget"
+      }
+    },
+    "required": ["dataset"]
+  },
+  "ui_schema": {
+    "dataset": {
+      "ui:help": "ui help is raw data"
+    },
+    "column": {
+      "ui:info_modal": "\n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n "
+    },
+    "column_with_both": {
+      "ui:help": "ui help is raw data",
+      "ui:info_modal": "\n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n \n## Let's understand how {lever} influences {kpi_goal}\n\nOur goal is to {goal_direction} {kpi_goal}. We'll use historical data to explore whether or not {lever} has an influence on it. \n\n\n\n**Data Details**\n\n- **KPI Goal:**  {#goal_direction} {kpi_goal}\n- **Data Date:** Marketing Session between the months of {#min_month} and {#max_month}, inclusive\n "
+    },
+    "checkbox1": {
+      "ui:info_modal": "\n## New markdown for the info modal"
+    },
+    "checkbox_with_both": {
+      "ui:help": "ui help is tooltip",
+      "ui:info_modal": "\n## New markdown for the info modal"
+    },
+    "boolean_button_widget": {
+      "ui:widget": "BooleanButtonWidget",
+      "ui:options": {
+        "process_data": true,
+        "bottom_border": false,
+        "inline_input_height": true,
+        "button_wrapper_style": {
+          "float": "right",
+          "marginTop": "25px"
+        }
+      },
+      "ui:info_modal": "\n## New markdown for the info modal"
+    },
+    "boolean_toggle_widget": {
+      "ui:widget": "BooleanToggleWidget",
+      "ui:info_modal": "\n## New markdown for the info modal"
+    }
+  },
+  "data": {
+    "dataset": "marketing_overview"
+  }
+}

@@ -1,0 +1,1 @@
+alter table "public"."company_github_sync" alter column "target_repo" drop not null;

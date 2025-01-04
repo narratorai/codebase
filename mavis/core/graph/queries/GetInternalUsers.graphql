@@ -1,0 +1,5 @@
+query GetInternalUsers {
+  users: user(where: { role: { _eq: internal_admin } }) {
+    email
+  }
+}

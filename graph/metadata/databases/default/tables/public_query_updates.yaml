@@ -1,0 +1,25 @@
+table:
+  name: query_updates
+  schema: public
+object_relationships:
+  - name: transformation
+    using:
+      foreign_key_constraint_on: transformation_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - from_sync_time
+        - id
+        - processed_at
+        - rows_inserted
+        - to_sync_time
+        - transformation_id
+        - update_duration
+        - update_kind
+        - updated_at
+      filter:
+        transformation:
+          company_id:
+            _eq: X-Hasura-Company-Id

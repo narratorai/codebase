@@ -1,0 +1,565 @@
+{
+    "fields": {},
+    "query": {
+      "activities": [
+        {
+          "id": "aactivity_with_typed_features_7291cad9",
+          "name": "Activity With Typed Features",
+          "slug": [
+            "activity_with_typed_features"
+          ],
+          "activity_ids": [
+            "e4f0b3f1-6e40-4ad0-9564-e1ed41f79c35"
+          ],
+          "did": true,
+          "occurrence": "all",
+          "occurrence_value": null,
+          "force_recompute_occurrence": null,
+          "resolution_filter": null,
+          "config": {
+            "has_source": false,
+            "activity_stream": "activity_stream"
+          },
+          "relationships": [],
+          "filters": [
+            {
+              "activity_column_name": "feature_boolean_value",
+              "column_type": "boolean",
+              "enrichment_table": null,
+              "enrichment_table_column": null,
+              "filter": {
+                "operator": "equal",
+                "kind": "value",
+                "value": "true",
+                "or_null": false,
+                "from_type": null,
+                "from_value": null,
+                "from_value_kind": "value",
+                "from_value_resolution": null,
+                "to_type": null,
+                "to_value": null,
+                "to_value_kind": "value",
+                "to_value_resolution": null,
+                "value_resolution": null
+              }
+            },
+            {
+              "activity_column_name": "feature_string_value",
+              "column_type": "string",
+              "enrichment_table": null,
+              "enrichment_table_column": null,
+              "filter": {
+                "operator": "contains",
+                "kind": "value",
+                "value": "test",
+                "or_null": false,
+                "from_type": null,
+                "from_value": null,
+                "from_value_kind": "value",
+                "from_value_resolution": null,
+                "to_type": null,
+                "to_value": null,
+                "to_value_kind": "value",
+                "to_value_resolution": null,
+                "value_resolution": null
+              }
+            },
+            {
+              "activity_column_name": "feature_number_value",
+              "column_type": "integer",
+              "enrichment_table": null,
+              "enrichment_table_column": null,
+              "filter": {
+                "operator": "greater_than",
+                "kind": "value",
+                "value": "3",
+                "or_null": false,
+                "from_type": null,
+                "from_value": null,
+                "from_value_kind": "value",
+                "from_value_resolution": null,
+                "to_type": null,
+                "to_value": null,
+                "to_value_kind": "value",
+                "to_value_resolution": null,
+                "value_resolution": null
+              }
+            },
+            {
+              "activity_column_name": "feature_timstamp_value",
+              "column_type": "timestamp",
+              "enrichment_table": null,
+              "enrichment_table_column": null,
+              "filter": {
+                "operator": "greater_than",
+                "kind": "value",
+                "value": "2023-02-01T08:00:00.000Z",
+                "or_null": false,
+                "from_type": null,
+                "from_value": null,
+                "from_value_kind": "value",
+                "from_value_resolution": null,
+                "to_type": null,
+                "to_value": null,
+                "to_value_kind": "value",
+                "to_value_resolution": null,
+                "value_resolution": "date"
+              }
+            }
+          ],
+          "kind": "limiting"
+        },
+        {
+          "id": "aactivity_with_typed_features_8c27cb71",
+          "name": "Activity With Typed Features",
+          "slug": [
+            "activity_with_typed_features"
+          ],
+          "activity_ids": [
+            "e4f0b3f1-6e40-4ad0-9564-e1ed41f79c35"
+          ],
+          "did": true,
+          "occurrence": "first",
+          "occurrence_value": null,
+          "force_recompute_occurrence": null,
+          "resolution_filter": null,
+          "config": {
+            "has_source": false,
+            "activity_stream": "activity_stream"
+          },
+          "relationships": [
+            {
+              "slug": "within_cohort"
+            },
+            {
+              "slug": "cohort_column",
+              "cohort_column_name": "feature_boolean_value",
+              "cohort_column_enrichment_table": null,
+              "column_name": "feature_boolean_value",
+              "column_name_enrichment_table": null,
+              "column_name_enrichment_table_column": null,
+              "operator": "equal"
+            },
+            {
+              "slug": "cohort_column",
+              "cohort_column_name": "feature_number_value",
+              "cohort_column_enrichment_table": null,
+              "column_name": "feature_number_value",
+              "column_name_enrichment_table": null,
+              "column_name_enrichment_table_column": null,
+              "operator": "equal"
+            },
+            {
+              "slug": "cohort_column",
+              "cohort_column_name": "feature_string_value",
+              "cohort_column_enrichment_table": null,
+              "column_name": "feature_string_value",
+              "column_name_enrichment_table": null,
+              "column_name_enrichment_table_column": null,
+              "operator": "equal"
+            },
+            {
+              "slug": "cohort_column",
+              "cohort_column_name": "feature_timstamp_value",
+              "cohort_column_enrichment_table": null,
+              "column_name": "feature_timstamp_value",
+              "column_name_enrichment_table": null,
+              "column_name_enrichment_table_column": null,
+              "operator": "equal"
+            },
+            {
+              "slug": "cohort_column",
+              "cohort_column_name": "ts.month",
+              "cohort_column_enrichment_table": null,
+              "column_name": "ts.month",
+              "column_name_enrichment_table": null,
+              "column_name_enrichment_table_column": null,
+              "operator": "equal"
+            }
+          ],
+          "filters": [
+            {
+              "activity_column_name": "feature_boolean_value",
+              "column_type": "boolean",
+              "enrichment_table": null,
+              "enrichment_table_column": null,
+              "filter": {
+                "operator": "equal",
+                "kind": "value",
+                "value": "true",
+                "or_null": false,
+                "from_type": null,
+                "from_value": null,
+                "from_value_kind": "value",
+                "from_value_resolution": null,
+                "to_type": null,
+                "to_value": null,
+                "to_value_kind": "value",
+                "to_value_resolution": null,
+                "value_resolution": "date"
+              }
+            },
+            {
+              "activity_column_name": "feature_string_value",
+              "column_type": "string",
+              "enrichment_table": null,
+              "enrichment_table_column": null,
+              "filter": {
+                "operator": "equal",
+                "kind": "value",
+                "value": "hiii",
+                "or_null": false,
+                "from_type": null,
+                "from_value": null,
+                "from_value_kind": "value",
+                "from_value_resolution": null,
+                "to_type": null,
+                "to_value": null,
+                "to_value_kind": "value",
+                "to_value_resolution": null,
+                "value_resolution": null
+              }
+            },
+            {
+              "activity_column_name": "feature_number_value",
+              "column_type": "integer",
+              "enrichment_table": null,
+              "enrichment_table_column": null,
+              "filter": {
+                "operator": "greater_than",
+                "kind": "value",
+                "value": "3",
+                "or_null": false,
+                "from_type": null,
+                "from_value": null,
+                "from_value_kind": "value",
+                "from_value_resolution": null,
+                "to_type": null,
+                "to_value": null,
+                "to_value_kind": "value",
+                "to_value_resolution": null,
+                "value_resolution": null
+              }
+            },
+            {
+              "activity_column_name": "feature_timstamp_value",
+              "column_type": "timestamp",
+              "enrichment_table": null,
+              "enrichment_table_column": null,
+              "filter": {
+                "operator": "greater_than",
+                "kind": "value",
+                "value": "2023-02-05T08:00:00.000Z",
+                "or_null": false,
+                "from_type": null,
+                "from_value": null,
+                "from_value_kind": "value",
+                "from_value_resolution": null,
+                "to_type": null,
+                "to_value": null,
+                "to_value_kind": "value",
+                "to_value_resolution": null,
+                "value_resolution": "date"
+              }
+            }
+          ],
+          "kind": "append",
+          "relationship_slug": "first_in_between",
+          "temp_id": "1['activity_with_typed_features']"
+        }
+      ],
+      "columns": [
+        {
+          "id": "aactivity_id_8a560618",
+          "name": "activity_id",
+          "label": "Activity Id",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aactivity_with_typed_features_7291cad9",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "ats_5eaa782c",
+          "name": "ts",
+          "label": "Timestamp",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": null,
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aactivity_with_typed_features_7291cad9",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "acustomer_d9c8968d",
+          "name": "customer",
+          "label": "Customer",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aactivity_with_typed_features_7291cad9",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "aactivity_388c0982",
+          "name": "activity",
+          "label": "Activity",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aactivity_with_typed_features_7291cad9",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "arevenue_impact_8056ca52",
+          "name": "revenue_impact",
+          "label": "Revenue Impact",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": [
+            "sum"
+          ],
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aactivity_with_typed_features_7291cad9",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "alink_5f2134d0",
+          "name": "link",
+          "label": "Link",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aactivity_with_typed_features_7291cad9",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "aactivity_occurrence_9ff2f5c9",
+          "name": "activity_occurrence",
+          "label": "Activity Occurrence",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aactivity_with_typed_features_7291cad9",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_boolean_value_dd283cc9",
+          "name": "feature_boolean_value",
+          "label": "Boolean Value",
+          "output": true,
+          "filters": [],
+          "mavis_type": "boolean",
+          "group_func": null,
+          "type": "boolean",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aactivity_with_typed_features_7291cad9",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_number_value_b0cbb799",
+          "name": "feature_number_value",
+          "label": "Number Value",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "group_func": null,
+          "type": "number",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aactivity_with_typed_features_7291cad9",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_string_value_d52a11d1",
+          "name": "feature_string_value",
+          "label": "String Value",
+          "output": true,
+          "filters": [],
+          "mavis_type": "string",
+          "group_func": null,
+          "type": "string",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aactivity_with_typed_features_7291cad9",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "afeature_timstamp_value_eca61e3a",
+          "name": "feature_timstamp_value",
+          "label": "Timstamp Value",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": null,
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_id": "aactivity_with_typed_features_7291cad9",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "ats_28739fdf",
+          "name": "ts",
+          "label": "Next Activity With Typed Featureses Timestamp",
+          "output": true,
+          "filters": [],
+          "mavis_type": "timestamp",
+          "group_func": null,
+          "type": "timestamp",
+          "source_kind": "activity",
+          "source_details": {
+            "activity_kind": "append",
+            "activity_id": "aactivity_with_typed_features_8c27cb71",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "applied_function": null
+          }
+        },
+        {
+          "id": "adid_activity_with_typed_featur_60c5dc45",
+          "name": null,
+          "label": "Did Repeat Activity With Typed Features",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "type": "integer",
+          "group_func": [
+            "sum",
+            "average"
+          ],
+          "source_kind": "computed",
+          "source_details": {
+            "raw_string": "exists(ats_28739fdf)",
+            "activity_kind": "append",
+            "activity_id": "aactivity_with_typed_features_8c27cb71",
+            "enrichment_table": null
+          }
+        },
+        {
+          "id": "aday_activity_with_typed_featur_63391450",
+          "name": null,
+          "label": "Days To Repeat Activity With Typed Features",
+          "output": true,
+          "filters": [],
+          "mavis_type": "integer",
+          "type": "integer",
+          "group_func": [
+            "average"
+          ],
+          "source_kind": "computed",
+          "source_details": {
+            "raw_string": "time_diff('day', join_ts.local, ats_28739fdf)",
+            "activity_kind": "append",
+            "activity_id": "aactivity_with_typed_features_8c27cb71",
+            "enrichment_table": null
+          }
+        }
+      ],
+      "all_groups": [],
+      "order": [
+        {
+          "column_id": "ats_5eaa782c",
+          "order_direction": "desc"
+        }
+      ],
+      "activity_stream": "activity_stream",
+      "swapped_ids": [],
+      "columns_order": {
+        "parent": {
+          "order": [
+            "aactivity_id_8a560618",
+            "ats_5eaa782c",
+            "acustomer_d9c8968d",
+            "aactivity_388c0982",
+            "arevenue_impact_8056ca52",
+            "alink_5f2134d0",
+            "aactivity_occurrence_9ff2f5c9",
+            "afeature_boolean_value_dd283cc9",
+            "afeature_number_value_b0cbb799",
+            "afeature_string_value_d52a11d1",
+            "afeature_timstamp_value_eca61e3a",
+            "ats_28739fdf",
+            "adid_activity_with_typed_featur_60c5dc45",
+            "aday_activity_with_typed_featur_63391450"
+          ],
+          "left_pinned": [],
+          "right_pinned": []
+        }
+      },
+      "story": {
+        "content": []
+      }
+    }
+  }

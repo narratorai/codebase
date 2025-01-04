@@ -1,0 +1,184 @@
+table:
+  name: dataset
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: company_id
+  - name: company_category
+    using:
+      foreign_key_constraint_on: category_id
+  - name: metric
+    using:
+      foreign_key_constraint_on: metric_id
+  - name: updated_by_user
+    using:
+      manual_configuration:
+        column_mapping:
+          updated_by: id
+        insertion_order: null
+        remote_table:
+          name: user
+          schema: public
+  - name: user
+    using:
+      foreign_key_constraint_on: created_by
+array_relationships:
+  - name: dataset_activities
+    using:
+      foreign_key_constraint_on:
+        column: dataset_id
+        table:
+          name: dataset_activities
+          schema: public
+  - name: dependent_narratives
+    using:
+      foreign_key_constraint_on:
+        column: dataset_id
+        table:
+          name: narrative_datasets
+          schema: public
+  - name: materializations
+    using:
+      foreign_key_constraint_on:
+        column: dataset_id
+        table:
+          name: dataset_materialization
+          schema: public
+  - name: tags
+    using:
+      manual_configuration:
+        column_mapping:
+          id: dataset_id
+        insertion_order: null
+        remote_table:
+          name: dataset_tags
+          schema: public
+  - name: team_permissions
+    using:
+      manual_configuration:
+        column_mapping:
+          id: dataset_id
+        insertion_order: null
+        remote_table:
+          name: dataset_team_permissions
+          schema: public
+  - name: versions
+    using:
+      manual_configuration:
+        column_mapping:
+          id: dataset_id
+        insertion_order: null
+        remote_table:
+          name: dataset_versions
+          schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - status:
+              _nin:
+                - internal_only
+      set:
+        created_by: x-hasura-User-Id
+      columns:
+        - category
+        - company_id
+        - description
+        - hide_from_index
+        - locked
+        - name
+        - slug
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - category
+        - company_id
+        - created_at
+        - created_by
+        - description
+        - hide_from_index
+        - id
+        - last_config_updated_at
+        - last_viewed_at
+        - locked
+        - name
+        - slug
+        - status
+        - updated_at
+        - updated_by
+      filter:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - status:
+              _nin:
+                - internal_only
+          - _or:
+              - status:
+                  _eq: live
+              - created_by:
+                  _eq: X-Hasura-User-Id
+      allow_aggregations: true
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - category
+        - description
+        - hide_from_index
+        - last_viewed_at
+        - locked
+        - name
+        - status
+      filter:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - _or:
+              - created_by:
+                  _eq: X-Hasura-User-Id
+              - _exists:
+                  _table:
+                    name: company_user
+                    schema: public
+                  _where:
+                    _and:
+                      - company_id:
+                          _eq: X-Hasura-Company-Id
+                      - user_id:
+                          _eq: X-Hasura-User-Id
+                      - role:
+                          _eq: admin
+      check:
+        company_id:
+          _eq: X-Hasura-Company-Id
+        status:
+          _nin:
+            - internal_only
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        _and:
+          - company_id:
+              _eq: X-Hasura-Company-Id
+          - _or:
+              - created_by:
+                  _eq: X-Hasura-User-Id
+              - _exists:
+                  _table:
+                    name: company_user
+                    schema: public
+                  _where:
+                    _and:
+                      - company_id:
+                          _eq: X-Hasura-Company-Id
+                      - user_id:
+                          _eq: X-Hasura-User-Id
+                      - role:
+                          _eq: admin

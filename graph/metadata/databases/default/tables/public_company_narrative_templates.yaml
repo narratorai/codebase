@@ -1,0 +1,17 @@
+table:
+  name: company_narrative_templates
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: company_id
+array_relationships:
+  - name: templates
+    using:
+      manual_configuration:
+        column_mapping:
+          template_name: name
+        insertion_order: null
+        remote_table:
+          name: narrative_template
+          schema: public

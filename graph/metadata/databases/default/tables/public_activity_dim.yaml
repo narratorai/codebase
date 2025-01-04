@@ -1,0 +1,23 @@
+table:
+  name: activity_dim
+  schema: public
+object_relationships:
+  - name: activity
+    using:
+      foreign_key_constraint_on: activity_id
+  - name: dim_table
+    using:
+      foreign_key_constraint_on: dim_table_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - activity_id
+        - activity_join_column
+        - created_at
+        - dim_table_id
+        - id
+      filter:
+        activity:
+          company_id:
+            _eq: X-Hasura-Company-Id

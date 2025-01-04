@@ -1,0 +1,6 @@
+query GetQueryTemplateSources {
+  query_templates: query_template(distinct_on: data_source) {
+    data_source
+    schema_names
+  }
+}

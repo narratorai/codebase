@@ -1,0 +1,35 @@
+query GetTransformationUpdates($id: uuid!, $started_at: timestamptz) {
+  transformation: transformation_by_pk(id: $id) {
+    last_diff_data_and_insert_at
+    last_resynced_at
+    next_resync_at
+    start_data_after
+    has_source
+    query_updates(order_by: [{processed_at: asc}], where: {processed_at: {_gt: $started_at}}) {
+      transformation_id
+      to_sync_time
+      rows_inserted
+      update_duration
+      processed_at
+      update_kind
+      from_sync_time
+    }
+    transformation_maintenances(where: {started_at: {_gt: $started_at}}) {
+      notes
+      started_at
+      ended_at
+      kind
+    }
+    activities {
+      activity {
+        name
+        activity_maintenances(where: {started_at: {_gt: $started_at}}) {
+          notes
+          started_at
+          ended_at
+          kind
+        }
+      }
+    }
+  }
+}

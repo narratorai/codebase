@@ -1,0 +1,143 @@
+{
+  "columns": [
+    {
+      "id": "landing_url_limiting_marketing_session_MegPzuKo_landing_url",
+      "label": "landing_url",
+      "type": "string",
+      "kind": "exact",
+      "metrics_type": "distribution",
+      "metrics": [
+        {
+          "name": "https://www.narrator.ai/",
+          "value": 316
+        },
+        {
+          "name": "https://www.narrator.ai/docs/getting-started/",
+          "value": 76
+        },
+        {
+          "name": "https://www.narrator.ai/how-it-works/",
+          "value": 68
+        },
+        {
+          "name": "https://www.narrator.ai/how-it-works",
+          "value": 40
+        }
+      ]
+    },
+    {
+      "id": "landing_url_limiting_marketing_session_MegPzuKo_activity_occurrence",
+      "label": "activity_occurrence",
+      "type": "integer",
+      "kind": "exact",
+      "metrics_type": "percentile",
+      "metrics": [
+        {
+          "name": "median",
+          "value": 43
+        },
+        {
+          "name": "avg",
+          "value": 87.10543657331137
+        },
+        {
+          "name": "twenty_five_percent",
+          "value": 5
+        },
+        {
+          "name": "seventy_five_percent",
+          "value": 131
+        }
+      ]
+    },
+    {
+      "id": "metrics_total_events",
+      "label": "total_events",
+      "type": "integer",
+      "kind": "exact",
+      "metrics_type": "percentile",
+      "metrics": [
+        {
+          "name": "median",
+          "value": 1
+        },
+        {
+          "name": "avg",
+          "value": 18.575782537067546
+        },
+        {
+          "name": "twenty_five_percent",
+          "value": 1
+        },
+        {
+          "name": "seventy_five_percent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "landing_url_metric_total_lead_submitted_2fz7_11d",
+      "label": "total_lead_submitted",
+      "type": "integer",
+      "kind": "exact",
+      "metrics_type": "percentile",
+      "metrics": [
+        {
+          "name": "median",
+          "value": 1
+        },
+        {
+          "name": "avg",
+          "value": 4.181818181818182
+        },
+        {
+          "name": "twenty_five_percent",
+          "value": 1
+        },
+        {
+          "name": "seventy_five_percent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "landing_url_computed_conversion_to_lead_submitted_2fz7_11d",
+      "label": "conversion_rate_to_lead_submitted",
+      "type": "float",
+      "kind": "exact",
+      "metrics_type": "percentile",
+      "metrics": [
+        {
+          "name": "median",
+          "value": 0.0909090909090909
+        },
+        {
+          "name": "avg",
+          "value": 0.24201622979478424
+        },
+        {
+          "name": "twenty_five_percent",
+          "value": 0.0119047619047619
+        },
+        {
+          "name": "seventy_five_percent",
+          "value": 0.16666666666666666
+        }
+      ]
+    },
+    {
+      "id": "landing_url_replace_broke",
+      "label": "replace_broke",
+      "type": "string",
+      "kind": "exact",
+      "metrics_type": "distribution",
+      "metrics": [
+        {
+          "name": "https://www.narrator.ai/",
+          "value": 316
+        }
+      ]
+    }
+  ],
+  "total_rows": 22551
+}

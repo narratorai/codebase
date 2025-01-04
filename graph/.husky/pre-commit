@@ -1,0 +1,1 @@
+./scripts/bump_migrations_ref.py && git add packages/codegen/REF && yarn lint-staged

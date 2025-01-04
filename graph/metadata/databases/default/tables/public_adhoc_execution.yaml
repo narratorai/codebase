@@ -1,0 +1,3 @@
+table:
+  name: adhoc_execution
+  schema: public

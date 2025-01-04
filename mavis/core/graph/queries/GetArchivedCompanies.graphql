@@ -1,0 +1,23 @@
+query GetArchivedCompanies($updated_befor: timestamptz!) {
+  company(
+    where: {
+      status: { _eq: archived }
+      skip_automated_archive: { _eq: false }
+      updated_at: { _lt: $updated_befor }
+      resources: { s3_bucket: { _is_null: false } }
+    }
+  ) {
+    id
+    name
+    slug
+    status
+    resources {
+      id
+      company_role
+      kms_key
+      s3_bucket
+      read_policy
+      write_policy
+    }
+  }
+}

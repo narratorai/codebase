@@ -1,0 +1,34 @@
+query GetDatasetMaintenance(
+  $activity_ids: [uuid!]!
+  $last_updated_at: timestamptz!
+  $tables: [String!]!
+  $company_id: uuid!
+) {
+  activity_maintenance(
+    where: {
+      _and: [
+        {
+          _or: [
+            { activity_id: { _in: $activity_ids }, dim_table_id: { _is_null: true } }
+            { dim_table: { table: { _in: $tables }, company_id: { _eq: $company_id } } }
+          ]
+        }
+        { _or: [{ ended_at: { _is_null: true } }, { ended_at: { _gte: $last_updated_at } }] }
+      ]
+    }
+  ) {
+    id
+    kind
+    notes
+    started_at
+    ended_at
+    activity_id
+    dim_table {
+      schema_: schema
+      table
+    }
+    maintenance_kind {
+      description
+    }
+  }
+}

@@ -1,0 +1,25 @@
+table:
+  name: company_query_alert
+  schema: public
+object_relationships:
+  - name: company_task
+    using:
+      foreign_key_constraint_on: task_id
+  - name: sql_query
+    using:
+      foreign_key_constraint_on: query_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - alert_kind
+        - created_at
+        - email
+        - id
+        - query_id
+        - task_id
+        - updated_at
+      filter:
+        sql_query:
+          related_id:
+            _eq: X-Hasura-Company-Id

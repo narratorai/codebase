@@ -1,0 +1,9 @@
+mutation UpdateTransformationMaintenanceNote($id: uuid!, $notes: String!) {
+  update_transformation_maintenance_by_pk(pk_columns: {id: $id}, _set: {notes: $notes}){
+    id
+    started_at
+    ended_at
+    notes
+    kind
+  }
+}

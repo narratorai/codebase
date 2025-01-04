@@ -1,0 +1,19 @@
+{
+  "type": "EDIT_COMPUTATION_SUBMIT",
+  "column": {
+      "id": null,
+      "filters": [],
+      "label": "Group Func in Group",
+      "name": "",
+      "output": true,
+      "source_details": {
+          "kind": "freehand_function",
+          "raw_string": "iff(not_is_null(link_14a609c0), '1', '0')"
+      },
+      "source_kind": "computed",
+      "type": "string",
+      "_auto_generated_by": null
+  },
+  "isEdit": false,
+  "groupSlug": "feature_1_feature_2_link11a8f00b"
+}

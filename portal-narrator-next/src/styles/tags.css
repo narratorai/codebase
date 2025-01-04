@@ -1,0 +1,179 @@
+.tag {
+  @apply flex;
+  @apply flex-row;
+  @apply items-center;
+  @apply border;
+  @apply border-transparent;
+
+  &.tag-transparent {
+    @apply text-gray-400;
+    @apply stroke-gray-200;
+    @apply bg-transparent;
+
+    &.tag-border {
+      @apply border-transparent;
+    }
+  }
+
+  &.tag-white {
+    @apply text-gray-600;
+    @apply stroke-gray-400;
+    @apply bg-white;
+
+    &.tag-border {
+      @apply border-gray-100;
+    }
+  }
+
+  &.tag-green {
+    @apply text-green-900;
+    @apply stroke-green-900;
+    @apply bg-green-200;
+
+    &.tag-border {
+      @apply border-green-400;
+    }
+  }
+
+  &.tag-red {
+    @apply text-red-900;
+    @apply stroke-red-900;
+    @apply bg-red-200;
+
+    &.tag-border {
+      @apply border-red-400;
+    }
+  }
+
+  &.tag-purple {
+    @apply text-purple-900;
+    @apply stroke-purple-900;
+    @apply bg-purple-200;
+
+    &.tag-border {
+      @apply border-purple-400;
+    }
+  }
+
+  &.tag-yellow {
+    @apply text-yellow-900;
+    @apply stroke-yellow-900;
+    @apply bg-yellow-200;
+
+    &.tag-border {
+      @apply border-yellow-400;
+    }
+  }
+
+  &.tag-blue {
+    @apply text-blue-900;
+    @apply stroke-blue-900;
+    @apply bg-blue-200;
+
+    &.tag-border {
+      @apply border-blue-400;
+    }
+  }
+
+  &.tag-pink {
+    @apply text-pink-900;
+    @apply stroke-pink-900;
+    @apply bg-pink-200;
+
+    &.tag-border {
+      @apply border-pink-400;
+    }
+  }
+
+  &.tag-pink-purple {
+    @apply text-pink-purple-900;
+    @apply stroke-pink-purple-900;
+    @apply bg-pink-purple-200;
+
+    &.tag-border {
+      @apply border-pink-purple-400;
+    }
+  }
+
+  &.tag-gray {
+    @apply bg-gray-50;
+    @apply text-gray-800;
+    @apply stroke-gray-800;
+
+    &.tag-border {
+      @apply border-gray-200;
+    }
+  }
+
+  .tag-label {
+    @apply px-1;
+    @apply text-xs;
+    @apply font-medium;
+  }
+
+  &.tag-label {
+    @apply text-xs;
+    @apply font-medium;
+  }
+
+  .tag-icon-leading {
+    @apply size-4;
+  }
+
+  .tag-icon-trailing {
+    @apply size-3;
+  }
+
+  .tag-indicator {
+    @apply rounded-full;
+    @apply bg-pink-purple-500;
+    @apply ml-1;
+    @apply size-2;
+  }
+
+  .tag-avatar {
+    @apply box-content;
+    @apply rounded-full;
+    @apply size-4;
+  }
+
+  &.tag-3xs {
+    @apply p-1;
+    @apply rounded-md;
+  }
+
+  &.tag-4xs {
+    @apply py-0.5;
+    @apply px-1;
+    @apply rounded-md;
+  }
+
+  &.tag-5xs {
+    @apply px-0.5;
+    @apply rounded-sm;
+
+    .tag-label {
+      @apply px-0.5;
+      @apply text-2xs;
+      @apply font-semibold;
+    }
+
+    &.tag-label {
+      @apply text-2xs;
+      @apply font-semibold;
+    }
+
+    .tag-icon-leading {
+      @apply size-3;
+    }
+
+    .tag-icon-trailing {
+      @apply size-3;
+    }
+
+    .tag-indicator {
+      @apply ml-0.5;
+      @apply size-1.5;
+    }
+  }
+}

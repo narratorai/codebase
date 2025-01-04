@@ -1,0 +1,8 @@
+subscription DashboardsUpdated($company_id: uuid!, $statuses: [status_enum!]!) {
+  narrative(
+    where: { company_id: { _eq: $company_id }, state: { _in: $statuses }, type: { _eq: dashboard } }
+    order_by: [{ updated_at: desc }, { type: asc }]
+  ) {
+    id
+  }
+}

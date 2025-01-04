@@ -1,0 +1,56 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+      - production
+  pull_request:
+    branches:
+      - main
+      - production
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+
+      - id: jest-cache
+        uses: actions/cache@v4
+        with:
+          path: .jest-cache
+          key: ${{ runner.os }}-jest
+
+      - id: ts-cache
+        uses: actions/cache@v4
+        with:
+          path: tsconfig.tsbuildinfo
+          key: ${{ runner.os }}-ts
+
+      - name: install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          yarn --silent install --frozen-lockfile --pure-lockfile
+
+      - name: test
+        run: |
+          export NODE_OPTIONS="--max_old_space_size=8192"
+          yarn --silent test --cacheDirectory=.jest-cache --reporters=default --reporters=jest-junit -w 3
+        env:
+          NEXT_PUBLIC_MAVIS_US_URL: ${{secrets.NEXT_PUBLIC_MAVIS_US_URL}}
+
+      - name: jest-report
+        uses: IgnusG/jest-report-action@v2.3.3
+        if: ${{ github.actor != 'dependabot[bot]' }}
+        with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          run-name: CI

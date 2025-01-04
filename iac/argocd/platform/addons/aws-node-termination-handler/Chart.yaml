@@ -1,0 +1,11 @@
+apiVersion: v2
+name: aws-node-termination-handler
+description: A Helm chart for installing the AWS Node Termination Handler
+type: application
+version: 0.1.0
+appVersion: "1.0"
+
+dependencies:
+  - name: aws-node-termination-handler
+    version: 0.21.0
+    repository: https://aws.github.io/eks-charts

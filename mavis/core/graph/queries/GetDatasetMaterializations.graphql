@@ -1,0 +1,18 @@
+query GetDatasetMaterializations($dataset_id: uuid!) {
+  materializations: dataset_materialization(where: {dataset_id: {_eq: $dataset_id}}) {
+    id
+    label
+    sheet_key
+    type
+    group_slug
+    external_link
+    company_task {
+      id
+      schedule
+      task_slug
+      updated_at
+      description
+      category
+    }
+  }
+}

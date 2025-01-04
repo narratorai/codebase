@@ -1,0 +1,25 @@
+mutation CreateNewTransformation(
+$company_id: uuid!
+  $slug: String!
+  $table: String!
+  $update_type: transformation_update_types_enum!
+  $kind: transformation_kinds_enum!
+  $name: String!
+  $task_id: uuid
+  $updated_by: uuid
+) {
+  transformation: insert_transformation_one(
+    object: {
+      company_id: $company_id
+      update_type: $update_type
+      table: $table
+      slug: $slug
+      name: $name
+      kind: $kind
+      task_id: $task_id
+      updated_by: $updated_by
+    }
+  ) {
+      id
+  }
+}

@@ -1,0 +1,12 @@
+query GetAllMaterializations($company_id: uuid!, $kind: materialization_type_enum!) {
+  materializations: dataset_materialization(
+    where: { type: { _eq: $kind }, dataset: { company_id: { _eq: $company_id } } }
+  ) {
+    id
+    group_slug
+    label
+    type
+    task_id
+    dataset_id
+  }
+}

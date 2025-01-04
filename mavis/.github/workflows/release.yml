@@ -1,0 +1,25 @@
+name: Release
+on:
+  push:
+    branches:
+      - main-k8s
+jobs:
+  github_release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          github_token: ${{ secrets.PAT }}
+      - name: Create git tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.2
+        with:
+          github_token: ${{ secrets.PAT }}
+          tag_prefix: 'v'
+          release_branches: main-k8s
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.tag_version.outputs.new_tag }}
+          name: ${{ steps.tag_version.outputs.new_tag }}
+          body: ${{ steps.tag_version.outputs.changelog }}

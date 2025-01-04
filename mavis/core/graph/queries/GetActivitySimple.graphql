@@ -1,0 +1,15 @@
+query GetActivitySimple($id: uuid!) {
+  activity_by_pk(id: $id) {
+    id
+    name
+    slug
+    category
+    created_at
+    updated_by
+    updated_at
+    table_id
+    description
+    row_count
+    maintainer_id
+  }
+}

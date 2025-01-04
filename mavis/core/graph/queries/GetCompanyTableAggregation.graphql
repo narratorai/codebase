@@ -1,0 +1,7 @@
+query GetCompanyTableAggregation($table_id: uuid!) {
+  company_table_aggregation_dim(where: {company_table_id: {_eq: $table_id}}) {
+    dim_table_id
+    company_table_id
+    created_at
+  }
+}

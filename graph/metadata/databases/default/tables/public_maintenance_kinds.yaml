@@ -1,0 +1,11 @@
+table:
+  name: maintenance_kinds
+  schema: public
+is_enum: true
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - description
+        - value
+      filter: {}

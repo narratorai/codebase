@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "functions": {
+    "src/pages/api/**/*": {
+      "maxDuration": 300
+    }
+  }
+}

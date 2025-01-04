@@ -1,0 +1,10 @@
+query GetActivitiesBySlugs($table_id: uuid!, $slugs: [String!]!) {
+  activities: activity(where: { table_id: { _eq: $table_id }, slug: { _in: $slugs } }) {
+    id
+    slug
+    name
+    description
+    table_id
+    row_count
+  }
+}

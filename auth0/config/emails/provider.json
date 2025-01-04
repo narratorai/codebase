@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "credentials": {
+    "smtp_host": "smtp.postmarkapp.com",
+    "smtp_port": 587,
+    "smtp_user": "##POSTMARK_TOKEN##",
+    "smtp_pass": "##POSTMARK_TOKEN##"
+  },
+  "name": "smtp",
+  "default_from_address": "##EMAIL_DEFAULT_FROM##"
+}

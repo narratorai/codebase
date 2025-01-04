@@ -1,0 +1,20 @@
+# Query used at the GET /api/chat endpoint
+
+query GetAllChats($graph_filter: chat_bool_exp!, $limit: Int, $offset: Int, $favorite_tag_id: uuid!) {
+  chat_aggregate(where: $graph_filter) {
+    aggregate {
+      totalCount: count
+    }
+  }
+  chats: chat(where: $graph_filter, order_by: { created_at: desc }, limit: $limit, offset: $offset) {
+    id
+    created_by
+    created_at
+    rating
+    summary
+    detailed_summary
+    tags(where: { tag_id: { _eq: $favorite_tag_id } }) {
+      id
+    }
+  }
+}

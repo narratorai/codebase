@@ -1,0 +1,448 @@
+{
+  "override_sql": null,
+  "query": {
+    "activities": [
+      {
+        "did": true,
+        "kind": "limiting",
+        "occurence_after_time": false,
+        "occurrence": "all",
+        "occurrence_value": 1,
+        "relationships": [],
+        "config": {
+          "activity_stream": "activity_stream",
+          "customer_table": "users",
+          "enrichment_table": null,
+          "has_source": true
+        },
+        "slug": "marketing_session",
+        "filters": [],
+        "id": "marketing_session_MegPzuKo"
+      },
+      {
+        "did": true,
+        "kind": "conversion",
+        "occurence_after_time": false,
+        "occurrence": "first",
+        "occurrence_value": 1,
+        "relationships": [
+          {
+            "slug": "within_cohort"
+          }
+        ],
+        "config": {
+          "activity_stream": "activity_stream",
+          "customer_table": "users",
+          "enrichment_table": null,
+          "has_source": false
+        },
+        "slug": "lead_submitted",
+        "filters": [],
+        "id": "lead_submitted_2fz7_11d"
+      }
+    ],
+    "columns": [
+      {
+        "id": "limiting_marketing_session_MegPzuKo_ts",
+        "filters": [],
+        "label": "marketing_session_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "marketing_session_MegPzuKo",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "timestamp",
+        "mavis_type": "timestamp"
+      },
+      {
+        "id": "limiting_marketing_session_MegPzuKo_customer",
+        "filters": [],
+        "label": "customer",
+        "name": "customer",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "marketing_session_MegPzuKo",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "string",
+        "mavis_type": "string"
+      },
+      {
+        "id": "limiting_marketing_session_MegPzuKo_join_customer",
+        "filters": [],
+        "label": "unique_customer_identifier",
+        "name": "join_customer",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "marketing_session_MegPzuKo",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "string",
+        "mavis_type": "string"
+      },
+      {
+        "id": "limiting_marketing_session_MegPzuKo_landing_url",
+        "filters": [],
+        "label": "landing_url",
+        "name": "landing_url",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "marketing_session_MegPzuKo",
+          "enrichment_table": "enriched_pages"
+        },
+        "source_kind": "activity",
+        "type": "string",
+        "mavis_type": "string"
+      },
+      {
+        "id": "limiting_marketing_session_MegPzuKo_activity_occurrence",
+        "filters": [],
+        "label": "activity_occurrence",
+        "name": "activity_occurrence",
+        "output": true,
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "marketing_session_MegPzuKo",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "integer",
+        "mavis_type": "integer"
+      },
+      {
+        "id": "conversion_lead_submitted_2fz7_11d_ts",
+        "filters": [],
+        "label": "converted_to_lead_submitted_at",
+        "name": "ts",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_id": "lead_submitted_2fz7_11d",
+          "enrichment_table": null
+        },
+        "source_kind": "activity",
+        "type": "timestamp"
+      },
+      {
+        "id": "converted_to_lead_submitted_2fz7_11d",
+        "filters": [],
+        "label": "converted_to_lead_submitted",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_id": "lead_submitted_2fz7_11d",
+          "raw_string": "iff(not_is_null({conversion_lead_submitted_2fz7_11d_ts}),1, 0)"
+        },
+        "source_kind": "computed",
+        "type": "boolean"
+      },
+      {
+        "id": "days_to_lead_submitted_2fz7_11d",
+        "filters": [],
+        "label": "days_to_lead_submitted",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "activity_kind": "conversion",
+          "activity_id": "lead_submitted_2fz7_11d",
+          "raw_string": "date_diff('day', {limiting_marketing_session_MegPzuKo_ts},{conversion_lead_submitted_2fz7_11d_ts})"
+        },
+        "source_kind": "computed",
+        "type": "number"
+      },
+      {
+        "id": "test_ifttt",
+        "filters": [],
+        "label": "test_ifttt",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "ifttt",
+          "cases": [
+            {
+              "filters": [
+                {
+                  "column_id": "limiting_marketing_session_MegPzuKo_ts",
+                  "filter": {
+                    "operator": "greater_than",
+                    "value": "2019-12-01T00:00:00Z",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "After Dec",
+              "value_kind": "string"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "limiting_marketing_session_MegPzuKo_ts",
+                  "filter": {
+                    "operator": "greater_than",
+                    "value": "2019-11-01T00:00:00Z",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "After Nov",
+              "value_kind": "string"
+            }
+          ],
+          "value_kind": "string",
+          "value": "Before Nov"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "test_freehand",
+        "filters": [],
+        "label": "test_freehand",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "freehand_function",
+          "raw_string": "{limiting_marketing_session_MegPzuKo_landing_url} + \"matt\""
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "days_decimated",
+        "filters": [],
+        "label": "days_decimated",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "ifttt",
+          "cases": [
+            {
+              "filters": [
+                {
+                  "column_id": "days_to_lead_submitted_2fz7_11d",
+                  "filter": {
+                    "operator": "greater_than",
+                    "value": "5",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "more than 5",
+              "value_kind": "string"
+            }
+          ],
+          "value_kind": "string",
+          "value": "less than 5"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      }
+    ],
+    "activity_stream": "activity_stream",
+    "all_groups": [
+      {
+        "name": "landing url",
+        "slug": "landing_url",
+        "_column_ids": [
+          "limiting_marketing_session_MegPzuKo_landing_url",
+          "limiting_marketing_session_MegPzuKo_activity_occurrence"
+        ],
+        "columns": [
+          {
+            "id": "landing_url_limiting_marketing_session_MegPzuKo_landing_url",
+            "filters": [],
+            "label": "landing_url",
+            "name": "",
+            "output": true,
+            "type": "string",
+            "column_id": "limiting_marketing_session_MegPzuKo_landing_url",
+            "pivoted": false
+          },
+          {
+            "id": "landing_url_limiting_marketing_session_MegPzuKo_activity_occurrence",
+            "filters": [],
+            "label": "activity_occurrence",
+            "name": "",
+            "output": true,
+            "type": "integer",
+            "column_id": "limiting_marketing_session_MegPzuKo_activity_occurrence",
+            "pivoted": false
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "landing_url_computed_conversion_to_lead_submitted_2fz7_11d",
+            "filters": [],
+            "label": "conversion_rate_to_lead_submitted",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "({landing_url_metric_total_lead_submitted_2fz7_11d}*1.0)/{metrics_total_events}"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": null
+          },
+          {
+            "id": "landing_url_replace_broke",
+            "filters": [],
+            "label": "replace_broke",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "replace",
+              "column_id": "landing_url_limiting_marketing_session_MegPzuKo_landing_url",
+              "remove_str": "this",
+              "replace_str": "that"
+            },
+            "source_kind": "computed",
+            "type": "string",
+            "_auto_generated_by": null
+          }
+        ],
+        "metrics": [
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metrics_total_events",
+            "label": "total_events",
+            "agg_function": "COUNT_ALL",
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "landing_url_metric_total_lead_submitted_2fz7_11d",
+            "label": "total_lead_submitted",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "converted_to_lead_submitted_2fz7_11d",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          }
+        ],
+        "pivot": [],
+        "order": [
+          {
+            "column_id": "landing_url_limiting_marketing_session_MegPzuKo_landing_url",
+            "order_direction": "desc"
+          }
+        ],
+        "parent_filters": [],
+        "_fieldIndex": 0,
+        "_isEdit": true
+      },
+      {
+        "name": "Double Group",
+        "slug": "double_group",
+        "_column_ids": [
+          "converted_to_lead_submitted_2fz7_11d",
+          "days_decimated"
+        ],
+        "columns": [
+          {
+            "id": "double_group_converted_to_lead_submitted_2fz7_11d",
+            "filters": [],
+            "label": "converted_to_lead_submitted",
+            "name": "",
+            "output": true,
+            "type": "boolean",
+            "column_id": "converted_to_lead_submitted_2fz7_11d",
+            "pivoted": false
+          },
+          {
+            "id": "double_group_days_decimated",
+            "filters": [],
+            "label": "days_decimated",
+            "name": "",
+            "output": true,
+            "type": "string",
+            "column_id": "days_decimated",
+            "pivoted": false
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "double_group_computed_conversion_to_lead_submitted_2fz7_11d",
+            "filters": [],
+            "label": "conversion_rate_to_lead_submitted",
+            "name": "",
+            "output": true,
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "({double_group_metric_total_lead_submitted_2fz7_11d}*1.0)/{metrics_total_events}"
+            },
+            "source_kind": "computed",
+            "type": "float",
+            "_auto_generated_by": null
+          }
+        ],
+        "metrics": [
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "metrics_total_events",
+            "label": "count_records",
+            "agg_function": "COUNT_ALL",
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          },
+          {
+            "_pre_pivot_column_id": null,
+            "_pre_pivot_column_label": null,
+            "id": "double_group_metric_total_lead_submitted_2fz7_11d",
+            "label": "total_lead_submitted",
+            "agg_function": "SUM",
+            "output": true,
+            "column_id": "converted_to_lead_submitted_2fz7_11d",
+            "filters": [],
+            "pivot": [],
+            "type": "number",
+            "_auto_generated_by": null
+          }
+        ],
+        "pivot": [],
+        "order": [
+          {
+            "column_id": "metrics_total_events",
+            "order_direction": "desc"
+          }
+        ],
+        "parent_filters": []
+      }
+    ],
+    "order": [
+      {
+        "column_id": "limiting_marketing_session_MegPzuKo_ts",
+        "order_direction": "desc"
+      }
+    ]
+  }
+}

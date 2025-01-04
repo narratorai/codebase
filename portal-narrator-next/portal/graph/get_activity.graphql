@@ -1,0 +1,26 @@
+fragment ActivityFragment on activity {
+  id
+  name
+  transformations {
+    id
+    transformation {
+      id
+      name
+      table
+    }
+  }
+}
+
+query GetActivityById($id: uuid!) {
+  activity(where: { id: { _eq: $id } }) {
+    id
+    ...ActivityFragment
+  }
+}
+
+query GetActivityBySlug($company_id: uuid!, $slug: String!) {
+  activity(where: { slug: { _eq: $slug }, company: { id: { _eq: $company_id } } }) {
+    id
+    ...ActivityFragment
+  }
+}

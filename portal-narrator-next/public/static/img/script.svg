@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+  <defs>
+    <path id="script-a" d="M9,4.41421356 L9,5 L6.00976563,5 L6.00976563,2 L3,2 L3,10 L9,10 L9,4.41421356 Z M8.58578644,4 L7.00976563,2.42397919 L7.00976563,4 L8.58578644,4 Z M2,1 L7,1 L10,4 L10,11 L2,11 L2,1 Z"/>
+  </defs>
+  <use xlink:href="#script-a"/>
+</svg>

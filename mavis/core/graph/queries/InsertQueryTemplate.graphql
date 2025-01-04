@@ -1,0 +1,26 @@
+mutation InsertQueryTemplate(
+  $sql_query: String!
+  $transformation_name: String!
+  $transformation_kind: transformation_kinds_enum!
+  $transformation_update_type: transformation_update_types_enum!
+  $data_source: String!
+  $warehouse_language: String!
+  $updated_by: uuid!
+  $schema_names: String!
+) {
+  inserted_template: insert_query_template_one(
+    object: {
+      warehouse_language: $warehouse_language
+      data_source: $data_source
+      query: $sql_query
+      transformation_name: $transformation_name
+      transformation_kind: $transformation_kind
+      transformation_update_type: $transformation_update_type
+      updated_by: $updated_by
+      schema_names: $schema_names
+      el_source: "fivetran"
+    }
+  ) {
+    id
+  }
+}

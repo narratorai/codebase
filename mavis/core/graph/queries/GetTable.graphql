@@ -1,0 +1,24 @@
+query GetTable($company_id: uuid!, $table: String!) {
+  transformation(
+    where: { company_id: { _eq: $company_id }, table: { _eq: $table } }
+  ) {
+    id
+    kind
+    name
+    table
+    last_resynced_at
+    update_type
+    column_renames {
+      label
+      name
+      type
+      casting
+      created_at
+    }
+    production_queries_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+}

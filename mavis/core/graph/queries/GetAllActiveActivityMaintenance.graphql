@@ -1,0 +1,14 @@
+query GetAllActiveActivityMaintenance($company_id: uuid!) {
+  activity_maintenance(
+    where: {
+      activity: {
+        company_id: {_eq:$company_id}
+      }
+      ended_at: { _is_null: true }
+    }
+    order_by: { ended_at: desc_nulls_first }
+  ) {
+    id
+    activity_id
+  }
+}

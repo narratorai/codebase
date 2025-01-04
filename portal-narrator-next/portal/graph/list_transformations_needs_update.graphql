@@ -1,0 +1,9 @@
+subscription ListTransformationsNeedsUpdate($company_slug: String!) {
+  all_transformations: transformation(
+    where: { company: { slug: { _eq: $company_slug } } }
+    order_by: [{ created_at: desc }]
+  ) {
+    id
+    updated_at
+  }
+}

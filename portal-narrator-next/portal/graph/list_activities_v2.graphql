@@ -1,0 +1,63 @@
+query ActivityIndexV2($company_slug: String!) {
+  all_activities: activity(
+    where: { company: { slug: { _eq: $company_slug } } }
+    order_by: { company_category: { category: desc_nulls_last } }
+  ) {
+    id
+    created_at
+    updated_at
+    slug
+    name
+    description
+    category
+    validated
+    status
+    next_index_at
+    activity_maintenances(where: { ended_at: { _is_null: true } }) {
+      id
+      kind
+      notes
+      started_at
+      maintenance_kind {
+        description
+      }
+    }
+    company_table {
+      id
+      activity_stream
+    }
+    company_category {
+      id
+      category
+      color
+    }
+    datasets(where: { _and: { dataset: { company: { slug: { _eq: $company_slug } }, status: { _eq: live } } } }) {
+      id
+      dataset {
+        id
+        name
+        slug
+      }
+    }
+    tags {
+      id
+      company_tag {
+        id
+        tag
+        color
+        user_id
+      }
+    }
+    transformations {
+      id
+      transformation {
+        id
+        name
+        current_query {
+          id
+          sql
+        }
+      }
+    }
+  }
+}

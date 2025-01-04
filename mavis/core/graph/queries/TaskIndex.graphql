@@ -1,0 +1,11 @@
+query TaskIndex($company_id: uuid!) {
+  company_task(
+    where: { company_id: { _eq: $company_id }, internal_only: { _eq: false } }
+  ) {
+    category
+    created_at
+    id
+    task_slug
+    schedule
+  }
+}

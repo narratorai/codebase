@@ -1,0 +1,3653 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`helpers #getActivityBySlug should find the correct OR activity when given a single slug 1`] = `
+{
+  "_id": "complete_company_setup",
+  "features": [
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Message Id",
+      "name": "activity_id",
+      "values": [
+        {
+          "percent_of_total": 1,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "timestamp",
+      "label": "Received At",
+      "name": "ts",
+      "values": [
+        {
+          "percent_of_total": 1,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Source",
+      "name": "source",
+      "values": [
+        {
+          "percent_of_total": 1,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Source Id",
+      "name": "source_id",
+      "values": [
+        {
+          "percent_of_total": 1,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Email",
+      "name": "customer",
+      "values": [
+        {
+          "percent_of_total": 1,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Company Slug",
+      "name": "feature_1",
+      "values": [
+        {
+          "percent_of_total": 1,
+          "total_rows": 1,
+          "value": "narratorclient",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Link",
+      "name": "link",
+      "values": [
+        {
+          "percent_of_total": 1,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "integer",
+      "label": "Activity Occurrence",
+      "name": "activity_occurrence",
+      "values": [
+        {
+          "percent_of_total": 1,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+  ],
+  "has_source": true,
+  "meta": {
+    "columns": [
+      {
+        "label": "Message Id",
+        "name": "activity_id",
+      },
+      {
+        "label": "Received At",
+        "name": "ts",
+      },
+      {
+        "label": "Source",
+        "name": "source",
+      },
+      {
+        "label": "Source Id",
+        "name": "source_id",
+      },
+      {
+        "label": "Email",
+        "name": "customer",
+      },
+      {
+        "label": "Company Slug",
+        "name": "feature_1",
+      },
+      {
+        "label": "Link",
+        "name": "link",
+      },
+      {
+        "label": "Activity Occurrence",
+        "name": "activity_occurrence",
+      },
+    ],
+    "name": "Complete Company Setup",
+    "status": "live",
+  },
+  "name": "Complete Company Setup",
+  "script_slugs": [
+    "batch_runs",
+  ],
+  "slug": "complete_company_setup",
+  "table": "activity_stream",
+}
+`;
+
+exports[`helpers #getActivityBySlug should find the correct OR activity when given multiple slugs 1`] = `
+{
+  "_id": "complete_company_setup_or_created_a_dashboard",
+  "features": [
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Message Id OR Id",
+      "name": "activity_id",
+      "values": [
+        {
+          "percent_of_total": 0.967741935483871,
+          "total_rows": 30,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "timestamp",
+      "label": "Received At OR Created At",
+      "name": "ts",
+      "values": [
+        {
+          "percent_of_total": 0.967741935483871,
+          "total_rows": 30,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Source",
+      "name": "source",
+      "values": [
+        {
+          "percent_of_total": 1,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Source Id",
+      "name": "source_id",
+      "values": [
+        {
+          "percent_of_total": 1,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Email",
+      "name": "customer",
+      "values": [
+        {
+          "percent_of_total": 0.967741935483871,
+          "total_rows": 30,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Company Slug OR Slug",
+      "name": "feature_1",
+      "values": [
+        {
+          "percent_of_total": 0.06451612903225806,
+          "total_rows": 2,
+          "value": "sw_mktg_site_visit",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "narratorclient",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "overview",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "marketing_overivew",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "test_save",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "dashy_mcdashboardface",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "dynamic_metrics_test",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "matt_fun",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "survey_wizard",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "executive_overview",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "main_usage",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "first_dataset",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "brittany_s_dash",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "testing_new_form",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "woo",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "test_six_graphs_42",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "take_me_where_i_want_to_go",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "test_six_graphs",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "what_happens_now",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "test_dashboard_form",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "steph_s_test",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "one_more_dumb_test",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "another_one",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "take_me_to_the_dashbaord",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "executive_dashboard",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "do_we_want_braces_for_dogs",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "testing_new_dashboard_and_batch",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "large_test",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "ahmeds_overview",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "sk_test",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Link",
+      "name": "link",
+      "values": [
+        {
+          "percent_of_total": 0.967741935483871,
+          "total_rows": 30,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "integer",
+      "label": "Activity Occurrence",
+      "name": "activity_occurrence",
+      "values": [
+        {
+          "percent_of_total": 0.967741935483871,
+          "total_rows": 30,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.03225806451612903,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Description",
+      "name": "feature_2",
+      "values": [
+        {
+          "percent_of_total": 0.5667,
+          "total_rows": 17,
+          "value": null,
+        },
+        {
+          "percent_of_total": 0.0667,
+          "total_rows": 2,
+          "value": "how many ppl visiting over time",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "testing things!!!! ",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "This dashboard is only for dogs.",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "This is a description",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "Dashboard belonging to Brittany!",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "This is a very nice test",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "You're gonna love the way you look...i guarantee it",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "Email Received",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "Dashy McDashboardface",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "This is so great. Thanks.",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "Key metrics for the executives",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "Test dashboard lorem ipsum dolor sit amet, lorem ipsum dolor sit amet 12345.",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Name",
+      "name": "feature_3",
+      "values": [
+        {
+          "percent_of_total": 0.4667,
+          "total_rows": 14,
+          "value": null,
+        },
+        {
+          "percent_of_total": 0.2,
+          "total_rows": 6,
+          "value": "test",
+        },
+        {
+          "percent_of_total": 0.1,
+          "total_rows": 3,
+          "value": "ahmeds ",
+        },
+        {
+          "percent_of_total": 0.0667,
+          "total_rows": 2,
+          "value": "this works",
+        },
+        {
+          "percent_of_total": 0.0667,
+          "total_rows": 2,
+          "value": "executives",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "Example",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "other one",
+        },
+        {
+          "percent_of_total": 0.0333,
+          "total_rows": 1,
+          "value": "Executive",
+        },
+      ],
+    },
+  ],
+  "has_source": true,
+  "meta": {
+    "columns": [
+      {
+        "label": "Message Id OR Id",
+        "name": "activity_id",
+      },
+      {
+        "label": "Received At OR Created At",
+        "name": "ts",
+      },
+      {
+        "label": "Source",
+        "name": "source",
+      },
+      {
+        "label": "Source Id",
+        "name": "source_id",
+      },
+      {
+        "label": "Email",
+        "name": "customer",
+      },
+      {
+        "label": "Company Slug OR Slug",
+        "name": "feature_1",
+      },
+      {
+        "label": "Link",
+        "name": "link",
+      },
+      {
+        "label": "Activity Occurrence",
+        "name": "activity_occurrence",
+      },
+      {
+        "label": "Description",
+        "name": "feature_2",
+      },
+      {
+        "label": "Name",
+        "name": "feature_3",
+      },
+    ],
+    "name": "Complete Company Setup Created A Dashboard",
+    "status": "live",
+  },
+  "name": "Complete Company Setup Created A Dashboard",
+  "script_slugs": [
+    "batch_runs",
+    "created_a_dashboard",
+  ],
+  "slug": [
+    "complete_company_setup",
+    "created_a_dashboard",
+  ],
+  "table": "activity_stream",
+  "virtual": true,
+}
+`;
+
+exports[`helpers #getActivityBySlug should return an OR activity if the array of slugs match, even if they are not in the same order 1`] = `
+{
+  "_id": "added_metric_or_complete_company_setup_or_created_a_dashboard",
+  "features": [
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Id OR Message Id OR Id",
+      "name": "activity_id",
+      "values": [
+        {
+          "percent_of_total": 0.6804123711340206,
+          "total_rows": 66,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.30927835051546393,
+          "total_rows": 30,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "timestamp",
+      "label": "Created At OR Received At OR Created At",
+      "name": "ts",
+      "values": [
+        {
+          "percent_of_total": 0.6804123711340206,
+          "total_rows": 66,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.30927835051546393,
+          "total_rows": 30,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Email",
+      "name": "customer",
+      "values": [
+        {
+          "percent_of_total": 0.6804123711340206,
+          "total_rows": 66,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.30927835051546393,
+          "total_rows": 30,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Kpi OR Company Slug OR Slug",
+      "name": "feature_1",
+      "values": [
+        {
+          "percent_of_total": 0.1958762886597938,
+          "total_rows": 19,
+          "value": "event_conversion_rate",
+        },
+        {
+          "percent_of_total": 0.18556701030927836,
+          "total_rows": 18,
+          "value": "total_events",
+        },
+        {
+          "percent_of_total": 0.07216494845360824,
+          "total_rows": 7,
+          "value": "total_customers",
+        },
+        {
+          "percent_of_total": 0.041237113402061855,
+          "total_rows": 4,
+          "value": "customer_conversion_rate",
+        },
+        {
+          "percent_of_total": 0.030927835051546393,
+          "total_rows": 3,
+          "value": "first_timer_conversion_rate",
+        },
+        {
+          "percent_of_total": 0.030927835051546393,
+          "total_rows": 3,
+          "value": "median_minutes",
+        },
+        {
+          "percent_of_total": 0.020618556701030927,
+          "total_rows": 2,
+          "value": "avg_target_per_customer",
+        },
+        {
+          "percent_of_total": 0.020618556701030927,
+          "total_rows": 2,
+          "value": "ninety_percent_minutes",
+        },
+        {
+          "percent_of_total": 0.020618556701030927,
+          "total_rows": 2,
+          "value": "sw_mktg_site_visit",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "percent_of_first_timers",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "seventy_five_percent_minutes",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "average_minutes",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "eighty_percent_minutes",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "total_start_activity_in_path",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "twenty_five_percent_minutes",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "avg_start_per_customer",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "total_first_time_customers",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "narratorclient",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "overview",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "marketing_overivew",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "test_save",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "dashy_mcdashboardface",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "dynamic_metrics_test",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "matt_fun",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "survey_wizard",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "executive_overview",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "main_usage",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "first_dataset",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "brittany_s_dash",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "testing_new_form",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "woo",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "test_six_graphs_42",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "take_me_where_i_want_to_go",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "test_six_graphs",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "what_happens_now",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "test_dashboard_form",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "steph_s_test",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "one_more_dumb_test",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "another_one",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "take_me_to_the_dashbaord",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "executive_dashboard",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "do_we_want_braces_for_dogs",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "testing_new_dashboard_and_batch",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "large_test",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "ahmeds_overview",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "sk_test",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Slug OR Description",
+      "name": "feature_2",
+      "values": [
+        {
+          "percent_of_total": 0.17708333333333334,
+          "total_rows": 17,
+          "value": null,
+        },
+        {
+          "percent_of_total": 0.16666666666666666,
+          "total_rows": 16,
+          "value": "ordered_impression_kit",
+        },
+        {
+          "percent_of_total": 0.07291666666666667,
+          "total_rows": 7,
+          "value": "create_segment",
+        },
+        {
+          "percent_of_total": 0.052083333333333336,
+          "total_rows": 5,
+          "value": "email_received",
+        },
+        {
+          "percent_of_total": 0.041666666666666664,
+          "total_rows": 4,
+          "value": "deleted_segment",
+        },
+        {
+          "percent_of_total": 0.041666666666666664,
+          "total_rows": 4,
+          "value": "email_recieved",
+        },
+        {
+          "percent_of_total": 0.03125,
+          "total_rows": 3,
+          "value": "load_datasets",
+        },
+        {
+          "percent_of_total": 0.03125,
+          "total_rows": 3,
+          "value": "session",
+        },
+        {
+          "percent_of_total": 0.03125,
+          "total_rows": 3,
+          "value": "load_segment",
+        },
+        {
+          "percent_of_total": 0.03125,
+          "total_rows": 3,
+          "value": "create_activity",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "demo_started",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "added_metric",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "survey_email_captured",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "loaded_activity",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "how many ppl visiting over time",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "ordered_redo_modeling_kit",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "email_opened",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "phone_call",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "portal_session",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "loaded_a_plot",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "load_segment_meta_info",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "view_dashboards",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "ticket_solved",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "downloaded_csv",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "email_sent",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "testing things!!!! ",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "This dashboard is only for dogs.",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "This is a description",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "Dashboard belonging to Brittany!",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "This is a very nice test",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "You're gonna love the way you look...i guarantee it",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "Email Received",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "Dashy McDashboardface",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "This is so great. Thanks.",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "Key metrics for the executives",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "Test dashboard lorem ipsum dolor sit amet, lorem ipsum dolor sit amet 12345.",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Slug OR Name",
+      "name": "feature_3",
+      "values": [
+        {
+          "percent_of_total": 0.1875,
+          "total_rows": 18,
+          "value": "ordered_aligner_set",
+        },
+        {
+          "percent_of_total": 0.14583333333333334,
+          "total_rows": 14,
+          "value": null,
+        },
+        {
+          "percent_of_total": 0.0625,
+          "total_rows": 6,
+          "value": "test",
+        },
+        {
+          "percent_of_total": 0.041666666666666664,
+          "total_rows": 4,
+          "value": "ordered_impression_kit",
+        },
+        {
+          "percent_of_total": 0.041666666666666664,
+          "total_rows": 4,
+          "value": "email_opened",
+        },
+        {
+          "percent_of_total": 0.03125,
+          "total_rows": 3,
+          "value": "demo_started",
+        },
+        {
+          "percent_of_total": 0.03125,
+          "total_rows": 3,
+          "value": "loaded_a_plot",
+        },
+        {
+          "percent_of_total": 0.03125,
+          "total_rows": 3,
+          "value": "view_activities",
+        },
+        {
+          "percent_of_total": 0.03125,
+          "total_rows": 3,
+          "value": "create_activity",
+        },
+        {
+          "percent_of_total": 0.03125,
+          "total_rows": 3,
+          "value": "run_datasets",
+        },
+        {
+          "percent_of_total": 0.03125,
+          "total_rows": 3,
+          "value": "email_replied",
+        },
+        {
+          "percent_of_total": 0.03125,
+          "total_rows": 3,
+          "value": "ahmeds ",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "email_sent",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "marketing_session",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "filterd_timeSegmentation",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "view_segments",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "downloaded_csv",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "complete_company_setup",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "held_meeting",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "this works",
+        },
+        {
+          "percent_of_total": 0.020833333333333332,
+          "total_rows": 2,
+          "value": "executives",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "create_segment",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "email_clicked",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "sales_email_recieved",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "scheduled_meeting",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "view_segment_aggs",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "deleted_segment",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "view_waterfall",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "sales_email_sent",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "Example",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "other one",
+        },
+        {
+          "percent_of_total": 0.010416666666666666,
+          "total_rows": 1,
+          "value": "Executive",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Link",
+      "name": "link",
+      "values": [
+        {
+          "percent_of_total": 0.6804123711340206,
+          "total_rows": 66,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.30927835051546393,
+          "total_rows": 30,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "integer",
+      "label": "Activity Occurrence",
+      "name": "activity_occurrence",
+      "values": [
+        {
+          "percent_of_total": 0.6804123711340206,
+          "total_rows": 66,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.30927835051546393,
+          "total_rows": 30,
+          "value": "not_null",
+        },
+        {
+          "percent_of_total": 0.010309278350515464,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Source",
+      "name": "source",
+      "values": [
+        {
+          "percent_of_total": 1,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+    {
+      "enrichment_table": null,
+      "kind": "string",
+      "label": "Source Id",
+      "name": "source_id",
+      "values": [
+        {
+          "percent_of_total": 1,
+          "total_rows": 1,
+          "value": "not_null",
+        },
+      ],
+    },
+  ],
+  "has_source": true,
+  "meta": {
+    "columns": [
+      {
+        "label": "Id OR Message Id OR Id",
+        "name": "activity_id",
+      },
+      {
+        "label": "Created At OR Received At OR Created At",
+        "name": "ts",
+      },
+      {
+        "label": "Email",
+        "name": "customer",
+      },
+      {
+        "label": "Kpi OR Company Slug OR Slug",
+        "name": "feature_1",
+      },
+      {
+        "label": "Slug OR Description",
+        "name": "feature_2",
+      },
+      {
+        "label": "Slug OR Name",
+        "name": "feature_3",
+      },
+      {
+        "label": "Link",
+        "name": "link",
+      },
+      {
+        "label": "Activity Occurrence",
+        "name": "activity_occurrence",
+      },
+      {
+        "label": "Source",
+        "name": "source",
+      },
+      {
+        "label": "Source Id",
+        "name": "source_id",
+      },
+    ],
+    "name": "Added Metric Complete Company Setup Created A Dashboard",
+    "status": "live",
+  },
+  "name": "Added Metric Complete Company Setup Created A Dashboard",
+  "script_slugs": [
+    "batch_runs",
+    "added_metric",
+    "created_a_dashboard",
+  ],
+  "slug": [
+    "added_metric",
+    "complete_company_setup",
+    "created_a_dashboard",
+  ],
+  "table": "activity_stream",
+  "virtual": true,
+}
+`;
+
+exports[`helpers #getKeyJoinColumnOptions gets column options based on selected activities 1`] = `
+[
+  {
+    "label": "Activity Occurrence",
+    "value": "activity_occurrence",
+  },
+  {
+    "label": "fancy_activity_id",
+    "value": "activity_id",
+  },
+  {
+    "label": "this should exist",
+    "value": "feature_3",
+  },
+]
+`;
+
+exports[`helpers #makeActivityColumn creates proper column label 1`] = `
+{
+  "filters": [],
+  "id": "limiting_test_activity_id_activity_id",
+  "label": "activity_id",
+  "name": "activity_id",
+  "output": true,
+  "source_details": {
+    "activity_id": "test-activity-id",
+    "activity_kind": "limiting",
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "string",
+}
+`;
+
+exports[`helpers #makeActivityColumn for DATASET_ACTIVITY_KIND_ATTRIBUTE prepends activity name to column label 1`] = `
+{
+  "filters": [],
+  "id": "append_test_activity_id_activity_id",
+  "label": "First Test Activity Name activity_id",
+  "name": "activity_id",
+  "output": true,
+  "source_details": {
+    "activity_id": "test-activity-id",
+    "activity_kind": "append",
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "string",
+}
+`;
+
+exports[`helpers #makeActivityColumn for enrichment prepends activity name to column label 1`] = `
+{
+  "filters": [],
+  "id": "enrichment_test_activity_id_referral_kind",
+  "label": "referral_kind",
+  "name": "referral_kind",
+  "output": true,
+  "source_details": {
+    "activity_id": "test-activity-id",
+    "activity_kind": "enrichment",
+    "enrichment_table": "enriched_pages",
+  },
+  "source_kind": "activity",
+  "type": "string",
+}
+`;
+
+exports[`helpers #makeActivityColumn for feature columns creates proper column label 1`] = `
+{
+  "filters": [],
+  "id": "limiting_test_activity_id_feature_1",
+  "label": "this should exist",
+  "name": "feature_1",
+  "output": true,
+  "source_details": {
+    "activity_id": "test-activity-id",
+    "activity_kind": "limiting",
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "string",
+}
+`;
+
+exports[`helpers #makeActivityColumn for feature columns with activity.meta.columns creates proper column label 1`] = `
+{
+  "filters": [],
+  "id": "limiting_test_activity_id_feature_1",
+  "label": "im_a_fancy_meta_label",
+  "name": "feature_1",
+  "output": true,
+  "source_details": {
+    "activity_id": "test-activity-id",
+    "activity_kind": "limiting",
+    "enrichment_table": null,
+  },
+  "source_kind": "activity",
+  "type": "string",
+}
+`;
+
+exports[`helpers #makeExistingColumnSelectOptions creates grouped column options for Select 1`] = `
+[
+  {
+    "label": "Cohort",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "email",
+          "label": "email",
+          "name": "customer",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "activity",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "email",
+        "value": "email",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "segment_id",
+          "label": "segment_id",
+          "name": "source_id",
+          "output": true,
+          "source_details": {
+            "activity_id": "session_UUID",
+            "activity_kind": "limiting",
+          },
+          "source_kind": "activity",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "segment_id",
+        "value": "segment_id",
+      },
+      {
+        "column": {
+          "filters": [
+            {
+              "operator": ">",
+              "value": "2018-10-01",
+            },
+          ],
+          "id": "first_session_at",
+          "label": "first_session_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "first_session_at",
+        "value": "first_session_at",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "id_device",
+          "label": "device",
+          "name": "device",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "enrichment",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "device",
+        "value": "id_device",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "session_source",
+          "label": "session_source",
+          "name": "session_source",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "enrichment",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "session_source",
+        "value": "session_source",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "session_kind",
+          "label": "session_kind",
+          "name": "session_kind",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "enrichment",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "session_kind",
+        "value": "session_kind",
+      },
+    ],
+  },
+  {
+    "label": "Cohort",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "survey_email_captured_at",
+          "label": "survey_email_captured_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "survey_email_captured",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "survey_email_captured_at",
+        "value": "survey_email_captured_at",
+      },
+    ],
+  },
+  {
+    "label": "Attributes",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "photos_received_at",
+          "label": "photos_received_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "append",
+            "activity_slug": "photos_recieved",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "photos_received_at",
+        "value": "photos_received_at",
+      },
+    ],
+  },
+  {
+    "label": "Attributes - Customer Table Columns",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "customer_name",
+          "label": "name",
+          "name": "name",
+          "output": true,
+          "source_details": {
+            "table": "v_customers",
+          },
+          "source_kind": "customer",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "name",
+        "value": "customer_name",
+      },
+    ],
+  },
+  {
+    "label": "Conversion",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "survey_wizard_completed_at",
+          "label": "survey_wizard_completed_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "survey_wizard_completed",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "survey_wizard_completed_at",
+        "value": "survey_wizard_completed_at",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "converted_to_survey_wizard_completed_UUID",
+          "label": "converted_to_survey_wizard_completed",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "survey_wizard_completed",
+            "cases": [
+              {
+                "column": "survey_wizard_completed_at",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null,
+                },
+                "value": 1,
+                "value_kind": "number",
+              },
+            ],
+            "kind": "ifttt",
+            "value": 0,
+            "value_kind": "number",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "converted_to_survey_wizard_completed",
+        "value": "converted_to_survey_wizard_completed_UUID",
+      },
+    ],
+  },
+  {
+    "label": "Conversion",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "ordered_impression_kit_at",
+          "label": "ordered_impression_kit_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "ordered_impression_kit_at",
+        "value": "ordered_impression_kit_at",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "converted_to_ordered_impression_kit_UUID",
+          "label": "converted_to_ordered_impression_kit",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+            "cases": [
+              {
+                "column": "ordered_impression_kit_at",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null,
+                },
+                "value": 1,
+                "value_kind": "number",
+              },
+            ],
+            "kind": "ifttt",
+            "value": 0,
+            "value_kind": "number",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "converted_to_ordered_impression_kit",
+        "value": "converted_to_ordered_impression_kit_UUID",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "days_from_session_to_ordered_impression_kit",
+          "label": "days_from_session_to_ordered_impression_kit",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+            "column": "first_session_at",
+            "kind": "time_between",
+            "second_column": "ordered_impression_kit_at",
+            "segmentation": "days",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "days_from_session_to_ordered_impression_kit",
+        "value": "days_from_session_to_ordered_impression_kit",
+      },
+    ],
+  },
+  {
+    "label": "Computed Columns",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "session_attribution",
+          "label": "session_attribution",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "column": "session_source",
+            "delimiter": " - ",
+            "kind": "string_concatenate_multi_column",
+            "second_column": "session_kind",
+          },
+          "source_kind": "computed",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "session_attribution",
+        "value": "session_attribution",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "sa_row_number",
+          "label": "sa_row_number",
+          "name": "sa_row_number",
+          "output": true,
+          "source_details": {
+            "full_order": [
+              "first_session_at",
+            ],
+            "group": [
+              "session_attribution",
+            ],
+            "kind": "row_number",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "sa_row_number",
+        "value": "sa_row_number",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "sa_count",
+          "label": "sa_count",
+          "name": "sa_count",
+          "output": true,
+          "source_details": {
+            "group": [
+              "session_attribution",
+            ],
+            "kind": "count",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "sa_count",
+        "value": "sa_count",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "sa_percent_of_total",
+          "label": "sa_percent_of_total",
+          "name": "sa_percent_of_total",
+          "output": true,
+          "source_details": {
+            "column": "sa_count",
+            "group": [
+              "session_attribution",
+            ],
+            "kind": "percent_of_total",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "sa_percent_of_total",
+        "value": "sa_percent_of_total",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "categorized_source",
+          "label": "categorized_source",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "cases": [
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "=",
+                  "value": "Referral",
+                },
+                "value": "NOT Direct-Organic-Search",
+                "value_kind": "string",
+              },
+              {
+                "column": "session_source",
+                "filter": {
+                  "operator": "=",
+                  "value": "Organic",
+                },
+                "value": "Direct-Organic-Search",
+                "value_kind": "string",
+              },
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null,
+                },
+                "value": "is set test",
+                "value_kind": "string",
+              },
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "in",
+                  "value": [
+                    "Direct",
+                    "Search",
+                  ],
+                },
+                "value": "****Direct-Organic-Search",
+                "value_kind": "string",
+              },
+            ],
+            "kind": "ifttt",
+            "value": "NOT Direct-Organic-Search",
+            "value_kind": "string",
+          },
+          "source_kind": "computed",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "categorized_source",
+        "value": "categorized_source",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "decimated_session",
+          "label": "decimated_session",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "column": "first_session_at",
+            "kind": "time_truncate",
+            "resolution": 5,
+            "segmentation": "minute",
+          },
+          "source_kind": "computed",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "decimated_session",
+        "value": "decimated_session",
+      },
+    ],
+  },
+]
+`;
+
+exports[`helpers #makeExistingColumnSelectOptions with columnTypes disables every column but strings 1`] = `
+[
+  {
+    "label": "Cohort",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "email",
+          "label": "email",
+          "name": "customer",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "activity",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "email",
+        "value": "email",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "segment_id",
+          "label": "segment_id",
+          "name": "source_id",
+          "output": true,
+          "source_details": {
+            "activity_id": "session_UUID",
+            "activity_kind": "limiting",
+          },
+          "source_kind": "activity",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "segment_id",
+        "value": "segment_id",
+      },
+      {
+        "column": {
+          "filters": [
+            {
+              "operator": ">",
+              "value": "2018-10-01",
+            },
+          ],
+          "id": "first_session_at",
+          "label": "first_session_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "first_session_at",
+        "value": "first_session_at",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "id_device",
+          "label": "device",
+          "name": "device",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "enrichment",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "device",
+        "value": "id_device",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "session_source",
+          "label": "session_source",
+          "name": "session_source",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "enrichment",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "session_source",
+        "value": "session_source",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "session_kind",
+          "label": "session_kind",
+          "name": "session_kind",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "enrichment",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "session_kind",
+        "value": "session_kind",
+      },
+    ],
+  },
+  {
+    "label": "Cohort",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "survey_email_captured_at",
+          "label": "survey_email_captured_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "survey_email_captured",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "survey_email_captured_at",
+        "value": "survey_email_captured_at",
+      },
+    ],
+  },
+  {
+    "label": "Attributes",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "photos_received_at",
+          "label": "photos_received_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "append",
+            "activity_slug": "photos_recieved",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "photos_received_at",
+        "value": "photos_received_at",
+      },
+    ],
+  },
+  {
+    "label": "Attributes - Customer Table Columns",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "customer_name",
+          "label": "name",
+          "name": "name",
+          "output": true,
+          "source_details": {
+            "table": "v_customers",
+          },
+          "source_kind": "customer",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "name",
+        "value": "customer_name",
+      },
+    ],
+  },
+  {
+    "label": "Conversion",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "survey_wizard_completed_at",
+          "label": "survey_wizard_completed_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "survey_wizard_completed",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "survey_wizard_completed_at",
+        "value": "survey_wizard_completed_at",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "converted_to_survey_wizard_completed_UUID",
+          "label": "converted_to_survey_wizard_completed",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "survey_wizard_completed",
+            "cases": [
+              {
+                "column": "survey_wizard_completed_at",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null,
+                },
+                "value": 1,
+                "value_kind": "number",
+              },
+            ],
+            "kind": "ifttt",
+            "value": 0,
+            "value_kind": "number",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "converted_to_survey_wizard_completed",
+        "value": "converted_to_survey_wizard_completed_UUID",
+      },
+    ],
+  },
+  {
+    "label": "Conversion",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "ordered_impression_kit_at",
+          "label": "ordered_impression_kit_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "ordered_impression_kit_at",
+        "value": "ordered_impression_kit_at",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "converted_to_ordered_impression_kit_UUID",
+          "label": "converted_to_ordered_impression_kit",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+            "cases": [
+              {
+                "column": "ordered_impression_kit_at",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null,
+                },
+                "value": 1,
+                "value_kind": "number",
+              },
+            ],
+            "kind": "ifttt",
+            "value": 0,
+            "value_kind": "number",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "converted_to_ordered_impression_kit",
+        "value": "converted_to_ordered_impression_kit_UUID",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "days_from_session_to_ordered_impression_kit",
+          "label": "days_from_session_to_ordered_impression_kit",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+            "column": "first_session_at",
+            "kind": "time_between",
+            "second_column": "ordered_impression_kit_at",
+            "segmentation": "days",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "days_from_session_to_ordered_impression_kit",
+        "value": "days_from_session_to_ordered_impression_kit",
+      },
+    ],
+  },
+  {
+    "label": "Computed Columns",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "session_attribution",
+          "label": "session_attribution",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "column": "session_source",
+            "delimiter": " - ",
+            "kind": "string_concatenate_multi_column",
+            "second_column": "session_kind",
+          },
+          "source_kind": "computed",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "session_attribution",
+        "value": "session_attribution",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "sa_row_number",
+          "label": "sa_row_number",
+          "name": "sa_row_number",
+          "output": true,
+          "source_details": {
+            "full_order": [
+              "first_session_at",
+            ],
+            "group": [
+              "session_attribution",
+            ],
+            "kind": "row_number",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "sa_row_number",
+        "value": "sa_row_number",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "sa_count",
+          "label": "sa_count",
+          "name": "sa_count",
+          "output": true,
+          "source_details": {
+            "group": [
+              "session_attribution",
+            ],
+            "kind": "count",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "sa_count",
+        "value": "sa_count",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "sa_percent_of_total",
+          "label": "sa_percent_of_total",
+          "name": "sa_percent_of_total",
+          "output": true,
+          "source_details": {
+            "column": "sa_count",
+            "group": [
+              "session_attribution",
+            ],
+            "kind": "percent_of_total",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "sa_percent_of_total",
+        "value": "sa_percent_of_total",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "categorized_source",
+          "label": "categorized_source",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "cases": [
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "=",
+                  "value": "Referral",
+                },
+                "value": "NOT Direct-Organic-Search",
+                "value_kind": "string",
+              },
+              {
+                "column": "session_source",
+                "filter": {
+                  "operator": "=",
+                  "value": "Organic",
+                },
+                "value": "Direct-Organic-Search",
+                "value_kind": "string",
+              },
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null,
+                },
+                "value": "is set test",
+                "value_kind": "string",
+              },
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "in",
+                  "value": [
+                    "Direct",
+                    "Search",
+                  ],
+                },
+                "value": "****Direct-Organic-Search",
+                "value_kind": "string",
+              },
+            ],
+            "kind": "ifttt",
+            "value": "NOT Direct-Organic-Search",
+            "value_kind": "string",
+          },
+          "source_kind": "computed",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "categorized_source",
+        "value": "categorized_source",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "decimated_session",
+          "label": "decimated_session",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "column": "first_session_at",
+            "kind": "time_truncate",
+            "resolution": 5,
+            "segmentation": "minute",
+          },
+          "source_kind": "computed",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "decimated_session",
+        "value": "decimated_session",
+      },
+    ],
+  },
+]
+`;
+
+exports[`helpers #makeExistingColumnSelectOptions with groupSlug creates grouped column options for Select from group 1`] = `
+[
+  {
+    "label": "Group By Columns",
+    "options": [
+      {
+        "column": {
+          "column_id": "session_session_kind",
+          "filters": [],
+          "id": "group_session_session_kind",
+          "label": "session_session_kind",
+          "output": true,
+          "pivoted": "false",
+          "type": "string",
+        },
+        "groupSlug": "group_by_kind_and_source",
+        "isDisabled": false,
+        "label": "session_session_kind",
+        "value": "group_session_session_kind",
+      },
+      {
+        "column": {
+          "column_id": "session_session_source",
+          "filters": [],
+          "id": "group_session_session_source",
+          "label": "session_session_source",
+          "output": true,
+          "pivoted": "false",
+          "type": "string",
+        },
+        "groupSlug": "group_by_kind_and_source",
+        "isDisabled": false,
+        "label": "session_session_source",
+        "value": "group_session_session_source",
+      },
+    ],
+  },
+  {
+    "label": "Metric Columns",
+    "options": [
+      {
+        "column": {
+          "agg_function": "COUNT",
+          "column_id": "*",
+          "filters": [],
+          "id": "metrics_total_events",
+          "label": "total_events",
+          "output": true,
+          "pivot": [],
+          "type": "number",
+        },
+        "groupSlug": "group_by_kind_and_source",
+        "isDisabled": false,
+        "label": "total_events",
+        "value": "metrics_total_events",
+      },
+      {
+        "column": {
+          "agg_function": "SUM",
+          "column_id": "converted_to_ordered_impression_kit",
+          "filters": [],
+          "id": "metric_total_ordered_impression_kit",
+          "label": "total_ordered_impression_kit",
+          "output": true,
+          "pivot": [],
+          "type": "number",
+        },
+        "groupSlug": "group_by_kind_and_source",
+        "isDisabled": false,
+        "label": "total_ordered_impression_kit",
+        "value": "metric_total_ordered_impression_kit",
+      },
+    ],
+  },
+  {
+    "label": "Computed Columns",
+    "options": [],
+  },
+]
+`;
+
+exports[`helpers #makeExistingColumnSelectOptions with omitColumnIds disable those columns 1`] = `
+[
+  {
+    "label": "Cohort",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "email",
+          "label": "email",
+          "name": "customer",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "activity",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "email",
+        "value": "email",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "segment_id",
+          "label": "segment_id",
+          "name": "source_id",
+          "output": true,
+          "source_details": {
+            "activity_id": "session_UUID",
+            "activity_kind": "limiting",
+          },
+          "source_kind": "activity",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "segment_id",
+        "value": "segment_id",
+      },
+      {
+        "column": {
+          "filters": [
+            {
+              "operator": ">",
+              "value": "2018-10-01",
+            },
+          ],
+          "id": "first_session_at",
+          "label": "first_session_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "first_session_at",
+        "value": "first_session_at",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "id_device",
+          "label": "device",
+          "name": "device",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "enrichment",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "device",
+        "value": "id_device",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "session_source",
+          "label": "session_source",
+          "name": "session_source",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "enrichment",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "session_source",
+        "value": "session_source",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "session_kind",
+          "label": "session_kind",
+          "name": "session_kind",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "enrichment",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "session_kind",
+        "value": "session_kind",
+      },
+    ],
+  },
+  {
+    "label": "Cohort",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "survey_email_captured_at",
+          "label": "survey_email_captured_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "survey_email_captured",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "survey_email_captured_at",
+        "value": "survey_email_captured_at",
+      },
+    ],
+  },
+  {
+    "label": "Attributes",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "photos_received_at",
+          "label": "photos_received_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "append",
+            "activity_slug": "photos_recieved",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "photos_received_at",
+        "value": "photos_received_at",
+      },
+    ],
+  },
+  {
+    "label": "Attributes - Customer Table Columns",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "customer_name",
+          "label": "name",
+          "name": "name",
+          "output": true,
+          "source_details": {
+            "table": "v_customers",
+          },
+          "source_kind": "customer",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "name",
+        "value": "customer_name",
+      },
+    ],
+  },
+  {
+    "label": "Conversion",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "survey_wizard_completed_at",
+          "label": "survey_wizard_completed_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "survey_wizard_completed",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "survey_wizard_completed_at",
+        "value": "survey_wizard_completed_at",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "converted_to_survey_wizard_completed_UUID",
+          "label": "converted_to_survey_wizard_completed",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "survey_wizard_completed",
+            "cases": [
+              {
+                "column": "survey_wizard_completed_at",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null,
+                },
+                "value": 1,
+                "value_kind": "number",
+              },
+            ],
+            "kind": "ifttt",
+            "value": 0,
+            "value_kind": "number",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "converted_to_survey_wizard_completed",
+        "value": "converted_to_survey_wizard_completed_UUID",
+      },
+    ],
+  },
+  {
+    "label": "Conversion",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "ordered_impression_kit_at",
+          "label": "ordered_impression_kit_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "ordered_impression_kit_at",
+        "value": "ordered_impression_kit_at",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "converted_to_ordered_impression_kit_UUID",
+          "label": "converted_to_ordered_impression_kit",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+            "cases": [
+              {
+                "column": "ordered_impression_kit_at",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null,
+                },
+                "value": 1,
+                "value_kind": "number",
+              },
+            ],
+            "kind": "ifttt",
+            "value": 0,
+            "value_kind": "number",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "converted_to_ordered_impression_kit",
+        "value": "converted_to_ordered_impression_kit_UUID",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "days_from_session_to_ordered_impression_kit",
+          "label": "days_from_session_to_ordered_impression_kit",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+            "column": "first_session_at",
+            "kind": "time_between",
+            "second_column": "ordered_impression_kit_at",
+            "segmentation": "days",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "days_from_session_to_ordered_impression_kit",
+        "value": "days_from_session_to_ordered_impression_kit",
+      },
+    ],
+  },
+  {
+    "label": "Computed Columns",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "session_attribution",
+          "label": "session_attribution",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "column": "session_source",
+            "delimiter": " - ",
+            "kind": "string_concatenate_multi_column",
+            "second_column": "session_kind",
+          },
+          "source_kind": "computed",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "session_attribution",
+        "value": "session_attribution",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "sa_row_number",
+          "label": "sa_row_number",
+          "name": "sa_row_number",
+          "output": true,
+          "source_details": {
+            "full_order": [
+              "first_session_at",
+            ],
+            "group": [
+              "session_attribution",
+            ],
+            "kind": "row_number",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "sa_row_number",
+        "value": "sa_row_number",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "sa_count",
+          "label": "sa_count",
+          "name": "sa_count",
+          "output": true,
+          "source_details": {
+            "group": [
+              "session_attribution",
+            ],
+            "kind": "count",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "sa_count",
+        "value": "sa_count",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "sa_percent_of_total",
+          "label": "sa_percent_of_total",
+          "name": "sa_percent_of_total",
+          "output": true,
+          "source_details": {
+            "column": "sa_count",
+            "group": [
+              "session_attribution",
+            ],
+            "kind": "percent_of_total",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "sa_percent_of_total",
+        "value": "sa_percent_of_total",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "categorized_source",
+          "label": "categorized_source",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "cases": [
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "=",
+                  "value": "Referral",
+                },
+                "value": "NOT Direct-Organic-Search",
+                "value_kind": "string",
+              },
+              {
+                "column": "session_source",
+                "filter": {
+                  "operator": "=",
+                  "value": "Organic",
+                },
+                "value": "Direct-Organic-Search",
+                "value_kind": "string",
+              },
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null,
+                },
+                "value": "is set test",
+                "value_kind": "string",
+              },
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "in",
+                  "value": [
+                    "Direct",
+                    "Search",
+                  ],
+                },
+                "value": "****Direct-Organic-Search",
+                "value_kind": "string",
+              },
+            ],
+            "kind": "ifttt",
+            "value": "NOT Direct-Organic-Search",
+            "value_kind": "string",
+          },
+          "source_kind": "computed",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "categorized_source",
+        "value": "categorized_source",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "decimated_session",
+          "label": "decimated_session",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "column": "first_session_at",
+            "kind": "time_truncate",
+            "resolution": 5,
+            "segmentation": "minute",
+          },
+          "source_kind": "computed",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "decimated_session",
+        "value": "decimated_session",
+      },
+    ],
+  },
+]
+`;
+
+exports[`helpers #makeExistingColumnSelectOptions with selectColumnIds only allows those columns 1`] = `
+[
+  {
+    "label": "Cohort",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "email",
+          "label": "email",
+          "name": "customer",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "activity",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "email",
+        "value": "email",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "segment_id",
+          "label": "segment_id",
+          "name": "source_id",
+          "output": true,
+          "source_details": {
+            "activity_id": "session_UUID",
+            "activity_kind": "limiting",
+          },
+          "source_kind": "activity",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": false,
+        "label": "segment_id",
+        "value": "segment_id",
+      },
+      {
+        "column": {
+          "filters": [
+            {
+              "operator": ">",
+              "value": "2018-10-01",
+            },
+          ],
+          "id": "first_session_at",
+          "label": "first_session_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "first_session_at",
+        "value": "first_session_at",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "id_device",
+          "label": "device",
+          "name": "device",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "enrichment",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "device",
+        "value": "id_device",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "session_source",
+          "label": "session_source",
+          "name": "session_source",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "enrichment",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "session_source",
+        "value": "session_source",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "session_kind",
+          "label": "session_kind",
+          "name": "session_kind",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "session",
+          },
+          "source_kind": "enrichment",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "session_kind",
+        "value": "session_kind",
+      },
+    ],
+  },
+  {
+    "label": "Cohort",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "survey_email_captured_at",
+          "label": "survey_email_captured_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "limiting",
+            "activity_slug": "survey_email_captured",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "survey_email_captured_at",
+        "value": "survey_email_captured_at",
+      },
+    ],
+  },
+  {
+    "label": "Attributes",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "photos_received_at",
+          "label": "photos_received_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "append",
+            "activity_slug": "photos_recieved",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "photos_received_at",
+        "value": "photos_received_at",
+      },
+    ],
+  },
+  {
+    "label": "Attributes - Customer Table Columns",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "customer_name",
+          "label": "name",
+          "name": "name",
+          "output": true,
+          "source_details": {
+            "table": "v_customers",
+          },
+          "source_kind": "customer",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "name",
+        "value": "customer_name",
+      },
+    ],
+  },
+  {
+    "label": "Conversion",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "survey_wizard_completed_at",
+          "label": "survey_wizard_completed_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "survey_wizard_completed",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "survey_wizard_completed_at",
+        "value": "survey_wizard_completed_at",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "converted_to_survey_wizard_completed_UUID",
+          "label": "converted_to_survey_wizard_completed",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "survey_wizard_completed",
+            "cases": [
+              {
+                "column": "survey_wizard_completed_at",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null,
+                },
+                "value": 1,
+                "value_kind": "number",
+              },
+            ],
+            "kind": "ifttt",
+            "value": 0,
+            "value_kind": "number",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "converted_to_survey_wizard_completed",
+        "value": "converted_to_survey_wizard_completed_UUID",
+      },
+    ],
+  },
+  {
+    "label": "Conversion",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "ordered_impression_kit_at",
+          "label": "ordered_impression_kit_at",
+          "name": "ts",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+          },
+          "source_kind": "activity",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "ordered_impression_kit_at",
+        "value": "ordered_impression_kit_at",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "converted_to_ordered_impression_kit_UUID",
+          "label": "converted_to_ordered_impression_kit",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+            "cases": [
+              {
+                "column": "ordered_impression_kit_at",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null,
+                },
+                "value": 1,
+                "value_kind": "number",
+              },
+            ],
+            "kind": "ifttt",
+            "value": 0,
+            "value_kind": "number",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "converted_to_ordered_impression_kit",
+        "value": "converted_to_ordered_impression_kit_UUID",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "days_from_session_to_ordered_impression_kit",
+          "label": "days_from_session_to_ordered_impression_kit",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "activity_kind": "conversion",
+            "activity_slug": "ordered_impression_kit",
+            "column": "first_session_at",
+            "kind": "time_between",
+            "second_column": "ordered_impression_kit_at",
+            "segmentation": "days",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "days_from_session_to_ordered_impression_kit",
+        "value": "days_from_session_to_ordered_impression_kit",
+      },
+    ],
+  },
+  {
+    "label": "Computed Columns",
+    "options": [
+      {
+        "column": {
+          "filters": [],
+          "id": "session_attribution",
+          "label": "session_attribution",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "column": "session_source",
+            "delimiter": " - ",
+            "kind": "string_concatenate_multi_column",
+            "second_column": "session_kind",
+          },
+          "source_kind": "computed",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "session_attribution",
+        "value": "session_attribution",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "sa_row_number",
+          "label": "sa_row_number",
+          "name": "sa_row_number",
+          "output": true,
+          "source_details": {
+            "full_order": [
+              "first_session_at",
+            ],
+            "group": [
+              "session_attribution",
+            ],
+            "kind": "row_number",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "sa_row_number",
+        "value": "sa_row_number",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "sa_count",
+          "label": "sa_count",
+          "name": "sa_count",
+          "output": true,
+          "source_details": {
+            "group": [
+              "session_attribution",
+            ],
+            "kind": "count",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "sa_count",
+        "value": "sa_count",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "sa_percent_of_total",
+          "label": "sa_percent_of_total",
+          "name": "sa_percent_of_total",
+          "output": true,
+          "source_details": {
+            "column": "sa_count",
+            "group": [
+              "session_attribution",
+            ],
+            "kind": "percent_of_total",
+          },
+          "source_kind": "computed",
+          "type": "number",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "sa_percent_of_total",
+        "value": "sa_percent_of_total",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "categorized_source",
+          "label": "categorized_source",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "cases": [
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "=",
+                  "value": "Referral",
+                },
+                "value": "NOT Direct-Organic-Search",
+                "value_kind": "string",
+              },
+              {
+                "column": "session_source",
+                "filter": {
+                  "operator": "=",
+                  "value": "Organic",
+                },
+                "value": "Direct-Organic-Search",
+                "value_kind": "string",
+              },
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "is_not_null",
+                  "value": null,
+                },
+                "value": "is set test",
+                "value_kind": "string",
+              },
+              {
+                "column": "session_kind",
+                "filter": {
+                  "operator": "in",
+                  "value": [
+                    "Direct",
+                    "Search",
+                  ],
+                },
+                "value": "****Direct-Organic-Search",
+                "value_kind": "string",
+              },
+            ],
+            "kind": "ifttt",
+            "value": "NOT Direct-Organic-Search",
+            "value_kind": "string",
+          },
+          "source_kind": "computed",
+          "type": "string",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "categorized_source",
+        "value": "categorized_source",
+      },
+      {
+        "column": {
+          "filters": [],
+          "id": "decimated_session",
+          "label": "decimated_session",
+          "name": "",
+          "output": true,
+          "source_details": {
+            "column": "first_session_at",
+            "kind": "time_truncate",
+            "resolution": 5,
+            "segmentation": "minute",
+          },
+          "source_kind": "computed",
+          "type": "timestamp",
+        },
+        "groupSlug": null,
+        "isDisabled": true,
+        "label": "decimated_session",
+        "value": "decimated_session",
+      },
+    ],
+  },
+]
+`;

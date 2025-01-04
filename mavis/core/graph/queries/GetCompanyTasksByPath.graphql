@@ -1,0 +1,9 @@
+query GetCompanyTasksByPath($company_id: uuid!, $path: String!) {
+  company_task(where: {company_id: {_eq: $company_id}, internal_only: {_eq: false}, function_path: {_eq: $path}}) {
+    id
+    task_slug
+    label
+    schedule
+    category
+  }
+}

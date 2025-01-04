@@ -1,0 +1,113 @@
+{
+  "schema": {
+    "type": "object",
+    "anyOf": [
+      {
+        "title": "BigQuery",
+        "required": [
+          "name",
+          "projectId",
+          "jsonKey"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "projectId": {
+            "type": "string",
+            "title": "Project ID"
+          },
+          "jsonKey": {
+            "type": "string",
+            "title": "JSON Key File",
+            "format": "data-url"
+          },
+          "loadSchema": {
+            "type": "boolean",
+            "title": "Load Schema"
+          },
+          "standardSql": {
+            "type": "boolean",
+            "title": "Use Standard SQL",
+            "default": true
+          },
+          "processingLocation": {
+            "type": "string",
+            "title": "Processing Location"
+          },
+          "scannedDataLimit": {
+            "type": "integer",
+            "title": "Scanned Data Limit (MB)"
+          },
+          "maxBillingTier": {
+            "type": "integer",
+            "title": "Maximum Billing Tier"
+          },
+          "udfSources": {
+            "type": "string",
+            "title": "UDF Source URIs (i.e. gs://bucket/date_utils.js, gs://bucket/string_utils.js )"
+          }
+        }
+      },
+      {
+        "title": "Redshift",
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "host": {
+            "type": "string"
+          },
+          "port": {
+            "type": "number"
+          },
+          "dbname": {
+            "type": "string",
+            "title": "Database Name"
+          },
+          "sslmode": {
+            "type": "string",
+            "title": "SSL Mode",
+            "default": "prefer"
+          },
+          "adhoc_query_group": {
+            "type": "string",
+            "title": "Query Group for Adhoc Queries",
+            "default": "default"
+          },
+          "scheduled_query_group": {
+            "type": "string",
+            "title": "Query Group for Scheduled Queries",
+            "default": "default"
+          }
+        },
+        "order": [
+          "host",
+          "port",
+          "user",
+          "password",
+          "dbname",
+          "sslmode",
+          "adhoc_query_group",
+          "scheduled_query_group"
+        ],
+        "required": [
+          "dbname",
+          "user",
+          "password",
+          "host",
+          "port"
+        ],
+        "secret": [
+          "password"
+        ]
+        
+      }
+    ]
+  }
+}

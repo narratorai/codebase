@@ -1,0 +1,81 @@
+query GetCompany($slug: String!) {
+  companies: company(where: {slug: {_eq: $slug}}) {
+    max_inserts
+    currency_used
+    id
+    slug
+    status
+    name
+    website
+    production_schema
+    materialize_schema
+    warehouse_language
+    timezone
+    cache_minutes
+    start_data_on
+    validation_months
+    batch_halt
+    project_id
+    logo_url
+    select_wlm_count
+    created_at
+    updated_at
+    plot_colors
+    spend_table
+    dataset_row_threshold
+    dataset_default_filter_days
+    warehouse_default_schemas
+    use_time_boundary
+    week_day_offset
+    datacenter_region
+    tables(order_by: {created_at: asc}) {
+      id
+      identifier
+      updated_at
+      schema_name
+      activity_stream
+      row_count
+      index_table
+      is_imported
+      maintainer_id
+      manually_partition_activity
+      default_time_between
+      customer_dim_table_id
+      customer_dim {
+        id
+        schema_name: schema
+        table
+      }
+      team_permissions {
+        team_id
+        can_edit
+      }
+    }
+    tags: company_tags(order_by: {created_at: asc}, where: {user_id: {_is_null: true}}) {
+      id
+      tag
+      color
+    }
+    teams(order_by: {created_at: asc}) {
+      id
+      name
+    }
+    company_users{
+        id
+        user_id
+        first_name
+        last_name
+        preferences{
+          profile_picture
+        }
+        user {
+          email
+        }
+    }
+    resources {
+      company_role
+      kms_key
+      s3_bucket
+    }
+  }
+}

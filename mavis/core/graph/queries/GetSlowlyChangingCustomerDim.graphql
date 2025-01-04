@@ -1,0 +1,7 @@
+query GetSlowlyChangingCustomerDim($table_id: uuid!) {
+  slowly_changing_customer_dims(where: { table_id: { _eq: $table_id } }) {
+    dim_table_id
+    id
+    slowly_changing_ts_column
+  }
+}

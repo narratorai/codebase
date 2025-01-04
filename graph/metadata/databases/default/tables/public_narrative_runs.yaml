@@ -1,0 +1,30 @@
+table:
+  name: narrative_runs
+  schema: public
+object_relationships:
+  - name: narrative
+    using:
+      manual_configuration:
+        column_mapping:
+          company_id: company_id
+          narrative_slug: slug
+        insertion_order: null
+        remote_table:
+          name: narrative
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - company_id
+        - created_at
+        - id
+        - is_actionable
+        - narrative_slug
+        - s3_key
+      filter:
+        narrative:
+          company:
+            id:
+              _eq: X-Hasura-Company-Id
+      limit: 100

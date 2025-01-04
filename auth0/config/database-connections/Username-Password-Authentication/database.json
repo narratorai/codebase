@@ -1,0 +1,33 @@
+{
+  "options": {
+    "mfa": {
+      "active": true,
+      "return_enroll_settings": true
+    },
+    "import_mode": false,
+    "disable_signup": false,
+    "passwordPolicy": "good",
+    "password_history": {
+      "size": 3,
+      "enable": true
+    },
+    "strategy_version": 2,
+    "password_dictionary": {
+      "enable": true,
+      "dictionary": []
+    },
+    "brute_force_protection": true,
+    "password_no_personal_info": {
+      "enable": true
+    },
+    "password_complexity_options": {
+      "min_length": 8
+    },
+    "enabledDatabaseCustomization": false
+  },
+  "strategy": "auth0",
+  "name": "Username-Password-Authentication",
+  "is_domain_connection": false,
+  "realms": ["Username-Password-Authentication"],
+  "enabled_clients": ["Narrator", "Narrator Portal"]
+}

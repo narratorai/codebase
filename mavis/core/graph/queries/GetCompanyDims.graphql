@@ -1,0 +1,8 @@
+query GetCompanyDims($company_id: uuid!) {
+  dim_tables: dim_table(where: { company_id: { _eq: $company_id } }) {
+    id
+    schema_: schema
+    table
+    join_key
+  }
+}

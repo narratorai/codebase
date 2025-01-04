@@ -1,0 +1,9 @@
+query GetLastExecutions($task_id: uuid!) {
+  task_execution(where: {task_id: {_eq: $task_id}}, limit: 5, order_by: {started_at: desc_nulls_last}) {
+    id
+    status
+    started_at
+    completed_at
+    details
+  }
+}

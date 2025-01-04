@@ -1,0 +1,79 @@
+query GetTransformationContext($id: uuid!) {
+  transformation: transformation_by_pk(id: $id) {
+    id
+    created_at
+    kind
+    slug
+    table
+    update_type
+    updated_at
+
+    current_query {
+      id
+      sql
+      updated_by
+      updated_at
+      notes
+    }
+    column_renames {
+      id
+      name
+      label
+      has_data
+      type
+      casting
+    }
+
+    has_source
+    is_aliasing
+    start_data_after
+    remove_customers
+    notify_row_count_percent_change
+    do_not_update_on_percent_change
+    allow_future_data
+    name
+    mutable_day_window
+    max_days_to_insert
+    delete_window
+    do_not_delete_on_resync
+    depends_on_transformations {
+      depends_on_transformation_id
+    }
+    run_after_transformations {
+      run_after_transformation_id
+    }
+
+    next_resync_at
+
+    activities {
+      activity {
+        id
+        slug
+      }
+    }
+    production_queries(order_by: { created_at: desc }, limit: 15) {
+      id
+      sql
+      created_at
+      updated_by
+      notes
+    }
+   task_id
+    validation_queries(order_by: { updated_at: asc }) {
+      id
+      updated_by
+      updated_at
+      sql
+      notes
+      alert {
+        task_id
+        email
+        alert_kind
+        company_task {
+          task_slug
+          schedule
+        }
+      }
+    }
+  }
+}

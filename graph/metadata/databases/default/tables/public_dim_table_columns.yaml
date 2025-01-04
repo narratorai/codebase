@@ -1,0 +1,3 @@
+table:
+  name: dim_table_columns
+  schema: public

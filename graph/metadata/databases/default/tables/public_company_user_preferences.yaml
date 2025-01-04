@@ -1,0 +1,62 @@
+table:
+  name: company_user_preferences
+  schema: public
+object_relationships:
+  - name: company_user
+    using:
+      foreign_key_constraint_on: company_user_id
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        company_user:
+          _and:
+            - user_id:
+                _eq: X-Hasura-User-Id
+            - company_id:
+                _eq: X-Hasura-Company-Id
+      columns:
+        - company_user_id
+        - email_opt_out
+        - profile_picture
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - company_user_id
+        - created_at
+        - email_opt_out
+        - id
+        - profile_picture
+        - updated_at
+      filter:
+        company_user:
+          _or:
+            - user_id:
+                _eq: X-Hasura-User-Id
+            - company:
+                _and:
+                  - id:
+                      _eq: X-Hasura-Company-Id
+                  - demo_company:
+                      _ne: true
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - email_opt_out
+        - profile_picture
+      filter:
+        company_user:
+          _and:
+            - user_id:
+                _eq: X-Hasura-User-Id
+            - company_id:
+                _eq: X-Hasura-Company-Id
+      check:
+        company_user:
+          _and:
+            - user_id:
+                _eq: X-Hasura-User-Id
+            - company_id:
+                _eq: X-Hasura-Company-Id

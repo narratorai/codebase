@@ -1,0 +1,12 @@
+mutation DeleteDatasetNarrative($narrative_slug: String, $dataset_slug: String, $company_id: uuid) {
+  delete_dataset(where: { slug: { _eq: $dataset_slug }, company_id: { _eq: $company_id } }) {
+    returning {
+      id
+    }
+  }
+  delete_narrative(where: { slug: { _eq: $narrative_slug }, company_id: { _eq: $company_id } }) {
+    returning {
+      id
+    }
+  }
+}

@@ -1,0 +1,7 @@
+query GetNarrativeCount($company_id: uuid!) {
+  narrative_aggregate(where: {company_id: {_eq: $company_id}, state: {_eq: live}}) {
+    aggregate {
+      count
+    }
+  }
+}

@@ -1,0 +1,5 @@
+mutation UpdateTaskOrchestrationId($id: uuid!, $task_orchestration_id: String!) {
+  update_task_execution_by_pk(pk_columns: {id: $id}, _set: {orchestration_id: $task_orchestration_id}) {
+    id
+  }
+}

@@ -1,0 +1,8 @@
+subscription TransformationMaintenanceCount($company_id: uuid!) {
+  transformation(where: { company_id: { _eq: $company_id } }) {
+    id
+    transformation_maintenances(where: { ended_at: { _is_null: true } }) {
+      id
+    }
+  }
+}

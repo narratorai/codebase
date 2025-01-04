@@ -1,0 +1,10 @@
+query GetUserCompanies($user_id: uuid!) {
+  company_user(where: { user_id: { _eq: $user_id } }) {
+    id
+    company {
+      id
+      slug
+      name
+    }
+  }
+}

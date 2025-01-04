@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GroupedIndex/services/helpers #getAllPossibleGroupKeys gets all group keys including GROUP_RECENT keys 1`] = `
+[
+  "fancy",
+  "hipster",
+  "New",
+  "Existing",
+  "Uncategorized",
+]
+`;
+
+exports[`GroupedIndex/services/helpers #getAllPossibleGroupKeys with groupLabelOverrides gets all group keys from overrides as well 1`] = `
+[
+  "Validated",
+  "Not Validated",
+  "New",
+  "Existing",
+  "Uncategorized",
+]
+`;
+
+exports[`GroupedIndex/services/helpers #groupItems groups items 1`] = `
+{
+  "fancy": [
+    {
+      "category": "fancy",
+      "description": "This is a description",
+      "name": "Fancy Name",
+      "nested": {
+        "value": "nested is fun!",
+      },
+      "null_category": null,
+      "only_in_fancy_name": "better only see me in fancy!",
+      "other": "Should not be searched",
+      "validated": false,
+    },
+  ],
+  "hipster": [
+    {
+      "category": "hipster",
+      "description": "Banjo anim ramps chia VHS batch flexitarian bespoke meh pinterest esse beard.",
+      "name": "Hipster Ipsum",
+      "nested": {
+        "value": "Green juice cillum ut, 3 wolf moon",
+      },
+      "null_category": null,
+      "other": "Should not be searched",
+      "validated": false,
+    },
+  ],
+}
+`;
+
+exports[`GroupedIndex/services/helpers #groupItems with groupLabelOverrides adds values from one group to both when passed addToGroup 1`] = `
+{
+  "fancy": [
+    {
+      "category": "fancy",
+      "description": "This is a description",
+      "name": "Fancy Name",
+      "nested": {
+        "value": "nested is fun!",
+      },
+      "null_category": null,
+      "only_in_fancy_name": "better only see me in fancy!",
+      "other": "Should not be searched",
+      "validated": false,
+    },
+  ],
+  "hipster": [
+    {
+      "category": "fancy",
+      "description": "This is a description",
+      "name": "Fancy Name",
+      "nested": {
+        "value": "nested is fun!",
+      },
+      "null_category": null,
+      "only_in_fancy_name": "better only see me in fancy!",
+      "other": "Should not be searched",
+      "validated": false,
+    },
+    {
+      "category": "hipster",
+      "description": "Banjo anim ramps chia VHS batch flexitarian bespoke meh pinterest esse beard.",
+      "name": "Hipster Ipsum",
+      "nested": {
+        "value": "Green juice cillum ut, 3 wolf moon",
+      },
+      "null_category": null,
+      "other": "Should not be searched",
+      "validated": false,
+    },
+  ],
+}
+`;
+
+exports[`GroupedIndex/services/helpers #groupItems with groupLabelOverrides only overrides the default group names from _.groupBy 1`] = `
+{
+  "Not Validated": [
+    {
+      "category": "fancy",
+      "description": "This is a description",
+      "name": "Fancy Name",
+      "nested": {
+        "value": "nested is fun!",
+      },
+      "null_category": null,
+      "only_in_fancy_name": "better only see me in fancy!",
+      "other": "Should not be searched",
+      "validated": false,
+    },
+    {
+      "category": "hipster",
+      "description": "Banjo anim ramps chia VHS batch flexitarian bespoke meh pinterest esse beard.",
+      "name": "Hipster Ipsum",
+      "nested": {
+        "value": "Green juice cillum ut, 3 wolf moon",
+      },
+      "null_category": null,
+      "other": "Should not be searched",
+      "validated": false,
+    },
+  ],
+}
+`;
+
+exports[`GroupedIndex/services/helpers #groupItems with null group values includes items with null groups into an "Uncategorized" group 1`] = `
+{
+  "Uncategorized": [
+    {
+      "category": "fancy",
+      "description": "This is a description",
+      "name": "Fancy Name",
+      "nested": {
+        "value": "nested is fun!",
+      },
+      "null_category": null,
+      "only_in_fancy_name": "better only see me in fancy!",
+      "other": "Should not be searched",
+      "validated": false,
+    },
+    {
+      "category": "hipster",
+      "description": "Banjo anim ramps chia VHS batch flexitarian bespoke meh pinterest esse beard.",
+      "name": "Hipster Ipsum",
+      "nested": {
+        "value": "Green juice cillum ut, 3 wolf moon",
+      },
+      "null_category": null,
+      "other": "Should not be searched",
+      "validated": false,
+    },
+  ],
+}
+`;

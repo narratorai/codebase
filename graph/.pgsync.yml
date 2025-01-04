@@ -1,0 +1,166 @@
+# https://github.com/ankane/pgsync
+from: $(./scripts/get_db_url.sh $FROM)
+
+# destination database URL
+to: $(./scripts/get_db_url.sh $TO)
+
+# allow writes to destination if $TO is not production
+to_safe: $(if [[ $TO = "production" ]]; then echo false; else echo true; fi)
+
+# sync specific schemas
+schemas:
+  - public
+  # - hdb_catalog
+
+# exclude tables
+exclude:
+  # - hdb_catalog.schema_migrations
+  # - hdb_catalog.event_invocation_logs
+  # - hdb_catalog.event_log
+  # - hdb_catalog.hdb_action_log
+  # - hdb_catalog.hdb_cron_event_invocation_logs
+  # - hdb_catalog.hdb_cron_events
+  # - hdb_catalog.hdb_scheduled_event_invocation_logs
+  # - hdb_catalog.hdb_scheduled_events
+
+  # No need to sync job/task execution records.
+  - task_execution
+  - job_execution
+  - adhoc_execution
+
+  # Exclude most of our real tables, they are synced in through groups
+  # We do sync enum tables, and tables that have non-company specific data here though!
+  - company
+  - user
+  - company_user
+  - company_task
+  - company_job
+  - company_categories
+  - company_query_alert
+  - company_resources
+  - company_prototypes
+  - company_table
+  - company_table_aggregation_dim
+  - company_tags
+  - company_timeline
+  - company_github_sync
+  - company_user_notifications
+  - company_user_preferences
+  - company_narrative_templates
+  - company_auth0
+  - dataset
+  - dataset_materialization
+  - dataset_activities
+  - narrative
+  - narrative_runs
+  - narrative_datasets
+  - narrative_narratives
+  - narrative_template
+  - narrative_integrations
+  - tranformation_enriched_activities
+  - transformation
+  - transformation_activities
+  - transformation_depends_on
+  - transformation_run_after
+  - transformation_test
+  - activity
+  - activity_dim
+  - dim_table
+  - query_updates
+  - query_template
+  - service_limit
+  - watcher
+  - column_renames
+  - question_answer
+  - sql_queries
+  - tag
+  - group
+  - custom_function
+  - activity_maintenance
+  - transformation_maintenance
+  - metric
+
+groups:
+  # Syncing a company group will capture all of a company's records (by slug)
+  # Note order does matter here
+  company:
+    company: "where slug = '{1}'"
+
+    # NOTE not syncing demo_company users
+    user: "where id in (select user_id from company_user where company_id in (select id from company where slug = '{1}' AND demo_company = false)) OR role = 'internal_admin'"
+    company_user: "where company_id in (select id from company where slug = '{1}' AND demo_company = false)"
+
+    company_task: "where company_id in (select id from company where slug = '{1}')"
+    company_job: "where task_id in (select id from company_task where company_id in (select id from company where slug = '{1}'))"
+    company_prototypes: "where company_id in (select id from company where slug = '{1}')"
+    company_categories: "where company_id in (select id from company where slug = '{1}')"
+    company_resources: "where company_id in (select id from company where slug = '{1}')"
+    company_auth0: "where company_id in (select id from company where slug = '{1}')"
+    company_table: "where company_id in (select id from company where slug = '{1}')"
+    company_tags: "where company_id in (select id from company where slug = '{1}')"
+    company_user_notifications: "where company_user_id in (select id from company_user where company_id in (select id from company where slug = '{1}'))"
+    company_user_preferences: "where company_user_id in (select id from company_user where company_id in (select id from company where slug = '{1}'))"
+
+    dataset: "where company_id in (select id from company where slug = '{1}')"
+    dataset_materialization: "where dataset_id in (select id from dataset where company_id in (select id from company where slug = '{1}'))"
+    narrative: "where company_id in (select id from company where slug = '{1}')"
+    narrative_runs: "where company_id in (select id from company where slug = '{1}')"
+    tranformation_enriched_activities: "where transformation_id in (select id from transformation where company_id in (select id from company where slug = '{1}'))"
+    transformation: "where company_id in (select id from company where slug = '{1}')"
+    transformation_activities: "where transformation_id in (select id from transformation where company_id in (select id from company where slug = '{1}'))"
+    transformation_depends_on: "where transformation_id in (select id from transformation where company_id in (select id from company where slug = '{1}'))"
+    transformation_run_after: "where transformation_id in (select id from transformation where company_id in (select id from company where slug = '{1}'))"
+    transformation_test: "where transformation_id in (select id from transformation where company_id in (select id from company where slug = '{1}'))"
+    transformation_maintenance: where transformation_id in (select id from transformation where company_id in (select id from company where slug = '{1}'))
+
+    metric: "where company_id in (select id from company where slug = '{1}')"
+    activity: "where company_id in (select id from company where slug = '{1}')"
+    activity_maintenance: where activity_id in (select id from activity where company_id in (select id from company where slug = '{1}'))
+    query_updates: "where transformation_id in (select id from transformation where company_id in (select id from company where slug = '{1}'))"
+    service_limit: "where company_id in (select id from company where slug = '{1}')"
+    watcher: "where user_id in (select user_id from company_user where company_id in (select id from company where slug = '{1}'))"
+
+    dataset_activities: "where dataset_id in (select id from dataset where company_id in (select id from company where slug = '{1}'))"
+    narrative_datasets: "where narrative_id in (select id from narrative where company_id in (select id from company where slug = '{1}'))"
+    narrative_narratives: "where narrative_id in (select id from narrative where company_id in (select id from company where slug = '{1}'))"
+
+    narrative_template: "where company_id in (select id from company where slug = '{1}')"
+
+    # These are a bit more complicated w/ related_to + related_id columns
+    company_timeline: |
+      where (
+        (related_to = 'activity' AND related_to_id in (select id from activity where company_id in (select id from company where slug = '{1}')))
+        OR (related_to = 'company' AND related_to_id in (select id from company where slug = '{1}'))
+      )
+    column_renames: |
+      where (
+        (related_to = 'activity' AND related_to_id in (select id from activity where company_id in (select id from company where slug = '{1}')))
+        OR (related_to = 'transformation' AND related_to_id in (select id from transformation where company_id in (select id from company where slug = '{1}')))
+      )
+    question_answer: |
+      where (
+        (related_to = 'activity' AND related_id in (select id from activity where company_id in (select id from company where slug = '{1}')))
+        OR (related_to = 'transformation' AND related_id in (select id from transformation where company_id in (select id from company where slug = '{1}')))
+      )
+    tag: |
+      where (
+        (related_to = 'activity' AND related_id in (select id from activity where company_id in (select id from company where slug = '{1}')))
+        OR (related_to = 'transformation' AND related_id in (select id from transformation where company_id in (select id from company where slug = '{1}')))
+        OR (related_to = 'dataset' AND related_id in (select id from dataset where company_id in (select id from company where slug = '{1}')))
+        OR (related_to = 'narrative' AND related_id in (select id from narrative where company_id in (select id from company where slug = '{1}')))
+        OR (related_to = 'metric' AND related_id in (select id from metric where company_id in (select id from company where slug = '{1}')))
+      )
+    sql_queries: |
+      where (
+        (related_to = 'activity' AND related_id in (select id from activity where company_id in (select id from company where slug = '{1}')))
+        OR (related_to = 'transformation' AND related_id in (select id from transformation where company_id in (select id from company where slug = '{1}')))
+        OR (related_to = 'company' AND related_id in (select id from company where slug = '{1}'))
+      )
+
+    # Depends on sql_queries table!
+    company_query_alert: "where task_id in (select id from company_task where company_id in (select id from company where slug = '{1}'))"
+
+    # Only sync templates that are created by a user of the company being synced
+    query_template: where updated_by in (select id from company_user where company_id in (select id from company where slug = '{1}'))
+
+    custom_function: "where company_id in (select id from company where slug = '{1}')"

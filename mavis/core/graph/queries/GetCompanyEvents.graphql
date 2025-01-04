@@ -1,0 +1,9 @@
+query GetCompanyEvents($company_id: uuid!) {
+    company_timeline(where: {related_to: {_eq: company}, related_to_id: {_eq: $company_id}}, order_by: [{ description: desc }]) {
+        name
+        id
+        happened_at
+        description
+        updated_at
+    }
+}

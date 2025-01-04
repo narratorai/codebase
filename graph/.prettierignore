@@ -1,0 +1,6 @@
+# Let Hasura own formatting for better diffs
+metadata/**/*.yaml
+migrations/**/*.yaml
+
+
+/.nx/workspace-data

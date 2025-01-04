@@ -1,0 +1,56 @@
+subscription ActivityIndex($company_slug: String!) {
+  all_activities: activity(where: { company: { slug: { _eq: $company_slug } } }) {
+    id
+    created_at
+    updated_at
+    slug
+    name
+    description
+    category
+    validated
+    status
+    next_index_at
+    activity_maintenances(where: { ended_at: { _is_null: true } }) {
+      id
+      kind
+      notes
+      started_at
+      maintenance_kind {
+        description
+      }
+    }
+    company_table {
+      id
+      activity_stream
+    }
+    enriched_by(limit: 1) {
+      id
+      transformation {
+        id
+        name
+        table
+      }
+    }
+    transformations {
+      id
+      transformation {
+        id
+        name
+        current_query {
+          id
+          sql
+        }
+      }
+    }
+    company_category {
+      id
+      category
+      color
+    }
+    column_renames {
+      id
+      name
+      label
+    }
+  }
+}

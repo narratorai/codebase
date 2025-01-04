@@ -1,0 +1,11 @@
+query GetTaskWatchers($task_id: uuid!) {
+  watcher(where: {related_to: {_eq: company_task}, related_id: {_eq: $task_id}}) {
+    user {
+      email
+      company_users {
+        first_name
+        last_name
+      }
+    }
+  }
+}

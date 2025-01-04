@@ -1,0 +1,56 @@
+{{- if .Values.spec.apps.mavis.createProject -}}
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: {{ .Values.spec.apps.mavis.project | default "mavis" }}
+  namespace: {{ .Values.argoProjectNamespace | default "argocd" }}
+  # Finalizer that ensures that project is not deleted until it is not referenced by any application
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  destinations:
+    - namespace: {{ .Values.spec.apps.mavis.namespace | default "mavis" }}
+      server: {{ .Values.destinationServer | default .Values.spec.destination.server }}
+  sourceRepos:
+    - {{ .Values.spec.apps.mavis.repoURL }}
+  {{- with .Values.sourceNamespaces }}
+  sourceNamespaces:
+    {{- toYaml .| nindent 4 }}
+  {{- end }}
+---
+  {{- end }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.spec.apps.mavis.name | default "mavis" }}
+  namespace: {{ .Values.argoNamespace | default "argocd" }}
+  labels:
+    {{- toYaml .Values.labels | nindent 4 }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    notifications.argoproj.io/subscribe.on-deployed.slack: argocd
+    argocd.argoproj.io/sync-wave: "1"
+    argocd-image-updater.argoproj.io/image-list: "mavis=479493230127.dkr.ecr.us-east-1.amazonaws.com/mavis:1.x, mavis-worker=479493230127.dkr.ecr.us-east-1.amazonaws.com/mavis-worker:1.x"
+    argocd-image-updater.argoproj.io/mavis.pull-secret: ext:/scripts/ecr-login.sh
+    argocd-image-updater.argoproj.io/mavis-worker.pull-secret: ext:/scripts/ecr-login.sh
+    argocd-image-updater.argoproj.io/update-strategy: semver
+    argocd-image-updater.argoproj.io/write-back-method: argocd
+spec:
+  project: {{ .Values.argoProject | default "default" }}
+  destination:
+    namespace: {{ .Values.spec.apps.mavis.namespace | default "backend" }}
+    server: {{ .Values.destinationServer | default .Values.spec.destination.server }}
+  source:
+    repoURL: {{ .Values.spec.apps.mavis.repoURL }}
+    targetRevision: {{ .Values.spec.apps.mavis.targetRevision }}
+    path: {{ .Values.spec.apps.mavis.path }}
+    helm:
+    {{- toYaml .Values.spec.apps.mavis.helm | nindent 6 }}
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=false

@@ -1,0 +1,12 @@
+mutation DeleteActivityColumns($activity_id: uuid!) {
+    delete_column_renames(
+        where: {
+            related_to: { _eq: activity }
+            related_to_id: { _eq: $activity_id }
+        }
+    ) {
+        returning {
+            id
+        }
+    }
+}

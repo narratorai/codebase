@@ -1,0 +1,9 @@
+mutation RecordTaskFailed($task_execution_id: uuid!, $details: jsonb) {
+  update_task_execution_by_pk(
+    pk_columns: { id: $task_execution_id }
+    _set: { status: failed, completed_at: "now()" }
+    _append: { details: $details }
+  ) {
+    id
+  }
+}

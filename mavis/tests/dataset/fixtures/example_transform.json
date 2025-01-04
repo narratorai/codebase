@@ -1,0 +1,160 @@
+{
+  "id": "c63a886a-43f2-43b0-bb09-dfaf57556a73",
+  "slug": "started_sessions",
+  "production_queries": [
+    {
+      "sql": "SELECT\n    t.message_id || t.timestamp AS activity_id,\n    t.timestamp AS ts,\n\n\n    NULL AS source,\n    NULL AS source_id,\n    mt.company_slug AS customer,\n\n\n    'ran_dataset' AS activity,\n\n\n    mt.dataset_slug AS feature_1,\n    mt.group_slug AS feature_2,\n    t.user_id AS feature_3,\n\n\n    NULL AS revenue_impact,\n    t.context_page_url AS link\n\nFROM portal.tracks t \njoin portal.ran_dataset mt \n    on (mt.message_id = t.message_id)\nwhere t.event = 'ran_dataset'\n    and mt.company_slug is not NULL",
+      "updated_by": "Narrator"
+    }
+  ],
+  "column_renames": [
+    {
+      "id": "896ca9de-5592-49e8-a2a1-104dea47a0f5",
+      "name": "activity",
+      "type": "string",
+      "casting": null
+    },
+    {
+      "id": "fed54e75-0f88-4b2e-b76c-b8852d5d9853",
+      "name": "activity_id",
+      "type": "string",
+      "casting": null
+    },
+    {
+      "id": "e81f240d-c87a-4086-b441-8ba1feedffb9",
+      "name": "customer",
+      "type": "string",
+      "casting": null
+    },
+    {
+      "id": "3ab9beca-4095-4e10-a499-1242bac6f982",
+      "name": "feature_1",
+      "type": "string",
+      "casting": null
+    },
+    {
+      "id": "ce8427c4-89ea-4189-b3ff-251698e9e7b3",
+      "name": "feature_2",
+      "type": "string",
+      "casting": null
+    },
+    {
+      "id": "248fb453-b133-4967-b31a-b9f69bd2ead9",
+      "name": "feature_3",
+      "type": "string",
+      "casting": null
+    },
+    {
+      "id": "b09143a5-2590-4350-8e31-88b1016c48b5",
+      "name": "link",
+      "type": "string",
+      "casting": null
+    },
+    {
+      "id": "346d7714-dc6c-4b4b-acf4-31f2a6c66702",
+      "name": "revenue_impact",
+      "type": "string",
+      "casting": "float"
+    },
+    {
+      "id": "61d3eb12-8cab-453b-92dd-11d133d43bb9",
+      "name": "source",
+      "type": "string",
+      "casting": null
+    },
+    {
+      "id": "530485e5-0e0b-49bc-950e-261ff1565250",
+      "name": "source_id",
+      "type": "string",
+      "casting": null
+    },
+    {
+      "id": "b2b523a3-5baf-41de-afe7-480b385e49dd",
+      "name": "ts",
+      "type": "timestamp",
+      "casting": null
+    }
+  ],
+  "enriched_activities": [],
+  "depends_on_transformations": [],
+  "activities": [{ "activity_id": "22e38afd-3145-47c1-92d4-9d4f51163f53", "activity":{"id":"22e38afd-3145-47c1-92d4-9d4f51163f53", "slug":"ran_dataset"}}],
+  "query_updates": [
+    {
+      "created_at": "2021-08-15T16:49:36.767401",
+      "rows_inserted": 626,
+      "from_sync_time": "2022-04-13T11:07:08.843435+00:00",
+      "to_sync_time": "2022-04-14T11:07:41.712089+00:00"
+    },
+    {
+      "created_at": "2021-08-15T16:49:36.767401",
+      "rows_inserted": 608,
+      "from_sync_time": "2022-04-12T11:06:13.658662+00:00",
+      "to_sync_time": "2022-04-13T11:08:02.011044+00:00"
+    },
+    {
+      "created_at": "2021-08-17T16:49:36.767401",
+      "rows_inserted": 637,
+      "from_sync_time": "2022-04-11T11:13:39.427765+00:00",
+      "to_sync_time": "2022-04-12T11:09:12.238793+00:00"
+    },
+    {
+      "created_at": "2021-08-17T18:49:36.767401",
+      "rows_inserted": 702,
+      "from_sync_time": "2022-04-10T11:06:02.897353+00:00",
+      "to_sync_time": "2022-04-11T11:15:32.525646+00:00"
+    },
+    {
+      "created_at": "2021-08-17T18:49:36.767401",
+      "rows_inserted": 724,
+      "from_sync_time": "2022-04-09T11:05:38.451387+00:00",
+      "to_sync_time": "2022-04-10T11:07:00.290727+00:00"
+    },
+    {
+      "created_at": "2021-08-17T18:49:36.767401",
+      "rows_inserted": 719,
+      "from_sync_time": "2022-04-08T11:06:19.424093+00:00",
+      "to_sync_time": "2022-04-09T11:06:35.923598+00:00"
+    },
+    {
+      "created_at": "2021-08-17T18:49:36.767401",
+      "rows_inserted": 741,
+      "from_sync_time": "2022-04-07T11:05:45.592976+00:00",
+      "to_sync_time": "2022-04-08T11:07:17.429835+00:00"
+    },
+    {
+      "created_at": "2021-08-17T18:49:36.767401",
+      "rows_inserted": 605,
+      "from_sync_time": "2022-04-06T11:06:00.505044+00:00",
+      "to_sync_time": "2022-04-07T11:06:42.958276+00:00"
+    },
+    {
+      "created_at": "2021-08-17T18:49:36.767401",
+      "rows_inserted": 707,
+      "from_sync_time": "2022-04-05T11:01:34.740774+00:00",
+      "to_sync_time": "2022-04-06T11:06:57.693379+00:00"
+    },
+    {
+      "created_at": "2021-08-17T18:49:36.767401",
+      "rows_inserted": 570,
+      "from_sync_time": "2022-04-04T11:06:44.905131+00:00",
+      "to_sync_time": "2022-04-05T11:07:32.091342+00:00"
+    }
+  ],
+  "name": "Started Sessions",
+  "delete_window": null,
+  "has_source": true,
+  "do_not_delete_on_resync": false,
+  "is_aliasing": false,
+  "kind": "stream",
+  "max_days_to_insert": 60,
+  "mutable_day_window": 90,
+  "last_resynced_at": "2021-08-19T16:49:36.767401+00:00",
+  "next_resync_at": null,
+  "single_activity": true,
+  "notify_row_count_percent_change": null,
+  "do_not_update_on_percent_change": null,
+  "allow_future_data": null,
+  "start_data_after": "2020-10-01",
+  "table": "activity_stream",
+  "update_type": "regular"
+}

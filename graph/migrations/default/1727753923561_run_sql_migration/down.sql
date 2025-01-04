@@ -1,0 +1,3 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- CREATE INDEX narrative_versions_idx ON versions (related_id) WHERE related_to = 'narrative';

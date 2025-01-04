@@ -1,0 +1,25 @@
+mutation InsertTransformationMaintenance(
+  $transformation_id: uuid!
+  $kind: maintenance_kinds_enum!
+  $notes: String = ""
+) {
+  insert_transformation_maintenance_one(
+    object: {
+      kind: $kind
+      notes: $notes
+      started_at: "now()"
+      transformation_id: $transformation_id
+    }
+  ) {
+    transformation_id
+    id
+    kind
+    notes
+    started_at
+    ended_at
+    transformation {
+      table
+      name
+    }
+  }
+}

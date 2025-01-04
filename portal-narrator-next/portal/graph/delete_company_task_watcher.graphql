@@ -1,0 +1,13 @@
+mutation DeleteCompanyTaskWatcher($user_id: uuid!, $task_id: uuid!) {
+  delete_watcher(
+    where: { _and: { related_id: { _eq: $task_id }, user_id: { _eq: $user_id }, related_to: { _eq: company_task } } }
+  ) {
+    returning {
+      id
+      company_task {
+        id
+        task_slug
+      }
+    }
+  }
+}

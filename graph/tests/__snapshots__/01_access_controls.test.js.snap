@@ -1,0 +1,506 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic Access Controls Admin role matches test query 1`] = `
+{
+  "company": [
+    {
+      "company_users": [
+        {
+          "first_name": "OTHER COMPANY",
+          "id": "c1f9f3aa-bfe4-4f43-ada3-ced827265c64",
+          "last_name": "User",
+          "role": "user",
+          "user": {
+            "email": "ops+test-company-other-user@narrator.ai",
+            "id": "49340f93-c41f-41d5-a337-253415f59b8a",
+            "role": "user",
+          },
+        },
+      ],
+      "id": "d479a719-8aea-4bf3-bb68-5cd9ca89524a",
+      "name": "Other Company",
+    },
+    {
+      "company_users": [
+        {
+          "first_name": "Company",
+          "id": "f5e33cd7-e5aa-4891-b795-3aa2dc88929a",
+          "last_name": "User",
+          "role": "user",
+          "user": {
+            "email": "ops+test-company-user@narrator.ai",
+            "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+            "role": "user",
+          },
+        },
+        {
+          "first_name": "Company",
+          "id": "567054ad-1fa5-4196-a835-2d62b82c72bc",
+          "last_name": "Admin",
+          "role": "admin",
+          "user": {
+            "email": "ops+test-company-admin@narrator.ai",
+            "id": "aaecdd5f-ae0a-4f6a-84fd-74459c1f40d5",
+            "role": "user",
+          },
+        },
+      ],
+      "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+      "name": "Test Company!!!",
+    },
+    {
+      "company_users": [
+        {
+          "first_name": "OTHER COMPANY",
+          "id": "f2e2dfde-3076-479c-9b33-a99f39451d4b",
+          "last_name": "User",
+          "role": "user",
+          "user": {
+            "email": "ops+test-company-other-user@narrator.ai",
+            "id": "49340f93-c41f-41d5-a337-253415f59b8a",
+            "role": "user",
+          },
+        },
+        {
+          "first_name": "Demo Company",
+          "id": "7ff7e158-0e27-47f4-a52d-d0ac46bb2fbc",
+          "last_name": "User",
+          "role": "user",
+          "user": {
+            "email": "ops+test-company-user@narrator.ai",
+            "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+            "role": "user",
+          },
+        },
+      ],
+      "id": "6065f99b-d77b-4af8-9cb4-009c9c0f5305",
+      "name": "Demo Company!!!",
+    },
+  ],
+  "user": [
+    {
+      "company_users": [
+        {
+          "company": {
+            "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+            "name": "Test Company!!!",
+          },
+          "first_name": "Company",
+          "id": "f5e33cd7-e5aa-4891-b795-3aa2dc88929a",
+          "last_name": "User",
+          "role": "user",
+        },
+        {
+          "company": {
+            "id": "6065f99b-d77b-4af8-9cb4-009c9c0f5305",
+            "name": "Demo Company!!!",
+          },
+          "first_name": "Demo Company",
+          "id": "7ff7e158-0e27-47f4-a52d-d0ac46bb2fbc",
+          "last_name": "User",
+          "role": "user",
+        },
+      ],
+      "email": "ops+test-company-user@narrator.ai",
+      "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+      "role": "user",
+    },
+    {
+      "company_users": [
+        {
+          "company": {
+            "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+            "name": "Test Company!!!",
+          },
+          "first_name": "Company",
+          "id": "567054ad-1fa5-4196-a835-2d62b82c72bc",
+          "last_name": "Admin",
+          "role": "admin",
+        },
+      ],
+      "email": "ops+test-company-admin@narrator.ai",
+      "id": "aaecdd5f-ae0a-4f6a-84fd-74459c1f40d5",
+      "role": "user",
+    },
+    {
+      "company_users": [
+        {
+          "company": {
+            "id": "6065f99b-d77b-4af8-9cb4-009c9c0f5305",
+            "name": "Demo Company!!!",
+          },
+          "first_name": "OTHER COMPANY",
+          "id": "f2e2dfde-3076-479c-9b33-a99f39451d4b",
+          "last_name": "User",
+          "role": "user",
+        },
+        {
+          "company": {
+            "id": "d479a719-8aea-4bf3-bb68-5cd9ca89524a",
+            "name": "Other Company",
+          },
+          "first_name": "OTHER COMPANY",
+          "id": "c1f9f3aa-bfe4-4f43-ada3-ced827265c64",
+          "last_name": "User",
+          "role": "user",
+        },
+      ],
+      "email": "ops+test-company-other-user@narrator.ai",
+      "id": "49340f93-c41f-41d5-a337-253415f59b8a",
+      "role": "user",
+    },
+  ],
+}
+`;
+
+exports[`Basic Access Controls User role With company-id header Company Admin matches test query 1`] = `
+{
+  "company": [
+    {
+      "company_users": [
+        {
+          "first_name": "Company",
+          "id": "f5e33cd7-e5aa-4891-b795-3aa2dc88929a",
+          "last_name": "User",
+          "role": "user",
+          "user": {
+            "email": "ops+test-company-user@narrator.ai",
+            "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+            "role": "user",
+          },
+        },
+        {
+          "first_name": "Company",
+          "id": "567054ad-1fa5-4196-a835-2d62b82c72bc",
+          "last_name": "Admin",
+          "role": "admin",
+          "user": {
+            "email": "ops+test-company-admin@narrator.ai",
+            "id": "aaecdd5f-ae0a-4f6a-84fd-74459c1f40d5",
+            "role": "user",
+          },
+        },
+      ],
+      "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+      "name": "Test Company!!!",
+    },
+  ],
+  "user": [
+    {
+      "company_users": [
+        {
+          "company": {
+            "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+            "name": "Test Company!!!",
+          },
+          "first_name": "Company",
+          "id": "f5e33cd7-e5aa-4891-b795-3aa2dc88929a",
+          "last_name": "User",
+          "role": "user",
+        },
+      ],
+      "email": "ops+test-company-user@narrator.ai",
+      "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+      "role": "user",
+    },
+    {
+      "company_users": [
+        {
+          "company": {
+            "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+            "name": "Test Company!!!",
+          },
+          "first_name": "Company",
+          "id": "567054ad-1fa5-4196-a835-2d62b82c72bc",
+          "last_name": "Admin",
+          "role": "admin",
+        },
+      ],
+      "email": "ops+test-company-admin@narrator.ai",
+      "id": "aaecdd5f-ae0a-4f6a-84fd-74459c1f40d5",
+      "role": "user",
+    },
+  ],
+}
+`;
+
+exports[`Basic Access Controls User role With company-id header Company User matches test query 1`] = `
+{
+  "company": [
+    {
+      "company_users": [
+        {
+          "first_name": "Company",
+          "id": "f5e33cd7-e5aa-4891-b795-3aa2dc88929a",
+          "last_name": "User",
+          "role": "user",
+          "user": {
+            "email": "ops+test-company-user@narrator.ai",
+            "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+            "role": "user",
+          },
+        },
+        {
+          "first_name": "Company",
+          "id": "567054ad-1fa5-4196-a835-2d62b82c72bc",
+          "last_name": "Admin",
+          "role": "admin",
+          "user": {
+            "email": "ops+test-company-admin@narrator.ai",
+            "id": "aaecdd5f-ae0a-4f6a-84fd-74459c1f40d5",
+            "role": "user",
+          },
+        },
+      ],
+      "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+      "name": "Test Company!!!",
+    },
+    {
+      "company_users": [
+        {
+          "first_name": "Demo Company",
+          "id": "7ff7e158-0e27-47f4-a52d-d0ac46bb2fbc",
+          "last_name": "User",
+          "role": "user",
+          "user": {
+            "email": "ops+test-company-user@narrator.ai",
+            "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+            "role": "user",
+          },
+        },
+      ],
+      "id": "6065f99b-d77b-4af8-9cb4-009c9c0f5305",
+      "name": "Demo Company!!!",
+    },
+  ],
+  "user": [
+    {
+      "company_users": [
+        {
+          "company": {
+            "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+            "name": "Test Company!!!",
+          },
+          "first_name": "Company",
+          "id": "f5e33cd7-e5aa-4891-b795-3aa2dc88929a",
+          "last_name": "User",
+          "role": "user",
+        },
+        {
+          "company": {
+            "id": "6065f99b-d77b-4af8-9cb4-009c9c0f5305",
+            "name": "Demo Company!!!",
+          },
+          "first_name": "Demo Company",
+          "id": "7ff7e158-0e27-47f4-a52d-d0ac46bb2fbc",
+          "last_name": "User",
+          "role": "user",
+        },
+      ],
+      "email": "ops+test-company-user@narrator.ai",
+      "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+      "role": "user",
+    },
+    {
+      "company_users": [
+        {
+          "company": {
+            "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+            "name": "Test Company!!!",
+          },
+          "first_name": "Company",
+          "id": "567054ad-1fa5-4196-a835-2d62b82c72bc",
+          "last_name": "Admin",
+          "role": "admin",
+        },
+      ],
+      "email": "ops+test-company-admin@narrator.ai",
+      "id": "aaecdd5f-ae0a-4f6a-84fd-74459c1f40d5",
+      "role": "user",
+    },
+  ],
+}
+`;
+
+exports[`Basic Access Controls User role With company-id header Company User on Demo Company matches test query 1`] = `
+{
+  "company": [
+    {
+      "company_users": [
+        {
+          "first_name": "Company",
+          "id": "f5e33cd7-e5aa-4891-b795-3aa2dc88929a",
+          "last_name": "User",
+          "role": "user",
+          "user": {
+            "email": "ops+test-company-user@narrator.ai",
+            "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+            "role": "user",
+          },
+        },
+      ],
+      "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+      "name": "Test Company!!!",
+    },
+    {
+      "company_users": [
+        {
+          "first_name": "Demo Company",
+          "id": "7ff7e158-0e27-47f4-a52d-d0ac46bb2fbc",
+          "last_name": "User",
+          "role": "user",
+          "user": {
+            "email": "ops+test-company-user@narrator.ai",
+            "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+            "role": "user",
+          },
+        },
+      ],
+      "id": "6065f99b-d77b-4af8-9cb4-009c9c0f5305",
+      "name": "Demo Company!!!",
+    },
+  ],
+  "user": [
+    {
+      "company_users": [
+        {
+          "company": {
+            "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+            "name": "Test Company!!!",
+          },
+          "first_name": "Company",
+          "id": "f5e33cd7-e5aa-4891-b795-3aa2dc88929a",
+          "last_name": "User",
+          "role": "user",
+        },
+        {
+          "company": {
+            "id": "6065f99b-d77b-4af8-9cb4-009c9c0f5305",
+            "name": "Demo Company!!!",
+          },
+          "first_name": "Demo Company",
+          "id": "7ff7e158-0e27-47f4-a52d-d0ac46bb2fbc",
+          "last_name": "User",
+          "role": "user",
+        },
+      ],
+      "email": "ops+test-company-user@narrator.ai",
+      "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+      "role": "user",
+    },
+  ],
+}
+`;
+
+exports[`Basic Access Controls User role With null company-id header Company Admin matches test query 1`] = `
+{
+  "company": [
+    {
+      "company_users": [
+        {
+          "first_name": "Company",
+          "id": "567054ad-1fa5-4196-a835-2d62b82c72bc",
+          "last_name": "Admin",
+          "role": "admin",
+          "user": {
+            "email": "ops+test-company-admin@narrator.ai",
+            "id": "aaecdd5f-ae0a-4f6a-84fd-74459c1f40d5",
+            "role": "user",
+          },
+        },
+      ],
+      "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+      "name": "Test Company!!!",
+    },
+  ],
+  "user": [
+    {
+      "company_users": [
+        {
+          "company": {
+            "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+            "name": "Test Company!!!",
+          },
+          "first_name": "Company",
+          "id": "567054ad-1fa5-4196-a835-2d62b82c72bc",
+          "last_name": "Admin",
+          "role": "admin",
+        },
+      ],
+      "email": "ops+test-company-admin@narrator.ai",
+      "id": "aaecdd5f-ae0a-4f6a-84fd-74459c1f40d5",
+      "role": "user",
+    },
+  ],
+}
+`;
+
+exports[`Basic Access Controls User role With null company-id header Company User matches test query 1`] = `
+{
+  "company": [
+    {
+      "company_users": [
+        {
+          "first_name": "Company",
+          "id": "f5e33cd7-e5aa-4891-b795-3aa2dc88929a",
+          "last_name": "User",
+          "role": "user",
+          "user": {
+            "email": "ops+test-company-user@narrator.ai",
+            "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+            "role": "user",
+          },
+        },
+      ],
+      "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+      "name": "Test Company!!!",
+    },
+    {
+      "company_users": [
+        {
+          "first_name": "Demo Company",
+          "id": "7ff7e158-0e27-47f4-a52d-d0ac46bb2fbc",
+          "last_name": "User",
+          "role": "user",
+          "user": {
+            "email": "ops+test-company-user@narrator.ai",
+            "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+            "role": "user",
+          },
+        },
+      ],
+      "id": "6065f99b-d77b-4af8-9cb4-009c9c0f5305",
+      "name": "Demo Company!!!",
+    },
+  ],
+  "user": [
+    {
+      "company_users": [
+        {
+          "company": {
+            "id": "cf093343-7657-4969-9eef-b8c93eedab32",
+            "name": "Test Company!!!",
+          },
+          "first_name": "Company",
+          "id": "f5e33cd7-e5aa-4891-b795-3aa2dc88929a",
+          "last_name": "User",
+          "role": "user",
+        },
+        {
+          "company": {
+            "id": "6065f99b-d77b-4af8-9cb4-009c9c0f5305",
+            "name": "Demo Company!!!",
+          },
+          "first_name": "Demo Company",
+          "id": "7ff7e158-0e27-47f4-a52d-d0ac46bb2fbc",
+          "last_name": "User",
+          "role": "user",
+        },
+      ],
+      "email": "ops+test-company-user@narrator.ai",
+      "id": "5e77a9b3-4067-4a8d-89cd-b10952b71cd4",
+      "role": "user",
+    },
+  ],
+}
+`;

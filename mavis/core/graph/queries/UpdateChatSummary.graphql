@@ -1,0 +1,5 @@
+mutation UpdateChatSummary($chat_id: uuid!, $summary: String!, $detailed_summary: String!) {
+  update_chat_by_pk(pk_columns: { id: $chat_id }, _set: { summary: $summary, detailed_summary: $detailed_summary }) {
+    id
+  }
+}

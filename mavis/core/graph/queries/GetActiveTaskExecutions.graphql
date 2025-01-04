@@ -1,0 +1,9 @@
+query GetActiveTaskExecutions {
+  task_executions: task_execution(where: { status: { _in: [pending, running] } }) {
+    id
+    task_id
+    status
+    started_at
+    orchestration_id
+  }
+}

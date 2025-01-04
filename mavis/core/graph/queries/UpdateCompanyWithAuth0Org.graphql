@@ -1,0 +1,5 @@
+mutation UpdateCompanyWithAuth0Org($company_id: uuid!, $org_id: String!) {
+  update_company_auth0(where: { company_id: { _eq: $company_id } }, _set: { org_id: $org_id }) {
+    affected_rows
+  }
+}

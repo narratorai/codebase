@@ -1,0 +1,39 @@
+{
+  "id": "c63a886a-43f2-43b0-bb09-dfaf57556a73",
+  "slug": "started_sessions",
+  "depends_on_transformations": [],
+  "activities": [
+    {
+      "activity": {
+        "id": "22e38afd-3145-47c1-92d4-9d4f51163f53",
+        "slug": "started_session",
+        "activity_maintenances": [],
+        "name": "Started Session"
+      }
+    }
+  ],
+  "column_renames": [
+    {
+      "name": "ts"
+    }
+  ],
+  "run_after_transformations": [],
+  "production_queries_aggregate": { "aggregate": { "count": 1 } },
+  "transformation_maintenances": [],
+  "kind": "stream",
+  "name": "Started Sessions",
+  "next_resync_at": null,
+  "last_diff_data_and_insert_at": "2022-04-27T12:50:06.313415+00:00",
+  "has_source": true,
+  "is_aliasing": false,
+  "remove_customers": null,
+  "table": "activity_stream",
+  "update_type": "regular",
+  "production_queries": [
+    {
+      "sql": "SELECT\n    t.message_id || t.timestamp AS activity_id,\n    t.timestamp AS ts,\n\n\n    NULL AS source,\n    NULL AS source_id,\n    mt.company_slug AS customer,\n\n\n    'ran_dataset' AS activity,\n\n\n    mt.dataset_slug AS feature_1,\n    mt.group_slug AS feature_2,\n    t.user_id AS feature_3,\n\n\n    NULL AS revenue_impact,\n    t.context_page_url AS link\n\nFROM portal.tracks t \njoin portal.ran_dataset mt \n    on (mt.message_id = t.message_id)\nwhere t.event = 'ran_dataset'\n    and mt.company_slug is not NULL",
+      "updated_by": "Narrator"
+    }
+  ],
+  "query_updates": []
+}

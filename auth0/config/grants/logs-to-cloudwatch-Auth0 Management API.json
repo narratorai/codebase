@@ -1,0 +1,5 @@
+{
+  "client_id": "logs-to-cloudwatch",
+  "audience": "https://##AUTH0_TENANT_NAME##/api/v2/",
+  "scope": ["read:logs", "delete:clients"]
+}

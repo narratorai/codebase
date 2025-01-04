@@ -1,0 +1,102 @@
+query TransformationIndexV2($company_id: uuid!) {
+  all_transformations: transformation(
+    where: { company_id: { _eq: $company_id } }
+    order_by: { production_queries_aggregate: { max: { created_at: desc_nulls_last } } }
+  ) {
+    id
+    created_at
+    updated_at
+    slug
+    name
+    delete_window
+    remove_customers
+    do_not_delete_on_resync
+    has_source
+    is_aliasing
+    allow_future_data
+    max_days_to_insert
+    notify_row_count_percent_change
+    start_data_after
+    kind
+    table
+    update_type
+    next_resync_at
+    query_updates(order_by: [{ processed_at: desc }], limit: 1) {
+      id
+      transformation_id
+      to_sync_time
+      rows_inserted
+      update_duration
+      processed_at
+      update_kind
+      from_sync_time
+    }
+    transformation_maintenances(where: { ended_at: { _is_null: true } }) {
+      id
+      notes
+      started_at
+      ended_at
+      kind
+      maintenance_kind {
+        description
+      }
+    }
+    activities {
+      id
+      activity {
+        id
+        slug
+        name
+      }
+    }
+    current_query {
+      id
+      sql
+      updated_by
+      updated_at
+      notes
+    }
+    production_queries(order_by: { created_at: desc }, limit: 15) {
+      id
+      sql
+      created_at
+      updated_at
+      updated_by
+      notes
+    }
+    depends_on_transformations {
+      id
+      depends_on_transformation_id
+      depends_on_transformations {
+        id
+        name
+      }
+    }
+    run_after_transformations {
+      id
+      run_after_transformation_id
+      run_after_transformations {
+        id
+        name
+      }
+    }
+    validation_queries(order_by: { updated_at: asc }) {
+      id
+      updated_by
+      updated_at
+      sql
+      notes
+      alert {
+        id
+        task_id
+        email
+        alert_kind
+        company_task {
+          id
+          task_slug
+          schedule
+        }
+      }
+    }
+  }
+}

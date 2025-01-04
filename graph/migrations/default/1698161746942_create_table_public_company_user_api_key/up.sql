@@ -1,0 +1,2 @@
+CREATE TABLE "public"."company_user_api_key" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "company_user_id" uuid NOT NULL, "label" varchar, "created_at" timestamptz NOT NULL DEFAULT now(), "revoked_at" timestamptz, "last_used_at" timestamptz, PRIMARY KEY ("id") , FOREIGN KEY ("company_user_id") REFERENCES "public"."company_user"("id") ON UPDATE cascade ON DELETE cascade, UNIQUE ("id"));COMMENT ON TABLE "public"."company_user_api_key" IS E'API Keys for company user';
+CREATE EXTENSION IF NOT EXISTS pgcrypto;

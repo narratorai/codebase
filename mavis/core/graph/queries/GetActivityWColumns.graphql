@@ -1,0 +1,51 @@
+query GetActivityWColumns($id: uuid!) {
+  activity: activity_by_pk(id: $id) {
+    id
+    slug
+    name
+    description
+    category
+    table_id
+    row_count
+    company_table {
+      slowly_changing_customer_dims {
+        slowly_changing_ts_column
+        dim_table {
+          id
+          schema_: schema
+          table
+          join_key
+          columns {
+            id
+            name
+            type
+            label
+          }
+        }
+      }
+    }
+    column_renames {
+      id
+      label
+      type
+      name
+      has_data
+    }
+    activity_dims {
+      activity_join_column
+      slowly_changing_ts_column
+      dim_table {
+        id
+        schema_: schema
+        table
+        join_key
+        columns {
+          id
+          name
+          type
+          label
+        }
+      }
+    }
+  }
+}

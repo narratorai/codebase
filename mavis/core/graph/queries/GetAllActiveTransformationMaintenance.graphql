@@ -1,0 +1,14 @@
+query GetAllActiveTransformationMaintenance($company_id: uuid!) {
+  transformation_maintenance(
+    where: {
+      transformation:{
+        company_id:{_eq:$company_id}
+      }
+      ended_at: { _is_null: true }
+    }
+    order_by: { ended_at: desc_nulls_first }
+  ) {
+    id
+    transformation_id
+  }
+}

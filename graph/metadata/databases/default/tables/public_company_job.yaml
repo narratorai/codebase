@@ -1,0 +1,47 @@
+table:
+  name: company_job
+  schema: public
+object_relationships:
+  - name: task
+    using:
+      foreign_key_constraint_on: task_id
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        _and:
+          - task:
+              company_id:
+                _eq: X-Hasura-Company_id
+          - task:
+              internal_only:
+                _ne: true
+      columns:
+        - depends_on
+        - name
+        - script
+        - script_args
+        - task_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - depends_on
+        - execution_environment
+        - id
+        - name
+        - retries
+        - script
+        - script_args
+        - task_id
+        - timeout
+        - updated_at
+      filter:
+        _and:
+          - task:
+              company_id:
+                _eq: X-Hasura-Company-Id
+          - task:
+              internal_only:
+                _ne: true

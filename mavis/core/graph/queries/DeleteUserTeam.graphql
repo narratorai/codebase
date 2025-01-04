@@ -1,0 +1,7 @@
+mutation DeleteUserTeam($company_user_id: uuid!, $team_id: uuid!) {
+  delete_team_user(where: { company_user_id: { _eq: $company_user_id }, team_id: { _eq: $team_id } }) {
+    returning {
+      id
+    }
+  }
+}

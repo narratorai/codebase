@@ -1,0 +1,12 @@
+mutation UpdateNarrativeDepends($narrative_id: uuid!, $update_narratives: [narrative_narratives_insert_input!]!) {
+  delete_narrative_narratives(where: {narrative_id: {_eq: $narrative_id}}) {
+    returning {
+      id
+    }
+  }
+  insert_narrative_narratives(objects: $update_narratives) {
+    returning {
+      id
+    }
+  }
+}

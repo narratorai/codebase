@@ -1,0 +1,13 @@
+mutation UpdateTransformationName(
+    $id: uuid!
+    $name: String!
+    $table: String!
+    $updated_by: uuid
+) {
+    update_transformation_by_pk(
+        pk_columns: { id: $id }
+        _set: { name: $name, table: $table, updated_by: $updated_by }
+    ) {
+        id
+    }
+}

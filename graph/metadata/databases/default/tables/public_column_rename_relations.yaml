@@ -1,0 +1,4 @@
+table:
+  name: column_rename_relations
+  schema: public
+is_enum: true

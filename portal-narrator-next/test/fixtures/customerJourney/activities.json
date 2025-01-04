@@ -1,0 +1,653 @@
+[
+  {
+      "ts": "2021-11-01T06:59:27.914897",
+      "activity_occurrence": 3,
+      "activity": "viewed_product",
+      "revenue_impact": null,
+      "_id": -6266282755210350000,
+      "features": [
+          {
+              "label": "Product SKU",
+              "value": "240",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "32ce1efdf04e16e027af5ea3d3b1c8c6",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": null,
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#F0A21D",
+      "activity_name": "Added to Cart"
+  },
+  {
+      "ts": "2021-11-01T06:59:26.914897",
+      "activity_occurrence": 10,
+      "activity": "viewed_page",
+      "revenue_impact": null,
+      "_id": -6862073527046626000,
+      "features": [
+          {
+              "label": "Ad Source",
+              "value": "/product",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Referring Domain",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Device",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "32ce1efdf04e16e027af5ea3d3b1c8c6",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/product",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#FF6802",
+      "activity_name": "Viewed Website"
+  },
+  {
+      "ts": "2021-11-01T06:55:26.914897",
+      "activity_occurrence": 9,
+      "activity": "viewed_page",
+      "revenue_impact": null,
+      "_id": 5007573080340414000,
+      "features": [
+          {
+              "label": "Ad Source",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Referring Domain",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Device",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "388a9c0bc454324a6cd829562a0a3863",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#FF6802",
+      "activity_name": "Viewed Website"
+  },
+  {
+      "ts": "2021-11-01T06:54:27.914897",
+      "activity_occurrence": 1,
+      "activity": "started_checkout",
+      "revenue_impact": null,
+      "_id": 6957976457450277000,
+      "features": [
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "794f821ac8344f69bff77527793fb5dfst",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/checkout",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#151977",
+      "activity_name": "Started Checkout"
+  },
+  {
+      "ts": "2021-11-01T06:54:26.914897",
+      "activity_occurrence": 8,
+      "activity": "viewed_page",
+      "revenue_impact": null,
+      "_id": -2878034322310197000,
+      "features": [
+          {
+              "label": "Ad Source",
+              "value": "/checkout",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Referring Domain",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Device",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "794f821ac8344f69bff77527793fb5df",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/checkout",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#FF6802",
+      "activity_name": "Viewed Website"
+  },
+  {
+      "ts": "2021-11-01T06:54:25.914897",
+      "activity_occurrence": 2,
+      "activity": "viewed_product",
+      "revenue_impact": null,
+      "_id": -7316127692543178000,
+      "features": [
+          {
+              "label": "Product SKU",
+              "value": "20",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "e9f4b26b19f407191bd2c859a738c29b",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": null,
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#F0A21D",
+      "activity_name": "Added to Cart"
+  },
+  {
+      "ts": "2021-11-01T06:54:25.914897",
+      "activity_occurrence": 1,
+      "activity": "viewed_product",
+      "revenue_impact": null,
+      "_id": 19598251358866384,
+      "features": [
+          {
+              "label": "Product SKU",
+              "value": "70",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "6dc2a523836fe3788cf0aa08fdf6a751",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/product",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#F0A21D",
+      "activity_name": "Added to Cart"
+  },
+  {
+      "ts": "2021-11-01T06:54:24.914897",
+      "activity_occurrence": 7,
+      "activity": "viewed_page",
+      "revenue_impact": null,
+      "_id": 2813883599193387000,
+      "features": [
+          {
+              "label": "Ad Source",
+              "value": "/product",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Referring Domain",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Device",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "e9f4b26b19f407191bd2c859a738c29b",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/product",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#FF6802",
+      "activity_name": "Viewed Website"
+  },
+  {
+      "ts": "2021-11-01T06:52:26.914897",
+      "activity_occurrence": 6,
+      "activity": "viewed_page",
+      "revenue_impact": null,
+      "_id": 511417195641141400,
+      "features": [
+          {
+              "label": "Ad Source",
+              "value": "/promo",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Referring Domain",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Device",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "5842bb0663900a4e0bbe92fd24f71f23",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/promo",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#FF6802",
+      "activity_name": "Viewed Website"
+  },
+  {
+      "ts": "2021-11-01T06:52:26.914897",
+      "activity_occurrence": 5,
+      "activity": "viewed_page",
+      "revenue_impact": null,
+      "_id": 4717342921032903000,
+      "features": [
+          {
+              "label": "Ad Source",
+              "value": "/promo",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Referring Domain",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Device",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "bfe7c673c7b61cbbe43b2416e7692ce9",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/promo",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#FF6802",
+      "activity_name": "Viewed Website"
+  },
+  {
+      "ts": "2021-11-01T06:50:26.914897",
+      "activity_occurrence": 4,
+      "activity": "viewed_page",
+      "revenue_impact": null,
+      "_id": 6231407018474217000,
+      "features": [
+          {
+              "label": "Ad Source",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Referring Domain",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Device",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "66d92d2bda89f0ea8821d1efc844d32c",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#FF6802",
+      "activity_name": "Viewed Website"
+  },
+  {
+      "ts": "2021-11-01T06:47:26.914897",
+      "activity_occurrence": 3,
+      "activity": "viewed_page",
+      "revenue_impact": null,
+      "_id": -9179941361148418000,
+      "features": [
+          {
+              "label": "Ad Source",
+              "value": "/home",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Referring Domain",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Device",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "0fbaee2b01ea72c51efd2eb7d75c2eeb",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/home",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#FF6802",
+      "activity_name": "Viewed Website"
+  },
+  {
+      "ts": "2021-11-01T06:46:26.914897",
+      "activity_occurrence": 2,
+      "activity": "viewed_page",
+      "revenue_impact": null,
+      "_id": 4651388284614795000,
+      "features": [
+          {
+              "label": "Ad Source",
+              "value": "/promo",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Referring Domain",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Device",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "f60841c312370e0282a6e99f9bf12bac",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/promo",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#FF6802",
+      "activity_name": "Viewed Website"
+  },
+  {
+      "ts": "2021-11-01T06:39:26.914897",
+      "activity_occurrence": 1,
+      "activity": "viewed_page",
+      "revenue_impact": null,
+      "_id": 942420535372713100,
+      "features": [
+          {
+              "label": "Ad Source",
+              "value": "/promo",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Referring Domain",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Device",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "a11ea5e01d697a6302d428e44c348807",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "www.example.com/promo",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#FF6802",
+      "activity_name": "Viewed Website"
+  },
+  {
+      "ts": "2021-11-01T06:31:26.914897",
+      "activity_occurrence": 1,
+      "activity": "started_session",
+      "revenue_impact": null,
+      "_id": 5174973746959827000,
+      "features": [
+          {
+              "label": "Ad Source",
+              "value": null,
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Referring domain",
+              "value": "reddit",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Device",
+              "value": "desktop",
+              "for_copy": false,
+              "for_link": false
+          },
+          {
+              "label": "Source Id",
+              "value": null,
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Activity Id",
+              "value": "095f6014de3692b0f4841d7a152b5c27",
+              "for_copy": true,
+              "for_link": false
+          },
+          {
+              "label": "Link",
+              "value": "/product",
+              "for_copy": false,
+              "for_link": true
+          }
+      ],
+      "dot_color": "#E3DE71",
+      "activity_name": "Started Session"
+  }
+]

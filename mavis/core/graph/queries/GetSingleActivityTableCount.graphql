@@ -1,0 +1,9 @@
+query GetSingleActivityTableCount($activity_id: uuid!) {
+    transformation_activities_aggregate(
+        where: { activity_id: { _eq: $activity_id } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+}

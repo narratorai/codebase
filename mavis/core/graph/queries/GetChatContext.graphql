@@ -1,0 +1,28 @@
+query GetChatContext($user_id: uuid!, $company_id: uuid!, $table_id: uuid!, $favorite_tag_id: uuid!) {
+  company_tags: company_tags_by_pk(id: $favorite_tag_id) {
+    tagged_items(where: { related_to: { _eq: activity } }) {
+      activity {
+        id
+        slug
+        name
+        category
+        description
+      }
+    }
+  }
+  company_user(where: { user_id: { _eq: $user_id }, company_id: { _eq: $company_id } }) {
+    user_context
+    company_context
+    metrics_context
+  }
+  chat(
+    where: { created_by: { _eq: $user_id }, table_id: { _eq: $table_id } }
+    order_by: { created_at: desc_nulls_last }
+    limit: 5
+  ) {
+    id
+    created_at
+    summary
+    detailed_summary
+  }
+}

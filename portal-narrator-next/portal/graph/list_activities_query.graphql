@@ -1,0 +1,41 @@
+query ListActivities($company_slug: String!, $activity_stream: String!) {
+  all_activities: activity(
+    where: { company: { slug: { _eq: $company_slug } }, company_table: { activity_stream: { _eq: $activity_stream } } }
+  ) {
+    id
+    slug
+    name
+    description
+    category
+    validated
+    status
+    column_renames {
+      id
+      name
+      label
+      has_data
+    }
+    company_category {
+      id
+      category
+      color
+    }
+    company_table {
+      id
+      activity_stream
+    }
+    enriched_by(limit: 1) {
+      id
+      transformation {
+        id
+        name
+        table
+        column_renames {
+          id
+          label
+          name
+        }
+      }
+    }
+  }
+}

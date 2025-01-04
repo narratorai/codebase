@@ -1,0 +1,2744 @@
+{
+  "fields": {},
+  "query": {
+    "activities": [
+      {
+        "id": "added_to_crm484b076d",
+        "name": "Added To CRM",
+        "slug": [
+          "added_to_crm"
+        ],
+        "activity_ids": [
+          "8655a018-fa09-44c7-9cb5-63fbbebe0969"
+        ],
+        "did": true,
+        "occurrence": "all",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "limiting"
+      },
+      {
+        "id": "call0120a1b8",
+        "name": "Call",
+        "slug": [
+          "call"
+        ],
+        "activity_ids": [
+          "01b22c7e-f64f-4fd5-a11a-139318e0e7c7"
+        ],
+        "did": true,
+        "occurrence": "metric",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [
+          {
+            "activity_column_name": "feature_2",
+            "column_type": "string",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "filter": {
+              "operator": "equal",
+              "kind": "value",
+              "value": "Connected",
+              "or_null": false,
+              "from_type": null,
+              "from_value": null,
+              "from_value_kind": "value",
+              "from_value_resolution": null,
+              "to_type": null,
+              "to_value": null,
+              "to_value_kind": "value",
+              "to_value_resolution": null,
+              "value_resolution": null
+            }
+          }
+        ],
+        "kind": "append",
+        "relationship_slug": "agg_all_ever",
+        "force_recompute_occurrence": null,
+        "temp_id": "0['call']"
+      },
+      {
+        "id": "voicemail1ea380eb",
+        "name": "Voicemail",
+        "slug": [
+          "voicemail"
+        ],
+        "activity_ids": [
+          "a66ecdff-998e-43ac-8605-dcb1fb68b982"
+        ],
+        "did": true,
+        "occurrence": "metric",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "agg_all_ever"
+      },
+      {
+        "id": "call3ab6d390",
+        "name": "Call",
+        "slug": [
+          "call"
+        ],
+        "activity_ids": [
+          "01b22c7e-f64f-4fd5-a11a-139318e0e7c7"
+        ],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [
+          {
+            "activity_column_name": "feature_2",
+            "column_type": "string",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "filter": {
+              "operator": "equal",
+              "kind": "value",
+              "value": "Connected",
+              "or_null": false,
+              "from_type": null,
+              "from_value": null,
+              "from_value_kind": "value",
+              "from_value_resolution": null,
+              "to_type": null,
+              "to_value": null,
+              "to_value_kind": "value",
+              "to_value_resolution": null,
+              "value_resolution": null
+            }
+          }
+        ],
+        "kind": "append",
+        "relationship_slug": "last_ever",
+        "force_recompute_occurrence": null,
+        "temp_id": "1['call']"
+      },
+      {
+        "id": "voicemail640f4a0a",
+        "name": "Voicemail",
+        "slug": [
+          "voicemail"
+        ],
+        "activity_ids": [
+          "a66ecdff-998e-43ac-8605-dcb1fb68b982"
+        ],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "last_ever"
+      },
+      {
+        "id": "opened_emailcd7464ce",
+        "name": "Opened Email",
+        "slug": [
+          "opened_email"
+        ],
+        "activity_ids": [
+          "885bd1bb-2e3a-4afe-899b-8798136a8115"
+        ],
+        "did": true,
+        "occurrence": "metric",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [
+          {
+            "activity_column_name": "feature_3",
+            "column_type": "string",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "filter": {
+              "operator": "contains",
+              "kind": "value",
+              "value": "mailbox",
+              "or_null": false,
+              "from_type": null,
+              "from_value": null,
+              "from_value_kind": "value",
+              "from_value_resolution": null,
+              "to_type": null,
+              "to_value": null,
+              "to_value_kind": "value",
+              "to_value_resolution": null,
+              "value_resolution": null
+            }
+          }
+        ],
+        "kind": "append",
+        "relationship_slug": "agg_all_ever",
+        "force_recompute_occurrence": null,
+        "temp_id": "0['opened_email']"
+      },
+      {
+        "id": "opened_email50f73bbb",
+        "name": "Opened Email",
+        "slug": [
+          "opened_email"
+        ],
+        "activity_ids": [
+          "885bd1bb-2e3a-4afe-899b-8798136a8115"
+        ],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [
+          {
+            "activity_column_name": "feature_3",
+            "column_type": "string",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "filter": {
+              "operator": "contains",
+              "kind": "value",
+              "value": "mailbox",
+              "or_null": false,
+              "from_type": null,
+              "from_value": null,
+              "from_value_kind": "value",
+              "from_value_resolution": null,
+              "to_type": null,
+              "to_value": null,
+              "to_value_kind": "value",
+              "to_value_resolution": null,
+              "value_resolution": null
+            }
+          }
+        ],
+        "kind": "append",
+        "relationship_slug": "last_ever",
+        "force_recompute_occurrence": null,
+        "temp_id": "1['opened_email']"
+      },
+      {
+        "id": "clicked_docsendbed5fb22",
+        "name": "Clicked Docsend",
+        "slug": [
+          "click_docsend"
+        ],
+        "activity_ids": [
+          "51d81b80-91dd-4a35-a77b-05d5c2f68e79"
+        ],
+        "did": true,
+        "occurrence": "metric",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "agg_all_ever"
+      },
+      {
+        "id": "clicked_docsend38c00c10",
+        "name": "Clicked Docsend",
+        "slug": [
+          "click_docsend"
+        ],
+        "activity_ids": [
+          "51d81b80-91dd-4a35-a77b-05d5c2f68e79"
+        ],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "last_ever"
+      },
+      {
+        "id": "transaction0347d9fa",
+        "name": "Transaction",
+        "slug": [
+          "transaction"
+        ],
+        "activity_ids": [
+          "4d1618a5-c4cb-46b7-a83c-64d9e41c3b9d"
+        ],
+        "did": true,
+        "occurrence": "metric",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [
+          {
+            "activity_column_name": "feature_2",
+            "column_type": "integer",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "filter": {
+              "operator": "greater_than",
+              "kind": "value",
+              "value": "0",
+              "or_null": false,
+              "from_type": null,
+              "from_value": null,
+              "from_value_kind": "value",
+              "from_value_resolution": null,
+              "to_type": null,
+              "to_value": null,
+              "to_value_kind": "value",
+              "to_value_resolution": null,
+              "value_resolution": null
+            }
+          }
+        ],
+        "kind": "append",
+        "relationship_slug": "agg_all_ever",
+        "temp_id": "0['transaction']"
+      },
+      {
+        "id": "transaction40be3ecf",
+        "name": "Transaction",
+        "slug": [
+          "transaction"
+        ],
+        "activity_ids": [
+          "4d1618a5-c4cb-46b7-a83c-64d9e41c3b9d"
+        ],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [
+          {
+            "activity_column_name": "feature_2",
+            "column_type": "integer",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "filter": {
+              "operator": "greater_than",
+              "kind": "value",
+              "value": "0",
+              "or_null": false,
+              "from_type": null,
+              "from_value": null,
+              "from_value_kind": "value",
+              "from_value_resolution": null,
+              "to_type": null,
+              "to_value": null,
+              "to_value_kind": "value",
+              "to_value_resolution": null,
+              "value_resolution": null
+            }
+          }
+        ],
+        "kind": "append",
+        "relationship_slug": "last_ever",
+        "temp_id": "1['transaction']"
+      },
+      {
+        "id": "marketplace_signup466f728b",
+        "name": "Marketplace Signup",
+        "slug": [
+          "marketplace_signup"
+        ],
+        "activity_ids": [
+          "719b1288-e24e-46d0-9481-83c99f12af1f"
+        ],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "last_ever"
+      },
+      {
+        "id": "deal_created2c63dfd5",
+        "name": "Deal Created",
+        "slug": [
+          "deal_created"
+        ],
+        "activity_ids": [
+          "17a1db9a-2738-4469-bfef-eab75b91c945"
+        ],
+        "did": true,
+        "occurrence": "metric",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "agg_all_ever"
+      },
+      {
+        "id": "deal_created959b6ca9",
+        "name": "Deal Created",
+        "slug": [
+          "deal_created"
+        ],
+        "activity_ids": [
+          "17a1db9a-2738-4469-bfef-eab75b91c945"
+        ],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "last_ever"
+      },
+      {
+        "id": "lead_funnel_entered9e6604eb",
+        "name": "Lead Funnel Entered",
+        "slug": [
+          "lead_funnel_entered"
+        ],
+        "activity_ids": [
+          "b901f4c6-3d8d-4c89-ab42-c64d2922a922"
+        ],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_ever"
+      },
+      {
+        "id": "subscribed_to_newsletter3f50a566",
+        "name": "Subscribed to Newsletter",
+        "slug": [
+          "newsletter_subscription"
+        ],
+        "activity_ids": [
+          "d6aa46d2-cbde-437e-a6de-bffb69cd85c5"
+        ],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_ever"
+      },
+      {
+        "id": "received_email21b54e58",
+        "name": "Received Email",
+        "slug": [
+          "received_email"
+        ],
+        "activity_ids": [
+          "fcd0b221-5dac-49b9-a53a-5aa8ba16bb1a"
+        ],
+        "did": true,
+        "occurrence": "metric",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [
+          {
+            "activity_column_name": "feature_3",
+            "column_type": "string",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "filter": {
+              "operator": "contains",
+              "kind": "value",
+              "value": "mailbox",
+              "or_null": false,
+              "from_type": null,
+              "from_value": null,
+              "from_value_kind": "value",
+              "from_value_resolution": null,
+              "to_type": null,
+              "to_value": null,
+              "to_value_kind": "value",
+              "to_value_resolution": null,
+              "value_resolution": null
+            }
+          }
+        ],
+        "kind": "append",
+        "relationship_slug": "agg_all_ever",
+        "force_recompute_occurrence": null,
+        "temp_id": "0['received_email']"
+      },
+      {
+        "id": "received_emaile20fba82",
+        "name": "Received Email",
+        "slug": [
+          "received_email"
+        ],
+        "activity_ids": [
+          "fcd0b221-5dac-49b9-a53a-5aa8ba16bb1a"
+        ],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [
+          {
+            "activity_column_name": "feature_3",
+            "column_type": "string",
+            "enrichment_table": null,
+            "enrichment_table_column": null,
+            "filter": {
+              "operator": "contains",
+              "kind": "value",
+              "value": "mailbox",
+              "or_null": false,
+              "from_type": null,
+              "from_value": null,
+              "from_value_kind": "value",
+              "from_value_resolution": null,
+              "to_type": null,
+              "to_value": null,
+              "to_value_kind": "value",
+              "to_value_resolution": null,
+              "value_resolution": null
+            }
+          }
+        ],
+        "kind": "append",
+        "relationship_slug": "last_ever",
+        "force_recompute_occurrence": null,
+        "temp_id": "1['received_email']"
+      },
+      {
+        "id": "sent_emaild0e54b26",
+        "name": "Sent Email",
+        "slug": [
+          "sent_email"
+        ],
+        "activity_ids": [
+          "4a1c1bb1-a284-4a0c-9ce3-6bf7e0b47832"
+        ],
+        "did": true,
+        "occurrence": "metric",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "agg_all_ever"
+      },
+      {
+        "id": "sent_email004a1371",
+        "name": "Sent Email",
+        "slug": [
+          "sent_email"
+        ],
+        "activity_ids": [
+          "4a1c1bb1-a284-4a0c-9ce3-6bf7e0b47832"
+        ],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "last_ever"
+      },
+      {
+        "id": "sales_meeting3a69c387",
+        "name": "Sales Meeting",
+        "slug": [
+          "sales_meeting"
+        ],
+        "activity_ids": [
+          "85f8f178-2dcf-4b13-8640-5d54c5d08ef7"
+        ],
+        "did": true,
+        "occurrence": "metric",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "agg_all_ever"
+      },
+      {
+        "id": "sales_meeting6acab319",
+        "name": "Sales Meeting",
+        "slug": [
+          "sales_meeting"
+        ],
+        "activity_ids": [
+          "85f8f178-2dcf-4b13-8640-5d54c5d08ef7"
+        ],
+        "did": true,
+        "occurrence": "last",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "last_ever"
+      }
+    ],
+    "columns": [
+      {
+        "id": "c_activity_id_8b27af28",
+        "name": "activity_id",
+        "label": "Activity Id",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "added_to_crm484b076d",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "c_ts_c02b99a9",
+        "name": "ts",
+        "label": "Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "added_to_crm484b076d",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        },
+        "probability": 0.13723722431999996
+      },
+      {
+        "id": "c_customer_fd09e4dd",
+        "name": "customer",
+        "label": "Customer",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "added_to_crm484b076d",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "c_join_customer_aa8051fc",
+        "name": "join_customer",
+        "label": "Unique Identifier",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "added_to_crm484b076d",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "c_link_b90938dd",
+        "name": "link",
+        "label": "Link",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "added_to_crm484b076d",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "c_activity_occurrence_ee6e49e6",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "group_func": null,
+        "type": "number",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "added_to_crm484b076d",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "customer_table_full_named0c4e62d",
+        "filters": [],
+        "label": "Full Name",
+        "name": "full_name",
+        "output": true,
+        "source_details": {
+          "table": "customer_table",
+          "activity_id": "added_to_crm484b076d"
+        },
+        "source_kind": "customer",
+        "mavis_type": "string",
+        "type": "string"
+      },
+      {
+        "id": "customer_table_owner_name7f26680d",
+        "filters": [],
+        "label": "Owner Name",
+        "name": "owner_name",
+        "output": true,
+        "source_details": {
+          "table": "customer_table",
+          "activity_id": "added_to_crm484b076d"
+        },
+        "source_kind": "customer",
+        "mavis_type": "string",
+        "type": "string"
+      },
+      {
+        "id": "customer_table_crm_url238cfd98",
+        "filters": [],
+        "label": "Crm Url",
+        "name": "crm_url",
+        "output": true,
+        "source_details": {
+          "table": "customer_table",
+          "activity_id": "added_to_crm484b076d"
+        },
+        "source_kind": "customer",
+        "mavis_type": "string",
+        "type": "string"
+      },
+      {
+        "id": "customer_table_investor_channel1970ee4b",
+        "filters": [],
+        "label": "Investor Channel",
+        "name": "investor_channel",
+        "output": true,
+        "source_details": {
+          "table": "customer_table",
+          "activity_id": "added_to_crm484b076d"
+        },
+        "source_kind": "customer",
+        "mavis_type": "string",
+        "type": "string"
+      },
+      {
+        "id": "customer_table_lead_sourced35ffafd",
+        "filters": [],
+        "label": "Lead Source",
+        "name": "lead_source",
+        "output": true,
+        "source_details": {
+          "table": "customer_table",
+          "activity_id": "added_to_crm484b076d"
+        },
+        "source_kind": "customer",
+        "mavis_type": "string",
+        "type": "string"
+      },
+      {
+        "id": "customer_table_organisation_nameebb06e01",
+        "filters": [],
+        "label": "Organisation Name",
+        "name": "organisation_name",
+        "output": true,
+        "source_details": {
+          "table": "customer_table",
+          "activity_id": "added_to_crm484b076d"
+        },
+        "source_kind": "customer",
+        "mavis_type": "string",
+        "type": "string"
+      },
+      {
+        "id": "customer_table_lead_qualificationb86a4f9c",
+        "filters": [],
+        "label": "Lead Qualification",
+        "name": "lead_qualification",
+        "output": true,
+        "source_details": {
+          "table": "customer_table",
+          "activity_id": "added_to_crm484b076d"
+        },
+        "source_kind": "customer",
+        "mavis_type": "string",
+        "type": "string"
+      },
+      {
+        "id": "customer_table_lead_qualitycff9b183",
+        "filters": [],
+        "label": "Lead Quality",
+        "name": "lead_quality",
+        "output": true,
+        "source_details": {
+          "table": "customer_table",
+          "activity_id": "added_to_crm484b076d"
+        },
+        "source_kind": "customer",
+        "mavis_type": "string",
+        "type": "string"
+      },
+      {
+        "id": "customer_table_primary_emailfddd7972",
+        "filters": [],
+        "label": "Primary Email",
+        "name": "primary_email",
+        "output": true,
+        "source_details": {
+          "table": "customer_table",
+          "activity_id": "added_to_crm484b076d"
+        },
+        "source_kind": "customer",
+        "mavis_type": "string",
+        "type": "string"
+      },
+      {
+        "id": "customer_table_primary_phone_number4a3ad356",
+        "filters": [],
+        "label": "Primary Phone Number",
+        "name": "primary_phone_number",
+        "output": true,
+        "source_details": {
+          "table": "customer_table",
+          "activity_id": "added_to_crm484b076d"
+        },
+        "source_kind": "customer",
+        "mavis_type": "string",
+        "type": "string"
+      },
+      {
+        "id": "c_count_ts_dc5bdd0b",
+        "name": "ts",
+        "label": "Total Calls Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "type": "integer",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "call0120a1b8",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": "count"
+        }
+      },
+      {
+        "id": "c_count_ts_cfefe0a3",
+        "name": "ts",
+        "label": "Total Voicemails Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "type": "integer",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "voicemail1ea380eb",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": "count"
+        }
+      },
+      {
+        "id": "c_ts_b6512805",
+        "name": "ts",
+        "label": "Last Ever Calls Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "call3ab6d390",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_calld143c389",
+        "name": null,
+        "label": "Did Call Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(c_ts_b6512805)",
+          "activity_kind": "append",
+          "activity_id": "call3ab6d390",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_call8f8dad66",
+        "name": null,
+        "label": "Days To Call",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, c_ts_b6512805)",
+          "activity_kind": "append",
+          "activity_id": "call3ab6d390",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "c_ts_42212a0d",
+        "name": "ts",
+        "label": "Last Ever Voicemails Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "voicemail640f4a0a",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_voicemaild0668f7a",
+        "name": null,
+        "label": "Did Voicemail Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(c_ts_42212a0d)",
+          "activity_kind": "append",
+          "activity_id": "voicemail640f4a0a",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_voicemail1815f624",
+        "name": null,
+        "label": "Days To Voicemail",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, c_ts_42212a0d)",
+          "activity_kind": "append",
+          "activity_id": "voicemail640f4a0a",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "c_count_ts_31457a4c",
+        "name": "ts",
+        "label": "Total Opened Emails Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "type": "integer",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "opened_emailcd7464ce",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": "count"
+        }
+      },
+      {
+        "id": "c_ts_730396e7",
+        "name": "ts",
+        "label": "Last Ever Opened Emails Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "opened_email50f73bbb",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_opened_email2c7c7510",
+        "name": null,
+        "label": "Did Opened Email Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(c_ts_730396e7)",
+          "activity_kind": "append",
+          "activity_id": "opened_email50f73bbb",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_opened_email21fe6da8",
+        "name": null,
+        "label": "Days To Opened Email",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, c_ts_730396e7)",
+          "activity_kind": "append",
+          "activity_id": "opened_email50f73bbb",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "c_count_ts_3a3d0f48",
+        "name": "ts",
+        "label": "Total Clicked Docsends Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "type": "integer",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "clicked_docsendbed5fb22",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": "count"
+        }
+      },
+      {
+        "id": "c_ts_e4e853aa",
+        "name": "ts",
+        "label": "Last Ever Clicked Docsends Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "clicked_docsend38c00c10",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_click_docsendd7abf537",
+        "name": null,
+        "label": "Did Clicked Docsend Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(c_ts_e4e853aa)",
+          "activity_kind": "append",
+          "activity_id": "clicked_docsend38c00c10",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_click_docsend1148c46b",
+        "name": null,
+        "label": "Days To Clicked Docsend",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, c_ts_e4e853aa)",
+          "activity_kind": "append",
+          "activity_id": "clicked_docsend38c00c10",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "c_count_ts_7ae73b6a",
+        "name": "ts",
+        "label": "Total Transactions Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "type": "integer",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "transaction0347d9fa",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": "count"
+        }
+      },
+      {
+        "id": "c_sum_feature_2_2cd6523b",
+        "name": "feature_2",
+        "label": "Sum Of Transaction Volume (USD) Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "type": "float",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "transaction0347d9fa",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": "sum"
+        }
+      },
+      {
+        "id": "c_ts_705ecf17",
+        "name": "ts",
+        "label": "Last Ever Transactions Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "transaction40be3ecf",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_transactiondb7b6f9f",
+        "name": null,
+        "label": "Did Transaction Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(c_ts_705ecf17)",
+          "activity_kind": "append",
+          "activity_id": "transaction40be3ecf",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_transactiondfad5b18",
+        "name": null,
+        "label": "Days To Transaction",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, c_ts_705ecf17)",
+          "activity_kind": "append",
+          "activity_id": "transaction40be3ecf",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "c_ts_32958fb9",
+        "name": "ts",
+        "label": "Last Ever Marketplace Signups Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "marketplace_signup466f728b",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_marketplace_signup0e63d5bb",
+        "name": null,
+        "label": "Did Marketplace Signup Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(c_ts_32958fb9)",
+          "activity_kind": "append",
+          "activity_id": "marketplace_signup466f728b",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_marketplace_signupd800fbb2",
+        "name": null,
+        "label": "Days To Marketplace Signup",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, c_ts_32958fb9)",
+          "activity_kind": "append",
+          "activity_id": "marketplace_signup466f728b",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "c_feature_1_ac9cec74",
+        "name": "feature_1",
+        "label": "Last Ever How Did You Hear About Us?",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "marketplace_signup466f728b",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "c_count_ts_cd7b1095",
+        "name": "ts",
+        "label": "Total Deal Createds Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "type": "integer",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "deal_created2c63dfd5",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": "count"
+        }
+      },
+      {
+        "id": "c_ts_a99c7b0e",
+        "name": "ts",
+        "label": "Last Ever Deal Createds Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "deal_created959b6ca9",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_deal_created7455b68f",
+        "name": null,
+        "label": "Did Deal Created Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(c_ts_a99c7b0e)",
+          "activity_kind": "append",
+          "activity_id": "deal_created959b6ca9",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_deal_created5ae6e369",
+        "name": null,
+        "label": "Days To Deal Created",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, c_ts_a99c7b0e)",
+          "activity_kind": "append",
+          "activity_id": "deal_created959b6ca9",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "c_feature_3_e4a47d56",
+        "name": "feature_3",
+        "label": "Last Ever Deal Channel",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "deal_created959b6ca9",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "c_link_995c9678",
+        "name": "link",
+        "label": "Last Ever Deal Createds Link",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "deal_created959b6ca9",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "c_ts_871c1df1",
+        "name": "ts",
+        "label": "First Ever Lead Funnel Entereds Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "lead_funnel_entered9e6604eb",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        },
+        "probability": 0.08099808191999998
+      },
+      {
+        "id": "did_lead_funnel_entered2d9858e2",
+        "name": null,
+        "label": "Did Lead Funnel Entered Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(c_ts_871c1df1)",
+          "activity_kind": "append",
+          "activity_id": "lead_funnel_entered9e6604eb",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_lead_funnel_enteredd3558345",
+        "name": null,
+        "label": "Days From Lead Funnel Entered",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', c_ts_871c1df1, join_ts.local)",
+          "activity_kind": "append",
+          "activity_id": "lead_funnel_entered9e6604eb",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "c_ts_4ae104bb",
+        "name": "ts",
+        "label": "First Ever Subscribed To Newsletters Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "subscribed_to_newsletter3f50a566",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_newsletter_subscriptionf7eb63b3",
+        "name": null,
+        "label": "Did Subscribed To Newsletter Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(c_ts_4ae104bb)",
+          "activity_kind": "append",
+          "activity_id": "subscribed_to_newsletter3f50a566",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_newsletter_subscription4387d514",
+        "name": null,
+        "label": "Days From Subscribed To Newsletter",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', c_ts_4ae104bb, join_ts.local)",
+          "activity_kind": "append",
+          "activity_id": "subscribed_to_newsletter3f50a566",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "c_count_ts_7ed3493b",
+        "name": "ts",
+        "label": "Total Received Emails Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "type": "integer",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "received_email21b54e58",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": "count"
+        }
+      },
+      {
+        "id": "c_ts_10ead335",
+        "name": "ts",
+        "label": "Last Ever Received Emails Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "received_emaile20fba82",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_received_emailf6116f0d",
+        "name": null,
+        "label": "Did Received Email Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(c_ts_10ead335)",
+          "activity_kind": "append",
+          "activity_id": "received_emaile20fba82",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_received_email9a83b7ed",
+        "name": null,
+        "label": "Days To Received Email",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, c_ts_10ead335)",
+          "activity_kind": "append",
+          "activity_id": "received_emaile20fba82",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "c_count_ts_ab3cf585",
+        "name": "ts",
+        "label": "Total Sent Emails Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "type": "integer",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "sent_emaild0e54b26",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": "count"
+        }
+      },
+      {
+        "id": "c_ts_e6f7bfb2",
+        "name": "ts",
+        "label": "Last Ever Sent Emails Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "sent_email004a1371",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_sent_email90f14051",
+        "name": null,
+        "label": "Did Sent Email Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(c_ts_e6f7bfb2)",
+          "activity_kind": "append",
+          "activity_id": "sent_email004a1371",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_sent_emailb15b2d06",
+        "name": null,
+        "label": "Days To Sent Email",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, c_ts_e6f7bfb2)",
+          "activity_kind": "append",
+          "activity_id": "sent_email004a1371",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "c_count_ts_3e40db12",
+        "name": "ts",
+        "label": "Total Sales Meetings Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "type": "integer",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "sales_meeting3a69c387",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": "count"
+        }
+      },
+      {
+        "id": "c_ts_53460093",
+        "name": "ts",
+        "label": "Last Ever Sales Meetings Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "sales_meeting6acab319",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_sales_meeting86dc6526",
+        "name": null,
+        "label": "Did Sales Meeting Ever",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "sum",
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(c_ts_53460093)",
+          "activity_kind": "append",
+          "activity_id": "sales_meeting6acab319",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_sales_meeting3cd04009",
+        "name": null,
+        "label": "Days To Sales Meeting",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": [
+          "average"
+        ],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, c_ts_53460093)",
+          "activity_kind": "append",
+          "activity_id": "sales_meeting6acab319",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "monthb64a2759",
+        "name": null,
+        "label": "Month",
+        "output": true,
+        "filters": [],
+        "mavis_type": null,
+        "type": "timestamp",
+        "group_func": [],
+        "source_kind": "computed",
+        "source_details": {
+          "kind": "freehand_function",
+          "raw_string": "date_trunc('month', c_ts_c02b99a9)"
+        }
+      },
+      {
+        "id": "id_days_since_last_transaction_3xy3f6d7g",
+        "filters": [],
+        "label": "Days since last transaction",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_to_now",
+          "column_id": "c_ts_705ecf17",
+          "segmentation": "day"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_days_since_last_doc_send_04syult_d",
+        "filters": [],
+        "label": "Days since last DocSend",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_to_now",
+          "column_id": "c_ts_e4e853aa",
+          "segmentation": "day"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_days_since_last_email_open_xxkvrsij6",
+        "filters": [],
+        "label": "Days since last email open",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_to_now",
+          "column_id": "c_ts_730396e7",
+          "segmentation": "day"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_days_since_last_sales_emailed_contact_giolnrtik",
+        "filters": [],
+        "label": "Days since last Received email",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_to_now",
+          "column_id": "c_ts_10ead335",
+          "segmentation": "day"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_days_since_last_contact_emailed_sales_1bndqmfzt",
+        "filters": [],
+        "label": "Days since last Sent Email",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_to_now",
+          "column_id": "c_ts_e6f7bfb2",
+          "segmentation": "day"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_days_since_last_voicemail_lnrkf3vck",
+        "filters": [],
+        "label": "Days since last Voicemail",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_to_now",
+          "column_id": "c_ts_42212a0d",
+          "segmentation": "day"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_days_since_last_call_cidqkpeqj",
+        "filters": [],
+        "label": "Days since last Call",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_to_now",
+          "column_id": "c_ts_b6512805",
+          "segmentation": "day"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_last_transaction_bins_b9ldi4ipy",
+        "filters": [],
+        "label": "Last Transaction bins",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "bin",
+          "bins": [
+            {
+              "from_value": 0,
+              "to_value": 30,
+              "name": "0-30"
+            },
+            {
+              "from_value": 31,
+              "to_value": 60,
+              "name": "31-60"
+            },
+            {
+              "from_value": 61,
+              "to_value": 90,
+              "name": "61-90"
+            },
+            {
+              "from_value": 91,
+              "to_value": 180,
+              "name": "90-180"
+            },
+            {
+              "from_value": 181,
+              "to_value": 365,
+              "name": "181-365"
+            },
+            {
+              "from_value": 365,
+              "to_value": 3000,
+              "name": "365+"
+            }
+          ],
+          "column_id": "id_days_since_last_transaction_3xy3f6d7g",
+          "else_name": "Other"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj",
+        "filters": [],
+        "label": "Last Call bins",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "bin",
+          "bins": [
+            {
+              "from_value": 0,
+              "to_value": 30,
+              "name": "0-30"
+            },
+            {
+              "from_value": 31,
+              "to_value": 60,
+              "name": "31-60"
+            },
+            {
+              "from_value": 61,
+              "to_value": 90,
+              "name": "61-90"
+            },
+            {
+              "from_value": 91,
+              "to_value": 180,
+              "name": "90-180"
+            },
+            {
+              "from_value": 181,
+              "to_value": 365,
+              "name": "181-365"
+            },
+            {
+              "from_value": 365,
+              "to_value": 3000,
+              "name": "365+"
+            }
+          ],
+          "column_id": "id_days_since_last_call_cidqkpeqj",
+          "else_name": "Other"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq",
+        "filters": [],
+        "label": "Last Voicemail bins",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "bin",
+          "bins": [
+            {
+              "from_value": 0,
+              "to_value": 30,
+              "name": "0-30"
+            },
+            {
+              "from_value": 31,
+              "to_value": 60,
+              "name": "31-60"
+            },
+            {
+              "from_value": 61,
+              "to_value": 90,
+              "name": "61-90"
+            },
+            {
+              "from_value": 91,
+              "to_value": 180,
+              "name": "90-180"
+            },
+            {
+              "from_value": 181,
+              "to_value": 365,
+              "name": "181-365"
+            },
+            {
+              "from_value": 365,
+              "to_value": 3000,
+              "name": "365+"
+            }
+          ],
+          "column_id": "id_days_since_last_voicemail_lnrkf3vck",
+          "else_name": "Other"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4",
+        "filters": [],
+        "label": "Last Email Received bins",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "bin",
+          "bins": [
+            {
+              "from_value": 0,
+              "to_value": 30,
+              "name": "0-30"
+            },
+            {
+              "from_value": 31,
+              "to_value": 60,
+              "name": "31-60"
+            },
+            {
+              "from_value": 61,
+              "to_value": 90,
+              "name": "61-90"
+            },
+            {
+              "from_value": 91,
+              "to_value": 180,
+              "name": "90-180"
+            },
+            {
+              "from_value": 181,
+              "to_value": 365,
+              "name": "181-365"
+            },
+            {
+              "from_value": 365,
+              "to_value": 3000,
+              "name": "365+"
+            }
+          ],
+          "column_id": "id_days_since_last_sales_emailed_contact_giolnrtik",
+          "else_name": "Other"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv",
+        "filters": [],
+        "label": "Last Email Sent bins",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "bin",
+          "bins": [
+            {
+              "from_value": 0,
+              "to_value": 30,
+              "name": "0-30"
+            },
+            {
+              "from_value": 31,
+              "to_value": 60,
+              "name": "31-60"
+            },
+            {
+              "from_value": 61,
+              "to_value": 90,
+              "name": "61-90"
+            },
+            {
+              "from_value": 91,
+              "to_value": 180,
+              "name": "90-180"
+            },
+            {
+              "from_value": 181,
+              "to_value": 365,
+              "name": "181-365"
+            },
+            {
+              "from_value": 365,
+              "to_value": 3000,
+              "name": "365+"
+            }
+          ],
+          "column_id": "id_days_since_last_contact_emailed_sales_1bndqmfzt",
+          "else_name": "Other"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv_4AKhShUbB",
+        "filters": [],
+        "label": "Last DocSend click bins",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "bin",
+          "bins": [
+            {
+              "from_value": 0,
+              "to_value": 30,
+              "name": "0-30"
+            },
+            {
+              "from_value": 31,
+              "to_value": 60,
+              "name": "31-60"
+            },
+            {
+              "from_value": 61,
+              "to_value": 90,
+              "name": "61-90"
+            },
+            {
+              "from_value": 91,
+              "to_value": 180,
+              "name": "90-180"
+            },
+            {
+              "from_value": 181,
+              "to_value": 365,
+              "name": "181-365"
+            },
+            {
+              "from_value": 365,
+              "to_value": 3000,
+              "name": "365+"
+            }
+          ],
+          "column_id": "id_days_since_last_doc_send_04syult_d",
+          "else_name": "Other"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_days_since_last_transaction_3xy3f6d7g_D_aHGHDS0",
+        "filters": [],
+        "label": "Days since Added to CRM",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_to_now",
+          "column_id": "c_ts_c02b99a9",
+          "segmentation": "day"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_days_since_mp_signup_wko2lgnva",
+        "filters": [],
+        "label": "Days since MP signup",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_to_now",
+          "column_id": "c_ts_32958fb9",
+          "segmentation": "day"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv_4AKhShUbB_AKWDWa7qR",
+        "filters": [],
+        "label": "Last Mktg Email Open bins",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "bin",
+          "bins": [
+            {
+              "from_value": 0,
+              "to_value": 30,
+              "name": "0-30"
+            },
+            {
+              "from_value": 31,
+              "to_value": 60,
+              "name": "31-60"
+            },
+            {
+              "from_value": 61,
+              "to_value": 90,
+              "name": "61-90"
+            },
+            {
+              "from_value": 91,
+              "to_value": 180,
+              "name": "90-180"
+            },
+            {
+              "from_value": 181,
+              "to_value": 365,
+              "name": "181-365"
+            },
+            {
+              "from_value": 365,
+              "to_value": 3000,
+              "name": "365+"
+            }
+          ],
+          "column_id": "id_days_since_last_email_open_xxkvrsij6",
+          "else_name": "Other"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv_4AKhShUbB_njnF6wR6V",
+        "filters": [],
+        "label": "Last MP signup bins",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "bin",
+          "bins": [
+            {
+              "from_value": 0,
+              "to_value": 30,
+              "name": "0-30"
+            },
+            {
+              "from_value": 31,
+              "to_value": 60,
+              "name": "31-60"
+            },
+            {
+              "from_value": 61,
+              "to_value": 90,
+              "name": "61-90"
+            },
+            {
+              "from_value": 91,
+              "to_value": 180,
+              "name": "90-180"
+            },
+            {
+              "from_value": 181,
+              "to_value": 365,
+              "name": "181-365"
+            },
+            {
+              "from_value": 365,
+              "to_value": 3000,
+              "name": "365+"
+            }
+          ],
+          "column_id": "id_days_since_mp_signup_wko2lgnva",
+          "else_name": "Other"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_days_since_last_product_deal_created_uk35n5ffz",
+        "filters": [],
+        "label": "Days since last Product Deal created",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_to_now",
+          "column_id": "c_ts_a99c7b0e",
+          "segmentation": "day"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv_4AKhShUbB_njnF6wR6V_OaKQBE112_prn_IU9qW",
+        "filters": [],
+        "label": "Last Product Deal created bins",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "bin",
+          "bins": [
+            {
+              "from_value": 0,
+              "to_value": 30,
+              "name": "0-30"
+            },
+            {
+              "from_value": 31,
+              "to_value": 60,
+              "name": "31-60"
+            },
+            {
+              "from_value": 61,
+              "to_value": 90,
+              "name": "61-90"
+            },
+            {
+              "from_value": 91,
+              "to_value": 180,
+              "name": "90-180"
+            },
+            {
+              "from_value": 181,
+              "to_value": 365,
+              "name": "181-365"
+            },
+            {
+              "from_value": 365,
+              "to_value": 3000,
+              "name": "365+"
+            }
+          ],
+          "column_id": "id_days_since_last_product_deal_created_uk35n5ffz",
+          "else_name": "Other"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_days_since_last_mp_login_m8bimznek_a5WFEneAx",
+        "filters": [],
+        "label": "Days since last Meeting",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_to_now",
+          "column_id": "c_ts_53460093",
+          "segmentation": "day"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv_4AKhShUbB_njnF6wR6V_OaKQBE112_prn_IU9qW_YMVPEUI3D",
+        "filters": [],
+        "label": "Last Meeting bins",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "bin",
+          "bins": [
+            {
+              "from_value": 0,
+              "to_value": 30,
+              "name": "0-30"
+            },
+            {
+              "from_value": 31,
+              "to_value": 60,
+              "name": "31-60"
+            },
+            {
+              "from_value": 61,
+              "to_value": 90,
+              "name": "61-90"
+            },
+            {
+              "from_value": 91,
+              "to_value": 180,
+              "name": "90-180"
+            },
+            {
+              "from_value": 181,
+              "to_value": 365,
+              "name": "181-365"
+            },
+            {
+              "from_value": 365,
+              "to_value": 3000,
+              "name": "365+"
+            }
+          ],
+          "column_id": "id_days_since_last_mp_login_m8bimznek_a5WFEneAx",
+          "else_name": "Other"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_days_since_lead_funnel_entered_iblhogtmh",
+        "filters": [],
+        "label": "Days since Lead Funnel Entered",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "time_to_now",
+          "column_id": "c_ts_871c1df1",
+          "segmentation": "day"
+        },
+        "source_kind": "computed",
+        "type": "number",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv_4AKhShUbB_njnF6wR6V_OaKQBE112_prn_IU9qW_YMVPEUI3D_4tgHnPSe9_rauNLFOvl",
+        "filters": [],
+        "label": "Lead Funnel Entered bins",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "bin",
+          "bins": [
+            {
+              "from_value": 0,
+              "to_value": 30,
+              "name": "0-30"
+            },
+            {
+              "from_value": 31,
+              "to_value": 60,
+              "name": "31-60"
+            },
+            {
+              "from_value": 61,
+              "to_value": 90,
+              "name": "61-90"
+            },
+            {
+              "from_value": 91,
+              "to_value": 180,
+              "name": "90-180"
+            },
+            {
+              "from_value": 181,
+              "to_value": 365,
+              "name": "181-365"
+            },
+            {
+              "from_value": 365,
+              "to_value": 3000,
+              "name": "365+"
+            }
+          ],
+          "column_id": "id_days_since_lead_funnel_entered_iblhogtmh",
+          "else_name": "Other"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      }
+    ],
+    "all_groups": [],
+    "order": [],
+    "activity_stream": "activity_stream",
+    "swapped_ids": [
+      {
+        "group_slug": null,
+        "old_id": "c_ts_815242bb",
+        "new_id": "c_ts_a6f86ffd"
+      },
+      {
+        "group_slug": null,
+        "old_id": "c_ts_dc3eb275",
+        "new_id": "c_ts_aced89e3"
+      },
+      {
+        "group_slug": null,
+        "old_id": "c_ts_a6f86ffd",
+        "new_id": "c_ts_c02b99a9"
+      },
+      {
+        "group_slug": null,
+        "old_id": "c_ts_aced89e3",
+        "new_id": "c_ts_485ab4fa"
+      },
+      {
+        "group_slug": null,
+        "old_id": "c_ts_2a0f40ef",
+        "new_id": "c_ts_871c1df1"
+      },
+      {
+        "group_slug": null,
+        "old_id": "c_ts_485ab4fa",
+        "new_id": "c_ts_b6512805"
+      },
+      {
+        "group_slug": null,
+        "old_id": "c_ts_5d47b368",
+        "new_id": "c_ts_730396e7"
+      },
+      {
+        "group_slug": null,
+        "old_id": "id_days_since_last_mp_login_m8bimznek_a5WFEneAx_Dpv6H1rII",
+        "new_id": "id_days_since_last_call_meeting_misc_j6jiufayo"
+      },
+      {
+        "group_slug": null,
+        "old_id": "id_days_since_last_call_meeting_misc_j6jiufayo",
+        "new_id": "id_days_since_last_mp_login_m8bimznek_a5WFEneAx"
+      },
+      {
+        "group_slug": null,
+        "old_id": "id_days_since_last_mp_login_m8bimznek",
+        "new_id": "id_days_since_last_mp_login_m8bimznek_a5WFEneAx"
+      }
+    ],
+    "columns_order": {
+      "parent": {
+        "order": [
+          "c_count_ts_dc5bdd0b",
+          "c_count_ts_cfefe0a3",
+          "c_ts_b6512805",
+          "did_calld143c389",
+          "day_call8f8dad66",
+          "c_ts_42212a0d",
+          "did_voicemaild0668f7a",
+          "day_voicemail1815f624",
+          "c_count_ts_31457a4c",
+          "c_ts_730396e7",
+          "did_opened_email2c7c7510",
+          "day_opened_email21fe6da8",
+          "c_count_ts_3a3d0f48",
+          "c_ts_e4e853aa",
+          "did_click_docsendd7abf537",
+          "day_click_docsend1148c46b",
+          "monthb64a2759",
+          "id_days_since_last_transaction_3xy3f6d7g",
+          "id_days_since_last_doc_send_04syult_d",
+          "id_days_since_last_email_open_xxkvrsij6",
+          "id_days_since_last_sales_emailed_contact_giolnrtik",
+          "id_days_since_last_contact_emailed_sales_1bndqmfzt",
+          "id_days_since_last_voicemail_lnrkf3vck",
+          "id_days_since_last_call_cidqkpeqj",
+          "id_last_transaction_bins_b9ldi4ipy",
+          "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj",
+          "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq",
+          "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4",
+          "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv",
+          "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv_4AKhShUbB",
+          "id_days_since_last_transaction_3xy3f6d7g_D_aHGHDS0",
+          "id_days_since_mp_signup_wko2lgnva",
+          "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv_4AKhShUbB_AKWDWa7qR",
+          "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv_4AKhShUbB_njnF6wR6V",
+          "id_days_since_last_product_deal_created_uk35n5ffz",
+          "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv_4AKhShUbB_njnF6wR6V_OaKQBE112_prn_IU9qW",
+          "id_days_since_last_mp_login_m8bimznek_a5WFEneAx",
+          "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv_4AKhShUbB_njnF6wR6V_OaKQBE112_prn_IU9qW_YMVPEUI3D",
+          "id_days_since_lead_funnel_entered_iblhogtmh",
+          "id_last_transaction_bins_b9ldi4ipy_ZIcnvtiyj_CBW4gZDVq_QN8vx6o6z_Kbjl9ikq4_AwuPYsjrv_4AKhShUbB_njnF6wR6V_OaKQBE112_prn_IU9qW_YMVPEUI3D_4tgHnPSe9_rauNLFOvl",
+          "c_count_ts_7ae73b6a",
+          "c_sum_feature_2_2cd6523b",
+          "c_ts_705ecf17",
+          "did_transactiondb7b6f9f",
+          "day_transactiondfad5b18",
+          "c_ts_32958fb9",
+          "did_marketplace_signup0e63d5bb",
+          "day_marketplace_signupd800fbb2",
+          "c_feature_1_ac9cec74",
+          "c_count_ts_cd7b1095",
+          "c_ts_a99c7b0e",
+          "did_deal_created7455b68f",
+          "day_deal_created5ae6e369",
+          "c_feature_3_e4a47d56",
+          "c_link_995c9678",
+          "c_activity_id_8b27af28",
+          "c_ts_c02b99a9",
+          "c_customer_fd09e4dd",
+          "c_join_customer_aa8051fc",
+          "c_link_b90938dd",
+          "c_activity_occurrence_ee6e49e6",
+          "customer_table_full_named0c4e62d",
+          "customer_table_owner_name7f26680d",
+          "customer_table_crm_url238cfd98",
+          "customer_table_investor_channel1970ee4b",
+          "customer_table_lead_sourced35ffafd",
+          "customer_table_organisation_nameebb06e01",
+          "customer_table_lead_qualificationb86a4f9c",
+          "customer_table_lead_qualitycff9b183",
+          "customer_table_primary_emailfddd7972",
+          "customer_table_primary_phone_number4a3ad356",
+          "c_ts_871c1df1",
+          "did_lead_funnel_entered2d9858e2",
+          "day_lead_funnel_enteredd3558345",
+          "c_ts_4ae104bb",
+          "did_newsletter_subscriptionf7eb63b3",
+          "day_newsletter_subscription4387d514",
+          "c_count_ts_7ed3493b",
+          "c_ts_10ead335",
+          "did_received_emailf6116f0d",
+          "day_received_email9a83b7ed",
+          "c_count_ts_ab3cf585",
+          "c_ts_e6f7bfb2",
+          "did_sent_email90f14051",
+          "day_sent_emailb15b2d06",
+          "c_count_ts_3e40db12",
+          "c_ts_53460093",
+          "did_sales_meeting86dc6526",
+          "day_sales_meeting3cd04009"
+        ],
+        "left_pinned": [],
+        "right_pinned": []
+      }
+    }
+  }
+}

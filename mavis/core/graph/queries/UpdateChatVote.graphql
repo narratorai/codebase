@@ -1,0 +1,5 @@
+mutation UpdateChatVote($id: uuid!, $rating: Int!) {
+  update_chat_by_pk(pk_columns: {id: $id}, _set: {rating: $rating}) {
+    id
+  }
+}

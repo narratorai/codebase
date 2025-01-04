@@ -1,0 +1,15 @@
+query GetTransformationById($id: uuid!) {
+  transformation(where: { id: { _eq: $id } }) {
+    id
+    name
+    kind
+    table
+    activities {
+      id
+      activity {
+        id
+        name
+      }
+    }
+  }
+}

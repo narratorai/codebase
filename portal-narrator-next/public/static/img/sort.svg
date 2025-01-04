@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="11px" viewBox="0 0 16 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M2.8758771,8.60289343 L2.8758771,0.333333333 L3.77259738,0.333333333 L3.77259738,8.60808421 L6.03387658,6.34011656 L6.66666667,6.97994641 L3.32316919,10.3333333 L0,6.97779455 L0.634927648,6.34011583 L2.8758771,8.60289343 Z" id="path-sort"></path>
+        <path d="M2.8758771,8.60289343 L2.8758771,0.333333333 L3.77259738,0.333333333 L3.77259738,8.60808421 L6.03387658,6.34011656 L6.66666667,6.97994641 L3.32316919,10.3333333 L0,6.97779455 L0.634927648,6.34011583 L2.8758771,8.60289343 Z" id="path-sort-3"></path>
+    </defs>
+    <g id="Portal-/-Segment-/-Index-/-Saved" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Segment-/-S-/-Run-/-Dropdown" transform="translate(-210.000000, -199.000000)">
+            <g id="Dropdown-/-Basic" transform="translate(199.000000, 186.000000)">
+                <g id="Group" transform="translate(11.000000, 13.000000)">
+                    <g id="Icon-/-Arrow-/-Up">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-sort"></use>
+                        </mask>
+                        <use id="Mask" fill="#242424" fill-rule="evenodd" transform="translate(3.333333, 5.333333) rotate(-180.000000) translate(-3.333333, -5.333333) " xlink:href="#path-sort"></use>
+                    </g>
+                    <g id="Icon-/-Arrow-/-Down" transform="translate(9.333333, 0.000000)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-sort-3"></use>
+                        </mask>
+                        <use id="Mask" fill="#242424" fill-rule="evenodd" xlink:href="#path-sort-3"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

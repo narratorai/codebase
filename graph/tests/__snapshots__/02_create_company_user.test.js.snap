@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create Company User company admin can create for their company 1`] = `
+{
+  "insert_company_user": {
+    "affected_rows": Any<Number>,
+    "returning": [
+      {
+        "id": Any<String>,
+        "role": Any<String>,
+      },
+    ],
+  },
+}
+`;

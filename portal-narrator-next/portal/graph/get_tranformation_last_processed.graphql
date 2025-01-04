@@ -1,0 +1,13 @@
+# takes a list of transformation ids and returns the 1 most recent query_update w/ rows inserted
+
+query TransformationsLastProcessed($transformation_ids: [uuid!]!) {
+  query_updates(
+    where: { transformation_id: { _in: $transformation_ids }, rows_inserted: { _gt: 0 } }
+    order_by: [{ processed_at: desc_nulls_last }]
+    limit: 1
+  ) {
+    id
+    rows_inserted
+    processed_at
+  }
+}

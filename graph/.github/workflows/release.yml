@@ -1,0 +1,119 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  build-hasura-image:
+    if: "!contains(github.event.commits[0].message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    environment:
+      name: Production
+    env:
+      ECR_IMAGE: graph
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          echo "BUILD_REVISION=$(echo ${GITHUB_SHA::8})" >> $GITHUB_ENV
+      - run: |
+          echo "BRANCH_NAME=$(echo ${GITHUB_HEAD_REF})" >> $GITHUB_ENV
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ECR_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_ECR_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Login to Amazon ECR
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Extract hasura metadata
+        id: extract_hasura_metadata
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ steps.ecr-login.outputs.registry }}/${{ env.ECR_IMAGE }}
+          tags: |
+            type=ref,priority=600,event=branch
+            type=ref,priority=600,event=tag
+            type=ref,priority=600,prefix=pr-,event=pr
+            type=sha,priority=100,prefix=sha-
+
+      - name: Build hasura
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          pull: true
+          push: true
+          no-cache: ${{ github.event_name == 'workflow_dispatch' }}
+          cache-from: |
+            ${{ steps.ecr-login.outputs.registry }}/${{ env.ECR_IMAGE }}:main
+            type=gha, scope=${{ github.workflow }}
+          cache-to: |
+            type=gha, scope=${{ github.workflow }}, mode=max
+          build-args: |
+            "BUILD_LABEL=${{ env.BRANCH_NAME }}"
+            "BUILD_REVISION=${{ env.BUILD_REVISION }}"
+          tags: ${{ steps.extract_hasura_metadata.outputs.tags }}
+          labels: ${{ steps.extract_hasura_metadata.outputs.labels }}
+
+  run-migrations:
+    if: "!contains(github.event.commits[0].message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    environment:
+      name: Production
+    env:
+      GRAPH_ENDPOINT: ${{ secrets.HASURA_GRAPHQL_ENDPOINT }}
+      ADMIN_SECRET: ${{ secrets.HASURA_GRAPHQL_ADMIN_SECRET }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: yarn
+      - name: Run install
+        run: |
+          yarn install --immutable
+          curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | bash
+      - name: Check locked queries
+        run: ./scripts/detect_locked_queries.sh
+      - name: Apply migrations
+        run: |
+          yarn hasura metadata apply --endpoint "$GRAPH_ENDPOINT" --admin-secret "$ADMIN_SECRET"
+          yarn hasura migrate apply --all-databases --endpoint "$GRAPH_ENDPOINT" --admin-secret "$ADMIN_SECRET"
+          yarn hasura metadata reload --endpoint "$GRAPH_ENDPOINT" --admin-secret "$ADMIN_SECRET"
+
+  release-npm-packages:
+    if: "!contains(github.event.commits[0].message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    needs: run-migrations
+    environment:
+      name: Production
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # needs full history in order to generate changelogs etc
+          persist-credentials: false # This credential does not have the required permission to operate on protected branches
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: yarn
+      - name: install
+        run: |
+          yarn install --immutable
+      - name: release
+        run: |
+          yarn semantic-release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,7 @@
+table:
+  name: company_user_api_key
+  schema: public
+object_relationships:
+  - name: company_user
+    using:
+      foreign_key_constraint_on: company_user_id

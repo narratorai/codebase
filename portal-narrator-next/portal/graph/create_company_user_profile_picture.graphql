@@ -1,0 +1,11 @@
+mutation CreateCompanyUserProfilePicture($profile_picture: String!, $company_user_id: uuid!) {
+  insert_company_user_preferences(
+    objects: { profile_picture: $profile_picture, company_user_id: $company_user_id }
+    on_conflict: { constraint: company_user_preferences_user_id_key, update_columns: profile_picture }
+  ) {
+    returning {
+      id
+      profile_picture
+    }
+  }
+}

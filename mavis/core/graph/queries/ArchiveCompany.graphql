@@ -1,0 +1,13 @@
+mutation ArchiveCompany($company_id: uuid!) {
+  update_company_by_pk(pk_columns: { id: $company_id }, _set: { status: archived }) {
+    id
+  }
+   update_service_limit(
+        where: { company_id: { _eq: $company_id }, end_on: { _is_null: true }}
+        _set: { end_on: "now()" }
+    ) {
+        returning {
+            company_id
+        }
+    }
+}

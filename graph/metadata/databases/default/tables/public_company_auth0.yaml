@@ -1,0 +1,19 @@
+table:
+  name: company_auth0
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: company_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - connection_id
+        - disable_sso
+        - enforce_sso
+        - org_id
+        - id
+      filter:
+        company_id:
+          _eq: X-Hasura-Company-Id

@@ -1,0 +1,17 @@
+mutation DeleteActivity($id: uuid!) {
+  delete_activity_by_pk(id: $id) {
+    id
+    table_id
+    slug
+  }
+  update_dataset(where: {dataset_activities: {activity_id: {_eq: $id}}}, _set: {status: archived}) {
+    returning {
+      id
+    }
+  }
+  update_narrative(where: {narrative_datasets: {dataset: {dataset_activities: {activity_id: {_eq: $id}}}}}, _set: {state: archived}) {
+    returning {
+      id
+    }
+  }
+}

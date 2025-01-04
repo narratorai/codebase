@@ -1,0 +1,37 @@
+query CompanySeed($company_slug: String!) {
+  company(limit: 1, where: { slug: { _eq: $company_slug } }) {
+    id
+    allow_narrator_employee_access
+    name
+    slug
+    status
+    batch_halt
+    updated_at
+    timezone
+    spend_table
+    production_schema
+    materialize_schema
+    cache_minutes
+    demo_company
+    branding_color
+    plot_colors
+    logo_url
+    currency_used
+    warehouse_default_schemas
+    datacenter_region
+    tables {
+      id
+      identifier
+      activity_stream
+      customer_table
+      customer_label
+      row_count
+      customer_dim_table_id
+      customer_dim {
+        id
+        schema
+        table
+      }
+    }
+  }
+}

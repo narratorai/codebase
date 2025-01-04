@@ -1,0 +1,12 @@
+query GetAllNarrativeIntegrations($id: uuid!) {
+  narrative: narrative_by_pk(id: $id) {
+    id
+    slug
+    name
+    integrations{
+      id
+      task_id
+      kind
+    }
+  }
+}

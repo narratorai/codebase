@@ -1,0 +1,391 @@
+{
+   "schema":{
+      "title":"Field Generator",
+      "description":"A way to generate fields",
+      "type":"object",
+      "properties":{
+         "config":{
+            "title":"Load the data you want to plot",
+            "type":"object",
+            "properties":{
+               "narrative":{
+                  "enum":[
+                     "ramin_news_narrative",
+                     "downloaded_dataset"
+                  ],
+                  "enumNames":[
+                     "Ramin New's Narrative",
+                     "downloaded_dataset"
+                  ],
+                  "type":"string",
+                  "title":"Load Fields from a Narrative",
+                  "meta_ui":{
+                     "update_ui":true,
+                     "process_data":true
+                  }
+               },
+               "fields":{
+                  "type":"string",
+                  "meta_ui":{
+                     "widget":"hidden",
+                     "update_ui":true,
+                     "process_data":false
+                  }
+               }
+            },
+            "required":[
+
+            ]
+         },
+         "kind":{
+            "enum":[
+               "value",
+               "dataset_metric",
+               "combined_dataset"
+            ],
+            "enumNames":[
+               "Value",
+               "Dataset Metric",
+               "Combined Dataset"
+            ],
+            "type":"string",
+            "default":"value",
+            "title":"Kind of Field",
+            "meta_ui":{
+               "update_ui":true,
+               "process_data":false
+            }
+         },
+         "name":{
+            "title":"Name your Field",
+            "type":"object",
+            "properties":{
+               "name":{
+                  "type":"string",
+                  "default":"insert_name_here",
+                  "title":"Name of Fields"
+               },
+               "format":{
+                  "enum":[
+                     "auto",
+                     "revenue",
+                     "percent",
+                     "table"
+                  ],
+                  "enumNames":[
+                     "Auto",
+                     "Revenue",
+                     "Percent",
+                     "Table"
+                  ],
+                  "type":"string",
+                  "title":"Format",
+                  "default":"auto"
+               }
+            },
+            "required":[
+               "name"
+            ]
+         },
+         "preview":{
+            "type":"boolean",
+            "default":true,
+            "title":" Preview Results"
+         }
+      },
+      "required":[
+         "kind",
+         "name"
+      ],
+      "meta_ui":{
+         "order":[
+            "config",
+            "kind",
+            "value",
+            "name",
+            "preview"
+         ]
+      },
+      "dependencies":{
+         "kind":{
+            "oneOf":[
+               {
+                  "properties":{
+                     "kind":{
+                        "enum":[
+                           "value"
+                        ]
+                     },
+                     "value":{
+                        "type":"string",
+                        "title":"Value Content",
+                        "meta_ui":{
+                           "update_ui":false,
+                           "process_data":true,
+                           "widget":"MarkdownWidget"
+                        }
+                     }
+                  },
+                  "required":[
+                     "value"
+                  ]
+               },
+               {
+                  "properties":{
+                     "kind":{
+                        "enum":[
+                           "dataset_metric"
+                        ]
+                     },
+                     "value":{
+                        "title":"Dataset Metric",
+                        "type":"object",
+                        "properties":{
+                           "dataset_slug":{
+                              "enum":[
+
+                              ],
+                              "enumNames":[
+
+                              ],
+                              "type":"string",
+                              "title":"Dataset",
+                              "meta_ui":{
+                                 "update_ui":true,
+                                 "process_data":false
+                              }
+                           },
+                           "group_slug":{
+                              "enum":[
+
+                              ],
+                              "enumNames":[
+
+                              ],
+                              "type":"string",
+                              "title":"Group",
+                              "meta_ui":{
+                                 "update_ui":true,
+                                 "process_data":false
+                              }
+                           },
+                           "column_id":{
+                              "enum":[
+
+                              ],
+                              "enumNames":[
+
+                              ],
+                              "type":"string",
+                              "title":"Ouput Column",
+                              "meta_ui":{
+                                 "update_ui":false,
+                                 "process_data":true
+                              }
+                           },
+                           "function":{
+                              "enum":[
+                                 "min",
+                                 "max",
+                                 "first",
+                                 "last",
+                                 "sum",
+                                 "average",
+                                 "median",
+                                 "median_high",
+                                 "median_low",
+                                 "stdev",
+                                 "variance",
+                                 "harmonic_mean"
+                              ],
+                              "enumNames":[
+                                 "Min",
+                                 "Max",
+                                 "First",
+                                 "Last",
+                                 "Sum",
+                                 "Average",
+                                 "Median",
+                                 "Median High",
+                                 "Median Low",
+                                 "Stdev",
+                                 "Variance",
+                                 "Harmonic Mean"
+                              ],
+                              "type":"string",
+                              "title":"Aggregation Function",
+                              "meta_ui":{
+                                 "update_ui":false,
+                                 "process_data":true
+                              }
+                           },
+                           "lookups":{
+                              "type":"array",
+                              "items":{
+                                 "type":"object",
+                                 "properties":{
+                                    "lookup_column_id":{
+                                       "enum":[
+
+                                       ],
+                                       "enumNames":[
+
+                                       ],
+                                       "type":"string",
+                                       "title":"Column"
+                                    },
+                                    "condition":{
+                                       "enum":[
+                                          "is_null",
+                                          "==",
+                                          ">=",
+                                          "<="
+                                       ],
+                                       "enumNames":[
+                                          "Is Null",
+                                          "==",
+                                          ">=",
+                                          "<="
+                                       ],
+                                       "type":"string",
+                                       "default":"==",
+                                       "title":"Condition"
+                                    },
+                                    "value":{
+                                       "type":"string",
+                                       "title":"value",
+                                       "examples":[
+
+                                       ]
+                                    }
+                                 },
+                                 "anyOf":[
+
+                                 ]
+                              },
+                              "title":"Add Filters",
+                              "meta_ui":{
+                                 "update_ui":false,
+                                 "process_data":true
+                              }
+                           }
+                        },
+                        "required":[
+                           "dataset_slug",
+                           "group_slug",
+                           "column_id"
+                        ]
+                     }
+                  },
+                  "required":[
+                     "value"
+                  ]
+               },
+               {
+                  "properties":{
+                     "kind":{
+                        "enum":[
+                           "combined_dataset"
+                        ]
+                     },
+                     "value":{
+                        "title":"Combinging a Dataset",
+                        "type":"object",
+                        "properties":{
+                           "left_dataset_slug":{
+                              "enum":[
+
+                              ],
+                              "enumNames":[
+
+                              ],
+                              "type":"string",
+                              "title":"Dataset",
+                              "meta_ui":{
+                                 "update_ui":true,
+                                 "process_data":false
+                              }
+                           },
+                           "left_group_slug":{
+                              "enum":[
+
+                              ],
+                              "enumNames":[
+
+                              ],
+                              "type":"string",
+                              "title":"Dataset",
+                              "meta_ui":{
+                                 "update_ui":true,
+                                 "process_data":true
+                              }
+                           },
+                           "left_output_columns":{
+                              "type":"array",
+                              "items":{
+                                 "type":"object",
+                                 "properties":{
+                                    "column_id":{
+                                       "enum":[
+
+                                       ],
+                                       "enumNames":[
+
+                                       ],
+                                       "type":"string",
+                                       "title":"Column"
+                                    },
+                                    "name":{
+                                       "type":"string",
+                                       "title":"Name Override"
+                                    }
+                                 },
+                                 "anyOf":[
+
+                                 ]
+                              },
+                              "title":"Ouput Columns"
+                           },
+                           "add_equations":{
+                              "type":"array",
+                              "items":{
+                                 "type":"object",
+                                 "properties":{
+                                    "value":{
+                                       "type":"string",
+                                       "title":"Value",
+                                       "meta_ui":{
+                                          "update_ui":false,
+                                          "process_data":false,
+                                          "widget":"MarkdownWidget"
+                                       }
+                                    },
+                                    "name":{
+                                       "type":"string",
+                                       "title":"Name Override"
+                                    }
+                                 },
+                                 "anyOf":[
+
+                                 ]
+                              },
+                              "title":"Additonal Equations"
+                           }
+                        },
+                        "required":[
+                           "left_datset_slug",
+                           "left_output_columns"
+                        ]
+                     }
+                  },
+                  "required":[
+                     "value"
+                  ]
+               }
+            ]
+         }
+      },
+      "slug":"field_generator",
+      "version":1
+   }
+}

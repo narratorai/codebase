@@ -1,0 +1,23 @@
+mutation InsertCustomFunction(
+  $company_id: uuid
+  $description: String
+  $input_count: Int
+  $text_to_replace: String
+  $name: String
+) {
+  insert_custom_function_one(
+    object: {
+      company_id: $company_id
+      description: $description
+      name: $name
+      text_to_replace: $text_to_replace
+      input_count: $input_count
+    }
+    on_conflict: {
+      constraint: custom_functions_company_id_name_key
+      update_columns: [text_to_replace, input_count, description]
+    }
+  ) {
+    id
+  }
+}

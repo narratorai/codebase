@@ -1,0 +1,3742 @@
+{
+  "response": [
+    {
+      "_last_modified_at": "2019-06-23T22:21:32",
+      "features": [
+        {
+          "enrichment_table": "enriched_pages",
+          "kind": "string",
+          "label": "Enriched Activity Id",
+          "name": "enriched_activity_id",
+          "values": null
+        },
+        {
+          "enrichment_table": "enriched_pages",
+          "kind": "timestamp",
+          "label": "Timestamp",
+          "name": "enriched_ts",
+          "values": null
+        },
+        {
+          "enrichment_table": "enriched_pages",
+          "kind": "text",
+          "label": "Referrer",
+          "name": "referrer",
+          "values": [
+            {
+              "percent_of_total": 0.0013,
+              "total_rows": 15,
+              "value": "android-app://com.Slack"
+            },
+            {
+              "percent_of_total": 0.0012,
+              "total_rows": 13,
+              "value": "android-app://com.google.android.gm"
+            },
+            {
+              "percent_of_total": 0.0015,
+              "total_rows": 17,
+              "value": "android-app://com.google.android.googlequicksearchbox"
+            },
+            {
+              "percent_of_total": 0.0012,
+              "total_rows": 13,
+              "value": "android-app://com.google.android.googlequicksearchbox/https/www.google.com"
+            },
+            {
+              "percent_of_total": 0.0012,
+              "total_rows": 13,
+              "value": "android-app://com.linkedin.android"
+            },
+            {
+              "percent_of_total": 0.0002,
+              "total_rows": 2,
+              "value": "android-app://m.facebook.com"
+            },
+            {
+              "percent_of_total": 0.0003,
+              "total_rows": 3,
+              "value": "android-app://org.telegram.messenger"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http%3A%2F%2Fnarrator.ai%2F&h=AT2CJmQkXxjiMhMnwsvjgMx2Wy0UkE1fXV6NTt-RpMtr7fuqQAl9LoH8VO971DRMQiL6YqdYMYR4GlILEqyP1fI-hncwelm84cAMavkj8Wg8HjVj3kJgdg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http%3A%2F%2Fnarrator.ai%2F&h=AT2SFhJ9xWQUOFMix4H54INktey2bia6Sfqpdb-PdOtDRmL2YkmoiPvQSx0BFeZsi_FIBiU7drN6gCQDOp3G-NahgT5ZwEo4V4EDO07DXXffGxWgpOHYmg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http%3A%2F%2Fnarrator.ai%2F&h=ATMP6kw4rU1PTJTKHqxPM_23dlIQiWQn5heL1u9LYWKH2T1hQYQtjSmS8JmjzpEP6GJX44ihob3aHMd7ce5lgfpkp0Fq9QXCSf5r3w"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http%3A%2F%2Fnarrator.ai%2F&h=ATOFp8Xry9DH0W7V4IS8_jB_5305XGVmdu1gZBM1HG_SMmAD2t3fcFCPcrpHLibAjEY6JfFr3hTh5TOf0JlEbWu_wVhCWZI12gdQlmjiZj2qJ7SPIAszDg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http%3A%2F%2Fnarrator.ai%2F&h=ATPyKZEqIWbJV2Uk2ozi46Xu-3NCsGM0SsegzPir3IvGd5NxcmAlt8a8YLTTOyyiULDptKhrzcd6gY-iQLa_L_C7csryTL7r_ymRMpty0SqcVey996ffVEYXOK4p6Q"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http://narrator.ai/&h=AT2Utbu_3mT520K_qJymvQTMm3pY7NdChCvoPXMCiPiUbdvvpgmuyrt6KmuJGOv7ETNg2s1ygMIlXaubkstPVIiJ8paI9N3HE1S_TwelvMlmI6GntN4jm0wXiq_51FRQbalmfzW_hVUIuQ"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http://narrator.ai/&h=ATOdzDCDxb2T4LJfb3OYvlZKtmc8oED6X-ZKPw6DQRJKtYIalG_qw2r7WcVNIfq-ka5GhMZUmJRhrW0OBCPovhkSPiCxpx5A6LbIiCFxzOC7M6ID34VWqT2M165SBQ"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http://narratorai.com/&h=AT0CzFEHTqXwGA5y2ZFy4107SnJr1vtAd6FdolWeVcM7Vt6Kc1MxY6TMDK_v-5jQkabtmk55AdfljWDt9um3XZK8vhtyDxuNCkjeb7CdEVPV8ROGnDWUD_db44h-v_JImt_D3auqpPMojA"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT090dxoEMfGFoQ4JEqwNSMWj5AFAwPHncS7C5Btq9Tpz6q5lMlBOoO-fB4y3Y9EtSnXEvadwjPeFavIJvnaqQzV3mQKFWMaPwAJLj2_txTVCyCGePRp883r9tqiikez7uUZF4aL5URV2Ne5EEE"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT0EFMrZ9JeRIXcWQ0m5E2XC55S5HQ3eySi-DorkxK0lNf_rT1wfF38ZV9l18qLQfkuQuVD_wpzhRPN2ACBiPH8HtI2chswm4ynGjNHha2p2wjf2wn40MMUpQybYNgMJ3Q"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT0l9X3lJJ-lmayB5wtt8nlGxjsOyDK8gRjv8KdGG-3RsiNbDIP_bg-36Ch3FsuX-6Nd9-CR_Pgz5kDH2wFVpgfFug_hgEgnS615ViYypVtXwAlk1hY6YCsLvSTAqRGKYYw"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT18OLiIyu6RcV1Mx763EVGjfkFtBEmFLVAOHsWP7tghNM05cMF3-AHJFfQCn63K3tjwVex5gO16xoAkQIfD7FjDN9J1_IAclQGhMH-SU87VkdOAmJoPAwWEazjK4CHL7A"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT1ldE5j8Ne3L1pEvt5o45J7J9WeaSGcOIi9-om8tfXx_UB-fKf1Lupv3dZyxM74zbJC9-1DBqxkpgwqjS7AQ_00WIwcET7Tk5sq48jjFhPQFe25eOuz868n8dqA26UxLCN8ihnmwoBNRvc_AzU"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT1vcL5M6NXc9Jhhcg5BVPywPm7KZSLIXDW6RHl-slGo6w9bD1zsWE1n7wUxS3TFvo4q0WJsRjAIcoHcLmSyVLFdIYAFEFTdH9LsHtzwhAmAt9qiN9hN_0kz3nmv2GOevFX7wJE5JL4EM_qMNw"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT21zt4hruLrQh-2SvnKHYF80UsicH9aHvfHkq22dJ8yHebrrAoG9XFsqF-ceA1NsaNTbRqf0Che4q0IFn8ekKEEkz-O_dw5XNzhIaM8e4O9OqRi_mU0nAIlBvnlWaoK"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2G58WwjI5ZnK1AzMwDCwUOSsibWS_sKIXdXzev3xnDvkLdcCSXRVcrjtZnLh2Q4bEswMFAOl6JJ5hoBLKIQnFFQSk7wvCs82ITFopglB7x5pOlFCRDw9S8UsA"
+            },
+            {
+              "percent_of_total": 0.0002,
+              "total_rows": 2,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2GlyCjbRW3epRoWn9AcTcZnxLq_HCoFr49FjCwFsXX77bhP1bTSXbfBvNVuVfkqPzJXiBRVYBYIOBe9nt-h7lojOgRJOwsMfkro0fnS9XHzj4JgwaXnAeZL_B5HZQzITvr3kSGMtKl5hao1Q"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2dCfN2SuRPBoXtKKOW3mjrg_VppZRuJDTTPmTMzb2scS_OhzCGUSPzTZgtbZVhFJ3pKb5FhKzG69E_FrgUvhaoQ3dRoDdpV-zowaWzUz4vP5JBnFL9l7xtUKMGCf4wyw"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2pkI4WQqXxzNnTg-xhcWl9hiDynxFMSd5x9vzLX4-3MGGt354u3Jl1ilSVfToXwAfhsOzvdSoCYCRjc1stZXxsQsszEhprHSV4mrrIO44H0WKy-6skD2rUBgINifVSKw"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2uggClFpjNAs4frYDlBaA7cmdD99RvA50rPVZmMSapTQjaM-0SjQuL95qq5WMEBjSpugM056-q7yyJtVoapi9dUmMXzkL_5_hJ4EFqtR_xx3TAiEQRnpsf87M"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2zBnQUi_F6z5dBEa5D0g0pj3hS8LXRRSW_vLhZSXmcWwnS2nxXg-Df2dWCrOmlEcf-zzA3j8OFXjA2nkWc7aTYgRfIIemY8gNJ-bcq3CIMGkJkc2l7VVis1HegvGbgCpWnHGwFyok"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2zgAns6u4CSkoy8_gX-yUiO3By3ta9RfaGYxdcWSRwzIbNqXq4V3Eg2Q515lJ70CgAimofknc3eaNeIsvsrQcFCs_lc070D8cKwQcr9S27eE_jzYbA5gWXF52yMras"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT38gYkkXmkoiviLO_KpWvEODAItsnTjjksORYwxa1F29yMjbVKCXXuO0Bsxi6W9RbSQcwHJhPWm2uqWoCAPV41NvpjYk_uxzi0S9NJ_Cu0d4zjzPt7OIgy7i2zrK6B7bA"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT3Cj1uYzCmtewNpj5o2Tq4knE4GI_Wkb3W-Sc767I5HIOWtHDL5ZtIT5Xm-F4gr9FxCJ_6KAWVNRLdCGrvmXhKLFrdWFAuq_CSx-wGK4aBwmWK_PUk2guZgDSI20fP2"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT3__JX4Jrt3yMjBRT-tRcon5-GEZTA046vzosTxgc5MmYJvZQP1-8L9xtQlTKQR9AorWAcbo6W8hrxv_0U6098JLJPbt13CSteg722LGBD4FLub3WwyPR5l09NacEZoZzvrvoJyrgKyzLVqEVc"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT3flER7vQP4Fl0Vpfkj7wIegMxqL5mTGInJOpbisrbw2X_LYTG5k6jOGB4rdE0BJc0X78bUcAOAcfxg1J-JAczbsetMSkizGzBMYzEjP8LRVPdr87LngPclbBQWy8QkvkU1S6khWOzFOJbjTdY"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT3jpMq3spoEWh9ZHU2uABE7pO4fJkaB37dIJVSNnhaiponbO2jzTHflhlisOL0KHo5BRooOw9mI5daNmH-_0eOFsbfMBR7ouwkLD6ylIloWPpqyhcXSG0NWaRFBo_MUdFHNLQlq9uQ2I1sSJg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=ATN42qwpYFdNJ-2urEi6UlCuRyaZ_w4mIbhOh5q4G7RcEdcKXjKngDw7cYGkmcZL9N27mZO5kMarRhAvK6OgaUiz3HpMp9JPeleePjJtP4JC_MuunBpSxqr6sx5sd4on"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=ATOAy0SrwR2rZu23WkkKWuuwdmal9MUmF13SzP7dTU9AXebp8EGLkrE6QrlzMxeUiUl1ZXEBmFXLp7FFBlYzIMR29P2TXaaAV5jxgMb61g"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=ATPFj4ui8TWpMCgf-3CVJ7aI_9f7rGULjDTCDhypJclVIdQ6G2I-TTTdMcqlXbt3di_DX5hTQiLxC9whN5QrchEFymAludsp4Vzz7sbe_lSK8_M27tid-sJTpZwrTDu3vQ"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/activity_stream"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/activity_stream/activities?status=live"
+            },
+            {
+              "percent_of_total": 0.0003,
+              "total_rows": 3,
+              "value": "http://localhost:3000/activity_stream/scripts?type=stream"
+            },
+            {
+              "percent_of_total": 0.0002,
+              "total_rows": 2,
+              "value": "http://localhost:3000/activity_stream/secrets"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/candidco/manage/scripts/t/stream/s/activecampaign"
+            },
+            {
+              "percent_of_total": 0.0004,
+              "total_rows": 4,
+              "value": "http://localhost:3000/manage"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/manage/scripts/t/stream/new"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/manage/secrets"
+            },
+            {
+              "percent_of_total": 0.0009,
+              "total_rows": 10,
+              "value": "http://localhost:3000/onboarding"
+            },
+            {
+              "percent_of_total": 0.0002,
+              "total_rows": 2,
+              "value": "http://localhost:3000/scripts/t/stream/new"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/scripts/t/stream/s/email_sent"
+            },
+            {
+              "percent_of_total": 0.0002,
+              "total_rows": 2,
+              "value": "http://localhost:3000/scripts/t/stream/s/portal_page_views"
+            },
+            {
+              "percent_of_total": 0.0002,
+              "total_rows": 2,
+              "value": "http://localhost:3000/scripts/t/stream/s/segment"
+            },
+            {
+              "percent_of_total": 0.0002,
+              "total_rows": 2,
+              "value": "http://localhost:3000/theskimm/onboarding/creds"
+            },
+            {
+              "percent_of_total": 0.0004,
+              "total_rows": 4,
+              "value": "http://localhost:8000/"
+            },
+            {
+              "percent_of_total": 0.0007,
+              "total_rows": 8,
+              "value": "http://localhost:8000/admin/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:8000/docs/how-to-query/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:8000/docs/templates/"
+            },
+            {
+              "percent_of_total": 0.0043,
+              "total_rows": 48,
+              "value": "http://m.facebook.com"
+            },
+            {
+              "percent_of_total": 0.0006,
+              "total_rows": 7,
+              "value": "http://m.facebook.com/"
+            },
+            {
+              "percent_of_total": 0.0003,
+              "total_rows": 3,
+              "value": "http://myemail.constantcontact.com/Dashing-Through-Our-Year-and-Wishing-You-a-Wonderful-2018.html?soid=1011190628337&aid=DLKo4kSa5lM"
+            },
+            {
+              "percent_of_total": 0.0004,
+              "total_rows": 4,
+              "value": "http://r.search.yahoo.com/_ylt=AwrJ25VDKshaRnwAJzFEDN04;_ylu=X3oDMTByMG04Z2o2BHNlYwNzcgRwb3MDMQRjb2xvA2JmMQR2dGlkAw--/RV=2/RE=1523096259/RO=10/RU=https%3a%2f%2fwww.narrator.ai%2f/RK=2/RS=QfBkiliiZSFKc3zF1CCqbz5550A-"
+            },
+            {
+              "percent_of_total": 0.0006,
+              "total_rows": 7,
+              "value": "http://tracyloi.com/info/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://tsvqvc.xyz/"
+            },
+            {
+              "percent_of_total": 0.0002,
+              "total_rows": 2,
+              "value": "http://www.api-staging.narrator.ai/?id=00002"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://www.api.narrator.ai/?3594"
+            },
+            {
+              "percent_of_total": 0.0006,
+              "total_rows": 7,
+              "value": "http://www.bing.com/search?q=amazon"
+            },
+            {
+              "percent_of_total": 0.0006,
+              "total_rows": 7,
+              "value": "http://www.digital.nyc/startups/narratorai"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://www.espn.com/mlb/"
+            },
+            {
+              "percent_of_total": 0.0147,
+              "total_rows": 164,
+              "value": "http://www.flybridge.com/portfolio-company/narrator/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://www.google.com/"
+            },
+            {
+              "percent_of_total": 0.0004,
+              "total_rows": 4,
+              "value": "http://www.google.com/search"
+            },
+            {
+              "percent_of_total": 0.0002,
+              "total_rows": 2,
+              "value": "http://www.url-opener.com/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1660._ePAgOPNYpRUb1SgLPXSSLixYa4SOfysnbMGNsrx-b2Zlk4W4PWqNrIHP99SSdLQ.8f9db9ad2dbad89b8c545f2eda29d8be4a1b8d12&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkgUc0YOm24rr5dkiDnIjpu2TfUVc&data=UlNrNmk5WktYejY4cHFySjRXSWhXT1pZbkE5YURWeGg4NGVXT2tXOEdCMmVpcEpjcUxBbzRNYld5U0lOdmtzWWhOTmppYldvOHJwdUJwN2tMTHprdXhqYWZUcXFwWUdidnE0Zjd0QkotWWs&b64e=2&sign=fd1acc6969d0e3e2e153557ec19d5489&keyno=0&cst=AiuY0DBWFJ7IXge4WdYJQXbYQp9t5VF6oFCpbAaqrxBFgsLZmRvEX3z7RgR85EVfsz-K4Ll80OC3aKG7QHo-mFV3P7fAt0HA_EnPTEyAZn4xJiE8ccsd_Fq3kIVV0SirbwSwS5bbLUVjFxAZlaNCJA&ref=orjY4mGPRjk5boDnW0uvlrrd71vZw9kp5uQozpMtKCX9U1h5sqoIOwdH2CeRhr_0_lLbot073-FDYFCKavwrLYv3rCA4ENTpJH5pJShhjz6pKxUSzycg-g&l10n=ru&cts=1515403636548&mc=5.09666633494"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1665.gPs6ZAK9ih4ebDeyKlMLgml5bCSehziSXoKp7EZUU_UwadfsKEsK3rhWxDfmfFNG.3fe7a6201fa4ff36cc5f7daf027ce67f3d644079&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkgUc0YMIVJNtoWDTa6Ctl47TPu5I&data=UlNrNmk5WktYejY4cHFySjRXSWhXT1pZbkE5YURWeGg4NGVXT2tXOEdCMmVpcEpjcUxBbzRIeTV1eTh5cVpVSTdoWS11YWl3QmY3OWRzZUVqRGQwSXF4TTU1N3hSVXp6SENjZzdSMk1RTjQ&b64e=2&sign=93bcac2cc5e3564e963ac5b1ad66c053&keyno=0&cst=AiuY0DBWFJ7IXge4WdYJQSaYtyyri96FaJz4fBlifJ1Gzq4EU5gVKTfmG31kxVmaB74aUG0btkiEQi7BXsK-2Rkh-joKRgaA7Danyd0M5iOgcWauh2GYzPyz44nmdpSErU6i-vDonZLoa8P537SWhQ9mDJ1PPxBb&ref=orjY4mGPRjk5boDnW0uvlrrd71vZw9kp5uQozpMtKCVmXZkm5y4FtF9xJA7NC5cmP7PaVLEjleu8W0sD57t8_HT6zxq1zAtTliT0KkLeFimu-i4WJgbr2g&l10n=ru&cts=1515890341633&mc=2.61769243964"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1668.I1ehki2_l-CUfqVvbps2wcTVdAD5OX86eqmzOcZ7tGrGlNsv_I_o7VOXtBv-wcDz.194b2a32303baa89732e7b4270284c0cd54f4618&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkgUc0YOm24rr5dkiDnIjpu2TfUVc&data=UlNrNmk5WktYejY4cHFySjRXSWhXT1pZbkE5YURWeGg4NGVXT2tXOEdCMmVpcEpjcUxBbzRQV1JQaVFpNW9ma2s4UkpJc244WHFUNGxsSmNacXc1MXVncnpFcEhWVkE4ZE1mX3gyY3hfajA&b64e=2&sign=61e506ad1b1cf19e3ff5ebf2a4987601&keyno=0&cst=AiuY0DBWFJ7IXge4WdYJQa9gkHE_3kbi4XJJ0spZ3fAhduU7F6mlheKWOdsQxRM5gffNUC-hjNTwTqHCHzdDVjjd-qpB4-Au1VQreAxMlb1WgOSq02JCzDCODAm5w03lhUp0YN0eXCPsnaqtj9EEydiy2sL6iCQg&ref=orjY4mGPRjk5boDnW0uvlrrd71vZw9kp5uQozpMtKCVGd-5JIAsUxt5qyiMbglz4oEXpjNL3NJ5TLTzwZg_NNzThNAf1wvaZaDL-zA8ojVbXkEisJcySLw&l10n=ru&cts=1516107883902&mc=3.49350369478"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1705.Pxi0y6zSRmTZiQ5PN66Lvit5VQdLBbhrTnzJg3QLg855CoSkkyPAghh1Q66oSwe1.b885d2e2210573f6572f7e122cebc5d83b88227d&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkgUc0YFUVNhHyyhJgRFg5yeLMIWU&data=UlNrNmk5WktYejY4cHFySjRXSWhXT1pZbkE5YURWeGg4NGVXT2tXOEdCMmVpcEpjcUxBbzRKWnZweVRObW5sOGRobTRXZ3hsdG5lZ1YwUmU5N2RJYUY5czk4N2dJemo3N09xWVVTUzRMN2M&b64e=2&sign=1d027039da6a10112e7223d5bbb2a9af&keyno=0&cst=AiuY0DBWFJ7IXge4WdYJQYpgPUyh7uQlxSgZxEODDH4KrfYGE7rtXW7TUDwNriIG0HKeOP6ZzbWpfo566jog2fBkAPPLhllkSUF5JNi0Ze4v98anZofZ3KiBpuRVMq_HZB96A0ZeMCGVmyenx05P1OR8tZhQuXS5&ref=orjY4mGPRjk5boDnW0uvlrrd71vZw9kp5uQozpMtKCV-HtQ36UFK08D54EbWbB98ySk2pB7xY4Eq0Y4oGbrflNWs1FRrvf02cdKd4nQSEcXQmzNnoQRrRw&l10n=ru&cts=1519280499553&mc=1.77642368358"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1746.F07d-Sao_f-Z6SytUiA3CxkR0Au0sBZotxN6lLpNCen6b6wAp47z9N_qiZXfdjAn.ded394eafc1773025ae1a7e56df8a309798b0b9b&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkgUc0YMkOSpatjLUqgxH-XWLwn-g&data=UlNrNmk5WktYejR0eWJFYk1LdmtxaGJNQ25lWVcxS2stdVpMam4yN05ISmN6QXhjZHYyb1ppaFJXcC1sNEhEUTFuWjhBT0RBS1VNWW5vcjk3UkhCZWlYTzcyclQtNVlo&b64e=2&sign=952a426e8d0fe159cdfc03350f40b0d5&keyno=0&cst=AiuY0DBWFJ7IXge4WdYJQYpgPUyh7uQlrh9CaUKQh4j7MjHVBQAEB2lcS1JCSgppSmJccHHW5h65Npwui24hWwnTQFrCytTcyRshBvV2U3jFZ1FzHULhnW74Rpc0f179OV975ynttHHtUVnrfF3dHceOnnQ6aUjR&ref=orjY4mGPRjk5boDnW0uvlrrd71vZw9kp5uQozpMtKCWuAUzT58TqASVD_tdNEfUpub2-2fOj45oSv1RZJiepB1aT1dXErY_HbtbbUkmk3G1TE3MTyzRWYA&l10n=ru&cts=1522701287126&mc=1.53692103824"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1754.dKSEBCp0zKSXR91WzfIx0k7BS4DseIz6M3y55T-6sxLlq2mgBEKxebKNRSSJRWlk.6b0459200e4cd8b112fc622137e38e5783a5a6d0&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkgUc0YGftRg9cP1erjBfVTUcXDXk&data=UlNrNmk5WktYejR0eWJFYk1LdmtxaGJNQ25lWVcxS2stdVpMam4yN05ISUdUV0Q0X21iZzhlb09zUWFzUlQyaFFnOUUtcFlVS0UyYldmcnZDdG5WLWRWQS1td0tvek5x&b64e=2&sign=35c509f8162d06089598db9f032f3700&keyno=0&cst=AiuY0DBWFJ7IXge4WdYJQe3IrxbPWIv48-EJv4dnBmJNH6LjZM9f_ioP4AMpnqcRKidVbvxS-KCGVIpdHk3QDR5k-OldVh00mr_SJmMxswO7ZGBPy1ZBg1GFcYiCVuYmYJ5FBlzCQgvSdyqjlZVlR9B0vjmpRAQk&ref=orjY4mGPRjk5boDnW0uvlrrd71vZw9kp5uQozpMtKCVwjJVQHb9Csw6fFLtEppqqL5e8u2Tfq0OqvMq7jr4GaVrbZ48ZmUBvgROq0CB46gQVI7oGOxUZKQ&l10n=ru&cts=1523399904674&mc=3.94891031873"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1813.1_sWLRGRzZlMnoe2I1st7bDFJWAi8mvYosqHUe-kAAjSCbnkyTYnYkp9KYJswJ3J.2e8a7022f0140334274f009ab22841b7b43ef895&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkgUc0YHRNgn3KsbHJbmUkku86_mY&data=UlNrNmk5WktYejR0eWJFYk1LdmtxdlhEblBIZFUxMlRiNmRMRC1ueW1MTmtiLXd0aTFCTmVyTWNBQWVZOGk1RjdxX0lFeDE1V3BzMW5HX0IzYU1hNkRSVEJuNzRmdkd5aXRUX05VZ2dSaW8&b64e=2&sign=39c0fbc0f3573b45d06a978166bfe12d&keyno=0&cst=AiuY0DBWFJ7IXge4WdYJQYpgPUyh7uQlul9RSYcWc-uva0KC1_MJ6W5s-Ivc42M0yCRtlhvBfrPpUPwNGcYv_I2M2kB0mGU6tm0oNcAatS_SeJP7Bkh_xhzN1sawQJdndS9f4-_VrTTDsCNrk5vqUMADxGTqTbVA&ref=orjY4mGPRjk5boDnW0uvlrrd71vZw9kp5uQozpMtKCXma_RTIh0ntGE7AvP4cRP1zNQYqJUXnDYKIJdhsEXZ8CbgQ4-6GyGqZ54PjVUl6sxl7gnjrZ4DAg&l10n=ru&cts=1528478282428&mc=3.27110247099"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/yandsearch?text=https://yandex.ru/clck/jsredir%3Ffrom%3Dyandex.ru%253Bsearch%253Bweb%253B%253B%26text%3D%26etext%3D1830.AMmNuHicC_jXmzbca0pQutY3FR0AcB_rLu2j2iWbq-5JdQNqXM7JEmkD6uKv-jLL.08e1f0c2f69a48ed691c506a249d1da3afeb033d%26uuid%3D%26state%3D_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkgUc0YL_nDC5hqtEQ6WayFoZKRZE%26data%3DUlNrNmk5WktYejY4cHFySjRXSWhXT1pZbkE5YURWeGg4NGVXT2tXOEdCMUJQaDhVcWNHc2hvU1VNTW95YWtQcHh6cGZDaWRGeW9vMExWdlBiNFZRbjNMeGJBZGl4WlZQaXFLd2l1ZTZYVjQ%26b64e%3D2%26sign%3D060ff4fbb10a2cd14871891d2969613c%26keyno%3D0%26cst%3DAiuY0DBWFJ7IXge4WdYJQXbYQp9t5VF6gRtxPUhJ1G2mw-3Y4IUOcGHW7rUdy0JHBMVZHoOaL55di3lrmtPY-PFp4fuHIBBqpQowRCW5KVSbRwWbegjravH6vQSoNCr9-l9ZFrWrADpGl72J3wtdxml-1yHZSiiP%26ref%3DorjY4mGPRjk5boDnW0uvlrrd71vZw9kp5uQozpMtKCWLmUMpz38pRPmMhZCNQr4UDAq1DUXtgiwW2ZQY2-SlmAQzayrhc6OI-uPY2GLR5uEgndkdzul7ZA%26l10n%3Dru%26cts%3D1529906353267%26mc%3D2.35447843051&lr=213"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/yandsearch?text=https://yandex.ru/clck/jsredir%3Ffrom%3Dyandex.ru%253Bsearch%253Bweb%253B%253B%26text%3D%26etext%3D1834.fpOTQUzeWIinxLhZ6CHPWXjMx6B_rXoZ-JWoa_DIQIZ4ri6esOHb9O4cIe2TylaA.37af15a9bf60f58ba3fc81fd6b824c0a114a6992%26uuid%3D%26state%3D_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkgUc0YOm24rr5dkiDnIjpu2TfUVc%26data%3DUlNrNmk5WktYejY4cHFySjRXSWhXT1pZbkE5YURWeGg4NGVXT2tXOEdCMmVpcEpjcUxBbzRDa1U3ZzAzYjRfRmt6VUVJQzk2bzlJOHdVVkEyR2ZZbnVUbUlfYTAwa2J3a0h6VFBEbEZmTG8%26b64e%3D2%26sign%3D6e7bca9ac32df51d20a15df0eb58e342%26keyno%3D0%26cst%3DAiuY0DBWFJ7IXge4WdYJQa9gkHE_3kbiQ3e9P2_SYyh0mFh9pw42H8gv3IOPuIRCFjB3qTcabDO_E6tHbDokThvk0G2zC8lsSLb4Gbs0kD_QrD_Lx5p1gRB2fJBp3nwdi5DtgfIbRBeT71RSzbx8nrDtDs8g6R63%26ref%3DorjY4mGPRjk5boDnW0uvlrrd71vZw9kp5uQozpMtKCV-bB70LKhDfBuob5QW6u_QPGP-YVtChmMkoH_tgvYbk-fYNLhv3jeLTwlx7u22rCSHu8X1tYH9aA%26l10n%3Dru%26cts%3D1530284334940%26mc%3D7.08688869585&lr=213"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=241161855598-2iin8jc743idbim6jaqchb9o1q2cc6ev.apps.googleusercontent.com&as=3EfH777zdjKA8OAjXW_XbA&destination=https%3A%2F%2Flogin-dev.narrator.ai&approval_state=!ChQxQjhGcVpkT1FZNGQyNHBGV1BGehIfTThFVkVXVkU5RkVmc0NEZU1wUEotOVlKQW9UOFZSWQ%E2%88%99ANKMe1QAAAAAW34wy2mSUm8sEuPvjPMJHwBvh3vTkS6B&oauthgdpr=1&xsrfsig=AHgIfE98VnGch9OIsmviP59deSk7E2FLxw&flowName=GeneralOAuthFlow"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=241161855598-2iin8jc743idbim6jaqchb9o1q2cc6ev.apps.googleusercontent.com&as=iN37URY1coFs86lXUFbbKA&destination=https%3A%2F%2Flogin-dev.narrator.ai&approval_state=!ChRMaEY2WFlOaFFpLXd5eW1lWG15eRIfMDNSUkpxVmJ4OFlTc0NEZU1wUEotOWI1YTViOFZSWQ%E2%88%99ANKMe1QAAAAAW34xFyOpkSjwAzHTyLsYMAJXI7RVjQre&oauthgdpr=1&xsrfsig=AHgIfE8P1tU-iSXOWD5tXRuxSlkX0tOdFg&flowName=GeneralOAuthFlow"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=2pfE8za3N066vJ4fgvQFQA&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChR4VVozU3NDNm0xZk9YRTl1cWJYbBIfdzhzNTFHRXplR0VRVUU3MWpGWk5XazNUREIxaGtoWQ%E2%88%99AJDr988AAAAAXHWPZ-7NAZ9WjfGbcWuHC7bFH8PeMlnt&oauthgdpr=1&xsrfsig=ChkAeAh8TyFM7nhYWBxWqrFMKsvMFPSU3Py4Eg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=6lJTVhNXN4iqGX8LvdCBhg&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChR0LVF4cEtuaUVYbEVrMUNoWXc2WBIfWV96VlhIb3RXdVVaVUU3MWpGWk5XazNEUGZDNWtoWQ%E2%88%99AJDr988AAAAAXHb7O570v0zFMq7jYgxb0byUjidQE1NT&oauthgdpr=1&xsrfsig=ChkAeAh8T7Mtow1PVkhFVbC6jFOpn7JKTlMwEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=7qMkwzN8QCEMuPkvxyeL3A&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChRUTGFHN0tYSmtCZFVWZ0ZSUWh4NxIfUTBTM0VzLUN6RW9ic0NEZU1wUEotOVk1cTNIUGtCWQ%E2%88%99AJDr988AAAAAXG8iKk3X4dnE5slvyfYC2TOb5gzdd-B4&oauthgdpr=1&xsrfsig=ChkAeAh8T_Hm0WS0Q-aEYP2rJkuDifO1SKlHEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=ETB1MpB9fwqniKEzYtSNlQ&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChRQLUM5aUp1bi1aREJVNUlWM0Y0LRIfVS0wQnpURnpaaUljVUU3MWpGWk5XazFUMjIxWWtoWQ%E2%88%99AJDr988AAAAAXHVr1bi9Zc40KA1UVC6WD0_-53fGDefq&oauthgdpr=1&xsrfsig=ChkAeAh8T6I4icNx-RRIrskMMyTF5uWM73dOEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=SmD-rMA-im_10WBVg8m5Rw&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChRwQkhDNHM1anRSNXlOSUg0X0hycxIfZzRMTE12amI1UElTQU9FaERQUmpBazI2Y21kNWZ4WQ%E2%88%99APNbktkAAAAAXCgf9HaMbfbtUwmibR5PSWgfak1mBLNX&oauthgdpr=1&xsrfsig=AHgIfE-_vn2M7Xu-sf3C3rldyAH3cjEjbg&flowName=GeneralOAuthFlow"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=aaQwkkDB2MIW2XQokvUksQ&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChQwQ3Bidkh6X29yN0NfUXQ3TGlXSxIfNDI4SjZFRldHZWdWQU9FaERQUmpBazBxQkVabGdSWQ%E2%88%99APNbktkAAAAAXC_-pr6SESHz_s3zVEVNJDlSlnBYec5x&oauthgdpr=1&xsrfsig=AHgIfE_gf6apCdlGiLkZZ7uOc8zKU3ONQw&flowName=GeneralOAuthFlow"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=ajzerVA0imfyYsKUH2Z45w&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChRrcVI5aG9lY1ZKR2dQcUVKbFgyeBIfNDg4M2RCY2xPU2tUVUU3MWpGWk5XazNERUpPbGtoWQ%E2%88%99AJDr988AAAAAXHan0hsODnYU41oLog11hSBdjstdJ6Er&oauthgdpr=1&xsrfsig=ChkAeAh8T0KPFdL2JcGRZt14iEE_RXY1pEJ0Eg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=qeXeyPOYbNpFG433qbVlpg&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChRKdFpIaWhZSDJlX1hmOXprTTRRcBIfWXoyZGJKb01NX29SVUU3MWpGWk5XazJ6LVFoZmtoWQ%E2%88%99AJDr988AAAAAXHWG5LhPFrRw452RR-EzYMZ-DILvMLN8&oauthgdpr=1&xsrfsig=ChkAeAh8T1cYTcCrU3SbF7ae7rtzJnAOi94GEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=ytrO2iGHjsG8IDW41Dte-g&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChRkZVFUbk5BdmI5ZFl2RGRfa0IwMRIfUV9zN3lLSW41QTBXVUU3MWpGWk5XazF6eG5KWWtoWQ%E2%88%99AJDr988AAAAAXHVr6YpD3kmueKbON1hzfpvSrVRxPSAz&oauthgdpr=1&xsrfsig=ChkAeAh8T43WtFUzN1zziRw6BHgLRR9wioTzEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow"
+            },
+            {
+              "percent_of_total": 0.0011,
+              "total_rows": 12,
+              "value": "https://app.asana.com/0/847705907683339/1110234010014766"
+            },
+            {
+              "percent_of_total": 0.0002,
+              "total_rows": 2,
+              "value": "https://aws-crm.my.salesforce.com/"
+            },
+            {
+              "percent_of_total": 0.0043,
+              "total_rows": 48,
+              "value": "https://bookface.ycombinator.com/company/12598"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://bookface.ycombinator.com/directory"
+            },
+            {
+              "percent_of_total": 0.0035,
+              "total_rows": 39,
+              "value": "https://bookface.ycombinator.com/directory?sectors=All+Sectors&fates=All+Fates&keywords=All+Keywords&locations=All+Locations&stages=All+Stages&batches=s2019"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://bookface.ycombinator.com/directory?sectors=All+Sectors&fates=All+Fates&locations=All+Locations&batches=s2019&stages=All+Stages"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://captcha.gecirtnotification.com/pitc/?url=https%3a%2f%2fwww%2enarrator%2eai%2f%3f%5fsm%5fnck%3d1&referer=www%2egoogle%2ecom%2f&reason=This+site+is+categorized+as+Miscellaneous+or+Unknown&reasoncode=CATEGORY_CAUTIONED&timebound=1&action=deny&kind=category&rule=52&cat=Miscellaneous+or+Unknown&user=212550490@ge.com&lang=en_US&zsq=jnt6jFMTDWH6rJTZKQF60HDb0FPnt6jFrrZN6VFzsq"
+            },
+            {
+              "percent_of_total": 0.0004,
+              "total_rows": 4,
+              "value": "https://cn.bing.com/"
+            },
+            {
+              "percent_of_total": 0.0088,
+              "total_rows": 98,
+              "value": "https://combined.ai/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://crossfitsouthbrooklyn.com/blog/"
+            }
+          ]
+        },
+        {
+          "enrichment_table": "enriched_pages",
+          "kind": "string",
+          "label": "Referral Kind",
+          "name": "referral_kind",
+          "values": [
+            {
+              "percent_of_total": 0.7451,
+              "total_rows": 8287,
+              "value": "Direct"
+            },
+            {
+              "percent_of_total": 0.0791,
+              "total_rows": 880,
+              "value": "Referral"
+            },
+            {
+              "percent_of_total": 0.1283,
+              "total_rows": 1427,
+              "value": "Search"
+            },
+            {
+              "percent_of_total": 0.0475,
+              "total_rows": 528,
+              "value": "Social"
+            }
+          ]
+        },
+        {
+          "enrichment_table": "enriched_pages",
+          "kind": "string",
+          "label": "Medium Kind",
+          "name": "medium_kind",
+          "values": [
+            {
+              "percent_of_total": 1,
+              "total_rows": 11122,
+              "value": "Organic"
+            }
+          ]
+        },
+        {
+          "enrichment_table": null,
+          "kind": "string",
+          "label": "Activity Id",
+          "name": "activity_id",
+          "values": null
+        },
+        {
+          "enrichment_table": null,
+          "kind": "timestamp",
+          "label": "Ts",
+          "name": "ts",
+          "values": null
+        },
+        {
+          "enrichment_table": null,
+          "kind": "string",
+          "label": "Source",
+          "name": "source",
+          "values": null
+        },
+        {
+          "enrichment_table": null,
+          "kind": "string",
+          "label": "Source Id",
+          "name": "source_id",
+          "values": null
+        },
+        {
+          "enrichment_table": null,
+          "kind": "string",
+          "label": "Activity",
+          "name": "activity",
+          "values": null
+        },
+        {
+          "enrichment_table": null,
+          "kind": "string",
+          "label": "Customer",
+          "name": "customer",
+          "values": null
+        },
+        {
+          "enrichment_table": null,
+          "kind": "string",
+          "label": "Page Path",
+          "name": "feature_1",
+          "values": [
+            {
+              "percent_of_total": 0.8671,
+              "total_rows": 6601,
+              "value": "/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/'"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/)"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/,avis"
+            },
+            {
+              "percent_of_total": 0.0022,
+              "total_rows": 17,
+              "value": "/about-us"
+            },
+            {
+              "percent_of_total": 0.0106,
+              "total_rows": 81,
+              "value": "/about-us/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/admin"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/before-and-after-b"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/blog/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/debugger"
+            },
+            {
+              "percent_of_total": 0.0012,
+              "total_rows": 9,
+              "value": "/docs/"
+            },
+            {
+              "percent_of_total": 0.0053,
+              "total_rows": 40,
+              "value": "/docs/core-concepts/"
+            },
+            {
+              "percent_of_total": 0.0009,
+              "total_rows": 7,
+              "value": "/docs/data-management/"
+            },
+            {
+              "percent_of_total": 0.0205,
+              "total_rows": 156,
+              "value": "/docs/getting-started/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/docs/hipaa/"
+            },
+            {
+              "percent_of_total": 0.0014,
+              "total_rows": 11,
+              "value": "/docs/how-to-query/"
+            },
+            {
+              "percent_of_total": 0.0068,
+              "total_rows": 52,
+              "value": "/docs/manage-scripts/"
+            },
+            {
+              "percent_of_total": 0.002,
+              "total_rows": 15,
+              "value": "/docs/modifying-the-activity-stream/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/docs/quick-intro"
+            },
+            {
+              "percent_of_total": 0.0038,
+              "total_rows": 29,
+              "value": "/docs/redshift-setup/"
+            },
+            {
+              "percent_of_total": 0.0012,
+              "total_rows": 9,
+              "value": "/docs/setting-up-narrator/"
+            },
+            {
+              "percent_of_total": 0.0068,
+              "total_rows": 52,
+              "value": "/docs/templates/"
+            },
+            {
+              "percent_of_total": 0.0046,
+              "total_rows": 35,
+              "value": "/docs/understanding-the-data-model/"
+            },
+            {
+              "percent_of_total": 0.002,
+              "total_rows": 15,
+              "value": "/docs/user-mapping/"
+            },
+            {
+              "percent_of_total": 0.0025,
+              "total_rows": 19,
+              "value": "/docs/your-first-script/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/documentation"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/dpcs"
+            },
+            {
+              "percent_of_total": 0.0008,
+              "total_rows": 6,
+              "value": "/faq"
+            },
+            {
+              "percent_of_total": 0.0039,
+              "total_rows": 30,
+              "value": "/faq/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/feature"
+            },
+            {
+              "percent_of_total": 0.0004,
+              "total_rows": 3,
+              "value": "/features"
+            },
+            {
+              "percent_of_total": 0.0041,
+              "total_rows": 31,
+              "value": "/features/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/features/customer-journey/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/features/dashboards/"
+            },
+            {
+              "percent_of_total": 0.0007,
+              "total_rows": 5,
+              "value": "/features/dataset/"
+            },
+            {
+              "percent_of_total": 0.0026,
+              "total_rows": 20,
+              "value": "/how-it-works"
+            },
+            {
+              "percent_of_total": 0.0146,
+              "total_rows": 111,
+              "value": "/how-it-works/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/insight"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/insights"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/mailto:privacy@narrartor.ai"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/mav"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/mavis"
+            },
+            {
+              "percent_of_total": 0.0093,
+              "total_rows": 71,
+              "value": "/mavis/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/old-produt"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/old/wp-admin"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/portal"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/press"
+            },
+            {
+              "percent_of_total": 0.0011,
+              "total_rows": 8,
+              "value": "/privacy"
+            },
+            {
+              "percent_of_total": 0.0079,
+              "total_rows": 60,
+              "value": "/privacy/"
+            },
+            {
+              "percent_of_total": 0.0013,
+              "total_rows": 10,
+              "value": "/product"
+            },
+            {
+              "percent_of_total": 0.0021,
+              "total_rows": 16,
+              "value": "/product/"
+            },
+            {
+              "percent_of_total": 0.0026,
+              "total_rows": 20,
+              "value": "/product/analysts/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/product/engineers/"
+            },
+            {
+              "percent_of_total": 0.0004,
+              "total_rows": 3,
+              "value": "/product/stakeholders/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/sales_deck"
+            },
+            {
+              "percent_of_total": 0.0003,
+              "total_rows": 2,
+              "value": "/search"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/security"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "/static/studioProgress.b964c757.png"
+            },
+            {
+              "percent_of_total": 0.0005,
+              "total_rows": 4,
+              "value": "/terms"
+            },
+            {
+              "percent_of_total": 0.005,
+              "total_rows": 38,
+              "value": "/terms/"
+            }
+          ]
+        },
+        {
+          "enrichment_table": null,
+          "kind": "string",
+          "label": "Feature 2",
+          "name": "feature_2",
+          "values": [
+            {
+              "percent_of_total": 0.0011,
+              "total_rows": 8,
+              "value": "android-app://com.Slack"
+            },
+            {
+              "percent_of_total": 0.0008,
+              "total_rows": 6,
+              "value": "android-app://com.google.android.gm"
+            },
+            {
+              "percent_of_total": 0.0016,
+              "total_rows": 12,
+              "value": "android-app://com.google.android.googlequicksearchbox"
+            },
+            {
+              "percent_of_total": 0.0004,
+              "total_rows": 3,
+              "value": "android-app://com.google.android.googlequicksearchbox/https/www.google.com"
+            },
+            {
+              "percent_of_total": 0.0009,
+              "total_rows": 7,
+              "value": "android-app://com.linkedin.android"
+            },
+            {
+              "percent_of_total": 0.0003,
+              "total_rows": 2,
+              "value": "android-app://m.facebook.com"
+            },
+            {
+              "percent_of_total": 0.0003,
+              "total_rows": 2,
+              "value": "android-app://org.telegram.messenger"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http%3A%2F%2Fnarrator.ai%2F&h=AT2CJmQkXxjiMhMnwsvjgMx2Wy0UkE1fXV6NTt-RpMtr7fuqQAl9LoH8VO971DRMQiL6YqdYMYR4GlILEqyP1fI-hncwelm84cAMavkj8Wg8HjVj3kJgdg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http%3A%2F%2Fnarrator.ai%2F&h=AT2SFhJ9xWQUOFMix4H54INktey2bia6Sfqpdb-PdOtDRmL2YkmoiPvQSx0BFeZsi_FIBiU7drN6gCQDOp3G-NahgT5ZwEo4V4EDO07DXXffGxWgpOHYmg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http%3A%2F%2Fnarrator.ai%2F&h=ATMP6kw4rU1PTJTKHqxPM_23dlIQiWQn5heL1u9LYWKH2T1hQYQtjSmS8JmjzpEP6GJX44ihob3aHMd7ce5lgfpkp0Fq9QXCSf5r3w"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http%3A%2F%2Fnarrator.ai%2F&h=ATOFp8Xry9DH0W7V4IS8_jB_5305XGVmdu1gZBM1HG_SMmAD2t3fcFCPcrpHLibAjEY6JfFr3hTh5TOf0JlEbWu_wVhCWZI12gdQlmjiZj2qJ7SPIAszDg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http%3A%2F%2Fnarrator.ai%2F&h=ATPyKZEqIWbJV2Uk2ozi46Xu-3NCsGM0SsegzPir3IvGd5NxcmAlt8a8YLTTOyyiULDptKhrzcd6gY-iQLa_L_C7csryTL7r_ymRMpty0SqcVey996ffVEYXOK4p6Q"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http://narrator.ai/&h=AT2Utbu_3mT520K_qJymvQTMm3pY7NdChCvoPXMCiPiUbdvvpgmuyrt6KmuJGOv7ETNg2s1ygMIlXaubkstPVIiJ8paI9N3HE1S_TwelvMlmI6GntN4jm0wXiq_51FRQbalmfzW_hVUIuQ"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http://narrator.ai/&h=ATOdzDCDxb2T4LJfb3OYvlZKtmc8oED6X-ZKPw6DQRJKtYIalG_qw2r7WcVNIfq-ka5GhMZUmJRhrW0OBCPovhkSPiCxpx5A6LbIiCFxzOC7M6ID34VWqT2M165SBQ"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.facebook.com/l.php?u=http://narratorai.com/&h=AT0CzFEHTqXwGA5y2ZFy4107SnJr1vtAd6FdolWeVcM7Vt6Kc1MxY6TMDK_v-5jQkabtmk55AdfljWDt9um3XZK8vhtyDxuNCkjeb7CdEVPV8ROGnDWUD_db44h-v_JImt_D3auqpPMojA"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT090dxoEMfGFoQ4JEqwNSMWj5AFAwPHncS7C5Btq9Tpz6q5lMlBOoO-fB4y3Y9EtSnXEvadwjPeFavIJvnaqQzV3mQKFWMaPwAJLj2_txTVCyCGePRp883r9tqiikez7uUZF4aL5URV2Ne5EEE"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT0EFMrZ9JeRIXcWQ0m5E2XC55S5HQ3eySi-DorkxK0lNf_rT1wfF38ZV9l18qLQfkuQuVD_wpzhRPN2ACBiPH8HtI2chswm4ynGjNHha2p2wjf2wn40MMUpQybYNgMJ3Q"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT0l9X3lJJ-lmayB5wtt8nlGxjsOyDK8gRjv8KdGG-3RsiNbDIP_bg-36Ch3FsuX-6Nd9-CR_Pgz5kDH2wFVpgfFug_hgEgnS615ViYypVtXwAlk1hY6YCsLvSTAqRGKYYw"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT18OLiIyu6RcV1Mx763EVGjfkFtBEmFLVAOHsWP7tghNM05cMF3-AHJFfQCn63K3tjwVex5gO16xoAkQIfD7FjDN9J1_IAclQGhMH-SU87VkdOAmJoPAwWEazjK4CHL7A"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT1ldE5j8Ne3L1pEvt5o45J7J9WeaSGcOIi9-om8tfXx_UB-fKf1Lupv3dZyxM74zbJC9-1DBqxkpgwqjS7AQ_00WIwcET7Tk5sq48jjFhPQFe25eOuz868n8dqA26UxLCN8ihnmwoBNRvc_AzU"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT1vcL5M6NXc9Jhhcg5BVPywPm7KZSLIXDW6RHl-slGo6w9bD1zsWE1n7wUxS3TFvo4q0WJsRjAIcoHcLmSyVLFdIYAFEFTdH9LsHtzwhAmAt9qiN9hN_0kz3nmv2GOevFX7wJE5JL4EM_qMNw"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT21zt4hruLrQh-2SvnKHYF80UsicH9aHvfHkq22dJ8yHebrrAoG9XFsqF-ceA1NsaNTbRqf0Che4q0IFn8ekKEEkz-O_dw5XNzhIaM8e4O9OqRi_mU0nAIlBvnlWaoK"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2G58WwjI5ZnK1AzMwDCwUOSsibWS_sKIXdXzev3xnDvkLdcCSXRVcrjtZnLh2Q4bEswMFAOl6JJ5hoBLKIQnFFQSk7wvCs82ITFopglB7x5pOlFCRDw9S8UsA"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2GlyCjbRW3epRoWn9AcTcZnxLq_HCoFr49FjCwFsXX77bhP1bTSXbfBvNVuVfkqPzJXiBRVYBYIOBe9nt-h7lojOgRJOwsMfkro0fnS9XHzj4JgwaXnAeZL_B5HZQzITvr3kSGMtKl5hao1Q"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2dCfN2SuRPBoXtKKOW3mjrg_VppZRuJDTTPmTMzb2scS_OhzCGUSPzTZgtbZVhFJ3pKb5FhKzG69E_FrgUvhaoQ3dRoDdpV-zowaWzUz4vP5JBnFL9l7xtUKMGCf4wyw"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2pkI4WQqXxzNnTg-xhcWl9hiDynxFMSd5x9vzLX4-3MGGt354u3Jl1ilSVfToXwAfhsOzvdSoCYCRjc1stZXxsQsszEhprHSV4mrrIO44H0WKy-6skD2rUBgINifVSKw"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2uggClFpjNAs4frYDlBaA7cmdD99RvA50rPVZmMSapTQjaM-0SjQuL95qq5WMEBjSpugM056-q7yyJtVoapi9dUmMXzkL_5_hJ4EFqtR_xx3TAiEQRnpsf87M"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2zBnQUi_F6z5dBEa5D0g0pj3hS8LXRRSW_vLhZSXmcWwnS2nxXg-Df2dWCrOmlEcf-zzA3j8OFXjA2nkWc7aTYgRfIIemY8gNJ-bcq3CIMGkJkc2l7VVis1HegvGbgCpWnHGwFyok"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT2zgAns6u4CSkoy8_gX-yUiO3By3ta9RfaGYxdcWSRwzIbNqXq4V3Eg2Q515lJ70CgAimofknc3eaNeIsvsrQcFCs_lc070D8cKwQcr9S27eE_jzYbA5gWXF52yMras"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT38gYkkXmkoiviLO_KpWvEODAItsnTjjksORYwxa1F29yMjbVKCXXuO0Bsxi6W9RbSQcwHJhPWm2uqWoCAPV41NvpjYk_uxzi0S9NJ_Cu0d4zjzPt7OIgy7i2zrK6B7bA"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT3Cj1uYzCmtewNpj5o2Tq4knE4GI_Wkb3W-Sc767I5HIOWtHDL5ZtIT5Xm-F4gr9FxCJ_6KAWVNRLdCGrvmXhKLFrdWFAuq_CSx-wGK4aBwmWK_PUk2guZgDSI20fP2"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT3__JX4Jrt3yMjBRT-tRcon5-GEZTA046vzosTxgc5MmYJvZQP1-8L9xtQlTKQR9AorWAcbo6W8hrxv_0U6098JLJPbt13CSteg722LGBD4FLub3WwyPR5l09NacEZoZzvrvoJyrgKyzLVqEVc"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT3flER7vQP4Fl0Vpfkj7wIegMxqL5mTGInJOpbisrbw2X_LYTG5k6jOGB4rdE0BJc0X78bUcAOAcfxg1J-JAczbsetMSkizGzBMYzEjP8LRVPdr87LngPclbBQWy8QkvkU1S6khWOzFOJbjTdY"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=AT3jpMq3spoEWh9ZHU2uABE7pO4fJkaB37dIJVSNnhaiponbO2jzTHflhlisOL0KHo5BRooOw9mI5daNmH-_0eOFsbfMBR7ouwkLD6ylIloWPpqyhcXSG0NWaRFBo_MUdFHNLQlq9uQ2I1sSJg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=ATN42qwpYFdNJ-2urEi6UlCuRyaZ_w4mIbhOh5q4G7RcEdcKXjKngDw7cYGkmcZL9N27mZO5kMarRhAvK6OgaUiz3HpMp9JPeleePjJtP4JC_MuunBpSxqr6sx5sd4on"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=ATOAy0SrwR2rZu23WkkKWuuwdmal9MUmF13SzP7dTU9AXebp8EGLkrE6QrlzMxeUiUl1ZXEBmFXLp7FFBlYzIMR29P2TXaaAV5jxgMb61g"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://l.instagram.com/?u=http%3A%2F%2Fnarrator.ai%2F&e=ATPFj4ui8TWpMCgf-3CVJ7aI_9f7rGULjDTCDhypJclVIdQ6G2I-TTTdMcqlXbt3di_DX5hTQiLxC9whN5QrchEFymAludsp4Vzz7sbe_lSK8_M27tid-sJTpZwrTDu3vQ"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/activity_stream/scripts?type=stream"
+            },
+            {
+              "percent_of_total": 0.0003,
+              "total_rows": 2,
+              "value": "http://localhost:3000/activity_stream/secrets"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/candidco/manage/scripts/t/stream/s/activecampaign"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/manage"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/manage/secrets"
+            },
+            {
+              "percent_of_total": 0.0007,
+              "total_rows": 5,
+              "value": "http://localhost:3000/onboarding"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/scripts/t/stream/new"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/scripts/t/stream/s/email_sent"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/scripts/t/stream/s/portal_page_views"
+            },
+            {
+              "percent_of_total": 0.0003,
+              "total_rows": 2,
+              "value": "http://localhost:3000/scripts/t/stream/s/segment"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:3000/theskimm/onboarding/creds"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:8000/admin/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:8000/docs/how-to-query/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://localhost:8000/docs/templates/"
+            },
+            {
+              "percent_of_total": 0.0054,
+              "total_rows": 41,
+              "value": "http://m.facebook.com"
+            },
+            {
+              "percent_of_total": 0.0009,
+              "total_rows": 7,
+              "value": "http://m.facebook.com/"
+            },
+            {
+              "percent_of_total": 0.0004,
+              "total_rows": 3,
+              "value": "http://myemail.constantcontact.com/Dashing-Through-Our-Year-and-Wishing-You-a-Wonderful-2018.html?soid=1011190628337&aid=DLKo4kSa5lM"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://r.search.yahoo.com/_ylt=AwrJ25VDKshaRnwAJzFEDN04;_ylu=X3oDMTByMG04Z2o2BHNlYwNzcgRwb3MDMQRjb2xvA2JmMQR2dGlkAw--/RV=2/RE=1523096259/RO=10/RU=https%3a%2f%2fwww.narrator.ai%2f/RK=2/RS=QfBkiliiZSFKc3zF1CCqbz5550A-"
+            },
+            {
+              "percent_of_total": 0.0007,
+              "total_rows": 5,
+              "value": "http://tracyloi.com/info/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://tsvqvc.xyz/"
+            },
+            {
+              "percent_of_total": 0.0003,
+              "total_rows": 2,
+              "value": "http://www.api-staging.narrator.ai/?id=00002"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://www.api.narrator.ai/?3594"
+            },
+            {
+              "percent_of_total": 0.0009,
+              "total_rows": 7,
+              "value": "http://www.bing.com/search?q=amazon"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://www.digital.nyc/startups/narratorai"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://www.espn.com/mlb/"
+            },
+            {
+              "percent_of_total": 0.0154,
+              "total_rows": 117,
+              "value": "http://www.flybridge.com/portfolio-company/narrator/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://www.google.com/"
+            },
+            {
+              "percent_of_total": 0.0005,
+              "total_rows": 4,
+              "value": "http://www.google.com/search"
+            },
+            {
+              "percent_of_total": 0.0003,
+              "total_rows": 2,
+              "value": "http://www.url-opener.com/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1660._ePAgOPNYpRUb1SgLPXSSLixYa4SOfysnbMGNsrx-b2Zlk4W4PWqNrIHP99SSdLQ.8f9db9ad2dbad89b8c545f2eda29d8be4a1b8d12&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1665.gPs6ZAK9ih4ebDeyKlMLgml5bCSehziSXoKp7EZUU_UwadfsKEsK3rhWxDfmfFNG.3fe7a6201fa4ff36cc5f7daf027ce67f3d644079&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1668.I1ehki2_l-CUfqVvbps2wcTVdAD5OX86eqmzOcZ7tGrGlNsv_I_o7VOXtBv-wcDz.194b2a32303baa89732e7b4270284c0cd54f4618&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1705.Pxi0y6zSRmTZiQ5PN66Lvit5VQdLBbhrTnzJg3QLg855CoSkkyPAghh1Q66oSwe1.b885d2e2210573f6572f7e122cebc5d83b88227d&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1746.F07d-Sao_f-Z6SytUiA3CxkR0Au0sBZotxN6lLpNCen6b6wAp47z9N_qiZXfdjAn.ded394eafc1773025ae1a7e56df8a309798b0b9b&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1754.dKSEBCp0zKSXR91WzfIx0k7BS4DseIz6M3y55T-6sxLlq2mgBEKxebKNRSSJRWlk.6b0459200e4cd8b112fc622137e38e5783a5a6d0&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/clck/jsredir?from=yandex.ru%3Bsearch%3Bweb%3B%3B&text=&etext=1813.1_sWLRGRzZlMnoe2I1st7bDFJWAi8mvYosqHUe-kAAjSCbnkyTYnYkp9KYJswJ3J.2e8a7022f0140334274f009ab22841b7b43ef895&uuid=&state=_BLhILn4SxNIvvL0W45KSic66uCIg23qh8iRG98qeIXmeppkg"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/yandsearch?text=https://yandex.ru/clck/jsredir%3Ffrom%3Dyandex.ru%253Bsearch%253Bweb%253B%253B%26text%3D%26etext%3D1830.AMmNuHicC_jXmzbca0pQutY3FR0AcB_rLu2j2iWbq-5JdQNqXM7JEmkD6uKv-jLL.08e1f0c2f69a48ed691c506a249d1da3afeb033d%26uuid%"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "http://yandex.ru/yandsearch?text=https://yandex.ru/clck/jsredir%3Ffrom%3Dyandex.ru%253Bsearch%253Bweb%253B%253B%26text%3D%26etext%3D1834.fpOTQUzeWIinxLhZ6CHPWXjMx6B_rXoZ-JWoa_DIQIZ4ri6esOHb9O4cIe2TylaA.37af15a9bf60f58ba3fc81fd6b824c0a114a6992%26uuid%"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=2pfE8za3N066vJ4fgvQFQA&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChR4VVozU"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=6lJTVhNXN4iqGX8LvdCBhg&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChR0LVF4c"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=aaQwkkDB2MIW2XQokvUksQ&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChQwQ3Bid"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=ajzerVA0imfyYsKUH2Z45w&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChRrcVI5a"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=484017167266-ohvgtcd73k36gldtoq6shspqcf1bgiq7.apps.googleusercontent.com&as=qeXeyPOYbNpFG433qbVlpg&destination=https%3A%2F%2Fidentity.services.netlify.com&approval_state=!ChRKdFpIa"
+            },
+            {
+              "percent_of_total": 0.0005,
+              "total_rows": 4,
+              "value": "https://app.asana.com/0/847705907683339/1110234010014766"
+            },
+            {
+              "percent_of_total": 0.0003,
+              "total_rows": 2,
+              "value": "https://aws-crm.my.salesforce.com/"
+            },
+            {
+              "percent_of_total": 0.0041,
+              "total_rows": 31,
+              "value": "https://bookface.ycombinator.com/company/12598"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://bookface.ycombinator.com/directory"
+            },
+            {
+              "percent_of_total": 0.0037,
+              "total_rows": 28,
+              "value": "https://bookface.ycombinator.com/directory?sectors=All+Sectors&fates=All+Fates&keywords=All+Keywords&locations=All+Locations&stages=All+Stages&batches=s2019"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://bookface.ycombinator.com/directory?sectors=All+Sectors&fates=All+Fates&locations=All+Locations&batches=s2019&stages=All+Stages"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://captcha.gecirtnotification.com/pitc/?url=https%3a%2f%2fwww%2enarrator%2eai%2f%3f%5fsm%5fnck%3d1&referer=www%2egoogle%2ecom%2f&reason=This+site+is+categorized+as+Miscellaneous+or+Unknown&reasoncode=CATEGORY_CAUTIONED&timebound=1&action=deny&ki"
+            },
+            {
+              "percent_of_total": 0.0004,
+              "total_rows": 3,
+              "value": "https://cn.bing.com/"
+            },
+            {
+              "percent_of_total": 0.0112,
+              "total_rows": 85,
+              "value": "https://combined.ai/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://crossfitsouthbrooklyn.com/blog/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://crowdsource.google.com/u/0/getworkspacepluginfile/default_workspace/B2B_company_appid_collection_prod/company_appid_collection_new/index.html"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://deploy-preview-28--www-narrator.netlify.com/docs/manage-scripts/"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://deploy-preview-409--portal-narrator.netlify.com/activity_stream/secrets"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://deploy-preview-410--portal-narrator.netlify.com/scripts/t/stream/new"
+            },
+            {
+              "percent_of_total": 0.0003,
+              "total_rows": 2,
+              "value": "https://deploy-preview-427--portal-narrator.netlify.com/scripts/t/stream/new"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://deploy-preview-455--portal-narrator.netlify.com/onboarding"
+            },
+            {
+              "percent_of_total": 0.0003,
+              "total_rows": 2,
+              "value": "https://deploy-preview-491--portal-narrator.netlify.com/manage/scripts/t/stream/s/sessions"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://deploy-preview-532--portal-narrator.netlify.com/theskimm/manage/scripts/t/stream/new"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://deploy-preview-582--portal-narrator.netlify.com/narratorclient/manage"
+            },
+            {
+              "percent_of_total": 0.0001,
+              "total_rows": 1,
+              "value": "https://deploy-preview-91--www-narrator.netlify.com/docs/templates/"
+            }
+          ]
+        },
+        {
+          "enrichment_table": null,
+          "kind": "string",
+          "label": "Feature 3",
+          "name": "feature_3",
+          "values": [
+            {
+              "percent_of_total": 1,
+              "total_rows": 7613,
+              "value": null
+            }
+          ]
+        },
+        {
+          "enrichment_table": null,
+          "kind": "float",
+          "label": "Revenue Impact",
+          "name": "revenue_impact",
+          "values": null
+        },
+        {
+          "enrichment_table": null,
+          "kind": "string",
+          "label": "Link",
+          "name": "link",
+          "values": null
+        }
+      ],
+      "has_source": true,
+      "meta": {
+        "name": "marketing_session"
+      },
+      "name": "marketing_session",
+      "script_slugs": ["marketing_session"],
+      "_id": "marketing_session",
+      "slug": "marketing_session",
+      "table": "activity_stream"
+    },
+    {
+      "_id": "page_view",
+      "slug": "page_view",
+      "table": "activity_stream",
+      "has_source": true,
+      "script_slugs": ["page_view"],
+      "features": [
+        {
+          "name": "activity_id",
+          "label": "Activity Id",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "ts",
+          "label": "Ts",
+          "kind": "timestamp",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "source",
+          "label": "Source",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "source_id",
+          "label": "Source Id",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "activity",
+          "label": "Activity",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "customer",
+          "label": "Customer",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "feature_1",
+          "label": "Feature 1",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": [
+            {
+              "value": "/",
+              "total_rows": 4697,
+              "percent_of_total": 0.091
+            },
+            {
+              "value": "//segment_agg",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/404",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/DATASETS",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/accounts",
+              "total_rows": 24,
+              "percent_of_total": 0.0005
+            },
+            {
+              "value": "/acitivities",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activites",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities",
+              "total_rows": 4374,
+              "percent_of_total": 0.0847
+            },
+            {
+              "value": "/activities/",
+              "total_rows": 5,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/added_point",
+              "total_rows": 9,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/added_provider",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/affirm_charge",
+              "total_rows": 11,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/blog_page_view",
+              "total_rows": 15,
+              "percent_of_total": 0.0003
+            },
+            {
+              "value": "/activities/a/canceled_appointment",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/cancelled_ordered_impression_kit",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/cancelled_ordered_redo_modeling_kit",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/cancelled_ordered_sofa",
+              "total_rows": 9,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/cancelled_subscription",
+              "total_rows": 11,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/cannot_treat",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/card_swiped",
+              "total_rows": 19,
+              "percent_of_total": 0.0004
+            },
+            {
+              "value": "/activities/a/card_tapped",
+              "total_rows": 21,
+              "percent_of_total": 0.0004
+            },
+            {
+              "value": "/activities/a/cc_manufacturing",
+              "total_rows": 14,
+              "percent_of_total": 0.0003
+            },
+            {
+              "value": "/activities/a/charged_for_",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/charged_for_buycard_sale",
+              "total_rows": 17,
+              "percent_of_total": 0.0003
+            },
+            {
+              "value": "/activities/a/charged_for_sale_from_vend",
+              "total_rows": 10,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/charged_for_self-checkout_app_top_up",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/charged_for_swapdevice_payment_fee",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/charged_for_tns_app_top_up",
+              "total_rows": 20,
+              "percent_of_total": 0.0004
+            },
+            {
+              "value": "/activities/a/cheek_experiment",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/churned_customer",
+              "total_rows": 9,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/completed_a_lecture",
+              "total_rows": 31,
+              "percent_of_total": 0.0006
+            },
+            {
+              "value": "/activities/a/completed_checkout_step",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/completed_consent",
+              "total_rows": 21,
+              "percent_of_total": 0.0004
+            },
+            {
+              "value": "/activities/a/completed_course",
+              "total_rows": 44,
+              "percent_of_total": 0.0009
+            },
+            {
+              "value": "/activities/a/completed_course_enrollment",
+              "total_rows": 13,
+              "percent_of_total": 0.0003
+            },
+            {
+              "value": "/activities/a/contact_tag_added",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/contract_sent",
+              "total_rows": 10,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/contract_signed",
+              "total_rows": 12,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/create_activity",
+              "total_rows": 5,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/create_segment",
+              "total_rows": 17,
+              "percent_of_total": 0.0003
+            },
+            {
+              "value": "/activities/a/created_a_course",
+              "total_rows": 16,
+              "percent_of_total": 0.0003
+            },
+            {
+              "value": "/activities/a/created_a_dashboard",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/created_a_dataset",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/created_a_lecture",
+              "total_rows": 11,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/created_a_page",
+              "total_rows": 20,
+              "percent_of_total": 0.0004
+            },
+            {
+              "value": "/activities/a/created_a_product",
+              "total_rows": 21,
+              "percent_of_total": 0.0004
+            },
+            {
+              "value": "/activities/a/created_a_school",
+              "total_rows": 16,
+              "percent_of_total": 0.0003
+            },
+            {
+              "value": "/activities/a/created_quiz",
+              "total_rows": 8,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/created_teachable_account",
+              "total_rows": 13,
+              "percent_of_total": 0.0003
+            },
+            {
+              "value": "/activities/a/deleted_segment",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/delivered_aligner",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/delivered_impression_kit",
+              "total_rows": 24,
+              "percent_of_total": 0.0005
+            },
+            {
+              "value": "/activities/a/demo_started",
+              "total_rows": 8,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/device_added",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/dispute_lost",
+              "total_rows": 11,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/dispute_won",
+              "total_rows": 6,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/downloaded_csv",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/email_bounce",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/email_click",
+              "total_rows": 12,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/email_clicked",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/email_delivered",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/email_open",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/email_opened",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/email_received",
+              "total_rows": 6,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/email_recieved",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/email_sent",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/email_user_update",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/end_session",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/enrolled_in_course",
+              "total_rows": 15,
+              "percent_of_total": 0.0003
+            },
+            {
+              "value": "/activities/a/failed_to_new_business",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/failed_to_renewal",
+              "total_rows": 12,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/failed_to_upsell",
+              "total_rows": 5,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/favorited_card",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/fee_charged",
+              "total_rows": 5,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/fetch_dashboards",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/filterd_attributionModel",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/filterd_cohortSet",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/filterd_timeDensity",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/filterd_timeSegmentation",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/first_activity",
+              "total_rows": 6,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/first_touch_aligner_attribution",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/first_touch_lead_attribution",
+              "total_rows": 22,
+              "percent_of_total": 0.0004
+            },
+            {
+              "value": "/activities/a/first_touch_lead_created_attribution",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/first_touch_order_attribution",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/had_appointment",
+              "total_rows": 21,
+              "percent_of_total": 0.0004
+            },
+            {
+              "value": "/activities/a/had_intercom_conversation",
+              "total_rows": 6,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/had_scan",
+              "total_rows": 53,
+              "percent_of_total": 0.001
+            },
+            {
+              "value": "/activities/a/held_meeting",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/ik_experiment",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "/activities/a/ik_experiment_5_7_2018",
+              "total_rows": 5,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/in_chart_aligner_set",
+              "total_rows": 11,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/initiate_new_business",
+              "total_rows": 16,
+              "percent_of_total": 0.0003
+            },
+            {
+              "value": "/activities/a/initiate_paid_poc",
+              "total_rows": 6,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/initiate_renewal",
+              "total_rows": 13,
+              "percent_of_total": 0.0003
+            },
+            {
+              "value": "/activities/a/initiate_upsell",
+              "total_rows": 8,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "/activities/a/integration_failed",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/integration_force",
+              "total_rows": 6,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/integration_frozen",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "/activities/a/integration_new",
+              "total_rows": 6,
+              "percent_of_total": 0.0001
+            }
+          ]
+        },
+        {
+          "name": "feature_2",
+          "label": "Feature 2",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": [
+            {
+              "value": "android-app://com.Slack",
+              "total_rows": 9,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "android-app://com.google.android.gm",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "http://localhost:3000/activities",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "http://localhost:3000/narratives/a/ordered_impression_kit?sa=survey_wizard_started",
+              "total_rows": 8,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "http://localhost:3000/narratorclient/customer_journey?cj_id=stephanie@narrator.ai&cj_table=customers",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "http://localhost:3000/storyboard",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "http://localhost:8000/",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "http://localhost:8000/contact",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "http://localhost:8000/docs/getting-started/",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "http://localhost:8000/docs/manage-scripts/",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "http://localhost:8000/docs/modifying-the-activity-stream/",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "http://localhost:8000/terms",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "http://localhost:8888/notebooks/Alogrithms/Path%20via%20MAVIS.ipynb",
+              "total_rows": 42,
+              "percent_of_total": 0.0008
+            },
+            {
+              "value": "http://localhost:8888/notebooks/Alogrithms/Path.ipynb",
+              "total_rows": 11,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "http://www.espn.com/",
+              "total_rows": 9,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "http://www.espn.com/nfl/story/_/id/25580285/new-england-patriots-receiver-josh-gordon-says-stepping-away-focus-mental-health",
+              "total_rows": 1,
+              "percent_of_total": 0
+            },
+            {
+              "value": "http://www.espn.com/olympics/hockey/story/_/id/25634334/nathan-oystrick-humboldt-broncos-resigns-first-season-bus-crash",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "http://www.google.com/search",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/AccountChooser?continue=https://accounts.google.com/o/oauth2/auth?response_type%3Dcode%26redirect_uri%3Dhttps://narrator.auth0.com/login/callback%26scope%3Demail%2Bprofile%26state%3D-214-oDlOZCsvwms2JIcpGbPZ611uDvs%26clien",
+              "total_rows": 6,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/AccountChooser?continue=https://accounts.google.com/o/oauth2/auth?response_type%3Dcode%26redirect_uri%3Dhttps://narrator.auth0.com/login/callback%26scope%3Demail%2Bprofile%26state%3DcdJNUMq6nFOXPG9ZJATVUBCfwDIqxpLb%26clien",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/AccountChooser?continue=https://accounts.google.com/o/oauth2/auth?response_type%3Dcode%26redirect_uri%3Dhttps://narrator.auth0.com/login/callback%26scope%3Demail%2Bprofile%26state%3Dm4EWpdwXFfS834EwDQRQVUAVHYFxF9Gl%26clien",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/AccountChooser?continue=https://accounts.google.com/o/oauth2/auth?response_type%3Dcode%26redirect_uri%3Dhttps://narrator.auth0.com/login/callback%26scope%3Demail%2Bprofile%26state%3Dmr4GGIgycRPRkD7kwLdK23R09JA5Ar8i%26clien",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/CheckCookie",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=-0MlmpNcU5U22KlJM4E_TQ&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRfbUNaYXB2cXczLXRw",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=-13b56e70f6e67e56&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChQ4dWFNWFcwdm1CamlxMTAzZ",
+              "total_rows": 8,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=-183e8decdcac1e9c&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChR3bXdpWFktUXNhR3did1Y0U",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=-1b6cef63e861d3f0&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRNSmtDZDZvcGR1ZXlidUFES",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=-2534f42871d4f976&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRIZWp3RXZfdXUyYVNpNHBoZ",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=-29021d6cdca4bdf0&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChQ0VnYwTVl2VHNDZW1EdU5xd",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=-60d6ba0f95128664&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRQby1mMUZsRVo2elBFSkc4Z",
+              "total_rows": 37,
+              "percent_of_total": 0.0007
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=-645d46e015d9b7a3&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRPNGpFTjF6TzJ0cVlXcGxVc",
+              "total_rows": 10,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=-715275ca997b2ba&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRMWU9FS1N6Y2xsYUFXaW1Hb0",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=-BUCaIFjsqjlwntQzR2KFw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChQ5MngzOEJvSENQWXR3",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=-QCfaHcgxBI6qPSa20lrrw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRJLUN1NG0yQ1R2ekRN",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=-ZFhrb1clixyJHhf_9iMwQ&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChROUjV4ZUE4QXllbzdR",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=-f-pyjTr83Q2ABWtULoQYA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChQzMEl1VE02ZjVlZzFR",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=0-5UwVZWHMJsnw660SA9Iw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChR4MHRGWW1rckRFOHhR",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=01gteycBDL2dWnHiNRNXiw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChQ3VkwxTmZyX0JPRWF1",
+              "total_rows": 15,
+              "percent_of_total": 0.0003
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=056u9-wlnqLoyTWSt1NTeA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRKYUtKN3lUNFo5WDNH",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=08eQkzhmZvY_eitw98mshw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRuZUYtZ1U4VXdDSmJ5",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=09WPTcuWWMaglLZo3aneGg&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRJRmt1dVhKNTk2VW0z",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=0BG3jhNX7dSjzqtr8Z1jvg&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRIc2JlLUw0dFZ2U1Bh",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=0EIyqUNrB63Xh7ryETGQBw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRWZG0xWFZic3NnLXc4",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=0EYLvAz8fGpdvJZaE6-XAw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRlcEotV0JwMGQwNnNw",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=0Ijv7mm1c87kl1mSaY0f1w&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRwWi0tQVM1NXI5dmRR",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=0MyNZs4rZnRGKMIeWtcKCg&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRnTFZ0M0NQUnZpODEw",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=0NzLwRGYZTd9YLlSpCgHvg&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRHYmdUMHBGZjBjU1J1",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=0i_eGvLQuegWjvtv8hRVEw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRQTFk0RFd1T2RBU2lH",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=0kv1kwvUoB7UR1gx5ZTB7w&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChR0NmI1Mi05YUM4Z0pD",
+              "total_rows": 38,
+              "percent_of_total": 0.0007
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=0pkXJhoaEsEl6XQQt-gazg&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRrWURoU3JSTDJndlBQ",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=0yT1HkFoIaMsmTCcW1tgHQ&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRubm12UzN4VEdUdnVt",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=10H8XpNu6hSvvIiNQBr5wg&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChR3MmdPMWlUOG9Ja0g4",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=10uYNwoDHh7xx5flQJcfNA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRHbXp5cy0tLTRtU19N",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=115f62fb2cf3cf2f&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChQ5M2pLcEZwc084bE5MY2VBM2",
+              "total_rows": 27,
+              "percent_of_total": 0.0005
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=12XNVA3RmS0_fV6vFAn8lw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRTREd2QXM4WWtUdXUx",
+              "total_rows": 9,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=150euHXs4cMLdPf4E8ffTA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRlclhNeUlzVS1YeEV5",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=1MocnAkgH7fijiekvuxLZA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChQtQUtRRzhMN1I1MVhP",
+              "total_rows": 5,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=1mDxSOUF-6CFXaGyIN4BBA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChR5ellmempkbjN4ZzhW",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=1n9NJf3zVCAHI1Ay1Rv4Ow&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRYRWh3YkVfMUtia2xS",
+              "total_rows": 23,
+              "percent_of_total": 0.0004
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=1oJiG2uMAsB3ZbgNJzps-g&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChQwMU5ucHdBaW5hRzhq",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=1zKT6SOPG5VkNS4J2xAg4Q&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRBZjRPVWVXRlNxYURH",
+              "total_rows": 57,
+              "percent_of_total": 0.0011
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=2199cee492854e5f&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChR4clZwcnpUSW9ISF9WOWpCeX",
+              "total_rows": 14,
+              "percent_of_total": 0.0003
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=2KJIdCO0H5k4x79Y2pG9uA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRSTnFmZXpFcklKY2hp",
+              "total_rows": 5,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=2Xvv_CXenbDJI75D82T6dg&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRmbWJqaFM1eVp5NXhN",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=2ZoXAHKXxRzJvyet0I6EgA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRrZjZVTlhOb295aS1V",
+              "total_rows": 9,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=2a6db44463d2a150&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRsOC1Eamw0NnhJMVE3RHRNMV",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=2g24PiB7HqABQMaYzzLnEg&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChR1Ymhua1JNX1dfUWt4",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=2iUqqj6eghVFP1CR9DbGnw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChR4eXFWNlA2dUo5eDBQ",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=2rEo7EP6R6GssLXhNSrs2YKfqZD7GbqbG-PniWTjh6p5gkW-fKfpmCoLZd79WqLe_Uz-gr0GoE8qYKuJjaYS0x50Kb4kG_6qlQLO7ACY",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=2rNdWu2E8sHmlrN3t31cDg&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChR6WWxlSUU4dGR4bkRn",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=356lzNILttp_tCu0r7FP4w&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRIVzhyeFQ2SF9Zam5n",
+              "total_rows": 37,
+              "percent_of_total": 0.0007
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=377WAcLMG6XFskOGpLS0Pg&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChR0S0RvZldUS0IyU3Jt",
+              "total_rows": 6,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=39JPr09-pG5P3KhCaVPvqA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRhdTZZMWUyQVNnbV9B",
+              "total_rows": 6,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3DqNXvayE7SMDx-5rRHjew&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChR1eUVNeFhfcEF6YkJq",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3GMWDEZxPDqOW0Ua_fET7w&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChROQk5JdTRWRlVnRlVD",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3JGrXUDo9IDwCEe3-Lq4DA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRNd052Ri1vY0xZTGwt",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3JR5I3FsWK3kMJ7eifJ7nA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRia05mcXlNWkJ4MmhJ",
+              "total_rows": 20,
+              "percent_of_total": 0.0004
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3LVPoOASk5-AG0w2yNW5Qw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRQSUFHTHhRV0F0N0w2",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3NrBnKKYa3wqQh8BAw8iAA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChQtMXB1bC1sZUo4aENn",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3P_VImAX1gW9ThLVj_N-pQ&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChQ3d0tlOFBrOElQdHlI",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3PgL3dut68hL-iX1RmSiyg&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRCU1ZHaWFYYnRIb3Zi",
+              "total_rows": 11,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3QNl1AefNCY_AKa89pme8A&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRzRktKbkZiWEExTXBm",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3VpZW5ohymLv0SYwHZvv5Q&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRCLVMtZ0dBT1RDTE9a",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3ZaFanSwDzvfNG8xmqschQ&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRHRmFlTzRMTHMwYjVR",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3dtKeUvVBHhdE_sRYxBdLg&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRvMndlRVhyeEwzUXp4",
+              "total_rows": 8,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3mjA9wwvdUUcADKkD_jvYw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChQtMGdtU3MtaTRndzRD",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3mrV-aI7ht6fuql_jL7_xg&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRyOVVjZEYtSzVhMVlX",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3nT3HfVUyA57cUJ1a6fGog&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChQ5bWp3TWpROENTLXpF",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3yif5M8oNH0TVMFz-lFtFA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRlMTBXM2Z3V2Q3WDNx",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=3zfMUEgLyJ8pdBwSxDKW2g&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRKX21YSWUtMjlxdGRR",
+              "total_rows": 7,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=4C6TzIdGfMg9qyUjIbWWgw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRmSkh6VUVTU1M1OGpO",
+              "total_rows": 4,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=4M7k6TJUe8qQevUVS6REzA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRDTEhfYzNraTNLV3dR",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=4PLb8CX1SgpVe0OdiTSKzw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRFNnlJOGoyUXZETG43",
+              "total_rows": 3,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=4RPQFNjj5QpWoiLBBS63ew&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRwQ092VUYteVlESGdv",
+              "total_rows": 5,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=4Rs9vs5cFItyZgdYOLgf_DFJScyimDHbMWrK-l6IyDukDykLMzZoq8D4CdjqT8ztRgMtoCyKmTyxr7iImOV0yh3sGCH2eU3bXG5piecL",
+              "total_rows": 5,
+              "percent_of_total": 0.0001
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=4dJNeaNNmmxaFMGifRsHwQ&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRZWHl1MzBLdElWbWkz",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=4dj8MGdICfC6sndM69_rcA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRXRzU4QzdhMkhCa2hC",
+              "total_rows": 11,
+              "percent_of_total": 0.0002
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=4eUPL_qN9WsTgZPbK_Iaiw&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRVWW13Wm04bXRwZlNq",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=4nF7Fl_oCfdJGmdC4XZpNQ&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChQ3SGlGR1JzWVFieGx0",
+              "total_rows": 2,
+              "percent_of_total": 0
+            },
+            {
+              "value": "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=558137218512-ip7r1kftqgjn5iktakosha1ll3oasj9v.apps.googleusercontent.com&as=4z18AwLHI0YYSnzboIGWBA&destination=https%3A%2F%2Fnarrator.auth0.com&approval_state=!ChRuUDUzVHhGTDVUcEFT",
+              "total_rows": 2,
+              "percent_of_total": 0
+            }
+          ]
+        },
+        {
+          "name": "feature_3",
+          "label": "Feature 3",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": [
+            {
+              "value": null,
+              "total_rows": 51638,
+              "percent_of_total": 1
+            }
+          ]
+        },
+        {
+          "name": "revenue_impact",
+          "label": "Revenue Impact",
+          "kind": "float",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "link",
+          "label": "Link",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        }
+      ],
+      "_last_modified_at": "2019-06-19T06:00:07"
+    },
+    {
+      "_id": "email_clicked",
+      "slug": "email_clicked",
+      "table": "activity_stream",
+      "has_source": false,
+      "script_slugs": ["mixmax_clicked"],
+      "features": [
+        {
+          "name": "activity_id",
+          "label": "Activity Id",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "ts",
+          "label": "Ts",
+          "kind": "timestamp",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "source",
+          "label": "Source",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "source_id",
+          "label": "Source Id",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "activity",
+          "label": "Activity",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "customer",
+          "label": "Customer",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "feature_1",
+          "label": "Feature 1",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": [
+            {
+              "value": "Adam, Teachers Pay Teachers <> Narrator.ai Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Ahmed, Narrator <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Analyze customer behavior to build better products - Narrator.ai",
+              "total_rows": 3,
+              "percent_of_total": 0.0203
+            },
+            {
+              "value": "Answer Amedisys, Inc.'s BI Questions Faster",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Answer Apple's BI Questions Faster",
+              "total_rows": 10,
+              "percent_of_total": 0.0676
+            },
+            {
+              "value": "Answer Dollar Shave Club's BI Questions Faster",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "Answer Doxel's BI Questions Faster",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Answer FLYR Inc's BI Questions Faster",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Answer Grainger's BI Questions Faster",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Answer PNC Bank Corp.'s BI Questions Faster",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Answer S&P Global Inc.'s BI Questions Faster",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Answer Segment's BI Questions Faster",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Answer Sunrun's BI Questions Faster",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "Answer data questions like you’re a Senior Data Analyst",
+              "total_rows": 5,
+              "percent_of_total": 0.0338
+            },
+            {
+              "value": "Answer data questions like you’re a Senior Data Analyst - Narrator.ai",
+              "total_rows": 5,
+              "percent_of_total": 0.0338
+            },
+            {
+              "value": "Apple <> Narrator Intro",
+              "total_rows": 10,
+              "percent_of_total": 0.0676
+            },
+            {
+              "value": "Arundhati, Apple <> Narrator Intro",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "Arvind, CircleUp <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Bhairav, Apple <> Narrator Intro",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "Boost Sales & Marketing ROI at Autodesk - Narrator.ai",
+              "total_rows": 3,
+              "percent_of_total": 0.0203
+            },
+            {
+              "value": "Boost Sales & Marketing ROI at Captivate Network - Narrator.ai",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Boost Sales & Marketing ROI at FlyCleaners - Narrator.ai",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Boost Sales & Marketing ROI at Homer - Narrator.ai",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Brillio Company <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Coinbase <> Narrator.ai Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Connect Your Customers Across Siloed Data Sources",
+              "total_rows": 12,
+              "percent_of_total": 0.0811
+            },
+            {
+              "value": "Curtin University <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Dave, Bombora <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "David, Coinbase <> Naji, Narrator.ai Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Derek, JOOR <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Dots <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Eugen, Adore Me <> Naji, Narrator.ai Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "FanDuel <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Felipe, Waud Capital Partners L.L.C <> Narrator Intro",
+              "total_rows": 3,
+              "percent_of_total": 0.0203
+            },
+            {
+              "value": "Fiverr <> Narrator.ai Intro",
+              "total_rows": 3,
+              "percent_of_total": 0.0203
+            },
+            {
+              "value": "FlyCleaners <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Gali, Fiverr <> Narrator Intro",
+              "total_rows": 3,
+              "percent_of_total": 0.0203
+            },
+            {
+              "value": "Headspace <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Hemang, Apple <> Narrator Intro",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "Instagram <> Narrator Intro",
+              "total_rows": 3,
+              "percent_of_total": 0.0203
+            },
+            {
+              "value": "JJ, Wayup <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Kate <> Naji, Narrator.ai Reconnect",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "Lifestyle <> Narrator.ai Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Lyft <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Marc, Lumosity <> Narrator Intro",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "Meeting Link",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Naji, Narrator.ai - Contact at WordStream?",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "Narrator <> Narrator Intro",
+              "total_rows": 3,
+              "percent_of_total": 0.0203
+            },
+            {
+              "value": "Outpost Club <> Narrator Intro",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "Outpost Club <> Narrator.ai Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Pablo, PNC Bank Corp. <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Parsley Health <> Narrator Intro",
+              "total_rows": 3,
+              "percent_of_total": 0.0203
+            },
+            {
+              "value": "Ranjit, Apple <> Narrator Intro",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "Re: Answer Sunrun's BI Questions Faster",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Re: Boost Sales & Marketing ROI at Bombas - Narrator.ai",
+              "total_rows": 3,
+              "percent_of_total": 0.0203
+            },
+            {
+              "value": "Re: Sales - New Email Outreach Test",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Re: Understanding Sequence Reporting",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Ricardo, Blanket <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Ripple <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Robin, Doxel <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "STORQ <> Narrator.ai Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Saritha, Dollar Shave Club <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Sathish, Splendid Spoon <> Narrator.ai Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Sealed <> Narrator Intro",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "SimpleBet <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Sunrun Inc. <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "The fastest way to build a self-service data platform",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Tired of waiting for your data team to provide accurate data?",
+              "total_rows": 4,
+              "percent_of_total": 0.027
+            },
+            {
+              "value": "Torrid <> Narrator.ai Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Track Customer Behavior Across All Touchpoints - Narrator.ai",
+              "total_rows": 7,
+              "percent_of_total": 0.0473
+            },
+            {
+              "value": "Yael, Apple <> Narrator Intro",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "eero <> Narrator Intro",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            }
+          ]
+        },
+        {
+          "name": "feature_2",
+          "label": "Feature 2",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": [
+            {
+              "value": "Edge Browser",
+              "total_rows": 27,
+              "percent_of_total": 0.1824
+            },
+            {
+              "value": "Iphone",
+              "total_rows": 6,
+              "percent_of_total": 0.0405
+            },
+            {
+              "value": "Java/1.8.0_191",
+              "total_rows": 3,
+              "percent_of_total": 0.0203
+            },
+            {
+              "value": "Mac",
+              "total_rows": 81,
+              "percent_of_total": 0.5473
+            },
+            {
+              "value": "Mozilla/5.0 (Linux; Android 8.0.0; SM-G950U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.90 Mobile Safari/537.36",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Mozilla/5.0 (Linux; Android 9; SM-N960U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko",
+              "total_rows": 8,
+              "percent_of_total": 0.0541
+            },
+            {
+              "value": "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko",
+              "total_rows": 7,
+              "percent_of_total": 0.0473
+            },
+            {
+              "value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+              "total_rows": 2,
+              "percent_of_total": 0.0135
+            },
+            {
+              "value": "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Mozilla/5.0 (iPad; CPU OS 12_1_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Safari/604.1",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            },
+            {
+              "value": "Slackbot-LinkExpanding 1.0 (+https://api.slack.com/robots)",
+              "total_rows": 1,
+              "percent_of_total": 0.0068
+            }
+          ]
+        },
+        {
+          "name": "feature_3",
+          "label": "Feature 3",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": [
+            {
+              "value": null,
+              "total_rows": 148,
+              "percent_of_total": 1
+            }
+          ]
+        },
+        {
+          "name": "revenue_impact",
+          "label": "Revenue Impact",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": [
+            {
+              "value": null,
+              "total_rows": 148,
+              "percent_of_total": 1
+            }
+          ]
+        },
+        {
+          "name": "link",
+          "label": "Link",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        }
+      ],
+      "_last_modified_at": "2019-06-21T06:39:10"
+    },
+    {
+      "_id": "ticket_closed",
+      "slug": "ticket_closed",
+      "table": "activity_stream",
+      "has_source": true,
+      "script_slugs": ["zendesk_tickets"],
+      "features": [
+        {
+          "name": "activity_id",
+          "label": "ticket_id",
+          "kind": "integer",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "ts",
+          "label": "ts",
+          "kind": "timestamp",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "source",
+          "label": "Source",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "source_id",
+          "label": "Source Id",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "activity",
+          "label": "Activity",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "customer",
+          "label": "Customer",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "feature_1",
+          "label": "Ticket Type",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": [
+            {
+              "value": "incident",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "problem",
+              "total_rows": 6,
+              "percent_of_total": 0.039
+            },
+            {
+              "value": "question",
+              "total_rows": 7,
+              "percent_of_total": 0.0455
+            },
+            {
+              "value": "task",
+              "total_rows": 15,
+              "percent_of_total": 0.0974
+            },
+            {
+              "value": null,
+              "total_rows": 125,
+              "percent_of_total": 0.8117
+            }
+          ]
+        },
+        {
+          "name": "feature_2",
+          "label": "Subject",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": [
+            {
+              "value": "Accept query parameter for customer journey",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Active Campaign - Appointment to Book Chase",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "ActiveCampaign in redshift",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Acuity Scheduling: please can you triple-check that the webhook data is correct?",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Adding Nick Livermore",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Adding Salesforce to Redshift",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Additional data sources",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Additions to daily emails",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Amplitude: something isn't right",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Attributed sales vs actual sales",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Booking Appointments - making sure we are on the same page",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "CC Processing",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Candid: We have events in Segment not reaching Redshift on production",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Completed Consent",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Daily IK experiment",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Data request",
+              "total_rows": 2,
+              "percent_of_total": 0.013
+            },
+            {
+              "value": "Dupe / incorrect call data",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Fivetran error",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Fivetran integration for new segment source",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Fwd: 160 Test kit orders",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Fwd: Affirm <> Candid Co File Access Issue",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Fwd: Partial outage to some device mode destinations",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Fwd: Potential Bug / Setup Weakness",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Fwd: Survey answers data export",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Half the customer journey is missing",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "IK Query",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Import customer_id into Acuity redshift tables",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Important data request: Understanding % of customers who convert between activities by X days",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Mehdi access to Fivetran",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Modeling Kit numbers in Narrator -- Question",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "More accounts for Fivetran",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "New Activities Add for candidco",
+              "total_rows": 3,
+              "percent_of_total": 0.0195
+            },
+            {
+              "value": "PVS Received update",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Photo Data",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Query to end all queries: proof of unattributed IK sales",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Query/question",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Question about Active Campaign Webhook",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Re-Dash Pull",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Re: 2018-10-08 Candid 's Report - Daily Report",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Re: 2018-10-26 Candid 's Report - Daily Report",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Re: 2018-12-10 Candid 's Report - Daily Report",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Re: 2018-12-17 Candid 's Report - Daily Report",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Re: Candid - Daily Report 2018-10-07",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Re: Candidco Daily Report - 2018-05-02",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Re: Candidco Daily Report - 2018-06-28",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Re: Daily Report - 2018-02-12",
+              "total_rows": 2,
+              "percent_of_total": 0.013
+            },
+            {
+              "value": "Re: Daily Report - 2018-02-13",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Re: Daily Report - 2018-02-14",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Re: Daily Report - 2018-02-19",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Request for daily report",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Request: new attribution status for filled in email address during survey",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Retrospectively update incorrect identifies",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "SIB Cohort",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Sample ticket: Meet the ticket",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Segment Form Submission Failure (06-18-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Segment Form Submission Failure (06-26-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Segment Form Submission Failure (07-16-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Segment Form Submission Failure (08-02-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Segment Form Submission Failure (08-07-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Segment Form Submission Failure (08-11-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Segment Form Submission Failure (08-16-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Segment Form Submission Failure (08-23-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Segment Form Submission Failure (08-30-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Segment Form Submission Failure (10-08-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Segment Form Submission Failure (10-16-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Segment ID alongside each activity",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Shopify orders x narrator",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Test Meeting Cohort",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Testing Support",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Text message responses",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Ticket Submission",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Urgent redash query help",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Using activity stream to bridge from segment data to our postgres database",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "W9",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Wire up 3x new segment sources into Redshift",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (01-04-19)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (01-07-19)",
+              "total_rows": 4,
+              "percent_of_total": 0.026
+            },
+            {
+              "value": "Zendesk Widget Request (01-15-19)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (02-05-19)",
+              "total_rows": 2,
+              "percent_of_total": 0.013
+            },
+            {
+              "value": "Zendesk Widget Request (02-20-19)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (02-25-19)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (02-26-19)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (05-04-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (05-07-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (05-09-18)",
+              "total_rows": 2,
+              "percent_of_total": 0.013
+            },
+            {
+              "value": "Zendesk Widget Request (05-11-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (05-14-18)",
+              "total_rows": 2,
+              "percent_of_total": 0.013
+            },
+            {
+              "value": "Zendesk Widget Request (05-15-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (05-16-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (05-18-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (06-05-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (06-06-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (06-07-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (06-08-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (06-11-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (06-13-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (06-14-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (06-15-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (06-18-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            },
+            {
+              "value": "Zendesk Widget Request (06-27-18)",
+              "total_rows": 1,
+              "percent_of_total": 0.0065
+            }
+          ]
+        },
+        {
+          "name": "feature_3",
+          "label": "narrator_admin",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": [
+            {
+              "value": "ahmed@narrator.ai",
+              "total_rows": 120,
+              "percent_of_total": 0.7792
+            },
+            {
+              "value": "matt@narrator.ai",
+              "total_rows": 34,
+              "percent_of_total": 0.2208
+            }
+          ]
+        },
+        {
+          "name": "revenue_impact",
+          "label": "Revenue Impact",
+          "kind": "float",
+          "enrichment_table": null,
+          "values": null
+        },
+        {
+          "name": "link",
+          "label": "zendesk_url",
+          "kind": "string",
+          "enrichment_table": null,
+          "values": null
+        }
+      ],
+      "_last_modified_at": "2019-06-19T06:00:56"
+    }
+  ]
+}

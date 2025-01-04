@@ -1,0 +1,10 @@
+query GetTimeline($timeline_ids: [uuid!]!) {
+  company_timeline(where: {related_to_id: {_in: $timeline_ids}}) {
+    happened_at
+    id
+    name
+    description
+    related_to
+    related_to_id
+  }
+}

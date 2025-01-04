@@ -1,0 +1,17 @@
+query OrderedDatasetIndex($company_id: uuid!, $user_id: uuid) {
+  dataset(where: {company_id: {_eq: $company_id}, status: {_neq: archived}}) {
+    created_by
+    description
+    name
+    slug
+    status
+    category
+    updated_at
+    metric_id
+    id
+    tags(where: {company_tag: {tag: {_eq: "recently_viewed"}, user_id: {_eq: $user_id}}}) {
+      tag_id
+      updated_at
+    }
+  }
+}

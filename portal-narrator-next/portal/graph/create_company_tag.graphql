@@ -1,0 +1,5 @@
+mutation CreateCompanyTag($company_id: uuid!, $tag: String!, $user_id: uuid, $color: String) {
+  insert_company_tags_one(object: { company_id: $company_id, tag: $tag, user_id: $user_id, color: $color }) {
+    id
+  }
+}

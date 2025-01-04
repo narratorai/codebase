@@ -1,0 +1,80 @@
+default_language_version:
+  python: python3
+
+default_stages: [pre-commit, pre-push]
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-added-large-files
+        args: ['--maxkb=500']
+        exclude: ^core/graph/sync_client/
+      - id: check-ast
+      # - id: check-builtin-literals
+      - id: check-case-conflict
+      - id: check-docstring-first
+        exclude: heartbeat/scheduler.py|core/graph/__init__.py # It does not accept docstrings for module members
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-yaml
+        args: ['--unsafe']
+        exclude: kubernetes/helm
+      - id: debug-statements
+      - id: destroyed-symlinks
+      - id: detect-aws-credentials
+        args: ['--allow-missing-credentials']
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: fix-byte-order-marker
+      - id: mixed-line-ending
+      - id: name-tests-test
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.3.0
+    hooks:
+      - id: codespell
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.1.1
+    hooks:
+      - id: flake8
+        exclude: core/graph/queries|core/graph/sync_client/enums.py
+        additional_dependencies: [flake8-bugbear, flake8-bandit]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.1
+    hooks:
+      - id: ruff
+      - id: ruff-format
+
+  - repo: https://github.com/ryanrhee/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
+
+  # MAVIS LOCAL/CUSTOM HOOKS
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: ./bin/run_test -m 'not slow'
+        language: system
+        types: [python]
+        pass_filenames: false
+        always_run: true
+        stages: [push]
+
+      - id: graph_validate_file
+        name: validate .graphql file operation names
+        entry: ./bin/graph_validate_file
+        language: python
+        types: [graphql]
+        additional_dependencies: ['gql==2.0.0']

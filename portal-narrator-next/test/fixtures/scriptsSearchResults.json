@@ -1,0 +1,605 @@
+{
+  "response": [
+    {
+      "_index": "narratorai_scripts",
+      "_type": "_doc",
+      "_id": "stream_tables-download_csv",
+      "_score": 86.44938,
+      "_source": {
+        "slug": "download_csv",
+        "name": "Download Csv",
+        "kind": "manual",
+        "type": "stream",
+        "source": "Segment",
+        "source_notes": null,
+        "directory_type": "stream_tables",
+        "activities": [
+          {
+            "slug": "downloaded_csv",
+            "first_seen": "2018-02-09 10:22:00.544000-05:00"
+          }
+        ],
+        "enriched_activities": [],
+        "sql": "SELECT\n\t t.message_id AS \"activity_id\"\n\t , t.timestamp AS \"ts\"\n\t , 'segment' AS \"source\"\n\t , t.anonymous_id AS \"source_id\"\n\t , CASE \n\t\tWHEN t.user_id ilike '%@%' then t.user_id \n\t\tELSE null\n\t END AS \"customer\"\n\t , 'downloaded_csv' AS \"activity\"\n\t , substring ( regexp_substr ( d.file, 'tables/[^&]*' ) , 8 ) AS \"feature_1\"\n\t , nvl ( nullif ( split_part ( t.context_page_path, '/', 2 ) , '' ) ) AS \"feature_2\"\n\t , NULL ::VARCHAR(255) AS \"feature_3\"\n\t , NULL ::FLOAT AS \"revenue_impact\"\n\t , t.context_page_url::varchar ( 255 ) AS \"link\"\nFROM portal.tracks AS t\nJOIN portal.download AS d\n\tON ( d.message_id = t.message_id )\nWHERE t.event = 'Download' \n\tAND t.context_page_url ilike 'https://portal.narrator.ai%' \n\tAND d.file ilike '%tables%'",
+        "tables": [
+          {
+            "table": "tracks",
+            "schema": "portal",
+            "alias": "t",
+            "join_condition": null,
+            "joined_alias": [],
+            "kind": "from",
+            "nested_object": null
+          },
+          {
+            "table": "download",
+            "schema": "portal",
+            "alias": "d",
+            "join_condition": "( d.message_id = t.message_id )",
+            "joined_alias": [
+              "t"
+            ],
+            "kind": "join",
+            "nested_object": null
+          }
+        ],
+        "columns": [
+          {
+            "name": "activity_id",
+            "definition": "t.message_id",
+            "label": "Message Id",
+            "kind": "string"
+          },
+          {
+            "name": "ts",
+            "definition": "t.timestamp",
+            "label": "Timestamp",
+            "kind": "timestamp"
+          },
+          {
+            "name": "source",
+            "definition": "'segment'",
+            "label": "Source",
+            "kind": "string"
+          },
+          {
+            "name": "source_id",
+            "definition": "t.anonymous_id",
+            "label": "Anonymous Id",
+            "kind": "string"
+          },
+          {
+            "name": "customer",
+            "definition": "case when t.user_id ilike '%@%' then t.user_id else null end",
+            "label": "User Id",
+            "kind": "string"
+          },
+          {
+            "name": "activity",
+            "definition": "'downloaded_csv'",
+            "label": "Activity",
+            "kind": "string"
+          },
+          {
+            "name": "feature_1",
+            "definition": "substring ( regexp_substr ( d.file, 'tables/[^&]*' ) , 8 )",
+            "label": "File",
+            "kind": "string"
+          },
+          {
+            "name": "feature_2",
+            "definition": "nvl ( nullif ( split_part ( t.context_page_path, '/', 2 ) , '' ) )",
+            "label": "Context Page Path",
+            "kind": "string"
+          },
+          {
+            "name": "feature_3",
+            "definition": null,
+            "label": "Feature 3",
+            "kind": "string"
+          },
+          {
+            "name": "revenue_impact",
+            "definition": null,
+            "label": "Revenue Impact",
+            "kind": "revenue"
+          },
+          {
+            "name": "link",
+            "definition": "t.context_page_url::varchar ( 255 )",
+            "label": "Context Page Url",
+            "kind": "string"
+          }
+        ],
+        "stream_table": "mv_activity_stream",
+        "run_after_scripts": [],
+        "single_activity": true,
+        "created_by": "ahmed@narrator.ai",
+        "notes": "",
+        "has_source": true,
+        "file_info": {
+          "path": "narratorai/transformations/stream_tables/download_csv.json",
+          "sha": "951d215a61aeb2fb8b14015a01972179a7dd72ec"
+        }
+      },
+      "highlight": {
+        "name": [
+          "<span class=\"highlighted\">Download</span> Csv"
+        ],
+        "sql": [
+          "then t.user_id \n\t\tELSE null\n\t END AS \"customer\"\n\t , '<span class=\"highlighted\">downloaded_csv</span>",
+          "varchar ( 255 ) AS \"link\"\nFROM portal.tracks AS t\nJOIN <span class=\"highlighted\">portal.download</span>",
+          "ON ( d.message_id = t.message_id )\nWHERE t.event = '<span class=\"highlighted\">Download</span>"
+        ]
+      }
+    },
+    {
+      "_index": "narratorai_scripts",
+      "_type": "_doc",
+      "_id": "stream_tables-download_csv_with_slug",
+      "_score": 62.87188,
+      "_source": {
+        "slug": "download_csv_with_slug",
+        "name": "Download Csv With Slug",
+        "kind": "regular",
+        "type": "stream",
+        "source": "Segment",
+        "source_notes": "This is parsing the file name to find the slug",
+        "directory_type": "stream_tables",
+        "activities": [
+          {
+            "slug": "downloaded_csv",
+            "first_seen": "2018-02-09 10:22:00.544000-05:00"
+          }
+        ],
+        "enriched_activities": [],
+        "sql": "SELECT\n\t t.message_id AS \"activity_id\"\n\t , t.timestamp AS \"ts\"\n\t , 'segment' AS \"source\"\n\t , t.anonymous_id AS \"source_id\"\n\t , CASE \n\t\tWHEN t.user_id ilike '%@%' then t.user_id \n\t\tELSE null\n\t END AS \"customer\"\n\t , 'downloaded_csv' AS \"activity\"\n\t , CASE \n\t\tWHEN d.file not ilike 'prod/%' then d.file \n\t\tELSE nullif ( substring ( d.file, strpos ( d.file, 'segment-' ) +8, strpos ( d.file, '.csv' ) - strpos ( d.file, 'segment-' ) - 13 -8 ) , '' )\n\t END AS \"feature_1\"\n\t , nvl ( nullif ( split_part ( t.context_page_path, '/', 2 ) , '' ) ) AS \"feature_2\"\n\t , NULL ::VARCHAR(255) AS \"feature_3\"\n\t , NULL ::FLOAT AS \"revenue_impact\"\n\t , t.context_page_url::varchar ( 255 ) AS \"link\"\nFROM portal.tracks AS t\nJOIN portal.download AS d\n\tON ( d.message_id = t.message_id )\nWHERE t.event = 'Download' \n\tAND t.context_page_url ilike 'https://portal.narrator.ai%'",
+        "tables": [
+          {
+            "table": "tracks",
+            "schema": "portal",
+            "alias": "t",
+            "join_condition": null,
+            "joined_alias": [],
+            "kind": "from",
+            "nested_object": null
+          },
+          {
+            "table": "download",
+            "schema": "portal",
+            "alias": "d",
+            "join_condition": "( d.message_id = t.message_id )",
+            "joined_alias": [
+              "t"
+            ],
+            "kind": "join",
+            "nested_object": null
+          }
+        ],
+        "columns": [
+          {
+            "name": "activity_id",
+            "definition": "t.message_id",
+            "label": "Message Id",
+            "kind": "string"
+          },
+          {
+            "name": "ts",
+            "definition": "t.timestamp",
+            "label": "Timestamp",
+            "kind": "timestamp"
+          },
+          {
+            "name": "source",
+            "definition": "'segment'",
+            "label": "Source",
+            "kind": "string"
+          },
+          {
+            "name": "source_id",
+            "definition": "t.anonymous_id",
+            "label": "Anonymous Id",
+            "kind": "string"
+          },
+          {
+            "name": "customer",
+            "definition": "case when t.user_id ilike '%@%' then t.user_id else null end",
+            "label": "User Id",
+            "kind": "string"
+          },
+          {
+            "name": "activity",
+            "definition": "'downloaded_csv'",
+            "label": "Activity",
+            "kind": "string"
+          },
+          {
+            "name": "feature_1",
+            "definition": "case when d.file not ilike 'prod/%' then d.file else nullif ( substring ( d.file, strpos ( d.file, 'segment-' ) +8, strpos ( d.file, '.csv' ) - strpos ( d.file, 'segment-' ) - 13 -8 ) , '' ) end",
+            "label": "File",
+            "kind": "string"
+          },
+          {
+            "name": "feature_2",
+            "definition": "nvl ( nullif ( split_part ( t.context_page_path, '/', 2 ) , '' ) )",
+            "label": "Context Page Path",
+            "kind": "string"
+          },
+          {
+            "name": "feature_3",
+            "definition": null,
+            "label": "Feature 3",
+            "kind": "string"
+          },
+          {
+            "name": "revenue_impact",
+            "definition": null,
+            "label": "Revenue Impact",
+            "kind": "revenue"
+          },
+          {
+            "name": "link",
+            "definition": "t.context_page_url::varchar ( 255 )",
+            "label": "Context Page Url",
+            "kind": "string"
+          }
+        ],
+        "stream_table": "mv_activity_stream",
+        "run_after_scripts": [],
+        "single_activity": true,
+        "created_by": "ahmed@narrator.ai",
+        "notes": "",
+        "has_source": true,
+        "file_info": {
+          "path": "narratorai/transformations/stream_tables/download_csv_with_slug.json",
+          "sha": "2774cb8c7f2f30ae86af1cc33b72148b5bffc7e7"
+        }
+      },
+      "highlight": {
+        "name": [
+          "<span class=\"highlighted\">Download</span> Csv With Slug"
+        ],
+        "sql": [
+          "then t.user_id \n\t\tELSE null\n\t END AS \"customer\"\n\t , '<span class=\"highlighted\">downloaded_csv</span>",
+          "varchar ( 255 ) AS \"link\"\nFROM portal.tracks AS t\nJOIN <span class=\"highlighted\">portal.download</span>",
+          "ON ( d.message_id = t.message_id )\nWHERE t.event = '<span class=\"highlighted\">Download</span>"
+        ]
+      }
+    },
+    {
+      "_index": "narratorai_scripts",
+      "_type": "_doc",
+      "_id": "stream_tables-end_sessions",
+      "_score": 39.660515,
+      "_source": {
+        "slug": "end_sessions",
+        "name": "End Sessions",
+        "kind": "regular",
+        "type": "stream",
+        "source": "Activity Stream",
+        "source_notes": null,
+        "directory_type": "stream_tables",
+        "activities": [
+          {
+            "slug": "left_portal_session",
+            "first_seen": "2018-01-04 17:26:20.654000-05:00"
+          }
+        ],
+        "enriched_activities": [],
+        "sql": "SELECT\n\t activity_id\n\t , DATE_ADD ( 'minutes', 1, ts ) AS \"ts\"\n\t , source\n\t , source_id\n\t , customer\n\t , 'left_portal_session' AS \"activity\"\n\t , feature_1\n\t , feature_2\n\t , feature_3\n\t , revenue_impact\n\t , link\nFROM (\n\tSELECT\n\t\t activity_id\n\t\t , ts AT TIME ZONE 'UTC' AS \"ts\"\n\t\t , source\n\t\t , source_id\n\t\t , customer\n\t\t , feature_1\n\t\t , feature_2\n\t\t , feature_3\n\t\t , revenue_impact\n\t\t , link\n\t\t , LEAD ( s.ts AT TIME ZONE 'UTC' ) OVER ( partition by customer order by ts ) AS \"next_ts\"\n\tFROM dw.mv_activity_stream AS s\n\tWHERE s.ts < DATE_ADD ( 'minutes', -30, SYSDATE ) \n\t\tAND _activity_source in ( 'page_views', 'downloaded_csv', 'loaded_plot','trigger_fetch', 'applied_filter' )\n) AS s\nWHERE DATE_DIFF ( 'minutes', s.ts, next_ts ) >=30 \n\tOR next_ts is NULL",
+        "tables": [
+          {
+            "table": null,
+            "schema": null,
+            "alias": "s",
+            "join_condition": null,
+            "joined_alias": [],
+            "kind": "from",
+            "nested_object": {
+              "is_distinct": false,
+              "columns": [
+                {
+                  "name": null,
+                  "definition": "activity_id",
+                  "label": "Activity Id",
+                  "kind": "string"
+                },
+                {
+                  "name": "ts",
+                  "definition": "ts AT TIME ZONE 'UTC'",
+                  "label": "Ts",
+                  "kind": "timestamp"
+                },
+                {
+                  "name": null,
+                  "definition": "source",
+                  "label": "Source",
+                  "kind": "string"
+                },
+                {
+                  "name": null,
+                  "definition": "source_id",
+                  "label": "Source Id",
+                  "kind": "string"
+                },
+                {
+                  "name": null,
+                  "definition": "customer",
+                  "label": "Customer",
+                  "kind": "string"
+                },
+                {
+                  "name": null,
+                  "definition": "feature_1",
+                  "label": "Feature 1",
+                  "kind": "string"
+                },
+                {
+                  "name": null,
+                  "definition": "feature_2",
+                  "label": "Feature 2",
+                  "kind": "string"
+                },
+                {
+                  "name": null,
+                  "definition": "feature_3",
+                  "label": "Feature 3",
+                  "kind": "string"
+                },
+                {
+                  "name": null,
+                  "definition": "revenue_impact",
+                  "label": "Revenue Impact",
+                  "kind": "revenue"
+                },
+                {
+                  "name": null,
+                  "definition": "link",
+                  "label": "Link",
+                  "kind": "string"
+                },
+                {
+                  "name": "next_ts",
+                  "definition": "LEAD ( s.ts AT TIME ZONE 'UTC' ) OVER ( partition by customer order by ts )",
+                  "label": "Ts",
+                  "kind": "string"
+                }
+              ],
+              "tables": [
+                {
+                  "table": "mv_activity_stream",
+                  "schema": "dw",
+                  "alias": "s",
+                  "join_condition": null,
+                  "joined_alias": [],
+                  "kind": "from",
+                  "nested_object": null
+                }
+              ],
+              "filters": "s.ts < DATE_ADD ( 'minutes', -30, SYSDATE ) and _activity_source in ( 'page_views', 'downloaded_csv', 'loaded_plot','trigger_fetch', 'applied_filter' )",
+              "union": [],
+              "ctes": {},
+              "group_by": null,
+              "order_by": null,
+              "having": null
+            }
+          }
+        ],
+        "columns": [
+          {
+            "name": null,
+            "definition": "activity_id",
+            "label": "Activity Id",
+            "kind": "string"
+          },
+          {
+            "name": "ts",
+            "definition": "DATE_ADD ( 'minutes', 1, ts )",
+            "label": "Ts",
+            "kind": "timestamp"
+          },
+          {
+            "name": null,
+            "definition": "source",
+            "label": "Source",
+            "kind": "string"
+          },
+          {
+            "name": null,
+            "definition": "source_id",
+            "label": "Source Id",
+            "kind": "string"
+          },
+          {
+            "name": null,
+            "definition": "customer",
+            "label": "Customer",
+            "kind": "string"
+          },
+          {
+            "name": "activity",
+            "definition": "'left_portal_session'",
+            "label": "Activity",
+            "kind": "string"
+          },
+          {
+            "name": null,
+            "definition": "feature_1",
+            "label": "Feature 1",
+            "kind": "string"
+          },
+          {
+            "name": null,
+            "definition": "feature_2",
+            "label": "Feature 2",
+            "kind": "string"
+          },
+          {
+            "name": null,
+            "definition": "feature_3",
+            "label": "Feature 3",
+            "kind": "string"
+          },
+          {
+            "name": null,
+            "definition": "revenue_impact",
+            "label": "Revenue Impact",
+            "kind": "revenue"
+          },
+          {
+            "name": null,
+            "definition": "link",
+            "label": "Link",
+            "kind": "string"
+          }
+        ],
+        "stream_table": "mv_activity_stream",
+        "run_after_scripts": [],
+        "single_activity": true,
+        "created_by": "ahmed@narrator.ai",
+        "notes": "",
+        "has_source": false,
+        "file_info": {
+          "path": "narratorai/transformations/stream_tables/end_sessions.json",
+          "sha": "f6e1da0e34c59032074c0f59ee244343a82b59a1"
+        }
+      },
+      "highlight": {
+        "sql": [
+          "SYSDATE ) \n\t\tAND _activity_source in ( 'page_views', '<span class=\"highlighted\">downloaded_csv</span>"
+        ]
+      }
+    },
+    {
+      "_index": "narratorai_pending_scripts",
+      "_type": "_doc",
+      "_id": "stream_tables-download_csv",
+      "_score": 31.738186,
+      "_source": {
+        "slug": "download_csv",
+        "name": "Download Csv Test Name",
+        "kind": "manual",
+        "type": "stream",
+        "source_notes": "look for the csv in your heart",
+        "directory_type": "stream_tables",
+        "activities": [],
+        "enriched_activities": [],
+        "enriched_scripts": null,
+        "sql": "SELECT\n\t t.message_id AS \"activity_id\"\n\t , t.timestamp AS \"ts\"\n\t , 'segment' AS \"source\"\n\t , t.anonymous_id AS \"source_id\"\n\t , CASE \n\t\tWHEN t.user_id ilike '%@%' then t.user_id \n\t\tELSE null\n\t END AS \"customer\"\n\t , 'downloaded_csv' AS \"activity\"\n\t , substring ( regexp_substr ( d.file , 'tables/[^&]*' ) , 8 ) AS \"feature_1\"\n\t , nvl ( nullif ( split_part ( t.context_page_path , '/' , 2 ) , '' ) ) AS \"feature_2\"\n\t , NULL ::VARCHAR(255) AS \"feature_3\"\n\t , NULL ::FLOAT AS \"revenue_impact\"\n\t , t.context_page_url::varchar ( 255 ) AS \"link\"\nFROM portal.tracks AS t\nJOIN portal.download AS d\n\tON ( d.message_id = t.message_id )\nWHERE t.event = 'Download' \n\tAND t.context_page_url ilike 'https://portal.narrator.ai%' \n\tAND d.file ilike '%tables%'",
+        "tables": [
+          {
+            "table": "tracks",
+            "schema": "portal",
+            "alias": "t",
+            "join_condition": null,
+            "joined_alias": [],
+            "kind": "from",
+            "nested_object": null
+          },
+          {
+            "table": "download",
+            "schema": "portal",
+            "alias": "d",
+            "join_condition": "( d.message_id = t.message_id )",
+            "joined_alias": [
+              "t"
+            ],
+            "kind": "join",
+            "nested_object": null
+          }
+        ],
+        "columns": [
+          {
+            "name": "activity_id",
+            "definition": "t.message_id",
+            "label": "Message Id",
+            "kind": "string"
+          },
+          {
+            "name": "ts",
+            "definition": "t.timestamp",
+            "label": "Timestamp",
+            "kind": "timestamp"
+          },
+          {
+            "name": "source",
+            "definition": "'segment'",
+            "label": "Source",
+            "kind": "string"
+          },
+          {
+            "name": "source_id",
+            "definition": "t.anonymous_id",
+            "label": "Anonymous Id",
+            "kind": "string"
+          },
+          {
+            "name": "customer",
+            "definition": "CASE WHEN t.user_id ilike '%@%' then t.user_id ELSE null END",
+            "label": "User Id",
+            "kind": "string"
+          },
+          {
+            "name": "activity",
+            "definition": "'downloaded_csv'",
+            "label": "Activity",
+            "kind": "string"
+          },
+          {
+            "name": "feature_1",
+            "definition": "substring ( regexp_substr ( d.file , 'tables/[^&]*' ) , 8 )",
+            "label": "File",
+            "kind": "string"
+          },
+          {
+            "name": "feature_2",
+            "definition": "nvl ( nullif ( split_part ( t.context_page_path , '/' , 2 ) , '' ) )",
+            "label": "Context Page Path",
+            "kind": "string"
+          },
+          {
+            "name": "feature_3",
+            "definition": null,
+            "label": "Feature 3",
+            "kind": "string"
+          },
+          {
+            "name": "revenue_impact",
+            "definition": null,
+            "label": "Revenue Impact",
+            "kind": "revenue"
+          },
+          {
+            "name": "link",
+            "definition": "t.context_page_url::varchar ( 255 )",
+            "label": "Context Page Url",
+            "kind": "string"
+          }
+        ],
+        "stream_table": "mv_activity_stream",
+        "run_after_scripts": [],
+        "table_name": null,
+        "single_activity": true,
+        "created_by": "ahmed@narrator.ai",
+        "notes": "",
+        "has_source": true,
+        "file_info": {
+          "path": "narratorai/transformations/stream_tables/download_csv.json",
+          "sha": "f1dcaad2433dcb11997894547e1e389665425977",
+          "pending_changes": true,
+          "branch": "narratorai_scripts_d97ab200-106c-11e9-be99-475836aa9faf"
+        }
+      },
+      "highlight": {
+        "name": [
+          "<span class=\"highlighted\">Download</span> Csv Test Name"
+        ],
+        "sql": [
+          "then t.user_id \n\t\tELSE null\n\t END AS \"customer\"\n\t , '<span class=\"highlighted\">downloaded_csv</span>",
+          "varchar ( 255 ) AS \"link\"\nFROM portal.tracks AS t\nJOIN <span class=\"highlighted\">portal.download</span>",
+          "ON ( d.message_id = t.message_id )\nWHERE t.event = '<span class=\"highlighted\">Download</span>"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1257 @@
+{
+  "fields": {},
+  "query": {
+    "activities": [
+      {
+        "id": "created_account285ce562",
+        "name": "Created Account",
+        "slug": ["created_account"],
+        "activity_ids": ["e60ed8dd-4acd-4811-bbe9-5d7f548d6b63"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [],
+        "filters": [],
+        "kind": "limiting"
+      },
+      {
+        "id": "started_trialaf3a3905",
+        "name": "Started Trial",
+        "slug": ["started_trial"],
+        "activity_ids": ["89fa9d1c-e143-47c2-ae4a-fa43a1e3af09"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "after"
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_after"
+      },
+      {
+        "id": "purchased_premium4ba661b2",
+        "name": "Purchased Premium",
+        "slug": ["purchased_premium"],
+        "activity_ids": ["c736529a-1f51-45b9-94e5-abdbeb03d09c"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "after"
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_after",
+        "temp_id": "0['purchased_premium']"
+      },
+      {
+        "id": "bought_ppp03ec1a96",
+        "name": "Bought Ppp",
+        "slug": ["bought_ppp"],
+        "activity_ids": ["ed47c22c-41c7-40c5-b058-c017664a2562"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": false,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "after"
+          }
+        ],
+        "filters": [],
+        "kind": "append",
+        "relationship_slug": "first_after",
+        "temp_id": "0['bought_ppp']"
+      },
+      {
+        "id": "purchased_premium_or_made_purchaseedd71fff",
+        "name": "Purchased Premium Or Made Purchase",
+        "slug": ["purchased_premium", "made_purchase"],
+        "activity_ids": ["c736529a-1f51-45b9-94e5-abdbeb03d09c", "15cc0d6a-3640-4639-943c-e5b7a18fdaf2"],
+        "did": true,
+        "occurrence": "metric",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "after"
+          },
+          {
+            "slug": "within_time",
+            "relationship_time": "day",
+            "relationship_time_value": 100
+          }
+        ],
+        "filters": [
+          {
+            "activity_column_name": "is_change_during_sub_period",
+            "enrichment_table": "enriched_purchase",
+            "enrichment_table_column": null,
+            "filter": {
+              "operator": "not_equal",
+              "kind": "value",
+              "value": "true",
+              "or_null": true,
+              "from_type": null,
+              "from_value": null,
+              "from_value_kind": "value",
+              "from_value_resolution": null,
+              "to_type": null,
+              "to_value": null,
+              "to_value_kind": "value",
+              "to_value_resolution": null
+            }
+          }
+        ],
+        "kind": "append",
+        "relationship_slug": "agg_all_after",
+        "temp_id": "0['made_purchase', 'purchased_premium']"
+      },
+      {
+        "id": "made_purchase114efaca",
+        "name": "Made Purchase",
+        "slug": ["made_purchase"],
+        "activity_ids": ["15cc0d6a-3640-4639-943c-e5b7a18fdaf2"],
+        "did": true,
+        "occurrence": "first",
+        "occurrence_value": null,
+        "resolution_filter": null,
+        "config": {
+          "has_source": true,
+          "activity_stream": "activity_stream"
+        },
+        "relationships": [
+          {
+            "slug": "after"
+          }
+        ],
+        "filters": [
+          {
+            "activity_column_name": "subscription_tier",
+            "enrichment_table": "enriched_purchase",
+            "enrichment_table_column": null,
+            "filter": {
+              "operator": "equal",
+              "kind": "value",
+              "value": "Boost",
+              "or_null": false,
+              "from_type": null,
+              "from_value": null,
+              "from_value_kind": "value",
+              "from_value_resolution": null,
+              "to_type": null,
+              "to_value": null,
+              "to_value_kind": "value",
+              "to_value_resolution": null
+            }
+          }
+        ],
+        "kind": "append",
+        "relationship_slug": "first_after"
+      }
+    ],
+    "columns": [
+      {
+        "id": "activity_idfa308ae1",
+        "name": "activity_id",
+        "label": "First Activity Id",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "created_account285ce562",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ts3c9ca37e",
+        "name": "ts",
+        "label": "Registration Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "created_account285ce562",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "customer90b4d0be",
+        "name": "customer",
+        "label": "Customer",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "created_account285ce562",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "activity_occurrence4551e40d",
+        "name": "activity_occurrence",
+        "label": "Activity Occurrence",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "group_func": null,
+        "type": "number",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "limiting",
+          "activity_id": "created_account285ce562",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "customer_age_at_reg_bucket8bccfdd8",
+        "filters": [],
+        "label": "Age At Reg Bucket",
+        "name": "age_at_reg_bucket",
+        "output": true,
+        "source_details": {
+          "table": "customer",
+          "activity_id": "created_account285ce562"
+        },
+        "source_kind": "customer",
+        "mavis_type": "string",
+        "type": "string"
+      },
+      {
+        "id": "customer_source722afe8b",
+        "filters": [],
+        "label": "Source",
+        "name": "source",
+        "output": true,
+        "source_details": {
+          "table": "customer",
+          "activity_id": "created_account285ce562"
+        },
+        "source_kind": "customer",
+        "mavis_type": "string",
+        "type": "string"
+      },
+      {
+        "id": "tsa8e35ea4",
+        "name": "ts",
+        "label": "First Trial Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "started_trialaf3a3905",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_started_triald091bdec",
+        "name": null,
+        "label": "Did Redeem Trial",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(tsa8e35ea4)",
+          "activity_kind": "append",
+          "activity_id": "started_trialaf3a3905",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_started_trial1cd10e09",
+        "name": null,
+        "label": "Days To First Redeem Trial",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, tsa8e35ea4)",
+          "activity_kind": "append",
+          "activity_id": "started_trialaf3a3905",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "ts9782573f",
+        "name": "ts",
+        "label": "First Premium Purchase Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "purchased_premium4ba661b2",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_purchased_premium6f363173",
+        "name": null,
+        "label": "Did Purchased Premium",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts9782573f)",
+          "activity_kind": "append",
+          "activity_id": "purchased_premium4ba661b2",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_purchased_premium28ca9a87",
+        "name": null,
+        "label": "Days To First Purchased Premium",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, ts9782573f)",
+          "activity_kind": "append",
+          "activity_id": "purchased_premium4ba661b2",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "subscription_tierc52df057",
+        "name": "subscription_tier",
+        "label": "First Subscription Tier",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "purchased_premium4ba661b2",
+          "enrichment_table": "enriched_purchase",
+          "enrichment_table_column": "activity_id",
+          "applied_function": null
+        }
+      },
+      {
+        "id": "store97ffbf89",
+        "name": "store",
+        "label": "First Store",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "purchased_premium4ba661b2",
+          "enrichment_table": "enriched_purchase",
+          "enrichment_table_column": "activity_id",
+          "applied_function": null
+        }
+      },
+      {
+        "id": "countryee1d3652",
+        "name": "country",
+        "label": "First Country",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "purchased_premium4ba661b2",
+          "enrichment_table": "enriched_purchase",
+          "enrichment_table_column": "activity_id",
+          "applied_function": null
+        }
+      },
+      {
+        "id": "feature_24c16891d",
+        "name": "feature_2",
+        "label": "First Purchase Is Trial Conversion",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "purchased_premium4ba661b2",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "ts7ee47f86",
+        "name": "ts",
+        "label": "First PPP Bought Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "bought_ppp03ec1a96",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_bought_ppp5ef0e5dc",
+        "name": null,
+        "label": "Did Trigger Bought PPP",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts7ee47f86)",
+          "activity_kind": "append",
+          "activity_id": "bought_ppp03ec1a96",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_bought_ppp3ce52390",
+        "name": null,
+        "label": "Days To First Bought PPP",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, ts7ee47f86)",
+          "activity_kind": "append",
+          "activity_id": "bought_ppp03ec1a96",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "feature_1cbaaf96a",
+        "name": "feature_1",
+        "label": "First PPP Feature",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "bought_ppp03ec1a96",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "feature_29659110f",
+        "name": "feature_2",
+        "label": "First PPP Location",
+        "output": true,
+        "filters": [],
+        "mavis_type": "string",
+        "group_func": null,
+        "type": "string",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "bought_ppp03ec1a96",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "count_ts1002bfde",
+        "name": "ts",
+        "label": "Total Purchases",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": ["sum", "average"],
+        "type": "integer",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "purchased_premium_or_made_purchaseedd71fff",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": "count"
+        }
+      },
+      {
+        "id": "sum_revenue_impact2dfe16c5",
+        "name": "revenue_impact",
+        "label": "3 mo LTV",
+        "output": true,
+        "filters": [],
+        "mavis_type": "float",
+        "group_func": ["sum", "average"],
+        "type": "float",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "purchased_premium_or_made_purchaseedd71fff",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": "sum"
+        }
+      },
+      {
+        "id": "ts7097e917",
+        "name": "ts",
+        "label": "First Boost Purchase Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": "timestamp",
+        "group_func": null,
+        "type": "timestamp",
+        "source_kind": "activity",
+        "source_details": {
+          "activity_kind": "append",
+          "activity_id": "made_purchase114efaca",
+          "enrichment_table": null,
+          "enrichment_table_column": null,
+          "applied_function": null
+        }
+      },
+      {
+        "id": "did_made_purchase422c8e8c",
+        "name": null,
+        "label": "Did Purchase Boost",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["sum", "average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "exists(ts7097e917)",
+          "activity_kind": "append",
+          "activity_id": "made_purchase114efaca",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "day_made_purchase185071bd",
+        "name": null,
+        "label": "Days To First Boost Purchase",
+        "output": true,
+        "filters": [],
+        "mavis_type": "integer",
+        "type": "integer",
+        "group_func": ["average"],
+        "source_kind": "computed",
+        "source_details": {
+          "raw_string": "time_diff('day', join_ts.local, ts7097e917)",
+          "activity_kind": "append",
+          "activity_id": "made_purchase114efaca",
+          "enrichment_table": null
+        }
+      },
+      {
+        "id": "id_redeem_trial_within_first_week_dka9d_rqu",
+        "filters": [],
+        "label": "Did Redeem Trial Within First Week",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "ifttt",
+          "value_kind": "string",
+          "cases": [
+            {
+              "filters": [
+                {
+                  "column_id": "did_started_triald091bdec",
+                  "filter": {
+                    "operator": "equal",
+                    "value": "1",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                },
+                {
+                  "column_id": "day_started_trial1cd10e09",
+                  "filter": {
+                    "operator": "less_than",
+                    "value": "8",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "1",
+              "value_kind": "string"
+            }
+          ],
+          "value": "0"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_redeem_trial_within_first_week_dka9d_rqu_xVeU82Ibr",
+        "filters": [],
+        "label": "Did Redeem Trial After First Week",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "ifttt",
+          "value_kind": "string",
+          "cases": [
+            {
+              "filters": [
+                {
+                  "column_id": "did_started_triald091bdec",
+                  "filter": {
+                    "operator": "equal",
+                    "value": "1",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                },
+                {
+                  "column_id": "day_started_trial1cd10e09",
+                  "filter": {
+                    "operator": "greater_than_equal",
+                    "value": "8",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "1",
+              "value_kind": "string"
+            }
+          ],
+          "value": "0"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_did_purchase_premium_within_48_hrs_j96gsjjus",
+        "filters": [],
+        "label": "Did Purchase Premium Within 48 hrs",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "ifttt",
+          "value_kind": "string",
+          "cases": [
+            {
+              "filters": [
+                {
+                  "column_id": "did_purchased_premium6f363173",
+                  "filter": {
+                    "operator": "equal",
+                    "value": "1",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                },
+                {
+                  "column_id": "day_purchased_premium28ca9a87",
+                  "filter": {
+                    "operator": "less_than_equal",
+                    "kind": "value",
+                    "or_null": false,
+                    "value": "48"
+                  }
+                }
+              ],
+              "value": "1",
+              "value_kind": "string"
+            }
+          ],
+          "value": "0"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "id_day_of_first_premium_purchase_yxbzkc0sn",
+        "filters": [],
+        "label": "Day of First Premium Purchase",
+        "name": "",
+        "output": true,
+        "source_details": {
+          "kind": "ifttt",
+          "value_kind": "string",
+          "cases": [
+            {
+              "filters": [
+                {
+                  "column_id": "did_purchased_premium6f363173",
+                  "filter": {
+                    "operator": "equal",
+                    "value": "0",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "null",
+              "value_kind": "null"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "day_purchased_premium28ca9a87",
+                  "filter": {
+                    "operator": "less_than",
+                    "value": "1",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "Day 00",
+              "value_kind": "string"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "day_purchased_premium28ca9a87",
+                  "filter": {
+                    "operator": "less_than",
+                    "value": "2",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "Day 01",
+              "value_kind": "string"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "day_purchased_premium28ca9a87",
+                  "filter": {
+                    "operator": "less_than",
+                    "value": "3",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "Day 02",
+              "value_kind": "string"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "day_purchased_premium28ca9a87",
+                  "filter": {
+                    "operator": "less_than",
+                    "value": "4",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "Day 03",
+              "value_kind": "string"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "day_purchased_premium28ca9a87",
+                  "filter": {
+                    "operator": "less_than",
+                    "value": "5",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "Day 04",
+              "value_kind": "string"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "day_purchased_premium28ca9a87",
+                  "filter": {
+                    "operator": "less_than",
+                    "value": "6",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "Day 05",
+              "value_kind": "string"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "day_purchased_premium28ca9a87",
+                  "filter": {
+                    "operator": "less_than",
+                    "value": "7",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "Day 06",
+              "value_kind": "string"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "day_purchased_premium28ca9a87",
+                  "filter": {
+                    "operator": "less_than",
+                    "value": "8",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "Day 07",
+              "value_kind": "string"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "day_purchased_premium28ca9a87",
+                  "filter": {
+                    "operator": "less_than",
+                    "value": "15",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "Day 08 - 14",
+              "value_kind": "string"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "day_purchased_premium28ca9a87",
+                  "filter": {
+                    "operator": "less_than",
+                    "value": "22",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "Day 15 - 21",
+              "value_kind": "string"
+            },
+            {
+              "filters": [
+                {
+                  "column_id": "day_purchased_premium28ca9a87",
+                  "filter": {
+                    "operator": "less_than",
+                    "value": "29",
+                    "kind": "value",
+                    "or_null": false
+                  }
+                }
+              ],
+              "value": "Day 22 - 28",
+              "value_kind": "string"
+            }
+          ],
+          "value": "Day 29+"
+        },
+        "source_kind": "computed",
+        "type": "string",
+        "_auto_generated_by": null
+      },
+      {
+        "id": "month_of_registration_timestamp9c13cc03",
+        "name": null,
+        "label": "Month of Registration Timestamp",
+        "output": true,
+        "filters": [],
+        "mavis_type": null,
+        "type": "timestamp",
+        "group_func": [],
+        "source_kind": "computed",
+        "source_details": {
+          "kind": "freehand_function",
+          "raw_string": "date_trunc('month', ts3c9ca37e)"
+        }
+      }
+    ],
+    "all_groups": [
+      {
+        "name": "by Month Of Registration Timestamp & Did Purchase Boost",
+        "slug": "month_of_registration_timestamp_did_purchase_boost4881102b",
+        "columns": [
+          {
+            "id": "month_of_registration_timestamp_56b29f71",
+            "filters": [],
+            "label": "Month of Registration Timestamp",
+            "name": "",
+            "output": true,
+            "mavis_type": "timestamp",
+            "type": "timestamp",
+            "source_kind": "group",
+            "column_id": "month_of_registration_timestamp9c13cc03",
+            "pivoted": false,
+            "column_kind": "group"
+          },
+          {
+            "id": "did_purchase_boost_8db5d07f",
+            "filters": [],
+            "label": "Did Purchase Boost",
+            "name": "",
+            "output": true,
+            "mavis_type": "integer",
+            "type": "integer",
+            "source_kind": "group",
+            "column_id": "did_made_purchase422c8e8c",
+            "pivoted": false,
+            "column_kind": "group"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "total_customers_5064099a",
+            "label": "Total Customers",
+            "agg_function": "COUNT_ALL",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": null,
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": "number",
+            "type": "integer",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_redeem_trial_4a261f93",
+            "label": "Total Redeem Trial",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_triald091bdec",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_redeem_trial_8f24d488",
+            "label": "Conversion Rate to Redeem Trial",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_started_triald091bdec",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_to_first_redeem_trial_7092bfab",
+            "label": "Average Days To First Redeem Trial",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_started_trial1cd10e09",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_purchased_premium_9df6272d",
+            "label": "Total Purchased Premium",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_purchased_premium6f363173",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_purchased_premium_30e0486b",
+            "label": "Conversion Rate to Purchased Premium",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_purchased_premium6f363173",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_to_first_purchased_premium_c33d8790",
+            "label": "Average Days To First Purchased Premium",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_purchased_premium28ca9a87",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_trigger_bought_ppp_43b0b45c",
+            "label": "Total Trigger Bought PPP",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_bought_ppp5ef0e5dc",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "conversion_rate_to_trigger_bought_ppp_be9f1835",
+            "label": "Conversion Rate to Trigger Bought PPP",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "did_bought_ppp5ef0e5dc",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_to_first_bought_ppp_a4fe86fb",
+            "label": "Average Days To First Bought PPP",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_bought_ppp3ce52390",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "total_purchases_fd62ab10",
+            "label": "Total Purchases",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "count_ts1002bfde",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_total_purchases_541bb7c2",
+            "label": "Average Total Purchases",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "count_ts1002bfde",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "3_mo_ltv_9b0a5c43",
+            "label": "3 mo LTV",
+            "agg_function": "SUM",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "sum_revenue_impact2dfe16c5",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_3_mo_ltv_a6cf2d8c",
+            "label": "Average 3 mo LTV",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "sum_revenue_impact2dfe16c5",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          },
+          {
+            "id": "average_days_to_first_boost_purchase_d0161faa",
+            "label": "Average Days To First Boost Purchase",
+            "agg_function": "AVERAGE",
+            "conditioned_on_columns": null,
+            "output": true,
+            "column_id": "day_made_purchase185071bd",
+            "filters": [],
+            "pivot": [],
+            "mavis_type": null,
+            "display_format": null,
+            "type": "float",
+            "column_kind": "metrics"
+          }
+        ],
+        "computed_columns": [
+          {
+            "id": "conversion_rate_to_purchase_boostbaf0fba6",
+            "name": null,
+            "label": "Conversion Rate to Purchase Boost",
+            "output": true,
+            "filters": [],
+            "mavis_type": null,
+            "type": "float",
+            "group_func": [],
+            "source_kind": "computed",
+            "source_details": {
+              "kind": "freehand_function",
+              "raw_string": "ratio_to_report(total_customers_5064099a, [month_of_registration_timestamp_56b29f71])"
+            },
+            "column_kind": "computed"
+          }
+        ],
+        "pivot": [],
+        "parent_filters": [],
+        "order": [
+          {
+            "column_id": "month_of_registration_timestamp_56b29f71",
+            "order_direction": "desc"
+          },
+          {
+            "column_id": "did_purchase_boost_8db5d07f",
+            "order_direction": "asc"
+          }
+        ],
+        "plots": []
+      }
+    ],
+    "order": [
+      {
+        "column_id": "ts3c9ca37e",
+        "order_direction": "desc"
+      }
+    ],
+    "activity_stream": "activity_stream",
+    "swapped_ids": [],
+    "columns_order": {}
+  }
+}

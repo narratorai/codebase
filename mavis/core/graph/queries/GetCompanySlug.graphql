@@ -1,0 +1,7 @@
+query GetCompanySlug($id: uuid!) {
+  company_by_pk(id: $id) {
+    name
+    slug
+    batch_halt
+  }
+}

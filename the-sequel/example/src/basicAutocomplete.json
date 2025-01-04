@@ -1,0 +1,126 @@
+{
+  "autocomplete": [
+    {
+      "triggerCharacters": ["{", " "],
+      "onlyCompleteBetween": ["{", "}"],
+      "limitToSqlBlock": true,
+      "completionItems": [
+        {
+          "label": "random_number",
+          "insertText": "random_number"
+        },
+        {
+          "label": "now",
+          "insertText": "now",
+          "kind": 2
+        },
+        {
+          "label": "today",
+          "insertText": "today",
+          "kind": 2
+        },
+        {
+          "label": "this_week",
+          "insertText": "this_week"
+        },
+        {
+          "label": "this_month",
+          "insertText": "this_month"
+        },
+        {
+          "label": "this_year",
+          "insertText": "this_year"
+        },
+        {
+          "label": "yesterday",
+          "insertText": "yesterday"
+        },
+        {
+          "label": "last_week",
+          "insertText": "last_week"
+        },
+        {
+          "label": "last_month",
+          "insertText": "last_month"
+        },
+        {
+          "label": "last_year",
+          "insertText": "last_year"
+        },
+        {
+          "label": "last_point_disclaimer",
+          "insertText": "last_point_disclaimer"
+        },
+        {
+          "label": "test_value",
+          "insertText": "test_value"
+        },
+        {
+          "label": "test_rate",
+          "insertText": "test_rate"
+        },
+        {
+          "label": "test_value2",
+          "insertText": "test_value2"
+        },
+        {
+          "label": "test_rate2",
+          "insertText": "test_rate2"
+        },
+        {
+          "label": "company_slug",
+          "insertText": "company_slug"
+        },
+        {
+          "label": "cache_minutes",
+          "insertText": "cache_minutes"
+        },
+        {
+          "label": "warehouse",
+          "insertText": "warehouse"
+        },
+        {
+          "label": "company_name",
+          "insertText": "company_name"
+        },
+        {
+          "label": "website",
+          "insertText": "website"
+        }
+      ]
+    },
+    {
+      "triggerCharacters": ["$"],
+      "completionItems": [
+        {
+          "label": "eval",
+          "insertText": "eval(${1:string_to_evalue})",
+          "detail": "evalute python (only arthemtic, if statements and loops)",
+          "documentation": {
+            "value": "# Header\n This is the **best** editor.\n 1. hi\n 2. yo"
+          }
+        },
+        {
+          "label": "format",
+          "insertText": "format(${1:value}, ${2:kind_to_format})",
+          "detail": "Supports formats for revenue, percent, string (if number or string then don't pass second varaibe)"
+        },
+        {
+          "label": "date_add",
+          "insertText": "date_add(${1:date}, ${2|one,two,three|}, ${3:resolution})",
+          "detail": "Adds a N resolutions to a date"
+        },
+        {
+          "label": "date_trunc",
+          "insertText": "date_trunc(${1:date}, ${2:segmentation})",
+          "detail": "Truncates a date to the nearest resolutions"
+        },
+        {
+          "label": "impact_simulator",
+          "insertText": "impact_simulator(${1:total_input}, ${2:percent_shift}, ${3:percent_from}, ${4:rate_from}, ${5:percent_to}, ${6:rate_to})",
+          "detail": "Runs the same computation as the format calculator"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+table:
+  name: cloud_region_names
+  schema: public
+is_enum: true

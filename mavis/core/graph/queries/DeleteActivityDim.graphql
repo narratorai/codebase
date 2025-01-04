@@ -1,0 +1,5 @@
+mutation DeleteActivityDim($id: uuid!) {
+  delete_activity_dim_by_pk(id: $id) {
+    id
+  }
+}

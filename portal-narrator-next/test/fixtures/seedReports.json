@@ -1,0 +1,280 @@
+[
+  {
+    "id": "504baeb3-b9d3-47ce-810f-f2dcfc48a8ab",
+    "slug": "daily_report",
+    "name": "Daily Report",
+    "crontab": "0 8 * * *",
+    "owner": {
+      "id": "5d8fd6f3-b5d9-42fd-a04a-7ecaa8883aa1",
+      "email": "ahmed@narrator.ai",
+      "deleted_at": null,
+      "created_at": "2017-12-22T18:43:45.466Z",
+      "updated_at": "2018-06-25T13:40:14.072Z",
+      "super_admin": true,
+      "phone": "13478190072",
+      "first_name": "Ahmed",
+      "last_name": "Elsamadisi",
+      "title": "Founder, CEO",
+      "product_user_type": "director",
+      "api_admin": true
+    },
+    "company": {
+      "id": "ee522f92-1ae3-41f4-80f4-c936711f21d8",
+      "slug": "narratorai",
+      "name": "Narrator AI"
+    },
+    "category": null,
+    "report_metrics": [
+      {
+        "id": "4f2ba610-1a4e-49a8-a2d2-ad0e7ab93864",
+        "display_order": 1,
+        "metric_names": [
+          "total_activities",
+          "total_customers",
+          "avg_events_per_customer"
+        ],
+        "metric_labels": [
+          "Total Activities",
+          "Total Customers",
+          "AVG Events per Customer"
+        ],
+        "updated_at": "2018-07-01T22:58:52.659Z",
+        "reportable_type": "SegmentAggregation",
+        "time_segmentation": "",
+        "reportable": {
+          "id": "31722d37-b443-4ca1-824b-50a0ec4103be",
+          "name": "Main Events by company",
+          "group_columns": [
+            "activity",
+            "company"
+          ],
+          "order_columns": [
+            "company"
+          ],
+          "order_column_directions": [],
+          "updated_at": "2018-07-12T22:56:20.960Z",
+          "segment_agg_metrics": [
+            {
+              "id": "1ae2a034-5655-4853-a8ac-45cdc9fd3a90",
+              "segment_aggregation_id": "31722d37-b443-4ca1-824b-50a0ec4103be",
+              "metric_name": "total_activities",
+              "metric_label": "",
+              "agg_function": "COUNT",
+              "column": "*",
+              "deleted_at": null,
+              "created_at": "2018-07-01T22:55:24.321Z",
+              "updated_at": "2018-07-01T22:55:24.321Z"
+            },
+            {
+              "id": "1fd9e1c3-31e5-4646-8a55-b87d70cc1d00",
+              "segment_aggregation_id": "31722d37-b443-4ca1-824b-50a0ec4103be",
+              "metric_name": "total_customers",
+              "metric_label": "total_customers",
+              "agg_function": "COUNT_DISTINCT",
+              "column": "email",
+              "deleted_at": null,
+              "created_at": "2018-07-01T22:55:24.326Z",
+              "updated_at": "2018-07-01T22:55:24.326Z"
+            },
+            {
+              "id": "8e26655a-ee67-401b-b472-0bf964fbb3de",
+              "segment_aggregation_id": "31722d37-b443-4ca1-824b-50a0ec4103be",
+              "metric_name": "avg_events_per_customer",
+              "metric_label": "avg_events_per_customer",
+              "agg_function": "AVG_PER_CUSTOMER",
+              "column": "*",
+              "deleted_at": null,
+              "created_at": "2018-07-01T22:55:24.329Z",
+              "updated_at": "2018-07-01T22:55:24.329Z"
+            }
+          ],
+          "segment_agg_limits": [],
+          "segment": {
+            "id": "4f63e0a6-4fab-46b0-a772-411fcc92edeb",
+            "slug": "main_events_by_company_2309437",
+            "name": "Main Events By Company",
+            "description": "",
+            "global": false,
+            "should_track_customers": false,
+            "created_at": "2018-06-28T23:22:08.015Z",
+            "category": null,
+            "company": {
+              "id": "ee522f92-1ae3-41f4-80f4-c936711f21d8",
+              "slug": "narratorai",
+              "name": "Narrator AI"
+            },
+            "user": {
+              "id": "5d8fd6f3-b5d9-42fd-a04a-7ecaa8883aa1",
+              "email": "ahmed@narrator.ai"
+            }
+          },
+          "category": null
+        },
+        "report_distributions": []
+      }
+    ],
+    "followers": [
+      {
+        "id": "6dffeb2d-7b2f-4694-90e0-942a2a960b84",
+        "user": {
+          "id": "e5a9787d-5aad-44da-af52-670f5aa26bfc",
+          "email": "george@narrator.ai",
+          "deleted_at": null,
+          "created_at": "2018-07-02T13:57:45.811Z",
+          "updated_at": "2018-07-02T13:57:45.811Z",
+          "super_admin": true,
+          "phone": "18142800007",
+          "first_name": "George",
+          "last_name": "Woskob",
+          "title": "Developer",
+          "product_user_type": "operator",
+          "api_admin": true
+        },
+        "kind": "text",
+        "email": "george@narrator.ai",
+        "phone": "18142800007",
+        "sftp_prefix": "",
+        "sftp_folder": "",
+        "google_sheet_key": ""
+      },
+      {
+        "id": "0ad30403-cf10-43bc-8378-9627a0fa21be",
+        "user": {
+          "id": "5d8fd6f3-b5d9-42fd-a04a-7ecaa8883aa1",
+          "email": "ahmed@narrator.ai",
+          "deleted_at": null,
+          "created_at": "2017-12-22T18:43:45.466Z",
+          "updated_at": "2018-06-25T13:40:14.072Z",
+          "super_admin": true,
+          "phone": "13478190072",
+          "first_name": "Ahmed",
+          "last_name": "Elsamadisi",
+          "title": "Founder, CEO",
+          "product_user_type": "director",
+          "api_admin": true
+        },
+        "kind": "text",
+        "email": "ahmed@narrator.ai",
+        "phone": "13478190072",
+        "sftp_prefix": "",
+        "sftp_folder": "",
+        "google_sheet_key": ""
+      },
+      {
+        "id": "b0574a13-d4fc-4bc8-bcda-1b3e51992422",
+        "user": {
+          "id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091",
+          "email": "matt@narrator.ai",
+          "deleted_at": null,
+          "created_at": "2017-12-22T18:43:45.448Z",
+          "updated_at": "2018-06-25T13:29:51.596Z",
+          "super_admin": true,
+          "phone": "12674962352",
+          "first_name": "Matthew",
+          "last_name": "Star",
+          "title": "Director of Product",
+          "product_user_type": "director",
+          "api_admin": true
+        },
+        "kind": "text",
+        "email": "matt@narrator.ai",
+        "phone": "12674962352",
+        "sftp_prefix": "",
+        "sftp_folder": "",
+        "google_sheet_key": ""
+      },
+      {
+        "id": "0d5c6ef0-a92c-4e6f-ab7d-4ed67489e78f",
+        "user": {
+          "id": "0bd5c5d1-6fd4-4c42-918c-21b9364c0d05",
+          "email": "nason@narrator.ai",
+          "deleted_at": null,
+          "created_at": "2017-12-22T18:43:46.173Z",
+          "updated_at": "2018-05-16T22:20:01.575Z",
+          "super_admin": true,
+          "phone": "",
+          "first_name": "Michael",
+          "last_name": "Nason",
+          "title": "Advisor",
+          "product_user_type": "overseer",
+          "api_admin": false
+        },
+        "kind": "email",
+        "email": "nason@narrator.ai",
+        "phone": "",
+        "sftp_prefix": "",
+        "sftp_folder": "",
+        "google_sheet_key": ""
+      },
+      {
+        "id": "8af235c9-9e78-42e2-80d5-b1810b213815",
+        "user": {
+          "id": "22b4d8a4-0529-43ce-8c44-c86de3b60e8f",
+          "email": "drew@narrator.ai",
+          "deleted_at": null,
+          "created_at": "2018-05-07T18:44:25.092Z",
+          "updated_at": "2018-06-25T13:40:32.889Z",
+          "super_admin": true,
+          "phone": "(347) 460-5112",
+          "first_name": "Drew",
+          "last_name": "Foulkes",
+          "title": "Operations Lead",
+          "product_user_type": "operator",
+          "api_admin": true
+        },
+        "kind": "text",
+        "email": "drew@narrator.ai",
+        "phone": "(347) 460-5112",
+        "sftp_prefix": "",
+        "sftp_folder": "",
+        "google_sheet_key": ""
+      },
+      {
+        "id": "025ac795-bf2b-4cc9-9841-46ccb73954c9",
+        "user": {
+          "id": "2919c0ec-6d51-4d63-8bb7-7fbcf513519d",
+          "email": "sarah@narrator.ai",
+          "deleted_at": null,
+          "created_at": "2018-03-29T20:37:01.100Z",
+          "updated_at": "2018-06-29T22:00:04.754Z",
+          "super_admin": true,
+          "phone": "7176820126",
+          "first_name": "Sarah",
+          "last_name": "Kim",
+          "title": "UX Designer",
+          "product_user_type": "operator",
+          "api_admin": true
+        },
+        "kind": "text",
+        "email": "sarah@narrator.ai",
+        "phone": "7176820126",
+        "sftp_prefix": "",
+        "sftp_folder": "",
+        "google_sheet_key": ""
+      },
+      {
+        "id": "73001c52-522c-448c-9ff8-dab7e49c1b3a",
+        "user": {
+          "id": "adc7ae3e-f7e5-4d02-99dd-cc055400ce26",
+          "email": "tracy@narrator.ai",
+          "deleted_at": null,
+          "created_at": "2018-01-18T21:36:21.999Z",
+          "updated_at": "2018-06-28T23:19:53.292Z",
+          "super_admin": true,
+          "phone": "12672438380",
+          "first_name": "Tracy",
+          "last_name": "Loi",
+          "title": "Lead Product Designer",
+          "product_user_type": "operator",
+          "api_admin": false
+        },
+        "kind": "text",
+        "email": "tracy@narrator.ai",
+        "phone": "12672438380",
+        "sftp_prefix": "",
+        "sftp_folder": "",
+        "google_sheet_key": ""
+      }
+    ]
+  }
+]

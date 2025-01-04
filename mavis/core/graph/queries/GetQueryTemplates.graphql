@@ -1,0 +1,11 @@
+query GetQueryTemplates {
+  query_templates: query_template {
+    id
+    data_source
+    transformation_name
+    transformation_kind
+    transformation_update_type
+    query
+    schema_names
+  }
+}

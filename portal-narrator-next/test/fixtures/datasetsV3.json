@@ -1,0 +1,229 @@
+[
+  {
+    "__typename": "dataset",
+    "id": "datasetid_1",
+    "created_at": "2022-05-12T14:45:00.45249+00:00",
+    "created_by": "user_id_1",
+    "updated_at": "2022-05-13T16:05:49.426694+00:00",
+    "last_config_updated_at": "2022-05-12T15:38:31.838055+00:00",
+    "name": "Testing plots",
+    "description": null,
+    "slug": "testing_plotsddf4fb24",
+    "status": "in_progress",
+    "last_viewed_at": "2022-05-13T16:05:49.151+00:00",
+    "hide_from_index": false,
+    "company_category": null,
+    "tags": [],
+    "materializations": [],
+    "user": {
+      "__typename": "user",
+      "id": "user_id_1",
+      "email": "fake@fake.ai",
+      "company_users": [
+        {
+          "__typename": "company_user",
+          "first_name": "fake",
+          "last_name": "fake",
+          "id": "company_user_id_1",
+          "role": "admin",
+          "user_id": "user_id_1"
+        }
+      ]
+    },
+    "dataset_activities": [
+      {
+        "__typename": "dataset_activities",
+        "id": "dataset_activity_id_1",
+        "activity": {
+          "__typename": "activity",
+          "id": "activity_id_1",
+          "name": "Marketing Session",
+          "slug": "marketing_session",
+          "status": "live",
+          "updated_at": "2022-04-27T19:23:54.458002+00:00"
+        }
+      },
+      {
+        "__typename": "dataset_activities",
+        "id": "dataset_activity_id_2",
+        "activity": {
+          "__typename": "activity",
+          "id": "activity_id_2",
+          "name": "Scheduled Meeting",
+          "slug": "scheduled_meeting",
+          "status": "live",
+          "updated_at": "2022-04-27T19:23:54.146625+00:00"
+        }
+      }
+    ],
+    "dependent_narratives": []
+  },
+  {
+    "__typename": "dataset",
+    "id": "dataset_id_2",
+    "created_at": "2022-03-09T22:36:03.218745+00:00",
+    "created_by": "user_id_1",
+    "updated_at": "2022-05-12T14:43:30.92206+00:00",
+    "last_config_updated_at": "2022-05-11T21:17:53.156012+00:00",
+    "name": "Testing parent filter",
+    "description": "Description",
+    "slug": "new_cypress_dataset_1646865338826a2953265",
+    "status": "live",
+    "last_viewed_at": "2022-05-12T14:43:30.715+00:00",
+    "hide_from_index": false,
+    "company_category": null,
+    "tags": [
+      {
+        "__typename": "dataset_tags",
+        "id": "tag_id_1",
+        "updated_at": "2022-05-13T18:13:47.136745+00:00",
+        "company_tag": {
+          "__typename": "company_tags",
+          "id": "company_tag_id_1",
+          "tag": "recently_viewed",
+          "color": null,
+          "user_id": "user_id_1"
+        }
+      },
+      {
+        "__typename": "dataset_tags",
+        "id": "tag_id_2",
+        "updated_at": "2022-04-29T15:11:14.359878+00:00",
+        "company_tag": {
+          "__typename": "company_tags",
+          "id": "comapny_tag_id_2",
+          "tag": "primary",
+          "color": "volcano",
+          "user_id": null
+        }
+      },
+      {
+        "__typename": "dataset_tags",
+        "id": "tag_id_3",
+        "updated_at": "2022-04-29T15:11:14.382476+00:00",
+        "company_tag": {
+          "__typename": "company_tags",
+          "id": "company_tag_id_3",
+          "tag": "website",
+          "color": "cyan",
+          "user_id": null
+        }
+      },
+      {
+        "__typename": "dataset_tags",
+        "id": "tag_id_4",
+        "updated_at": "2022-05-11T15:46:44.573142+00:00",
+        "company_tag": {
+          "__typename": "company_tags",
+          "id": "company_tag_id_4",
+          "tag": "A Very Long Tag That Will Mess With The UI",
+          "color": "geekblue",
+          "user_id": null
+        }
+      },
+      {
+        "__typename": "dataset_tags",
+        "id": "tag_id_5",
+        "updated_at": "2022-05-11T15:46:44.537137+00:00",
+        "company_tag": {
+          "__typename": "company_tags",
+          "id": "company_tag_id_5",
+          "tag": "zendesk",
+          "color": null,
+          "user_id": null
+        }
+      }
+    ],
+    "materializations": [],
+    "user": {
+      "__typename": "user",
+      "id": "user_id_1",
+      "email": "fake@fake.ai",
+      "company_users": [
+        {
+          "__typename": "company_user",
+          "first_name": "fake",
+          "last_name": "fake",
+          "id": "company_user_id_1",
+          "role": "admin",
+          "user_id": "user_id_1"
+        }
+      ]
+    },
+    "dataset_activities": [
+      {
+        "__typename": "dataset_activities",
+        "id": "dataset_activities_id_3",
+        "activity": {
+          "__typename": "activity",
+          "id": "activity_id_3",
+          "name": "User Added",
+          "slug": "user_added",
+          "status": "live",
+          "updated_at": "2022-04-27T19:23:54.054671+00:00"
+        }
+      }
+    ],
+    "dependent_narratives": []
+  },
+  {
+    "__typename": "dataset",
+    "id": "dataset_id_4",
+    "created_at": "2022-05-11T17:14:46.72326+00:00",
+    "created_by": "user_id_1",
+    "updated_at": "2022-05-11T17:17:15.158176+00:00",
+    "last_config_updated_at": "2022-05-11T17:17:15.158176+00:00",
+    "name": "A Brand New Dataset",
+    "description": "What a great description!\nDon'tcha think?",
+    "slug": "a_brand_new_dataset69e9c037",
+    "status": "in_progress",
+    "last_viewed_at": "2022-05-11T17:17:15.134315+00:00",
+    "hide_from_index": false,
+    "company_category": null,
+    "tags": [
+      {
+        "__typename": "dataset_tags",
+        "id": "tag_id_6",
+        "updated_at": "2022-05-11T17:14:49.303061+00:00",
+        "company_tag": {
+          "__typename": "company_tags",
+          "id": "company_tag_id_1",
+          "tag": "recently_viewed",
+          "color": null,
+          "user_id": "user_id_1"
+        }
+      }
+    ],
+    "materializations": [],
+    "user": {
+      "__typename": "user",
+      "id": "user_id_1",
+      "email": "fake@fake.ai",
+      "company_users": [
+        {
+          "__typename": "company_user",
+          "first_name": "fake",
+          "last_name": "fake",
+          "id": "company_user_id_1",
+          "role": "admin",
+          "user_id": "user_id_1"
+        }
+      ]
+    },
+    "dataset_activities": [
+      {
+        "__typename": "dataset_activities",
+        "id": "dataset_activity_id_5",
+        "activity": {
+          "__typename": "activity",
+          "id": "activity_id_2",
+          "name": "Scheduled Meeting",
+          "slug": "scheduled_meeting",
+          "status": "live",
+          "updated_at": "2022-04-27T19:23:54.146625+00:00"
+        }
+      }
+    ],
+    "dependent_narratives": []
+  }
+]

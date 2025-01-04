@@ -1,0 +1,6 @@
+query GetCompanyUserPreferences($company_user_id: uuid!) {
+  company_user_preferences(where: { company_user_id: { _eq: $company_user_id } }, limit: 1) {
+    id
+    email_opt_out
+  }
+}

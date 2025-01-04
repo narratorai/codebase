@@ -1,0 +1,8 @@
+mutation InsertVersion($related_to: tag_relations_enum = activity, $id: uuid!, $user_id: uuid!, $s3_key: String!) {
+  insert_versions_one(object: {related_to: $related_to, related_id: $id, user_id: $user_id, s3_key: $s3_key}) {
+    id
+    created_at
+    user_id
+    s3_key
+  }
+}

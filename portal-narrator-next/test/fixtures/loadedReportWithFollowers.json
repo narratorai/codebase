@@ -1,0 +1,329 @@
+{
+  "id": "504baeb3-b9d3-47ce-810f-f2dcfc48a8ab",
+  "slug": "daily_report",
+  "name": "Daily Report",
+  "crontab": "0 8 * * *",
+  "owner": {
+    "id": "5d8fd6f3-b5d9-42fd-a04a-7ecaa8883aa1",
+    "email": "ahmed@narrator.ai",
+    "deleted_at": null,
+    "created_at": "2017-12-22T18:43:45.466Z",
+    "updated_at": "2018-06-25T13:40:14.072Z",
+    "super_admin": true,
+    "phone": "13478190072",
+    "first_name": "Ahmed",
+    "last_name": "Elsamadisi",
+    "title": "Founder, CEO",
+    "product_user_type": "director",
+    "api_admin": true,
+    "company_admin": false
+  },
+  "description": "This is the daily report yo",
+  "category_name": null,
+  "report_type": "followers",
+  "is_temp": false,
+  "company": {
+    "id": "ee522f92-1ae3-41f4-80f4-c936711f21d8",
+    "slug": "narratorai",
+    "name": "Narrator AI"
+  },
+  "category": null,
+  "report_metrics": [
+    {
+      "id": "4f2ba610-1a4e-49a8-a2d2-ad0e7ab93864",
+      "display_order": 1,
+      "metric_names": [
+        "total_activities",
+        "total_customers",
+        "avg_events_per_customer"
+      ],
+      "metric_labels": [
+        "Total Activities",
+        "Total Customers",
+        "AVG Events per Customer"
+      ],
+      "updated_at": "2018-07-01T22:58:52.659Z",
+      "reportable_type": "SegmentAggregation",
+      "time_segmentation": "",
+      "reportable": {
+        "id": "31722d37-b443-4ca1-824b-50a0ec4103be",
+        "name": "Main Events by company",
+        "slug": "main_events_by_company"
+      },
+      "report_distributions": [],
+      "reportable_id": "31722d37-b443-4ca1-824b-50a0ec4103be",
+      "_is_editing": false
+    }
+  ],
+  "followers": [
+    {
+      "id": "36c4501a-dc44-4ee1-a87d-004bd2b724d5",
+      "user": {
+        "id": "5d8fd6f3-b5d9-42fd-a04a-7ecaa8883aa1",
+        "email": "ahmed@narrator.ai",
+        "deleted_at": null,
+        "created_at": "2017-12-22T18:43:45.466Z",
+        "updated_at": "2018-06-25T13:40:14.072Z",
+        "super_admin": true,
+        "phone": "13478190072",
+        "first_name": "Ahmed",
+        "last_name": "Elsamadisi",
+        "title": "Founder, CEO",
+        "product_user_type": "director",
+        "api_admin": true,
+        "company_admin": false
+      },
+      "kind": "email",
+      "override_email": "",
+      "override_phone": "",
+      "sftp_prefix": "",
+      "sftp_folder": "",
+      "google_sheet_key": "",
+      "webhook_url": "",
+      "user_id": "5d8fd6f3-b5d9-42fd-a04a-7ecaa8883aa1"
+    },
+    {
+      "id": "daf7241e-0ea8-4634-a6f9-d0a982162999",
+      "user": {
+        "id": "5d8fd6f3-b5d9-42fd-a04a-7ecaa8883aa1",
+        "email": "ahmed@narrator.ai",
+        "deleted_at": null,
+        "created_at": "2017-12-22T18:43:45.466Z",
+        "updated_at": "2018-06-25T13:40:14.072Z",
+        "super_admin": true,
+        "phone": "13478190072",
+        "first_name": "Ahmed",
+        "last_name": "Elsamadisi",
+        "title": "Founder, CEO",
+        "product_user_type": "director",
+        "api_admin": true,
+        "company_admin": false
+      },
+      "kind": "text",
+      "override_email": "",
+      "override_phone": "",
+      "sftp_prefix": "",
+      "sftp_folder": "",
+      "google_sheet_key": "",
+      "webhook_url": "",
+      "user_id": "5d8fd6f3-b5d9-42fd-a04a-7ecaa8883aa1"
+    },
+    {
+      "id": "c6d0c1e3-e22c-4200-9809-24c8174f038a",
+      "user": {
+        "id": "e5a9787d-5aad-44da-af52-670f5aa26bfc",
+        "email": "george@narrator.ai",
+        "deleted_at": null,
+        "created_at": "2018-07-02T13:57:45.811Z",
+        "updated_at": "2018-08-10T19:47:42.212Z",
+        "super_admin": true,
+        "phone": "18142800007",
+        "first_name": "George",
+        "last_name": "Woskob",
+        "title": "Developer",
+        "product_user_type": "operator",
+        "api_admin": true,
+        "company_admin": false
+      },
+      "kind": "email",
+      "override_email": "",
+      "override_phone": "",
+      "sftp_prefix": "",
+      "sftp_folder": "",
+      "google_sheet_key": "",
+      "webhook_url": "",
+      "user_id": "e5a9787d-5aad-44da-af52-670f5aa26bfc"
+    },
+    {
+      "id": "47962413-d753-4b80-88b9-7cbe142f3cc0",
+      "user": {
+        "id": "e5a9787d-5aad-44da-af52-670f5aa26bfc",
+        "email": "george@narrator.ai",
+        "deleted_at": null,
+        "created_at": "2018-07-02T13:57:45.811Z",
+        "updated_at": "2018-08-10T19:47:42.212Z",
+        "super_admin": true,
+        "phone": "18142800007",
+        "first_name": "George",
+        "last_name": "Woskob",
+        "title": "Developer",
+        "product_user_type": "operator",
+        "api_admin": true,
+        "company_admin": false
+      },
+      "kind": "text",
+      "override_email": "",
+      "override_phone": "",
+      "sftp_prefix": "",
+      "sftp_folder": "",
+      "google_sheet_key": "",
+      "webhook_url": "",
+      "user_id": "e5a9787d-5aad-44da-af52-670f5aa26bfc"
+    },
+    {
+      "id": "d80627de-2c05-453b-8f75-7cf9ed56feeb",
+      "user": {
+        "id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091",
+        "email": "matt@narrator.ai",
+        "deleted_at": null,
+        "created_at": "2017-12-22T18:43:45.448Z",
+        "updated_at": "2018-10-03T21:46:08.751Z",
+        "super_admin": true,
+        "phone": "12674962352",
+        "first_name": "Matt",
+        "last_name": "Star",
+        "title": "Director of Product",
+        "product_user_type": "director",
+        "api_admin": true,
+        "company_admin": true
+      },
+      "kind": "text",
+      "override_email": "",
+      "override_phone": "",
+      "sftp_prefix": "",
+      "sftp_folder": "",
+      "google_sheet_key": "",
+      "webhook_url": "",
+      "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091"
+    },
+    {
+      "id": "ddbebc75-7eca-4dc4-b614-a9d2d7431dd7",
+      "user": {
+        "id": "0bd5c5d1-6fd4-4c42-918c-21b9364c0d05",
+        "email": "nason@narrator.ai",
+        "deleted_at": null,
+        "created_at": "2017-12-22T18:43:46.173Z",
+        "updated_at": "2018-08-21T17:36:18.415Z",
+        "super_admin": true,
+        "phone": "",
+        "first_name": "Michael",
+        "last_name": "Nason",
+        "title": "Advisor",
+        "product_user_type": "overseer",
+        "api_admin": true,
+        "company_admin": false
+      },
+      "kind": "email",
+      "override_email": "",
+      "override_phone": "",
+      "sftp_prefix": "",
+      "sftp_folder": "",
+      "google_sheet_key": "",
+      "webhook_url": "",
+      "user_id": "0bd5c5d1-6fd4-4c42-918c-21b9364c0d05"
+    },
+    {
+      "id": "525b2faf-7109-4900-bbe7-2de0a4d9f86e",
+      "user": {
+        "id": "2919c0ec-6d51-4d63-8bb7-7fbcf513519d",
+        "email": "sarah@narrator.ai",
+        "deleted_at": null,
+        "created_at": "2018-03-29T20:37:01.100Z",
+        "updated_at": "2018-06-29T22:00:04.754Z",
+        "super_admin": true,
+        "phone": "7176820126",
+        "first_name": "Sarah",
+        "last_name": "Kim",
+        "title": "UX Designer",
+        "product_user_type": "operator",
+        "api_admin": true,
+        "company_admin": false
+      },
+      "kind": "text",
+      "override_email": "",
+      "override_phone": "",
+      "sftp_prefix": "",
+      "sftp_folder": "",
+      "google_sheet_key": "",
+      "webhook_url": "",
+      "user_id": "2919c0ec-6d51-4d63-8bb7-7fbcf513519d"
+    },
+    {
+      "id": "867a7e9c-d117-442f-87b9-4de748cb76f7",
+      "user": {
+        "id": "adc7ae3e-f7e5-4d02-99dd-cc055400ce26",
+        "email": "tracy@narrator.ai",
+        "deleted_at": null,
+        "created_at": "2018-01-18T21:36:21.999Z",
+        "updated_at": "2018-06-28T23:19:53.292Z",
+        "super_admin": true,
+        "phone": "12672438380",
+        "first_name": "Tracy",
+        "last_name": "Loi",
+        "title": "Lead Product Designer",
+        "product_user_type": "operator",
+        "api_admin": false,
+        "company_admin": false
+      },
+      "kind": "text",
+      "override_email": "",
+      "override_phone": "",
+      "sftp_prefix": "",
+      "sftp_folder": "",
+      "google_sheet_key": "",
+      "webhook_url": "",
+      "user_id": "adc7ae3e-f7e5-4d02-99dd-cc055400ce26"
+    },
+    {
+      "id": "82432a25-b729-4156-813c-a499b09a4e80",
+      "user": {
+        "id": "5d8fd6f3-b5d9-42fd-a04a-7ecaa8883aa1",
+        "email": "ahmed@narrator.ai",
+        "deleted_at": null,
+        "created_at": "2017-12-22T18:43:45.466Z",
+        "updated_at": "2018-06-25T13:40:14.072Z",
+        "super_admin": true,
+        "phone": "13478190072",
+        "first_name": "Ahmed",
+        "last_name": "Elsamadisi",
+        "title": "Founder, CEO",
+        "product_user_type": "director",
+        "api_admin": true,
+        "company_admin": false
+      },
+      "kind": "email",
+      "override_email": "",
+      "override_phone": "",
+      "sftp_prefix": "",
+      "sftp_folder": "",
+      "google_sheet_key": "",
+      "webhook_url": "",
+      "user_id": "5d8fd6f3-b5d9-42fd-a04a-7ecaa8883aa1"
+    }
+  ],
+  "_export": {
+    "webhook_urls": []
+  },
+  "_followers": [
+    {
+      "user_id": "5d8fd6f3-b5d9-42fd-a04a-7ecaa8883aa1",
+      "send_email": true,
+      "send_text": true
+    },
+    {
+      "user_id": "e5a9787d-5aad-44da-af52-670f5aa26bfc",
+      "send_email": true,
+      "send_text": true
+    },
+    {
+      "user_id": "5c7e0b0a-ae54-426f-a0cf-cb643e02a091",
+      "send_text": true
+    },
+    {
+      "user_id": "0bd5c5d1-6fd4-4c42-918c-21b9364c0d05",
+      "send_email": true
+    },
+    {
+      "user_id": "2919c0ec-6d51-4d63-8bb7-7fbcf513519d",
+      "send_text": true
+    },
+    {
+      "user_id": "adc7ae3e-f7e5-4d02-99dd-cc055400ce26",
+      "send_text": true
+    }
+  ],
+  "_schedule": {
+    "send_at_time": 8,
+    "send_every_time_unit": "day"
+  }
+}

@@ -1,0 +1,9 @@
+query GetCompanyGithubSyncConfig($company_id: uuid!) {
+  company_github_sync(where: { company: { id: { _eq: $company_id } } }, order_by: { created_at: desc }) {
+    id
+    created_at
+    user_id
+    installation_id
+    target_repo
+  }
+}

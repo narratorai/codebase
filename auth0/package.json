@@ -1,0 +1,48 @@
+{
+  "name": "auth0",
+  "version": "1.0.0",
+  "description": "This repo configures our auth0 tenants",
+  "main": "index.js",
+  "scripts": {
+    "pull:nonprod": "./scripts/pull.sh nonprod",
+    "push:nonprod": "doppler run --project auth0 --config nonprod -- yarn --silent a0deploy import -i config",
+    "pull:production": "./scripts/pull.sh production",
+    "push:production": "doppler run --project auth0 --config production -- yarn --silent a0deploy import -i config",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check-config": "echo \"TODO check config file for secrets\"",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narratorai/auth0.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENCED",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/narratorai/auth0/issues"
+  },
+  "homepage": "https://github.com/narratorai/auth0#readme",
+  "devDependencies": {
+    "auth0-deploy-cli": "7.19.0",
+    "husky": "^8.0.0",
+    "lint-staged": "13.1.1",
+    "prettier": "2.8.4"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "*.{js,md,json}": [
+      "yarn --silent prettier --write"
+    ],
+    "config/*.json": [
+      "yarn --silent check-config"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+# Query used at the GET /api/transformations endpoint
+
+query GetAllTransformations($company_id: uuid!, $limit: Int!, $offset: Int!) {
+  transformation_aggregate(where: { company_id: { _eq: $company_id } }) {
+    aggregate {
+      totalCount: count
+    }
+  }
+  transformations: transformation(
+    where: { company_id: { _eq: $company_id } }
+    order_by: { production_queries_aggregate: { max: { created_at: desc_nulls_last } } }
+    limit: $limit
+    offset: $offset
+  ) {
+    id
+    slug
+    name
+    kind
+    update_type
+    table
+    max_days_to_insert
+    start_data_after
+    requires_identity_resolution: has_source
+    is_aliasing
+    transformations_activities: activities {
+      activity {
+        id
+        slug
+        name
+      }
+    }
+    current_query {
+      id
+      sql
+      notes
+      created_at
+      updated_at
+    }
+    production_queries(order_by: { created_at: desc }, limit: 15) {
+      id
+      sql
+      notes
+      created_at
+      updated_at
+    }
+    events: transformation_maintenances(where: { ended_at: { _is_null: true } }) {
+      id
+      kind
+      notes
+      started_at
+    }
+    created_at
+    updated_at
+  }
+}

@@ -1,0 +1,29 @@
+mutation UpdateTrainingRequest(
+  $id: uuid!
+  $dataset_id: uuid
+  $email_requester: Boolean!
+  $group_slug: String!
+  $plot_slug: String!
+  $status: trainining_request_status_enum!
+  $email_context: String!
+  $email_sent_at: timestamptz!
+  $status_updated_at: timestamptz!
+  $assigned_to: uuid!
+) {
+  update_training_request_by_pk(
+    pk_columns: { id: $id }
+    _set: {
+      dataset_id: $dataset_id
+      email_requester: $email_requester
+      group_slug: $group_slug
+      plot_slug: $plot_slug
+      status: $status
+      email_context: $email_context
+      email_sent_at: $email_sent_at
+      status_updated_at: $status_updated_at
+      assigned_to: $assigned_to
+    }
+  ) {
+    id
+  }
+}

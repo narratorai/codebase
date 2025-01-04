@@ -1,0 +1,17 @@
+query TrainingRequestIndex($company_id: uuid) {
+  training_request(where: {company_id: {_eq: $company_id}}) {
+    context
+    created_by
+    created_at
+    updated_at
+    type
+    status
+    training_id
+    email_requester
+    email_sent_at
+    status_updated_at
+    chat{
+        question
+    }
+  }
+}

@@ -1,0 +1,10 @@
+subscription ListKpisTagsNeedsUpdate($company_id: uuid!) {
+  metric_tags(
+    where: { company_tag: { _and: { company_id: { _eq: $company_id }, user_id: { _is_null: true } } } }
+    order_by: { updated_at: desc }
+    limit: 1
+  ) {
+    id
+    updated_at
+  }
+}

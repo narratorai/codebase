@@ -1,0 +1,37 @@
+mutation RenameCompanyTable(
+    $company_id: uuid!
+    $activity_stream: String!
+    $new_name: String!
+) {
+    update_company_table(
+        where: {
+            activity_stream: { _eq: $activity_stream }
+            company_id: { _eq: $company_id }
+        }
+        _set: { activity_stream: $new_name }
+    ){
+        returning {
+            id
+        }
+    }
+    update_company_by_pk(
+        pk_columns: { id: $company_id }
+        _set: {
+            updated_at: "now()"
+        }
+    ){
+        slug
+    }
+    update_transformation(
+        where: {
+            table: { _eq: $activity_stream }
+            company_id: { _eq: $company_id }
+        }
+        _set: { table: $new_name }
+    ) {
+        returning {
+            name
+            id
+        }
+    }
+}

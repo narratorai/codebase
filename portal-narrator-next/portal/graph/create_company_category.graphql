@@ -1,0 +1,8 @@
+mutation CreateCompanyCategory($company_id: uuid!, $category: String!) {
+  insert_company_categories(objects: { category: $category, company_id: $company_id }) {
+    returning {
+      id
+      category
+    }
+  }
+}

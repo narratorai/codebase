@@ -1,0 +1,21 @@
+mutation UpdateDatasetMaterialization(
+  $id: uuid!
+  $type: materialization_type_enum!
+  $group_slug: String
+  $label: String!
+  $updated_by: uuid
+  $external_link: String
+) {
+  update_dataset_materialization_by_pk(
+    pk_columns: { id: $id }
+    _set: {
+      updated_by: $updated_by
+      group_slug: $group_slug
+      type: $type
+      label: $label
+      external_link: $external_link
+    }
+  ) {
+    id
+  }
+}

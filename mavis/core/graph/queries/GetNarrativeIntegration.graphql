@@ -1,0 +1,16 @@
+query GetNarrativeIntegration($id: uuid!) {
+  narrative_integration: narrative_integrations_by_pk(id: $id) {
+    id
+    kind
+    narrative_id
+    task_id
+    narrative{
+      slug
+      name
+      narrative_runs(order_by: { created_at: desc_nulls_last }, limit: 1) {
+        s3_key
+
+      }
+    }
+  }
+}

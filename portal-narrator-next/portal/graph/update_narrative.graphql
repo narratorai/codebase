@@ -1,0 +1,30 @@
+mutation UpdateNarrative(
+  $narrative_id: uuid!
+  $company_task_id: uuid
+  $name: String!
+  $schedule: String
+  $description: String!
+  $state: status_enum!
+  $category_id: uuid
+  $requested_by: uuid
+) {
+  update_narrative(
+    where: { id: { _eq: $narrative_id } }
+    _set: {
+      state: $state
+      name: $name
+      description: $description
+      category_id: $category_id
+      requested_by: $requested_by
+    }
+  ) {
+    returning {
+      id
+    }
+  }
+  update_company_task(where: { id: { _eq: $company_task_id } }, _set: { schedule: $schedule }) {
+    returning {
+      id
+    }
+  }
+}

@@ -1,0 +1,22 @@
+query GetActiveMaintenance($ids: [uuid!]!, $last_updated_at: timestamptz!) {
+  activity_maintenance(
+    where: {
+      activity_id: { _in: $ids }
+      _or: [
+        { ended_at: { _is_null: true } }
+        { ended_at: { _gte: $last_updated_at } }
+      ]
+    }
+    order_by: { ended_at: desc_nulls_first }
+  ) {
+    id
+    kind
+    notes
+    started_at
+    ended_at
+    activity_id
+    maintenance_kind {
+      description
+    }
+  }
+}

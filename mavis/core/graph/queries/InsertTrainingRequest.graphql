@@ -1,0 +1,20 @@
+mutation InsertTrainingRequest(
+  $chat_id: uuid!
+  $context: String!
+  $type: String!
+  $created_by: uuid!
+  $company_id: uuid!
+) {
+  insert_training_request_one(
+    object: {
+      chat_id: $chat_id
+      context: $context
+      type: $type
+      created_by: $created_by
+      status_updated_at: "now()"
+      company_id: $company_id
+    }
+  ) {
+    id
+  }
+}

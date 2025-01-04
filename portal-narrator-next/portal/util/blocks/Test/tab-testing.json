@@ -1,0 +1,393 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "metric": {
+        "enum": [
+          "ba984c59-dd98-4d7d-962a-fa67faa84b98",
+          "149ddb92-f3a4-4598-b8cd-a08e4ed8db4a",
+          "77b6211c-1562-4293-a511-71850b4ef3cf",
+          "46021e7d-9e92-42dc-b817-da2352db0e19"
+        ],
+        "enumNames": ["Open Email to Order Rate", "Lead to Meeting Rate", "Visit to Cart Rate", "Email to Order Rate"],
+        "type": "string",
+        "title": "Metric"
+      },
+      "plot_data": {
+        "type": "string",
+        "title": " "
+      },
+      "all_narratives": {
+        "type": "string",
+        "title": " "
+      },
+      "all_datasets": {
+        "type": "string",
+        "title": " "
+      },
+      "choosen_feature": {
+        "enum": [],
+        "enumNames": [],
+        "type": "string",
+        "title": "Choose a Dimension to Slice a Metric by"
+      },
+      "rerun_feature": {
+        "type": "boolean",
+        "title": "Re-Run Feature"
+      },
+      "explore_metric": {
+        "type": "boolean",
+        "title": "Custom Dataset"
+      },
+      "run_narrative": {
+        "type": "boolean",
+        "title": "Run Data Science Analysis"
+      },
+      "save_dataset": {
+        "type": "boolean",
+        "title": "Save Dataset"
+      },
+      "results_markdown": {
+        "type": "string",
+        "title": " "
+      },
+      "actions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "happened_at": {
+              "type": "string",
+              "format": "date",
+              "title": "Happened At",
+              "default": "2022-02-25"
+            },
+            "name": {
+              "type": "string",
+              "title": "Name"
+            },
+            "description": {
+              "type": "string",
+              "title": "Description"
+            }
+          }
+        },
+        "title": "Actions"
+      },
+      "save_actions": {
+        "type": "boolean",
+        "title": "Save Actions"
+      },
+      "show_feature_plot": {
+        "type": "boolean",
+        "default": false,
+        "title": "Show Feature Plot"
+      }
+    },
+    "title": "View KPI",
+    "description": "View and take action from a KPI",
+    "dependencies": {
+      "show_feature_plot": {
+        "oneOf": [
+          {
+            "properties": {
+              "show_feature_plot": {
+                "enum": [true]
+              },
+              "feature_plot": {
+                "type": "string",
+                "title": " "
+              },
+              "feature_over_time_plot": {
+                "type": "string",
+                "title": " "
+              }
+            },
+            "required": []
+          },
+          {
+            "properties": {
+              "show_feature_plot": {
+                "enum": [false]
+              }
+            },
+            "required": []
+          }
+        ]
+      }
+    }
+  },
+  "ui_schema": {
+    "ui:options": {
+      "hide_submit": true,
+      "hide_output": true,
+      "title": false,
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "graph_subscription": "\nsubscription GetMetric($id: uuid!) {\n  metric_by_pk(id: $id) {\n    narratives(where: {state: {_neq: archived}}, order_by: {updated_at: asc}) {\n      narrative_runs(order_by: {created_at: desc_nulls_last}, limit: 1) {\n        created_at\n      }\n    }\n    actions(order_by: {created_at: desc}) {\n      id\n    }\n  }\n}\n\n",
+      "graph_subscription_inputs": {
+        "id": "77b6211c-1562-4293-a511-71850b4ef3cf"
+      }
+    },
+    "ui:tabs": {
+      "tabs": [
+        {
+          "label": "Overall",
+          "property_names": ["metric", "plot_data", "all_narratives", "all_datasets"],
+          "tab_id": "overall",
+          "redirect_tab_ids": []
+        },
+        {
+          "label": "Explore",
+          "property_names": [
+            "choosen_feature",
+            "explore_metric",
+            "rerun_feature",
+            "show_feature_plot",
+            "feature_plot",
+            "run_narrative",
+            "save_dataset"
+          ],
+          "tab_id": "explore",
+          "redirect_tab_ids": [],
+          "ui:info_modal": "\n## New markdown for the info modal"
+        },
+        {
+          "label": "Log Actions",
+          "property_names": ["actions", "save_actions"],
+          "tab_id": "actions",
+          "redirect_tab_ids": []
+        }
+      ]
+    },
+    "ui:order": [
+      "metric",
+      "explore_metric",
+      "plot_data",
+      "all_narratives",
+      "all_datasets",
+      "choosen_feature",
+      "rerun_feature",
+      "show_feature_plot",
+      "feature_plot",
+      "feature_over_time_plot",
+      "run_narrative",
+      "save_dataset",
+      "results_markdown",
+      "actions",
+      "save_actions"
+    ],
+    "metric": {
+      "ui:options": {
+        "size": "large",
+        "process_data": true,
+        "update_schema": true,
+        "outer_box_props": {
+          "width": "80%",
+          "pr": "12px",
+          "pl": "0px",
+          "mb": "8px"
+        },
+        "bottom_border": false
+      }
+    },
+    "explore_metric": {
+      "ui:widget": "BooleanButtonWidget",
+      "ui:options": {
+        "process_data": true,
+        "outer_box_props": {
+          "width": "20%",
+          "pr": "12px",
+          "pl": "0px",
+          "mb": "8px"
+        },
+        "bottom_border": false,
+        "inline_input_height": true
+      }
+    },
+    "plot_data": {
+      "ui:widget": "PlotRenderWidget"
+    },
+    "all_narratives": {
+      "ui:widget": "MarkdownRenderWidget",
+      "ui:options": {
+        "outer_box_props": {
+          "width": "50%",
+          "pr": "12px",
+          "pl": "0px",
+          "mb": "8px"
+        },
+        "bottom_border": false
+      }
+    },
+    "all_datasets": {
+      "ui:widget": "MarkdownRenderWidget",
+      "ui:options": {
+        "outer_box_props": {
+          "width": "50%",
+          "pr": "12px",
+          "pl": "0px",
+          "mb": "8px"
+        },
+        "bottom_border": false
+      }
+    },
+    "choosen_feature": {
+      "ui:options": {
+        "load_values": true,
+        "process_data": true,
+        "outer_box_props": {
+          "width": "80%",
+          "pr": "12px",
+          "pl": "0px",
+          "mb": "8px"
+        },
+        "bottom_border": false
+      }
+    },
+    "rerun_feature": {
+      "ui:widget": "BooleanButtonWidget",
+      "ui:options": {
+        "process_data": true,
+        "outer_box_props": {
+          "width": "20%",
+          "pr": "12px",
+          "pl": "0px",
+          "mb": "8px"
+        },
+        "bottom_border": false,
+        "inline_input_height": true
+      }
+    },
+    "run_narrative": {
+      "ui:widget": "BooleanButtonWidget",
+      "ui:options": {
+        "process_data": true,
+        "button_type": "primary",
+        "outer_box_props": {
+          "width": "50%",
+          "pr": "12px",
+          "pl": "0px",
+          "mb": "8px"
+        },
+        "bottom_border": false
+      }
+    },
+    "save_dataset": {
+      "ui:widget": "BooleanButtonWidget",
+      "ui:options": {
+        "process_data": true,
+        "button_type": "primary",
+        "outer_box_props": {
+          "width": "50%",
+          "pr": "12px",
+          "pl": "0px",
+          "mb": "8px"
+        },
+        "bottom_border": false
+      }
+    },
+    "show_feature_plot": {
+      "ui:hidden": true,
+      "ui:widget": "hidden"
+    },
+    "show_everything": {
+      "ui:hidden": true,
+      "ui:widget": "hidden"
+    },
+    "feature_plot": {
+      "ui:widget": "PlotRenderWidget"
+    },
+    "feature_over_time_plot": {
+      "ui:widget": "PlotRenderWidget"
+    },
+    "results_markdown": {
+      "ui:widget": "MarkdownRenderWidget"
+    },
+    "show_actions": {
+      "ui:widget": "BooleanToggleWidget"
+    },
+    "actions": {
+      "ui:order": ["name", "happened_at", "description"],
+      "ui:options": {
+        "orderable": false
+      },
+      "items": {
+        "name": {
+          "ui:options": {
+            "outer_box_props": {
+              "width": "70%",
+              "pr": "12px",
+              "pl": "0px",
+              "mb": "8px"
+            },
+            "bottom_border": false
+          }
+        },
+        "happened_at": {
+          "ui:options": {
+            "outer_box_props": {
+              "width": "30%",
+              "pr": "12px",
+              "pl": "0px",
+              "mb": "8px"
+            },
+            "bottom_border": false,
+            "data_public": true
+          }
+        },
+        "description": {
+          "ui:widget": "MarkdownWidget",
+          "ui:options": {
+            "default_height": 70
+          }
+        }
+      }
+    },
+    "save_actions": {
+      "ui:widget": "BooleanButtonWidget",
+      "ui:options": {
+        "process_data": true,
+        "button_type": "primary",
+        "outer_box_props": {
+          "width": "50%",
+          "pr": "12px",
+          "pl": "0px",
+          "mb": "8px"
+        },
+        "bottom_border": false
+      }
+    }
+  },
+  "data": {
+    "actions": [
+      {
+        "happened_at": "2022-01-01",
+        "name": "Happy New Year",
+        "id": "7e88a86d-68b5-4d2c-bd1f-480d021723d9",
+        "description": "",
+        "related_to": "metric",
+        "created_at": "2022-02-25T03:11:56.334565+00:00"
+      },
+      {
+        "happened_at": "2021-11-01",
+        "name": "did something",
+        "id": "c60093a5-6364-4cd1-8f17-0277d0135369",
+        "description": "TEST",
+        "related_to": "metric",
+        "created_at": "2022-02-25T03:11:56.277956+00:00"
+      }
+    ],
+    "show_feature_plot": false,
+    "show_everything": true,
+    "metric": "77b6211c-1562-4293-a511-71850b4ef3cf",
+    "plot_data": "{\"data\":[{\"x\":[\"2017-12-01T00:00:00\",\"2018-01-01T00:00:00\",\"2018-02-01T00:00:00\",\"2018-03-01T00:00:00\",\"2018-04-01T00:00:00\",\"2018-05-01T00:00:00\",\"2018-06-01T00:00:00\",\"2018-07-01T00:00:00\",\"2018-08-01T00:00:00\",\"2018-09-01T00:00:00\",\"2018-10-01T00:00:00\",\"2018-11-01T00:00:00\",\"2018-12-01T00:00:00\",\"2019-01-01T00:00:00\",\"2019-02-01T00:00:00\",\"2019-03-01T00:00:00\",\"2019-04-01T00:00:00\",\"2019-05-01T00:00:00\",\"2019-06-01T00:00:00\",\"2019-07-01T00:00:00\",\"2019-08-01T00:00:00\",\"2019-09-01T00:00:00\",\"2019-10-01T00:00:00\",\"2019-11-01T00:00:00\",\"2019-12-01T00:00:00\",\"2020-01-01T00:00:00\",\"2020-02-01T00:00:00\",\"2020-03-01T00:00:00\",\"2020-04-01T00:00:00\",\"2020-05-01T00:00:00\",\"2020-06-01T00:00:00\",\"2020-07-01T00:00:00\",\"2020-08-01T00:00:00\",\"2020-09-01T00:00:00\",\"2020-10-01T00:00:00\",\"2020-11-01T00:00:00\",\"2020-12-01T00:00:00\",\"2021-01-01T00:00:00\",\"2021-02-01T00:00:00\",\"2021-03-01T00:00:00\",\"2021-04-01T00:00:00\",\"2021-05-01T00:00:00\",\"2021-06-01T00:00:00\",\"2021-07-01T00:00:00\",\"2021-08-01T00:00:00\",\"2021-09-01T00:00:00\",\"2021-10-01T00:00:00\",\"2021-11-01T00:00:00\",\"2021-12-01T00:00:00\",\"2022-01-01T00:00:00\",\"2022-02-01T00:00:00\"],\"y\":[0.5098,0.5661,0.6129,0.6345,0.6385,0.6418,0.6446,0.6531,0.6552,0.6552,0.6531,0.6538,0.6604,0.6585,0.6614,0.6616,0.6566,0.6533,0.6549,0.6559,0.6676,0.6582,0.653,0.6608,0.6605,0.6632,0.6577,0.6686,0.6614,0.6558,0.6551,0.6609,0.6581,0.6379,0.7879,0.8013,0.2511,0.2686,0.2761,0.278,0.2726,0.2755,0.2722,0.2659,0.4147,0.8637,0.8733,0.8693,0.8718,0.8602,0.8761],\"type\":\"line\",\"mode\":\"lines+markers\",\"name\":\"Visit To Cart Rate\",\"hoverlabel\":{\"namelength\":-1},\"line\":{\"color\":\"#35a1ff\",\"dash\":\"solid\"},\"visible\":true,\"format\":\"percent\",\"yaxis\":\"y\"},{\"x\":[\"2022-01-01T00:00:00\",\"2022-01-01T00:00:00\",null,\"2021-11-01T00:00:00\",\"2021-11-01T00:00:00\",null],\"y\":[0,0.90735,null,0,0.90735,null],\"hovertext\":[\"Metric Event @ 2022-01-01<br><b>Happy New Year</b><br>\",\"Metric Event @ 2022-01-01<br><b>Happy New Year</b><br>\",null,\"Metric Event @ 2021-11-01<br><b>did something</b><br>TEST\",\"Metric Event @ 2021-11-01<br><b>did something</b><br>TEST\",null],\"hoverinfo\":\"x+text\",\"type\":\"line\",\"mode\":\"lines+markers\",\"visible\":true,\"name\":\"Actions\",\"opacity\":0.2,\"line\":{\"color\":\"#00AB08\",\"width\":0.8,\"dash\":\"line\"}}],\"layout\":{\"annotations\":[],\"shapes\":[],\"height\":480,\"title\":{\"text\":\"<b>Visit to Cart Rate over month</b>\",\"x\":0.01,\"y\":0.95,\"yref\":\"container\",\"font\":{\"family\":\"Source Sans Pro\",\"color\":\"#242424\",\"size\":30}},\"yaxis\":{\"showspikes\":true,\"spikethickness\":0.5,\"spikemode\":\"across\",\"spikecolor\":\"#333333\",\"type\":\"linear\",\"rangemode\":\"tozero\",\"zeroline\":true,\"showline\":false,\"showgrid\":true,\"showticklabels\":true,\"title\":{\"text\":\"Visit to Cart Rate\",\"font\":{\"size\":16}},\"tickformat\":\",.2%\",\"hoverformat\":\".2%\"},\"xaxis\":{\"showspikes\":true,\"spikethickness\":0.5,\"spikecolor\":\"#333333\",\"showline\":true,\"showgrid\":false,\"showticklabels\":true,\"title\":{\"text\":\"Timestamp\",\"font\":{\"size\":16}},\"hoverformat\":\"%d %B (%a)<br>%Y\"},\"font\":{\"family\":\"Source Sans Pro\",\"color\":\"#242424\"},\"autosize\":true,\"margin\":{\"autoexpand\":true},\"legend\":{\"orientation\":\"h\",\"x\":0,\"y\":1.15,\"traceorder\":\"normal\"}},\"config\":{\"dataset_slug\":null,\"group_slug\":\"month\",\"plot_slug\":null,\"group_name\":\"by Month Of Timestamp\",\"snapshot_time\":\"2022-02-25T22:50:24.620737\",\"x_type\":\"timestamp\"},\"revision\":2}",
+    "all_narratives": "## Narratives (6) \n\n - ❌ [City](https://portal.narrator.ai/narrator-demo/narratives/a/impact_of_city_to_increase_visit_to_cart_rate9e89c77a)   [Only Yours]\n - ⏳ (running) [Last Before Ad Source](https://portal.narrator.ai/narrator-demo/narratives/a/impact_of_last_before_ad_source_to_increase_visit_to_cart_rate2f009947)   [Only Yours]\n - ✅ [Total Started Sessions Before](https://portal.narrator.ai/narrator-demo/narratives/a/impact_of_total_started_sessions_before_to_increase_visit_to_cart_rated3f12d44)   [Only Yours]\n - ✅ [Impact of Referring Domain to increase Visit to Cart Rate](https://portal.narrator.ai/narrator-demo/narratives/a/impact_of_referring_domain_to_increase_visit_to_cart_rate668ca97d)   \n - ✅ [Activity Occurrence](https://portal.narrator.ai/narrator-demo/narratives/a/impact_of_activity_occurrence_to_increase_visit_to_cart_rate674a2293)   \n - ✅ [Total Submitted Tickets Before](https://portal.narrator.ai/narrator-demo/narratives/a/impact_of_total_submitted_tickets_before_to_increase_visit_to_cart_rate0daccfa9)   ",
+    "all_datasets": "## Datasets (3)\n\n - [Exploring Visit to Cart Rate](https://portal.narrator.ai/narrator-demo/datasets/edit/ced7cea6_0761_4173_ad6b_2c156de98725)  [Only Yours]\n - [Exploring Visit to Cart Rate](https://portal.narrator.ai/narrator-demo/datasets/edit/21c94b22_4d14_4290_a9ac_b03ecd2a4dae)  [Only Yours]\n - [City](https://portal.narrator.ai/narrator-demo/datasets/edit/kpi_gen_3fa50456_4400_44c1_8f78_35b32b674487) ( [bar 📊](https://portal.narrator.ai/narrator-demo/datasets/edit/kpi_gen_3fa50456_4400_44c1_8f78_35b32b674487?group=feature&plot=feature&view=plot)  |  [line 📈](https://portal.narrator.ai/narrator-demo/datasets/edit/kpi_gen_3fa50456_4400_44c1_8f78_35b32b674487?group=feature_over_time&plot=feature_over_time&view=plot) ) [Only Yours]",
+    "max_run_time": 1645829447.245394,
+    "requester": {
+      "email": "ahmed@narrator.ai",
+      "user_id": "5d8fd6f3-b5d9-42fd-a04a-7ecaa8883aa1"
+    }
+  }
+}

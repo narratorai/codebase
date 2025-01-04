@@ -1,0 +1,12 @@
+mutation DeleteTemplateByName($name: String!, $max_customer_iteration: Int = 100000) {
+  delete_narrative_template(
+    where: {
+      name: { _eq: $name }
+      customer_iteration: { _lte: $max_customer_iteration }
+    }
+  ) {
+    returning {
+      id
+    }
+  }
+}

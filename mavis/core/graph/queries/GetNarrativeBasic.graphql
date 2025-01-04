@@ -1,0 +1,13 @@
+query GetNarrativeBasic($id: uuid!) {
+  narrative_by_pk(id: $id) {
+    id
+    slug
+    name
+    description
+    type
+    created_at
+    updated_at
+    created_by
+    company_id
+  }
+}

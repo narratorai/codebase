@@ -1,0 +1,23 @@
+mutation InsertSqlQuery(
+  $related_to: sql_query_relations_enum!
+  $related_id: uuid!
+  $related_kind: sql_query_kinds_enum!
+  $sql: String!
+  $notes: String
+  $updated_by: String
+) {
+  inserted_query: insert_sql_queries_one(
+    object: {
+      related_to: $related_to
+      related_id: $related_id
+      related_kind: $related_kind
+      sql: $sql
+      notes: $notes
+      updated_by: $updated_by
+    }
+  ) {
+    id
+    updated_by
+    updated_at
+  }
+}

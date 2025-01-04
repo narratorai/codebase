@@ -1,0 +1,13 @@
+query GetQueryTemplatesForSource($data_source: String!) {
+  query_template(where: { data_source: { _eq: $data_source } }) {
+    id
+    warehouse_language
+    data_source
+    transformation_name
+    transformation_kind
+    transformation_update_type
+    updated_at
+    schema_names
+    query
+  }
+}

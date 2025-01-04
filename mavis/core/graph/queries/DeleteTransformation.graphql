@@ -1,0 +1,5 @@
+mutation DeleteTransformation($id: uuid!) {
+    delete_transformation_by_pk(id: $id) {
+        id
+    }
+}

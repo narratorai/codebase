@@ -1,0 +1,81 @@
+region: ""
+account: ""
+clusterName: ""
+destinationServer: ""
+argoNamespace: ""
+argoProject: ""
+
+labels:
+  env: prod-eu
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  # All helm parameters can be sent by IaC code (Terraform or CDK)
+  apps:
+    maviseu:
+      createProject: false
+      repoURL: git@github.com:narratorai/mavis.git
+      targetRevision: main-k8s
+      path: kubernetes/helm/mavis
+      helm:
+        values: |-
+          replicaCount: 7
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 750Mi
+            requests:
+              cpu: 700m
+              memory: 250Mi
+          serviceAccount:
+            create: true
+            annotations:
+              eks.amazonaws.com/role-arn: arn:aws:iam::479493230127:role/provisioned-company/narratorclient/company-dedicated-narratorclient-Role1ABCC5F0-1SMKS53HB1Q95
+            name: ""          
+          serviceAccountWorker:
+            create: true
+            annotations:
+              eks.amazonaws.com/role-arn: arn:aws:iam::479493230127:role/provisioned-company/narrator/company-dedicated-narrator-Role1ABCC5F0-ZAPSB7WEILNN
+            name: "mavis-worker-deployment"         
+          serviceAccountHeartbeat:
+            create: true
+            annotations:
+              eks.amazonaws.com/role-arn: arn:aws:iam::479493230127:role/provisioned-company/narrator/company-dedicated-narrator-Role1ABCC5F0-ZAPSB7WEILNN
+            name: "mavis-heartbeat-deployment"            
+          image:
+            tag: v1.12.17
+            repository: 479493230127.dkr.ecr.eu-west-1.amazonaws.com/mavis
+            repositoryWorker: 479493230127.dkr.ecr.eu-west-1.amazonaws.com/mavis-worker  
+            repositoryHeartbeat: 479493230127.dkr.ecr.eu-west-1.amazonaws.com/mavis-heartbeat
+            repositoryWorkerBouncer: 479493230127.dkr.ecr.us-east-1.amazonaws.com/mavis-worker-bouncer
+          doppler:
+            enabled: true
+            name: mavis-prod
+            targetName: my-secrets
+          mavisWorkerBouncer:
+            enable: true
+          ingress:
+            enabled: true
+            className: alb
+            annotations:
+              kubernetes.io/ingress.class: alb
+              alb.ingress.kubernetes.io/scheme: internet-facing
+              alb.ingress.kubernetes.io/target-type: ip
+              alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:479493230127:certificate/ab52970f-c826-46e6-b0f4-f833450e37a3
+              external-dns.alpha.kubernetes.io/hostname: mavis.eu.narrator.ai
+              alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80},{"HTTPS":443}]'
+              alb.ingress.kubernetes.io/backend-protocol: HTTP
+              alb.ingress.kubernetes.io/target-group-attributes: deregistration_delay.timeout_seconds=180
+              alb.ingress.kubernetes.io/healthcheck-path: /health
+              alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+              # Add any additional annotations specific to ALB Ingress Controller
+            hosts:
+              - host: mavis.eu.narrator.ai
+                paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                      service:
+                        name: ssl-redirect
+                        port:
+                          name: use-annotation

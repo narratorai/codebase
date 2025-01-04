@@ -1,0 +1,16 @@
+{
+  "schema": {
+    "type": "object"
+  },
+  "ui_schema": {
+    "ui:field": "MetricField"
+  },
+  "data": {
+    "name": "Blog Views",
+    "value": 3212,
+    "lift_percent": 0.04,
+    "last_value": 3012,
+    "format": "number",
+    "time_resolution": "week"
+  }
+}

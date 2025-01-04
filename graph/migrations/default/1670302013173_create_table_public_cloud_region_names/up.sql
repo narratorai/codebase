@@ -1,0 +1,1 @@
+CREATE TABLE "public"."cloud_region_names" ("value" text NOT NULL, "description" text, PRIMARY KEY ("value") , UNIQUE ("value"));COMMENT ON TABLE "public"."cloud_region_names" IS E'Enum of cloud region names';

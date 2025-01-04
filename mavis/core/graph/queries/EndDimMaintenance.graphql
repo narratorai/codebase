@@ -1,0 +1,5 @@
+mutation EndDimMaintenance($dim_table_id: uuid!) {
+  update_activity_maintenance(where: { ended_at: { _is_null: true }, dim_table_id: { _eq: $dim_table_id } }, _set: { ended_at: "now()" }) {
+    affected_rows
+  }
+}
