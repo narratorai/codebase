@@ -1,5 +1,5 @@
 apscheduler==3.10.4
-asteval==0.9.29
+asteval==1.0.6
 auth0-python==4.7.2
 Babel==2.16.0
 backoff==2.2.1
